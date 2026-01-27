@@ -506,11 +506,14 @@ select.form-control {
   /* Make containers and cards safe to shrink on small screens */
   .container, .main-content, .card, .panel, .panel-left, .panel-right, .tool-interface, .tool-card, .preview-area, .guides-grid, .tools-grid { min-width: 0; }
 
+  /* Strong overrides to nullify inline min-widths that cause overflow */
+  .tool-interface *, .card *, .panel *, .preview-area * { min-width: 0 !important; max-width: 100% !important; box-sizing: border-box !important; }
+
   /* Force grids to a single column where necessary */
   .guides-grid, .tools-grid, .footer-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
 
   /* Forms & interactive elements should be full width and prevent min-width overflow */
-  input[type="text"], input[type="search"], input[type="email"], textarea, select, .form-control, .btn { min-width: 0; width: 100%; box-sizing: border-box; }
+  input[type="text"], input[type="search"], input[type="email"], textarea, select, .form-control, .btn { min-width: 0 !important; width: 100% !important; box-sizing: border-box !important; }
 
   /* Tables should scroll horizontally without breaking layout */
   table { width: 100%; display: block; overflow-x: auto; }
@@ -519,8 +522,9 @@ select.form-control {
   .nav-link { white-space: normal; }
 
   /* Prevent tool action buttons from having min-width that breaks layout */
-  .tool-actions .btn { min-width: 0; }
+  .tool-actions .btn { min-width: 0 !important; }
 }
+
 
 /* Tabs */
 .tabs {
