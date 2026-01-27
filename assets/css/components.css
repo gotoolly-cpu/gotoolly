@@ -495,6 +495,33 @@ select.form-control {
   max-height: 500px;
 }
 
+/* Mobile fixes: prevent horizontal overflow, improve wrapping for long words, and ensure small-screen widths */
+@media (max-width: 640px) {
+  /* Prevent page-level horizontal scrolling caused by wide elements */
+  html, body { max-width: 100%; overflow-x: hidden; }
+
+  /* Ensure content wraps and doesn't force horizontal scroll */
+  body, p, h1, h2, h3, h4, h5, h6, li, a { overflow-wrap: break-word; word-break: break-word; }
+
+  /* Make containers and cards safe to shrink on small screens */
+  .container, .main-content, .card, .panel, .panel-left, .panel-right, .tool-interface, .tool-card, .preview-area, .guides-grid, .tools-grid { min-width: 0; }
+
+  /* Force grids to a single column where necessary */
+  .guides-grid, .tools-grid, .footer-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
+
+  /* Forms & interactive elements should be full width and prevent min-width overflow */
+  input[type="text"], input[type="search"], input[type="email"], textarea, select, .form-control, .btn { min-width: 0; width: 100%; box-sizing: border-box; }
+
+  /* Tables should scroll horizontally without breaking layout */
+  table { width: 100%; display: block; overflow-x: auto; }
+
+  /* Make nav links wrap instead of overflowing */
+  .nav-link { white-space: normal; }
+
+  /* Prevent tool action buttons from having min-width that breaks layout */
+  .tool-actions .btn { min-width: 0; }
+}
+
 /* Tabs */
 .tabs {
   border-bottom: 1px solid var(--color-border);
