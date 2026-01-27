@@ -544,7 +544,16 @@ select.form-control {
 
   /* Prevent tool action buttons from having min-width that breaks layout */
   .tool-actions .btn { min-width: 0 !important; }
+
+  /* Image / Editor specific small-screen fixes */
+  .setting-select, .quality-control, .dimension-input, .dimension-group, .setting-row, .compression-stats, .stat-item {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .setting-row { grid-template-columns: 1fr !important; }
 }
+
 
 
 /* Tabs */
