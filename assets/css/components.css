@@ -512,6 +512,21 @@ select.form-control {
   /* Target containers commonly setting large min-widths */
   .tool-interface, .results-sidebar, .panel-left, .panel-right { min-width: 0 !important; width: 100% !important; flex-basis: auto !important; }
 
+  /* Ensure page-specific layouts like favicon and image compressor use full width on small screens */
+  .favicon-layout, .favicon-layout > *, .favicon-layout .tool-interface, .favicon-layout .results-sidebar {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    flex: none !important;
+  }
+
+  /* Make preview canvas responsive */
+  #preview-canvas, .result-preview img, .result-preview canvas {
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
   /* Nullify inline style min-widths (mobile-only - safe override) */
   [style*="min-width"] { min-width: 0 !important; max-width: 100% !important; }
 
