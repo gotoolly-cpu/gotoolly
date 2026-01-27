@@ -119,6 +119,8 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  /* Prevent iOS from auto-zooming text and causing layout shift */
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
