@@ -100,6 +100,44 @@
   width: 100%;
 }
 
+/* Shared Tool Actions (used on guides, tool pages, and CTAs)
+   Ensures buttons sit side-by-side on wide screens and stack with consistent
+   spacing and equal widths on mobile. */
+.tool-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 2px solid #f0f2f5;
+  justify-content: center;
+  align-items: center;
+}
+
+.tool-actions .btn {
+  flex: 1 1 auto;
+  min-width: 140px;
+  box-sizing: border-box;
+}
+
+/* Mobile: stack buttons and ensure spacing & equal width */
+@media (max-width: 640px) {
+  .tool-actions {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .tool-actions .btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+  }
+
+  .tool-actions .btn + .btn {
+    margin-top: var(--space-3);
+  }
+}
+
 /* Cards */
 .card {
   background-color: var(--color-background);
