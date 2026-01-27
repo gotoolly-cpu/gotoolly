@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Compressor - Reduce Image File Size Online | GoToolly</title>
+    <meta name="description" content="Free online image compressor. Reduce JPG, PNG, and WebP file sizes without noticeable quality loss. Works entirely in your browser - no uploads.">
+    <meta name="keywords" content="image compressor, reduce image size, compress photos, image optimization, web image optimizer">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://gotoolly.com/tools/image-compressor">
+    
+    <!-- Favicon & Manifest -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/tools.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        .file-drop-zone {
+            border: 2px dashed var(--color-border);
+            border-radius: 12px;
+            padding: var(--space-8);
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            background-color: var(--color-bg-alt);
+        }
+        
+        .file-drop-zone:hover,
+        .file-drop-zone.dragover {
+            border-color: var(--color-primary);
+            background-color: rgba(37, 99, 235, 0.05);
+        }
+        
+        .file-drop-zone svg {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto var(--space-3);
+            color: var(--color-primary);
+            opacity: 0.7;
+        }
+        
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-4);
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--space-4);
+            margin-top: var(--space-4);
+        }
+        
+        .result-item {
+            background: var(--color-bg-alt);
+            border-radius: 8px;
+            padding: var(--space-4);
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .result-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .result-item.selected {
+            border-color: var(--color-primary);
+            background-color: rgba(37, 99, 235, 0.05);
+        }
+        
+        .result-preview {
+            width: 100%;
+            height: 120px;
+            background: #f5f5f5;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-3);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .result-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .result-info {
+            font-size: var(--text-sm);
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+        
+        .result-info strong {
+            display: block;
+            color: var(--color-text);
+            margin-top: var(--space-2);
+        }
+        
+        .compression-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-3);
+            padding: var(--space-4);
+            background: var(--color-bg-alt);
+            border-radius: 10px;
+            margin: var(--space-2) 0 var(--space-4) 0;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        
+        .stat-item {
+            text-align: center;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+            padding: var(--space-3) var(--space-2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 0;
+        }
+        
+        .stat-item .value {
+            font-size: var(--text-2xl);
+            font-weight: var(--weight-bold);
+            color: var(--color-primary);
+        }
+        
+        .stat-item .label {
+            font-size: var(--text-sm);
+            color: var(--color-text-light);
+            margin-top: var(--space-1);
+        }
+        
+        /* Layout */
+        .favicon-layout {
+            display: flex;
+            gap: var(--space-6);
+            flex-wrap: wrap;
+        }
+        
+        .tool-interface {
+            flex: 1;
+            min-width: 320px;
+        }
+        
+        .results-sidebar {
+            flex: 0 0 350px;
+            min-width: 320px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card {
+            background: var(--color-bg-alt);
+            border-radius: 8px;
+            padding: var(--space-4);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card h4 {
+            margin: 0 0 var(--space-3) 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-text);
+        }
+        
+        .card ul,
+        .card ol {
+            margin: 0;
+            padding-left: var(--space-4);
+            line-height: 1.8;
+            font-size: 1rem;
+            color: var(--color-text-light);
+        }
+        
+        .card li {
+            margin-bottom: var(--space-2);
+        }
+        
+        .quality-visual {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            margin-top: var(--space-2);
+        }
+        
+        .quality-bar {
+            flex: 1;
+            height: 6px;
+            background: var(--color-border);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .quality-fill {
+            position: absolute;
+            height: 100%;
+            background: linear-gradient(90deg, #ef4444, #f59e0b, #10b981);
+            border-radius: 3px;
+            transition: width 0.3s;
+        }
+        
+        /* Preview comparison */
+        .comparison-container {
+            display: none;
+            margin-top: var(--space-6);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .comparison-header {
+            background: var(--color-bg-alt);
+            padding: var(--space-3) var(--space-4);
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            justify-content: space-between;
+            font-weight: 500;
+        }
+        
+        .comparison-images {
+            display: flex;
+            height: 200px;
+        }
+        
+        .comparison-original,
+        .comparison-compressed {
+            flex: 1;
+            padding: var(--space-4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .comparison-original {
+            border-right: 1px solid var(--color-border);
+        }
+        
+        .comparison-original img,
+        .comparison-compressed img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        /* Progress animation */
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .processing {
+            animation: pulse 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <a href="/" class="logo">
+                    <img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg">
+                    <span class="logo-text">GoToolly</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools/index.html" class="nav-link">Tools</a>
+                    <a href="/guides/index.html" class="nav-link">Guides</a>
+                    <a href="/pages/about.html" class="nav-link">About</a>
+                    <a href="/pages/contact.html" class="nav-link">Contact</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-button" aria-label="Toggle menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools/index.html" class="nav-link">Tools</a>
+                    <a href="/guides/index.html" class="nav-link">Guides</a>
+                    <a href="/pages/about.html" class="nav-link">About</a>
+                    <a href="/pages/contact.html" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Image Compressor</h1>
+                <p class="page-description">
+                    Reduce image file sizes without quality loss. Perfect for web optimization, social media, and faster loading times. 
+                    Your images are processed locally—nothing is uploaded or stored on our servers.
+                </p>
+            </div>
+
+            <!-- Tool Layout -->
+            <div class="favicon-layout">
+                <!-- Left: Controls -->
+                <div class="tool-interface">
+                    <h2>Compress Images</h2>
+                    <p>Drag & drop or select images to compress them with custom settings</p>
+
+                    <!-- Step 1: Upload -->
+                    <div class="form-section">
+                        <h3 style="margin-bottom: var(--space-4);">Step 1: Upload</h3>
+                        <label for="image-input" class="file-drop-zone" id="drop-zone" style="margin: 0; display: block; width: 100%; box-sizing: border-box; position: relative;">
++                            <!-- File input is nested inside the label (visually hidden but focusable) to ensure clicking works across browsers -->
++                            <input type="file" id="image-input" accept="image/*" multiple style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; z-index: 2;" aria-label="Select images to compress">
+                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                 <polyline points="17 8 12 3 7 8"></polyline>
+                                 <line x1="12" y1="3" x2="12" y2="15"></line>
+                             </svg>
+                             <p style="margin: 0; font-weight: 500;">Drag images here or <span style="color: var(--color-primary); text-decoration: underline; cursor: pointer;" id="browse-link">click to browse</span></p>
+                             <p style="margin: var(--space-2) 0 0; font-size: var(--text-sm); color: var(--color-text-light);">JPG, PNG, WebP, GIF • Up to 10 MB each</p>
+                         </label>
+-                        <input type="file" id="image-input" accept="image/*" multiple style="display: none;">
++                        <!-- file-list shown after selection -->
++                        <div id="file-list" style="margin-top: var(--space-4); display: none;">
++                            <p style="font-weight: 500; margin-bottom: var(--space-2);">Selected files:</p>
++                            <div id="file-names" style="font-size: var(--text-sm); color: var(--color-text-light);"></div>
++                        </div>
+-                        <div id="file-list" style="margin-top: var(--space-4); display: none;">
+-                            <p style="font-weight: 500; margin-bottom: var(--space-2);">Selected files:</p>
+-                            <div id="file-names" style="font-size: var(--text-sm); color: var(--color-text-light);"></div>
+-                        </div>
++                        
+
+                    </div>
+                            <div class="form-group">
+                                <label for="quality" class="form-label">Quality</label>
+                                <div class="quality-visual">
+                                    <input type="range" id="quality" class="range-slider" min="10" max="100" value="80" step="5" style="flex: 1;">
+                                    <span id="quality-value" style="min-width: 45px; font-weight: 500;">80%</span>
+                                </div>
+                                <div class="quality-bar">
+                                    <div class="quality-fill" id="quality-fill" style="transform: scaleX(0.8); transform-origin: left;"></div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; font-size: var(--text-xs); color: var(--color-text-light); margin-top: var(--space-1);">
+                                    <span>Smaller file</span>
+                                    <span>Better quality</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="max-width" class="form-label">Max Width</label>
+                                <select id="max-width" class="form-control">
+                                    <option value="0">Original</option>
+                                    <option value="3840">3840px (4K)</option>
+                                    <option value="2560">2560px (2K)</option>
+                                    <option value="1920">1920px (Full HD)</option>
+                                    <option value="1280" selected>1280px</option>
+                                    <option value="1024">1024px</option>
+                                    <option value="800">800px</option>
+                                    <option value="640">640px</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="format" class="form-label">Output Format</label>
+                                <select id="format" class="form-control">
+                                    <option value="original">Keep Original</option>
+                                    <option value="jpeg">JPEG</option>
+                                    <option value="png">PNG</option>
+                                    <option value="webp" selected>WebP</option>
+                                </select>
+                                <div id="format-tip" style="font-size: var(--text-xs); color: var(--color-text-light); margin-top: var(--space-1);">
+                                    WebP offers best compression
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Preview Comparison -->
+                    <div id="comparison-area" class="comparison-container">
+                        <div class="comparison-header">
+                            <span>Original</span>
+                            <span>Compressed</span>
+                        </div>
+                        <div class="comparison-images">
+                            <div class="comparison-original">
+                                <img id="comparison-original-img" alt="Original">
+                            </div>
+                            <div class="comparison-compressed">
+                                <img id="comparison-compressed-img" alt="Compressed">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Progress -->
+                    <div id="progress-area" style="display: none; margin-top: var(--space-8);">
+                        <div style="margin-bottom: var(--space-4);">
+                            <div class="progress-bar" style="height: 6px; background: var(--color-border); border-radius: 3px; overflow: hidden;">
+                                <div class="progress-fill" id="progress-fill" style="width: 0%; background: var(--color-primary); height: 100%; transition: width 0.2s;"></div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-top: var(--space-2); font-size: var(--text-sm);">
+                                <span id="progress-text">Processing...</span>
+                                <span id="progress-percent">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Actions -->
+                    <div style="display: flex; gap: var(--space-3); margin-top: var(--space-8);">
+                        <button id="compress-btn" class="btn btn-primary btn-lg" disabled style="flex: 1;">
+                            <i class="fas fa-compress-alt"></i> Compress Images
+                        </button>
+                        <button id="reset-btn" class="btn btn-outline btn-lg">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Right: Results -->
+                <div class="results-sidebar">
+                    <!-- Results Section -->
+                    <div id="results-area" style="display: none; height: 100%; flex: 1; display: flex; flex-direction: column;">
+                        <div style="flex: 1 1 auto; display: flex; flex-direction: column;">
+                            <h3 style="margin-bottom: var(--space-4);">Compression Results</h3>
+                            <div class="compression-stats">
+                                <div class="stat-item">
+                                    <div class="value" id="original-size">0 MB</div>
+                                    <div class="label">Original Size</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="value" id="compressed-size">0 MB</div>
+                                    <div class="label">Compressed Size</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="value" id="savings-percent">0%</div>
+                                    <div class="label">Saved</div>
+                                </div>
+                            </div>
+                            
+                            <div style="margin: var(--space-3) 0; font-size: var(--text-sm); color: var(--color-text-light);">
+                                <i class="fas fa-info-circle"></i> Click an image to preview or select for download
+                            </div>
+                            
+                            <div id="results-content" class="results-grid">
+                                <!-- Individual image results and download buttons will be populated here -->
+                            </div>
+                    </div>
+                    </div>
+                    
+                    <!-- Empty State -->
+                    <div id="empty-results" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding: var(--space-8); text-align: center; color: var(--color-text-light);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 64px; height: 64px; margin-bottom: var(--space-4); opacity: 0.5;">
+                            <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        <h4>No Results Yet</h4>
+                        <p style="margin-top: var(--space-2);">Select images and click "Compress Images" to see results here.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Info Cards -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-top: var(--space-6);">
+                <div class="card">
+                    <h4><i class="fas fa-box-open" style="color: var(--color-primary); margin-right: 8px;"></i>What You Get</h4>
+                    <ul>
+                        <li><strong>Batch compression</strong> - Multiple images at once</li>
+                        <li><strong>Quality control</strong> - 10-100%</li>
+                        <li><strong>Resize</strong> - Set max width</li>
+                        <li><strong>Format conversion</strong> - JPEG, PNG, WebP</li>
+                        <li><strong>100% local</strong> - No uploads</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4><i class="fas fa-list-ol" style="color: var(--color-primary); margin-right: 8px;"></i>How to Use</h4>
+                    <ol>
+                        <li>Drag or select images</li>
+                        <li>Adjust quality, size, format</li>
+                        <li>Click Compress</li>
+                        <li>Download results</li>
+                    </ol>
+                </div>
+                <div class="card">
+                    <h4><i class="fas fa-lightbulb" style="color: var(--color-primary); margin-right: 8px;"></i>Pro Tips</h4>
+                    <ul>
+                        <li>75-85% quality is usually best</li>
+                        <li>WebP gives smallest files</li>
+                        <li>Resize for web speed</li>
+                        <li>All processing is private</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">
+                        Free, privacy-focused online tools that work entirely in your browser.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Popular Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="/tools/image-compressor.html">Image Compressor</a></li>
+                        <li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li>
+                        <li><a href="/tools/word-counter.html">Word Counter</a></li>
+                        <li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li>
+                        <li><a href="/tools/password-generator.html">Password Generator</a></li>
+                        <li><a href="/tools/index.html">View All Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides/index.html">Guides</a></li>
+                        <li><a href="/tools/index.html">All Tools</a></li>
+                        <li><a href="/pages/about.html">About Us</a></li>
+                        <li><a href="/pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/pages/legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/pages/legal/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="/pages/legal/disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © <span id="current-year">2024</span> GoToolly. All rights reserved.
+                </div>
+                <div class="legal-links">
+                    <a href="/pages/legal/privacy-policy.html">Privacy</a>
+                    <a href="/pages/legal/terms-of-service.html">Terms</a>
+                    <a href="/pages/legal/disclaimer.html">Disclaimer</a>
+                    <a href="/pages/contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        // Register Service Worker for offline support
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => {
+                    console.log('[ServiceWorker] Registered:', registration.scope);
+
+                    // Try to prompt an update and clear caches so dev changes appear immediately
+                    try {
+                        // Trigger update check
+                        registration.update();
+
+                        // If an active worker is waiting, tell it to skip waiting
+                        if (registration.waiting) {
+                            registration.waiting.postMessage({ action: 'SKIP_WAITING' });
+                        }
+
+                        // If controller exists, ask it to clear caches
+                        if (navigator.serviceWorker.controller) {
+                            const msgChan = new MessageChannel();
+                            msgChan.port1.onmessage = (event) => console.log('SW reply:', event.data);
+                            navigator.serviceWorker.controller.postMessage({ action: 'CLEAR_CACHE' }, [msgChan.port2]);
+                        }
+                    } catch (err) {
+                        console.warn('SW update/clear attempt failed:', err);
+                    }
+                })
+                .catch(error => {
+                    console.warn('[ServiceWorker] Registration failed:', error);
+                });
+        }
+    </script>
+    <script src="/assets/js/tools/image-compressor.js?v=1.0.1"></script>
+</body>
+</html>
