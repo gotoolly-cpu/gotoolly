@@ -509,6 +509,12 @@ select.form-control {
   /* Strong overrides to nullify inline min-widths that cause overflow */
   .tool-interface *, .card *, .panel *, .preview-area * { min-width: 0 !important; max-width: 100% !important; box-sizing: border-box !important; }
 
+  /* Target containers commonly setting large min-widths */
+  .tool-interface, .results-sidebar, .panel-left, .panel-right { min-width: 0 !important; width: 100% !important; flex-basis: auto !important; }
+
+  /* Nullify inline style min-widths (mobile-only - safe override) */
+  [style*="min-width"] { min-width: 0 !important; max-width: 100% !important; }
+
   /* Force grids to a single column where necessary */
   .guides-grid, .tools-grid, .footer-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
 
