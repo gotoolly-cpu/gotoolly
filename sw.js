@@ -1,10 +1,10 @@
 // Service Worker for Background Removal Tool
 // Enables offline functionality and caches critical resources
 
-const CACHE_VERSION = 'gotoolly-v2';
-const RUNTIME_CACHE = 'gotoolly-runtime-v2';
-const ASSETS_CACHE = 'gotoolly-assets-v2';
-const MODEL_CACHE = 'gotoolly-models-v2';
+const CACHE_VERSION = 'gotoolly-v3';
+const RUNTIME_CACHE = 'gotoolly-runtime-v3';
+const ASSETS_CACHE = 'gotoolly-assets-v3';
+const MODEL_CACHE = 'gotoolly-models-v3';
 
 // Files to cache on install
 const CRITICAL_ASSETS = [
@@ -12,6 +12,15 @@ const CRITICAL_ASSETS = [
     '/index.html',
     '/tools/Background%20Removal.html',
 +    '/tools/image-compressor.html',
+    '/assets/css/styles.min.css',
+    'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap',
+    // local self-hosted fonts (place woff2 files in /assets/fonts/)
+    '/assets/fonts/Inter-400.woff2',
+    '/assets/fonts/Inter-600.woff2',
+    '/assets/fonts/Inter-800.woff2',
+    '/assets/fonts/JetBrainsMono-400.woff2',
+    '/assets/fonts/JetBrainsMono-500.woff2',
+    // legacy files (kept for backward-compatibility)
     '/assets/css/base.css',
     '/assets/css/layout.css',
     '/assets/css/components.css',
@@ -89,8 +98,11 @@ self.addEventListener('fetch', (event) => {
         return;
     }
     
-    // Skip cross-origin requests
-    if (url.origin !== self.location.origin) {
+    // Allow Google Fonts to be handled by the service worker (cache-first)
+    const isCrossOriginFont = url.origin === 'https://fonts.googleapis.com' || url.origin === 'https://fonts.gstatic.com';
+
+    // Skip other cross-origin requests
+    if (url.origin !== self.location.origin && !isCrossOriginFont) {
         return;
     }
     
@@ -103,6 +115,9 @@ self.addEventListener('fetch', (event) => {
         event.respondWith(cacheFirstStrategy(request));
     } else if (request.destination === 'image') {
         // Images: cache-first with network update
+        event.respondWith(cacheFirstStrategy(request));
+    } else if (request.destination === 'font' || isCrossOriginFont) {
+        // Fonts (including Google Fonts): cache-first for fast text rendering
         event.respondWith(cacheFirstStrategy(request));
     } else {
         // Default: network-first

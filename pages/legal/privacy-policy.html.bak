@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service | GoToolly</title>
-    <meta name="description" content="GoToolly Terms of Service - Legal terms and conditions for using our website and tools.">
+    <title>Privacy Policy | GoToolly</title>
+    <meta name="description" content="GoToolly Privacy Policy - How we protect your data and privacy.">
     
     <link rel="preload" href="../../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="../../assets/css/styles.min.css"></noscript>
-  <link rel="canonical" href="https://gotoolly.com/legal/terms-of-service">
 </head>
 <body>
     <!-- Header -->
@@ -53,7 +52,7 @@
     <main class="main-content">
         <div class="container">
             <div class="page-header">
-                <h1>Terms of Service</h1>
+                <h1>Privacy Policy</h1>
                 <p class="page-description">
                     Last updated: January 2026
                 </p>
@@ -62,66 +61,71 @@
             <article class="content-section">
                 <div class="card">
                     <div style="padding: var(--space-6);">
-                        <h2>1. Acceptance of Terms</h2>
-                        <p>By accessing and using the GoToolly website and tools, you agree to be bound by these Terms of Service. If you do not agree with these terms, please do not use our service.</p>
+                        <h2>1. Introduction</h2>
+                        <p>GoToolly provides free online tools that process files and text in your web browser. This Privacy Policy explains what information we collect and how we handle your data when you visit our website and use our tools.</p>
+                        <p>Our tools are designed to work locally in your browser without uploading your files to our servers. However, like most websites, we do collect some basic information about how visitors use our site.</p>
                         
-                        <h2>2. Description of Service</h2>
-                        <p>GoToolly provides free online tools for processing images, PDFs, text, and other content. Our tools run primarily in your web browser, processing your data locally without uploading files to our servers. We provide these tools "as available" and may update, modify, or discontinue any tool or feature at any time.</p>
+                        <h2>2. Information We Do NOT Collect</h2>
+                        <p><strong>Your Tool Data:</strong> Files you upload, text you enter, and content you process using our tools are handled entirely in your browser. This data is not sent to our servers, stored by us, or accessible to GoToolly.</p>
+                        <p><strong>Personal Information:</strong> We do not require registration, collect names, email addresses, or other personal details unless you contact us directly.</p>
                         
-                        <h2>3. Permitted Use</h2>
-                        <p>You may use GoToolly for:</p>
+                        <h2>3. Information We MAY Collect</h2>
+                        <p>We may collect limited, standard website information to operate and improve our service:</p>
                         <ul>
-                            <li>Personal, educational, or professional purposes</li>
-                            <li>Processing your own files and content</li>
-                            <li>Normal use of tools within reasonable usage limits</li>
-                            <li>Commercial use, provided it complies with these terms</li>
+                            <li><strong>Basic Usage Data:</strong> Pages visited, browser type, device type, and general location (country/region level)</li>
+                            <li><strong>Technical Logs:</strong> Server access logs, error reports, and security monitoring data</li>
+                            <li><strong>Cookies:</strong> Small data files that remember your preferences and enable website functionality</li>
                         </ul>
                         
-                        <h2>4. Prohibited Use</h2>
-                        <p>You may not use GoToolly to:</p>
+                        <h2>4. How Our Tools Work</h2>
+                        <p>All GoToolly tools process your files and text locally using JavaScript in your web browser. Your files are not uploaded to our servers. You can verify this by:</p>
                         <ul>
-                            <li>Process illegal, harmful, or inappropriate content</li>
-                            <li>Attempt to disrupt, hack, or exploit our website or tools</li>
-                            <li>Use automated tools to scrape or overload our service</li>
-                            <li>Reverse engineer, copy, or redistribute our tools or website code</li>
-                            <li>Bypass security measures or usage limitations</li>
-                            <li>Violate the intellectual property rights of others</li>
+                            <li>Using tools while disconnected from the internet</li>
+                            <li>Checking your browser's network activity (developer tools)</li>
+                            <li>Observing that processing happens instantly without upload delays</li>
                         </ul>
                         
-                        <h2>5. Intellectual Property</h2>
-                        <p>GoToolly owns the website design, code, branding, and tool functionality. You retain full ownership of any content you input into our tools. We do not claim any rights to your files, text, or generated outputs.</p>
-                        
-                        <h2>6. Disclaimer of Warranties</h2>
-                        <p>GoToolly is provided "as is" and "as available" without any warranties of any kind. We do not guarantee that:</p>
+                        <h2>5. Cookies and Third-Party Services</h2>
+                        <p>We use cookies to remember your settings and enable basic website functionality. We may also use third-party services such as:</p>
                         <ul>
-                            <li>Our tools will be error-free or uninterrupted</li>
-                            <li>Results will be accurate or suitable for your specific needs</li>
-                            <li>The website will be available at all times</li>
-                            <li>Tools will remain unchanged or permanently available</li>
+                            <li><strong>Analytics Services:</strong> To understand how visitors use our site and identify popular tools</li>
+                            <li><strong>Advertising Services:</strong> To display relevant ads that support our free service</li>
+                        </ul>
+                        <p>These services may collect information according to their own privacy policies. You can disable cookies in your browser settings.</p>
+                        
+                        <h2>6. How We Use Information</h2>
+                        <p>We use the limited information we collect to:</p>
+                        <ul>
+                            <li>Keep the website running and secure</li>
+                            <li>Understand which tools are most useful to visitors</li>
+                            <li>Identify and fix technical problems</li>
+                            <li>Respond to support requests when contacted directly</li>
                         </ul>
                         
-                        <h2>7. Limitation of Liability</h2>
-                        <p>To the fullest extent permitted by law, GoToolly shall not be liable for any indirect, incidental, special, or consequential damages including but not limited to data loss, business interruption, or lost profits arising from your use of our service.</p>
+                        <h2>7. Data Security</h2>
+                        <p>We use standard security practices to protect our website and any information we collect. However, no internet service is completely secure, and we cannot guarantee absolute security of data transmitted over the internet.</p>
+                        <p>Since your tool data is processed locally in your browser and not sent to us, it remains under your control throughout the process.</p>
                         
-                        <h2>8. Third-Party Services and Links</h2>
-                        <p>Our website may contain links to third-party websites or services. We do not control or endorse these external services and are not responsible for their content, privacy policies, or practices. Use of third-party services is at your own risk.</p>
+                        <h2>8. Data Retention</h2>
+                        <p><strong>Tool Data:</strong> Not stored by us (processed locally in your browser)</p>
+                        <p><strong>Website Data:</strong> Basic usage information and server logs are retained for operational purposes and deleted according to standard practices</p>
                         
-                        <h2>9. Advertising</h2>
-                        <p>GoToolly is supported by advertising. We may display advertisements on our website, which are provided by third-party advertising services. We do not control the content of these advertisements.</p>
+                        <h2>9. Your Choices</h2>
+                        <p>You can:</p>
+                        <ul>
+                            <li>Disable cookies in your browser settings</li>
+                            <li>Use browser privacy modes or ad blockers</li>
+                            <li>Contact us about any privacy concerns</li>
+                        </ul>
+                        <p>These choices may affect some website functionality but will not impact the core tool processing, which happens in your browser.</p>
                         
-                        <h2>10. Termination</h2>
-                        <p>We reserve the right to restrict or block access to our service for users who violate these terms, abuse our tools, or engage in harmful activities. We may also discontinue the service or specific tools at any time.</p>
+                        <h2>10. Changes to This Policy</h2>
+                        <p>We may update this Privacy Policy to reflect changes in our practices or legal requirements. Updates will be posted on this page with a new "Last updated" date. Continued use of our website after changes indicates acceptance of the updated policy.</p>
                         
-                        <h2>11. Changes to Terms</h2>
-                        <p>We may update these Terms of Service occasionally to reflect changes in our service or legal requirements. Updates will be posted on this page with a new "Last updated" date. Continued use of GoToolly after changes constitutes acceptance of the updated terms.</p>
-                        
-                        <h2>12. Governing Law</h2>
-                        <p>These terms are governed by applicable laws. Any disputes will be resolved in accordance with the laws of the jurisdiction where GoToolly operates.</p>
-                        
-                        <h2>13. Contact Information</h2>
-                        <p>For questions about these Terms of Service or legal matters, contact us at:</p>
+                        <h2>11. Contact Information</h2>
+                        <p>For questions about this Privacy Policy or our privacy practices, contact us at:</p>
                         <p><strong>Email:</strong> <a href="mailto:contact@gotoolly.com">contact@gotoolly.com</a></p>
-                        <p>Please include "Terms of Service" in the subject line.</p>
+                        <p>Please include "Privacy Policy" in the subject line for faster response.</p>
                     </div>
                 </div>
             </article>

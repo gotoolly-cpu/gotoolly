@@ -9,6 +9,8 @@
   --color-primary-dark: #1d4ed8;
   --color-primary-light: #3b82f6;
   --color-secondary: #10b981;    /* Emerald - Action, Success */
+  --color-secondary-dark: #046c4f; /* Darker emerald for buttons (meets WCAG AA with white) */
+  --color-secondary-hover: #035a42;
   --color-accent: #8b5cf6;       /* Violet - Creativity */
   
   /* Neutral Colors */

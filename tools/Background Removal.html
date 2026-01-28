@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BG Remover Pro | Professional Background Removal Tool</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/base.css?v=2">
-    <link rel="stylesheet" href="../assets/css/layout.css?v=2">
-    <link rel="stylesheet" href="../assets/css/components.css?v=2">
-    <link rel="stylesheet" href="../assets/css/tools.css?v=2">
+    <!-- Critical CSS: preload and non-blocking load -->
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>    
     <!-- AI Background Removal Libraries removed for CSP compatibility -->
     <!-- Image optimization utilities -->
     <script src="../assets/js/image-optimizers.js"></script>
