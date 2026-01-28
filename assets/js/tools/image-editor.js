@@ -707,29 +707,38 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         canvas.toBlob(function(blob) {
-            const savedSize = (blob.size / 1024).toFixed(2);
-            if (resizerResizedSize) resizerResizedSize.textContent = `${savedSize} KB`;
-            
-            if (resizerResultImage) {
-                resizerResultImage.src = URL.createObjectURL(blob);
+            const savedSizeKB = (blob.size / 1024).toFixed(2);
+            if (resizerResizedSize) resizerResizedSize.textContent = `${savedSizeKB} KB`;
+
+            // Create a converter-style result and add it to the Conversion Results list
+            const url = URL.createObjectURL(blob);
+            const originalSize = resizerOriginalFile ? resizerOriginalFile.size : 0;
+            const convertedSize = blob.size;
+            const sizeChange = originalSize > 0 ? ((convertedSize - originalSize) / originalSize * 100).toFixed(1) : 0;
+            const extension = format === 'jpg' ? 'jpg' : format;
+
+            const result = {
+                url: url,
+                originalName: resizerOriginalFile ? resizerOriginalFile.name : 'resized-image',
+                extension: extension,
+                convertedSize: convertedSize,
+                originalSize: originalSize,
+                width: dimensions.width,
+                height: dimensions.height,
+                sizeChange: sizeChange
+            };
+
+            // Push to converterResults and re-render results area
+            converterResults.push(result);
+            if (typeof converterDisplayResults === 'function') {
+                converterDisplayResults();
             }
-            if (resizerResultDimensions) {
-                resizerResultDimensions.textContent = `${dimensions.width} × ${dimensions.height} px`;
+            if (converterResultsArea) {
+                converterResultsArea.style.display = 'block';
+                converterResultsArea.scrollIntoView({ behavior: 'smooth' });
             }
-            if (resizerResultSize) {
-                resizerResultSize.textContent = `${savedSize} KB`;
-            }
-            if (resizerResultsSection) {
-                resizerResultsSection.style.display = 'block';
-            }
-            
-            if (resizerDownloadBtn) {
-                resizerDownloadBtn.href = URL.createObjectURL(blob);
-                const extension = format === 'jpg' ? 'jpg' : format;
-                resizerDownloadBtn.download = `resized-image.${extension}`;
-            }
-            
-            showNotification('Image resized successfully', 'success');
+
+            showNotification('Image resized and added to Conversion Results', 'success');
         }, `image/${format}`, blobQuality);
     }
     

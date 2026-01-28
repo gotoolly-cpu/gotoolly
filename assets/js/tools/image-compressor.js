@@ -1,7 +1,11 @@
 /* ============================================
    GO TOOLLY - IMAGE COMPRESSOR
    Professional Image Compression Tool
-   Version 2.0 - Fixed Visual Issues
+   Version 2.1 - Fixed double-compress and UI click issues
+   - Prevent duplicate clicks from triggering multiple runs
+   - Stop propagation on browse-link to avoid double file-picker invocation
+   - Cleaned up drop-zone click behavior
+   - Removed stray HTML diff markers (fixed UI text placement)
    ============================================ */
 
 // ============================================
@@ -30,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const dropZone = document.getElementById('drop-zone');
     const fileList = document.getElementById('file-list');
     const fileNames = document.getElementById('file-names');
+    const fileCount = document.getElementById('file-count');
     const qualitySlider = document.getElementById('quality');
     const qualityValue = document.getElementById('quality-value');
     const qualityFill = document.getElementById('quality-fill');
@@ -59,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let compressedResults = [];
     let selectedImageIndex = null;
     let originalImageUrls = new Map(); // Store original image URLs for comparison
+    let isProcessing = false; // Guard against duplicate compression runs
     
     // ============================================
     // INITIALIZATION
@@ -90,16 +96,28 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add click-to-browse for drop zone
         const browseLink = document.getElementById('browse-link');
         if (browseLink && imageInput) {
+            // Prevent event propagation to avoid the dropZone click handler firing twice
             browseLink.addEventListener('click', function(e) {
                 e.preventDefault();
-                imageInput.click();
+                e.stopPropagation();
+                if (imageInput) imageInput.click();
+            });
+
+            // Accessible activation via keyboard (Enter / Space)
+            browseLink.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (imageInput) imageInput.click();
+                }
             });
         }
         
         // Hide empty results if results are showing
         if (compressedResults.length > 0) {
             emptyResults.style.display = 'none';
-            resultsArea.style.display = 'flex';
+            // Use block to preserve panel layout (avoid forcing flex which can rearrange inner content)
+            resultsArea.style.display = 'block';
         }
         
         console.log('✓ Initialization complete');
@@ -124,7 +142,17 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('✓ Setting up drop zone listeners');
             
             // Add a click fallback to ensure the file picker opens even if label behavior is inconsistent
-            dropZone.addEventListener('click', () => {
+            // Only trigger when clicking the drop zone itself (avoid nested clickable elements triggering twice)
+            dropZone.addEventListener('click', (e) => {
+                try {
+                    // If the click started on the browse-link or the native file input itself, do nothing.
+                    // This prevents the file picker from being triggered twice (native click + programmatic click)
+                    if (e.target && e.target.closest) {
+                        if (e.target.closest('#browse-link') || e.target.closest('#image-input') || (e.target.tagName && e.target.tagName.toLowerCase() === 'input' && e.target.type === 'file')) return;
+                    }
+                } catch (err) {
+                    // If closest() is not available for any reason, fall back to a safe click
+                }
                 if (imageInput) imageInput.click();
             });
             
@@ -183,7 +211,15 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Main buttons
         if (compressBtn) {
-            compressBtn.addEventListener('click', compressImages);
+            // Prevent duplicate clicks from starting multiple runs
+            compressBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (isProcessing) {
+                    console.warn('Compression already in progress - ignoring duplicate click');
+                    return;
+                }
+                compressImages();
+            });
         }
         
         if (resetBtn) {
@@ -289,6 +325,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (selectedFiles.length === 0) {
             fileList.style.display = 'none';
             if (compressBtn) compressBtn.disabled = true;
+            if (fileCount) fileCount.textContent = '0';
             return;
         }
         
@@ -306,90 +343,102 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         if (compressBtn) compressBtn.disabled = false;
+        if (fileCount) fileCount.textContent = String(selectedFiles.length);
     }
     
     // ============================================
     // IMAGE COMPRESSION CORE
     // ============================================
     async function compressImages() {
-        if (selectedFiles.length === 0) {
-            showNotification('Please select images first', 'error');
+        if (isProcessing) {
+            console.warn('Compression already running - skipping additional request');
             return;
         }
-        
-        // Reset state
-        compressedResults = [];
-        selectedImageIndex = null;
-        if (downloadSelectedBtn) downloadSelectedBtn.disabled = true;
-        
-        // Show progress
-        if (compressBtn) {
-            compressBtn.disabled = true;
-            compressBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
-        }
-        
-        if (progressArea) progressArea.style.display = 'block';
-        if (emptyResults) emptyResults.style.display = 'none';
-        if (resultsArea) resultsArea.style.display = 'flex';
-        
-        const quality = parseInt(qualitySlider.value) / 100;
-        const maxWidth = parseInt(maxWidthSelect.value);
-        const outputFormat = formatSelect.value;
-        const totalFiles = selectedFiles.length;
-        
-        let originalTotalSize = 0;
-        let compressedTotalSize = 0;
-        let processedCount = 0;
-        
-        // Process images sequentially to avoid memory issues
-        for (let i = 0; i < selectedFiles.length; i++) {
-            const file = selectedFiles[i];
-            originalTotalSize += file.size;
-            
-            updateProgress(i, totalFiles, `Processing: ${file.name}`);
-            
-            try {
-                // Store original image URL for comparison
-                const originalUrl = URL.createObjectURL(file);
-                originalImageUrls.set(file.name, originalUrl);
-                
-                const result = await compressImage(file, quality, maxWidth, outputFormat);
-                
-                compressedTotalSize += result.compressedSize;
-                compressedResults.push(result);
-                processedCount++;
-                
-                // Update UI with each result
-                updateResultsUI();
-                
-            } catch (error) {
-                console.error('Error compressing ' + file.name, error);
-                showNotification(`Failed to compress ${file.name}: ${error.message}`, 'error');
+        isProcessing = true;
+
+        try {
+            if (selectedFiles.length === 0) {
+                showNotification('Please select images first', 'error');
+                return;
             }
-        }
-        
-        // Final update
-        updateProgress(totalFiles, totalFiles, 'Complete!');
-        
-        // Update statistics
-        updateStatistics(originalTotalSize, compressedTotalSize);
-        
-        // Reset UI state
-        setTimeout(() => {
-            if (progressArea) progressArea.style.display = 'none';
+            
+            // Reset state
+            compressedResults = [];
+            selectedImageIndex = null;
+            if (downloadSelectedBtn) downloadSelectedBtn.disabled = true;
+            
+            // Show progress
             if (compressBtn) {
-                compressBtn.disabled = false;
-                compressBtn.innerHTML = '<i class="fas fa-compress-alt"></i> Compress Images';
+                compressBtn.disabled = true;
+                compressBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
             }
             
-            if (processedCount > 0) {
-                showNotification(`Successfully compressed ${processedCount} image(s)`, 'success');
-                // Select first image by default
-                if (compressedResults.length > 0) {
-                    selectImage(0);
+            if (progressArea) progressArea.style.display = 'block';
+            if (emptyResults) emptyResults.style.display = 'none';
+            if (resultsArea) resultsArea.style.display = 'block';
+            
+            const quality = parseInt(qualitySlider.value) / 100;
+            const maxWidth = parseInt(maxWidthSelect.value);
+            const outputFormat = formatSelect.value;
+            const totalFiles = selectedFiles.length;
+            
+            let originalTotalSize = 0;
+            let compressedTotalSize = 0;
+            let processedCount = 0;
+            
+            // Process images sequentially to avoid memory issues
+            for (let i = 0; i < selectedFiles.length; i++) {
+                const file = selectedFiles[i];
+                originalTotalSize += file.size;
+                
+                updateProgress(i, totalFiles, `Processing: ${file.name}`);
+                
+                try {
+                    // Store original image URL for comparison
+                    const originalUrl = URL.createObjectURL(file);
+                    originalImageUrls.set(file.name, originalUrl);
+                    
+                    const result = await compressImage(file, quality, maxWidth, outputFormat);
+                    
+                    compressedTotalSize += result.compressedSize;
+                    compressedResults.push(result);
+                    processedCount++;
+                    
+                    // Update UI with each result
+                    updateResultsUI();
+                    
+                } catch (error) {
+                    console.error('Error compressing ' + file.name, error);
+                    showNotification(`Failed to compress ${file.name}: ${error.message}`, 'error');
                 }
             }
-        }, 500);
+            
+            // Final update
+            updateProgress(totalFiles, totalFiles, 'Complete!');
+            
+            // Update statistics
+            updateStatistics(originalTotalSize, compressedTotalSize);
+            
+            // Reset UI state
+            setTimeout(() => {
+                if (progressArea) progressArea.style.display = 'none';
+                if (compressBtn) {
+                    compressBtn.disabled = false;
+                    compressBtn.innerHTML = '<i class="fas fa-compress-alt"></i> Compress Images';
+                }
+                
+                if (processedCount > 0) {
+                    showNotification(`Successfully compressed ${processedCount} image(s)`, 'success');
+                    // Select first image by default
+                    if (compressedResults.length > 0) {
+                        selectImage(0);
+                    }
+                }
+            }, 500);
+        } finally {
+            // Always clear processing flag so new runs can start
+            isProcessing = false;
+        }
     }
     
     async function compressImage(file, quality, maxWidth, outputFormat) {
@@ -751,6 +800,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (downloadSelectedBtn) downloadSelectedBtn.disabled = true;
         if (progressArea) progressArea.style.display = 'none';
         if (comparisonArea) comparisonArea.style.display = 'none';
+        if (fileCount) fileCount.textContent = '0';
         
         // Reset controls
         if (qualitySlider) qualitySlider.value = 80;

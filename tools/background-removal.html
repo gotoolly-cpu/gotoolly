@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BG Remover Pro | Professional Background Removal Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Critical CSS: preload and non-blocking load -->
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>    
+    <!-- AI Background Removal Libraries removed for CSP compatibility -->
+    <!-- Image optimization utilities -->
+    <script src="../assets/js/image-optimizers.js"></script>
+    <!-- Tool monitoring and error tracking -->
+    <script src="../assets/js/bg-removal-tools.js"></script>
+    <!-- Conservative background removal for logos -->
+    <script src="../assets/js/image-optimizers-conservative.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #9ca3af;
+            --border: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --radius: 8px;
+            --radius-sm: 6px;
+            --transition: all 0.2s ease;
+        }
+
+        body {
+            background: #f8fafc;
+            color: var(--dark);
+            min-height: 100vh;
+            padding: 0;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* Compact Three-Column Layout */
+        .tool-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr 280px;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 1200px) {
+            .tool-layout {
+                grid-template-columns: 280px 1fr;
+            }
+            .controls-panel {
+                grid-column: 1 / -1;
+                order: 3;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tool-layout {
+                grid-template-columns: 1fr;
+            }
+            .controls-panel { order: 2; }
+            .results-panel { order: 3; }
+        }
+
+        .panel {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .panel-header {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--dark);
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .panel-header i {
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        .compact-upload {
+            border: 2px dashed var(--border);
+            border-radius: var(--radius);
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            background-color: #fafbfc;
+            margin-bottom: 12px;
+        }
+
+        .compact-upload:hover {
+            border-color: var(--primary);
+            background-color: #f0f9ff;
+        }
+
+        .compact-upload.dragover {
+            border-color: var(--primary);
+            background-color: #e0f2fe;
+        }
+
+        .upload-icon {
+            font-size: 24px;
+            color: var(--gray);
+            margin-bottom: 6px;
+        }
+
+        .upload-text {
+            font-size: 12px;
+            color: var(--gray);
+            margin-bottom: 8px;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .image-display {
+            width: 100%;
+            height: 200px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 8px;
+            position: relative;
+            border: 1px solid var(--border);
+        }
+
+        .image-display.transparent-mode {
+            background: 
+                linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
+                linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #f0f0f0 75%), 
+                linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+            background-size: 16px 16px;
+            background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+            background-color: white;
+        }
+
+        .image-display img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            background-color: transparent;
+        }
+
+        .placeholder-text {
+            text-align: center;
+            color: var(--gray);
+            font-size: 12px;
+        }
+
+        .placeholder-text i {
+            font-size: 24px;
+            margin-bottom: 6px;
+            color: #d1d5db;
+        }
+
+        .placeholder-text h4 {
+            font-size: 13px;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 6px 10px;
+            font-size: 11px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            background: white;
+            color: var(--dark);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <!-- Site Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg">
+                    <span class="logo-text">GoToolly</span>
+                </a>
+                
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools/index.html" class="nav-link">Tools</a>
+                    <a href="/guides/index.html" class="nav-link">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                
+                <button class="mobile-menu-button" aria-label="Toggle menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools/index.html" class="nav-link">Tools</a>
+                    <a href="/guides/index.html" class="nav-link">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header" style="text-align: center; padding: 24px 0; margin-bottom: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 10px;">
+                    <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(10px);">
+                        <i class="fas fa-magic" style="font-size: 22px;"></i>
+                    </div>
+                    <h1 style="font-size: 28px; font-weight: 700; margin: 0; letter-spacing: -0.5px;">AI Background Removal</h1>
+                </div>
+                <p style="color: rgba(255,255,255,0.9); font-size: 14px; margin-bottom: 12px; font-weight: 400;">
+                    <i class="fas fa-shield-alt" style="margin-right: 6px; font-size: 12px;"></i>
+                    Professional background removal powered by AI • 100% browser-based • No uploads to servers
+                </p>
+                <span id="modelStatus" class="model-loading" style="font-size: 11px; padding: 6px 14px; border-radius: 20px; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); display: inline-flex; align-items: center; gap: 6px;">
+                    <i class="fas fa-hourglass-start"></i> Loading AI Models...
+                </span>
+                <button id="load-ai-btn" class="btn" style="margin-left: 10px; font-size: 12px; padding: 6px 10px; display: none;">Enable AI Models</button>
+            </div>
+
+            <div class="tool-layout">
+                <!-- Left Panel: Upload & Settings -->
+                <div class="panel upload-panel">
+                    <div class="panel-header">
+                        <i class="fas fa-upload"></i>
+                        Upload & Settings
+                    </div>
+                    
+                    <div class="compact-upload" id="uploadArea" style="padding: 20px 12px;">
+                        <div class="upload-icon" style="font-size: 32px;">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <div class="upload-text">
+                            Drop image or click to browse<br>
+                            <small>JPG, PNG, WebP • Max 20MB</small>
+                        </div>
+                        <input type="file" id="fileInput" class="file-input" accept="image/*">
+                    </div>
+
+                    <div class="compact-settings" style="flex: 1; display: flex; flex-direction: column; gap: 12px;">
+                        <div class="setting-row">
+                            <label style="font-size: 12px; font-weight: 600; margin-bottom: 6px; display: block;">Model</label>
+                            <select id="modelSelect" style="width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: 4px; font-size: 12px;">
+                                <option value="mediapipe">MediaPipe</option>
+                                <option value="bodypix">BodyPix</option>
+                                <option value="hybrid">Hybrid</option>
+                                <option value="precise">Precise</option>
+                            </select>
+                        </div>
+                        
+                        <div class="setting-row">
+                            <label style="font-size: 12px; font-weight: 600; margin-bottom: 6px; display: block;">Type</label>
+                            <select id="typeSelect" style="width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: 4px; font-size: 12px;">
+                                <option value="person" selected>Person</option>
+                                <option value="logo">Logo/Text</option>
+                                <option value="product">Product</option>
+                                <option value="auto">Auto Detect</option>
+                            </select>
+                        </div>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <label style="font-size: 11px; font-weight: 500; display: flex; align-items: center; gap: 8px;">
+                                <input type="checkbox" id="hairProtection" checked style="width: 16px; height: 16px; cursor: pointer;">
+                                Hair Protection
+                            </label>
+                            <label style="font-size: 11px; font-weight: 500; display: flex; align-items: center; gap: 8px;">
+                                <input type="checkbox" id="holeFilling" checked style="width: 16px; height: 16px; cursor: pointer;">
+                                Fill Holes
+                            </label>
+                            <label style="font-size: 11px; font-weight: 500; display: flex; align-items: center; gap: 8px;">
+                                <input type="checkbox" id="edgeRefinement" checked style="width: 16px; height: 16px; cursor: pointer;">
+                                Edge Refinement
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="btn-group" style="gap: 8px;">
+                        <button class="btn btn-primary" id="removeBgBtn" disabled style="flex: 1; padding: 12px 8px; font-size: 12px; font-weight: 600;">
+                            <i class="fas fa-magic"></i> Process
+                        </button>
+                        <button class="btn" id="sampleBtn" style="padding: 12px 10px;">
+                            <i class="fas fa-vial"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Center Panel: Images -->
+                <div class="panel images-panel">
+                    <div class="panel-header">
+                        <i class="fas fa-images"></i>
+                        Preview
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; flex: 1;">
+                        <div>
+                            <div style="font-size: 11px; font-weight: 600; margin-bottom: 6px; color: var(--gray);">ORIGINAL</div>
+                            <div class="image-display" style="height: 280px;" id="originalPreview">
+                                <div class="placeholder-text" id="originalPlaceholder">
+                                    <i class="fas fa-image"></i>
+                                    <small>Original</small>
+                                </div>
+                                <img id="originalImage" style="display: none;" alt="Original">
+                                <canvas id="originalCanvas" style="display: none;"></canvas>
+                                
+                                <div class="processing-overlay" id="processingOverlay" style="display: none;">
+                                    <div class="spinner"></div>
+                                    <div style="font-size: 12px; font-weight: 500;">Processing...</div>
+                                    <div id="processStep" style="font-size: 11px; color: var(--gray);">Initializing...</div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" id="progressFill"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div style="font-size: 11px; font-weight: 600; margin-bottom: 6px; color: var(--gray);">RESULT</div>
+                            <div class="image-display transparent-mode" style="height: 280px;" id="resultContainer">
+                                <div class="placeholder-text" id="resultPlaceholder">
+                                    <i class="fas fa-cut"></i>
+                                    <small>Result</small>
+                                </div>
+                                <canvas id="resultCanvas" style="display: none;"></canvas>
+                                <img id="resultImage" style="display: none;" alt="Result">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Background Options -->
+                    <div style="margin-bottom: 14px;">
+                        <div style="font-size: 12px; font-weight: 600; margin-bottom: 8px;">Background</div>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+                            <div class="bg-option active" data-bg="transparent" style="width: 40px; height: 40px; border-radius: 4px; cursor: pointer; border: 2px solid white; background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%), linear-gradient(-45deg, #f0f0f0 25%, transparent 25%); background-size: 8px 8px;" title="Transparent"></div>
+                            <div class="bg-option" data-bg="#ffffff" style="width: 40px; height: 40px; border-radius: 4px; cursor: pointer; border: 2px solid white; background-color: #ffffff;" title="White"></div>
+                            <div class="bg-option" data-bg="#000000" style="width: 40px; height: 40px; border-radius: 4px; cursor: pointer; border: 2px solid white; background-color: #000000;" title="Black"></div>
+                            <div class="bg-option" data-bg="#6366f1" style="width: 40px; height: 40px; border-radius: 4px; cursor: pointer; border: 2px solid white; background-color: #6366f1;" title="Blue"></div>
+                            <div class="bg-option" data-bg="#10b981" style="width: 40px; height: 40px; border-radius: 4px; cursor: pointer; border: 2px solid white; background-color: #10b981;" title="Green"></div>
+                            <input type="color" id="customBgColor" value="#ffffff" style="width: 40px; height: 40px; border-radius: 4px; cursor: pointer; border: 2px solid white;" title="Custom">
+                        </div>
+                    </div>
+
+                    <div class="btn-group" style="gap: 10px;">
+                        <button class="btn btn-success" id="downloadBtn" disabled style="flex: 1; padding: 12px; font-size: 12px; font-weight: 600;">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                        <button class="btn" id="copyBtn" disabled style="padding: 12px 14px; font-size: 12px;">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        <button class="btn" id="resetBtn" disabled style="padding: 12px 14px; font-size: 12px;">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Panel: Advanced Controls -->
+                <div class="panel controls-panel">
+                    <div class="panel-header">
+                        <i class="fas fa-sliders-h"></i>
+                        Advanced
+                    </div>
+
+<div class="control-section">
+                        <div style="font-size: 11px; font-weight: 500; margin-bottom: 6px;">Quality</div>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                            <input type="range" min="70" max="100" value="100" id="qualitySlider" style="flex: 1; height: 4px;">
+                            <span id="qualityValue" style="font-size: 10px; color: var(--gray); min-width: 30px;">100%</span>
+                        </div>
+                        
+                        <div style="font-size: 11px; font-weight: 500; margin-bottom: 6px;">Format</div>
+                        <select id="outputFormat" style="width: 100%; padding: 4px; border: 1px solid var(--border); border-radius: 4px; font-size: 11px; margin-bottom: 12px;">
+                            <option value="png">PNG (Transparent)</option>
+                            <option value="jpeg">JPEG (Smaller)</option>
+                        </select>
+                        
+                        <div style="font-size: 11px; font-weight: 500; margin-bottom: 6px;">Edge Settings</div>
+                        <div style="margin-bottom: 8px;">
+                            <div style="display: flex; justify-content: space-between; font-size: 10px; margin-bottom: 2px;">
+                                <span>Preservation</span>
+                                <span id="edgeValue">85%</span>
+                            </div>
+                            <input type="range" min="50" max="100" value="85" id="edgeSlider" style="width: 100%; height: 4px;">
+                        </div>
+                        
+                        <div style="margin-bottom: 12px;">
+                            <div style="display: flex; justify-content: space-between; font-size: 10px; margin-bottom: 2px;">
+                                <span>Detail</span>
+                                <span id="detailValue">90%</span>
+                            </div>
+                            <input type="range" min="50" max="100" value="90" id="detailSlider" style="width: 100%; height: 4px;">
+                        </div>
+                    </div>
+
+                    <!-- Mask Refinement Tools -->
+                    <div class="mask-tools" id="maskTools" style="display: none; padding: 8px; background: #f0f9ff; border-radius: 4px; margin-bottom: 12px;">
+                        <div style="font-size: 11px; font-weight: 500; margin-bottom: 6px;">Refine Mask</div>
+                        
+                        <!-- Tool Buttons - Compact Row -->
+                        <div style="display: flex; gap: 3px; margin-bottom: 6px;">
+                            <button class="btn" id="brushAdd" data-action="add" title="Brush - Paint Foreground" style="font-size: 10px; padding: 5px 8px; border: 2px solid #6366f1; border-radius: 4px; background: #6366f1; color: white; font-weight: 600; flex: 1; min-width: 0;">
+                                <i class="fas fa-paint-brush"></i>
+                            </button>
+                            <button class="btn" id="brushRemove" data-action="remove" title="Eraser - Remove Foreground" style="font-size: 10px; padding: 5px 8px; border: 2px solid #e5e7eb; border-radius: 4px; background: white; color: #6b7280; flex: 1; min-width: 0;">
+                                <i class="fas fa-eraser"></i>
+                            </button>
+                            <button class="btn" id="undoRefine" title="Undo Last Stroke" style="font-size: 10px; padding: 5px 8px; background: #f59e0b; color: white; border: none; border-radius: 4px; flex: 1; min-width: 0;" disabled>
+                                <i class="fas fa-undo"></i>
+                            </button>
+                            <button class="btn" id="applyRefine" title="Apply Changes" style="font-size: 10px; padding: 5px 8px; background: #10b981; color: white; border: none; border-radius: 4px; flex: 1; min-width: 0;">
+                                <i class="fas fa-check"></i>
+                            </button>
+                            <button class="btn" id="cancelRefine" title="Cancel" style="font-size: 10px; padding: 5px 8px; background: #ef4444; color: white; border: none; border-radius: 4px; flex: 1; min-width: 0;">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- Brush Size Slider -->
+                        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                            <i class="fas fa-circle" style="font-size: 8px; color: #6b7280;"></i>
+                            <input type="range" id="brushSize" min="5" max="50" value="15" style="flex: 1; height: 4px;">
+                            <span id="brushSizeValue" style="font-size: 10px; color: #6b7280; min-width: 25px;">15px</span>
+                        </div>
+
+                        <!-- Mode Hint -->
+                        <div style="font-size: 9px; color: #6b7280; background: #f8fafc; padding: 3px 6px; border-radius: 3px; text-align: center;">
+                            <span id="brushModeHint">🖌️ Brush mode active</span>
+                        </div>
+                    </div>
+
+                    <!-- Edge Cleanup Section -->
+                    <div style="margin-bottom: 12px; padding: 8px; background: #f0fef8; border-radius: 4px; border-left: 3px solid #10b981;">
+                        <div style="font-size: 11px; font-weight: 500; margin-bottom: 6px; color: #047857;">Edge Cleanup</div>
+                        <div style="margin-bottom: 8px;">
+                            <div style="display: flex; justify-content: space-between; font-size: 10px; margin-bottom: 2px;">
+                                <span>Cleanup Intensity</span>
+                                <span id="edgeCleanupValue">70%</span>
+                            </div>
+                            <input type="range" min="0" max="100" value="70" id="edgeCleanupSlider" style="width: 100%; height: 4px;">
+                        </div>
+                        <div style="margin-bottom: 8px;">
+                            <label style="display: flex; align-items: center; font-size: 10px; gap: 6px; cursor: pointer;">
+                                <input type="checkbox" id="autoEdgeCleanup" checked style="width: 14px; height: 14px;">
+                                <span>Auto cleanup after processing</span>
+                            </label>
+                        </div>
+                        <button class="btn" id="cleanupEdgesBtn" style="width: 100%; font-size: 11px; padding: 6px; background: #10b981; border: none; color: white; border-radius: 4px; cursor: pointer;">
+                            <i class="fas fa-broom"></i> Cleanup Edges Now
+                        </button>
+                    </div>
+
+                    <div class="btn-group">
+                        <button class="btn" id="refineBtn" disabled style="flex: 1;">
+                            <i class="fas fa-paint-brush"></i> Refine
+                        </button>
+                    </div>
+
+                    <!-- Stats Section -->
+                    <div style="margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border);">
+                        <div style="font-size: 11px; font-weight: 500; margin-bottom: 8px;">Processing Stats</div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 10px;">
+                            <div style="text-align: center; padding: 6px; background: #f8fafc; border-radius: 4px;">
+                                <div id="processingTime" style="font-weight: 600; color: var(--primary);">0s</div>
+                                <div style="color: var(--gray);">Time</div>
+                            </div>
+                            <div style="text-align: center; padding: 6px; background: #f8fafc; border-radius: 4px;">
+                                <div id="imageSize" style="font-weight: 600; color: var(--primary);">0 KB</div>
+                                <div style="color: var(--gray);">Size</div>
+                            </div>
+                            <div style="text-align: center; padding: 6px; background: #f8fafc; border-radius: 4px;">
+                                <div id="resolution" style="font-weight: 600; color: var(--primary);">0×0</div>
+                                <div style="color: var(--gray);">Resolution</div>
+                            </div>
+                            <div style="text-align: center; padding: 6px; background: #f8fafc; border-radius: 4px;">
+                                <div id="accuracyScore" style="font-weight: 600; color: var(--primary);">0%</div>
+                                <div style="color: var(--gray);">Accuracy</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">
+                        Free, privacy-focused online tools that work entirely in your browser.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Popular Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="/tools/image-compressor.html">Image Compressor</a></li>
+                        <li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li>
+                        <li><a href="/tools/word-counter.html">Word Counter</a></li>
+                        <li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li>
+                        <li><a href="/tools/password-generator.html">Password Generator</a></li>
+                        <li><a href="/tools/index.html">View All Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides/index.html">Guides</a></li>
+                        <li><a href="/tools/index.html">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © <span id="current-year">2026</span> GoToolly. All rights reserved.
+                </div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle" id="toastIcon"></i>
+        <span id="toastMessage">Background removed successfully!</span>
+    </div>
+
+    <script>
+        // ============================================
+        // CDN AVAILABILITY CHECK
+        // ============================================
+        const CDN_STATUS = {
+            mediapipe: typeof SelfieSegmentation !== 'undefined',
+            tensorflow: typeof tf !== 'undefined',
+            bodypix: typeof bodyPix !== 'undefined'
+        };
+        
+        // Log CDN status for debugging
+        console.log('CDN Library Status:', CDN_STATUS);
+        
+        // ============================================
+        // CONFIGURATION & STATE MANAGEMENT
+        // ============================================
+        const CONFIG = {
+            MAX_IMAGE_SIZE: 20 * 1024 * 1024,
+            MAX_DIMENSION: 4096,
+            AI_MODELS: {
+                MEDIAPIPE: 'mediapipe',
+                BODYPIX: 'bodypix',
+                HYBRID: 'hybrid',
+                PRECISE: 'precise'
+            },
+            MODEL_LOAD_TIMEOUT: 15000,
+            MAX_MEMORY_MB: 512,
+            CACHE_MAX_SIZE: 10, // Max cached results
+            CACHE_EXPIRY_MS: 3600000 // 1 hour
+        };
+
+        // ============================================
+        // EDGE CLEANUP & HALO REMOVAL
+        // ============================================
+        class EdgeCleanupProcessor {
+            /**
+             * Remove background residue from edges
+             */
+            cleanupEdges(processedData, originalData, settings = {}) {
+                const width = processedData.width;
+                const height = processedData.height;
+                const processed = processedData.data;
+                const original = originalData.data;
+                const result = new Uint8ClampedArray(processed);
+                
+                console.log('EdgeCleanupProcessor.cleanupEdges started:', {width, height, dataLength: result.length});
+                
+                // Default settings
+                const config = {
+                    intensity: settings.edgeCleanupIntensity || 0.7, // 0-1
+                    detectColorSimilarity: true,
+                    removeFeather: true,
+                    expandMask: false,
+                    ...settings
+                };
+                
+                console.log('Config:', config);
+                
+                // Sample background color from borders
+                const bgColor = this.sampleImageBorders(original, width, height);
+                console.log('Background color sampled:', bgColor);
+                
+                let removedCount = 0;
+                let edgePixelsProcessed = 0;
+                
+                // First pass: identify edge pixels (pixels near transparent areas)
+                const isEdgePixel = new Uint8Array(width * height);
+                const edgeDepth = 3; // How many pixels deep to consider as "edge"
+                
+                for (let y = 0; y < height; y++) {
+                    for (let x = 0; x < width; x++) {
+                        const idx = (y * width + x) * 4;
+                        const alpha = result[idx + 3];
+                        
+                        // Skip if already transparent
+                        if (alpha === 0) continue;
+                        
+                        // Check if this pixel is near a transparent area
+                        let nearTransparent = false;
+                        
+                        for (let dy = -edgeDepth; dy <= edgeDepth; dy++) {
+                            for (let dx = -edgeDepth; dx <= edgeDepth; dx++) {
+                                const nx = x + dx;
+                                const ny = y + dy;
+                                
+                                if (nx >= 0 && nx < width && ny >= 0 && ny < height) {
+                                    const nIdx = (ny * width + nx) * 4 + 3;
+                                    
+                                    // If any neighbor is transparent, this is an edge pixel
+                                    if (result[nIdx] < 50) {
+                                        nearTransparent = true;
+                                        break;
+                                    }
+                                }
+                            }
+                            if (nearTransparent) break;
+                        }
+                        
+                        if (nearTransparent) {
+                            isEdgePixel[y * width + x] = 1;
+                        }
+                    }
+                }
+                
+                // Second pass: process only edge pixels
+                for (let y = 0; y < height; y++) {
+                    for (let x = 0; x < width; x++) {
+                        const pixelIndex = y * width + x;
+                        
+                        // Only process edge pixels
+                        if (!isEdgePixel[pixelIndex]) continue;
+                        
+                        edgePixelsProcessed++;
+                        
+                        const idx = (y * width + x) * 4;
+                        const alpha = result[idx + 3];
+                        
+                        // Get pixel color
+                        const pixelColor = [result[idx], result[idx + 1], result[idx + 2]];
+                        
+                        // Calculate color distance to background
+                        const colorDist = this.colorDistance(pixelColor, bgColor);
+                        
+                        // Determine removal based on alpha and color similarity
+                        let shouldRemove = false;
+                        
+                        // Very faint edge pixels - always remove
+                        if (alpha < 100) {
+                            shouldRemove = true;
+                        }
+                        // Semi-transparent edge AND similar to background
+                        else if (alpha < 200 && colorDist < 80) {
+                            shouldRemove = true;
+                        }
+                        // Even opaque edge pixels if VERY similar to background
+                        else if (colorDist < 40 * config.intensity) {
+                            shouldRemove = true;
+                        }
+                        
+                        if (shouldRemove) {
+                            result[idx + 3] = 0; // Make transparent
+                            removedCount++;
+                        }
+                    }
+                }
+                
+                console.log('Edge pixels identified and processed:', edgePixelsProcessed);
+                console.log('Removed pixels:', removedCount, '(' + (removedCount/edgePixelsProcessed*100).toFixed(2) + '% of edges)');
+                
+                console.log('EdgeCleanupProcessor.cleanupEdges completed');
+                return new ImageData(result, width, height);
+            }
+            
+            /**
+             * Detect pixels on the edge between foreground and background
+             */
+            detectEdgePixels(data, width, height) {
+                const edgePixels = [];
+                
+                for (let y = 1; y < height - 1; y++) {
+                    for (let x = 1; x < width - 1; x++) {
+                        const idx = (y * width + x) * 4;
+                        const alpha = data[idx + 3];
+                        
+                        // Only consider semi-transparent or edge pixels
+                        if (alpha > 10 && alpha < 245) {
+                            edgePixels.push(y * width + x);
+                        } else if (alpha > 200) {
+                            // Check if this opaque pixel borders transparency
+                            let hasTransparentNeighbor = false;
+                            for (let dy = -1; dy <= 1; dy++) {
+                                for (let dx = -1; dx <= 1; dx++) {
+                                    if (dx === 0 && dy === 0) continue;
+                                    const nIdx = ((y + dy) * width + (x + dx)) * 4 + 3;
+                                    if (data[nIdx] < 50) {
+                                        hasTransparentNeighbor = true;
+                                        break;
+                                    }
+                                }
+                                if (hasTransparentNeighbor) break;
+                            }
+                            
+                            if (hasTransparentNeighbor) {
+                                edgePixels.push(y * width + x);
+                            }
+                        }
+                    }
+                }
+                
+                return edgePixels;
+            }
+            
+            /**
+             * Determine if edge pixel should be removed (background residue)
+             */
+            shouldRemoveEdgePixel(pixelIdx, processed, original, width, height, config) {
+                const dataIdx = pixelIdx * 4;
+                const y = Math.floor(pixelIdx / width);
+                const x = pixelIdx % width;
+                
+                const currentAlpha = processed[dataIdx + 3];
+                const currentColor = [processed[dataIdx], processed[dataIdx + 1], processed[dataIdx + 2]];
+                
+                // 1. Check alpha level (very faint pixels are definitely residue)
+                if (currentAlpha < 50) {
+                    return true; // Very faint = background residue
+                }
+                
+                // 2. Check if this is an edge pixel by looking at neighbors
+                let hasTransparentNeighbor = false;
+                let hasOpaqueNeighbor = false;
+                
+                for (let dy = -1; dy <= 1; dy++) {
+                    for (let dx = -1; dx <= 1; dx++) {
+                        if (dx === 0 && dy === 0) continue;
+                        const nx = x + dx;
+                        const ny = y + dy;
+                        
+                        if (nx >= 0 && nx < width && ny >= 0 && ny < height) {
+                            const nIdx = (ny * width + nx) * 4 + 3;
+                            const neighborAlpha = processed[nIdx];
+                            
+                            if (neighborAlpha < 50) hasTransparentNeighbor = true;
+                            if (neighborAlpha > 200) hasOpaqueNeighbor = true;
+                        }
+                    }
+                }
+                
+                // Only process actual edge pixels (between foreground and background)
+                if (!hasTransparentNeighbor && !hasOpaqueNeighbor) {
+                    return false; // Interior pixel, leave it alone
+                }
+                
+                // 3. Check color similarity to background
+                if (config.detectColorSimilarity) {
+                    const bgColor = this.estimateLocalBackground(processed, original, x, y, width, height);
+                    
+                    const colorDistance = this.colorDistance(currentColor, bgColor);
+                    // Stricter thresholds: remove if very similar to background
+                    const maxDistance = 60 * config.intensity;
+                    
+                    if (colorDistance < maxDistance) {
+                        return true; // Color matches background too closely
+                    }
+                }
+                
+                // 4. Remove isolated pixels (speckles)
+                if (hasTransparentNeighbor && currentAlpha < 150) {
+                    let opaqueNeighbors = 0;
+                    
+                    for (let dy = -1; dy <= 1; dy++) {
+                        for (let dx = -1; dx <= 1; dx++) {
+                            if (dx === 0 && dy === 0) continue;
+                            const px = Math.floor(x + dx);
+                            const py = Math.floor(y + dy);
+                            if (px < 0 || px >= width || py < 0 || py >= height) continue;
+                            const nIdx = ((y + dy) * width + (x + dx)) * 4 + 3;
+                            if (processed[nIdx] > 150) opaqueNeighbors++;
+                        }
+                    }
+                    
+                    if (opaqueNeighbors < 2) {
+                        return true; // Isolated semi-transparent pixel = speckle
+                    }
+                }
+                
+                return false;
+            }
+            
+            /**
+             * Estimate local background color around a pixel
+             */
+            estimateLocalBackground(processed, original, centerX, centerY, width, height) {
+                const samples = [];
+                const sampleRadius = 3;
+                
+                for (let dy = -sampleRadius; dy <= sampleRadius; dy++) {
+                    for (let dx = -sampleRadius; dx <= sampleRadius; dx++) {
+                        if (dx === 0 && dy === 0) continue;
+
+...(file continues until end)

@@ -118,31 +118,31 @@
     
     <!-- Pages -->
     <url>
-        <loc>https://gotoolly.com/pages/about.html</loc>
+        <loc>https://gotoolly.com/about</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://gotoolly.com/pages/contact.html</loc>
+        <loc>https://gotoolly.com/contact</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://gotoolly.com/pages/legal/privacy-policy.html</loc>
+        <loc>https://gotoolly.com/legal/privacy-policy</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
-        <loc>https://gotoolly.com/pages/legal/terms-of-service.html</loc>
+        <loc>https://gotoolly.com/legal/terms-of-service</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
-        <loc>https://gotoolly.com/pages/legal/disclaimer.html</loc>
+        <loc>https://gotoolly.com/legal/disclaimer</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
