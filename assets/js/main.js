@@ -204,7 +204,7 @@ function initFileInputs() {
             if (preview && file.type.startsWith('image/')) {
                 const reader = new FileReader();
                 reader.onload = function(e) {
-                    preview.innerHTML = `<img src="${e.target.result}" class="image-preview" alt="Preview">`;
+                    preview.innerHTML = `<img src="${e.target.result}" class="image-preview" alt="Preview" height="300">`;
                     preview.classList.add('has-content');
                 };
                 reader.readAsDataURL(file);

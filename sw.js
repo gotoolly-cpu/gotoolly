@@ -14,12 +14,6 @@ const CRITICAL_ASSETS = [
 +    '/tools/image-compressor.html',
     '/assets/css/styles.min.css',
     'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap',
-    // local self-hosted fonts (place woff2 files in /assets/fonts/)
-    '/assets/fonts/Inter-400.woff2',
-    '/assets/fonts/Inter-600.woff2',
-    '/assets/fonts/Inter-800.woff2',
-    '/assets/fonts/JetBrainsMono-400.woff2',
-    '/assets/fonts/JetBrainsMono-500.woff2',
     // legacy files (kept for backward-compatibility)
     '/assets/css/base.css',
     '/assets/css/layout.css',

@@ -608,7 +608,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             resultItem.innerHTML = `
                 <div class="result-preview">
-                    <img src="${result.url}" alt="${result.originalName}" loading="lazy">
+                    <img src="${result.url}" alt="${result.originalName}" loading="lazy" height="120">
                 </div>
                 <div class="result-info">
                     <small style="display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">

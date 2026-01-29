@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
             reader.onload = function(e) {
                 const previewArea = document.querySelector('.file-input-label');
                 previewArea.innerHTML = `
-                    <img src="${e.target.result}" class="image-preview" alt="Preview">
+                    <img src="${e.target.result}" class="image-preview" alt="Preview" height="120">
                     <span>${images.length} image${images.length > 1 ? 's' : ''} ready</span>
                 `;
                 previewArea.classList.add('has-content');
