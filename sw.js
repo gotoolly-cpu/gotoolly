@@ -27,7 +27,10 @@ const CRITICAL_ASSETS = [
 // Model files to cache
 const MODELS_TO_CACHE = [
     '/assets/js/lib/remove-background.min.js',
-    '/assets/js/lib/remove-background.wasm'
+    '/assets/js/lib/remove-background.wasm',
+    // Local vendor builds for TensorFlow and BodyPix (replace placeholders with real builds)
+    '/assets/vendor/tf.min.js',
+    '/assets/vendor/body-pix.min.js'
 ];
 
 // Install event - cache critical assets

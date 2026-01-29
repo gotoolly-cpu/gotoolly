@@ -269,10 +269,10 @@
                     <i class="fas fa-shield-alt" style="margin-right: 6px; font-size: 12px;"></i>
                     Professional background removal powered by AI • 100% browser-based • No uploads to servers
                 </p>
-                <span id="modelStatus" class="model-loading" style="font-size: 11px; padding: 6px 14px; border-radius: 20px; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); display: inline-flex; align-items: center; gap: 6px;">
-                    <i class="fas fa-hourglass-start"></i> Loading AI Models...
+                <span id="modelStatus" class="model-missing" style="font-size: 11px; padding: 6px 14px; border-radius: 20px; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); display: inline-flex; align-items: center; gap: 6px;">
+                    <i class="fas fa-exclamation-circle"></i> Models not loaded
                 </span>
-                <button id="load-ai-btn" class="btn" style="margin-left: 10px; font-size: 12px; padding: 6px 10px; display: none;">Enable AI Models</button>
+                <button id="load-ai-btn" class="btn" style="margin-left: 10px; font-size: 12px; padding: 6px 10px; display: inline-block;">Enable AI Models</button>
             </div>
 
             <div class="tool-layout">
@@ -601,6 +601,226 @@
         <i class="fas fa-check-circle" id="toastIcon"></i>
         <span id="toastMessage">Background removed successfully!</span>
     </div>
+
+    <script>
+        // Background Removal UI glue: file drop/click, model toggle, and simple fallback processing
+        console.debug('Initializing background-removal UI script');
+        (function(){
+            const uploadArea = document.getElementById('uploadArea');
+            const fileInput = document.getElementById('fileInput');
+            const originalImage = document.getElementById('originalImage');
+            const originalPlaceholder = document.getElementById('originalPlaceholder');
+            const resultImage = document.getElementById('resultImage');
+            const resultCanvas = document.getElementById('resultCanvas');
+            const originalCanvas = document.getElementById('originalCanvas');
+            const modelStatus = document.getElementById('modelStatus');
+            const loadAiBtn = document.getElementById('load-ai-btn');
+            const removeBtn = document.getElementById('removeBgBtn');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const copyBtn = document.getElementById('copyBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const processingOverlay = document.getElementById('processingOverlay');
+            const processStep = document.getElementById('processStep');
+
+            let currentFile = null;
+            let modelLoaded = false;
+
+            // Show enable button if no CDN libs detected
+            if (!window.SelfieSegmentation && !window.bodyPix && !window.tf) {
+                loadAiBtn.style.display = 'inline-block';
+                modelStatus.innerHTML = '<i class="fas fa-hourglass-start"></i> Models not loaded';
+                modelStatus.classList.remove('model-loading');
+                modelStatus.classList.add('model-missing');
+            } else {
+                modelLoaded = true;
+                modelStatus.innerHTML = '<i class="fas fa-check-circle"></i> Models ready';
+                modelStatus.classList.remove('model-loading');
+                modelStatus.classList.add('model-ready');
+                removeBtn.disabled = false;
+            }
+
+            // Upload area click -> file input
+            uploadArea.addEventListener('click', () => fileInput.click());
+
+            // Drag & drop
+            ['dragenter','dragover'].forEach(ev => uploadArea.addEventListener(ev, e => { e.preventDefault(); e.stopPropagation(); uploadArea.classList.add('dragover'); }));
+            ['dragleave','dragend'].forEach(ev => uploadArea.addEventListener(ev, e => { e.preventDefault(); e.stopPropagation(); uploadArea.classList.remove('dragover'); }));
+            uploadArea.addEventListener('drop', e => {
+                e.preventDefault(); e.stopPropagation(); uploadArea.classList.remove('dragover');
+                const files = e.dataTransfer.files; if (files && files.length) handleFiles(files);
+            });
+
+            fileInput.addEventListener('change', (e) => { if (fileInput.files && fileInput.files[0]) handleFiles(fileInput.files); });
+
+            function handleFiles(files) {
+                const file = files[0];
+                if (!file) return;
+                if (!file.type.startsWith('image/')) {
+                    showToast('Please select an image file', 'error');
+                    return;
+                }
+                if (file.size > CONFIG.MAX_IMAGE_SIZE) {
+                    showToast('Image too large (max 20MB)', 'error');
+                    return;
+                }
+
+                currentFile = file;
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    originalImage.src = ev.target.result;
+                    originalImage.style.display = 'block';
+                    originalPlaceholder.style.display = 'none';
+                    // Reset result
+                    resultImage.style.display = 'none';
+                    resultCanvas.style.display = 'none';
+                    // Enable process button (only if models are ready or user can run fallback)
+                    removeBtn.disabled = false;
+                };
+                reader.readAsDataURL(file);
+            }
+
+            // Load AI models on demand (attempt local vendor files first, then CDN)
+            loadAiBtn.addEventListener('click', async () => {
+                loadAiBtn.disabled = true;
+                modelStatus.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading models...';
+                try {
+                    // Try local vendor files first (recommended for environments with strict CSP)
+                    try {
+                        await loadScript('/assets/vendor/tf.min.js');
+                        console.debug('Loaded local /assets/vendor/tf.min.js');
+                    } catch (e) {
+                        console.debug('Local tf not available, will try CDN', e);
+                    }
+
+                    if (typeof tf === 'undefined') {
+                        await loadScript('https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.8.0/dist/tf.min.js');
+                        console.debug('Loaded CDN tensorflow');
+                    }
+
+                    try {
+                        await loadScript('/assets/vendor/body-pix.min.js');
+                        console.debug('Loaded local /assets/vendor/body-pix.min.js');
+                    } catch (e) {
+                        console.debug('Local body-pix not available, will try CDN', e);
+                    }
+
+                    if (typeof bodyPix === 'undefined') {
+                        await loadScript('https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix@2.0.5/dist/body-pix.min.js');
+                        console.debug('Loaded CDN body-pix');
+                    }
+
+                    // Verify required globals exist
+                    if (typeof tf === 'undefined' || typeof bodyPix === 'undefined') {
+                        throw new Error('Required libraries are not available after load attempts');
+                    }
+
+                    modelLoaded = true;
+                    modelStatus.innerHTML = '<i class="fas fa-check-circle"></i> Models ready';
+                    modelStatus.classList.remove('model-missing');
+                    modelStatus.classList.add('model-ready');
+                    removeBtn.disabled = false;
+                    loadAiBtn.style.display = 'none';
+                    showToast('AI models loaded', 'success');
+                } catch (err) {
+                    console.warn('Failed to load models', err);
+                    modelStatus.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed to load models';
+                    loadAiBtn.disabled = false;
+                    showToast('Failed to load AI models. Using fallback.', 'warning');
+                }
+            });
+
+            // Simple fallback processor (color-background removal)
+            removeBtn.addEventListener('click', async () => {
+                if (!currentFile) { showToast('Please upload an image first', 'error'); return; }
+                if (!modelLoaded) showToast('Using basic fallback algorithm (enable AI Models for better quality)', 'info');
+
+                // Show processing overlay
+                processingOverlay.style.display = 'flex';
+                processStep.textContent = 'Analyzing image...';
+                await sleep(200);
+
+                // Draw image to canvas
+                const img = originalImage;
+                const w = img.naturalWidth;
+                const h = img.naturalHeight;
+                originalCanvas.width = w; originalCanvas.height = h;
+                const ctx = originalCanvas.getContext('2d'); ctx.drawImage(img, 0, 0, w, h);
+                let imageData = ctx.getImageData(0, 0, w, h);
+
+                processStep.textContent = 'Removing background (fast mode)...';
+                await sleep(200);
+
+                // Simple background color estimation (corners average)
+                const bg = sampleBorderColor(imageData, w, h);
+                const threshold = 60; // color distance threshold
+                const data = imageData.data;
+
+                for (let i = 0; i < data.length; i += 4) {
+                    const r = data[i], g = data[i+1], b = data[i+2];
+                    const d = Math.sqrt((r-bg[0])**2 + (g-bg[1])**2 + (b-bg[2])**2);
+                    if (d < threshold) data[i+3] = 0; // make transparent
+                }
+
+                // Write to result canvas and show
+                resultCanvas.width = w; resultCanvas.height = h;
+                const rctx = resultCanvas.getContext('2d'); rctx.putImageData(imageData, 0, 0);
+                const dataUrl = resultCanvas.toDataURL('image/png');
+                resultImage.src = dataUrl; resultImage.style.display = 'block'; resultCanvas.style.display = 'none';
+
+                processingOverlay.style.display = 'none';
+                showToast('Background removed (approximate)', 'success');
+
+                // Enable download/copy/reset
+                downloadBtn.disabled = false; copyBtn.disabled = false; resetBtn.disabled = false;
+
+                downloadBtn.onclick = () => downloadDataUrl(dataUrl, 'background-removed.png');
+                copyBtn.onclick = async () => {
+                    try {
+                        const blob = await (await fetch(dataUrl)).blob();
+                        await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+                        showToast('Image copied to clipboard', 'success');
+                    } catch (err) { showToast('Copy failed', 'error'); }
+                };
+
+                resetBtn.onclick = () => resetTool();
+            });
+
+            function resetTool(){
+                currentFile = null;
+                originalImage.src = '';
+                originalImage.style.display = 'none';
+                originalPlaceholder.style.display = 'block';
+                resultImage.src = '';
+                resultImage.style.display = 'none';
+                downloadBtn.disabled = true; copyBtn.disabled = true; resetBtn.disabled = true; removeBtn.disabled = true;
+            }
+
+            function sampleBorderColor(imageData, w, h){
+                const data = imageData.data; let r=0,g=0,b=0,count=0;
+                const samples = 6;
+                for (let i=0;i<samples;i++){
+                    // corners
+                    const coords = [[i, i],[w-1-i, i],[i,h-1-i],[w-1-i,h-1-i]];
+                    coords.forEach(([x,y])=>{
+                        const idx=(y*w + x)*4; r+=data[idx]; g+=data[idx+1]; b+=data[idx+2]; count++;
+                    });
+                }
+                return [Math.round(r/count), Math.round(g/count), Math.round(b/count)];
+            }
+
+            function loadScript(src){ return new Promise((res, rej)=>{ const s=document.createElement('script'); s.src=src; s.onload=res; s.onerror=rej; document.head.appendChild(s); }); }
+            function sleep(ms){ return new Promise(r=>setTimeout(r, ms)); }
+
+            function downloadDataUrl(url, filename){ const a=document.createElement('a'); a.href=url; a.download=filename; document.body.appendChild(a); a.click(); a.remove(); }
+
+            function showToast(message, type='info'){
+                const toast=document.getElementById('toast'); const icon=document.getElementById('toastIcon'); const msg=document.getElementById('toastMessage');
+                msg.textContent=message; toast.style.display='flex';
+                icon.className = 'fas fa-check-circle';
+                setTimeout(()=>{ toast.style.display='none'; }, 3000);
+            }
+        })();
+    </script>
 
     <script>
         // ============================================
