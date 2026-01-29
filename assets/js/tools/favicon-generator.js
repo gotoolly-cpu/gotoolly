@@ -103,16 +103,22 @@ document.addEventListener('DOMContentLoaded', function() {
     function switchTab(e) {
         const tabName = e.target.getAttribute('data-tab');
         currentMode = tabName;
-        
+
         // Update buttons
         tabButtons.forEach(btn => btn.classList.remove('active'));
         e.target.classList.add('active');
-        
+
         // Update content
         tabContents.forEach(content => content.classList.remove('active'));
-        document.getElementById(tabName).classList.add('active');
-        
-        // Auto-focus the appropriate input field
+        const newContent = document.getElementById(tabName);
+        newContent.classList.add('active');
+
+        // Smooth the preview update to avoid jank/flicker
+        if (previewContainer) {
+            previewContainer.style.opacity = '0';
+        }
+
+        // Auto-focus the appropriate input field (let browser settle first)
         setTimeout(() => {
             if (tabName === 'text') {
                 textInput.focus();
@@ -121,9 +127,15 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (tabName === 'image') {
                 imageInput.focus();
             }
+
+            // Defer expensive drawing a tick so the UI can update, then fade in
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    generatePreview();
+                    if (previewContainer) previewContainer.style.opacity = '1';
+                }, 40);
+            });
         }, 0);
-        
-        generatePreview();
     }
     
     function handleImageUpload(e) {

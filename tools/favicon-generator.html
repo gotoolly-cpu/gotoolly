@@ -69,6 +69,9 @@
             padding: var(--space-6);
             background-color: var(--color-surface);
             border-radius: var(--radius-lg);
+            /* Smooth opacity transition when switching tabs */
+            transition: opacity 120ms ease-in-out;
+            opacity: 1;
         }
         
         .preview-canvas-wrapper {
