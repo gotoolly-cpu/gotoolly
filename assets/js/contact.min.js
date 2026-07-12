@@ -1,31 +1,26 @@
-// Client-side contact form handler with simple rate limiting
+// Client-side contact form handler with Web3Forms + rate limiting
 class RateLimiter {
     constructor(maxRequests, timeWindow) {
-        this.maxRequests = maxRequests; // maximum
-        this.timeWindow = timeWindow; // Time window (milliseconds)
-        this.requests = new Map(); // per-identifier storage
+        this.maxRequests = maxRequests;
+        this.timeWindow = timeWindow;
+        this.requests = new Map();
     }
 
     canMakeRequest(identifier) {
         const now = Date.now();
         const userRequests = this.requests.get(identifier) || [];
-
-        // Remove old requests
         const validRequests = userRequests.filter(time => now - time < this.timeWindow);
 
         if (validRequests.length >= this.maxRequests) {
             this.requests.set(identifier, validRequests);
-            return false; // Exceeding the limit
+            return false;
         }
 
-        // Register a new request
         validRequests.push(now);
         this.requests.set(identifier, validRequests);
 
-        // Evict entries whose window has fully expired to prevent unbounded growth
-        const windowMs = this.timeWindow;
         for (const [key, timestamps] of this.requests) {
-            const filtered = timestamps.filter(t => now - t < windowMs);
+            const filtered = timestamps.filter(t => now - t < this.timeWindow);
             if (filtered.length === 0) {
                 this.requests.delete(key);
             } else {
@@ -44,11 +39,9 @@ class RateLimiter {
     }
 }
 
-// Create a Rate Limiter (5 requests every 15 minutes per pseudo-IP)
 const rateLimiter = new RateLimiter(5, 15 * 60 * 1000);
 
 function getClientIdentifier() {
-    // Approximate client identifier (not a real IP). Helps throttle repeated sends.
     return navigator.userAgent + '|' + navigator.language + '|' + screen.width + '|' + screen.height;
 }
 
@@ -60,26 +53,30 @@ async function submitContactForm(event) {
     const statusEl = document.getElementById('contact-form-status');
     const originalText = submitBtn ? submitBtn.textContent : 'Send';
 
-    // Honeypot check (server also enforces this)
+    // Honeypot check
     const honeypot = form.querySelector('input[name="website"]');
     if (honeypot && honeypot.value) {
         console.log('Bot detected via honeypot');
         if (statusEl) {
-            statusEl.textContent = 'Message submitted.'; // silent success for bots
+            statusEl.textContent = 'Message submitted.';
             statusEl.style.color = 'var(--color-text-light)';
         }
+        return;
+    }
+
+    // Botcheck field
+    const botcheck = form.querySelector('input[name="botcheck"]');
+    if (botcheck && botcheck.checked) {
         return;
     }
 
     // Rate limit check
     const clientId = getClientIdentifier();
     if (!rateLimiter.canMakeRequest(clientId)) {
-        const waitMsg = '⏳ Please wait before sending another message. You can send up to 5 messages every 15 minutes.';
+        const waitMsg = 'Please wait before sending another message. You can send up to 5 messages every 15 minutes.';
         if (statusEl) {
             statusEl.textContent = waitMsg;
             statusEl.style.color = 'var(--color-danger)';
-        } else {
-            alert(waitMsg);
         }
         return;
     }
@@ -89,28 +86,33 @@ async function submitContactForm(event) {
         submitBtn.disabled = true;
     }
 
-    // Collect form data
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-
-    // Build mailto URL with pre-filled fields
-    const subject = encodeURIComponent(data.messageType ? `[${data.messageType}] ${data.subject_line || ''}` : (data.subject_line || 'Contact from GoToolly'));
-    const body = encodeURIComponent(
-        `Name: ${data.name}\nEmail: ${data.email}\nMessage Type: ${data.messageType || 'N/A'}\nTopic: ${data.topic || 'N/A'}\n\nMessage:\n${data.message}`
-    );
-    const mailtoUrl = `mailto:support@gotoolly.com?subject=${subject}&body=${body}`;
-
     try {
-        window.location.href = mailtoUrl;
-        form.reset();
-        if (statusEl) {
-            statusEl.innerHTML = "Your email client is opening with the message pre-filled. Please click <strong>Send</strong> in your email app to complete. If it didn't open, <a href='" + mailtoUrl + "' style='color:inherit;text-decoration:underline;'>click here</a>.";
-            statusEl.style.color = 'var(--color-success)';
+        const formData = new FormData(form);
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            form.reset();
+            if (statusEl) {
+                statusEl.textContent = "Thank you! Your message was sent successfully. We'll respond within 1-3 business days.";
+                statusEl.style.color = 'var(--color-success)';
+            }
+        } else {
+            const errMsg = result.message || 'Something went wrong. Please try again.';
+            if (statusEl) {
+                statusEl.textContent = errMsg;
+                statusEl.style.color = 'var(--color-danger)';
+            }
+            console.error('Web3Forms error:', result);
         }
     } catch (err) {
-        console.error('Could not open email client:', err);
+        console.error('Network error while sending contact form:', err);
         if (statusEl) {
-            statusEl.innerHTML = 'Could not open your email client. Please send an email manually to <a href="mailto:support@gotoolly.com" style="color:inherit;text-decoration:underline;">support@gotoolly.com</a>.';
+            statusEl.textContent = 'Network error — please check your connection and try again.';
             statusEl.style.color = 'var(--color-danger)';
         }
     } finally {
@@ -122,11 +124,9 @@ async function submitContactForm(event) {
     }
 }
 
-// Initialize form behavior on DOM ready
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        // Add honeypot if not present
         if (!contactForm.querySelector('input[name="website"]')) {
             const honeypot = document.createElement('input');
             honeypot.type = 'text';

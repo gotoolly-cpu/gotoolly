@@ -107,7 +107,11 @@
                             <div style="padding: var(--space-6);">
                                 <h2 style="margin-bottom: var(--space-6);">Send a Message</h2>
                                 
-                                <form id="contact-form" method="post" action="#" novalidate>
+                                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+                                    <input type="hidden" name="access_key" value="96558ff3-d5d9-4435-9051-dcffc526baf9">
+                                    <input type="hidden" name="subject" value="New Contact Message from GoToolly">
+                                    <input type="hidden" name="from_name" value="GoToolly Contact Form">
+                                    <input type="checkbox" name="botcheck" class="hidden" style="display:none">
                                     <div class="form-group">
                                         <label for="name" class="form-label">Your Name</label>
                                         <input type="text" id="name" name="name" class="form-control" placeholder="First and last name" required>
