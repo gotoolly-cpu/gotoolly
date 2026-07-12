@@ -9,6 +9,20 @@
 
     <!-- Canonical -->
     <link rel="canonical" href="https://gotoolly.com/tools/image-compressor">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/image-compressor">
+    <meta property="og:title" content="Image Compressor - Reduce Image File Size Online | GoToolly">
+    <meta property="og:description" content="Free online image compressor. Reduce JPG, PNG, and WebP file sizes without noticeable quality loss. Works entirely in your browser - no uploads.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:site_name" content="GoToolly">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/image-compressor">
+    <meta name="twitter:title" content="Image Compressor - Reduce Image File Size Online | GoToolly">
+    <meta name="twitter:description" content="Free online image compressor. Reduce JPG, PNG, and WebP file sizes without noticeable quality loss. Works entirely in your browser - no uploads.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
     
     <!-- Favicon & Manifest -->
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
@@ -18,14 +32,14 @@
     <!-- Critical CSS: preload and non-blocking load -->
     <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">`n    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
     
     <style>
         /* Hero / Header */
@@ -95,6 +109,11 @@
         .results-panel { display: block; }
         .comparison-original img, .comparison-compressed img { display: block; max-width: 100%; height: auto; }
 
+        /* Prevent long filenames from causing horizontal overflow */
+        #file-names { word-break: break-word; overflow-wrap: anywhere; }
+        #file-names div { white-space: normal; }
+
+
         .compression-stats { display: flex; gap: var(--space-3); }
         .stat-item { flex: 1; text-align: center; background: white; border-radius: 8px; padding: var(--space-3); border: 1px solid var(--color-border); }
 
@@ -104,6 +123,28 @@
         /* Misc */
         @keyframes pulse { 0% { opacity: 1 } 50% { opacity: 0.5 } 100% { opacity: 1 } }
         .processing { animation: pulse 1.5s infinite; }
+
+        /* Mobile responsiveness: stack workspace panels and hero on small screens */
+        @media (max-width: 900px) {
+            .hero-content { grid-template-columns: 1fr; gap: var(--space-3); }
+            .hero-text h1 { font-size: 1.6rem; }
+            .tool-workspace { grid-template-columns: 1fr; gap: var(--space-4); padding: var(--space-4); }
+            .results-panel { order: 2; }
+
+            /* Results: use horizontal scrolling to avoid vertical instability */
+            .results-grid { display: flex; gap: var(--space-3); overflow-x: auto; padding-bottom: 8px; touch-action: pan-y; -webkit-overflow-scrolling: touch; }
+            .result-item { min-width: 180px; flex: 0 0 auto; }
+
+            /* Stabilize upload area height to avoid layout jumps */
+            .file-drop-zone, .upload-area { padding: var(--space-4); min-height: 120px; }
+            .file-drop-zone svg, .upload-area svg { width: 48px; height: 48px; }
+
+            /* Info cards: switch to horizontal scrollable row for easy swiping */
+            .info-cards { display: flex; overflow-x: auto; gap: var(--space-3); padding-bottom: 8px; -webkit-overflow-scrolling: touch; touch-action: pan-y; }
+            .info-cards .card { flex: 0 0 80%; max-width: 320px; }
+
+            .comparison-container { display: block; }
+        }
     </style>
 </head>
 <body>
@@ -300,33 +341,33 @@
             </div>
             
             <!-- Info Cards -->
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-top: var(--space-6);">
+            <div class="info-cards" aria-label="Tool Information">
                 <div class="card">
-                    <h4><i class="fas fa-box-open" style="color: var(--color-primary); margin-right: 8px;"></i>What You Get</h4>
+                    <h4><i class="fas fa-cogs" style="color: var(--color-primary); margin-right: 8px;"></i>Features</h4>
                     <ul>
-                        <li><strong>Batch compression</strong> - Multiple images at once</li>
-                        <li><strong>Quality control</strong> - 10-100%</li>
-                        <li><strong>Resize</strong> - Set max width</li>
-                        <li><strong>Format conversion</strong> - JPEG, PNG, WebP</li>
-                        <li><strong>100% local</strong> - No uploads</li>
+                        <li>Batch compression: multiple images at once</li>
+                        <li>Quality control: 10% to 100%</li>
+                        <li>Resizing: set maximum width</li>
+                        <li>Format conversion: JPEG, PNG, WebP</li>
+                        <li>100% local: no uploads</li>
                     </ul>
                 </div>
                 <div class="card">
-                    <h4><i class="fas fa-list-ol" style="color: var(--color-primary); margin-right: 8px;"></i>How to Use</h4>
+                    <h4><i class="fas fa-play-circle" style="color: var(--color-primary); margin-right: 8px;"></i>How to Use</h4>
                     <ol>
-                        <li>Drag or select images</li>
-                        <li>Adjust quality, size, format</li>
-                        <li>Click Compress</li>
-                        <li>Download results</li>
+                        <li>Drag or select your images</li>
+                        <li>Adjust quality, size, and format</li>
+                        <li>Click "Compress"</li>
+                        <li>Download the results</li>
                     </ol>
                 </div>
                 <div class="card">
-                    <h4><i class="fas fa-lightbulb" style="color: var(--color-primary); margin-right: 8px;"></i>Pro Tips</h4>
+                    <h4><i class="fas fa-lightbulb" style="color: var(--color-primary); margin-right: 8px;"></i>Tips</h4>
                     <ul>
-                        <li>75-85% quality is usually best</li>
-                        <li>WebP gives smallest files</li>
-                        <li>Resize for web speed</li>
-                        <li>All processing is private</li>
+                        <li>75% to 85% quality is generally optimal</li>
+                        <li>WebP format produces smaller files</li>
+                        <li>Resize to optimize web loading speed</li>
+                        <li>Private processing (everything is local)</li>
                     </ul>
                 </div>
             </div>
@@ -378,7 +419,7 @@
             
             <div class="footer-bottom">
                 <div class="copyright">
-                    © <span id="current-year">2024</span> GoToolly. All rights reserved.
+                    © <span id="current-year">2026</span> GoToolly. All rights reserved.
                 </div>
                 <div class="legal-links">
                     <a href="/legal/privacy-policy">Privacy</a>
@@ -392,7 +433,7 @@
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
-    <script defer src="/assets/js/main.js"></script>
+    <script defer src="/assets/js/main.min.js"></script>
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
         // Register Service Worker for offline support
@@ -400,32 +441,12 @@
             navigator.serviceWorker.register('/sw.js')
                 .then(registration => {
                     console.log('[ServiceWorker] Registered:', registration.scope);
-
-                    // Try to prompt an update and clear caches so dev changes appear immediately
-                    try {
-                        // Trigger update check
-                        registration.update();
-
-                        // If an active worker is waiting, tell it to skip waiting
-                        if (registration.waiting) {
-                            registration.waiting.postMessage({ action: 'SKIP_WAITING' });
-                        }
-
-                        // If controller exists, ask it to clear caches
-                        if (navigator.serviceWorker.controller) {
-                            const msgChan = new MessageChannel();
-                            msgChan.port1.onmessage = (event) => console.log('SW reply:', event.data);
-                            navigator.serviceWorker.controller.postMessage({ action: 'CLEAR_CACHE' }, [msgChan.port2]);
-                        }
-                    } catch (err) {
-                        console.warn('SW update/clear attempt failed:', err);
-                    }
                 })
                 .catch(error => {
                     console.warn('[ServiceWorker] Registration failed:', error);
                 });
         }
     </script>
-    <script src="/assets/js/tools/image-compressor.js?v=1.0.3"></script>
+    <script src="/assets/js/tools/image-compressor.min.js?v=1.0.3"></script>
 </body>
 </html>

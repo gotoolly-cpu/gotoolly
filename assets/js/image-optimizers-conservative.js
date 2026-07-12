@@ -632,7 +632,7 @@ function conservativeOverride(processedData, originalData) {
             }
         }
         
-        utils.showToast('Applied conservative mode to preserve content', 'warning');
+        console.warn('Applied conservative mode to preserve content');
     }
     
     return new ImageData(result, width, height);
@@ -655,7 +655,7 @@ function ultraConservativeMode(originalData) {
     result.set(data);
     
     // Only remove pixels that are VERY SIMILAR to border colors
-    const borderColor = this.getDominantBorderColor(originalData);
+    const borderColor = getDominantBorderColor(originalData);
     const removalThreshold = 40; // VERY conservative threshold
     
     for (let i = 0; i < data.length; i += 4) {

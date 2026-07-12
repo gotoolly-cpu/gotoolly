@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultsContent = document.getElementById('results-content');
     const emptyResults = document.getElementById('empty-results');
     const downloadSelectedBtn = document.getElementById('download-selected');
-    // const downloadAllBtn = document.getElementById('download-all');
+    const downloadAllBtn = document.getElementById('download-all-btn');
     const originalSizeEl = document.getElementById('original-size');
     const compressedSizeEl = document.getElementById('compressed-size');
     const savingsPercentEl = document.getElementById('savings-percent');
@@ -331,15 +331,17 @@ document.addEventListener('DOMContentLoaded', function() {
         
         fileList.style.display = 'block';
         if (fileNames) {
-            fileNames.innerHTML = selectedFiles.map((f, i) => {
+            fileNames.innerHTML = '';
+            selectedFiles.forEach((f, i) => {
                 const size = formatFileSize(f.size);
                 const icon = f.type.includes('png') ? '🖼️' : 
                             f.type.includes('jpeg') ? '📷' : 
                             f.type.includes('webp') ? '🌐' : '📄';
-                return `<div style="margin-bottom: 4px; padding: 4px 8px; background: rgba(0,0,0,0.02); border-radius: 4px;">
-                    ${icon} ${f.name} (${size})
-                </div>`;
-            }).join('');
+                const div = document.createElement('div');
+                div.style.cssText = 'margin-bottom: 4px; padding: 4px 8px; background: rgba(0,0,0,0.02); border-radius: 4px;';
+                div.textContent = `${icon} ${f.name} (${size})`;
+                fileNames.appendChild(div);
+            });
         }
         
         if (compressBtn) compressBtn.disabled = false;

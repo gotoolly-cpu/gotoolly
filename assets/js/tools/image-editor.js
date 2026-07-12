@@ -273,9 +273,19 @@ document.addEventListener('DOMContentLoaded', function() {
                             extension = 'jpg';
                     }
                     
+                    if (format === 'avif') {
+                        const testCanvas = document.createElement('canvas');
+                        testCanvas.width = 1;
+                        testCanvas.height = 1;
+                        if (!testCanvas.toBlob(function() {}, 'image/avif')) {
+                            reject(new Error('AVIF format is not supported by your browser. Please choose a different format.'));
+                            return;
+                        }
+                    }
+
                     canvas.toBlob(function(blob) {
                         if (!blob) {
-                            reject(new Error('Failed to convert image'));
+                            reject(new Error('Failed to convert image. Your browser may not support this format.'));
                             return;
                         }
                         

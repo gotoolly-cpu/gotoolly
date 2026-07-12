@@ -42,17 +42,20 @@
   font-weight: var(--weight-bold);
   font-size: var(--text-xl);
   color: var(--color-text);
+  contain: layout style;
 }
 
 .logo-svg {
   width: 2rem;
   height: 2rem;
   color: var(--color-primary);
+  contain: layout style;
 }
 
 /* Navigation */
 .main-nav {
   display: none;
+  min-width: 320px;
 }
 
 @media (min-width: 768px) {
@@ -255,7 +258,6 @@
 
 /* Main Content */
 .main-content {
-  min-height: calc(100vh - 16rem);
   padding: var(--space-8) 0;
 }
 

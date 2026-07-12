@@ -312,6 +312,8 @@ function showNotification(message, type = 'info') {
     }, 3000);
 }
 
+window.showNotification = showNotification;
+
 // Add CSS for notifications
 const style = document.createElement('style');
 style.textContent = `

@@ -26,434 +26,85 @@
     <meta name="twitter:description" content="Free browser-based tools for PDF, images, text & SEO. No uploads, no accounts, no tracking.">
     <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
     <meta name="twitter:image:alt" content="GoToolly Logo">
-    <meta name="twitter:creator" content="@GoToolly"> <!--@GoToolly -->
+    <meta name="twitter:creator" content="@GoToolly">
     
     <!-- Canonical -->
-    <link rel="canonical" href="https://gotoolly.com">
+    <link rel="canonical" href="https://gotoolly.com/">
     
     <!-- Favicon & Manifest -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="assets/images/logo-192.png">
     <link rel="manifest" href="site.webmanifest" crossorigin="use-credentials">
     
-    <!-- Critical CSS: preload and non-blocking load -->
-    <link rel="preload" href="assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="assets/css/styles.min.css"></noscript>
-
-    <!-- Fonts: preconnect + non-blocking load -->
+    <!-- Fonts: non-blocking load (font-display optional prevents layout shifts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+
+    <!-- Critical + site CSS loaded synchronously to prevent CLS -->
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <link rel="stylesheet" href="assets/css/home.min.css">
     
     <style>
-        /* Enhanced Homepage Styles */
-        .hero-section {
-            background: var(--color-surface);
-            color: var(--color-text);
-            padding: var(--space-16) var(--space-6);
-            border-radius: var(--radius-xl);
-            text-align: center;
-            margin-bottom: var(--space-12);
-            position: relative;
-            overflow: hidden;
-            min-height: 320px; /* Reserve vertical space to reduce CLS */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        /* Critical CSS: prevent CLS by defining base layout inline */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --color-primary: #2563eb;
+            --color-secondary: #10b981;
+            --color-text: #111827;
+            --color-text-light: #6b7280;
+            --color-background: #ffffff;
+            --color-surface: #f9fafb;
+            --color-border: #e5e7eb;
+            --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem;
+            --text-lg: 1.125rem; --text-xl: 1.25rem; --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem; --text-4xl: 2.25rem; --text-5xl: 3rem;
+            --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+            --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem;
+            --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem;
+            --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
+            --container-xl: 80rem;
+            --radius-md: 0.5rem; --radius-lg: 0.75rem; --radius-xl: 1rem;
+            --radius-full: 9999px;
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --weight-medium: 500; --weight-semibold: 600; --weight-bold: 700;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
-        @media (min-width: 768px) {
-            .hero-section { min-height: 420px; }
-        }
-        
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><circle cx="20" cy="20" r="8" fill="white"/><circle cx="80" cy="30" r="6" fill="white"/><circle cx="40" cy="70" r="10" fill="white"/><circle cx="70" cy="80" r="5" fill="white"/></svg>');
-            background-size: 300px;
-        }
-        
-        .hero-title {
-            font-size: var(--text-4xl);
-            font-weight: 800;
-            margin-bottom: var(--space-4);
-            line-height: 1.2;
-            position: relative;
-        }
-        
-        .hero-subtitle {
-            font-size: var(--text-xl);
-            color: var(--color-text-light);
-            max-width: 48rem;
-            margin: 0 auto var(--space-6);
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body {
+            font-family: var(--font-sans);
+            font-size: var(--text-base);
             line-height: 1.6;
-            position: relative;
-        }
-        
-        .hero-features {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-8);
-            margin: var(--space-8) 0;
-            flex-wrap: wrap;
-            position: relative;
-        }
-        
-        .hero-feature {
-            display: flex;
-            align-items: center;
-            gap: var(--space-3);
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: var(--space-3) var(--space-4);
-            border-radius: var(--radius-full);
-            font-size: var(--text-sm);
-            font-weight: 500;
-        }
-        
-        .hero-actions {
-            display: flex;
-            gap: var(--space-4);
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: var(--space-8);
-            position: relative;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: var(--space-10);
-        }
-        
-        .section-title {
-            font-size: var(--text-3xl);
-            font-weight: 700;
-            margin-bottom: var(--space-4);
             color: var(--color-text);
+            background-color: var(--color-background);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        
-        .section-description {
-            font-size: var(--text-lg);
-            color: var(--color-text-light);
-            max-width: 48rem;
-            margin: 0 auto;
-            line-height: 1.6;
+        img, svg { display: block; max-width: 100%; }
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400 800;
+            font-display: optional;
+            src: local('Inter');
         }
-        
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-8);
-            margin: var(--space-10) 0;
-        }
-        
-        .benefit-card {
-            background: var(--color-surface);
-            border-radius: var(--radius-xl);
-            padding: var(--space-8);
-            border: 1px solid var(--color-border);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-        }
-        
-        .benefit-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .benefit-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto var(--space-4);
-            color: white;
-        }
-        
-        .benefit-title {
-            font-size: var(--text-xl);
-            font-weight: 600;
-            margin-bottom: var(--space-3);
-            color: var(--color-text);
-        }
-        
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-6);
-            margin: var(--space-8) 0;
-        }
-
-        /* Homepage categories: show four categories in one row on large screens */
-        .category-grid {
-            grid-template-columns: repeat(4, minmax(220px, 1fr));
-            align-items: stretch;
-        }
-
-        @media (max-width: 1024px) {
-            .category-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 640px) {
-            .category-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .tool-card {
-            background: var(--color-surface);
-            border-radius: var(--radius-lg);
-            padding: var(--space-6);
-            border: 1px solid var(--color-border);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        
-        .tool-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        /* Ensure the button container stays at the bottom of the card */
-        .tool-card > div:last-child {
-            margin-top: auto !important;
-        }
-        
-        .tool-card-badge {
-            position: absolute;
-            top: var(--space-4);
-            right: var(--space-4);
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-            color: white;
-            padding: var(--space-1) var(--space-3);
-            border-radius: var(--radius-full);
-            font-size: var(--text-xs);
-            font-weight: 600;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-        }
-        
-        .tool-icon {
-            font-size: 2.5rem;
-            margin-bottom: var(--space-4);
-            text-align: center;
-        }
-        
-        .tool-title {
-            font-size: var(--text-lg);
-            font-weight: 600;
-            margin-bottom: var(--space-2);
-            color: var(--color-text);
-        }
-        
-        .category-card {
-            background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-secondary) 100%);
-            border-radius: var(--radius-lg);
-            padding: var(--space-6);
-            border: 1px solid var(--color-border);
-            transition: transform 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        
-        .category-card:hover {
-            transform: translateY(-2px);
-        }
-        
-        .category-title {
-            font-size: var(--text-lg);
-            font-weight: 600;
-            margin-bottom: var(--space-3);
-            color: var(--color-text);
-        }
-        
-        .category-list {
-            list-style: none;
-            padding: 0;
-            margin: var(--space-4) 0 0 0;
-            margin-top: auto;
-        }
-        
-        .category-list li {
-            margin-bottom: var(--space-2);
-            font-size: var(--text-sm);
-        }
-        
-        .category-list a {
-            color: var(--color-text-light);
-            text-decoration: none;
-            transition: color 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-        }
-        
-        .category-list a:hover {
-            color: var(--color-primary);
-        }
-        
-        .use-case-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-6);
-            margin: var(--space-8) 0;
-        }
-        
-        .use-case-card {
-            background: var(--color-surface);
-            border-radius: var(--radius-lg);
-            padding: var(--space-6);
-            border: 1px solid var(--color-border);
-            text-align: center;
-        }
-        
-        .use-case-icon {
-            font-size: 2.5rem;
-            margin-bottom: var(--space-4);
-        }
-        
-        .use-case-title {
-            font-size: var(--text-lg);
-            font-weight: 600;
-            margin-bottom: var(--space-2);
-            color: var(--color-text);
-        }
-        
-        .cta-section {
-            background: var(--color-surface);
-            color: var(--color-text);
-            padding: var(--space-12);
-            border-radius: var(--radius-xl);
-            text-align: center;
-            margin: var(--space-12) 0;
-            border: 1px solid var(--color-border);
-        }
-        
-        .cta-title {
-            font-size: var(--text-3xl);
-            font-weight: 700;
-            margin-bottom: var(--space-4);
-            color: var(--color-text);
-        }
-        
-        .cta-description {
-            font-size: var(--text-lg);
-            color: var(--color-text-light);
-            max-width: 42rem;
-            margin: 0 auto var(--space-8);
-            line-height: 1.6;
-        }
-        
-        .cta-actions {
-            display: flex;
-            gap: var(--space-4);
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-6);
-            margin: var(--space-10) 0;
-            text-align: center;
-        }
-        
-        .stat-item {
-            padding: var(--space-6);
-        }
-        
-        .stat-number {
-            font-size: var(--text-4xl);
-            font-weight: 800;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: var(--space-2);
-        }
-        
-        .stat-label {
-            font-size: var(--text-sm);
-            color: var(--color-text-light);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 600;
-        }
-        
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: var(--text-3xl);
-            }
-            
-            .hero-subtitle {
-                font-size: var(--text-lg);
-            }
-            
-            .hero-features {
-                flex-direction: column;
-                gap: var(--space-4);
-            }
-            
-            .hero-actions {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .section-title {
-                font-size: var(--text-2xl);
-            }
-            
-            .benefits-grid,
-            .tools-grid,
-            .use-case-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cta-section {
-                padding: var(--space-8);
-            }
-            
-            .cta-title {
-                font-size: var(--text-2xl);
-            }
-        }
-
-        /* 5.3 Skip to content and helper accessibility classes */
+        /* Accessibility (critical above-fold) */
         .skip-to-content {
             position: absolute;
-            top: -40px;
-            left: 0;
+            top: -40px; left: 0;
             background: #2563eb;
             color: white;
             padding: 8px 16px;
             text-decoration: none;
             z-index: 9999;
         }
-
-        .skip-to-content:focus {
-            top: 0;
-        }
-
+        .skip-to-content:focus { top: 0; }
         .sr-only {
             position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
+            width: 1px; height: 1px;
+            padding: 0; margin: -1px;
             overflow: hidden;
             clip: rect(0, 0, 0, 0);
             white-space: nowrap;
@@ -491,54 +142,20 @@
           "url": "https://gotoolly.com",
           "name": "GoToolly",
           "description": "Free browser-based tools for PDF, images, text & SEO. No uploads, no accounts, no tracking.",
-          "publisher": {
-            "@id": "https://gotoolly.com/#organization"
-          },
-          "potentialAction": [
-            {
-              "@type": "SearchAction",
-              "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://gotoolly.com/search?q={search_term_string}"
-              },
-              "query-input": "required name=search_term_string"
-            }
-          ],
+          "publisher": { "@id": "https://gotoolly.com/#organization" },
+          "potentialAction": [{
+            "@type": "SearchAction",
+            "target": { "@type": "EntryPoint", "urlTemplate": "https://gotoolly.com/search?q={search_term_string}" },
+            "query-input": "required name=search_term_string"
+          }],
           "inLanguage": "en"
         },
         {
           "@type": "ItemList",
           "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "item": {
-                "@type": "Service",
-                "name": "Image Compressor",
-                "description": "Compress JPEG, PNG, and WebP images locally in your browser",
-                "url": "https://gotoolly.com/tools/image-compressor"
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "item": {
-                "@type": "Service",
-                "name": "PDF Compressor",
-                "description": "Compress PDF files directly in your browser without uploading",
-                "url": "https://gotoolly.com/tools/pdf-compressor"
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 3,
-              "item": {
-                "@type": "Service",
-                "name": "Word Counter",
-                "description": "Count words, characters, and reading time locally in your browser",
-                "url": "https://gotoolly.com/tools/word-counter"
-              }
-            }
+            { "@type": "ListItem", "position": 1, "item": { "@type": "Service", "name": "Image Compressor", "description": "Compress JPEG, PNG, and WebP images locally in your browser", "url": "https://gotoolly.com/tools/image-compressor" } },
+            { "@type": "ListItem", "position": 2, "item": { "@type": "Service", "name": "PDF Compressor", "description": "Compress PDF files directly in your browser without uploading", "url": "https://gotoolly.com/tools/pdf-compressor" } },
+            { "@type": "ListItem", "position": 3, "item": { "@type": "Service", "name": "Word Counter", "description": "Count words, characters, and reading time locally in your browser", "url": "https://gotoolly.com/tools/word-counter" } }
           ]
         }
       ]
@@ -547,17 +164,15 @@
 </head>
 <body>
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
     <!-- Header -->
     <header class="site-header">
         <div class="container">
             <div class="header-content">
-                <!-- Logo -->
                 <a href="/" class="logo">
                     <img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg">
                     <span class="logo-text">GoToolly</span>
                 </a>
-                
-                <!-- Desktop Navigation -->
                 <nav class="main-nav">
                     <a href="/" class="nav-link active">Home</a>
                     <a href="/tools/index.html" class="nav-link">Tools</a>
@@ -565,25 +180,12 @@
                     <a href="/about" class="nav-link">About</a>
                     <a href="/contact" class="nav-link">Contact</a>
                 </nav>
-                
-                <!-- 5.1 Mobile menu button -->
-                <button class="mobile-menu-button"
-                        id="mobile-menu-toggle"
-                        aria-label="Toggle navigation menu"
-                        aria-expanded="false"
-                        aria-controls="mobile-menu"
-                        aria-haspopup="true">
+                <button class="mobile-menu-button" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu" aria-haspopup="true">
                     <span class="sr-only">Menu</span>
                     <span aria-hidden="true">☰</span>
                 </button>
             </div>
-            
-            <!-- 5.2 Mobile menu -->
-            <div id="mobile-menu" 
-                 class="mobile-menu" 
-                 role="menu"
-                 aria-label="Main navigation"
-                 aria-hidden="true">
+            <div id="mobile-menu" class="mobile-menu" role="menu" aria-label="Main navigation" aria-hidden="true">
                 <nav class="mobile-nav">
                     <a href="/" class="nav-link active">Home</a>
                     <a href="/tools/index.html" class="nav-link">Tools</a>
@@ -600,44 +202,67 @@
         <!-- Hero Section -->
         <section class="container">
             <div class="hero-section">
-  <h1>Tools for people who refuse to upload their files.</h1>
-
-  <p class="hero-subtitle">
-    Privacy-first tools that run entirely in your browser.<br>
-    No uploads. No accounts. No tracking. If a task requires server-side processing, it doesn’t belong here.
-  </p>
-
-  <ul class="hero-trust">
-    <li><strong>Client-side only</strong> — files stay on your device, processed in the browser</li>
-    <li><strong>No accounts or tracking</strong> — download results directly</li>
-    <li><strong>Clear limits</strong> — no heavy server-only features, by design</li>
-  </ul>
-
-  <div class="hero-actions">
-    <a href="/tools/index.html" class="btn btn-primary btn-lg">Use tools without uploading files</a>
-    <a href="/guides/index.html" class="btn btn-secondary btn-lg">How it works</a>
-  </div>
-</div>
+                <h1 class="hero-title">Tools for people who refuse to upload their files.</h1>
+                <p class="hero-subtitle">
+                    Privacy-first tools that run entirely in your browser.<br>
+                    No uploads. No accounts. No tracking.
+                </p>
+                <ul class="hero-trust">
+                    <li><strong>Client-side only</strong> — files stay on your device</li>
+                    <li><strong>No accounts</strong> — download results directly</li>
+                    <li><strong>No tracking</strong> — by design</li>
+                </ul>
+                <div class="hero-actions">
+                    <a href="/tools/index.html" class="btn btn-primary btn-lg">Use tools without uploading files</a>
+                    <a href="/guides/index.html" class="btn btn-secondary btn-lg">How it works</a>
+                </div>
+            </div>
         </section>
 
-        <!-- Stats Section -->
-        <section class="container content-section">
-            <div class="stats-grid">
-                <div class="stat-item">
+        <!-- Trust Bar -->
+        <section class="container">
+            <div class="trust-bar">
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <span>End-to-end privacy</span>
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    <span>Instant processing</span>
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                    <span>No sign-up required</span>
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                    <span>100% free</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <section class="container">
+            <div class="stats-bar">
+                <div class="stat-card">
+                    <div class="stat-icon">🛠️</div>
                     <div class="stat-number">30+</div>
                     <div class="stat-label">Free Tools</div>
                 </div>
-                <div class="stat-item">
+                <div class="stat-card">
+                    <div class="stat-icon">🌐</div>
                     <div class="stat-number">100%</div>
                     <div class="stat-label">Browser-Based</div>
                 </div>
-                <div class="stat-item">
+                <div class="stat-card">
+                    <div class="stat-icon">🚫</div>
                     <div class="stat-number">0</div>
                     <div class="stat-label">Server Uploads</div>
                 </div>
-                <div class="stat-item">
+                <div class="stat-card">
+                    <div class="stat-icon">🔒</div>
                     <div class="stat-number">∞</div>
-                    <div class="stat-label">Privacy-First by Design</div>
+                    <div class="stat-label">Privacy-First</div>
                 </div>
             </div>
         </section>
@@ -645,8 +270,9 @@
         <!-- Why Choose GoToolly -->
         <section class="container content-section" id="how-it-works">
             <div class="section-header">
-                <h2 class="section-title">Why Choose GoToolly Over Other Online Tools?</h2>
-                <p class="section-description">Many online tools upload files because server-side processing is easier to scale, easier to control, and easier to monetize. GoToolly makes a deliberate, privacy‑first choice: we run tools in your browser so your files stay on your device. That means some server‑only features are intentionally unavailable — a trade‑off we accept for keeping your data private.</p>
+                <div class="section-badge">Why GoToolly?</div>
+                <h2 class="section-title">Privacy-first by design, not by marketing</h2>
+                <p class="section-description">Many online tools upload files because server-side processing is easier to scale. GoToolly makes a deliberate choice: we run tools in your browser so your files stay on your device.</p>
             </div>
             
             <div class="benefits-grid">
@@ -666,8 +292,8 @@
                             <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
                         </svg>
                     </div>
-                    <h3 class="benefit-title">Honest trade‑offs</h3>
-                    <p>Some tasks (advanced OCR, massive batch conversions) require server compute and are not offered here. When server processing is necessary, we link to appropriate alternatives and explain the trade‑offs.</p>
+                    <h3 class="benefit-title">Honest trade-offs</h3>
+                    <p>Some tasks require server compute and are not offered here. When server processing is needed, we link to alternatives and explain the trade-offs.</p>
                 </div>
                 
                 <div class="benefit-card">
@@ -677,7 +303,7 @@
                         </svg>
                     </div>
                     <h3 class="benefit-title">Fast & predictable</h3>
-                    <p>Processing completes as soon as your device finishes the task, so results are immediate and predictable — limited by your device, not by upload queues.</p>
+                    <p>Results are immediate — limited by your device, not by upload queues or server load.</p>
                 </div>
             </div>
         </section>
@@ -685,8 +311,9 @@
         <!-- Featured Tools -->
         <section class="container content-section">
             <div class="section-header">
-                <h2 class="section-title">Most Popular Tools</h2>
-                <p class="section-description">Quick, privacy‑first tools people use most often. All work client‑side in your browser — no file uploads.</p>
+                <div class="section-badge">Most Popular</div>
+                <h2 class="section-title">Tools people use most</h2>
+                <p class="section-description">Quick, privacy-first tools that work entirely in your browser — no file uploads.</p>
             </div>
             
             <div class="tools-grid">
@@ -696,56 +323,57 @@
                     <h3 class="tool-title">Image Compressor</h3>
                     <p>Compress JPEG, PNG, and WebP images locally — no upload required.</p>
                     <div style="margin-top: var(--space-4);">
-                        <a href="/tools/image-compressor.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        <a href="/tools/image-compressor.html" class="btn btn-primary btn-sm">Use Tool →</a>
                     </div>
                 </div>
                 
                 <div class="tool-card">
                     <div class="tool-icon">📄</div>
                     <h3 class="tool-title">PDF Compressor</h3>
-                    <p>Compress PDF files in your browser — no upload required. Best for text‑based PDFs; scanned PDFs requiring OCR may need server tools.</p>
+                    <p>Compress PDF files in your browser — best for text-based PDFs.</p>
                     <div style="margin-top: var(--space-4);">
-                        <a href="/tools/pdf-compressor.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        <a href="/tools/pdf-compressor.html" class="btn btn-primary btn-sm">Use Tool →</a>
                     </div>
                 </div>
                 
                 <div class="tool-card">
                     <div class="tool-icon">🔢</div>
                     <h3 class="tool-title">Word Counter</h3>
-                    <p>Instant word, character, and reading‑time counts in your browser — no files shared. Useful for essays, posts, and SEO checks.</p>
+                    <p>Instant word, character, and reading-time counts — no files shared.</p>
                     <div style="margin-top: var(--space-4);">
-                        <a href="/tools/word-counter.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        <a href="/tools/word-counter.html" class="btn btn-primary btn-sm">Use Tool →</a>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center" style="margin-top: var(--space-8);">
-                <a href="/tools/index.html" class="btn btn-outline btn-lg">Browse all tools →</a>
+            <div style="text-align: center; margin-top: var(--space-8);">
+                <a href="/tools/index.html" class="btn btn-outline btn-lg">Browse all 30+ tools →</a>
             </div>
         </section>
 
         <!-- Tool Categories -->
         <section class="container content-section">
             <div class="section-header">
-                <h2 class="section-title">Tools Organized by Category</h2>
-                <p class="section-description">Find the right tool fast. All tools run client‑side in your browser — no file uploads and no server storage.</p>
+                <div class="section-badge">Categories</div>
+                <h2 class="section-title">Find the right tool fast</h2>
+                <p class="section-description">All tools run client-side in your browser — no file uploads and no server storage.</p>
             </div>
             
-            <div class="tools-grid category-grid">
-                <div class="category-card">
+            <div class="category-grid">
+                <div class="category-card cat-image">
                     <h3 class="category-title">📸 Image Tools</h3>
-                    <p>Compress, resize, and convert image formats (JPEG, PNG, WebP) locally. Preview quality and save without uploading files to an external service.</p>
+                    <p style="color: #1e40af; font-size: var(--text-sm);">Compress, resize, and convert images locally without uploading.</p>
                     <ul class="category-list">
                         <li><a href="/tools/image-compressor.html">Image Compressor</a></li>
-                        <li><a href="/tools/image-converter.html">Image Converter</a></li>
+                        <li><a href="/tools/image-editor.html">Image Converter</a></li>
                         <li><a href="/tools/favicon-generator.html">Favicon Generator</a></li>
-                        <li><a href="/tools/image-resizer.html">Image Resizer</a></li>
+                        <li><a href="/tools/image-editor.html">Image Resizer</a></li>
                     </ul>
                 </div>
                 
-                <div class="category-card">
+                <div class="category-card cat-pdf">
                     <h3 class="category-title">📄 PDF Tools</h3>
-                    <p>Compress, merge, split, rotate, and extract text from PDFs directly in your browser. Best for text‑based PDFs; scanned PDFs requiring high‑accuracy OCR may need server tools.</p>
+                    <p style="color: #9f1239; font-size: var(--text-sm);">Compress, merge, split, and extract text from PDFs.</p>
                     <ul class="category-list">
                         <li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li>
                         <li><a href="/tools/pdf-merger.html">PDF Merger</a></li>
@@ -754,9 +382,9 @@
                     </ul>
                 </div>
                 
-                <div class="category-card">
+                <div class="category-card cat-text">
                     <h3 class="category-title">📝 Text Tools</h3>
-                    <p>Local text utilities for writers: count words, clean formatting, change case, and generate SEO‑friendly slugs — all without sending text to a server.</p>
+                    <p style="color: #065f46; font-size: var(--text-sm);">Count words, clean text, change case, and more.</p>
                     <ul class="category-list">
                         <li><a href="/tools/word-counter.html">Word Counter</a></li>
                         <li><a href="/tools/case-converter.html">Case Converter</a></li>
@@ -765,79 +393,107 @@
                     </ul>
                 </div>
 
-                <div class="category-card">
-                        <h3 class="category-title">🛠️ Generators & Utilities</h3>
-                        <p>Create QR codes, secure passwords, favicons, and placeholder content in‑browser so data stays on your device.</p>
-                        <ul class="category-list">
-                            <li><a href="/tools/password-generator.html">Password Generator</a></li>
-                            <li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li>
-                            <li><a href="/tools/url-slug-generator.html">URL Slug Generator</a></li>
-                            <li><a href="/tools/lorem-ipsum-generator.html">Lorem Ipsum Generator</a></li>
-                        </ul>
-                    </div>
+                <div class="category-card cat-generators">
+                    <h3 class="category-title">🛠️ Generators</h3>
+                    <p style="color: #5b21b6; font-size: var(--text-sm);">Create QR codes, passwords, and placeholder content.</p>
+                    <ul class="category-list">
+                        <li><a href="/tools/password-generator.html">Password Generator</a></li>
+                        <li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li>
+                        <li><a href="/tools/url-slug-generator.html">URL Slug Generator</a></li>
+                        <li><a href="/tools/lorem-ipsum-generator.html">Lorem Ipsum Generator</a></li>
+                    </ul>
                 </div>
+            </div>
         </section>
 
-        <!-- Who Benefits from GoToolly -->
+        <!-- Who Benefits -->
         <section class="container content-section">
             <div class="section-header">
-                <h2 class="section-title">Who Benefits from GoToolly?</h2>
-                <p class="section-description">GoToolly is built for people who deliberately avoid uploading files to external servers. If you value keeping your files on your device, these use cases fit well.</p>
+                <div class="section-badge">Who Uses GoToolly?</div>
+                <h2 class="section-title">Built for people who value privacy</h2>
+                <p class="section-description">GoToolly is for people who deliberately avoid uploading files to external servers.</p>
             </div>
             
             <div class="use-case-grid">
                 <div class="use-case-card">
                     <div class="use-case-icon">✍️</div>
                     <h3 class="use-case-title">Content Creators</h3>
-                    <p>Compress and preview images for web publishing, create QR codes, and run quick text checks — without sharing drafts or assets with third parties.</p>
+                    <p>Compress images for web publishing, create QR codes, and run quick text checks — without sharing drafts with third parties.</p>
                 </div>
                 
                 <div class="use-case-card">
                     <div class="use-case-icon">🎓</div>
                     <h3 class="use-case-title">Students & Academics</h3>
-                    <p>Count words, compress submissions, and extract text locally so research and assignments remain on your device before you submit them.</p>
+                    <p>Count words, compress submissions, and extract text locally so research stays on your device before you submit.</p>
                 </div>
                 
                 <div class="use-case-card">
                     <div class="use-case-icon">💼</div>
                     <h3 class="use-case-title">Business Professionals</h3>
-                    <p>Merge or compress documents for email and storage locally — useful for sensitive reports and internal files you don’t want uploaded.</p>
+                    <p>Merge or compress documents for email and storage — useful for sensitive reports you don't want uploaded.</p>
                 </div>
                 
                 <div class="use-case-card">
                     <div class="use-case-icon">👨‍💻</div>
                     <h3 class="use-case-title">Developers & Designers</h3>
-                    <p>Generate favicons, optimize images, and create test assets locally as part of your build or design workflow — no external uploads required.</p>
+                    <p>Generate favicons, optimize images, and create test assets locally — no external uploads required.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SEO Content Section -->
+        <!-- FAQ Section -->
         <section class="container content-section">
-            <div class="card" style="background: var(--color-surface); border: 1px solid var(--color-border); padding: var(--space-8); border-radius: var(--radius-xl);">
-                <h2 style="margin-top: 0; margin-bottom: var(--space-4);">Privacy‑first tools that run in your browser</h2>
-                <p>Most online services upload files to run heavier processing or store data. GoToolly chooses client‑side processing so files stay on your device, reducing exposure and giving you direct control over results.</p>
+            <div class="faq-card">
+                <div class="faq-card-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Everything you need to know about GoToolly's privacy-first approach.</p>
+                </div>
                 
-                <h3 style="margin-top: var(--space-6); margin-bottom: var(--space-3);">Frequently asked questions</h3>
-                <div style="display: grid; gap: var(--space-4); margin-top: var(--space-4);">
-                    <div>
-                        <h4 style="margin-bottom: var(--space-2);">How do browser‑based tools work?</h4>
-                        <p>They use standard browser features — JavaScript, Canvas, Web Workers, and WebAssembly where applicable — to process files locally on your device. No file upload is required to use the core functions.</p>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How do browser-based tools work?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            They use standard browser features — JavaScript, Canvas, Web Workers, and WebAssembly — to process files locally on your device. No file upload is required to use the core functions.
+                        </div>
                     </div>
-                    
-                    <div>
-                        <h4 style="margin-bottom: var(--space-2);">Are there file size or feature limits?</h4>
-                        <p>Yes. Limits depend on your device and browser memory. Most tools handle files up to ~100MB; very large files, extensive batch jobs, or compute‑heavy tasks may not work reliably in the browser.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Are there file size or feature limits?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            Yes. Limits depend on your device and browser memory. Most tools handle files up to ~100MB; very large files or compute-heavy tasks may not work reliably in the browser.
+                        </div>
                     </div>
-                    
-                    <div>
-                        <h4 style="margin-bottom: var(--space-2);">When should I NOT use GoToolly?</h4>
-                        <p>Don’t use GoToolly when you need server‑grade processing: high‑accuracy OCR on scanned images, enterprise‑scale batch conversions, video/transcoding, or DRM‑protected files. In those cases we link to recommended server‑based alternatives and explain the trade‑offs.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>When should I NOT use GoToolly?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            Don't use GoToolly when you need server-grade processing: high-accuracy OCR on scanned images, enterprise-scale batch conversions, video/transcoding, or DRM-protected files. In those cases we link to recommended alternatives.
+                        </div>
                     </div>
-                    
-                    <div>
-                        <h4 style="margin-bottom: var(--space-2);">Is anything uploaded or stored?</h4>
-                        <p>No — core tools do not upload or store your files. We do use privacy-respecting, minimal analytics to improve the site, but we do not collect or retain the files you process with the tools.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Is anything uploaded or stored?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" role="region">
+                        <div class="faq-answer-inner">
+                            No — core tools do not upload or store your files. We do use privacy-respecting, minimal analytics to improve the site, but we do not collect or retain the files you process with the tools.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -846,11 +502,11 @@
         <!-- Final CTA -->
         <section class="container">
             <div class="cta-section">
-                <h2 class="cta-title">Use privacy‑first tools that keep files on your device</h2>
-                <p class="cta-description">Most tools are free to use and supported by unobtrusive advertising. If a task needs server processing, we will tell you and recommend alternatives — no surprises.</p>
+                <h2 class="cta-title">Use privacy-first tools that keep files on your device</h2>
+                <p class="cta-description">Most tools are free to use. If a task needs server processing, we will tell you and recommend alternatives — no surprises.</p>
                 <div class="cta-actions">
-                    <a href="/tools/index.html" class="btn btn-primary btn-lg">Browse Tools</a>
-                    <a href="/guides/index.html" class="btn btn-secondary btn-lg">How it works</a>
+                    <a href="/tools/index.html" class="btn btn-primary btn-lg">Browse All Tools</a>
+                    <a href="/guides/index.html" class="btn btn-secondary btn-lg">Read the Guides</a>
                 </div>
             </div>
         </section>
@@ -914,24 +570,41 @@
     </footer>
 
     <!-- JavaScript -->
-    <script defer src="/assets/js/main.js"></script>
+    <script defer src="/assets/js/main.min.js"></script>
     <script>
-        // Set current year in footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
-        
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: targetElement.offsetTop - 100, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isActive = this.classList.contains('active');
+                
+                // Close all others
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                    q.setAttribute('aria-expanded', 'false');
+                    q.nextElementSibling.classList.remove('active');
+                });
+                
+                // Toggle clicked
+                if (!isActive) {
+                    this.classList.add('active');
+                    this.setAttribute('aria-expanded', 'true');
+                    answer.classList.add('active');
                 }
             });
         });

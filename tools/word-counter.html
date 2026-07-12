@@ -6,7 +6,24 @@
     <title>Word Counter - Count Words, Characters & More | GoToolly</title>
     <meta name="description" content="Count words, characters, sentences, paragraphs instantly. Track reading time, character frequency, and text statistics for free.">
     <meta name="keywords" content="word counter, character counter, word count tool, text statistics, reading time calculator">
-    
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://gotoolly.com/tools/word-counter">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/word-counter">
+    <meta property="og:title" content="Word Counter - Count Words, Characters & More | GoToolly">
+    <meta property="og:description" content="Count words, characters, sentences, paragraphs instantly. Track reading time, character frequency, and text statistics for free.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:site_name" content="GoToolly">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/word-counter">
+    <meta name="twitter:title" content="Word Counter - Count Words, Characters & More | GoToolly">
+    <meta name="twitter:description" content="Count words, characters, sentences, paragraphs instantly. Track reading time, character frequency, and text statistics for free.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+
     <!-- Favicon & Manifest -->
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
@@ -15,14 +32,14 @@
     <!-- Critical CSS: preload and non-blocking load -->
     <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">`n    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
 </head>
 <body>
     <!-- Header -->
@@ -81,7 +98,13 @@
                         <p>Paste or type text to get detailed statistics</p>
                     </div>
                     
-                    <textarea id="text-input" class="text-area" placeholder="Paste or type your text here..." rows="12"></textarea>
+                    <label for="text-input">
+                        <i class="fas fa-font" style="color: var(--color-primary); margin-right: 6px;"></i>
+                        Enter Your Text
+                    </label>
+                    <div class="text-area-wrapper">
+                        <textarea id="text-input" class="text-area" placeholder="Paste or type your text here..." rows="12"></textarea>
+                    </div>
                     
                     <div class="tool-actions" style="margin-top: var(--space-4);">
                         <button id="reset-btn" class="btn btn-secondary">Clear Text</button>
@@ -168,25 +191,6 @@
             </div>
         </div>
     </main>
-                            <li><strong>Sentences:</strong> Groups ending with . ! ?</li>
-                            <li><strong>Paragraphs:</strong> Text blocks separated by line breaks</li>
-                            <li><strong>Reading Time:</strong> Based on 200 words per minute</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>Use Cases</h3>
-                        <ul>
-                            <li>SEO optimization (meta descriptions)</li>
-                            <li>Content planning (article targets)</li>
-                            <li>Academic writing (word limits)</li>
-                            <li>Social media posts (character limits)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
     
     <!-- Footer -->
     <footer class="site-footer">
@@ -233,7 +237,7 @@
             
             <div class="footer-bottom">
                 <div class="copyright">
-                    © <span id="current-year">2024</span> GoToolly. All rights reserved.
+                    © <span id="current-year">2026</span> GoToolly. All rights reserved.
                 </div>
                 <div class="legal-links">
                     <a href="/legal/privacy-policy">Privacy</a>
@@ -245,8 +249,8 @@
         </div>
     </footer>
     
-    <script defer src="/assets/js/main.js"></script>
-    <script src="/assets/js/tools/word-counter.js"></script>
+    <script defer src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/tools/word-counter.min.js"></script>
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>

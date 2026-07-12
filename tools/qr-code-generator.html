@@ -6,6 +6,21 @@
     <title>Barcode Generator - Create Professional Barcodes Online | GoToolly</title>
     <meta name="description" content="Generate professional barcodes and QR codes for free. Create Code-128, EAN-13, QR codes, Data Matrix, vCards, and more. Industry-standard barcode generator.">
     <meta name="keywords" content="barcode generator, QR code generator, EAN barcode, UPC code, ISBN barcode, vCard QR, Data Matrix, barcode maker">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://gotoolly.com/tools/qr-code-generator">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/qr-code-generator">
+    <meta property="og:title" content="Barcode Generator - Create Professional Barcodes Online | GoToolly">
+    <meta property="og:description" content="Generate professional barcodes and QR codes for free. Create Code-128, EAN-13, QR codes, Data Matrix, vCards, and more. Industry-standard barcode generator.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:site_name" content="GoToolly">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/qr-code-generator">
+    <meta name="twitter:title" content="Barcode Generator - Create Professional Barcodes Online | GoToolly">
+    <meta name="twitter:description" content="Generate professional barcodes and QR codes for free. Create Code-128, EAN-13, QR codes, Data Matrix, vCards, and more. Industry-standard barcode generator.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
     
     <!-- Favicon & Manifest -->
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
@@ -19,12 +34,12 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
     
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">`n    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <style>
         :root {
@@ -95,6 +110,14 @@
         .panel-title i {
             color: var(--color-primary);
             font-size: 18px;
+        }
+
+        /* Mobile responsiveness: stack panels for narrow viewports */
+        @media (max-width: 900px) {
+            .barcode-generator { grid-template-columns: 1fr; gap: 18px; }
+            .barcode-panel { padding: 18px; }
+            .panel-title { font-size: 1rem; }
+            .barcode-types { max-height: none; overflow: visible; }
         }
         
         /* Left Panel - Barcode Types */
@@ -1000,7 +1023,7 @@
             
             <div class="footer-bottom">
                 <div class="copyright">
-                    © <span id="current-year">2024</span> GoToolly. All rights reserved.
+                    © <span id="current-year">2026</span> GoToolly. All rights reserved.
                 </div>
                 <div class="legal-links">
                     <a href="/legal/privacy-policy">Privacy</a>
@@ -1016,8 +1039,8 @@
     <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
     
-    <script defer src="/assets/js/main.js"></script>
-    <script src="/assets/js/tools/barcode-generator.js"></script>
+    <script defer src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/tools/barcode-generator.min.js"></script>
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>

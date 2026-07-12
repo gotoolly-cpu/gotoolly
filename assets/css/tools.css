@@ -806,31 +806,174 @@ select:focus {
   line-height: 1.6;
 }
 
-/* Enhanced Text Area */
+/* Enhanced Text Area - Premium Styling */
 .text-area {
   width: 100%;
   display: block;
-  padding: 16px 20px;
+  padding: 20px 24px;
   font-family: var(--font-mono);
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.7;
   color: #1f2937;
-  background-color: white;
-  border: 2px solid #e5e7eb;
-  border-radius: 10px;
+  background: linear-gradient(145deg, #ffffff, #fafbfc);
+  border: 2px solid #e2e8f0;
+  border-radius: 14px;
   resize: vertical;
   transition: var(--transition-smooth);
   box-sizing: border-box;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+  position: relative;
+}
+
+.text-area:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 .text-area:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: var(--input-focus-shadow);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1), inset 0 2px 4px rgba(0, 0, 0, 0.02);
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
 }
 
 .text-area::placeholder {
-  color: var(--color-gray-400);
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* Text Area with Character Count */
+.text-area-wrapper {
+  position: relative;
+  margin-bottom: var(--space-4);
+}
+
+.text-area-wrapper .text-area {
+  padding-bottom: 40px;
+}
+
+.text-area-wrapper::after {
+  content: attr(data-count);
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+  font-size: 12px;
+  color: #94a3b8;
+  font-family: var(--font-sans);
+  pointer-events: none;
+  background: linear-gradient(145deg, #f8fafc, #f1f5f9);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Enhanced Text Area Label */
+.form-group label,
+label[for="text-input"] {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #374151;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+}
+
+.form-group label i,
+label[for="text-input"] i {
+  color: var(--color-primary);
+  margin-right: 6px;
+}
+
+/* Enhanced Result Box */
+.result-box {
+  width: 100%;
+  min-height: 120px;
+  padding: 20px 24px;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  line-height: 1.7;
+  color: #1f2937;
+  background: linear-gradient(145deg, #f0fdf4, #ecfdf5);
+  border: 2px solid #bbf7d0;
+  border-radius: 14px;
+  resize: vertical;
+  transition: var(--transition-smooth);
+  box-sizing: border-box;
+  box-shadow: inset 0 2px 4px rgba(16, 185, 129, 0.05);
+}
+
+.result-box:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+}
+
+/* Enhanced Result Area */
+.result-area {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 24px;
+  margin-top: var(--space-4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.result-area h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #059669;
+}
+
+.result-area h3 i {
+  color: #10b981;
+}
+
+/* Enhanced Checkbox Labels */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  background: linear-gradient(145deg, #ffffff, #fafbfc);
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 10px;
+}
+
+.checkbox-label:hover {
+  border-color: var(--color-primary);
+  background: linear-gradient(145deg, #eff6ff, #dbeafe);
+  transform: translateX(4px);
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+/* Enhanced Clean Options */
+.clean-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .clean-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Tool-specific Adjustments */
@@ -1288,4 +1431,95 @@ select:focus {
   form .tool-actions {
     margin-top: 12px !important;
   }
+}
+
+@media (prefers-color-scheme: dark) {
+    .pdf-panel,
+    .tool-interface,
+    .tool-header,
+    .input-area,
+    .output-area,
+    .options-panel,
+    .sidebar-section,
+    .results-display,
+    .results-content,
+    .preview-area,
+    .faq-section,
+    .stat-card,
+    .case-option,
+    .password-box,
+    .text-area,
+    .result-box,
+    .result-area,
+    .checkbox-label {
+        background: var(--color-surface);
+        border-color: var(--color-border);
+        color: var(--color-text);
+    }
+    
+    .pdf-panel {
+        background: linear-gradient(145deg, var(--color-surface), var(--color-surface));
+        border-color: var(--color-border);
+    }
+    
+    .panel-title,
+    .tool-header h2,
+    .stat-value {
+        color: var(--color-text);
+    }
+    
+    .result-item {
+        background: var(--color-surface);
+        border-color: var(--color-border);
+    }
+    
+    .result-preview {
+        background: var(--color-surface);
+    }
+    
+    .upload-area {
+        background: var(--color-surface);
+        border-color: var(--color-border);
+    }
+    
+    .stat-item {
+        background: var(--color-surface);
+        border-color: var(--color-border);
+    }
+
+    .text-area {
+        background: var(--color-surface);
+        border-color: var(--color-border);
+        color: var(--color-text);
+    }
+
+    .text-area:hover {
+        border-color: var(--color-primary);
+    }
+
+    .text-area:focus {
+        background: var(--color-surface);
+    }
+
+    .result-box {
+        background: var(--color-surface);
+        border-color: var(--color-border);
+        color: var(--color-text);
+    }
+
+    .result-area {
+        background: var(--color-surface);
+        border-color: var(--color-border);
+    }
+
+    .checkbox-label {
+        background: var(--color-surface);
+        border-color: var(--color-border);
+        color: var(--color-text);
+    }
+
+    .checkbox-label:hover {
+        background: var(--color-surface);
+        border-color: var(--color-primary);
+    }
 }

@@ -92,10 +92,33 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function copyResult() {
         const text = resultText.textContent;
-        navigator.clipboard.writeText(text).then(() => {
+        try {
+            navigator.clipboard.writeText(text).then(() => {
+                copyBtn.textContent = 'Copied!';
+                setTimeout(() => copyBtn.textContent = 'Copy Result', 2000);
+            }).catch(() => {
+                fallbackCopy(text);
+            });
+        } catch (e) {
+            fallbackCopy(text);
+        }
+    }
+
+    function fallbackCopy(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy');
             copyBtn.textContent = 'Copied!';
-            setTimeout(() => copyBtn.textContent = 'Copy Result', 2000);
-        });
+        } catch (e) {
+            copyBtn.textContent = 'Failed';
+        }
+        document.body.removeChild(textarea);
+        setTimeout(() => copyBtn.textContent = 'Copy Result', 2000);
     }
     
     function resetTool() {

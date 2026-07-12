@@ -1,17 +1,16 @@
 // Service Worker for Background Removal Tool
 // Enables offline functionality and caches critical resources
 
-const CACHE_VERSION = 'gotoolly-v3';
-const RUNTIME_CACHE = 'gotoolly-runtime-v3';
-const ASSETS_CACHE = 'gotoolly-assets-v3';
-const MODEL_CACHE = 'gotoolly-models-v3';
+const CACHE_VERSION = 'gotoolly-v5';
+const RUNTIME_CACHE = 'gotoolly-runtime-v5';
+const ASSETS_CACHE = 'gotoolly-assets-v5';
+const MODEL_CACHE = 'gotoolly-models-v5';
 
 // Files to cache on install
 const CRITICAL_ASSETS = [
     '/',
     '/index.html',
-    '/tools/Background%20Removal.html',
-+    '/tools/image-compressor.html',
+    '/tools/image-compressor.html',
     '/assets/css/styles.min.css',
     'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap',
     // legacy files (kept for backward-compatibility)
@@ -20,7 +19,7 @@ const CRITICAL_ASSETS = [
     '/assets/css/components.css',
     '/assets/css/tools.css',
     '/assets/js/main.js',
-+    '/assets/js/tools/image-compressor.js',
+    '/assets/js/tools/image-compressor.js',
     '/assets/images/logo.png'
 ];
 
@@ -44,7 +43,7 @@ self.addEventListener('install', (event) => {
                 const cache = await caches.open(ASSETS_CACHE);
                 await cache.addAll(CRITICAL_ASSETS.filter(asset => {
                     // Only cache resources that exist
-                    return asset !== '/tools/Background%20Removal.html'; // May not exist yet
+                    return true;
                 }));
                 
                 console.log('[ServiceWorker] Critical assets cached');
@@ -69,8 +68,8 @@ self.addEventListener('activate', (event) => {
             // Delete old cache versions
             await Promise.all(
                 cacheNames
-                    .filter(name => name.startsWith('bg-removal-') && 
-                                    name !== ASSETS_CACHE && 
+                    .filter(name => (name.startsWith('bg-removal-') || name.startsWith('gotoolly-')) &&
+                                    name !== ASSETS_CACHE &&
                                     name !== MODEL_CACHE &&
                                     name !== RUNTIME_CACHE)
                     .map(name => {

@@ -49,8 +49,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         let password = '';
+        const randomValues = new Uint32Array(length);
+        crypto.getRandomValues(randomValues);
         for (let i = 0; i < length; i++) {
-            password += characters.charAt(Math.floor(Math.random() * characters.length));
+            password += characters.charAt(randomValues[i] % characters.length);
         }
         
         passwordText.textContent = password;

@@ -21,6 +21,18 @@ class RateLimiter {
         // Register a new request
         validRequests.push(now);
         this.requests.set(identifier, validRequests);
+
+        // Evict entries whose window has fully expired to prevent unbounded growth
+        const windowMs = this.timeWindow;
+        for (const [key, timestamps] of this.requests) {
+            const filtered = timestamps.filter(t => now - t < windowMs);
+            if (filtered.length === 0) {
+                this.requests.delete(key);
+            } else {
+                this.requests.set(key, filtered);
+            }
+        }
+
         return true;
     }
 
