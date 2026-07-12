@@ -93,47 +93,31 @@ async function submitContactForm(event) {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
+    // Build mailto URL with pre-filled fields
+    const subject = encodeURIComponent(data.messageType ? `[${data.messageType}] ${data.subject_line || ''}` : (data.subject_line || 'Contact from GoToolly'));
+    const body = encodeURIComponent(
+        `Name: ${data.name}\nEmail: ${data.email}\nMessage Type: ${data.messageType || 'N/A'}\nTopic: ${data.topic || 'N/A'}\n\nMessage:\n${data.message}`
+    );
+    const mailtoUrl = `mailto:support@gotoolly.com?subject=${subject}&body=${body}`;
+
     try {
-        const resp = await fetch('/api/contact', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        });
-
-        const result = await resp.json().catch(() => ({}));
-
-        if (resp.ok) {
-            form.reset();
-            if (statusEl) {
-                statusEl.textContent = "Thank you! Your message was sent. We'll respond within 1-3 business days.";
-                statusEl.style.color = 'var(--color-success)';
-            } else {
-                alert('✅ Message sent successfully! We will reply as soon as possible.');
-            }
-        } else {
-            const errMsg = result.error || result.message || `Server responded with status ${resp.status}`;
-            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-                statusEl.innerHTML = `<strong>Error:</strong> ${String(errMsg)} <br><small>Check /api/health and server logs.</small>`;
-            } else {
-                statusEl.textContent = 'An error occurred while sending your message. Please try again later.';
-            }
-            statusEl.style.color = 'var(--color-danger)';
-            console.error('Contact API error:', resp.status, result);
+        window.location.href = mailtoUrl;
+        form.reset();
+        if (statusEl) {
+            statusEl.innerHTML = "Your email client is opening with the message pre-filled. Please click <strong>Send</strong> in your email app to complete. If it didn't open, <a href='" + mailtoUrl + "' style='color:inherit;text-decoration:underline;'>click here</a>.";
+            statusEl.style.color = 'var(--color-success)';
         }
     } catch (err) {
-        console.error('Network/CORS error while sending contact form:', err);
+        console.error('Could not open email client:', err);
         if (statusEl) {
-            statusEl.innerHTML = 'Network error — could not reach the contact API. Make sure the API server is running on the same origin.';
+            statusEl.innerHTML = 'Could not open your email client. Please send an email manually to <a href="mailto:support@gotoolly.com" style="color:inherit;text-decoration:underline;">support@gotoolly.com</a>.';
             statusEl.style.color = 'var(--color-danger)';
-        } else {
-            alert('❌ Network error — could not reach the contact API.');
         }
     } finally {
         if (submitBtn) {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
         }
-        // Log remaining quota for debugging
         console.log('Remaining messages:', rateLimiter.getRemainingRequests(clientId));
     }
 }
