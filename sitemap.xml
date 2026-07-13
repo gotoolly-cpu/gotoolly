@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gotoolly.com/</loc>
@@ -7,13 +7,13 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/tools</loc>
+    <loc>https://gotoolly.com/tools/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/guides</loc>
+    <loc>https://gotoolly.com/guides/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -415,33 +415,34 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/about</loc>
+    <loc>https://gotoolly.com/about/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/contact</loc>
+    <loc>https://gotoolly.com/contact/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/legal/disclaimer</loc>
+    <loc>https://gotoolly.com/legal/disclaimer/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/legal/privacy-policy</loc>
+    <loc>https://gotoolly.com/legal/privacy-policy/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/legal/terms-of-service</loc>
+    <loc>https://gotoolly.com/legal/terms-of-service/</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 </urlset>
+

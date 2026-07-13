@@ -13,4 +13,3 @@ Sitemap: https://gotoolly.com/sitemap.xml
 
 # Disallow for technical files
 Disallow: /assets/js/analytics/
-Disallow: /_redirects

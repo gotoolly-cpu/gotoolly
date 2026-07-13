@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Online Tools | PDF, Image, Text & SEO Utilities 2026 | GoToolly</title>
-    <meta name="description" content="Free browser-based tools for PDF editing, image optimization, text processing & SEO. Compress, merge, convert files privately in your browser—no uploads, no sign-up required.">
+    <title>Free Online PDF, Image & Text Tools | GoToolly</title>
+    <meta name="description" content="Free browser-based tools for PDF, images, text & SEO. Compress, merge, convert files privately - no uploads, no sign-up.">
     <meta name="keywords" content="free online tools, PDF compressor, image optimizer, word counter, SEO tools, QR code generator, password generator, text cleaner, privacy-focused tools, browser tools">
     <meta name="author" content="GoToolly">
     
@@ -42,76 +42,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
 
-    <!-- Critical + site CSS loaded synchronously to prevent CLS -->
-    <link rel="stylesheet" href="assets/css/styles.min.css">
-    <link rel="stylesheet" href="assets/css/home.min.css">
-    
+    <!-- Critical CSS inline (above-the-fold) -->
     <style>
-        /* Critical CSS: prevent CLS by defining base layout inline */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        :root {
-            --color-primary: #2563eb;
-            --color-secondary: #10b981;
-            --color-text: #111827;
-            --color-text-light: #6b7280;
-            --color-background: #ffffff;
-            --color-surface: #f9fafb;
-            --color-border: #e5e7eb;
-            --text-xs: 0.75rem; --text-sm: 0.875rem; --text-base: 1rem;
-            --text-lg: 1.125rem; --text-xl: 1.25rem; --text-2xl: 1.5rem;
-            --text-3xl: 1.875rem; --text-4xl: 2.25rem; --text-5xl: 3rem;
-            --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
-            --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem;
-            --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem;
-            --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
-            --container-xl: 80rem;
-            --radius-md: 0.5rem; --radius-lg: 0.75rem; --radius-xl: 1rem;
-            --radius-full: 9999px;
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
-            --weight-medium: 500; --weight-semibold: 600; --weight-bold: 700;
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-        body {
-            font-family: var(--font-sans);
-            font-size: var(--text-base);
-            line-height: 1.6;
-            color: var(--color-text);
-            background-color: var(--color-background);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        img, svg { display: block; max-width: 100%; }
-        @font-face {
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400 800;
-            font-display: optional;
-            src: local('Inter');
-        }
-        /* Accessibility (critical above-fold) */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--color-primary);
-            color: white;
-            padding: 8px 16px;
-            z-index: 100;
-            transition: top 0.3s;
-        }
-        .skip-link:focus { top: 0; }
-        .sr-only {
-            position: absolute;
-            width: 1px; height: 1px;
-            padding: 0; margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        :root{--color-primary:#2563eb;--color-primary-dark:#1d4ed8;--color-secondary:#10b981;--color-text:#111827;--color-text-light:#6b7280;--color-background:#fff;--color-surface:#f9fafb;--color-border:#e5e7eb;--font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--text-sm:.875rem;--text-base:1rem;--text-lg:1.125rem;--text-4xl:2.25rem;--space-2:.5rem;--space-4:1rem;--space-6:1.5rem;--space-8:2rem;--space-16:4rem;--space-20:5rem;--radius-xl:.75rem;--radius-full:9999px;--weight-bold:700;--container-xl:80rem}
+        html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+        body{font-family:var(--font-sans);font-size:var(--text-base);line-height:1.6;color:var(--color-text);background-color:var(--color-background);-webkit-font-smoothing:antialiased}
+        img,svg{display:block;max-width:100%}
+        @font-face{font-family:'Inter';font-style:normal;font-weight:400 800;font-display:optional;src:local('Inter')}
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s}
+        .skip-link:focus{top:0}
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+        .container{width:100%;max-width:var(--container-xl);margin:0 auto;padding:0 var(--space-4)}
+        .site-header{background-color:var(--color-background);border-bottom:1px solid var(--color-border);position:sticky;top:0;z-index:50}
+        .header-content{display:flex;align-items:center;justify-content:space-between;height:4rem;padding:var(--space-2) 0}
+        .logo{display:flex;align-items:center;gap:var(--space-2);text-decoration:none;color:var(--color-text);font-weight:var(--weight-bold);font-size:1.25rem}
+        .logo-svg{width:2rem;height:2rem}
+        .main-nav{display:none;gap:var(--space-6)}
+        @media(min-width:768px){.main-nav{display:flex}}
+        .nav-link{color:var(--color-text-light);text-decoration:none;padding:var(--space-2) 0;font-weight:500;transition:color .15s}
+        .nav-link:hover,.nav-link.active{color:var(--color-primary)}
+        .mobile-menu-button{display:flex;background:none;border:none;font-size:1.5rem;cursor:pointer;padding:var(--space-2);color:var(--color-text)}
+        @media(min-width:768px){.mobile-menu-button{display:none}}
+        .mobile-menu{display:none;border-top:1px solid var(--color-border);background:var(--color-background)}
+        .mobile-menu.active{display:block}
+        .mobile-nav{display:flex;flex-direction:column;padding:var(--space-4)}
+        .hero-section{background:linear-gradient(135deg,#1e3a5f 0,#2563eb 50%,#7c3aed 100%);color:#fff;padding:var(--space-16) var(--space-6);border-radius:var(--radius-xl);text-align:center;margin-bottom:var(--space-12);min-height:380px;display:flex;flex-direction:column;justify-content:center;contain:layout style}
+        @media(min-width:768px){.hero-section{min-height:460px;padding:var(--space-20) var(--space-8)}}
+        .hero-title{font-size:var(--text-4xl);font-weight:var(--weight-bold);margin-bottom:var(--space-4);line-height:1.15;position:relative}
+        @media(min-width:768px){.hero-title{font-size:3rem}}
+        .hero-subtitle{font-size:var(--text-lg);color:rgba(255,255,255,.9);max-width:42rem;margin:0 auto var(--space-8);line-height:1.7;position:relative}
+        .hero-trust{list-style:none;display:flex;justify-content:center;gap:var(--space-6);flex-wrap:wrap;margin:0 0 var(--space-8);padding:0;position:relative}
+        .hero-trust li{display:flex;align-items:center;gap:var(--space-2);background:rgba(255,255,255,.12);padding:var(--space-2) var(--space-4);border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:500}
+        .hero-actions{display:flex;justify-content:center;gap:var(--space-4);flex-wrap:wrap}
+        .btn{display:inline-flex;align-items:center;justify-content:center;padding:var(--space-3) var(--space-6);border-radius:var(--radius-full);font-weight:600;text-decoration:none;transition:all .2s;cursor:pointer;border:none;font-size:var(--text-base)}
+        .btn-primary{background:var(--color-primary);color:#fff}.btn-primary:hover{background:var(--color-primary-dark);transform:translateY(-1px)}
+        .btn-secondary{background:rgba(255,255,255,.2);color:#fff;border:1px solid rgba(255,255,255,.3)}.btn-secondary:hover{background:rgba(255,255,255,.3)}
+        .btn-lg{padding:var(--space-4) var(--space-8);font-size:var(--text-lg)}
+        .site-footer{background:#1f2937;color:#d1d5db;padding:var(--space-16) 0 var(--space-8)}
+        .footer-grid{display:grid;grid-template-columns:1fr;gap:var(--space-8);margin-bottom:var(--space-8)}
+        @media(min-width:768px){.footer-grid{grid-template-columns:repeat(4,1fr)}}
+        .footer-section h3{color:#fff;font-size:var(--text-base);margin-bottom:var(--space-4)}
+        .footer-links{list-style:none;padding:0;margin:0}
+        .footer-links li{margin-bottom:var(--space-2)}
+        .footer-links a{color:#9ca3af;text-decoration:none;font-size:var(--text-sm)}.footer-links a:hover{color:#fff}
+        .footer-bottom{border-top:1px solid #374151;padding-top:var(--space-6);display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4)}
+        .copyright{font-size:var(--text-sm);color:#9ca3af}
+        .legal-links{display:flex;gap:var(--space-4)}
+        .legal-links a{color:#9ca3af;text-decoration:none;font-size:var(--text-sm)}.legal-links a:hover{color:#fff}
     </style>
+
+    <!-- Async CSS: loaded non-render-blocking, styles apply when parsed -->
+    <link rel="stylesheet" href="assets/css/home-combined.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="assets/css/home-combined.min.css"></noscript>
 
     <!-- JSON-LD for SEO -->
     <script type="application/ld+json">
@@ -176,8 +159,8 @@
                 </a>
                 <nav class="main-nav">
                     <a href="/" class="nav-link active">Home</a>
-                    <a href="/tools/index.html" class="nav-link">Tools</a>
-                    <a href="/guides/index.html" class="nav-link">Guides</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
                     <a href="/about" class="nav-link">About</a>
                     <a href="/contact" class="nav-link">Contact</a>
                 </nav>
@@ -189,8 +172,8 @@
             <div id="mobile-menu" class="mobile-menu" role="menu" aria-label="Main navigation" aria-hidden="true">
                 <nav class="mobile-nav">
                     <a href="/" class="nav-link active">Home</a>
-                    <a href="/tools/index.html" class="nav-link">Tools</a>
-                    <a href="/guides/index.html" class="nav-link">Guides</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
                     <a href="/about" class="nav-link">About</a>
                     <a href="/contact" class="nav-link">Contact</a>
                 </nav>
@@ -214,8 +197,8 @@
                     <li><strong>No tracking</strong> — by design</li>
                 </ul>
                 <div class="hero-actions">
-                    <a href="/tools/index.html" class="btn btn-primary btn-lg">Use tools without uploading files</a>
-                    <a href="/guides/index.html" class="btn btn-secondary btn-lg">How it works</a>
+                    <a href="/tools" class="btn btn-primary btn-lg">Use tools without uploading files</a>
+                    <a href="/guides" class="btn btn-secondary btn-lg">How it works</a>
                 </div>
             </div>
         </section>
@@ -324,7 +307,7 @@
                     <h3 class="tool-title">Image Compressor</h3>
                     <p>Compress JPEG, PNG, and WebP images locally — no upload required.</p>
                     <div style="margin-top: var(--space-4);">
-                        <a href="/tools/image-compressor.html" class="btn btn-primary btn-sm">Use Tool →</a>
+                        <a href="/tools/image-compressor" class="btn btn-primary btn-sm">Use Tool →</a>
                     </div>
                 </div>
                 
@@ -333,7 +316,7 @@
                     <h3 class="tool-title">PDF Compressor</h3>
                     <p>Compress PDF files in your browser — best for text-based PDFs.</p>
                     <div style="margin-top: var(--space-4);">
-                        <a href="/tools/pdf-compressor.html" class="btn btn-primary btn-sm">Use Tool →</a>
+                        <a href="/tools/pdf-compressor" class="btn btn-primary btn-sm">Use Tool →</a>
                     </div>
                 </div>
                 
@@ -342,13 +325,13 @@
                     <h3 class="tool-title">Word Counter</h3>
                     <p>Instant word, character, and reading-time counts — no files shared.</p>
                     <div style="margin-top: var(--space-4);">
-                        <a href="/tools/word-counter.html" class="btn btn-primary btn-sm">Use Tool →</a>
+                        <a href="/tools/word-counter" class="btn btn-primary btn-sm">Use Tool →</a>
                     </div>
                 </div>
             </div>
             
             <div style="text-align: center; margin-top: var(--space-8);">
-                <a href="/tools/index.html" class="btn btn-outline btn-lg">Browse all 30+ tools →</a>
+                <a href="/tools" class="btn btn-outline btn-lg">Browse all 30+ tools →</a>
             </div>
         </section>
 
@@ -365,10 +348,10 @@
                     <h3 class="category-title">📸 Image Tools</h3>
                     <p style="color: #1e40af; font-size: var(--text-sm);">Compress, resize, and convert images locally without uploading.</p>
                     <ul class="category-list">
-                        <li><a href="/tools/image-compressor.html">Image Compressor</a></li>
-                        <li><a href="/tools/image-editor.html">Image Converter</a></li>
-                        <li><a href="/tools/favicon-generator.html">Favicon Generator</a></li>
-                        <li><a href="/tools/image-editor.html">Image Resizer</a></li>
+                        <li><a href="/tools/image-compressor">Image Compressor</a></li>
+                        <li><a href="/tools/image-editor">Image Converter</a></li>
+                        <li><a href="/tools/favicon-generator">Favicon Generator</a></li>
+                        <li><a href="/tools/image-editor">Image Resizer</a></li>
                     </ul>
                 </div>
                 
@@ -376,10 +359,10 @@
                     <h3 class="category-title">📄 PDF Tools</h3>
                     <p style="color: #9f1239; font-size: var(--text-sm);">Compress, merge, split, and extract text from PDFs.</p>
                     <ul class="category-list">
-                        <li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li>
-                        <li><a href="/tools/pdf-merger.html">PDF Merger</a></li>
-                        <li><a href="/tools/pdf-splitter-rotator.html">PDF Splitter & Rotator</a></li>
-                        <li><a href="/tools/pdf-to-text.html">PDF to Text</a></li>
+                        <li><a href="/tools/pdf-compressor">PDF Compressor</a></li>
+                        <li><a href="/tools/pdf-merger">PDF Merger</a></li>
+                        <li><a href="/tools/pdf-splitter-rotator">PDF Splitter & Rotator</a></li>
+                        <li><a href="/tools/pdf-to-text">PDF to Text</a></li>
                     </ul>
                 </div>
                 
@@ -387,10 +370,10 @@
                     <h3 class="category-title">📝 Text Tools</h3>
                     <p style="color: #065f46; font-size: var(--text-sm);">Count words, clean text, change case, and more.</p>
                     <ul class="category-list">
-                        <li><a href="/tools/word-counter.html">Word Counter</a></li>
-                        <li><a href="/tools/case-converter.html">Case Converter</a></li>
-                        <li><a href="/tools/text-cleaner.html">Text Cleaner</a></li>
-                        <li><a href="/tools/keyword-generator.html">Keyword Generator</a></li>
+                        <li><a href="/tools/word-counter">Word Counter</a></li>
+                        <li><a href="/tools/case-converter">Case Converter</a></li>
+                        <li><a href="/tools/text-cleaner">Text Cleaner</a></li>
+                        <li><a href="/tools/keyword-generator">Keyword Generator</a></li>
                     </ul>
                 </div>
 
@@ -398,10 +381,10 @@
                     <h3 class="category-title">🛠️ Generators</h3>
                     <p style="color: #5b21b6; font-size: var(--text-sm);">Create QR codes, passwords, and placeholder content.</p>
                     <ul class="category-list">
-                        <li><a href="/tools/password-generator.html">Password Generator</a></li>
-                        <li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li>
-                        <li><a href="/tools/url-slug-generator.html">URL Slug Generator</a></li>
-                        <li><a href="/tools/lorem-ipsum-generator.html">Lorem Ipsum Generator</a></li>
+                        <li><a href="/tools/password-generator">Password Generator</a></li>
+                        <li><a href="/tools/qr-code-generator">QR Code Generator</a></li>
+                        <li><a href="/tools/url-slug-generator">URL Slug Generator</a></li>
+                        <li><a href="/tools/lorem-ipsum-generator">Lorem Ipsum Generator</a></li>
                     </ul>
                 </div>
             </div>
@@ -506,8 +489,8 @@
                 <h2 class="cta-title">Use privacy-first tools that keep files on your device</h2>
                 <p class="cta-description">Most tools are free to use. If a task needs server processing, we will tell you and recommend alternatives — no surprises.</p>
                 <div class="cta-actions">
-                    <a href="/tools/index.html" class="btn btn-primary btn-lg">Browse All Tools</a>
-                    <a href="/guides/index.html" class="btn btn-secondary btn-lg">Read the Guides</a>
+                    <a href="/tools" class="btn btn-primary btn-lg">Browse All Tools</a>
+                    <a href="/guides" class="btn btn-secondary btn-lg">Read the Guides</a>
                 </div>
             </div>
         </section>
@@ -527,20 +510,20 @@
                 <div class="footer-section">
                     <h3>Popular Tools</h3>
                     <ul class="footer-links">
-                        <li><a href="/tools/image-compressor.html">Image Compressor</a></li>
-                        <li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li>
-                        <li><a href="/tools/word-counter.html">Word Counter</a></li>
-                        <li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li>
-                        <li><a href="/tools/password-generator.html">Password Generator</a></li>
-                        <li><a href="/tools/index.html">View All Tools</a></li>
+                        <li><a href="/tools/image-compressor">Image Compressor</a></li>
+                        <li><a href="/tools/pdf-compressor">PDF Compressor</a></li>
+                        <li><a href="/tools/word-counter">Word Counter</a></li>
+                        <li><a href="/tools/qr-code-generator">QR Code Generator</a></li>
+                        <li><a href="/tools/password-generator">Password Generator</a></li>
+                        <li><a href="/tools">View All Tools</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h3>Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="/guides/index.html">Guides</a></li>
-                        <li><a href="/tools/index.html">All Tools</a></li>
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
                         <li><a href="/about">About Us</a></li>
                         <li><a href="/contact">Contact</a></li>
                     </ul>
@@ -572,43 +555,8 @@
 
     <!-- JavaScript -->
     <script defer src="/assets/js/main.min.js"></script>
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({ top: targetElement.offsetTop - 100, behavior: 'smooth' });
-                }
-            });
-        });
-
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const answer = this.nextElementSibling;
-                const isActive = this.classList.contains('active');
-                
-                // Close all others
-                document.querySelectorAll('.faq-question').forEach(q => {
-                    q.classList.remove('active');
-                    q.setAttribute('aria-expanded', 'false');
-                    q.nextElementSibling.classList.remove('active');
-                });
-                
-                // Toggle clicked
-                if (!isActive) {
-                    this.classList.add('active');
-                    this.setAttribute('aria-expanded', 'true');
-                    answer.classList.add('active');
-                }
-            });
-        });
-    </script>
+    <script defer src="/assets/js/home.min.js"></script>
 </body>
 </html>
+
+

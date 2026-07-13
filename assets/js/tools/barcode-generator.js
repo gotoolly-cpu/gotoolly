@@ -167,6 +167,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function generateBarcode() {
         const data = collectFormData();
         
+        if (!currentBarcodeType) {
+            alert('Please select a barcode type first.');
+            return;
+        }
+        
         if (!validateData(data)) {
             return;
         }
@@ -365,6 +370,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function generateLinearBarcode(data) {
+        // Guard: if somehow called with a 2D type, redirect to generate2DBarcode
+        if (is2DBarcode(currentBarcodeType)) {
+            generate2DBarcode(data);
+            return;
+        }
+        
         // Use JsBarcode library for proper barcode generation
         if (typeof JsBarcode === 'undefined') {
             console.error('JsBarcode library not loaded');
