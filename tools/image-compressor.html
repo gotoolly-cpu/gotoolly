@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,6 +16,9 @@
     <meta property="og:title" content="Image Compressor - Reduce Image File Size Online | GoToolly">
     <meta property="og:description" content="Free online image compressor. Reduce JPG, PNG, and WebP file sizes without noticeable quality loss. Works entirely in your browser - no uploads.">
     <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
     <meta property="og:site_name" content="GoToolly">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -23,6 +26,8 @@
     <meta name="twitter:title" content="Image Compressor - Reduce Image File Size Online | GoToolly">
     <meta name="twitter:description" content="Free online image compressor. Reduce JPG, PNG, and WebP file sizes without noticeable quality loss. Works entirely in your browser - no uploads.">
     <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
     
     <!-- Favicon & Manifest -->
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
@@ -146,10 +151,60 @@
 
             .comparison-container { display: block; }
         }
+            .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-primary);
+            color: white;
+            padding: 8px 16px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
     </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Image Compressor",
+        "url": "https://gotoolly.com/tools/image-compressor",
+        "description": "Free online image compressor. Reduce JPG, PNG, and WebP file sizes without noticeable quality loss. Works entirely in your browser - no uploads.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Free to use",
+            "No account required",
+            "Client-side processing",
+            "Privacy-focused"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gotoolly.com/tools"},
+            {"@type": "ListItem", "position": 3, "name": "Image Compressor"}
+        ]
+    }
+    </script>
+
 </head>
 <body>
-    <!-- Header -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+<!-- Header -->
     <header class="site-header">
         <div class="container">
             <div class="header-content">
@@ -169,7 +224,7 @@
                 </nav>
                 
                 <!-- Mobile Menu Button -->
-                <button class="mobile-menu-button" aria-label="Toggle menu">
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
@@ -190,7 +245,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="main-content">
+    <main id="main-content" class="main-content">
         <div class="container">
             <!-- Page Header / Hero -->
             <div class="hero-section">
@@ -199,7 +254,7 @@
                         <h1>Image Compressor</h1>
                         <p>
                             Reduce image file sizes without quality loss. Perfect for web optimization, social media, and faster loading times.
-                            Your images are processed locally—nothing is uploaded or stored on our servers.
+                            Your images are processed locally�nothing is uploaded or stored on our servers.
                         </p>
                     </div>
                     <div class="hero-stats">
@@ -236,7 +291,7 @@
                                 <line x1="12" y1="3" x2="12" y2="15"></line>
                             </svg>
                             <p style="margin: 0; font-weight: 600;">Drag images here or <span id="browse-link" role="button" tabindex="0" aria-label="Open file browser" style="color: var(--color-primary); text-decoration: underline; cursor: pointer;">click to browse</span></p>
-                            <p style="margin: var(--space-2) 0 0; font-size: var(--text-sm); color: var(--color-text-light);">JPG, PNG, WebP, GIF • Up to 10 MB each</p>
+                            <p style="margin: var(--space-2) 0 0; font-size: var(--text-sm); color: var(--color-text-light);">JPG, PNG, WebP, GIF � Up to 10 MB each</p>
                         </label>
 
                         <div id="file-list" style="margin-top: var(--space-4); display: none;">
@@ -372,11 +427,44 @@
                     </ul>
                 </div>
             </div>
+
+            <!-- Related Tools -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Related Tools</h2>
+                </div>
+                <div class="tools-grid">
+                    <div class="card tool-card">
+                        <h3>Image Editor</h3>
+                        <p>Crop, resize, rotate, and flip your images with ease.</p>
+                        <div class="card-footer">
+                            <a href="./image-editor.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>Background Removal</h3>
+                        <p>Remove backgrounds from images automatically using AI.</p>
+                        <div class="card-footer">
+                            <a href="./background-removal.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>EXIF Remover</h3>
+                        <p>Strip metadata and EXIF data from your images for privacy.</p>
+                        <div class="card-footer">
+                            <a href="./image-metadata-remover.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+                <p style="margin-top: var(--space-4); text-align: center;">
+                    <a href="../guides/compress-images-for-web.html" style="color: var(--color-primary);">Read Guide: Compress Images for Web ?</a>
+                </p>
+            </section>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
@@ -420,7 +508,7 @@
             
             <div class="footer-bottom">
                 <div class="copyright">
-                    © <span id="current-year">2026</span> GoToolly. All rights reserved.
+                    � <span id="current-year">2026</span> GoToolly. All rights reserved.
                 </div>
                 <div class="legal-links">
                     <a href="/legal/privacy-policy">Privacy</a>

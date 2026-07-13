@@ -91,16 +91,17 @@
             src: local('Inter');
         }
         /* Accessibility (critical above-fold) */
-        .skip-to-content {
+        .skip-link {
             position: absolute;
-            top: -40px; left: 0;
-            background: #2563eb;
+            top: -40px;
+            left: 0;
+            background: var(--color-primary);
             color: white;
             padding: 8px 16px;
-            text-decoration: none;
-            z-index: 9999;
+            z-index: 100;
+            transition: top 0.3s;
         }
-        .skip-to-content:focus { top: 0; }
+        .skip-link:focus { top: 0; }
         .sr-only {
             position: absolute;
             width: 1px; height: 1px;
@@ -163,7 +164,7 @@
     </script>
 </head>
 <body>
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Header -->
     <header class="site-header">
@@ -513,7 +514,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">

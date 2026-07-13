@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,12 +13,17 @@
     <meta property="og:title" content="PDF Compressor - Reduce PDF Size Online | GoToolly">
     <meta property="og:description" content="Compress PDF files online for free. Reduce PDF size while preserving quality. Works entirely in your browser.">
     <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
     <meta property="og:site_name" content="GoToolly">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://gotoolly.com/tools/pdf-compressor">
     <meta name="twitter:title" content="PDF Compressor - Reduce PDF Size Online | GoToolly">
     <meta name="twitter:description" content="Compress PDF files online for free. Reduce PDF size while preserving quality. Works entirely in your browser.">
     <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
     <link rel="manifest" href="../site.webmanifest">
@@ -126,10 +131,60 @@
         .notification.error{background-color:#ef4444}
         @keyframes slideIn{from{transform:translateX(400px);opacity:0}to{transform:translateX(0);opacity:1}}
         @media(max-width:768px){.hero-content{grid-template-columns:1fr;text-align:center}.hero-text h1{font-size:2rem}.workspace-header{flex-direction:column;align-items:flex-start;gap:var(--space-4)}.action-panel{flex-direction:column}.result-stats{grid-template-columns:1fr}.preset-grid{grid-template-columns:repeat(2,1fr)}}
+            .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-primary);
+            color: white;
+            padding: 8px 16px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
     </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "PDF Compressor",
+        "url": "https://gotoolly.com/tools/pdf-compressor",
+        "description": "Compress PDF files online for free. Reduce PDF size while preserving quality. Works entirely in your browser.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Free to use",
+            "No account required",
+            "Client-side processing",
+            "Privacy-focused"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gotoolly.com/tools"},
+            {"@type": "ListItem", "position": 3, "name": "PDF Compressor"}
+        ]
+    }
+    </script>
+
 </head>
 <body>
-    <header class="site-header">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="site-header">
         <div class="container">
             <div class="header-content">
                 <a href="/" class="logo">
@@ -143,7 +198,7 @@
                     <a href="../../about" class="nav-link">About</a>
                     <a href="../../contact" class="nav-link">Contact</a>
                 </nav>
-                <button class="mobile-menu-button" aria-label="Toggle menu">
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
@@ -161,19 +216,19 @@
         </div>
     </header>
 
-    <main class="main-content">
+    <main id="main-content" class="main-content">
         <div class="container">
             <section class="hero-section">
                 <div class="hero-content">
                     <div class="hero-text">
                         <h1>PDF Compressor</h1>
                         <p class="hero-description">
-                            Reduce PDF file size with professional compression options. Remove metadata, delete unwanted pages, and optimize your documents — all in your browser.
+                            Reduce PDF file size with professional compression options. Remove metadata, delete unwanted pages, and optimize your documents � all in your browser.
                         </p>
                         <div class="hero-features">
-                            <div class="feature-badge">🔒 100% Private</div>
-                            <div class="feature-badge">⚡ Fast Compression</div>
-                            <div class="feature-badge">🎛️ Full Control</div>
+                            <div class="feature-badge">?? 100% Private</div>
+                            <div class="feature-badge">? Fast Compression</div>
+                            <div class="feature-badge">??? Full Control</div>
                         </div>
                     </div>
                     <div class="hero-stats">
@@ -238,17 +293,17 @@
                             <label class="setting-label">Compression Preset</label>
                             <div class="preset-grid">
                                 <button type="button" class="preset-btn active" data-preset="balanced">
-                                    <div class="preset-icon">⚖️</div>
+                                    <div class="preset-icon">??</div>
                                     <span class="preset-name">Balanced</span>
                                     <span class="preset-desc">Best balance</span>
                                 </button>
                                 <button type="button" class="preset-btn" data-preset="maximum">
-                                    <div class="preset-icon">📦</div>
+                                    <div class="preset-icon">??</div>
                                     <span class="preset-name">Maximum</span>
                                     <span class="preset-desc">Smallest size</span>
                                 </button>
                                 <button type="button" class="preset-btn" data-preset="custom">
-                                    <div class="preset-icon">🎛️</div>
+                                    <div class="preset-icon">???</div>
                                     <span class="preset-name">Custom</span>
                                     <span class="preset-desc">Full control</span>
                                 </button>
@@ -329,15 +384,15 @@
                     <p class="result-subtitle">Your PDF has been optimized successfully</p>
                     <div class="result-stats">
                         <div class="stat-box">
-                            <div class="stat-val" id="stat-original">—</div>
+                            <div class="stat-val" id="stat-original">�</div>
                             <div class="stat-lbl">Original Size</div>
                         </div>
                         <div class="stat-box">
-                            <div class="stat-val" id="stat-compressed">—</div>
+                            <div class="stat-val" id="stat-compressed">�</div>
                             <div class="stat-lbl">Compressed Size</div>
                         </div>
                         <div class="stat-box reduction">
-                            <div class="stat-val" id="stat-reduction">—</div>
+                            <div class="stat-val" id="stat-reduction">�</div>
                             <div class="stat-lbl">Size Reduction</div>
                         </div>
                     </div>
@@ -351,10 +406,50 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Related Tools -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Related Tools</h2>
+                </div>
+                <div class="tools-grid">
+                    <div class="card tool-card">
+                        <h3>PDF Merger</h3>
+                        <p>Combine multiple PDF files into a single document.</p>
+                        <div class="card-footer">
+                            <a href="./pdf-merger.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>PDF Editor</h3>
+                        <p>Edit PDF files, add watermarks, page numbers, and more.</p>
+                        <div class="card-footer">
+                            <a href="./pdf-editor.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>PDF to Text</h3>
+                        <p>Extract text content from PDF documents instantly.</p>
+                        <div class="card-footer">
+                            <a href="./pdf-to-text.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>PDF to Word</h3>
+                        <p>Convert PDF documents to editable Word files.</p>
+                        <div class="card-footer">
+                            <a href="./pdf-to-word.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+                <p style="margin-top: var(--space-4); text-align: center;">
+                    <a href="../guides/reduce-pdf-size-online.html" style="color: var(--color-primary);">Read Guide: Reduce PDF Size Online ?</a>
+                </p>
+            </section>
         </div>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
@@ -391,7 +486,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="copyright">© <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="copyright">� <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
                 <div class="legal-links">
                     <a href="/legal/privacy-policy">Privacy</a>
                     <a href="/legal/terms-of-service">Terms</a>

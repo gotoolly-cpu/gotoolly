@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Diff - Compare Two Texts Online | GoToolly</title>
+    <meta name="description" content="Compare two texts side by side and highlight differences. Find additions, deletions, and changes instantly. Free, private, browser-based tool.">
+    <meta name="keywords" content="text diff, compare texts, text comparison, diff tool, find differences, compare documents">
+    <link rel="canonical" href="https://gotoolly.com/tools/text-diff">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/text-diff">
+    <meta property="og:title" content="Text Diff - Compare Two Texts Online | GoToolly">
+    <meta property="og:description" content="Compare two texts side by side and highlight differences. Find additions, deletions, and changes instantly.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/text-diff">
+    <meta name="twitter:title" content="Text Diff - Compare Two Texts Online | GoToolly">
+    <meta name="twitter:description" content="Compare two texts side by side and highlight differences. Find additions, deletions, and changes instantly.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Text Diff","url":"https://gotoolly.com/tools/text-diff","description":"Compare two texts side by side and highlight differences. Find additions, deletions, and changes instantly.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Side-by-side view","Line-by-line comparison","Color-coded diff"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Text Diff"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the text diff tool work?","acceptedAnswer":{"@type":"Answer","text":"Paste your original text on the left and the changed text on the right. The tool uses the LCS algorithm to compare lines and highlight additions (green), deletions (red), and unchanged text."}},{"@type":"Question","name":"Can I compare code with this tool?","acceptedAnswer":{"@type":"Answer","text":"Yes. The tool works with any text including code, articles, or documents. It compares line by line and shows exactly what changed."}},{"@type":"Question","name":"Is my text uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens entirely in your browser. Your texts never leave your device."}},{"@type":"Question","name":"What does LCS mean?","acceptedAnswer":{"@type":"Answer","text":"LCS stands for Longest Common Subsequence. It is the standard algorithm used to find the minimum changes between two texts, showing only what was added or removed."}}]}</script>
+    <style>.diff-container{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-bottom:var(--space-4)}.diff-textarea{width:100%;min-height:200px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text)}.diff-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.diff-line{padding:4px 8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);border-bottom:1px solid var(--color-border);white-space:pre-wrap;word-break:break-word}.diff-added{background:rgba(16,185,129,.12);color:#059669}.diff-removed{background:rgba(239,68,68,.12);color:#dc2626;text-decoration:line-through}.diff-unchanged{color:var(--color-text-light)}.diff-prefix{display:inline-block;width:20px;font-weight:600;text-align:center;user-select:none}.diff-result{border:1px solid var(--color-border);border-radius:12px;overflow:hidden;max-height:400px;overflow-y:auto;background:var(--color-surface)}@media(max-width:768px){.diff-container{grid-template-columns:1fr}}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="../index.html" class="nav-link">Home</a>
+                    <a href="index.html" class="nav-link active">Tools</a>
+                    <a href="../guides/index.html" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="index.html" class="nav-link active">Tools</a>
+                <a href="../guides/index.html" class="nav-link">Guides</a>
+                <a href="../about" class="nav-link">About</a>
+                <a href="../contact" class="nav-link">Contact</a>
+            </nav></div>
+        </div>
+    </header>
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Text Diff</h1>
+                <p class="page-description">Compare two texts side by side and instantly see what changed. Additions are highlighted in green, deletions in red. Perfect for comparing documents, code, or any text.</p>
+            </div>
+            <div class="tool-layout">
+                <div class="tool-interface">
+                    <div class="tool-header">
+                        <h2>Compare Two Texts</h2>
+                        <p>Paste your original text and the changed version</p>
+                    </div>
+                    <div class="diff-container">
+                        <div>
+                            <label for="text-a"><i class="fas fa-file-alt" style="color:var(--color-primary);margin-right:6px"></i> Original Text</label>
+                            <textarea id="text-a" class="diff-textarea" placeholder="Paste the original text here..."></textarea>
+                        </div>
+                        <div>
+                            <label for="text-b"><i class="fas fa-file-alt" style="color:#8b5cf6;margin-right:6px"></i> Changed Text</label>
+                            <textarea id="text-b" class="diff-textarea" placeholder="Paste the changed text here..."></textarea>
+                        </div>
+                    </div>
+                    <div class="tool-actions">
+                        <button id="compare-btn" class="btn btn-primary btn-lg"><i class="fas fa-code-compare" aria-hidden="true"></i> Compare</button>
+                        <button id="reset-btn" class="btn btn-secondary"><i class="fas fa-redo" aria-hidden="true"></i> Reset</button>
+                    </div>
+                    <div id="result-area" class="result-area" style="display:none">
+                        <h3><i class="fas fa-check-circle" style="color:#10b981"></i> Differences</h3>
+                        <div class="diff-result" id="result-content"></div>
+                        <div class="tool-actions" style="margin-top:var(--space-3)"><button id="copy-btn" class="btn btn-primary btn-sm">Copy Result</button></div>
+                    </div>
+                    <div id="stats" class="stats-grid" style="display:none">
+                        <div class="stat-box"><div class="stat-value" id="stat-added">0</div><div class="stat-label">Lines Added</div></div>
+                        <div class="stat-box"><div class="stat-value" id="stat-removed">0</div><div class="stat-label">Lines Removed</div></div>
+                        <div class="stat-box"><div class="stat-value" id="stat-unchanged">0</div><div class="stat-label">Lines Unchanged</div></div>
+                    </div>
+                </div>
+                <div class="tool-sidebar">
+                    <div class="card"><h3>How It Works</h3><ol><li>Paste the original text on the left</li><li>Paste the changed text on the right</li><li>Click Compare to see differences</li><li>Green = added, Red = removed</li></ol></div>
+                    <div class="card"><h3>Use Cases</h3><ul><li>Compare document versions</li><li>Review code changes</li><li>Check for plagiarism</li><li>Verify edited text</li></ul></div>
+                </div>
+            </div>
+            <section class="content-section">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>Text Cleaner</h3><p>Remove extra spaces, line breaks, and formatting issues.</p><div class="card-footer"><a href="./text-cleaner.html" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Word Counter</h3><p>Count words, characters, sentences, and paragraphs in your text.</p><div class="card-footer"><a href="./word-counter.html" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Duplicate Line Remover</h3><p>Remove duplicate lines and keep only unique entries.</p><div class="card-footer"><a href="./duplicate-line-remover.html" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+            </section>
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
+                <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-3)">
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">How does the text diff tool work?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Paste your original text on the left and the changed text on the right. The tool uses the LCS algorithm to compare lines and highlight additions (green), deletions (red), and unchanged text.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Can I compare code with this tool?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Yes. The tool works with any text including code, articles, or documents. It compares line by line and shows exactly what changed.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Is my text uploaded to a server?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">No. All processing happens entirely in your browser. Your texts never leave your device.</p></div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor.html">Image Compressor</a></li><li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li><li><a href="/tools/word-counter.html">Word Counter</a></li><li><a href="/tools/index.html">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides/index.html">Guides</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+    <script defer src="../assets/js/main.min.js"></script>
+    <script defer src="../assets/js/tools/text-diff.min.js"></script>
+</body>
+</html>

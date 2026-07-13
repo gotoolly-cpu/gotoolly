@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,6 +14,9 @@
     <meta property="og:title" content="PDF Tools - Split, Extract & Rotate PDF Pages | GoToolly">
     <meta property="og:description" content="Free online PDF splitter, extractor, and rotator. Extract, split, or rotate PDF pages in your browser. No uploads required.">
     <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
     <meta property="og:site_name" content="GoToolly">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -21,6 +24,8 @@
     <meta name="twitter:title" content="PDF Tools - Split, Extract & Rotate PDF Pages | GoToolly">
     <meta name="twitter:description" content="Free online PDF splitter, extractor, and rotator. Extract, split, or rotate PDF pages in your browser. No uploads required.">
     <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
     
     <!-- Favicon & Manifest -->
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
@@ -809,10 +814,60 @@
             margin-bottom: var(--space-3);
             color: var(--color-text);
         }
+            .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-primary);
+            color: white;
+            padding: 8px 16px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
     </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "PDF Tools - Split, Extract & Rotate",
+        "url": "https://gotoolly.com/tools/pdf-splitter-rotator",
+        "description": "Free online PDF splitter, extractor, and rotator. Extract, split, or rotate PDF pages in your browser. No uploads required.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Free to use",
+            "No account required",
+            "Client-side processing",
+            "Privacy-focused"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gotoolly.com/tools"},
+            {"@type": "ListItem", "position": 3, "name": "PDF Splitter & Rotator"}
+        ]
+    }
+    </script>
+
 </head>
 <body>
-    <!-- Header -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+<!-- Header -->
     <header class="site-header">
         <div class="container">
             <div class="header-content">
@@ -829,7 +884,7 @@
                     <a href="../../contact" class="nav-link">Contact</a>
                 </nav>
                 
-                <button class="mobile-menu-button" aria-label="Toggle menu">
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
@@ -849,7 +904,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="main-content">
+    <main id="main-content" class="main-content">
         <div class="container">
             <!-- Page Header -->
             <div class="page-header">
@@ -857,7 +912,7 @@
                 <p class="page-description">
                     Professional PDF tools that work entirely in your browser. Split, extract, or rotate PDF pages with privacy guaranteed. No uploads required.
                 </p>
-                <a href="/guides/split-pdf-files.html" class="btn btn-secondary">📖 View Guide</a>
+                <a href="/guides/split-pdf-files.html" class="btn btn-secondary">?? View Guide</a>
             </div>
 
             <!-- Tool Navigation Tabs -->
@@ -865,11 +920,11 @@
                 <div class="nav-container">
                     <div class="tool-options">
                         <button class="tool-option active" id="tab-split">
-                            <span class="option-icon">✂️</span>
+                            <span class="option-icon">??</span>
                             <span class="option-content"><strong>Split & Extract</strong><br><small>Extract specific pages</small></span>
                         </button>
                         <button class="tool-option" id="tab-rotate">
-                            <span class="option-icon">🔄</span>
+                            <span class="option-icon">??</span>
                             <span class="option-content"><strong>Rotate Pages</strong><br><small>Fix orientation</small></span>
                         </button>
                     </div>
@@ -896,7 +951,7 @@
                                 <line x1="12" y1="3" x2="12" y2="15"/>
                             </svg>
                             <p><strong>Drop your PDF here or click to select</strong></p>
-                            <p class="small">Max file size: 50MB • Works entirely in your browser</p>
+                            <p class="small">Max file size: 50MB � Works entirely in your browser</p>
                             <button id="split-select-pdf" class="btn btn-primary">Select PDF File</button>
                         </div>
                         
@@ -968,7 +1023,7 @@
                                     <line x1="12" y1="3" x2="12" y2="15"/>
                                 </svg>
                                 <p><strong>Drop your PDF here or click to select</strong></p>
-                                <p class="small" style="margin-top: var(--space-2);">Max file size: 50MB • Works entirely in your browser</p>
+                                <p class="small" style="margin-top: var(--space-2);">Max file size: 50MB � Works entirely in your browser</p>
                                 <button id="rotate-select-pdf" class="btn btn-primary" style="margin-top: var(--space-4);">Select PDF File</button>
                             </div>
                             <div id="rotate-tool-interface-left" style="display: none;">
@@ -982,7 +1037,7 @@
                                                 <polyline points="15 7 15 17"/>
                                             </svg>
                                             No Rotation
-                                            <div class="rotation-degree">0°</div>
+                                            <div class="rotation-degree">0�</div>
                                         </div>
                                         <div class="rotation-btn" data-degrees="90" id="rotate-90">
                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -991,7 +1046,7 @@
                                                 <polyline points="15 7 15 17"/>
                                             </svg>
                                             Rotate Right
-                                            <div class="rotation-degree">90° clockwise</div>
+                                            <div class="rotation-degree">90� clockwise</div>
                                         </div>
                                         <div class="rotation-btn" data-degrees="-90" id="rotate-270">
                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1000,7 +1055,7 @@
                                                 <polyline points="15 7 15 17"/>
                                             </svg>
                                             Rotate Left
-                                            <div class="rotation-degree">90° counter-clockwise</div>
+                                            <div class="rotation-degree">90� counter-clockwise</div>
                                         </div>
                                         <div class="rotation-btn" data-degrees="180" id="rotate-180">
                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1009,7 +1064,7 @@
                                                 <polyline points="15 7 15 17"/>
                                             </svg>
                                             Flip Upside Down
-                                            <div class="rotation-degree">180°</div>
+                                            <div class="rotation-degree">180�</div>
                                         </div>
                                         <div class="rotation-btn" id="rotate-custom">
                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1025,7 +1080,7 @@
                                         <div style="display: flex; gap: var(--space-3); align-items: center; margin-top: var(--space-2);">
                                             <input type="range" id="custom-degrees" min="-180" max="180" value="0" step="90" style="flex: 1;">
                                             <input type="number" id="custom-degrees-input" min="-180" max="180" value="0" step="90" style="width: 80px;">
-                                            <span>°</span>
+                                            <span>�</span>
                                         </div>
                                     </div>
                                     <div class="batch-controls">
@@ -1089,22 +1144,22 @@
                 </div>
                 <div class="features-grid">
                     <div class="feature-card">
-                        <div class="feature-icon">🔒</div>
+                        <div class="feature-icon">??</div>
                         <h3>100% Private</h3>
                         <p>All processing happens in your browser. Your files never leave your computer.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
+                        <div class="feature-icon">?</div>
                         <h3>Fast Processing</h3>
                         <p>No uploads or downloads to external servers. Process PDFs instantly.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🛡️</div>
+                        <div class="feature-icon">???</div>
                         <h3>No Limits</h3>
                         <p>No file size restrictions for browser processing. Works with large PDFs.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🎯</div>
+                        <div class="feature-icon">??</div>
                         <h3>Professional Results</h3>
                         <p>Maintains PDF quality and structure while providing accurate results.</p>
                     </div>
@@ -1139,11 +1194,51 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Related Tools -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Related Tools</h2>
+                </div>
+                <div class="tools-grid">
+                    <div class="card tool-card">
+                        <h3>PDF Compressor</h3>
+                        <p>Reduce PDF file size while maintaining quality.</p>
+                        <div class="card-footer">
+                            <a href="./pdf-compressor.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>PDF Merger</h3>
+                        <p>Combine multiple PDF files into a single document.</p>
+                        <div class="card-footer">
+                            <a href="./pdf-merger.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>PDF Editor</h3>
+                        <p>Edit PDF files, add watermarks, page numbers, and more.</p>
+                        <div class="card-footer">
+                            <a href="./pdf-editor.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>PDF to Word</h3>
+                        <p>Convert PDF documents to editable Word files.</p>
+                        <div class="card-footer">
+                            <a href="./pdf-to-word.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+                <p style="margin-top: var(--space-4); text-align: center;">
+                    <a href="../guides/split-pdf-files.html" style="color: var(--color-primary);">Read Guide: Split PDF Files ?</a>
+                </p>
+            </section>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
@@ -1187,7 +1282,7 @@
             
             <div class="footer-bottom">
                 <div class="copyright">
-                    © <span id="current-year">2026</span> GoToolly. All rights reserved.
+                    � <span id="current-year">2026</span> GoToolly. All rights reserved.
                 </div>
                 <div class="legal-links">
                     <a href="/legal/privacy-policy">Privacy</a>

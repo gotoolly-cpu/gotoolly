@@ -7,241 +7,439 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/tools/index.html</loc>
+    <loc>https://gotoolly.com/tools</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/guides/index.html</loc>
+    <loc>https://gotoolly.com/guides</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/tools/background-removal.html</loc>
+    <loc>https://gotoolly.com/tools/background-removal</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/tools/case-converter.html</loc>
+    <loc>https://gotoolly.com/tools/image-metadata-remover</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/tools/image-watermark</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/tools/image-cropper</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/tools/meme-generator</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/tools/case-converter</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/tools/favicon-generator.html</loc>
+    <loc>https://gotoolly.com/tools/favicon-generator</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/tools/image-compressor.html</loc>
+    <loc>https://gotoolly.com/tools/image-compressor</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/tools/image-editor.html</loc>
+    <loc>https://gotoolly.com/tools/image-editor</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/tools/keyword-generator.html</loc>
+    <loc>https://gotoolly.com/tools/keyword-generator</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/tools/lorem-ipsum-generator.html</loc>
+    <loc>https://gotoolly.com/tools/lorem-ipsum-generator</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/tools/password-generator.html</loc>
+    <loc>https://gotoolly.com/tools/password-generator</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/tools/pdf-compressor.html</loc>
+    <loc>https://gotoolly.com/tools/pdf-compressor</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/tools/pdf-editor.html</loc>
+    <loc>https://gotoolly.com/tools/pdf-editor</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/tools/pdf-merger.html</loc>
+    <loc>https://gotoolly.com/tools/pdf-add-text</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/tools/pdf-watermark</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/tools/pdf-page-numbers</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/tools/pdf-merger</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/tools/pdf-splitter-rotator.html</loc>
+    <loc>https://gotoolly.com/tools/pdf-splitter-rotator</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/tools/pdf-to-text.html</loc>
+    <loc>https://gotoolly.com/tools/pdf-to-text</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/tools/qr-code-generator.html</loc>
+    <loc>https://gotoolly.com/tools/pdf-to-word</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/tools/qr-code-generator</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/tools/text-cleaner.html</loc>
+    <loc>https://gotoolly.com/tools/text-cleaner</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/tools/url-slug-generator.html</loc>
+    <loc>https://gotoolly.com/tools/url-slug-generator</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/tools/word-counter.html</loc>
+    <loc>https://gotoolly.com/tools/word-counter</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/guides/compress-images-for-web.html</loc>
+    <loc>https://gotoolly.com/guides/background-removal</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/guides/convert-pdf-to-text.html</loc>
+    <loc>https://gotoolly.com/guides/compress-images-for-web</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/guides/convert-text-case.html</loc>
+    <loc>https://gotoolly.com/guides/convert-pdf-to-text</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/guides/count-words-accurately.html</loc>
+    <loc>https://gotoolly.com/guides/pdf-to-word-converter</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/guides/add-text-to-pdf</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/guides/add-watermark-to-pdf</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/guides/add-page-numbers-to-pdf</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/guides/remove-image-metadata</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/guides/add-watermark-to-image</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/guides/crop-images-online</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/guides/create-memes-online</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/guides/convert-text-case</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/guides/create-qr-code-for-marketing.html</loc>
+    <loc>https://gotoolly.com/guides/count-words-accurately</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/guides/create-strong-passwords.html</loc>
+    <loc>https://gotoolly.com/guides/create-qr-code-for-marketing</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/guides/extract-pages-from-pdf.html</loc>
+    <loc>https://gotoolly.com/guides/create-strong-passwords</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/guides/favicon-generator.html</loc>
+    <loc>https://gotoolly.com/guides/extract-pages-from-pdf</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/guides/keyword-generator.html</loc>
+    <loc>https://gotoolly.com/guides/favicon-generator</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/guides/lorem-ipsum-generator.html</loc>
+    <loc>https://gotoolly.com/guides/keyword-generator</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/guides/merge-pdf-files.html</loc>
+    <loc>https://gotoolly.com/guides/lorem-ipsum-generator</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/guides/reduce-pdf-size-online.html</loc>
+    <loc>https://gotoolly.com/guides/merge-pdf-files</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/guides/resize-images-properly.html</loc>
+    <loc>https://gotoolly.com/guides/reduce-pdf-size-online</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/guides/split-pdf-files.html</loc>
+    <loc>https://gotoolly.com/guides/resize-images-properly</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/guides/text-cleaner.html</loc>
+    <loc>https://gotoolly.com/guides/split-pdf-files</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/guides/url-slug-generator.html</loc>
+    <loc>https://gotoolly.com/guides/text-cleaner</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/about/index.html</loc>
+    <loc>https://gotoolly.com/guides/url-slug-generator</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/tools/text-diff</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/tools/readability-checker</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/tools/duplicate-line-remover</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/tools/text-summarizer</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/guides/compare-texts-with-diff</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/guides/check-readability-score</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/guides/remove-duplicate-lines</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/guides/summarize-text-online</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/tools/json-formatter</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/tools/color-picker</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/tools/age-calculator</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/tools/uuid-generator</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/guides/format-json-data</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/guides/pick-and-convert-colors</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/guides/calculate-exact-age</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/guides/generate-uuids</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gotoolly.com/about</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/contact/index.html</loc>
+    <loc>https://gotoolly.com/contact</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/legal/disclaimer/index.html</loc>
+    <loc>https://gotoolly.com/legal/disclaimer</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/legal/privacy-policy/index.html</loc>
+    <loc>https://gotoolly.com/legal/privacy-policy</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://gotoolly.com/legal/terms-of-service/index.html</loc>
+    <loc>https://gotoolly.com/legal/terms-of-service</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

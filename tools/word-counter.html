@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,6 +16,9 @@
     <meta property="og:title" content="Word Counter - Count Words, Characters & More | GoToolly">
     <meta property="og:description" content="Count words, characters, sentences, paragraphs instantly. Track reading time, character frequency, and text statistics for free.">
     <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
     <meta property="og:site_name" content="GoToolly">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -23,6 +26,8 @@
     <meta name="twitter:title" content="Word Counter - Count Words, Characters & More | GoToolly">
     <meta name="twitter:description" content="Count words, characters, sentences, paragraphs instantly. Track reading time, character frequency, and text statistics for free.">
     <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
 
     <!-- Favicon & Manifest -->
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
@@ -41,9 +46,59 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Word Counter",
+        "url": "https://gotoolly.com/tools/word-counter",
+        "description": "Count words, characters, sentences, paragraphs instantly. Track reading time, character frequency, and text statistics for free.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Free to use",
+            "No account required",
+            "Client-side processing",
+            "Privacy-focused"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gotoolly.com/tools"},
+            {"@type": "ListItem", "position": 3, "name": "Word Counter"}
+        ]
+    }
+    </script>
+
+    <style>        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-primary);
+            color: white;
+            padding: 8px 16px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }    </style>
 </head>
 <body>
-    <!-- Header -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+<!-- Header -->
     <header class="site-header">
         <div class="container">
             <div class="header-content">
@@ -63,7 +118,7 @@
                 </nav>
                 
                 <!-- Mobile Menu Button -->
-                <button class="mobile-menu-button" aria-label="Toggle menu">
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
@@ -83,7 +138,7 @@
         </div>
     </header>
 
-    <main class="main-content">
+    <main id="main-content" class="main-content">
         <div class="container">
             <div class="page-header">
                 <h1>Word Counter</h1>
@@ -190,11 +245,51 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Related Tools -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Related Tools</h2>
+                </div>
+                <div class="tools-grid">
+                    <div class="card tool-card">
+                        <h3>Text Cleaner</h3>
+                        <p>Clean up extra spaces, empty lines, and formatting issues.</p>
+                        <div class="card-footer">
+                            <a href="./text-cleaner.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>Case Converter</h3>
+                        <p>Convert text between uppercase, lowercase, title case, and more.</p>
+                        <div class="card-footer">
+                            <a href="./case-converter.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>Keyword Generator</h3>
+                        <p>Generate keyword ideas for your content and SEO strategy.</p>
+                        <div class="card-footer">
+                            <a href="./keyword-generator.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>Readability Checker</h3>
+                        <p>Check Flesch-Kincaid grade level and readability statistics.</p>
+                        <div class="card-footer">
+                            <a href="./readability-checker.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+                <p style="margin-top: var(--space-4); text-align: center;">
+                    <a href="../guides/count-words-accurately.html" style="color: var(--color-primary);">Read Guide: Count Words Accurately ?</a>
+                </p>
+            </section>
         </div>
     </main>
     
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
@@ -238,7 +333,7 @@
             
             <div class="footer-bottom">
                 <div class="copyright">
-                    © <span id="current-year">2026</span> GoToolly. All rights reserved.
+                    � <span id="current-year">2026</span> GoToolly. All rights reserved.
                 </div>
                 <div class="legal-links">
                     <a href="/legal/privacy-policy">Privacy</a>

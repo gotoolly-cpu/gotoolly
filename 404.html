@@ -1,10 +1,32 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found - GoToolly</title>
     <meta name="description" content="The page you're looking for doesn't exist. Browse our tools or return to the homepage.">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://gotoolly.com/404">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/404">
+    <meta property="og:title" content="Page Not Found - GoToolly">
+    <meta property="og:description" content="The page you're looking for doesn't exist. Browse our tools or return to the homepage.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/404">
+    <meta name="twitter:title" content="Page Not Found - GoToolly">
+    <meta name="twitter:description" content="The page you're looking for doesn't exist. Browse our tools or return to the homepage.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
     
     <!-- Favicon & Manifest -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -20,9 +42,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <style>        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-primary);
+            color: white;
+            padding: 8px 16px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }    </style>
 </head>
 <body>
-    <!-- Header -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+<!-- Header -->
     <header class="site-header">
         <div class="container">
             <div class="header-content">
@@ -42,7 +78,7 @@
                 </nav>
                 
                 <!-- Mobile Menu Button -->
-                <button class="mobile-menu-button" aria-label="Toggle menu">
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
@@ -64,7 +100,7 @@
 
 
     <!-- Main Content -->
-    <main class="main-content">
+    <main id="main-content" class="main-content">
         <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 60vh;">
             <div style="text-align: center; max-width: 420px; margin: 0 auto;">
                 <!-- Simple Illustration -->
@@ -84,7 +120,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">

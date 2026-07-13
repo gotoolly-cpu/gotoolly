@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,12 +13,17 @@
     <meta property="og:title" content="PDF Merger - Combine PDF Files Online | GoToolly">
     <meta property="og:description" content="Merge multiple PDF files into one online. Rearrange pages, combine documents free. No watermarks, no file size limits.">
     <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
     <meta property="og:site_name" content="GoToolly">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://gotoolly.com/tools/pdf-merger">
     <meta name="twitter:title" content="PDF Merger - Combine PDF Files Online | GoToolly">
     <meta name="twitter:description" content="Merge multiple PDF files into one online. Rearrange pages, combine documents free. No watermarks, no file size limits.">
     <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
     <link rel="manifest" href="../site.webmanifest">
@@ -91,10 +96,60 @@
         .notification.error{background-color:#ef4444}
         @keyframes slideIn{from{transform:translateX(400px);opacity:0}to{transform:translateX(0);opacity:1}}
         @media(max-width:768px){.hero-content{grid-template-columns:1fr;text-align:center}.hero-text h1{font-size:2rem}.workspace-header{flex-direction:column;align-items:flex-start;gap:var(--space-4)}.action-panel{flex-direction:column}.file-item{flex-wrap:wrap}}
+            .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-primary);
+            color: white;
+            padding: 8px 16px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
     </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "PDF Merger",
+        "url": "https://gotoolly.com/tools/pdf-merger",
+        "description": "Merge multiple PDF files into one online. Rearrange pages, combine documents free. No watermarks, no file size limits.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Free to use",
+            "No account required",
+            "Client-side processing",
+            "Privacy-focused"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gotoolly.com/tools"},
+            {"@type": "ListItem", "position": 3, "name": "PDF Merger"}
+        ]
+    }
+    </script>
+
 </head>
 <body>
-    <header class="site-header">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="site-header">
         <div class="container">
             <div class="header-content">
                 <a href="/" class="logo">
@@ -108,7 +163,7 @@
                     <a href="../../about" class="nav-link">About</a>
                     <a href="../../contact" class="nav-link">Contact</a>
                 </nav>
-                <button class="mobile-menu-button" aria-label="Toggle menu">
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
@@ -126,19 +181,19 @@
         </div>
     </header>
 
-    <main class="main-content">
+    <main id="main-content" class="main-content">
         <div class="container">
             <section class="hero-section">
                 <div class="hero-content">
                     <div class="hero-text">
                         <h1>PDF Merger</h1>
                         <p class="hero-description">
-                            Combine multiple PDF files into one document. Reorder pages by dragging, merge instantly — all in your browser.
+                            Combine multiple PDF files into one document. Reorder pages by dragging, merge instantly � all in your browser.
                         </p>
                         <div class="hero-features">
-                            <div class="feature-badge">🔒 100% Private</div>
-                            <div class="feature-badge">⚡ Instant Merge</div>
-                            <div class="feature-badge">📋 Drag to Reorder</div>
+                            <div class="feature-badge">?? 100% Private</div>
+                            <div class="feature-badge">? Instant Merge</div>
+                            <div class="feature-badge">?? Drag to Reorder</div>
                         </div>
                     </div>
                     <div class="hero-stats">
@@ -225,10 +280,50 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Related Tools -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Related Tools</h2>
+                </div>
+                <div class="tools-grid">
+                    <div class="card tool-card">
+                        <h3>PDF Compressor</h3>
+                        <p>Reduce PDF file size while maintaining quality.</p>
+                        <div class="card-footer">
+                            <a href="./pdf-compressor.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>PDF Splitter &amp; Rotator</h3>
+                        <p>Split PDFs into separate files or rotate pages.</p>
+                        <div class="card-footer">
+                            <a href="./pdf-splitter-rotator.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>PDF Editor</h3>
+                        <p>Edit PDF files, add watermarks, page numbers, and more.</p>
+                        <div class="card-footer">
+                            <a href="./pdf-editor.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>PDF to Word</h3>
+                        <p>Convert PDF documents to editable Word files.</p>
+                        <div class="card-footer">
+                            <a href="./pdf-to-word.html" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+                <p style="margin-top: var(--space-4); text-align: center;">
+                    <a href="../guides/merge-pdf-files.html" style="color: var(--color-primary);">Read Guide: Merge PDF Files ?</a>
+                </p>
+            </section>
         </div>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
@@ -265,7 +360,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="copyright">© <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="copyright">� <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
                 <div class="legal-links">
                     <a href="/legal/privacy-policy">Privacy</a>
                     <a href="/legal/terms-of-service">Terms</a>

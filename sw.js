@@ -1,10 +1,10 @@
 // Service Worker for Background Removal Tool
 // Enables offline functionality and caches critical resources
 
-const CACHE_VERSION = 'gotoolly-v5';
-const RUNTIME_CACHE = 'gotoolly-runtime-v5';
-const ASSETS_CACHE = 'gotoolly-assets-v5';
-const MODEL_CACHE = 'gotoolly-models-v5';
+const CACHE_VERSION = 'gotoolly-v6';
+const RUNTIME_CACHE = 'gotoolly-runtime-v6';
+const ASSETS_CACHE = 'gotoolly-assets-v6';
+const MODEL_CACHE = 'gotoolly-models-v6';
 
 // Files to cache on install
 const CRITICAL_ASSETS = [

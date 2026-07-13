@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,6 +15,9 @@
     <meta property="og:title" content="How to Compress Images for Web: Complete Guide 2026 | GoToolly">
     <meta property="og:description" content="Step-by-step guide to compress images for faster websites. Learn optimal formats, settings, and how to use our free Image Compressor tool for maximum performance.">
     <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
     <meta property="og:site_name" content="GoToolly">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -22,6 +25,8 @@
     <meta name="twitter:title" content="How to Compress Images for Web: Complete Guide 2026 | GoToolly">
     <meta name="twitter:description" content="Step-by-step guide to compress images for faster websites. Learn optimal formats, settings, and how to use our free Image Compressor tool for maximum performance.">
     <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
     
         <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>  
@@ -74,10 +79,122 @@
             margin-bottom: var(--space-4);
             border-radius: 0 var(--radius-md) var(--radius-md) 0;
         }
+            .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-primary);
+            color: white;
+            padding: 8px 16px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
     </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "How to Compress Images for Web: Complete Guide 2026",
+        "description": "Step-by-step guide to compress images for faster websites. Learn optimal formats, settings, and how to use our free Image Compressor tool for maximum performance.",
+        "url": "https://gotoolly.com/guides/compress-images-for-web",
+        "author": {
+            "@type": "Organization",
+            "name": "GoToolly",
+            "url": "https://gotoolly.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "GoToolly",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://gotoolly.com/assets/images/logo-512.png"
+            }
+        },
+        "image": "https://gotoolly.com/assets/images/logo-512.png",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://gotoolly.com/guides/compress-images-for-web"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"},
+            {"@type": "ListItem", "position": 3, "name": "Compress Images for Web"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What's a good target file size for web images?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Aim for 100-300KB for hero images, under 100KB for content images, and under 50KB for thumbnails. The exact size depends on dimensions and purpose."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I use WebP or stick with JPEG?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use WebP for modern websites (98% browser support). Implement with JPEG fallbacks using the picture HTML element for maximum compatibility."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much quality loss is acceptable?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Compress until you notice artifacts in side-by-side comparison, then dial back 5-10%. For most photos, 75-85% quality is the sweet spot."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does compression affect SEO?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Directly and significantly. Image compression improves page speed, which is a major Google ranking factor. Properly compressed images also get indexed faster."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I compress images without losing quality?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, through lossless compression (PNG) or moderate lossy compression where data removal isn't visually noticeable. True \"lossless\" compression typically achieves 10-30% reduction for photos."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often should I re-compress images?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Only when you update website designs or change display dimensions. Don't re-compress already optimized images�this causes generational quality loss."
+                }
+            }
+        ]
+    }
+    </script>
+
 </head>
 <body>
-    <header class="site-header">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="site-header">
         <div class="container">
             <div class="header-content">
                 <a href="../index.html" class="logo">
@@ -91,7 +208,7 @@
                     <a href="../about" class="nav-link">About</a>
                     <a href="../contact" class="nav-link">Contact</a>
                 </nav>
-                <button class="mobile-menu-button" aria-label="Toggle menu">
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
@@ -110,7 +227,7 @@
         </div>
     </header>
 
-    <main class="main-content">
+    <main id="main-content" class="main-content">
         <div class="container">
             <!-- 1. HERO SECTION -->
             <div class="page-header">
@@ -282,7 +399,7 @@
                         <p>Yes, through lossless compression (PNG) or moderate lossy compression where data removal isn't visually noticeable. True "lossless" compression typically achieves 10-30% reduction for photos.</p>
                         
                         <h3>How often should I re-compress images?</h3>
-                        <p>Only when you update website designs or change display dimensions. Don't re-compress already optimized images—this causes generational quality loss.</p>
+                        <p>Only when you update website designs or change display dimensions. Don't re-compress already optimized images�this causes generational quality loss.</p>
 
                         <!-- 9. RELATED TOOLS & GUIDES -->
                         <h2>Related Tools & Guides</h2>
@@ -318,7 +435,7 @@
                             <div class="cta-container">
                                 <a href="../tools/image-compressor.html" class="btn btn-primary btn-lg">Compress Images for Free</a>
                             </div>
-                            <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">No sign-up required • No server uploads • Processed in your browser</p>
+                            <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">No sign-up required � No server uploads � Processed in your browser</p>
                         </div>
 
                     </article>
@@ -332,8 +449,8 @@
                         <li><a href="../tools/image-compressor.html">Image Compressor</a></li>
                         <li><a href="../tools/image-editor.html">Image Editor</a></li>
                         <li><a href="../tools/background-removal.html">Background Removal</a></li>
-                            <li><a href="/guides/resize-images-properly.html">Resize Images Guide</a></li>
-                            <li><a href="/guides/background-removal.html">Background Removal Guide</a></li>
+                            <li><a href="resize-images-properly.html">Resize Images Guide</a></li>
+                            <li><a href="background-removal.html">Background Removal Guide</a></li>
                         </ul>
                     </div>
 
@@ -342,7 +459,7 @@
         </div>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
@@ -386,7 +503,7 @@
             
             <div class="footer-bottom">
                 <div class="copyright">
-                    © 2026 GoToolly. All rights reserved.
+                    � 2026 GoToolly. All rights reserved.
                 </div>
                 <div class="legal-links">
                     <a href="../legal/privacy-policy">Privacy</a>
@@ -397,6 +514,6 @@
             </div>
         </div>
     </footer>
-    <script defer src="/assets/js/main.min.js"></script>
+    <script defer src="../assets/js/main.min.js"></script>
 </body>
 </html>

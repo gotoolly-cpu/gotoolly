@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -45,9 +45,51 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About GoToolly - Our Mission & Values",
+        "url": "https://gotoolly.com/about",
+        "description": "Learn about GoToolly's mission to provide free, privacy-focused online tools. Discover our values, team philosophy, and commitment to user privacy.",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "GoToolly",
+            "url": "https://gotoolly.com",
+            "description": "Free, privacy-focused online tools that work entirely in your browser.",
+            "sameAs": []
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "About"}
+        ]
+    }
+    </script>
+
+    <style>        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-primary);
+            color: white;
+            padding: 8px 16px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }    </style>
 </head>
 <body>
-    <!-- Header -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+<!-- Header -->
     <header class="site-header">
         <div class="container">
             <div class="header-content">
@@ -67,7 +109,7 @@
                 </nav>
                 
                 <!-- Mobile Menu Button -->
-                <button class="mobile-menu-button" aria-label="Toggle menu">
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
@@ -88,7 +130,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="main-content">
+    <main id="main-content" class="main-content">
         <div class="container">
             <!-- Page Header -->
             <div class="page-header">
@@ -273,7 +315,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
@@ -317,7 +359,7 @@
             
             <div class="footer-bottom">
                 <div class="copyright">
-                    © <span id="current-year">2026</span> GoToolly. All rights reserved.
+                    � <span id="current-year">2026</span> GoToolly. All rights reserved.
                 </div>
                 <div class="legal-links">
                     <a href="/legal/privacy-policy">Privacy</a>

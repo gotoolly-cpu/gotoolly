@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,6 +14,9 @@
     <meta property="og:title" content="Image Editor - Resize, Convert & Transform Images | GoToolly">
     <meta property="og:description" content="Free online image editor. Convert, resize, and edit images by dimensions, percentage, or aspect ratio. Supports JPG, PNG, WebP, and other formats. No uploads required.">
     <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
     <meta property="og:site_name" content="GoToolly">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
@@ -21,6 +24,8 @@
     <meta name="twitter:title" content="Image Editor - Resize, Convert & Transform Images | GoToolly">
     <meta name="twitter:description" content="Free online image editor. Convert, resize, and edit images by dimensions, percentage, or aspect ratio. Supports JPG, PNG, WebP, and other formats. No uploads required.">
     <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
     
     <!-- Favicon & Manifest -->
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
@@ -878,10 +883,60 @@
                 font-size: var(--text-sm);
             }
         }
+            .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-primary);
+            color: white;
+            padding: 8px 16px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
     </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Image Editor",
+        "url": "https://gotoolly.com/tools/image-editor",
+        "description": "Free online image editor. Convert, resize, and edit images by dimensions, percentage, or aspect ratio. Supports JPG, PNG, WebP, and other formats. No uploads required.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Free to use",
+            "No account required",
+            "Client-side processing",
+            "Privacy-focused"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gotoolly.com/tools"},
+            {"@type": "ListItem", "position": 3, "name": "Image Editor"}
+        ]
+    }
+    </script>
+
 </head>
 <body>
-    <!-- Header -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+<!-- Header -->
     <header class="site-header">
         <div class="container">
             <div class="header-content">
@@ -898,7 +953,7 @@
                     <a href="../../contact" class="nav-link">Contact</a>
                 </nav>
                 
-                <button class="mobile-menu-button" aria-label="Toggle menu">
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
@@ -918,7 +973,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="main-content">
+    <main id="main-content" class="main-content">
         <div class="container">
             <!-- Hero Section -->
             <section class="hero-section">
@@ -926,12 +981,12 @@
                     <div class="hero-text">
                         <h1>Professional Image Editor</h1>
                         <p class="hero-description">
-                            Transform your images with enterprise-grade tools. Convert between formats, resize with precision, and optimize for web—all with complete privacy.
+                            Transform your images with enterprise-grade tools. Convert between formats, resize with precision, and optimize for web�all with complete privacy.
                         </p>
                         <div class="hero-features">
-                            <div class="feature-badge">🔒 100% Private</div>
-                            <div class="feature-badge">⚡ Instant Processing</div>
-                            <div class="feature-badge">📱 Mobile Friendly</div>
+                            <div class="feature-badge">?? 100% Private</div>
+                            <div class="feature-badge">? Instant Processing</div>
+                            <div class="feature-badge">?? Mobile Friendly</div>
                         </div>
                     </div>
                     <div class="hero-stats">
@@ -961,14 +1016,14 @@
                     <h2 class="nav-title">Choose Your Tool</h2>
                     <div class="tool-options">
                         <div class="tool-option active" data-tab="converter">
-                            <div class="option-icon">🔄</div>
+                            <div class="option-icon">??</div>
                             <div class="option-content">
                                 <h3>Format Converter</h3>
                                 <p>Transform images between JPG, PNG, WebP, and AVIF formats</p>
                             </div>
                         </div>
                         <div class="tool-option" data-tab="resizer">
-                            <div class="option-icon">📏</div>
+                            <div class="option-icon">??</div>
                             <div class="option-content">
                                 <h3>Image Resizer</h3>
                                 <p>Resize images by pixels, percentage, or aspect ratio</p>
@@ -1002,28 +1057,28 @@
                                     </div>
                                     <div class="upload-content">
                                         <h3>Drop images here or click to select</h3>
-                                        <p>Supports JPG, PNG, WebP, GIF, BMP • Max 10 MB each</p>
+                                        <p>Supports JPG, PNG, WebP, GIF, BMP � Max 10 MB each</p>
                                     </div>
                                 </label>
                                 
                                 <div class="upload-info">
                                     <div class="info-grid">
                                         <div class="info-item">
-                                            <div class="info-icon">🔒</div>
+                                            <div class="info-icon">??</div>
                                             <div class="info-text">
                                                 <strong>Private Processing</strong>
                                                 <span>Files never leave your browser</span>
                                             </div>
                                         </div>
                                         <div class="info-item">
-                                            <div class="info-icon">⚡</div>
+                                            <div class="info-icon">?</div>
                                             <div class="info-text">
                                                 <strong>Instant Results</strong>
                                                 <span>No waiting for uploads</span>
                                             </div>
                                         </div>
                                         <div class="info-item">
-                                            <div class="info-icon">📁</div>
+                                            <div class="info-icon">??</div>
                                             <div class="info-text">
                                                 <strong>Batch Processing</strong>
                                                 <span>Convert multiple images at once</span>
@@ -1151,11 +1206,11 @@
                             <!-- Action Panel -->
                             <div class="action-panel">
                                 <button id="converter-convert-btn" class="btn-primary btn-large" disabled>
-                                    <span class="btn-icon">🔄</span>
+                                    <span class="btn-icon">??</span>
                                     <span class="btn-text">Convert Images</span>
                                 </button>
                                 <button id="converter-reset-btn" class="btn-secondary btn-large">
-                                    <span class="btn-icon">↻</span>
+                                    <span class="btn-icon">?</span>
                                     <span class="btn-text">Reset</span>
                                 </button>
                             </div>
@@ -1174,7 +1229,7 @@
                                 </svg>
                                 <p style="margin: 0; font-weight: 500;">Drag image here or click to browse</p>
                                 <p style="margin: var(--space-2) 0 0; font-size: var(--text-sm); color: var(--color-text-light);">
-                                    JPG, PNG, WebP, GIF • Up to 10 MB
+                                    JPG, PNG, WebP, GIF � Up to 10 MB
                                 </p>
                             </label>
                             <input type="file" id="resizer-image-input" accept="image/*" style="display: none;">
@@ -1305,7 +1360,7 @@
                                         <p id="resizer-result-dimensions"></p>
                                         <p id="resizer-result-size"></p>
                                     </div>
-                                    <a id="resizer-download-btn" class="result-download" download="resized-image.png">⬇️ Download</a>
+                                    <a id="resizer-download-btn" class="result-download" download="resized-image.png">?? Download</a>
                                 </div>
                             </div>
                         </div>
@@ -1315,7 +1370,7 @@
                     <div id="converter-results-area" class="results-workspace" style="display: none;">
                         <div class="results-header">
                             <div class="header-content">
-                                <h2>📊 Conversion Results</h2>
+                                <h2>?? Conversion Results</h2>
                                 <p>Your converted images are ready for download</p>
                             </div>
                             <div class="results-actions">
@@ -1387,8 +1442,9 @@
                         <h3>Related Tools</h3>
                         <ul class="sidebar-links">
                             <li><a href="/tools/image-compressor.html">Image Compressor</a></li>
-                            <li><a href="/tools/favicon-generator.html">Favicon Generator</a></li>
-                            <li><a href="/tools/pdf-rotator.html">PDF Rotator</a></li>
+                            <li><a href="/tools/image-metadata-remover.html">EXIF Remover</a></li>
+                            <li><a href="/tools/image-watermark.html">Image Watermark</a></li>
+                            <li><a href="/tools/meme-generator.html">Meme Generator</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1402,22 +1458,22 @@
                 
                 <div class="tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4);">
                     <div class="card" style="padding: var(--space-4);">
-                        <h3 style="margin: 0 0 var(--space-2); font-size: 1rem;">💾 What's the difference between JPEG and PNG?</h3>
+                        <h3 style="margin: 0 0 var(--space-2); font-size: 1rem;">?? What's the difference between JPEG and PNG?</h3>
                         <p style="margin: 0; font-size: var(--text-sm); line-height: 1.4;">JPEG uses lossy compression and is best for photographs. PNG uses lossless compression and supports transparency.</p>
                     </div>
                     
                     <div class="card" style="padding: var(--space-4);">
-                        <h3 style="margin: 0 0 var(--space-2); font-size: 1rem;">🖼️ Should I use WebP or AVIF?</h3>
+                        <h3 style="margin: 0 0 var(--space-2); font-size: 1rem;">??? Should I use WebP or AVIF?</h3>
                         <p style="margin: 0; font-size: var(--text-sm); line-height: 1.4;">WebP offers excellent compression with good browser support. AVIF provides even better compression but has limited support.</p>
                     </div>
                     
                     <div class="card" style="padding: var(--space-4);">
-                        <h3 style="margin: 0 0 var(--space-2); font-size: 1rem;">📁 Can I convert multiple images?</h3>
+                        <h3 style="margin: 0 0 var(--space-2); font-size: 1rem;">?? Can I convert multiple images?</h3>
                         <p style="margin: 0; font-size: var(--text-sm); line-height: 1.4;">Yes, select multiple images for batch conversion. All images will be converted using the same settings.</p>
                     </div>
                     
                     <div class="card" style="padding: var(--space-4);">
-                        <h3 style="margin: 0 0 var(--space-2); font-size: 1rem;">⭐ How do I maintain quality when resizing?</h3>
+                        <h3 style="margin: 0 0 var(--space-2); font-size: 1rem;">? How do I maintain quality when resizing?</h3>
                         <p style="margin: 0; font-size: var(--text-sm); line-height: 1.4;">Use high quality settings (85%+) and avoid enlarging beyond original dimensions. Resize to smaller sizes for best results.</p>
                     </div>
                 </div>
@@ -1435,7 +1491,7 @@
                         </div>
                         <h3 style="margin: 0 0 var(--space-1); font-size: 1.1rem;">Image Optimization Guide</h3>
                         <p style="margin: 0 0 var(--space-3); font-size: var(--text-sm); color: var(--color-text-light);">Learn best practices for converting and optimizing images for different uses.</p>
-                        <a href="/guides/compress-images-for-web.html" class="btn btn-primary btn-sm" style="font-size: var(--text-sm); padding: var(--space-2) var(--space-3);">Read Guide →</a>
+                        <a href="/guides/compress-images-for-web.html" class="btn btn-primary btn-sm" style="font-size: var(--text-sm); padding: var(--space-2) var(--space-3);">Read Guide ?</a>
                     </div>
                 </div>
             </section>
@@ -1443,7 +1499,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
@@ -1487,7 +1543,7 @@
             
             <div class="footer-bottom">
                 <div class="copyright">
-                    © <span id="current-year">2026</span> GoToolly. All rights reserved.
+                    � <span id="current-year">2026</span> GoToolly. All rights reserved.
                 </div>
                 <div class="legal-links">
                     <a href="/legal/privacy-policy">Privacy</a>
