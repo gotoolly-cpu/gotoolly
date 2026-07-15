@@ -47,8 +47,9 @@
         .stat-label{font-size:var(--text-xs);opacity:.8;font-weight:500}
         .tool-workspace{background:var(--color-surface);border-radius:20px;padding:var(--space-6);box-shadow:0 4px 20px rgba(0,0,0,.08)}
         .workspace-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:var(--space-4);border-bottom:1px solid var(--color-border);padding-bottom:var(--space-4)}
-        .header-content h2{font-size:1.5rem;font-weight:600;margin:0 0 var(--space-1)}
-        .header-content p{margin:0;color:var(--color-text-light);font-size:var(--text-sm)}
+        .workspace-header .header-content{display:block;height:auto}
+        .header-content h2{font-size:1.5rem;font-weight:600;margin:0 0 var(--space-2)}
+        .header-content p{margin:var(--space-1) 0 0;color:var(--color-text-light);font-size:var(--text-sm)}
         .file-counter{background:var(--color-primary);color:#fff;padding:var(--space-2) var(--space-4);border-radius:50px;font-size:var(--text-sm);font-weight:500}
         .upload-zone{margin-bottom:var(--space-4)}
         .upload-area{display:block;width:100%;padding:var(--space-6);border:2px dashed var(--color-border);border-radius:16px;background:var(--color-bg-alt);text-align:center;cursor:pointer;transition:all .3s;margin-bottom:var(--space-4)}
@@ -226,9 +227,9 @@
                             Reduce PDF file size with professional compression options. Remove metadata, delete unwanted pages, and optimize your documents � all in your browser.
                         </p>
                         <div class="hero-features">
-                            <div class="feature-badge">?? 100% Private</div>
-                            <div class="feature-badge">? Fast Compression</div>
-                            <div class="feature-badge">??? Full Control</div>
+                            <div class="feature-badge"><i class="fas fa-shield-alt"></i> 100% Private</div>
+                            <div class="feature-badge"><i class="fas fa-bolt"></i> Fast Compression</div>
+                            <div class="feature-badge"><i class="fas fa-sliders-h"></i> Full Control</div>
                         </div>
                     </div>
                     <div class="hero-stats">
@@ -293,17 +294,17 @@
                             <label class="setting-label">Compression Preset</label>
                             <div class="preset-grid">
                                 <button type="button" class="preset-btn active" data-preset="balanced">
-                                    <div class="preset-icon">??</div>
+                                    <div class="preset-icon"><i class="fas fa-balance-scale"></i></div>
                                     <span class="preset-name">Balanced</span>
                                     <span class="preset-desc">Best balance</span>
                                 </button>
                                 <button type="button" class="preset-btn" data-preset="maximum">
-                                    <div class="preset-icon">??</div>
+                                    <div class="preset-icon"><i class="fas fa-compress-arrows-alt"></i></div>
                                     <span class="preset-name">Maximum</span>
                                     <span class="preset-desc">Smallest size</span>
                                 </button>
                                 <button type="button" class="preset-btn" data-preset="custom">
-                                    <div class="preset-icon">???</div>
+                                    <div class="preset-icon"><i class="fas fa-cog"></i></div>
                                     <span class="preset-name">Custom</span>
                                     <span class="preset-desc">Full control</span>
                                 </button>
@@ -443,7 +444,7 @@
                     </div>
                 </div>
                 <p style="margin-top: var(--space-4); text-align: center;">
-                    <a href="../guides/reduce-pdf-size-online" style="color: var(--color-primary);">Read Guide: Reduce PDF Size Online ?</a>
+                    <a href="../guides/reduce-pdf-size-online" style="color: var(--color-primary);">Read Guide: Reduce PDF Size Online <i class="fas fa-arrow-right"></i></a>
                 </p>
             </section>
         </div>

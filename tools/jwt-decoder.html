@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JWT Decoder - Free Online Tool | GoToolly</title>
+    <meta name="description" content="Decode JSON Web Tokens (JWT) and inspect header, payload, and signature. Pretty-printed JSON output. All processing is local. Free, private, browser-based.">
+    <meta name="keywords" content="jwt decoder, jwt inspector, jwt parser, decode jwt, json web token decoder, jwt tool, jwt debugger">
+    <link rel="canonical" href="https://gotoolly.com/tools/jwt-decoder">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/jwt-decoder">
+    <meta property="og:title" content="JWT Decoder | GoToolly">
+    <meta property="og:description" content="Decode JSON Web Tokens (JWT) and inspect header, payload, and signature. Pretty-printed JSON output.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/jwt-decoder">
+    <meta name="twitter:title" content="JWT Decoder | GoToolly">
+    <meta name="twitter:description" content="Decode JSON Web Tokens (JWT) and inspect header, payload, and signature. Pretty-printed JSON output.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"JWT Decoder","url":"https://gotoolly.com/tools/jwt-decoder","description":"Decode JSON Web Tokens (JWT) and inspect header, payload, and signature with pretty-printed JSON output.","applicationCategory":"DeveloperApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Header decoding","Payload decoding","Signature display","Pretty-printed JSON"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"JWT Decoder"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a JWT?","acceptedAnswer":{"@type":"Answer","text":"JWT (JSON Web Token) is an open standard for securely transmitting information as a JSON object. It consists of three parts: header, payload, and signature, separated by dots."}},{"@type":"Question","name":"Is my JWT uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All JWT decoding happens entirely in your browser. Your token never leaves your device."}},{"@type":"Question","name":"Does this tool validate the signature?","acceptedAnswer":{"@type":"Answer","text":"This tool decodes and displays the three parts of a JWT. Signature validation is not performed — use the JWT Generator tool for development and testing with signature support."}},{"@type":"Question","name":"What does base64url decoding mean?","acceptedAnswer":{"@type":"Answer","text":"JWTs use a URL-safe variant of Base64 encoding (base64url) that replaces + and / with - and _, and strips padding. This tool handles that conversion automatically."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.jwt-container{max-width:640px;margin:0 auto var(--space-4)}.jwt-textarea{width:100%;min-height:100px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text);box-sizing:border-box}.jwt-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.jwt-panels{display:grid;grid-template-columns:1fr;gap:var(--space-4);margin-top:var(--space-4)}.jwt-panel{border:1px solid var(--color-border);border-radius:12px;overflow:hidden;background:var(--color-surface)}.jwt-panel-header{display:flex;justify-content:space-between;align-items:center;padding:var(--space-3) var(--space-4);background:rgba(99,102,241,.08);border-bottom:1px solid var(--color-border);font-weight:600;font-size:var(--text-sm)}.jwt-panel-header .badge{padding:2px 8px;border-radius:4px;font-size:var(--text-xs);background:var(--color-primary);color:#fff}.jwt-panel-body{padding:var(--space-3);font-family:'JetBrains Mono',monospace;font-size:var(--text-xs);white-space:pre-wrap;word-break:break-all;max-height:300px;overflow:auto;color:var(--color-text-light);line-height:1.6}.jwt-panel-body .json-key{color:#89b4fa}.jwt-panel-body .json-string{color:#a6e3a1}.jwt-panel-body .json-number{color:#fab387}.jwt-panel-body .json-boolean{color:#cba6f7}.jwt-panel-body .json-null{color:#f38ba8}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="../about" class="nav-link">About</a><a href="../contact" class="nav-link">Contact</a></nav></div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>JWT Decoder</h1>
+                <p class="page-description">Decode JSON Web Tokens (JWT) and inspect header, payload, and signature. Pretty-printed JSON output. All processing is local. Free, private, browser-based.</p>
+                <p style="margin-top:var(--space-3);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No server uploads &bull; 100% browser-based &bull; Your token never leaves your device</p>
+            </div>
+
+            <div class="jwt-container">
+                <label for="jwt-input" style="font-weight:600;margin-bottom:var(--space-2);display:block">JWT Token</label>
+                <textarea id="jwt-input" class="jwt-textarea" placeholder="Paste your JWT here...&#10;&#10;Example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"></textarea>
+
+                <div class="tool-actions" style="margin:var(--space-4) 0">
+                    <button id="decode-btn" class="btn btn-primary btn-lg">Decode Token</button>
+                    <button id="clear-btn" class="btn btn-outline btn-lg">Clear</button>
+                </div>
+
+                <div id="jwt-panels" class="jwt-panels" style="display:none">
+                    <div class="jwt-panel">
+                        <div class="jwt-panel-header"><span>Header</span><span class="badge">alg</span></div>
+                        <div id="jwt-header-body" class="jwt-panel-body"></div>
+                    </div>
+                    <div class="jwt-panel">
+                        <div class="jwt-panel-header"><span>Payload</span><span class="badge">data</span></div>
+                        <div id="jwt-payload-body" class="jwt-panel-body"></div>
+                    </div>
+                    <div class="jwt-panel">
+                        <div class="jwt-panel-header"><span>Signature</span><span class="badge">sig</span></div>
+                        <div id="jwt-signature-body" class="jwt-panel-body"></div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="content-section">
+                <div class="section-header"><h2>How It Works</h2></div>
+                <div class="tools-grid" style="grid-template-columns:repeat(3,1fr)">
+                    <div class="card step-card"><h3><span style="background:var(--color-primary);color:white;border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;margin-right:8px;font-size:.9rem">1</span> Paste Token</h3><p>Copy and paste any JWT into the input field. The tool accepts standard three-part tokens separated by dots.</p></div>
+                    <div class="card step-card"><h3><span style="background:var(--color-primary);color:white;border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;margin-right:8px;font-size:.9rem">2</span> Decode</h3><p>Each part is base64url-decoded. The header and payload are parsed as JSON and displayed with syntax highlighting.</p></div>
+                    <div class="card step-card"><h3><span style="background:var(--color-primary);color:white;border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;margin-right:8px;font-size:.9rem">3</span> Inspect</h3><p>Review the algorithm, token type, claims, and signature. All processing stays in your browser — nothing is sent to any server.</p></div>
+                </div>
+            </section>
+
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
+                <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-3)">
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What is a JWT?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">JWT (JSON Web Token) is an open standard for securely transmitting information as a JSON object. It consists of three parts: header, payload, and signature, separated by dots.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Is my JWT uploaded to a server?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">No. All JWT decoding happens entirely in your browser. Your token never leaves your device.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Does this tool validate the signature?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">This tool decodes and displays the three parts of a JWT. Signature validation is not performed — use the JWT Generator tool for development and testing with signature support.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What does base64url decoding mean?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">JWTs use a URL-safe variant of Base64 encoding (base64url) that replaces + and / with - and _, and strips padding. This tool handles that conversion automatically.</p></div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>JWT Generator</h3><p>Build and generate JSON Web Tokens for development and testing.</p><div class="card-footer"><a href="./jwt-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Hash Generator</h3><p>Generate MD5, SHA-1, SHA-256, and SHA-512 hashes.</p><div class="card-footer"><a href="./hash-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Base64 Encoder/Decoder</h3><p>Encode and decode Base64 strings instantly.</p><div class="card-footer"><a href="./base64-encoder" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+                <p style="margin-top:var(--space-4);text-align:center"><a href="/guides/jwt-decoder" style="color:var(--color-primary)">Read Guide: JWT Decoder Guide &rarr;</a></p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools/qr-code-generator">QR Code Generator</a></li><li><a href="/tools/password-generator">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+
+    <script defer src="../assets/js/main.min.js"></script>
+    <script defer src="../assets/js/tools/jwt-decoder.min.js"></script>
+</body>
+</html>

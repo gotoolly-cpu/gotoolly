@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Convert Markdown to HTML: Guide 2026 | GoToolly</title>
+    <meta name="description" content="Learn how to convert Markdown to HTML instantly. Step-by-step guide with syntax reference, best practices">
+    <meta name="keywords" content="markdown to html, convert markdown, md to html, markdown converter, html from markdown, markdown to html guide, online markdown converter">
+    <link rel="canonical" href="https://gotoolly.com/guides/markdown-to-html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/markdown-to-html">
+    <meta property="og:title" content="How to Convert Markdown to HTML: Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Learn how to convert Markdown to HTML instantly. Step-by-step guide with syntax reference, best practices, and tips for converting Markdown documents to clean HTML code.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/markdown-to-html">
+    <meta name="twitter:title" content="How to Convert Markdown to HTML: Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Learn how to convert Markdown to HTML instantly. Step-by-step guide with syntax reference, best practices, and tips for converting Markdown documents to clean HTML code.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <!-- Favicon & Manifest -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    
+    <!-- CSS -->
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>  
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+    
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+            color: white;
+            padding: var(--space-12) var(--space-6);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            margin-bottom: var(--space-10);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><text x="10" y="30" font-family="monospace" font-size="12">.md</text><text x="55" y="45" font-family="monospace" font-size="10">HTML</text><text x="25" y="70" font-family="monospace" font-size="14">--></text></svg>');
+            background-size: 300px;
+        }
+        
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #14b8a6; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(20, 184, 166, 0.1); border-left: 4px solid #14b8a6; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .conversion-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6); margin: var(--space-10) 0; }
+        .conversion-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-6); border: 1px solid var(--color-border); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .conversion-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .code-example { background: linear-gradient(135deg, rgba(20, 184, 166, 0.05) 0%, rgba(13, 148, 136, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(20, 184, 166, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        .split-view { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); margin: var(--space-6) 0; }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .conversion-grid { grid-template-columns: 1fr; } .split-view { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "How to Convert Markdown to HTML: Complete Guide 2026",
+        "description": "Learn how to convert Markdown to HTML instantly. Step-by-step guide with syntax reference, best practices, and tips for converting Markdown documents to clean HTML code.",
+        "url": "https://gotoolly.com/guides/markdown-to-html",
+        "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" },
+        "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } },
+        "image": "https://gotoolly.com/assets/images/logo-512.png",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/markdown-to-html" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"},
+            {"@type": "ListItem", "position": 3, "name": "Markdown to HTML", "item": "https://gotoolly.com/guides/markdown-to-html"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between Markdown and HTML?","acceptedAnswer":{"@type":"Answer","text":"Markdown is a lightweight plain-text formatting syntax designed for easy reading and writing. HTML is a markup language for structuring web content. Markdown converts to HTML, making it ideal for writing content that will be published on the web."}},{"@type":"Question","name":"Does the converter handle all Markdown syntax?","acceptedAnswer":{"@type":"Answer","text":"Yes, our converter supports full GitHub Flavored Markdown including headings, bold, italic, lists, tables, code blocks with syntax highlighting, blockquotes, links, images, task lists, strikethrough, and emoji shortcuts."}},{"@type":"Question","name":"Can I convert back from HTML to Markdown?","acceptedAnswer":{"@type":"Answer","text":"Yes, GoToolly also offers an HTML to Markdown converter for the reverse conversion. Visit the HTML to Markdown guide for details on converting HTML back to Markdown format."}},{"@type":"Question","name":"Is my Markdown data safe and private?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. All conversion happens entirely in your browser using JavaScript. No data is sent to any server, and nothing is stored or tracked. Your content never leaves your device."}},{"@type":"Question","name":"Can I download the converted HTML?","acceptedAnswer":{"@type":"Answer","text":"Yes, you can copy the HTML output to your clipboard with one click or download it as an .html file. The tool provides both Copy and Download buttons for convenience."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32">
+                    <span class="logo-text">GoToolly</span>
+                </a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Convert Markdown to HTML: Complete Guide 2026</h1>
+                <p class="page-description">
+                    Master the art of converting Markdown to clean, semantic HTML. Whether you're building a website, publishing documentation, or creating email templates, this guide covers everything you need.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/markdown-to-html" class="btn btn-primary btn-lg">Convert Markdown to HTML</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  Instant conversion  Clean HTML output  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>Why Convert Markdown to HTML?</h2>
+                    <p>
+                        Markdown's simplicity makes it the perfect format for writing, but the web speaks HTML. Converting Markdown to HTML bridges this gap, allowing you to write in a distraction-free plain text format while publishing rich, structured web content. From static site generators to content management systems, Markdown-to-HTML conversion is a fundamental skill for modern web publishing.
+                    </p>
+                    <p>
+                        In 2026, Markdown powers everything from GitHub README files and developer documentation to full-fledged blogging platforms and knowledge bases. Understanding how to convert Markdown to HTML gives you the flexibility to write once and publish anywhere.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Step-by-Step: Converting Markdown to HTML</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Input Your Markdown</h3>
+                                <p>Open the <a href="../tools/markdown-to-html">Markdown to HTML Converter</a> and paste your Markdown content into the input area. You can type directly or paste from any Markdown source file.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Configure Conversion Options</h3>
+                                <p>Choose your preferred output settings: enable or disable syntax highlighting for code blocks, select HTML indentation style (spaces or tabs), and decide whether to include a full HTML document wrapper or just the body content.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Preview the HTML Output</h3>
+                                <p>The tool instantly converts your Markdown to HTML. Review the output in the result pane. The converted HTML includes proper semantic tags like <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;table&gt;</code>, <code>&lt;pre&gt;</code>, and <code>&lt;code&gt;</code>.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Copy or Export the HTML</h3>
+                                <p>Use the Copy button to copy the HTML to your clipboard for use in your CMS, email campaign, or web page. The Download button saves the HTML as a file. Reset to start a new conversion.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Markdown to HTML Conversion Reference</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Markdown Element</th>
+                                <th>Markdown Syntax</th>
+                                <th>Generated HTML</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Heading 1</td><td><code># Title</code></td><td><code>&lt;h1&gt;Title&lt;/h1&gt;</code></td></tr>
+                            <tr><td>Bold</td><td><code>**text**</code></td><td><code>&lt;strong&gt;text&lt;/strong&gt;</code></td></tr>
+                            <tr><td>Italic</td><td><code>*text*</code></td><td><code>&lt;em&gt;text&lt;/em&gt;</code></td></tr>
+                            <tr><td>Link</td><td><code>[text](url)</code></td><td><code>&lt;a href="url"&gt;text&lt;/a&gt;</code></td></tr>
+                            <tr><td>Image</td><td><code>![alt](src)</code></td><td><code>&lt;img src="src" alt="alt"/&gt;</code></td></tr>
+                            <tr><td>Unordered List</td><td><code>- item</code></td><td><code>&lt;ul&gt;&lt;li&gt;item&lt;/li&gt;&lt;/ul&gt;</code></td></tr>
+                            <tr><td>Ordered List</td><td><code>1. item</code></td><td><code>&lt;ol&gt;&lt;li&gt;item&lt;/li&gt;&lt;/ol&gt;</code></td></tr>
+                            <tr><td>Code Block</td><td><code>```lang ... ```</code></td><td><code>&lt;pre&gt;&lt;code&gt;...&lt;/code&gt;&lt;/pre&gt;</code></td></tr>
+                            <tr><td>Blockquote</td><td><code>&gt; quote</code></td><td><code>&lt;blockquote&gt;quote&lt;/blockquote&gt;</code></td></tr>
+                            <tr><td>Table</td><td><code>| A | B |</code></td><td><code>&lt;table&gt;&lt;tr&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>Advanced Conversion Features</h2>
+                    <h3>Syntax Highlighting for Code Blocks</h3>
+                    <p>When your Markdown includes fenced code blocks with language identifiers, the converter automatically wraps them with appropriate HTML and CSS classes for syntax highlighting. This makes code examples in your documentation readable and professional.</p>
+                    
+                    <h3>Full Document vs. Fragment Output</h3>
+                    <p>Choose between generating a complete HTML document with <code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code> tags, or just the HTML fragment for embedding into an existing page. The fragment mode is ideal for CMS content fields and email templates.</p>
+
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Use fragment mode for CMS content</strong> - When pasting into WordPress, Ghost, or other CMS platforms, use the fragment output to avoid duplicating HTML document structure.</p>
+                    </div>
+
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Always check list nesting</strong> - Ensure your Markdown lists are properly indented. Incorrect indentation can produce broken HTML with improperly nested <code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> tags.</p>
+                    </div>
+
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Use raw HTML for complex layouts</strong> - Markdown allows inline HTML. For complex tables or custom layouts, embed raw HTML directly in your Markdown and it will pass through unchanged.</p>
+                    </div>
+
+                    <h3>Automatic Heading ID Generation</h3>
+                    <p>The converter automatically generates anchor IDs for each heading based on its text content. This enables deep linking to specific sections and improves navigation for long documents.</p>
+                </section>
+
+                <section>
+                    <h2>Common Use Cases for Markdown to HTML Conversion</h2>
+                    <ul>
+                        <li><strong>Static Site Generators:</strong> Hugo, Jekyll, Eleventy, and Next.js all use Markdown as their primary content format, converting to HTML at build time.</li>
+                        <li><strong>Documentation Sites:</strong> Generate clean, accessible documentation from Markdown source files for APIs, user guides, and developer portals.</li>
+                        <li><strong>Email Campaigns:</strong> Write email content in Markdown and convert to HTML for email marketing platforms like Mailchimp, SendGrid, and Campaign Monitor.</li>
+                        <li><strong>Knowledge Bases:</strong> Tools like Confluence, Notion, and GitBook support Markdown import and export, with HTML as the rendering layer.</li>
+                        <li><strong>Blog Publishing:</strong> Many blogging platforms allow you to write in Markdown and publish as HTML, giving you full control over formatting without touching code.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Best Practices for Markdown to HTML Conversion</h2>
+                    <ul>
+                        <li><strong>Validate your Markdown first:</strong> Use our Markdown Editor to preview and fix formatting issues before converting.</li>
+                        <li><strong>Choose the right output format:</strong> Use full document mode for standalone pages and fragment mode for embedded content.</li>
+                        <li><strong>Test on multiple devices:</strong> HTML rendered from Markdown should be responsive. Preview on desktop, tablet, and mobile.</li>
+                        <li><strong>Optimize images:</strong> Use descriptive alt text in Markdown images to generate accessible HTML <code>alt</code> attributes.</li>
+                        <li><strong>Minify for production:</strong> Use our HTML Minifier to reduce the size of generated HTML for faster page loads.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is the difference between Markdown and HTML?</h3>
+                        <p>Markdown is a lightweight plain-text formatting syntax designed for easy reading and writing. HTML is a markup language for structuring web content. Markdown converts to HTML, making it ideal for writing content that will be published on the web.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Does the converter handle all Markdown syntax?</h3>
+                        <p>Yes, our converter supports full GitHub Flavored Markdown including headings, bold, italic, lists, tables, code blocks with syntax highlighting, blockquotes, links, images, task lists, strikethrough, and emoji shortcuts.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I convert back from HTML to Markdown?</h3>
+                        <p>Yes, GoToolly also offers an HTML to Markdown converter for the reverse conversion. Visit the HTML to Markdown guide for details on converting HTML back to Markdown format.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is my Markdown data safe and private?</h3>
+                        <p>Absolutely. All conversion happens entirely in your browser using JavaScript. No data is sent to any server, and nothing is stored or tracked. Your content never leaves your device.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I download the converted HTML?</h3>
+                        <p>Yes, you can copy the HTML output to your clipboard with one click or download it as an .html file. The tool provides both Copy and Download buttons for convenience.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Complete Document Conversion Suite</h2>
+                    <p>Enhance your document workflow with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/markdown-editor">Markdown Editor</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Write and preview Markdown with real-time rendering</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/html-to-markdown">HTML to Markdown</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Convert HTML documents back to Markdown format</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/html-minifier">HTML Minifier</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Minify and optimize HTML output for production</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Convert Markdown to HTML Instantly</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Turn your Markdown documents into clean, semantic HTML code. Fast, private, and free. No account required.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/markdown-to-html" class="btn btn-primary btn-lg">Convert Now</a>
+                    <a href="../tools/markdown-editor" class="btn btn-secondary btn-lg">Edit Markdown First</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Local processing  No file uploads  Full GFM support  Instant results  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Formatting Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/markdown-editor">Markdown Editor</a></li>
+                        <li><a href="../tools/markdown-to-html">Markdown to HTML</a></li>
+                        <li><a href="../tools/html-to-markdown">HTML to Markdown</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

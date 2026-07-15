@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML to JSON Converter | GoToolly</title>
+    <meta name="description" content="Convert XML to JSON format instantly. Paste your XML and get clean, formatted JSON output. Free, private, browser-based XML to JSON converter.">
+    <meta name="keywords" content="xml to json, convert xml json, xml json converter, xml to json online">
+    <link rel="canonical" href="https://gotoolly.com/tools/xml-to-json">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/xml-to-json">
+    <meta property="og:title" content="XML to JSON Converter | GoToolly">
+    <meta property="og:description" content="Convert XML to JSON format instantly. Paste your XML and get clean, formatted JSON output.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/xml-to-json">
+    <meta name="twitter:title" content="XML to JSON Converter | GoToolly">
+    <meta name="twitter:description" content="Convert XML to JSON format instantly. Paste your XML and get clean, formatted JSON output.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"XML to JSON Converter","url":"https://gotoolly.com/tools/xml-to-json","description":"Convert XML to JSON format instantly. Paste your XML and get clean, formatted JSON output.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Pretty-print output","Handles attributes"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"XML to JSON"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the XML to JSON converter work?","acceptedAnswer":{"@type":"Answer","text":"It uses the browser's built-in DOMParser to parse XML, then recursively traverses the DOM tree to build a JSON object, preserving elements, text, attributes, and nesting."}},{"@type":"Question","name":"Are XML attributes included in the JSON output?","acceptedAnswer":{"@type":"Answer","text":"Yes. XML attributes are included in the output as properties prefixed with @ to distinguish them from child elements."}},{"@type":"Question","name":"Is my data uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens entirely in your browser. Your code never leaves your device."}},{"@type":"Question","name":"Can I toggle pretty-printing?","acceptedAnswer":{"@type":"Answer","text":"Yes. A pretty-print toggle lets you choose between compact or formatted JSON output with indentation."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.minifier-textarea{width:100%;min-height:250px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text)}.minifier-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.result-box{background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px;padding:var(--space-4);font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);white-space:pre-wrap;word-break:break-word;max-height:400px;overflow-y:auto;margin-bottom:var(--space-3)}.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);margin-top:var(--space-4)}.stat-box{background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px;padding:var(--space-4);text-align:center}.stat-value{font-size:var(--text-2xl);font-weight:700;color:var(--color-primary)}.stat-label{font-size:var(--text-xs);color:var(--color-text-light);margin-top:var(--space-1);text-transform:uppercase;letter-spacing:.05em}.tool-actions{display:flex;gap:var(--space-3);margin-top:var(--space-4);flex-wrap:wrap}.options-row{display:flex;gap:var(--space-3);margin-top:var(--space-3);flex-wrap:wrap;align-items:center}.option-group{display:flex;align-items:center;gap:var(--space-2)}.option-group label{font-size:var(--text-sm);color:var(--color-text-light);margin:0}.option-group input[type="checkbox"]{padding:6px 10px;border:1px solid var(--color-border);border-radius:6px;font-size:var(--text-sm);background:var(--color-surface);color:var(--color-text)}@media(max-width:768px){.stats-grid{grid-template-columns:1fr}}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/tools" class="nav-link active">Tools</a>
+                <a href="/guides" class="nav-link">Guides</a>
+                <a href="../about" class="nav-link">About</a>
+                <a href="../contact" class="nav-link">Contact</a>
+            </nav></div>
+        </div>
+    </header>
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>XML to JSON Converter</h1>
+                <p class="page-description">Convert XML data to JSON format instantly. Paste your XML and get clean, formatted JSON output.</p>
+            </div>
+            <div class="tool-layout">
+                <div class="tool-interface">
+                    <div class="tool-header">
+                        <h2>Convert XML to JSON</h2>
+                        <p>Paste your XML code below</p>
+                    </div>
+                    <label for="xml-input"><i class="fas fa-exchange-alt" style="color:var(--color-primary);margin-right:6px"></i> XML Input</label>
+                    <textarea id="xml-input" class="minifier-textarea" placeholder="Paste your XML code here..." rows="10"></textarea>
+                    <div class="options-row">
+                        <div class="option-group">
+                            <input type="checkbox" id="pretty-print" checked>
+                            <label for="pretty-print">Pretty-print JSON</label>
+                        </div>
+                    </div>
+                    <div class="tool-actions">
+                        <button id="convert-btn" class="btn btn-primary btn-lg"><i class="fas fa-exchange-alt" aria-hidden="true"></i> Convert</button>
+                        <button id="reset-btn" class="btn btn-secondary"><i class="fas fa-redo" aria-hidden="true"></i> Reset</button>
+                    </div>
+                    <div id="error-msg" class="result-box" style="display:none;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);color:#fca5a5"></div>
+                    <div id="result-area" class="result-area" style="display:none">
+                        <h3><i class="fas fa-check-circle" style="color:#10b981"></i> JSON Output</h3>
+                        <div id="result-text" class="result-box"></div>
+                        <div class="tool-actions">
+                            <button id="copy-btn" class="btn btn-primary btn-sm"><i class="fas fa-copy"></i> Copy Result</button>
+                            <button id="download-btn" class="btn btn-secondary btn-sm"><i class="fas fa-download"></i> Download</button>
+                        </div>
+                    </div>
+                    <div id="stats" class="stats-grid" style="display:none">
+                        <div class="stat-box"><div class="stat-value" id="stat-xml-size">0</div><div class="stat-label">XML Size</div></div>
+                        <div class="stat-box"><div class="stat-value" id="stat-json-size">0</div><div class="stat-label">JSON Size</div></div>
+                        <div class="stat-box"><div class="stat-value" id="stat-elements">0</div><div class="stat-label">Elements</div></div>
+                    </div>
+                </div>
+                <div class="tool-sidebar">
+                    <div class="card"><h3>How It Works</h3><ol><li>Paste your XML code</li><li>Toggle pretty-print option</li><li>Click Convert</li><li>Copy or download the JSON</li></ol></div>
+                    <div class="card"><h3>Features</h3><ul><li>Preserves attributes</li><li>Handles nested elements</li><li>Pretty-print toggle</li><li>Text node support</li></ul></div>
+                    <div class="card"><p style="font-size:var(--text-xs);color:var(--color-text-light);margin:0">Your text is processed entirely inside your browser.</p></div>
+                </div>
+            </div>
+            <section class="content-section">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>JSON Formatter</h3><p>Format and validate your JSON data.</p><div class="card-footer"><a href="./json-formatter" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>HTML Validator</h3><p>Check your HTML code for errors.</p><div class="card-footer"><a href="./html-validator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Text Cleaner</h3><p>Remove extra spaces and formatting.</p><div class="card-footer"><a href="./text-cleaner" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+            </section>
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
+                <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-3)">
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">How does the XML to JSON converter work?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">It uses the browser's built-in DOMParser to parse XML, then recursively traverses the DOM tree to build a JSON object, preserving elements, text, attributes, and nesting.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Are XML attributes included in the JSON output?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Yes. XML attributes are included in the output as properties prefixed with @ to distinguish them from child elements.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Is my data uploaded to a server?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">No. All processing happens entirely in your browser. Your code never leaves your device.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Can I toggle pretty-printing?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Yes. A pretty-print toggle lets you choose between compact or formatted JSON output with indentation.</p></div>
+                </div>
+            </section>
+
+            <p style="margin-top: var(--space-4); text-align: center;">
+                <a href="../guides/xml-to-json" style="color: var(--color-primary);">Read Guide: XML to JSON Conversion <i class="fas fa-arrow-right"></i></a>
+            </p>
+        </div>
+    </main>
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+    <script defer src="../assets/js/main.min.js"></script>
+    <script>
+    (function(){
+        const input=document.getElementById('xml-input');
+        const resultArea=document.getElementById('result-area');
+        const resultText=document.getElementById('result-text');
+        const errorMsg=document.getElementById('error-msg');
+        const stats=document.getElementById('stats');
+        let elementCount=0;
+        function xmlToJson(xml){
+            let obj={};
+            if(xml.nodeType===1){
+                if(xml.attributes.length>0){
+                    obj['@attributes']={};
+                    for(let j=0;j<xml.attributes.length;j++){
+                        let attr=xml.attributes.item(j);
+                        obj['@attributes'][attr.nodeName]=attr.nodeValue;
+                    }
+                }
+            }else if(xml.nodeType===3){return xml.nodeValue.trim()}
+            if(xml.hasChildNodes()){
+                let hasNonTextChild=false;
+                for(let i=0;i<xml.childNodes.length;i++){
+                    let c=xml.childNodes.item(i);
+                    if(c.nodeType===1){hasNonTextChild;break}
+                }
+                if(hasNonTextChild){
+                    for(let i=0;i<xml.childNodes.length;i++){
+                        let c=xml.childNodes.item(i);
+                        let nodeName=c.nodeName;
+                        if(c.nodeType===1){
+                            elementCount++;
+                            if(typeof obj[nodeName]==='undefined'){
+                                obj[nodeName]=xmlToJson(c);
+                            }else{
+                                if(!Array.isArray(obj[nodeName])){
+                                    let old=obj[nodeName];obj[nodeName]=[old];
+                                }
+                                obj[nodeName].push(xmlToJson(c));
+                            }
+                        }
+                    }
+                }else{
+                    let text='';for(let i=0;i<xml.childNodes.length;i++){text+=xml.childNodes.item(i).nodeValue}
+                    return text.trim();
+                }
+            }
+            return obj;
+        }
+        document.getElementById('convert-btn').addEventListener('click',function(){
+            let code=input.value.trim();if(!code){return}
+            errorMsg.style.display='none';
+            elementCount=0;
+            try{
+                let parser=new DOMParser();
+                let xmlDoc=parser.parseFromString(code,'text/xml');
+                let parseError=xmlDoc.querySelector('parsererror');
+                if(parseError){throw new Error(parseError.textContent.substring(0,200))}
+                let root=xmlDoc.documentElement;
+                elementCount=1;
+                let json=xmlToJson(root);
+                let output={};output[root.nodeName]=json;
+                let pretty=document.getElementById('pretty-print').checked;
+                let jsonStr=pretty?JSON.stringify(output,null,2):JSON.stringify(output);
+                resultText.textContent=jsonStr;resultArea.style.display='';stats.style.display='';
+                document.getElementById('stat-xml-size').textContent=code.length+' chars';
+                document.getElementById('stat-json-size').textContent=jsonStr.length+' chars';
+                document.getElementById('stat-elements').textContent=elementCount;
+            }catch(e){
+                errorMsg.textContent='Error: '+e.message;errorMsg.style.display='';resultArea.style.display='none';stats.style.display='none';
+            }
+        });
+        document.getElementById('reset-btn').addEventListener('click',function(){
+            input.value='';resultArea.style.display='none';stats.style.display='none';errorMsg.style.display='none';
+        });
+        document.getElementById('copy-btn').addEventListener('click',function(){
+            navigator.clipboard.writeText(resultText.textContent).then(function(){
+                let btn=document.getElementById('copy-btn');btn.textContent='Copied!';
+                setTimeout(function(){btn.innerHTML='<i class="fas fa-copy"></i> Copy Result'},2000);
+            });
+        });
+        document.getElementById('download-btn').addEventListener('click',function(){
+            let blob=new Blob([resultText.textContent],{type:'application/json'});
+            let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='converted.json';a.click();
+        });
+    })();
+    </script>
+</body>
+</html>

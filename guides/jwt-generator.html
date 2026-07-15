@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Generate JWT Tokens: Complete Guide 2026 | GoToolly</title>
+    <meta name="description" content="Step-by-step guide to generate JSON Web Tokens for development and testing. Learn HMAC signing with HS256, HS384, and HS512 algorithms.">
+    <meta name="keywords" content="jwt generator guide, generate jwt token, jwt signing, hmac jwt, hs256, jwt development, json web token creation">
+    <link rel="canonical" href="https://gotoolly.com/guides/jwt-generator">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/jwt-generator">
+    <meta property="og:title" content="How to Generate JWT Tokens: Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Step-by-step guide to generate JSON Web Tokens for development and testing. Learn HMAC signing with HS256, HS384, and HS512 algorithms.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/jwt-generator">
+    <meta name="twitter:title" content="How to Generate JWT Tokens: Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Step-by-step guide to generate JSON Web Tokens for development and testing. Learn HMAC signing with HS256, HS384, and HS512 algorithms.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+
+    <style>
+        .page-header { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.08"><rect width="100" height="100" fill="white"/><text x="10" y="30" font-family="monospace" font-size="8">HS256</text><text x="8" y="55" font-family="monospace" font-size="8">HS384</text><text x="10" y="80" font-family="monospace" font-size="8">HS512</text></svg>'); background-size: 250px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #4facfe; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(79, 172, 254, 0.1); border-left: 4px solid #4facfe; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .code-example { background: linear-gradient(135deg, rgba(79, 172, 254, 0.05) 0%, rgba(0, 242, 254, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(79, 172, 254, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; word-break: break-all; }
+        .use-case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .use-case-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .use-case-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Generate JWT Tokens: Complete Guide 2026", "description": "Step-by-step guide to generate JSON Web Tokens for development and testing. Learn HMAC signing with HS256, HS384, and HS512 algorithms.", "url": "https://gotoolly.com/guides/jwt-generator", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/jwt-generator" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "JWT Generator Guide", "item": "https://gotoolly.com/guides/jwt-generator"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between HS256, HS384, and HS512?","acceptedAnswer":{"@type":"Answer","text":"These are HMAC-based signing algorithms that differ only in the hash function used. HS256 uses SHA-256 (256-bit output), HS384 uses SHA-384 (384-bit output), and HS512 uses SHA-512 (512-bit output). HS512 offers the strongest security but produces longer signatures."}},{"@type":"Question","name":"Can I use this tool for production authentication?","acceptedAnswer":{"@type":"Answer","text":"This tool is designed for development and testing purposes. For production use, always use a well-tested JWT library in your server-side language (such as jsonwebtoken for Node.js, PyJWT for Python, or java-jwt for Java) that handles key management, algorithm validation, and security best practices."}},{"@type":"Question","name":"Is it safe to paste my secret key here?","acceptedAnswer":{"@type":"Answer","text":"Yes, all processing happens entirely in your browser. Your secret key is never sent to any server. However, for production systems, we recommend using server-side JWT libraries with proper key management rather than browser-based tools."}},{"@type":"Question","name":"What claims should I include in a JWT?","acceptedAnswer":{"@type":"Answer","text":"At minimum, include sub (subject) to identify the user, iat (issued at) for when the token was created, and exp (expiration) with a reasonable lifetime. For authorization, include custom claims like roles or permissions. Avoid storing sensitive data as claims are only Base64-encoded."}},{"@type":"Question","name":"Why use HMAC over RSA for JWT signing?","acceptedAnswer":{"@type":"Answer","text":"HMAC (HS256, HS384, HS512) uses a single shared secret for both signing and verification, making it simpler for single-server or trusted-party scenarios. RSA (RS256) uses a public/private key pair, enabling anyone with the public key to verify without being able to sign. Choose RSA when multiple services need to verify tokens."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Generate JWT Tokens: Complete Guide 2026</h1>
+                <p class="page-description">
+                    Create signed JSON Web Tokens for development and testing. Learn HMAC-based signing with HS256, HS384, and HS512 algorithms, understand token structure, and follow best practices for secure token generation.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/jwt-generator" class="btn btn-primary btn-lg">Generate JWT Now</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  3 algorithms  Custom claims  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>What is JWT Generation?</h2>
+                    <p>
+                        JWT generation is the process of creating a signed JSON Web Token that can be used for authentication and authorization in web applications and APIs. A JWT generator takes a header (specifying the algorithm and token type), a payload (containing claims about the user and session), and a secret key, then produces a signed token string. The signature provides integrity — any modification to the header or payload invalidates the signature, ensuring the token's contents are trustworthy.
+                    </p>
+                    <p>
+                        For development and testing, a quick JWT generator helps you create sample tokens without setting up a full authentication server. You can test your API endpoints, verify your JWT verification logic, and debug token-related issues. The tool supports HMAC-based algorithms (HS256, HS384, HS512) which use a shared secret key for both signing and verification — ideal for single-server and trusted-service scenarios.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>JWT Signing Algorithms</h2>
+                    <table class="comparison-table" style="width:100%;border-collapse:collapse;margin:var(--space-6)0;">
+                        <thead>
+                            <tr><th>Algorithm</th><th>Hash Function</th><th>Signature Size</th><th>Use Case</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>HS256</strong></td><td>SHA-256</td><td>256 bits (32 bytes)</td><td>Default choice, excellent balance of security and performance</td></tr>
+                            <tr><td><strong>HS384</strong></td><td>SHA-384</td><td>384 bits (48 bytes)</td><td>Higher security when token size isn't a concern</td></tr>
+                            <tr><td><strong>HS512</strong></td><td>SHA-512</td><td>512 bits (64 bytes)</td><td>Maximum security, recommended for high-sensitivity applications</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="pro-tip">
+                        <p><strong> Algorithm choice:</strong> HS256 is the recommended default for most development and testing scenarios. It provides strong security with minimal overhead. Choose HS512 when token size is not a concern and maximum security is desired.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Common Development Use Cases</h2>
+                    <div class="use-case-grid">
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128736;</div>
+                            <h4 style="margin: var(--space-2) 0;">API Testing</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Generate test JWTs to validate your API's authentication middleware. Test token expiry, invalid signatures, and malformed tokens without a full auth server.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128295;</div>
+                            <h4 style="margin: var(--space-2) 0;">Prototype Authentication</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Quickly create JWTs for prototype and MVP applications without building the full authentication flow. Perfect for early-stage development and demos.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128269;</div>
+                            <h4 style="margin: var(--space-2) 0;">Debugging Token Issues</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Reproduce and debug JWT-related issues by generating tokens with specific claims, expiry times, or algorithm types to isolate problems in your verification logic.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128214;</div>
+                            <h4 style="margin: var(--space-2) 0;">Learning & Education</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Learn how JWT structure and signing work by experimenting with different headers, payloads, and secret keys. See how changes affect the resulting token.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 id="step-by-step">Step-by-Step: Generate a JWT Token</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Enter the Header</h3>
+                                <p>Open the <a href="../tools/jwt-generator">JWT Generator</a> tool. The header is pre-filled with the default algorithm (HS256) and token type (JWT). You can customize the algorithm to HS384 or HS512 if needed.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Add Payload Claims</h3>
+                                <p>Enter the claims for your token as a JSON object. Include standard claims like <code>sub</code> (user ID), <code>name</code>, <code>iat</code> (issued at), and <code>exp</code> (expiration). You can also add custom claims for roles, permissions, or application-specific data.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Set Your Secret Key</h3>
+                                <p>Provide a secret key for HMAC signing. Use a strong, random key of sufficient length (at least 32 characters for HS256). The tool uses the Web Crypto API to sign the token securely in your browser.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Copy the Signed Token</h3>
+                                <p>Click generate to produce the signed JWT. The tool displays the complete token (header.payload.signature). Copy it and use it in your API requests via the Authorization header: <code>Bearer &lt;token&gt;</code>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>JWT Generation Examples</h2>
+                    <div class="code-example">
+                        <strong>Header:</strong><br>
+                        {"alg": "HS256", "typ": "JWT"}<br><br>
+                        <strong>Payload:</strong><br>
+                        {"sub": "1234567890", "name": "John Doe", "iat": 1516239022, "exp": 1735689600, "role": "admin"}<br><br>
+                        <strong>Secret:</strong><br>
+                        my-secret-key-at-least-32-chars-long<br><br>
+                        <strong>Result:</strong><br>
+                        eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE3MzU2ODk2MDAsInJvbGUiOiJhZG1pbiJ9.signature_here
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> Use <a href="../tools/jwt-decoder">JWT Decoder</a> to verify your generated token. Paste the token back into the decoder to inspect the header and payload claims and confirm everything looks correct.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Best Practices for JWT Generation</h2>
+                    <ul>
+                        <li><strong>Use strong secret keys:</strong> For HMAC algorithms, use a cryptographically random secret key. For HS256, use at least 32 bytes (256 bits). For HS512, use at least 64 bytes (512 bits). Never use weak or guessable secrets.</li>
+                        <li><strong>Include expiration claims:</strong> Always set the <code>exp</code> claim with a reasonable expiration time. Short-lived tokens (15-60 minutes) limit the damage if a token is compromised. Use refresh tokens for longer sessions.</li>
+                        <li><strong>Never put secrets in payload:</strong> JWT payloads are Base64-encoded, not encrypted. Anyone with the token can read the claims. Store only non-sensitive data like user IDs and roles.</li>
+                        <li><strong>Use appropriate algorithms:</strong> HS256 is suitable for development and single-server scenarios. For multi-service architectures, consider RS256 (asymmetric) so services can verify without sharing the signing key.</li>
+                        <li><strong>Validate tokens server-side:</strong> Always validate JWTs on your server before trusting them. Check the signature, expiration, issuer, and audience claims. Never trust client-side validation alone.</li>
+                        <li><strong>Rotate your secrets regularly:</strong> Periodically change your JWT signing secrets. Maintain a grace period where both old and new secrets are accepted to allow tokens signed with the old key to expire naturally.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Limitations to Consider</h2>
+                    <ul>
+                        <li><strong>Development and testing only:</strong> This tool is designed for generating JWTs for development, testing, and learning. For production authentication, use dedicated server-side JWT libraries that handle key management, algorithm validation, and security best practices.</li>
+                        <li><strong>HMAC only:</strong> The tool supports HMAC-based algorithms (HS256, HS384, HS512). It does not support asymmetric algorithms like RS256 (RSA) or ES256 (ECDSA), which require public/private key pairs.</li>
+                        <li><strong>No token revocation:</strong> The tool generates tokens but does not manage revocation. In production, implement a token blacklist or use short expiration times to handle scenarios where tokens need to be invalidated.</li>
+                        <li><strong>Signature not validated:</strong> While the tool signs tokens, it does not validate them after generation. Always use a server-side library to verify tokens in your application.</li>
+                    </ul>
+                    <div class="pro-tip">
+                        <p><strong> Important security disclaimer:</strong> This tool is intended for <strong>development and testing purposes only</strong>. For production authentication systems, always use well-established server-side JWT libraries that implement proper key management, algorithm whitelisting, and signature validation. Generating JWTs in a browser for production use introduces unnecessary security risks.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is the difference between HS256, HS384, and HS512?</h3>
+                        <p>These are HMAC-based signing algorithms that differ only in the hash function used. HS256 uses SHA-256 (256-bit output), HS384 uses SHA-384 (384-bit output), and HS512 uses SHA-512 (512-bit output). HS512 offers the strongest security but produces longer signatures.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I use this tool for production authentication?</h3>
+                        <p>This tool is designed for development and testing purposes. For production use, always use a well-tested JWT library in your server-side language (such as jsonwebtoken for Node.js, PyJWT for Python, or java-jwt for Java) that handles key management, algorithm validation, and security best practices.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is it safe to paste my secret key here?</h3>
+                        <p>Yes, all processing happens entirely in your browser. Your secret key is never sent to any server. However, for production systems, we recommend using server-side JWT libraries with proper key management rather than browser-based tools.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What claims should I include in a JWT?</h3>
+                        <p>At minimum, include sub (subject) to identify the user, iat (issued at) for when the token was created, and exp (expiration) with a reasonable lifetime. For authorization, include custom claims like roles or permissions. Avoid storing sensitive data as claims are only Base64-encoded.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Why use HMAC over RSA for JWT signing?</h3>
+                        <p>HMAC (HS256, HS384, HS512) uses a single shared secret for both signing and verification, making it simpler for single-server or trusted-party scenarios. RSA (RS256) uses a public/private key pair, enabling anyone with the public key to verify without being able to sign. Choose RSA when multiple services need to verify tokens.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is my data private when using this tool?</h3>
+                        <p>Yes, all JWT generation happens entirely in your browser using the Web Crypto API. Your secret key and payload data are never transmitted to any server, keeping everything completely private and secure on your device.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Related JWT Tools</h2>
+                    <p>Complement your JWT workflow with these tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/jwt-decoder">JWT Decoder</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Decode and inspect JWT header, payload, and claims for debugging</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/hash-generator">Hash Generator</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Generate MD5, SHA-1, SHA-256, and SHA-512 hashes for data integrity</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/uuid-generator">UUID Generator</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Generate UUID v4 strings for unique identifiers</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Generate JWT Tokens Instantly</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Create signed JWTs for development and testing with HS256, HS384, and HS512. Set custom claims and payloads. Fast, private, and free. No account required.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/jwt-generator" class="btn btn-primary btn-lg">Generate JWT Now</a>
+                    <a href="../tools/jwt-decoder" class="btn btn-secondary btn-lg">JWT Decoder</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Local processing  HMAC signing  Custom claims  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>JWT Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/jwt-generator">JWT Generator</a></li>
+                        <li><a href="../tools/jwt-decoder">JWT Decoder</a></li>
+                        <li><a href="../tools/hash-generator">Hash Generator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

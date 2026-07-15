@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIME Types: Complete Reference for Web Developers 2026 | GoToolly</title>
+    <meta name="description" content="Complete MIME type reference for web developers. Find the correct Content-Type for any file format including images, documents, audio, video, and application files.">
+    <meta name="keywords" content="mime type, content type, mime types, file types, content-type header, application/json, text/html, image/png, mime type reference">
+    <link rel="canonical" href="https://gotoolly.com/guides/mime-type-lookup">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/mime-type-lookup">
+    <meta property="og:title" content="MIME Types: Complete Reference for Web Developers 2026 | GoToolly">
+    <meta property="og:description" content="Complete MIME type reference for web developers. Find the correct Content-Type for any file format.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/mime-type-lookup">
+    <meta name="twitter:title" content="MIME Types: Complete Reference for Web Developers 2026 | GoToolly">
+    <meta name="twitter:description" content="Complete MIME type reference for web developers. Find the correct Content-Type for any file format.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+    <style>
+        .page-header { background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><text x="10" y="30" font-family="monospace" font-size="12">Content-Type:</text><text x="40" y="55" font-family="monospace" font-size="10">image/png</text></svg>'); background-size: 300px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #0ea5e9; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(14, 165, 233, 0.1); border-left: 4px solid #0ea5e9; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .use-case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .use-case-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        .code-example { background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(2, 132, 199, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(14, 165, 233, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .use-case-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "MIME Types: Complete Reference for Web Developers 2026", "description": "Complete MIME type reference for web developers. Find the correct Content-Type for any file format.", "url": "https://gotoolly.com/guides/mime-type-lookup", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/mime-type-lookup" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "MIME Type Lookup", "item": "https://gotoolly.com/guides/mime-type-lookup"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a MIME type?","acceptedAnswer":{"@type":"Answer","text":"A MIME (Multipurpose Internet Mail Extensions) type, also called Content-Type, tells the browser or client what kind of data is being transmitted. It follows the format type/subtype, such as text/html, image/png, or application/json. MIME types ensure browsers render content correctly and servers process uploads properly."}},{"@type":"Question","name":"What is the most common MIME type for JSON?","acceptedAnswer":{"@type":"Answer","text":"The standard MIME type for JSON is application/json. Always use this Content-Type when returning JSON from APIs. The older text/javascript or text/json types are considered obsolete. For JSONP responses, use application/javascript instead."}},{"@type":"Question","name":"Why is the correct MIME type important?","acceptedAnswer":{"@type":"Answer","text":"The correct MIME type ensures the browser interprets the content correctly. Using text/html for a JSON response can trigger XSS protection. Using the wrong image MIME type causes images not to display. Incorrect MIME types can also cause CORS issues, broken downloads, and security vulnerabilities."}},{"@type":"Question","name":"What is the difference between application/octet-stream and specific MIME types?","acceptedAnswer":{"@type":"Answer","text":"application/octet-stream is a generic binary stream type used when the specific file type is unknown. It causes the browser to download the file instead of displaying it. Always use the specific MIME type (like application/pdf or image/png) when possible."}},{"@type":"Question","name":"How do I set the MIME type in an HTTP response?","acceptedAnswer":{"@type":"Answer","text":"Set the Content-Type header in your HTTP response. For example, in Node.js: res.setHeader('Content-Type', 'application/json'). In Apache, use the AddType directive. In Nginx, use the types block. Most web frameworks have middleware or configuration options for setting default MIME types."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>MIME Types: Complete Reference for Web Developers</h1>
+                <p class="page-description">Find the correct MIME type for any file format. A comprehensive reference covering images, documents, audio, video, fonts, archives, and application-specific content types.</p>
+                <div style="margin-top: var(--space-6); position: relative;"><a href="../tools/mime-type-lookup" class="btn btn-primary btn-lg">Look Up MIME Type</a></div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">No uploads  Instant lookup  All formats covered  No sign-up</p>
+            </div>
+            <article class="guide-content">
+                <section>
+                    <h2>Why MIME Types Matter</h2>
+                    <p>MIME (Multipurpose Internet Mail Extensions) types are the identifiers that tell browsers, servers, and other web clients exactly what kind of data is being transmitted over HTTP. Every HTTP response includes a Content-Type header that specifies the MIME type of the response body. This information is critical because it determines how the client processes the content: whether to render it as HTML, display it as an image, parse it as JSON, or prompt the user to download it as a file. An incorrect or missing MIME type can cause browsers to misinterpret content, trigger security warnings, break API responses, and prevent files from loading entirely. For web developers, server administrators, and API designers, knowing the correct MIME type for every format you work with is fundamental to building reliable, secure web applications.</p>
+                </section>
+                <section>
+                    <h2>MIME Type Structure</h2>
+                    <p>A MIME type follows the format <code>type/subtype</code>, optionally followed by parameters like <code>charset</code>. The type indicates the general category, and the subtype specifies the exact format.</p>
+                    <div class="code-example">
+                        <strong>MIME Type Format:</strong>
+                        type/subtype[;parameter=value]
+
+                        <strong>Examples:</strong>
+                        text/html                    - HTML document
+                        text/html; charset=utf-8     - HTML with charset parameter
+                        image/png                    - PNG image
+                        application/json             - JSON data
+                        audio/mpeg                   - MP3 audio
+                        video/mp4                    - MP4 video
+                        font/woff2                   - WOFF2 font
+                    </div>
+                    <table class="comparison-table">
+                        <thead><tr><th>Type Category</th><th>Description</th><th>Common Examples</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>text/*</strong></td><td>Human-readable text content</td><td>text/html, text/css, text/plain, text/javascript</td></tr>
+                            <tr><td><strong>image/*</strong></td><td>Image data in various formats</td><td>image/png, image/jpeg, image/svg+xml, image/webp</td></tr>
+                            <tr><td><strong>audio/*</strong></td><td>Audio data</td><td>audio/mpeg, audio/wav, audio/ogg, audio/aac</td></tr>
+                            <tr><td><strong>video/*</strong></td><td>Video data</td><td>video/mp4, video/webm, video/ogg</td></tr>
+                            <tr><td><strong>application/*</strong></td><td>Binary or application-specific data</td><td>application/json, application/pdf, application/zip</td></tr>
+                            <tr><td><strong>font/*</strong></td><td>Font files</td><td>font/woff, font/woff2, font/ttf, font/otf</td></tr>
+                            <tr><td><strong>multipart/*</strong></td><td>Multi-part messages</td><td>multipart/form-data, multipart/byteranges</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>Step-by-Step: Using the MIME Type Lookup</h2>
+                    <div class="step-container">
+                        <div class="step-item"><div class="step-number">1</div><div class="step-content"><h3>Enter a File Extension or MIME Type</h3><p>Open the <a href="../tools/mime-type-lookup">MIME Type Lookup</a> and type either a file extension (like <code>.json</code> or <code>.png</code>) or a MIME type (like <code>application/json</code>) into the search field.</p></div></div>
+                        <div class="step-item"><div class="step-number">2</div><div class="step-content"><h3>View the Complete MIME Type</h3><p>The tool displays the full MIME type, its common file extensions, a description of the format, and usage context. Both extension-to-MIME and MIME-to-extension directions are supported.</p></div></div>
+                        <div class="step-item"><div class="step-number">3</div><div class="step-content"><h3>Browse by Category</h3><p>Explore MIME types organized by category: images, documents, audio, video, fonts, archives, and application-specific types. This helps you discover related formats and choose the right one.</p></div></div>
+                        <div class="step-item"><div class="step-number">4</div><div class="step-content"><h3>Copy the MIME Type</h3><p>Copy the exact MIME type string to use in your server configuration, Content-Type headers, or application code. The output is ready to paste into Apache, Nginx, or any framework.</p></div></div>
+                    </div>
+                </section>
+                <section>
+                    <h2>Essential MIME Types for Web Development</h2>
+                    <div class="code-example">
+                        <strong>HTML and Web Formats:</strong>
+                        text/html                    - .html, .htm
+                        text/css                     - .css
+                        text/javascript              - .js, .mjs
+                        text/plain                   - .txt
+                        text/xml                     - .xml
+                        text/csv                     - .csv
+
+                        <strong>Data Formats:</strong>
+                        application/json             - .json
+                        application/xml              - .xml
+                        application/x-yaml           - .yaml, .yml
+                        application/x-www-form-urlencoded - form submissions
+
+                        <strong>Image Formats:</strong>
+                        image/png                    - .png
+                        image/jpeg                   - .jpg, .jpeg
+                        image/gif                    - .gif
+                        image/svg+xml                - .svg
+                        image/webp                   - .webp
+                        image/avif                   - .avif
+                        image/x-icon                 - .ico
+
+                        <strong>Document Formats:</strong>
+                        application/pdf              - .pdf
+                        application/msword           - .doc
+                        application/vnd.openxmlformats-officedocument.wordprocessingml.document - .docx
+
+                        <strong>Archive Formats:</strong>
+                        application/zip              - .zip
+                        application/gzip             - .gz
+                        application/x-tar            - .tar
+                        application/x-7z-compressed  - .7z
+
+                        <strong>Font Formats:</strong>
+                        font/woff                    - .woff
+                        font/woff2                   - .woff2
+                        font/ttf                     - .ttf
+                        font/otf                     - .otf
+                        font/eot                     - .eot
+                    </div>
+                </section>
+                <section>
+                    <h2>Common Use Cases</h2>
+                    <div class="use-case-grid">
+                        <div class="use-case-card"><div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128640;</div><h4 style="margin: var(--space-2) 0;">API Responses</h4><p style="margin: 0; font-size: var(--text-sm);">Set the correct Content-Type for JSON, XML, and other API response formats to ensure clients parse responses correctly and avoid CORS issues.</p></div>
+                        <div class="use-case-card"><div style="font-size: 2rem; margin-bottom: var(--space-3);">&#127760;</div><h4 style="margin: var(--space-2) 0;">Web Server Config</h4><p style="margin: 0; font-size: var(--text-sm);">Configure Apache, Nginx, or other web servers to serve files with the correct Content-Type headers for optimal browser behavior and security.</p></div>
+                        <div class="use-case-card"><div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128194;</div><h4 style="margin: var(--space-2) 0;">File Uploads</h4><p style="margin: 0; font-size: var(--text-sm);">Validate uploaded file types using MIME type detection. Set the correct Content-Type when storing and serving uploaded files back to users.</p></div>
+                        <div class="use-case-card"><div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128274;</div><h4 style="margin: var(--space-2) 0;">Security Policies</h4><p style="margin: 0; font-size: var(--text-sm);">Prevent MIME sniffing attacks by setting X-Content-Type-Options headers and using correct Content-Type values to stop browsers from guessing content types.</p></div>
+                    </div>
+                </section>
+                <section>
+                    <h2>Setting MIME Types in Web Servers</h2>
+                    <div class="code-example">
+                        <strong>Nginx Configuration:</strong>
+                        types {
+                            application/json    json;
+                            text/html           html htm;
+                            image/png           png;
+                            image/jpeg          jpg jpeg;
+                            font/woff2          woff2;
+                        }
+
+                        <strong>Apache (.htaccess):</strong>
+                        AddType application/json .json
+                        AddType image/svg+xml .svg
+                        AddType font/woff2 .woff2
+
+                        <strong>Node.js (Express):</strong>
+                        res.setHeader('Content-Type', 'application/json');
+                        res.json({ message: 'Hello' });
+
+                        <strong>Python (Flask):</strong>
+                        from flask import Response
+                        return Response(json_data, mimetype='application/json')
+                    </div>
+                    <div class="pro-tip"><p><strong>Tip:</strong> <strong>Always set charset for text types</strong> - For text-based MIME types, include the charset parameter: <code>text/html; charset=utf-8</code>. This prevents encoding issues with international characters.</p></div>
+                    <div class="pro-tip"><p><strong>Tip:</strong> <strong>Use application/octet-stream as a last resort</strong> - Only use <code>application/octet-stream</code> when you genuinely do not know the file type. It forces the browser to download the file instead of displaying it.</p></div>
+                    <div class="pro-tip"><p><strong>Tip:</strong> <strong>SVG requires special handling</strong> - SVG files should use <code>image/svg+xml</code>, not <code>text/xml</code> or <code>application/xml</code>. Some servers need explicit configuration to serve SVG with the correct MIME type.</p></div>
+                </section>
+                <section>
+                    <h2>Best Practices for MIME Type Usage</h2>
+                    <ul>
+                        <li><strong>Always set the correct Content-Type header:</strong> Never rely on browsers to guess the content type. Explicitly set the Content-Type header in every HTTP response.</li>
+                        <li><strong>Prevent MIME sniffing:</strong> Add the <code>X-Content-Type-Options: nosniff</code> header to prevent browsers from overriding your specified MIME type.</li>
+                        <li><strong>Use specific types over generic ones:</strong> Prefer <code>image/webp</code> over <code>image/*</code> and <code>application/json</code> over <code>application/octet-stream</code>.</li>
+                        <li><strong>Validate file types server-side:</strong> Never trust the MIME type sent by clients in file uploads. Validate the file content using magic bytes or library-based detection.</li>
+                        <li><strong>Keep your MIME type database updated:</strong> New formats like AVIF, WebP, and WOFF2 are regularly added. Ensure your server configuration includes these newer types.</li>
+                        <li><strong>Use modern image formats:</strong> Serve images in WebP or AVIF when possible for better compression and faster page loads.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Common Mistakes to Avoid</h2>
+                    <ul>
+                        <li><strong>Missing Content-Type header:</strong> Omitting the Content-Type header forces browsers to sniff the content type, which can lead to incorrect rendering and security vulnerabilities.</li>
+                        <li><strong>Using text/javascript instead of application/javascript:</strong> While historically accepted, <code>application/javascript</code> is the officially registered MIME type. The MIME Sniff specification also defines it.</li>
+                        <li><strong>Serving SVG as text/xml:</strong> SVG should always use <code>image/svg+xml</code>. Using <code>text/xml</code> prevents browsers from rendering SVG inline and breaks CSP policies.</li>
+                        <li><strong>Trusting client-supplied MIME types:</strong> Attackers can modify the Content-Type header in file uploads. Always verify file types server-side using content inspection.</li>
+                        <li><strong>Forgetting charset for text types:</strong> Not specifying <code>charset=utf-8</code> for text-based types can cause encoding issues, especially with non-ASCII characters.</li>
+                        <li><strong>Using wrong types for modern formats:</strong> Use <code>font/woff2</code> (not <code>application/font-woff2</code>) for WOFF2 fonts and <code>image/avif</code> for AVIF images.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Privacy and Security Considerations</h2>
+                    <p>MIME types have significant security implications for web applications. Improper MIME handling can expose your application to attacks and data breaches:</p>
+                    <ul>
+                        <li><strong>Prevent MIME sniffing attacks:</strong> Browsers may ignore your Content-Type and interpret content differently. The <code>X-Content-Type-Options: nosniff</code> header prevents this by forcing browsers to respect the declared MIME type.</li>
+                        <li><strong>Validate uploaded file types:</strong> Never rely on the client-reported MIME type for file upload validation. Check file contents using magic bytes and store files with random names outside the web root.</li>
+                        <li><strong>Restrict allowed MIME types:</strong> Maintain an allowlist of accepted MIME types for file uploads. Reject uploads with unexpected Content-Type values to prevent malicious file uploads.</li>
+                        <li><strong>Use nosniff with JSON APIs:</strong> When serving <code>application/json</code>, always include <code>X-Content-Type-Options: nosniff</code> to prevent browsers from interpreting JSON responses as HTML, which could enable XSS attacks.</li>
+                        <li><strong>Client-side only processing:</strong> Our MIME Type Lookup tool operates entirely in your browser. No data is transmitted to any server, ensuring complete privacy.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h3>What is a MIME type?</h3><p>A MIME (Multipurpose Internet Mail Extensions) type, also called Content-Type, tells the browser or client what kind of data is being transmitted. It follows the format <code>type/subtype</code>, such as <code>text/html</code>, <code>image/png</code>, or <code>application/json</code>. MIME types ensure browsers render content correctly and servers process uploads properly.</p></div>
+                    <div class="faq-item"><h3>What is the most common MIME type for JSON?</h3><p>The standard MIME type for JSON is <code>application/json</code>. Always use this Content-Type when returning JSON from APIs. The older <code>text/javascript</code> or <code>text/json</code> types are considered obsolete. For JSONP responses, use <code>application/javascript</code> instead.</p></div>
+                    <div class="faq-item"><h3>Why is the correct MIME type important?</h3><p>The correct MIME type ensures the browser interprets the content correctly. Using <code>text/html</code> for a JSON response can trigger XSS protection. Using the wrong image MIME type causes images not to display. Incorrect MIME types can also cause CORS issues, broken downloads, and security vulnerabilities.</p></div>
+                    <div class="faq-item"><h3>What is the difference between application/octet-stream and specific MIME types?</h3><p><code>application/octet-stream</code> is a generic binary stream type used when the specific file type is unknown. It causes the browser to download the file instead of displaying it. Always use the specific MIME type (like <code>application/pdf</code> or <code>image/png</code>) when possible so the browser can handle the content appropriately.</p></div>
+                    <div class="faq-item"><h3>How do I set the MIME type in an HTTP response?</h3><p>Set the Content-Type header in your HTTP response. For example, in Node.js: <code>res.setHeader('Content-Type', 'application/json')</code>. In Apache, use the AddType directive. In Nginx, use the types block. Most web frameworks have middleware or configuration options for setting default MIME types.</p></div>
+                </section>
+                <section>
+                    <h2>Complete Web Development Suite</h2>
+                    <p>Enhance your web development workflow with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);"><h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/http-status-lookup">HTTP Status Lookup</a></h4><p style="margin: 0; font-size: var(--text-sm);">Look up HTTP status codes and their meanings</p></div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);"><h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/base64-encoder">Base64 Encoder/Decoder</a></h4><p style="margin: 0; font-size: var(--text-sm);">Encode and decode Base64 strings and data</p></div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);"><h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/html-encoder">HTML Encoder/Decoder</a></h4><p style="margin: 0; font-size: var(--text-sm);">Encode and decode HTML entities for safe web display</p></div>
+                    </div>
+                </section>
+            </article>
+            <section style="background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Look Up Any MIME Type</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">Find the correct Content-Type for any file format. Essential for web server configuration, API development, and file handling. Fast, private, and free.</p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);"><a href="../tools/mime-type-lookup" class="btn btn-primary btn-lg">Look Up MIME Type</a><a href="../tools/http-status-lookup" class="btn btn-secondary btn-lg">Look Up Status Code</a></div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">Local processing  No file uploads  All formats covered  Instant results  No sign-up</p>
+            </section>
+        </div>
+    </main>
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section"><h3>GoToolly</h3><p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p></div>
+                <div class="footer-section"><h3>Encoding Tools</h3><ul class="footer-links"><li><a href="../tools/url-encoder">URL Encoder</a></li><li><a href="../tools/html-encoder">HTML Encoder</a></li><li><a href="../tools/base64-encoder">Base64 Encoder</a></li></ul></div>
+                <div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div>
+                <div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Format SQL Queries: Complete Guide 2026 | GoToolly</title>
+    <meta name="description" content="Master SQL query formatting. Learn to beautify SQL code, improve readability, organize complex queries, and follow best practices for clean">
+    <meta name="keywords" content="sql formatter, format sql, sql beautifier, sql pretty printer, sql formatting guide, sql query formatter, beautify sql online, sql code formatter">
+    <link rel="canonical" href="https://gotoolly.com/guides/sql-formatter">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/sql-formatter">
+    <meta property="og:title" content="How to Format SQL Queries: Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Master SQL query formatting. Learn to beautify SQL code, improve readability, organize complex queries, and follow best practices for clean, maintainable database code.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/sql-formatter">
+    <meta name="twitter:title" content="How to Format SQL Queries: Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Master SQL query formatting. Learn to beautify SQL code, improve readability, organize complex queries, and follow best practices for clean, maintainable database code.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+    
+    <style>
+        .page-header { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><text x="10" y="30" font-family="monospace" font-size="12">SELECT</text><text x="50" y="55" font-family="monospace" font-size="10">FROM</text><text x="20" y="75" font-family="monospace" font-size="10">WHERE</text></svg>'); background-size: 300px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #10b981; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .feature-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        .code-example { background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(5, 150, 105, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(16, 185, 129, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .features-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Format SQL Queries: Complete Guide 2026", "description": "Master SQL query formatting. Learn to beautify SQL code, improve readability, organize complex queries, and follow best practices for clean, maintainable database code.", "url": "https://gotoolly.com/guides/sql-formatter", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/sql-formatter" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "SQL Formatter", "item": "https://gotoolly.com/guides/sql-formatter"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is SQL formatting?","acceptedAnswer":{"@type":"Answer","text":"SQL formatting is the process of organizing SQL code with consistent indentation, line breaks, capitalization, and spacing to improve readability and maintainability. Properly formatted SQL is easier to debug, review, and modify."}},{"@type":"Question","name":"What SQL dialects does the formatter support?","acceptedAnswer":{"@type":"Answer","text":"Our SQL Formatter supports MySQL, PostgreSQL, SQL Server, Oracle, SQLite, MariaDB, BigQuery, and standard ANSI SQL. The tool auto-detects the dialect or lets you select it manually for best results."}},{"@type":"Question","name":"Can I configure the formatting style?","acceptedAnswer":{"@type":"Answer","text":"Yes, the formatter offers customizable options including indentation size (2 or 4 spaces), uppercase or lowercase keywords, comma placement (before or after column names), and line width limits."}},{"@type":"Question","name":"Does formatting change how SQL works?","acceptedAnswer":{"@type":"Answer","text":"No, SQL formatting only changes the appearance of the code. It does not alter the query logic or execution plan. Formatted SQL produces the same results as unformatted SQL."}},{"@type":"Question","name":"Is my SQL data kept private?","acceptedAnswer":{"@type":"Answer","text":"Yes, all formatting happens entirely in your browser. No SQL code is sent to any server. Your queries never leave your device, making it safe for formatting proprietary database code."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Format SQL Queries: Complete Guide 2026</h1>
+                <p class="page-description">
+                    Transform messy SQL into clean, readable code. Learn SQL formatting best practices, beautify complex queries, and write maintainable database code that your team will love.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/sql-formatter" class="btn btn-primary btn-lg">Format SQL Now</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  Multiple dialects  Customizable style  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>Why SQL Formatting Matters</h2>
+                    <p>SQL is the language of data, but unformatted SQL can be a nightmare to read and maintain. A single complex query with multiple joins, subqueries, and aggregations can stretch hundreds of characters across one line. Proper formatting transforms this mess into a structured, readable document. It helps catch syntax errors, makes code review faster, and reduces the time spent debugging queries. In team environments, consistent SQL formatting is essential for collaboration and maintainability.</p>
+                </section>
+
+                <section>
+                    <h2>Step-by-Step: Formatting SQL Queries</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Input Your SQL</h3>
+                                <p>Open the <a href="../tools/sql-formatter">SQL Formatter</a> and paste your SQL code into the input area. The tool handles everything from simple SELECT statements to complex stored procedures with multiple CTEs and subqueries.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Select Database Dialect</h3>
+                                <p>Choose your SQL dialect for optimal formatting: MySQL, PostgreSQL, SQL Server, Oracle, SQLite, MariaDB, or BigQuery. Each dialect has unique keywords and syntax that the formatter handles intelligently.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Customize Formatting Style</h3>
+                                <p>Configure indentation size, keyword case (UPPER or lower), comma placement (leading or trailing), and line width. Preview changes in real time as you adjust settings to find your perfect style.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Copy or Download</h3>
+                                <p>Copy the formatted SQL to your clipboard for use in your database client, ORM, or migration files. Download the formatted result as a .sql file for storage or sharing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Before & After: SQL Formatting Example</h2>
+                    <div class="code-example">
+                        <strong>Before (unformatted):</strong>
+                        SELECT u.id,u.name,count(o.id) as order_count FROM users u LEFT JOIN orders o ON u.id=o.user_id WHERE u.active=1 AND o.created_at >= '2026-01-01' GROUP BY u.id,u.name HAVING count(o.id) > 5 ORDER BY order_count DESC LIMIT 10;
+
+                        <strong>After (formatted):</strong>
+                        SELECT
+                            u.id,
+                            u.name,
+                            COUNT(o.id) AS order_count
+                        FROM users u
+                        LEFT JOIN orders o
+                            ON u.id = o.user_id
+                        WHERE u.active = 1
+                            AND o.created_at >= '2026-01-01'
+                        GROUP BY u.id, u.name
+                        HAVING COUNT(o.id) > 5
+                        ORDER BY order_count DESC
+                        LIMIT 10;
+                    </div>
+                </section>
+
+                <section>
+                    <h2>SQL Formatting Best Practices</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128196;</div>
+                            <h4 style="margin: var(--space-2) 0;">Consistent Capitalization</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Use UPPERCASE for SQL keywords (SELECT, FROM, WHERE) and lowercase for column and table names. This visual distinction makes queries easier to scan.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#10133;</div>
+                            <h4 style="margin: var(--space-2) 0;">Leading vs. Trailing Commas</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Choose a comma style and stick with it. Leading commas make it easier to comment out columns, while trailing commas follow traditional SQL style.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128259;</div>
+                            <h4 style="margin: var(--space-2) 0;">Indent Subqueries</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Subqueries and CTEs should be indented to show their hierarchy. This makes complex query logic immediately visible and easier to follow.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128214;</div>
+                            <h4 style="margin: var(--space-2) 0;">Line Width Limits</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Keep lines under 80-120 characters. This prevents horizontal scrolling and makes queries easier to read in terminal windows and code editors.</p>
+                        </div>
+                    </div>
+
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Format before sharing</strong> - Always format SQL before sharing it with colleagues, posting on Stack Overflow, or saving in documentation. Clean SQL gets better answers and is more professional.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Use CTEs for complex queries</strong> - Common Table Expressions (WITH clauses) make complex queries read like a story. Format each CTE separately for maximum readability.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Align comments with code</strong> - Place comments on their own line above the code they describe, indented to the same level. Avoid inline comments that break the visual flow.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>SQL Formatting Conventions by Dialect</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr><th>Dialect</th><th>Unique Keywords</th><th>Specific Formatting Notes</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>MySQL</td><td>LIMIT, OFFSET</td><td>Backticks for identifiers, LIMIT before OFFSET</td></tr>
+                            <tr><td>PostgreSQL</td><td>RETURNING, DISTINCT ON</td><td>Double quotes for identifiers, ILIKE for case-insensitive</td></tr>
+                            <tr><td>SQL Server</td><td>TOP, WITH (NOLOCK)</td><td>Square brackets for identifiers, TOP before SELECT</td></tr>
+                            <tr><td>Oracle</td><td>ROWNUM, CONNECT BY</td><td>Dual table for SELECT without FROM, hierarchical queries</td></tr>
+                            <tr><td>BigQuery</td><td>UNNEST, STRUCT</td><td>Array and struct types, UNNEST for array flattening</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is SQL formatting?</h3>
+                        <p>SQL formatting is the process of organizing SQL code with consistent indentation, line breaks, capitalization, and spacing to improve readability and maintainability. Properly formatted SQL is easier to debug, review, and modify.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What SQL dialects does the formatter support?</h3>
+                        <p>Our SQL Formatter supports MySQL, PostgreSQL, SQL Server, Oracle, SQLite, MariaDB, BigQuery, and standard ANSI SQL. The tool auto-detects the dialect or lets you select it manually for best results.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I configure the formatting style?</h3>
+                        <p>Yes, the formatter offers customizable options including indentation size (2 or 4 spaces), uppercase or lowercase keywords, comma placement (before or after column names), and line width limits.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Does formatting change how SQL works?</h3>
+                        <p>No, SQL formatting only changes the appearance of the code. It does not alter the query logic or execution plan. Formatted SQL produces the same results as unformatted SQL.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is my SQL data kept private?</h3>
+                        <p>Yes, all formatting happens entirely in your browser. No SQL code is sent to any server. Your queries never leave your device, making it safe for formatting proprietary database code.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Complete Developer Tool Suite</h2>
+                    <p>Enhance your development workflow with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/json-formatter">JSON Formatter</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Format, validate, and beautify JSON data</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/xml-formatter">XML Formatter</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Format and beautify XML documents</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/regex-tester">Regex Tester</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Test regular expressions for data validation</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Format SQL Queries Instantly</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Transform messy SQL into beautiful, readable code. Supports all major database dialects with customizable formatting options. Fast, private, and free.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/sql-formatter" class="btn btn-primary btn-lg">Format SQL Now</a>
+                    <a href="../tools/xml-formatter" class="btn btn-secondary btn-lg">Format XML</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Local processing  Multiple dialects  Customizable style  Instant results  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Developer Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/sql-formatter">SQL Formatter</a></li>
+                        <li><a href="../tools/xml-formatter">XML Formatter</a></li>
+                        <li><a href="../tools/json-formatter">JSON Formatter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

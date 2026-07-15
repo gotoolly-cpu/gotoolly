@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         mergeBtn.disabled = true;
         mergeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Merging...';
-        progressSection.style.display = '';
+        progressSection.style.display = 'block';
         actionPanel.style.display = 'none';
 
         try {
@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
                 progressSection.style.display = 'none';
                 fileList.style.display = 'none';
-                resultArea.style.display = '';
+                resultArea.style.display = 'block';
                 actionPanel.style.display = 'none';
             }, 800);
 

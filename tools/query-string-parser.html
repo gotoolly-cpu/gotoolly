@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query String Parser - Parse URL Parameters | GoToolly</title>
+    <meta name="description" content="Parse URL query strings into key-value pairs. Handle arrays, nested objects, and build query strings from parameters. Free, private, browser-based tool.">
+    <meta name="keywords" content="query string parser, url parameters, parse query string, url params, query string decoder, query string builder, get parameters">
+    <link rel="canonical" href="https://gotoolly.com/tools/query-string-parser">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/query-string-parser">
+    <meta property="og:title" content="Query String Parser - Parse URL Parameters | GoToolly">
+    <meta property="og:description" content="Parse URL query strings into key-value pairs. Handle arrays, nested objects, and build query strings from parameters.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/query-string-parser">
+    <meta name="twitter:title" content="Query String Parser - Parse URL Parameters | GoToolly">
+    <meta name="twitter:description" content="Parse URL query strings into key-value pairs. Handle arrays, nested objects, and build query strings from parameters.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Query String Parser","url":"https://gotoolly.com/tools/query-string-parser","description":"Parse URL query strings into key-value pairs. Handle arrays, nested objects, and build query strings from parameters.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Parse query strings","Handle arrays and nested objects","Build query strings","Export as JSON"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Query String Parser"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a query string?","acceptedAnswer":{"@type":"Answer","text":"A query string is the part of a URL that follows the question mark (?) and contains key-value pairs separated by ampersands (&). For example, in example.com?name=John&age=30, the query string is name=John&age=30."}},{"@type":"Question","name":"How do I parse URL parameters?","acceptedAnswer":{"@type":"Answer","text":"Paste your query string (with or without the leading ?) into the input field and click Parse. The tool will extract all key-value pairs and display them in a table, handling arrays and nested objects."}},{"@type":"Question","name":"Can this tool handle array parameters?","acceptedAnswer":{"@type":"Answer","text":"Yes. Parameters like colors=red&colors=blue are detected as arrays. Indexed parameters like colors[0]=red&colors[1]=blue are also supported and grouped together."}},{"@type":"Question","name":"Is my data uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens entirely in your browser. Your query string data never leaves your device."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.qs-textarea{width:100%;min-height:120px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text)}.qs-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.qs-table{width:100%;border-collapse:collapse;font-size:var(--text-sm)}.qs-table th{text-align:left;padding:10px 12px;background:var(--color-bg);border-bottom:2px solid var(--color-border);font-weight:600;color:var(--color-text-light);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.05em}.qs-table td{padding:10px 12px;border-bottom:1px solid var(--color-border);font-family:'JetBrains Mono',monospace;font-size:var(--text-xs)}.qs-table tr:hover{background:var(--color-bg)}.qs-table .val-num{color:#f59e0b}.qs-table .val-bool{color:#10b981}.qs-table .val-str{color:#3b82f6}.qs-table .val-null{color:var(--color-text-light);font-style:italic}.qs-table .val-array{color:#ec4899}.tab-bar{display:flex;gap:0;border-bottom:2px solid var(--color-border);margin-bottom:var(--space-3)}.tab-btn{padding:10px 20px;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;cursor:pointer;font-size:var(--text-sm);font-weight:500;color:var(--color-text-light);transition:all .2s}.tab-btn:hover{color:var(--color-text)}.tab-btn.active{color:var(--color-primary);border-bottom-color:var(--color-primary)}.tab-content{display:none}.tab-content.active{display:block}.builder-row{display:flex;gap:var(--space-2);margin-bottom:var(--space-2);align-items:center}.builder-row input{flex:1;padding:8px 12px;border:1px solid var(--color-border);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:var(--text-xs);background:var(--color-surface);color:var(--color-text)}.builder-row input:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.builder-remove{background:none;border:1px solid var(--color-border);border-radius:6px;padding:8px 10px;cursor:pointer;color:#ef4444;transition:all .2s}.builder-remove:hover{border-color:#ef4444;background:rgba(239,68,68,.1)}.json-output{padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);font-family:'JetBrains Mono',monospace;font-size:var(--text-xs);white-space:pre-wrap;word-break:break-all;max-height:300px;overflow-y:auto}.toast{position:fixed;bottom:20px;right:20px;background:#10b981;color:#fff;padding:10px 20px;border-radius:8px;font-size:var(--text-sm);z-index:999;opacity:0;transition:opacity .3s}.toast.show{opacity:1}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/tools" class="nav-link active">Tools</a>
+                <a href="/guides" class="nav-link">Guides</a>
+                <a href="../about" class="nav-link">About</a>
+                <a href="../contact" class="nav-link">Contact</a>
+            </nav></div>
+        </div>
+    </header>
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Query String Parser</h1>
+                <p class="page-description">Parse URL query strings into key-value pairs. Handle arrays, nested objects, and build query strings from scratch. Export as JSON.</p>
+            </div>
+            <div class="tool-layout">
+                <div class="tool-interface">
+                    <div class="tool-header">
+                        <h2>Parse Query String</h2>
+                        <p>Paste a query string or build one from key-value pairs</p>
+                    </div>
+                    <div class="tab-bar">
+                        <button class="tab-btn active" data-tab="parse"><i class="fas fa-search"></i> Parse</button>
+                        <button class="tab-btn" data-tab="build"><i class="fas fa-hammer"></i> Build</button>
+                        <button class="tab-btn" data-tab="json"><i class="fas fa-code"></i> JSON</button>
+                    </div>
+                    <div id="tab-parse" class="tab-content active">
+                        <div style="margin-bottom:var(--space-3)">
+                            <label for="qs-input"><i class="fas fa-link" style="color:var(--color-primary);margin-right:6px"></i> Query String</label>
+                            <textarea id="qs-input" class="qs-textarea" placeholder="name=John&age=30&colors=red&colors=blue&address[city]=NYC">name=John&age=30&colors=red&colors=blue&active=true&address[city]=NYC&address[zip]=10001</textarea>
+                        </div>
+                        <div class="tool-actions">
+                            <button id="parse-btn" class="btn btn-primary btn-lg"><i class="fas fa-search" aria-hidden="true"></i> Parse</button>
+                            <button id="copy-json-btn" class="btn btn-secondary"><i class="fas fa-copy" aria-hidden="true"></i> Copy JSON</button>
+                            <button id="clear-btn" class="btn btn-secondary"><i class="fas fa-redo" aria-hidden="true"></i> Clear</button>
+                        </div>
+                        <div id="parse-output" style="margin-top:var(--space-4);overflow-x:auto"></div>
+                    </div>
+                    <div id="tab-build" class="tab-content">
+                        <p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-3)">Add key-value pairs to build a query string</p>
+                        <div id="builder-rows"></div>
+                        <div style="display:flex;gap:var(--space-2);margin-top:var(--space-3);flex-wrap:wrap">
+                            <button id="add-row-btn" class="btn btn-secondary"><i class="fas fa-plus" aria-hidden="true"></i> Add Row</button>
+                            <button id="build-btn" class="btn btn-primary btn-lg"><i class="fas fa-hammer" aria-hidden="true"></i> Build Query String</button>
+                        </div>
+                        <div id="build-output" style="margin-top:var(--space-3);padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);word-break:break-all;min-height:40px"></div>
+                    </div>
+                    <div id="tab-json" class="tab-content">
+                        <div id="json-output" class="json-output">Paste and parse a query string first to see JSON output here.</div>
+                        <button id="copy-json-btn2" class="btn btn-secondary" style="margin-top:var(--space-2)"><i class="fas fa-copy" aria-hidden="true"></i> Copy JSON</button>
+                    </div>
+                </div>
+                <div class="tool-sidebar">
+                    <div class="card"><h3>How It Works</h3><ol><li>Paste a query string in the Parse tab</li><li>Click Parse to extract key-value pairs</li><li>View results as a table or JSON</li><li>Use the Build tab to create query strings</li></ol></div>
+                    <div class="card"><h3>Supported Formats</h3><ul><li><strong>Simple</strong> - key=value</li><li><strong>Multiple</strong> - key1=a&key2=b</li><li><strong>Arrays</strong> - colors=red&colors=blue</li><li><strong>Indexed</strong> - colors[0]=red</li><li><strong>Nested</strong> - user[name]=John</li><li><strong>Encoded</strong> - key=hello%20world</li><li><strong>Empty</strong> - key=&key2</li></ul></div>
+                </div>
+            </div>
+            <section class="content-section">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>URL Encoder / Decoder</h3><p>Encode and decode URLs instantly. Convert special characters to URL-safe format.</p><div class="card-footer"><a href="./url-encoder" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>URL Parser</h3><p>Break down any URL into its individual components with color-coded output.</p><div class="card-footer"><a href="./url-parser" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>JSON Formatter</h3><p>Format, validate, and beautify JSON data with syntax highlighting.</p><div class="card-footer"><a href="./json-formatter" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+            </section>
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
+                <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-3)">
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What is a query string?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">A query string is the part of a URL that follows the question mark (?) and contains key-value pairs separated by ampersands (&). For example, in example.com?name=John&age=30, the query string is name=John&age=30.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">How do I parse URL parameters?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Paste your query string (with or without the leading ?) into the input field and click Parse. The tool will extract all key-value pairs and display them in a table, handling arrays and nested objects.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Can this tool handle array parameters?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Yes. Parameters like colors=red&colors=blue are detected as arrays. Indexed parameters like colors[0]=red&colors[1]=blue are also supported and grouped together.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Is my data uploaded to a server?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">No. All processing happens entirely in your browser. Your query string data never leaves your device.</p></div>
+                </div>
+            </section>
+
+            <p style="margin-top: var(--space-4); text-align: center;">
+                <a href="../guides/query-string-parser" style="color: var(--color-primary);">Read Guide: Query String Parser Guide <i class="fas fa-arrow-right"></i></a>
+            </p>
+        </div>
+    </main>
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+    <script defer src="../assets/js/main.min.js"></script>
+    <script>
+    (function(){
+        const qsInput=document.getElementById('qs-input');
+        const parseBtn=document.getElementById('parse-btn');
+        const clearBtn=document.getElementById('clear-btn');
+        const copyJsonBtn=document.getElementById('copy-json-btn');
+        const copyJsonBtn2=document.getElementById('copy-json-btn2');
+        const parseOutput=document.getElementById('parse-output');
+        const jsonOutput=document.getElementById('json-output');
+        const buildOutput=document.getElementById('build-output');
+        const addRowBtn=document.getElementById('add-row-btn');
+        const buildBtn=document.getElementById('build-btn');
+        const builderRows=document.getElementById('builder-rows');
+        let currentParsed=null;
+        function showToast(msg){let t=document.querySelector('.toast');if(!t){t=document.createElement('div');t.className='toast';document.body.appendChild(t)}t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000)}
+        function copyText(text){navigator.clipboard.writeText(text).then(()=>showToast('Copied!')).catch(()=>showToast('Copy failed'))}
+        function escapeHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+        document.querySelectorAll('.tab-btn').forEach(btn=>{btn.addEventListener('click',function(){document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));this.classList.add('active');document.getElementById('tab-'+this.dataset.tab).classList.add('active')})});
+        function parseNested(qs){
+            let str=qs.replace(/^\?/,'').trim();if(!str)return{};
+            const result={};const pairs=str.split('&');
+            pairs.forEach(pair=>{
+                const [rawKey,...rest]=pair.split('=');const rawVal=rest.join('=');const key=decodeURIComponent(rawKey);const val=rawVal===''?'':decodeURIComponent(rawVal);
+                const dotMatch=key.match(/^([^\[]+)\[(.+)\]$/);
+                if(dotMatch){
+                    const base=dotMatch[1];const inner=dotMatch[2];
+                    if(!result[base])result[base]={};
+                    result[base][inner]=coerceValue(val);
+                }else{
+                    if(result.hasOwnProperty(key)){
+                        if(!Array.isArray(result[key]))result[key]=[result[key]];
+                        result[key].push(coerceValue(val));
+                    }else{result[key]=coerceValue(val)}
+                }
+            });
+            return result;
+        }
+        function coerceValue(v){if(v==='')return '';if(v==='true')return true;if(v==='false')return false;if(v==='null')return null;if(!isNaN(v)&&v!=='')return Number(v);return v}
+        function typeOf(v){if(v===null)return 'null';if(Array.isArray(v))return 'array';return typeof v}
+        function typeClass(v){const t=typeOf(v);if(t==='number')return 'val-num';if(t==='boolean')return 'val-bool';if(t==='null')return 'val-null';if(t==='array')return 'val-array';return 'val-str'}
+        function flattenForTable(obj,prefix){
+            const rows=[];
+            Object.keys(obj).forEach(k=>{
+                const fullKey=prefix?prefix+'['+k+']':k;
+                const v=obj[k];
+                if(v!==null&&typeof v==='object'&&!Array.isArray(v)){rows.push(...flattenForTable(v,fullKey))}
+                else{rows.push({key:fullKey,value:v,type:typeOf(v)})}
+            });
+            return rows;
+        }
+        function renderTable(parsed){
+            const rows=flattenForTable(parsed);
+            if(!rows.length){parseOutput.innerHTML='<p style="color:var(--color-text-light);font-size:var(--text-sm)">No parameters found.</p>';return}
+            let html='<table class="qs-table"><thead><tr><th>#</th><th>Key</th><th>Value</th><th>Type</th><th></th></tr></thead><tbody>';
+            rows.forEach((r,i)=>{
+                const displayVal=r.value===null?'null':Array.isArray(r.value)?r.value.join(', '):String(r.value);
+                html+='<tr><td>'+(i+1)+'</td><td>'+escapeHtml(r.key)+'</td><td class="'+typeClass(r.value)+'">'+escapeHtml(displayVal)+'</td><td>'+r.type+'</td><td><button class="url-component-copy" style="background:none;border:1px solid var(--color-border);border-radius:4px;padding:4px 8px;cursor:pointer;color:var(--color-text-light);font-size:var(--text-xs)" onclick="(\''+escapeHtml(displayVal).replace(/'/g,"\\'")+'\')" title="Copy value"><i class="fas fa-copy"></i></button></td></tr>';
+            });
+            html+='</tbody></table>';
+            parseOutput.innerHTML=html;
+        }
+        function doParse(){
+            const raw=qsInput.value.trim();
+            if(!raw){parseOutput.innerHTML='';jsonOutput.textContent='No query string provided.';currentParsed=null;return}
+            currentParsed=parseNested(raw);
+            renderTable(currentParsed);
+            jsonOutput.textContent=JSON.stringify(currentParsed,null,2);
+        }
+        parseBtn.addEventListener('click',doParse);
+        clearBtn.addEventListener('click',function(){qsInput.value='';parseOutput.innerHTML='';jsonOutput.textContent='Paste and parse a query string first to see JSON output here.';currentParsed=null});
+        copyJsonBtn.addEventListener('click',function(){if(currentParsed)copyText(JSON.stringify(currentParsed,null,2))});
+        copyJsonBtn2.addEventListener('click',function(){if(currentParsed)copyText(JSON.stringify(currentParsed,null,2))});
+        parseOutput.addEventListener('click',function(e){const btn=e.target.closest('button[onclick]');if(btn){const val=btn.getAttribute('onclick').match(/\('(.+)'\)/);if(val)copyText(val[1].replace(/\\'/g,"'"))}});
+        let builderCount=0;
+        function addBuilderRow(key,val){
+            const id=builderCount++;
+            const row=document.createElement('div');row.className='builder-row';row.id='brow-'+id;
+            row.innerHTML='<input type="text" placeholder="Key" value="'+escapeHtml(key||'')+'" class="bkey"><input type="text" placeholder="Value" value="'+escapeHtml(val||'')+'" class="bval"><button class="builder-remove" title="Remove"><i class="fas fa-times"></i></button>';
+            row.querySelector('.builder-remove').addEventListener('click',function(){row.remove()});
+            builderRows.appendChild(row);
+        }
+        addRowBtn.addEventListener('click',function(){addBuilderRow('','')});
+        function buildQueryString(){
+            const rows=builderRows.querySelectorAll('.builder-row');
+            const parts=[];
+            rows.forEach(r=>{
+                const k=r.querySelector('.bkey').value.trim();
+                const v=r.querySelector('.bval').value;
+                if(k)parts.push(encodeURIComponent(k)+'='+encodeURIComponent(v));
+            });
+            buildOutput.textContent=parts.join('&');
+        }
+        buildBtn.addEventListener('click',buildQueryString);
+        addBuilderRow('name','John');addBuilderRow('age','30');addBuilderRow('colors','red');addBuilderRow('colors','blue');
+        qsInput.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();doParse()}});
+        doParse();
+    })();
+    </script>
+</body>
+</html>

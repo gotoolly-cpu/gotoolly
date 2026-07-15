@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Encode/Decode URLs: Complete Guide 2026 | GoToolly</title>
+    <meta name="description" content="Master URL encoding and decoding. Learn to properly format URLs, handle special characters, encode query parameters">
+    <meta name="keywords" content="url encoder, url decoder, url encode, url decode, percent encoding, url encoding guide, query string encoding, url special characters">
+    <link rel="canonical" href="https://gotoolly.com/guides/url-encoder">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/url-encoder">
+    <meta property="og:title" content="How to Encode/Decode URLs: Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Master URL encoding and decoding. Learn to properly format URLs, handle special characters, encode query parameters, and work with percent-encoding for web development.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/url-encoder">
+    <meta name="twitter:title" content="How to Encode/Decode URLs: Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Master URL encoding and decoding. Learn to properly format URLs, handle special characters, encode query parameters, and work with percent-encoding for web development.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+    
+    <style>
+        .page-header { background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><text x="10" y="30" font-family="monospace" font-size="12">https://</text><text x="40" y="55" font-family="monospace" font-size="10">%20%26</text><text x="15" y="75" font-family="monospace" font-size="10">?q=encode</text></svg>'); background-size: 300px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #0ea5e9; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(14, 165, 233, 0.1); border-left: 4px solid #0ea5e9; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .use-case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .use-case-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        .code-example { background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(2, 132, 199, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(14, 165, 233, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .use-case-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Encode/Decode URLs: Complete Guide 2026", "description": "Master URL encoding and decoding. Learn to properly format URLs, handle special characters, encode query parameters, and work with percent-encoding for web development.", "url": "https://gotoolly.com/guides/url-encoder", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/url-encoder" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "URL Encoder", "item": "https://gotoolly.com/guides/url-encoder"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is URL encoding?","acceptedAnswer":{"@type":"Answer","text":"URL encoding, also known as percent-encoding, converts characters that are not allowed in URLs into a format that can be safely transmitted. It replaces unsafe characters with a percent sign (%) followed by their two-digit hexadecimal ASCII code."}},{"@type":"Question","name":"Which characters need encoding in URLs?","acceptedAnswer":{"@type":"Answer","text":"Characters that must be encoded include spaces (%20), special characters like &amp; (%26), % (%25), + (%2B), # (%23), ? (%3F), and any non-ASCII characters. Unreserved characters (A-Z, a-z, 0-9, -, ., _, ~) do not need encoding."}},{"@type":"Question","name":"What is the difference between encodeURI and encodeURIComponent?","acceptedAnswer":{"@type":"Answer","text":"encodeURI encodes a complete URI while preserving characters that have special meaning in URIs (#, ?, &amp;, etc.). encodeURIComponent encodes everything including those special characters and is intended for encoding query parameter values."}},{"@type":"Question","name":"Why do spaces in URLs become %20?","acceptedAnswer":{"@type":"Answer","text":"Spaces are not allowed in URLs per the URL specification. The %20 encoding (ASCII hex 20 = 32 = space character) replaces spaces. In form-encoded data, spaces may also be encoded as + (plus sign)."}},{"@type":"Question","name":"Is URL encoding the same as HTML encoding?","acceptedAnswer":{"@type":"Answer","text":"No. URL encoding (percent-encoding) is for URLs, using % followed by hex codes. HTML encoding uses entities like &amp;amp; for HTML content. They serve different purposes and should not be confused."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Encode/Decode URLs: Complete Guide 2026</h1>
+                <p class="page-description">
+                    Master URL percent-encoding for web development. Learn to properly format URLs, handle special characters, encode query parameters, and avoid common URL pitfalls.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/url-encoder" class="btn btn-primary btn-lg">Encode/Decode URLs</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  Instant conversion  Full URL support  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>Why URL Encoding Is Essential</h2>
+                    <p>URLs are the backbone of web navigation, but they have strict rules about which characters are allowed. URL encoding, also known as percent-encoding, ensures that special characters, spaces, and non-ASCII characters are safely transmitted over the internet. Without proper encoding, URLs can break, query parameters can be misinterpreted, and web requests can fail entirely. Understanding URL encoding is essential for any web developer, API user, or SEO professional.</p>
+                </section>
+
+                <section>
+                    <h2>Step-by-Step: Using the URL Encoder/Decoder</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Choose Encode or Decode Mode</h3>
+                                <p>Open the <a href="../tools/url-encoder">URL Encoder/Decoder</a> and select whether you want to encode a string for use in a URL or decode a percent-encoded string back to readable text.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Enter Your Text or URL</h3>
+                                <p>Paste or type the text you want to encode, or a percent-encoded string you want to decode. The tool processes your input instantly as you type.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>View the Result</h3>
+                                <p>The encoded or decoded result appears in the output pane. For encoding, you'll see percent-encoded characters like <code>%20</code> for spaces and <code>%26</code> for ampersands. For decoding, you'll see the human-readable version.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Copy or Toggle Modes</h3>
+                                <p>Copy the result to your clipboard for use in your code, API calls, or URL construction. Switch between encode and decode modes to verify round-trip conversion. Download the result as a text file.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>URL Encoding Reference</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr><th>Character</th><th>Encoded</th><th>Usage Context</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Space</td><td><code>%20</code> or <code>+</code></td><td>Query strings, URL paths</td></tr>
+                            <tr><td>&amp;</td><td><code>%26</code></td><td>Query parameters (separates params)</td></tr>
+                            <tr><td>#</td><td><code>%23</code></td><td>Fragment identifier</td></tr>
+                            <tr><td>?</td><td><code>%3F</code></td><td>Query string separator</td></tr>
+                            <tr><td>=</td><td><code>%3D</code></td><td>Key-value pairs in query</td></tr>
+                            <tr><td>%</td><td><code>%25</code></td><td>Percent encoding itself</td></tr>
+                            <tr><td>+</td><td><code>%2B</code></td><td>Query strings (+ means space)</td></tr>
+                            <tr><td>/</td><td><code>%2F</code></td><td>Path segments</td></tr>
+                            <tr><td>@</td><td><code>%40</code></td><td>Email addresses in URLs</td></tr>
+                            <tr><td>:</td><td><code>%3A</code></td><td>Protocol separator (http://)</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="code-example">
+                        <strong>Encoding Example:</strong>
+                        Original: "Hello World & More!"
+                        Encoded: "Hello%20World%20%26%20More%21"
+
+                        <strong>Query String Example:</strong>
+                        Original: "?search=cat & dog&page=1"
+                        Encoded: "?search=cat%20%26%20dog&amp;page=1"
+                    </div>
+                </section>
+
+                <section>
+                    <h2>URL Encoding vs. Form Encoding</h2>
+                    <p>There are two common encoding schemes for URLs: percent-encoding (standard URL encoding) and application/x-www-form-urlencoded (form encoding). The key difference is that form encoding uses <code>+</code> for spaces and percent-encoding uses <code>%20</code>. Our tool supports both formats.</p>
+                    
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Use the right encoding for the context</strong> - Use percent-encoding (%20) for URL path segments and URL components. Use form encoding (+) for application/x-www-form-urlencoded POST data and query strings.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Double encoding causes issues</strong> - If a URL has already been encoded, encoding it again produces incorrect results. For example, <code>%20</code> encoded again becomes <code>%2520</code>. Check with the decoder first if unsure.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Always encode user-supplied URL parameters</strong> - When building URLs with user input, always encode parameter values to prevent URL injection, broken links, and security vulnerabilities.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Common Use Cases</h2>
+                    <div class="use-case-grid">
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128640;</div>
+                            <h4 style="margin: var(--space-2) 0;">API Requests</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Properly encode query parameters in REST and GraphQL API calls to ensure special characters in search terms, filters, and data payloads are transmitted correctly.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128269;</div>
+                            <h4 style="margin: var(--space-2) 0;">Search URLs</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Encode search queries with spaces, special characters, and non-ASCII text for use in search engine URLs, e-commerce filters, and database lookups.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128187;</div>
+                            <h4 style="margin: var(--space-2) 0;">Web Development</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Implement proper URL encoding in JavaScript, PHP, Python, and other languages for client-side and server-side URL construction and parsing.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128200;</div>
+                            <h4 style="margin: var(--space-2) 0;">SEO & Analytics</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Ensure tracking URLs with UTM parameters and analytics tags are correctly encoded so that special characters don't break campaign attribution.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Best Practices for URL Encoding</h2>
+                    <ul>
+                        <li><strong>Encode parameter values, not the entire URL:</strong> Only encode the values of query parameters, not the base URL structure (http://, domain, path).</li>
+                        <li><strong>Use the appropriate JavaScript function:</strong> Use <code>encodeURI()</code> for complete URIs and <code>encodeURIComponent()</code> for query parameter values.</li>
+                        <li><strong>Consider international domains:</strong> Non-ASCII characters in domain names should be encoded using Punycode (IDN), not percent-encoding.</li>
+                        <li><strong>Always decode before displaying:</strong> When showing URLs to users, decode percent-encoded strings back to readable text for better user experience.</li>
+                        <li><strong>Test with edge cases:</strong> Test your URL encoding with special characters, Unicode text, and boundary values to ensure robustness.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is URL encoding?</h3>
+                        <p>URL encoding, also known as percent-encoding, converts characters that are not allowed in URLs into a format that can be safely transmitted. It replaces unsafe characters with a percent sign (%) followed by their two-digit hexadecimal ASCII code.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Which characters need encoding in URLs?</h3>
+                        <p>Characters that must be encoded include spaces (%20), special characters like &amp; (%26), % (%25), + (%2B), # (%23), ? (%3F), and any non-ASCII characters. Unreserved characters (A-Z, a-z, 0-9, -, ., _, ~) do not need encoding.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What is the difference between encodeURI and encodeURIComponent?</h3>
+                        <p><code>encodeURI()</code> encodes a complete URI while preserving characters that have special meaning in URIs (#, ?, &amp;, etc.). <code>encodeURIComponent()</code> encodes everything including those special characters and is intended for encoding query parameter values.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Why do spaces in URLs become %20?</h3>
+                        <p>Spaces are not allowed in URLs per the URL specification. The %20 encoding (ASCII hex 20 = 32 = space character) replaces spaces. In form-encoded data, spaces may also be encoded as + (plus sign).</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is URL encoding the same as HTML encoding?</h3>
+                        <p>No. URL encoding (percent-encoding) is for URLs, using % followed by hex codes. HTML encoding uses entities like <code>&amp;amp;</code> for HTML content. They serve different purposes and should not be confused.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Complete Web Development Suite</h2>
+                    <p>Enhance your web development workflow with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/html-encoder">HTML Encoder/Decoder</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Encode and decode HTML entities for safe web display</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/url-slug-generator">URL Slug Generator</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Generate clean, SEO-friendly URL slugs from text</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/base64-encoder">Base64 Encoder/Decoder</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Encode and decode Base64 strings and files</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Encode and Decode URLs Instantly</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Properly format URLs for web development, API calls, and SEO. Safely handle special characters in any URL context. Fast, private, and free.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/url-encoder" class="btn btn-primary btn-lg">Encode/Decode Now</a>
+                    <a href="../tools/url-slug-generator" class="btn btn-secondary btn-lg">Generate URL Sl Kiss</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Local processing  No file uploads  Percent + form encoding  Instant results  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Encoding Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/url-encoder">URL Encoder</a></li>
+                        <li><a href="../tools/html-encoder">HTML Encoder</a></li>
+                        <li><a href="../tools/base64-encoder">Base64 Encoder</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guids</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

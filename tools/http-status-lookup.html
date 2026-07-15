@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Status Code Lookup - Reference Guide | GoToolly</title>
+    <meta name="description" content="Look up HTTP status codes with descriptions and usage. Search 60+ status codes from 1xx to 5xx. Free developer reference tool.">
+    <meta name="keywords" content="http status codes, http error codes, status code lookup, 404 meaning, 200 ok, 301 redirect, 500 error, http reference, rest api status codes">
+    <link rel="canonical" href="https://gotoolly.com/tools/http-status-lookup">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/http-status-lookup">
+    <meta property="og:title" content="HTTP Status Code Lookup - Reference Guide | GoToolly">
+    <meta property="og:description" content="Look up HTTP status codes with descriptions and usage. Search 60+ status codes from 1xx to 5xx.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/http-status-lookup">
+    <meta name="twitter:title" content="HTTP Status Code Lookup - Reference Guide | GoToolly">
+    <meta name="twitter:description" content="Look up HTTP status codes with descriptions and usage. Search 60+ status codes from 1xx to 5xx.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"HTTP Status Code Lookup","url":"https://gotoolly.com/tools/http-status-lookup","description":"Look up HTTP status codes with descriptions and usage. Search 60+ status codes from 1xx to 5xx.","applicationCategory":"DeveloperApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","60+ status codes","Search and filter","Grouped by category","Click to copy"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"HTTP Status Code Lookup"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an HTTP status code?","acceptedAnswer":{"@type":"Answer","text":"An HTTP status code is a three-digit number returned by a server in response to a client request. It indicates whether the request was successful, redirected, or encountered an error."}},{"@type":"Question","name":"What are the most common HTTP status codes?","acceptedAnswer":{"@type":"Answer","text":"The most common are: 200 (OK), 301 (Moved Permanently), 304 (Not Modified), 400 (Bad Request), 401 (Unauthorized), 403 (Forbidden), 404 (Not Found), 500 (Internal Server Error), and 503 (Service Unavailable)."}},{"@type":"Question","name":"What do 4xx status codes mean?","acceptedAnswer":{"@type":"Answer","text":"4xx status codes indicate client errors. The request contains bad syntax, cannot be fulfilled, or something is wrong with the client request."}},{"@type":"Question","name":"What do 5xx status codes mean?","acceptedAnswer":{"@type":"Answer","text":"5xx status codes indicate server errors. The server failed to fulfill a valid request. These usually require server-side investigation."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.search-box{width:100%;padding:12px 16px 12px 42px;border:1px solid var(--color-border);border-radius:8px;font-size:var(--text-sm);background:var(--color-surface);color:var(--color-text)}.search-box:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.search-wrapper{position:relative;margin-bottom:var(--space-3)}.search-wrapper .fa-search{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--color-text-light);font-size:var(--text-sm)}.cat-filters{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-4)}.cat-btn{padding:6px 14px;border:1px solid var(--color-border);border-radius:20px;background:var(--color-surface);cursor:pointer;font-size:var(--text-xs);font-weight:500;color:var(--color-text-light);transition:all .2s}.cat-btn:hover{border-color:var(--color-primary);color:var(--color-primary)}.cat-btn.active{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}.status-grid{display:grid;gap:var(--space-2)}.status-card{display:flex;align-items:flex-start;gap:var(--space-3);padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);cursor:pointer;transition:all .2s;position:relative}.status-card:hover{border-color:var(--color-primary);transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.08)}.status-code{font-family:'JetBrains Mono',monospace;font-size:var(--text-lg);font-weight:700;min-width:48px;flex-shrink:0}.sc-1xx{color:#6366f1}.sc-2xx{color:#10b981}.sc-3xx{color:#f59e0b}.sc-4xx{color:#ef4444}.sc-5xx{color:#dc2626}.status-info{flex:1}.status-name{font-weight:600;font-size:var(--text-sm);margin-bottom:2px}.status-desc{font-size:var(--text-xs);color:var(--color-text-light);line-height:1.4}.status-when{font-size:10px;color:var(--color-text-light);margin-top:4px;font-style:italic}.section-group-title{font-size:var(--text-base);font-weight:700;margin:var(--space-4) 0 var(--space-2);padding-bottom:var(--space-2);border-bottom:2px solid var(--color-border);display:flex;align-items:center;gap:var(--space-2)}.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;color:#fff}.badge-1xx{background:#6366f1}.badge-2xx{background:#10b981}.badge-3xx{background:#f59e0b}.badge-4xx{background:#ef4444}.badge-5xx{background:#dc2626}.result-count{font-size:var(--text-xs);color:var(--color-text-light);margin-bottom:var(--space-2)}.toast{position:fixed;bottom:20px;right:20px;background:#10b981;color:#fff;padding:10px 20px;border-radius:8px;font-size:var(--text-sm);z-index:999;opacity:0;transition:opacity .3s}.toast.show{opacity:1}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/tools" class="nav-link active">Tools</a>
+                <a href="/guides" class="nav-link">Guides</a>
+                <a href="../about" class="nav-link">About</a>
+                <a href="../contact" class="nav-link">Contact</a>
+            </nav></div>
+        </div>
+    </header>
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>HTTP Status Code Lookup</h1>
+                <p class="page-description">Quick reference for all HTTP status codes. Search by code or description. Click any status code to copy it.</p>
+            </div>
+            <div class="tool-layout">
+                <div class="tool-interface" style="max-width:100%">
+                    <div class="tool-header">
+                        <h2>Search Status Codes</h2>
+                        <p>Type a code (e.g. 404) or keyword (e.g. redirect) to filter</p>
+                    </div>
+                    <div class="search-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="status-search" class="search-box" placeholder="Search by code or description (e.g. 404, redirect, auth)..." autocomplete="off">
+                    </div>
+                    <div class="cat-filters" id="cat-filters"></div>
+                    <div id="result-count" class="result-count"></div>
+                    <div id="status-output" class="status-grid"></div>
+                </div>
+                <div class="tool-sidebar">
+                    <div class="card"><h3>Category Breakdown</h3><ul><li><span class="badge badge-1xx">1xx</span> Informational</li><li><span class="badge badge-2xx">2xx</span> Success</li><li><span class="badge badge-3xx">3xx</span> Redirection</li><li><span class="badge badge-4xx">4xx</span> Client Error</li><li><span class="badge badge-5xx">5xx</span> Server Error</li></ul></div>
+                    <div class="card"><h3>Tips</h3><ul><li>Type a code to jump to it</li><li>Use category buttons to filter</li><li>Click any card to copy the code</li><li>Combine search + category filter</li></ul></div>
+                </div>
+            </div>
+            <section class="content-section">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>URL Parser</h3><p>Break down any URL into its individual components with color-coded output.</p><div class="card-footer"><a href="./url-parser" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>MIME Type Lookup</h3><p>Find the correct MIME type for any file extension. 80+ types covered.</p><div class="card-footer"><a href="./mime-type-lookup" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Query String Parser</h3><p>Parse URL query parameters into key-value pairs with ease.</p><div class="card-footer"><a href="./query-string-parser" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+            </section>
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
+                <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-3)">
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What is an HTTP status code?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">An HTTP status code is a three-digit number returned by a server in response to a client request. It indicates whether the request was successful, redirected, or encountered an error.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What are the most common HTTP status codes?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">The most common are: 200 (OK), 301 (Moved Permanently), 304 (Not Modified), 400 (Bad Request), 401 (Unauthorized), 403 (Forbidden), 404 (Not Found), 500 (Internal Server Error), and 503 (Service Unavailable).</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What do 4xx status codes mean?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">4xx status codes indicate client errors. The request contains bad syntax, cannot be fulfilled, or something is wrong with the client request. Common examples include 400 (Bad Request), 404 (Not Found), and 429 (Too Many Requests).</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What do 5xx status codes mean?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">5xx status codes indicate server errors. The server failed to fulfill a valid request. Common examples include 500 (Internal Server Error), 502 (Bad Gateway), and 503 (Service Unavailable).</p></div>
+                </div>
+            </section>
+
+            <p style="margin-top: var(--space-4); text-align: center;">
+                <a href="../guides/http-status-lookup" style="color: var(--color-primary);">Read Guide: HTTP Status Codes Reference <i class="fas fa-arrow-right"></i></a>
+            </p>
+        </div>
+    </main>
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+    <script defer src="../assets/js/main.min.js"></script>
+    <script>
+    (function(){
+        var statuses=[
+            {code:100,name:"Continue",desc:"The server has received the request headers and the client should proceed to send the request body.",when:"Used with Expect: 100-continue header."},
+            {code:101,name:"Switching Protocols",desc:"The server is switching protocols as requested by the client.",when:"Upgrade header in request, e.g. switching to WebSocket."},
+            {code:102,name:"Processing",desc:"The server has received and is processing the request, but no response is available yet.",when:"WebDAV requests that may take a long time."},
+            {code:200,name:"OK",desc:"The request has succeeded. The server successfully returned the requested resource.",when:"Successful GET, PUT, or POST request."},
+            {code:201,name:"Created",desc:"The request has been fulfilled and resulted in a new resource being created.",when:"POST request that creates a new resource."},
+            {code:202,name:"Accepted",desc:"The request has been accepted for processing, but the processing has not been completed.",when:"Async operations where processing continues in the background."},
+            {code:203,name:"Non-Authoritative Information",desc:"The server is a proxy transforming the 200 OK response.",when:"Proxy servers modifying response content."},
+            {code:204,name:"No Content",desc:"The server successfully processed the request and is not returning any content.",when:"DELETE request, or PUT update with no response body needed."},
+            {code:205,name:"Reset Content",desc:"The server successfully processed the request, but is not returning any content.",when:"Form submission where the user agent should reset the document view."},
+            {code:206,name:"Partial Content",desc:"The server is delivering only part of the resource due to a range header in the request.",when:"Resume a download or streaming a large file."},
+            {code:207,name:"Multi-Status",desc:"The message body that follows is an XML message and can contain a number of separate response codes.",when:"WebDAV batch operations."},
+            {code:300,name:"Multiple Choices",desc:"The request has more than one possible response. The user or agent should choose one.",when:"Content negotiation with multiple representations."},
+            {code:301,name:"Moved Permanently",desc:"The requested resource has been permanently moved to a new URL.",when:"Domain migration, URL restructuring."},
+            {code:302,name:"Found",desc:"The requested resource temporarily resides under a different URL.",when:"Temporary redirection for maintenance or A/B testing."},
+            {code:303,name:"See Other",desc:"The response can be found under a different URI using a GET request.",when:"Redirect after a POST, PUT, or DELETE to show results."},
+            {code:304,name:"Not Modified",desc:"The resource has not been modified since the last request. Use cached version.",when:"Browser caching with If-Modified-Since or ETag headers."},
+            {code:305,name:"Use Proxy",desc:"The requested resource must be accessed through the given proxy.",when:"Rarely used, indicates proxy requirement."},
+            {code:307,name:"Temporary Redirect",desc:"The request should be repeated with another URI but future requests should still use the original URI.",when:"Temporary redirect preserving the HTTP method."},
+            {code:308,name:"Permanent Redirect",desc:"The request and all future requests should be repeated using another URI.",when:"Permanent redirect preserving the HTTP method."},
+            {code:400,name:"Bad Request",desc:"The server cannot or will not process the request due to an apparent client error.",when:"Malformed syntax, invalid request framing, or deceptive request routing."},
+            {code:401,name:"Unauthorized",desc:"Authentication is required and has either failed or not been provided.",when:"Missing or invalid authentication credentials."},
+            {code:402,name:"Payment Required",desc:"Reserved for future use. Originally intended for digital payment systems.",when:"Reserved for future use."},
+            {code:403,name:"Forbidden",desc:"The server understood the request but refuses to authorize it.",when:"User is authenticated but lacks permission for the resource."},
+            {code:404,name:"Not Found",desc:"The server cannot find the requested resource. The most common error on the web.",when:"Incorrect URL, deleted page, or broken link."},
+            {code:405,name:"Method Not Allowed",desc:"The request HTTP method is not allowed for the requested resource.",when:"POST to a read-only endpoint, or DELETE on a protected resource."},
+            {code:406,name:"Not Acceptable",desc:"The requested resource is not capable of generating content according to the Accept headers sent.",when:"Client requests a content type the server cannot provide."},
+            {code:407,name:"Proxy Authentication Required",desc:"The client must first authenticate itself with the proxy.",when:"Proxy server requires authentication before forwarding."},
+            {code:408,name:"Request Timeout",desc:"The server timed out waiting for the request from the client.",when:"Client took too long to send the complete request."},
+            {code:409,name:"Conflict",desc:"The request could not be completed due to a conflict with the current state of the resource.",when:"Version conflict in concurrent editing, duplicate resource creation."},
+            {code:410,name:"Gone",desc:"The resource has been permanently removed and will not be available again.",when:"Resource intentionally deleted and should not be cached or re-requested."},
+            {code:411,name:"Length Required",desc:"The server requires the Content-Length header to be present in the request.",when:"Request body is expected but Content-Length is missing."},
+            {code:412,name:"Precondition Failed",desc:"One or more conditions in the request header fields evaluated to false.",when:"If-Match or If-Unmodified-Since headers fail."},
+            {code:413,name:"Content Too Large",desc:"The request body is larger than the server is willing or able to process.",when:"Upload exceeds server file size limit."},
+            {code:414,name:"URI Too Long",desc:"The URI provided was too long for the server to process.",when:"Query string or URL exceeds server length limits."},
+            {code:415,name:"Unsupported Media Type",desc:"The request entity has a media type that the server does not support.",when:"Sending JSON to an endpoint that only accepts XML, or vice versa."},
+            {code:416,name:"Range Not Satisfiable",desc:"The client has asked for a portion of the file that cannot be served.",when:"Requested byte range is outside the resource boundaries."},
+            {code:417,name:"Expectation Failed",desc:"The Expect header in the request cannot be met by the server.",when:"Server cannot meet the Expect: 100-continue header."},
+            {code:418,name:"I am a teapot",desc:"The server refuses to brew coffee because it is a teapot. A joke from RFC 2324.",when:"April Fools joke from RFC 2324."},
+            {code:421,name:"Misdirected Request",desc:"The request was directed at a server that is unable or not willing to produce a response.",when:"TLS certificate mismatch or request misrouted."},
+            {code:422,name:"Unprocessable Content",desc:"The request was well-formed but semantically erroneous.",when:"WebDAV: valid XML but errors in processing instructions."},
+            {code:423,name:"Locked",desc:"The resource that is being accessed is locked.",when:"WebDAV: resource is locked by another user."},
+            {code:424,name:"Failed Dependency",desc:"The request failed because it depended on another request that failed.",when:"WebDAV: a previous request failed causing this one to fail."},
+            {code:425,name:"Too Early",desc:"The server is unwilling to risk processing a request that might be replayed.",when:"Preventing replay attacks with early data."},
+            {code:426,name:"Upgrade Required",desc:"The client should switch to a different protocol.",when:"Server requires TLS or HTTP/2 upgrade."},
+            {code:428,name:"Precondition Required",desc:"The origin server requires the request to be conditional.",when:"Preventing lost updates with If-Match header."},
+            {code:429,name:"Too Many Requests",desc:"The client has sent too many requests in a given amount of time (rate limiting).",when:"API rate limits exceeded. Try again later."},
+            {code:431,name:"Request Header Fields Too Large",desc:"The server is unwilling to process the request because either an individual header field, or all the header fields collectively, are too large.",when:"Request headers or cookies exceed server limits."},
+            {code:451,name:"Unavailable For Legal Reasons",desc:"The resource access is denied for legal reasons such as censorship or government demands.",when:"DMCA takedowns, legal blocks, government censorship."},
+            {code:500,name:"Internal Server Error",desc:"The server encountered an unexpected condition that prevented it from fulfilling the request.",when:"Server-side bug, unhandled exception, or configuration error."},
+            {code:501,name:"Not Implemented",desc:"The server does not support the functionality required to fulfill the request.",when:"Server does not support the HTTP method used."},
+            {code:502,name:"Bad Gateway",desc:"The server received an invalid response from the upstream server.",when:"Reverse proxy cannot get a valid response from the backend."},
+            {code:503,name:"Service Unavailable",desc:"The server is currently unable to handle the request due to temporary overloading or maintenance.",when:"Server is under maintenance or temporarily overloaded."},
+            {code:504,name:"Gateway Timeout",desc:"The server did not receive a timely response from the upstream server.",when:"Backend server is too slow or down."},
+            {code:505,name:"HTTP Version Not Supported",desc:"The server does not support the HTTP protocol version used in the request.",when:"Client uses HTTP/2 but server only supports HTTP/1.1."},
+            {code:506,name:"Variant Also Negotiates",desc:"The server has an internal configuration error: transparent content negotiation results in a circular reference.",when:"Content negotiation configuration error."},
+            {code:507,name:"Insufficient Storage",desc:"The server cannot store the representation needed to complete the request.",when:"WebDAV: server storage is full."},
+            {code:508,name:"Loop Detected",desc:"The server detected an infinite loop while processing the request.",when:"WebDAV: circular reference in resource dependencies."},
+            {code:510,name:"Not Extended",desc:"Further extensions to the request are required for the server to fulfill it.",when:"Server requires additional request parameters."},
+            {code:511,name:"Network Authentication Required",desc:"The client needs to authenticate to gain network access.",when:"Captive portal on public WiFi requiring login."}
+        ];
+        var categories=[
+            {id:"all",label:"All Codes"},
+            {id:"1xx",label:"1xx Informational"},
+            {id:"2xx",label:"2xx Success"},
+            {id:"3xx",label:"3xx Redirection"},
+            {id:"4xx",label:"4xx Client Error"},
+            {id:"5xx",label:"5xx Server Error"}
+        ];
+        var activeCat="all";
+        var searchInput=document.getElementById("status-search");
+        var catFilters=document.getElementById("cat-filters");
+        var statusOutput=document.getElementById("status-output");
+        var resultCount=document.getElementById("result-count");
+        function showToast(msg){var t=document.querySelector(".toast");if(!t){t=document.createElement("div");t.className="toast";document.body.appendChild(t)}t.textContent=msg;t.classList.add("show");setTimeout(function(){t.classList.remove("show")},2000)}
+        function copyText(text){navigator.clipboard.writeText(text).then(function(){showToast("Copied!")}).catch(function(){showToast("Copy failed")})}
+        function getCat(code){return Math.floor(code/100)+"xx"}
+        function renderFilters(){catFilters.innerHTML=categories.map(function(c){return '<button class="cat-btn'+(activeCat===c.id?" active":"")+'" data-cat="'+c.id+'">'+c.label+"</button>"}).join("")}
+        function render(){
+            var q=searchInput.value.toLowerCase().trim();
+            var filtered=statuses.filter(function(s){
+                if(activeCat!=="all"&&getCat(s.code)!==activeCat)return false;
+                if(!q)return true;
+                return String(s.code).indexOf(q)!==-1||s.name.toLowerCase().indexOf(q)!==-1||s.desc.toLowerCase().indexOf(q)!==-1;
+            });
+            resultCount.textContent=filtered.length+" of "+statuses.length+" status codes";
+            if(!filtered.length){statusOutput.innerHTML='<p style="color:var(--color-text-light);padding:var(--space-4);text-align:center">No status codes match your search.</p>';return}
+            var html="";
+            var lastCat="";
+            filtered.forEach(function(s){
+                var cat=getCat(s.code);
+                if(cat!==lastCat){
+                    var catName={"1xx":"Informational","2xx":"Success","3xx":"Redirection","4xx":"Client Error","5xx":"Server Error"}[cat];
+                    html+='<div class="section-group-title"><span class="badge badge-'+cat+'">'+cat+"</span> "+catName+"</div>";
+                    lastCat=cat;
+                }
+                html+='<div class="status-card" data-code="'+s.code+'"><span class="status-code sc-'+cat+'">'+s.code+'</span><div class="status-info"><div class="status-name">'+s.name+'</div><div class="status-desc">'+s.desc+'</div>';
+                if(s.when)html+='<div class="status-when">'+s.when+"</div>";
+                html+="</div></div>";
+            });
+            statusOutput.innerHTML=html;
+        }
+        renderFilters();
+        render();
+        catFilters.addEventListener("click",function(e){
+            var btn=e.target.closest(".cat-btn");
+            if(!btn)return;
+            activeCat=btn.dataset.cat;
+            renderFilters();
+            render();
+        });
+        searchInput.addEventListener("input",render);
+        statusOutput.addEventListener("click",function(e){
+            var card=e.target.closest(".status-card");
+            if(!card)return;
+            var code=card.dataset.code;
+            copyText(code);
+        });
+    })();
+    </script>
+</body>
+</html>

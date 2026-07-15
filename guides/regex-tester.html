@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Test Regular Expressions: Guide 2026 | GoToolly</title>
+    <meta name="description" content="Master regular expression testing. Learn regex syntax, patterns, flags, and best practices for pattern matching in text, validation, search and replace">
+    <meta name="keywords" content="regex tester, regular expression tester, regex guide, test regex, regex patterns, regex online, regex tutorial, regular expressions guide">
+    <link rel="canonical" href="https://gotoolly.com/guides/regex-tester">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/regex-tester">
+    <meta property="og:title" content="How to Test Regular Expressions: Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Master regular expression testing. Learn regex syntax, patterns, flags, and best practices for pattern matching in text, validation, search and replace, and data extraction.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/regex-tester">
+    <meta name="twitter:title" content="How to Test Regular Expressions: Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Master regular expression testing. Learn regex syntax, patterns, flags, and best practices for pattern matching in text, validation, search and replace, and data extraction.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+    
+    <style>
+        .page-header { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><text x="10" y="30" font-family="monospace" font-size="12">/regex/</text><text x="40" y="55" font-family="monospace" font-size="10">\d+\.\d+</text><text x="15" y="75" font-family="monospace" font-size="10">[a-z]+</text></svg>'); background-size: 300px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #ef4444; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(239, 68, 68, 0.1); border-left: 4px solid #ef4444; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .regex-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6); margin: var(--space-10) 0; }
+        .regex-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-6); border: 1px solid var(--color-border); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .regex-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .code-example { background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, rgba(220, 38, 38, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(239, 68, 68, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .regex-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Test Regular Expressions: Complete Guide 2026", "description": "Master regular expression testing. Learn regex syntax, patterns, flags, and best practices for pattern matching in text, validation, search and replace, and data extraction.", "url": "https://gotoolly.com/guides/regex-tester", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/regex-tester" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "Regex Tester", "item": "https://gotoolly.com/guides/regex-tester"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a regular expression?","acceptedAnswer":{"@type":"Answer","text":"A regular expression (regex) is a sequence of characters that defines a search pattern. It is used for pattern matching, validation, text extraction, and search-and-replace operations on strings. Regex is supported in most programming languages and text editors."}},{"@type":"Question","name":"How do I test a regex pattern?","acceptedAnswer":{"@type":"Answer","text":"Enter your regex pattern in the pattern field and your test text in the input area. The tool highlights all matches in real time, showing match positions, captured groups, and detailed match information for each result."}},{"@type":"Question","name":"What regex features does the tester support?","acceptedAnswer":{"@type":"Answer","text":"The tester supports all standard regex features including character classes, quantifiers, anchors, groups, alternation, lookahead/lookbehind, backreferences, and common flags (g, i, m, s, u, y)."}},{"@type":"Question","name":"Can I use regex for find and replace?","acceptedAnswer":{"@type":"Answer","text":"Yes. The tool includes a replace feature where you can specify a replacement pattern with backreferences ($1, $2, etc.) to perform regex-based search and replace on your text."}},{"@type":"Question","name":"Is my test data private?","acceptedAnswer":{"@type":"Answer","text":"Yes. All regex testing happens entirely in your browser. No patterns or text are sent to any server. Your data never leaves your device."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Test Regular Expressions: Complete Guide 2026</h1>
+                <p class="page-description">
+                    Master regex testing and pattern matching. Learn to create, test, and debug regular expressions for validation, text extraction, search and replace, and data processing.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/regex-tester" class="btn btn-primary btn-lg">Test Regex Patterns</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  Real-time matching  Replace support  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>Why Regex Testing Matters</h2>
+                    <p>Regular expressions are one of the most powerful tools for text processing. From validating email addresses and phone numbers to extracting data from logs and performing complex search-and-replace operations, regex saves countless hours of manual text processing. However, regex patterns can be tricky to get right. A single misplaced character can cause your pattern to match nothing or, worse, match unintended text. A regex tester gives you immediate feedback, showing exactly what your pattern matches and helping you debug and refine it until it works perfectly.</p>
+                </section>
+
+                <section>
+                    <h2>Step-by-Step: Using the Regex Tester</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Enter Your Regex Pattern</h3>
+                                <p>Open the <a href="../tools/regex-tester">Regex Tester</a> and type or paste your regular expression pattern. The tool supports all standard regex syntax including quantifiers, character classes, groups, alternation, and anchors.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Set Flags and Options</h3>
+                                <p>Toggle regex flags to modify pattern behavior: <strong>g</strong> (global), <strong>i</strong> (case-insensitive), <strong>m</strong> (multiline), <strong>s</strong> (dotall), <strong>u</strong> (unicode), and <strong>y</strong> (sticky). Each flag is clearly explained in the tool.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Provide Test Text</h3>
+                                <p>Enter your test text in the input area. The tool highlights all matches in real time as you type or modify the pattern. Match positions, captured groups, and detailed match information are displayed below the text.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Use Replace (Optional)</h3>
+                                <p>Switch to replace mode to perform regex-based search and replace. Use backreferences like <code>$1</code>, <code>$2</code> to reference captured groups in your replacement text. Preview replacements before applying them.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Common Regex Patterns Cheat Sheet</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr><th>Pattern</th><th>Matches</th><th>Example Usage</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>\d+</code></td><td>One or more digits</td><td>Extract numbers from text</td></tr>
+                            <tr><td><code>[a-zA-Z]+</code></td><td>One or more letters</td><td>Extract words</td></tr>
+                            <tr><td><code>\w+</code></td><td>Word characters (alphanumeric + _)</td><td>Extract identifiers</td></tr>
+                            <tr><td><code>\s+</code></td><td>Whitespace characters</td><td>Normalize spacing</td></tr>
+                            <tr><td><code>^.{3,5}$</code></td><td>Lines with 3-5 characters</td><td>Validate input length</td></tr>
+                            <tr><td><code>[\w.-]+@[\w.-]+\.\w+</code></td><td>Simple email pattern</td><td>Email validation</td></tr>
+                            <tr><td><code>\b\d{3}[-.]?\d{3}[-.]?\d{4}\b</code></td><td>US phone numbers</td><td>Phone number extraction</td></tr>
+                            <tr><td><code>https?://[^\s]+</code></td><td>URLs starting with http(s)</td><td>URL extraction from text</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>Advanced Regex Techniques</h2>
+                    <h3>Capturing Groups</h3>
+                    <p>Use parentheses <code>()</code> to create capturing groups that let you extract specific parts of a match. For example, <code>(\d{3})-(\d{3})-(\d{4})</code> captures area code, prefix, and line number separately from a phone number.</p>
+
+                    <div class="code-example">
+                        <strong>Pattern:</strong> (\w+)@(\w+)\.(\w+)
+                        <strong>Input:</strong> user@example.com
+                        <strong>Groups:</strong> $1 = "user", $2 = "example", $3 = "com"
+                    </div>
+
+                    <h3>Lookahead and Lookbehind</h3>
+                    <p>Zero-width assertions let you match text based on what comes before or after without including it in the match. Use <code>(?=...)</code> for positive lookahead, <code>(?!...)</code> for negative lookahead, <code>(?&lt;=...)</code> for positive lookbehind, and <code>(?&lt;!...)</code> for negative lookbehind.</p>
+
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Start simple and iterate</strong> - Begin with a basic pattern and gradually add complexity. Test each addition to ensure it still matches what you expect without false positives.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Use anchors to avoid partial matches</strong> - Use <code>^</code> and <code>$</code> anchors when you need to match the entire string rather than just a substring. This prevents false matches in longer text.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Escape special characters</strong> - Characters like <code>.</code>, <code>*</code>, <code>+</code>, <code>?</code>, <code>(</code>, <code>)</code>, <code>[</code>, <code>]</code>, <code>{</code>, <code>}</code>, <code>|</code>, <code>^</code>, <code>$</code>, and <code>\</code> need to be escaped with a backslash to match literally.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Common Regex Use Cases</h2>
+                    <div class="regex-grid">
+                        <div class="regex-card">
+                            <div style="font-size: 2.5rem; margin-bottom: var(--space-4); text-align: center;">&#9989;</div>
+                            <h3 style="margin-top: 0;">Input Validation</h3>
+                            <p>Validate email addresses, phone numbers, ZIP codes, credit card numbers, and passwords. Ensure user input matches expected formats before processing.</p>
+                        </div>
+                        <div class="regex-card">
+                            <div style="font-size: 2.5rem; margin-bottom: var(--space-4); text-align: center;">&#128269;</div>
+                            <h3 style="margin-top: 0;">Data Extraction</h3>
+                            <p>Extract URLs, email addresses, dates, prices, and specific patterns from large text documents, log files, and web pages for further processing.</p>
+                        </div>
+                        <div class="regex-card">
+                            <div style="font-size: 2.5rem; margin-bottom: var(--space-4); text-align: center;">&#128260;</div>
+                            <h3 style="margin-top: 0;">Find and Replace</h3>
+                            <p>Perform complex text transformations like reformatting dates, renaming variables, restructuring data, and normalizing inconsistent text formats.</p>
+                        </div>
+                        <div class="regex-card">
+                            <div style="font-size: 2.5rem; margin-bottom: var(--space-4); text-align: center;">&#128200;</div>
+                            <h3 style="margin-top: 0;">Log Analysis</h3>
+                            <p>Parse server logs, application logs, and error reports to extract timestamps, error codes, IP addresses, and user agents for monitoring and analysis.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Best Practices for Regex</h2>
+                    <ul>
+                        <li><strong>Be specific, not greedy:</strong> Use lazy quantifiers (<code>*?</code>, <code>+?</code>) when you want the smallest possible match rather than the largest.</li>
+                        <li><strong>Test with edge cases:</strong> Try your pattern with empty strings, very long strings, Unicode text, and strings with special characters.</li>
+                        <li><strong>Use comments and named groups:</strong> For complex patterns, use named groups <code>(?&lt;name&gt;...)</code> and the <code>x</code> flag for whitespace and comments.</li>
+                        <li><strong>Consider performance:</strong> Avoid catastrophic backtracking by keeping patterns simple and using possessive quantifiers where available.</li>
+                        <li><strong>Document your patterns:</strong> Add comments explaining what each part of your regex does. Future you (and your teammates) will thank you.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is a regular expression?</h3>
+                        <p>A regular expression (regex) is a sequence of characters that defines a search pattern. It is used for pattern matching, validation, text extraction, and search-and-replace operations on strings. Regex is supported in most programming languages and text editors.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do I test a regex pattern?</h3>
+                        <p>Enter your regex pattern in the pattern field and your test text in the input area. The tool highlights all matches in real time, showing match positions, captured groups, and detailed match information for each result.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What regex features does the tester support?</h3>
+                        <p>The tester supports all standard regex features including character classes, quantifiers, anchors, groups, alternation, lookahead/lookbehind, backreferences, and common flags (g, i, m, s, u, y).</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I use regex for find and replace?</h3>
+                        <p>Yes. The tool includes a replace feature where you can specify a replacement pattern with backreferences ($1, $2, etc.) to perform regex-based search and replace on your text.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is my test data private?</h3>
+                        <p>Yes. All regex testing happens entirely in your browser. No patterns or text are sent to any server. Your data never leaves your device.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Complete Text Processing Suite</h2>
+                    <p>Enhance your text processing workflow with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/text-cleaner">Text Cleaner</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Remove extra spaces, empty lines, and special characters</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/text-diff">Text Diff Checker</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Compare text and find differences between versions</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/duplicate-line-remover">Remove Duplicate Lines</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Remove duplicate lines and sort text alphabetically</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Test and Debug Regex Patterns Instantly</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Create, test, and debug regular expressions with real-time matching feedback. Perfect for validation, extraction, and text transformation. Fast, private, and free.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/regex-tester" class="btn btn-primary btn-lg">Test Regex Now</a>
+                    <a href="../tools/text-cleaner" class="btn btn-secondary btn-lg">Clean Text</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Local processing  Real-time matching  Replace support  Instant results  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Text Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/regex-tester">Regex Tester</a></li>
+                        <li><a href="../tools/text-cleaner">Text Cleaner</a></li>
+                        <li><a href="../tools/text-diff">Text Diff</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

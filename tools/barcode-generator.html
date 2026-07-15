@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcode Generator - Free Online Tool | GoToolly</title>
+    <meta name="description" content="Generate Code 128, Code 39, EAN-13, EAN-8, UPC-A, and UPC-E barcodes. Download as PNG or SVG. Free, private, browser-based.">
+    <meta name="keywords" content="barcode generator, code 128, code 39, ean-13, upc-a, barcode maker, barcode creator, barcode generator online">
+    <link rel="canonical" href="https://gotoolly.com/tools/barcode-generator">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/barcode-generator">
+    <meta property="og:title" content="Barcode Generator | GoToolly">
+    <meta property="og:description" content="Generate Code 128, Code 39, EAN-13, EAN-8, UPC-A, and UPC-E barcodes. Download as PNG or SVG.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/barcode-generator">
+    <meta name="twitter:title" content="Barcode Generator | GoToolly">
+    <meta name="twitter:description" content="Generate Code 128, Code 39, EAN-13, EAN-8, UPC-A, and UPC-E barcodes. Download as PNG or SVG.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Barcode Generator","url":"https://gotoolly.com/tools/barcode-generator","description":"Generate Code 128, Code 39, EAN-13, EAN-8, UPC-A, and UPC-E barcodes. Download as PNG or SVG.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Multiple barcode types","PNG download","SVG download","Size and margin control"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Barcode Generator"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What barcode formats are supported?","acceptedAnswer":{"@type":"Answer","text":"The tool supports Code 128, Code 39, EAN-13, EAN-8, UPC-A, and UPC-E barcode formats. Each format has specific encoding rules optimized for different use cases."}},{"@type":"Question","name":"Can I download the barcode as an image?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can download the generated barcode as PNG (raster) or SVG (vector). SVG is ideal for printing and scaling without quality loss."}},{"@type":"Question","name":"Is my data uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All barcode generation happens in your browser using the HTML5 Canvas API. Your data never leaves your device."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.barcode-workspace{display:grid;grid-template-columns:320px 1fr;gap:var(--space-4);margin-bottom:var(--space-4)}.barcode-controls{background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px;padding:var(--space-4)}.barcode-controls .form-group{margin-bottom:var(--space-3)}.barcode-controls label{display:block;font-size:var(--text-sm);font-weight:600;margin-bottom:var(--space-1);color:var(--color-text)}.barcode-controls select,.barcode-controls input{width:100%;padding:var(--space-2) var(--space-3);border:1px solid var(--color-border);border-radius:6px;background:var(--color-bg-alt);color:var(--color-text);font-size:var(--text-sm);box-sizing:border-box}.barcode-controls select:focus,.barcode-controls input:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.barcode-controls input[type=range]{padding:0;border:none;background:transparent}.range-row{display:flex;align-items:center;gap:var(--space-2)}.range-row input[type=range]{flex:1}.range-value{min-width:40px;font-size:var(--text-sm);font-weight:500;text-align:right}.barcode-preview{background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px;padding:var(--space-4);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:300px}.barcode-preview canvas{max-width:100%;max-height:260px;border-radius:4px}.barcode-preview .placeholder{color:var(--color-text-light);text-align:center;padding:var(--space-8)}.barcode-preview .placeholder svg{width:64px;height:64px;color:var(--color-border);margin-bottom:var(--space-3)}.barcode-actions{display:flex;gap:var(--space-2);margin-top:var(--space-4);flex-wrap:wrap;justify-content:center}.barcode-actions button{min-width:120px}.barcode-info{font-size:var(--text-xs);color:var(--color-text-light);margin-top:var(--space-2);text-align:center}@media(max-width:768px){.barcode-workspace{grid-template-columns:1fr}.barcode-preview{min-height:200px}}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="../about" class="nav-link">About</a><a href="../contact" class="nav-link">Contact</a></nav></div>
+        </div>
+    </header>
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Barcode Generator</h1>
+                <p class="page-description">Generate Code 128, Code 39, EAN-13, EAN-8, UPC-A, and UPC-E barcodes. Download as PNG or SVG. Free, private, browser-based.</p>
+                <p style="margin-top:var(--space-3);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No sign-up &bull; No server uploads &bull; 100% browser-based</p>
+            </div>
+            <div class="barcode-workspace">
+                <div class="barcode-controls">
+                    <div class="form-group">
+                        <label for="barcode-type">Barcode Type</label>
+                        <select id="barcode-type">
+                            <option value="code128">Code 128</option>
+                            <option value="code39">Code 39</option>
+                            <option value="ean13">EAN-13</option>
+                            <option value="ean8">EAN-8</option>
+                            <option value="upca">UPC-A</option>
+                            <option value="upce">UPC-E</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="barcode-text">Text / Data</label>
+                        <input type="text" id="barcode-text" value="GoToolly" placeholder="Enter text or numbers...">
+                    </div>
+                    <div class="form-group">
+                        <label for="barcode-size">Size</label>
+                        <div class="range-row">
+                            <input type="range" id="barcode-size" min="100" max="600" value="300" step="10">
+                            <span class="range-value" id="size-value">300px</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="barcode-margin">Margin</label>
+                        <div class="range-row">
+                            <input type="range" id="barcode-margin" min="0" max="40" value="10" step="1">
+                            <span class="range-value" id="margin-value">10px</span>
+                        </div>
+                    </div>
+                    <button id="generate-btn" class="btn btn-primary btn-lg" style="width:100%;margin-top:var(--space-2)">Generate Barcode</button>
+                    <div class="barcode-actions">
+                        <button id="download-png" class="btn btn-outline btn-sm" disabled>Download PNG</button>
+                        <button id="download-svg" class="btn btn-outline btn-sm" disabled>Download SVG</button>
+                    </div>
+                    <p id="barcode-status" class="barcode-info"></p>
+                </div>
+                <div class="barcode-preview" id="barcode-preview">
+                    <div class="placeholder" id="barcode-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h2v18H3zM7 3h2v18H7zM11 5h2v16h-2zM15 3h2v18h-2zM19 7h2v14h-2z"/></svg>
+                        <p>Enter data and click Generate</p>
+                    </div>
+                    <canvas id="barcode-canvas" style="display:none"></canvas>
+                </div>
+            </div>
+            <section class="content-section">
+                <div class="section-header"><h2>How It Works</h2></div>
+                <div class="tools-grid" style="grid-template-columns:repeat(3,1fr)">
+                    <div class="card step-card"><h3><span style="background:var(--color-primary);color:white;border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;margin-right:8px;font-size:.9rem">1</span> Choose Type</h3><p>Select a barcode format from Code 128, Code 39, EAN-13, EAN-8, UPC-A, or UPC-E.</p></div>
+                    <div class="card step-card"><h3><span style="background:var(--color-primary);color:white;border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;margin-right:8px;font-size:.9rem">2</span> Enter Data</h3><p>Type or paste the text or numbers you want to encode into the input field. Adjust size and margin as needed.</p></div>
+                    <div class="card step-card"><h3><span style="background:var(--color-primary);color:white;border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;margin-right:8px;font-size:.9rem">3</span> Download</h3><p>Generate your barcode and download it as PNG or SVG. Use directly in print or digital projects.</p></div>
+                </div>
+            </section>
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
+                <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-3)">
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What barcode formats are supported?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">The tool supports Code 128, Code 39, EAN-13, EAN-8, UPC-A, and UPC-E barcode formats. Each format has specific encoding rules optimized for different use cases.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Can I download the barcode as an image?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Yes. You can download the generated barcode as PNG (raster) or SVG (vector). SVG is ideal for printing and scaling without quality loss.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What is the difference between Code 128 and Code 39?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Code 128 is more compact and supports the full ASCII character set. Code 39 is older and supports only uppercase letters, digits, and a few special characters.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Is my data uploaded to a server?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">No. All barcode generation happens in your browser using the HTML5 Canvas API. Your data never leaves your device.</p></div>
+                </div>
+            </section>
+            <section class="content-section">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>QR Code Generator</h3><p>Create QR codes from text, links, or contact information.</p><div class="card-footer"><a href="./qr-code-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Random Name Generator</h3><p>Generate random names from multiple countries and genders.</p><div class="card-footer"><a href="./random-name-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>UUID Generator</h3><p>Generate random UUID v4 strings for databases and APIs.</p><div class="card-footer"><a href="./uuid-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+                <p style="margin-top:var(--space-4);text-align:center"><a href="/guides/barcode-generator" style="color:var(--color-primary)">Read Guide: How to Generate Barcodes &rarr;</a></p>
+            </section>
+        </div>
+    </main>
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools/qr-code-generator">QR Code Generator</a></li><li><a href="/tools/password-generator">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+    <script defer src="../assets/js/main.min.js"></script>
+    <script defer src="../assets/js/tools/barcode-generator.min.js"></script>
+</body>
+</html>

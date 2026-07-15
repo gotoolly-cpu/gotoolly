@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Minify JavaScript: Complete Guide 2026 | GoToolly</title>
+    <meta name="description" content="Master JavaScript minification. Learn to reduce JS file size, remove comments and whitespace, optimize code">
+    <meta name="keywords" content="js minifier, javascript minifier, minify js, javascript compression, js optimizer, javascript minification, reduce js size, web performance">
+    <link rel="canonical" href="https://gotoolly.com/guides/js-minifier">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/js-minifier">
+    <meta property="og:title" content="How to Minify JavaScript: Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Master JavaScript minification. Learn to reduce JS file size, remove comments and whitespace, optimize code, and improve website performance with proper JavaScript compression.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/js-minifier">
+    <meta name="twitter:title" content="How to Minify JavaScript: Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Master JavaScript minification. Learn to reduce JS file size, remove comments and whitespace, optimize code, and improve website performance with proper JavaScript compression.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+    
+    <style>
+        .page-header { background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><text x="10" y="30" font-family="monospace" font-size="12">function</text><text x="40" y="55" font-family="monospace" font-size="10">console.</text><text x="15" y="75" font-family="monospace" font-size="10">log()</text></svg>'); background-size: 300px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #f97316; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(249, 115, 22, 0.1); border-left: 4px solid #f97316; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .benefit-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        .code-example { background: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, rgba(234, 88, 12, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(249, 115, 22, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .benefits-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Minify JavaScript: Complete Guide 2026", "description": "Master JavaScript minification. Learn to reduce JS file size, remove comments and whitespace, optimize code, and improve website performance with proper JavaScript compression.", "url": "https://gotoolly.com/guides/js-minifier", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/js-minifier" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "JS Minifier", "item": "https://gotoolly.com/guides/js-minifier"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is JavaScript minification?","acceptedAnswer":{"@type":"Answer","text":"JavaScript minification removes unnecessary characters from JS code including whitespace, comments, line breaks, and shortens variable names where possible. This reduces file size without changing the code's behavior."}},{"@type":"Question","name":"Can minified JavaScript cause errors?","acceptedAnswer":{"@type":"Answer","text":"When done correctly, minification does not change behavior. However, code that relies on eval(), Function(), or dynamic property access by variable name may break if variable names are shortened. Our tool offers options to preserve certain naming patterns."}},{"@type":"Question","name":"How much can I reduce JavaScript file size?","acceptedAnswer":{"@type":"Answer","text":"Typical JavaScript minification saves 30-60% of the original file size. Large libraries with extensive comments and verbose naming can see 70% or more reduction. The tool shows exact before/after statistics."}},{"@type":"Question","name":"Should I use both minification and compression?","acceptedAnswer":{"@type":"Answer","text":"Yes, minification and server-level compression (Gzip/Brotli) work together. Minification reduces the number of characters, and compression further reduces the byte size. Using both yields maximum file size reduction."}},{"@type":"Question","name":"Is the minification process safe?","acceptedAnswer":{"@type":"Answer","text":"Yes, all minification happens entirely in your browser. No code is sent to any server. You can safely minify proprietary or sensitive JavaScript code without any security concerns."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Minify JavaScript: Complete Guide 2026</h1>
+                <p class="page-description">
+                    Optimize your JavaScript for faster downloads and execution. Learn JS minification techniques, best practices, and how to reduce bundle sizes for better web performance.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/js-minifier" class="btn btn-primary btn-lg">Minify JavaScript Now</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  Instant optimization  Bundle statistics  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>Why JavaScript Minification Matters</h2>
+                    <p>JavaScript is often the heaviest resource on modern web pages. Large JS files block rendering, delay interactivity, and increase bounce rates. Minification strips away everything the browser doesn't need to execute your code: comments, whitespace, line breaks, and even renames variables to shorter forms. Combined with server-level compression, minification can reduce JavaScript payloads by 70-80%, directly improving Time to Interactive (TTI) and Total Blocking Time (TBT).</p>
+                </section>
+
+                <section>
+                    <h2>Step-by-Step: Minifying JavaScript</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Input Your JavaScript</h3>
+                                <p>Open the <a href="../tools/js-minifier">JS Minifier</a> and paste your JavaScript code into the input area. You can minify anything from a single function to an entire library.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Configure Minification Options</h3>
+                                <p>Choose optimization level: basic (remove comments/whitespace), standard (also shortens local variable names), or advanced (more aggressive optimizations). Toggle options like mangling, dead code removal, and property renaming.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Preview the Result</h3>
+                                <p>The minified code appears instantly with before/after statistics. Review the output to ensure no syntax errors were introduced. The tool highlights potential issues like missing semicolons or ambiguous code.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Copy or Download</h3>
+                                <p>Copy the minified JS to your clipboard for immediate use. Download the result as a .min.js file for your build pipeline. Keep your original source files for future development.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>What JS Minification Removes</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr><th>Item</th><th>Before</th><th>After</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Whitespace & indentation</td><td><code>function add(a, b) {</code></td><td><code>function add(a,b){</code></td></tr>
+                            <tr><td>Single-line comments</td><td><code>// increment counter</code></td><td>Removed</td></tr>
+                            <tr><td>Multi-line comments</td><td><code>/* setup */</code></td><td>Removed</td></tr>
+                            <tr><td>Unnecessary semicolons</td><td><code>};</code> at block end</td><td><code>}</code></td></tr>
+                            <tr><td>Long variable names</td><td><code>totalUserCount</code></td><td><code>a</code></td></tr>
+                            <tr><td>Unreachable code</td><td><code>return; doSomething()</code></td><td><code>return</code></td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="code-example">
+                        <strong>Before (380 chars):</strong>
+                        // Calculate total price with tax
+                        function calculateTotal(price, taxRate) {
+                            const taxAmount = price * taxRate;
+                            const total = price + taxAmount;
+                            return total;
+                        }
+                        
+                        <strong>After (75 chars):</strong>
+                        function calculateTotal(a,b){return a+a*b}
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Benefits of JavaScript Minification</h2>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#9889;</div>
+                            <h4 style="margin: var(--space-2) 0;">Faster Loading</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Smaller JS files download faster, especially on slow 3G and 4G connections common on mobile devices.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128200;</div>
+                            <h4 style="margin: var(--space-2) 0;">Better Lighthouse Scores</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Reduced JS size directly improves performance metrics like TTI, TBT, and Speed Index in Lighthouse audits.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128179;</div>
+                            <h4 style="margin: var(--space-2) 0;">Lower Bandwidth Costs</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);;">Minified JS reduces CDN and hosting bandwidth usage, saving money for high-traffic websites and applications.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128274;</div>
+                            <h4 style="margin: var(--space-2) 0;">Obfuscation</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Minified code is harder to read, providing a basic level of protection against casual code inspection.</p>
+                        </div>
+                    </div>
+
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Use source maps for debugging</strong> - Generate a source map alongside your minified JS. This maps minified code back to your original source files, making debugging possible without losing optimization benefits.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Separate vendor and application code</strong> - Minify vendor libraries separately from your application code. Vendor code changes less frequently and can be cached longer by browsers.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Use tree shaking</strong> - Combine minification with tree shaking to remove unused exports from your JavaScript bundles. Modern bundlers like Webpack and Rollup automate this.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>JavaScript Minification Best Practices</h2>
+                    <ul>
+                        <li><strong>Always test after minification:</strong> Run your test suite and manually verify critical functionality after minification to catch any issues.</li>
+                        <li><strong>Keep original files:</strong> Minification is destructive. Always maintain your original, well-commented source code in your repository.</li>
+                        <li><strong>Use consistent naming:</strong> If you use property access by string name (obj['method']), the minifier won't rename that property. Consider using dot notation where possible.</li>
+                        <li><strong>Configure your build tool:</strong> Most modern build tools have built-in or plugin-based minification. Configure them once and automate the process.</li>
+                        <li><strong>Measure the impact:</strong> Use WebPageTest or Lighthouse to measure the real-world performance improvement from minification.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is JavaScript minification?</h3>
+                        <p>JavaScript minification removes unnecessary characters from JS code including whitespace, comments, line breaks, and shortens variable names where possible. This reduces file size without changing the code's behavior.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can minified JavaScript cause errors?</h3>
+                        <p>When done correctly, minification does not change behavior. However, code that relies on eval(), Function(), or dynamic property access by variable name may break if variable names are shortened. Our tool offers options to preserve certain naming patterns.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How much can I reduce JavaScript file size?</h3>
+                        <p>Typical JavaScript minification saves 30-60% of the original file size. Large libraries with extensive comments and verbose naming can see 70% or more reduction. The tool shows exact before/after statistics.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Should I use both minification and compression?</h3>
+                        <p>Yes, minification and server-level compression (Gzip/Brotli) work together. Minification reduces the number of characters, and compression further reduces the byte size. Using both yields maximum file size reduction.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is the minification process safe?</h3>
+                        <p>Yes, all minification happens entirely in your browser. No code is sent to any server. You can safely minify proprietary or sensitive JavaScript code without any security concerns.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Complete Web Optimization Suite</h2>
+                    <p>Optimize your entire frontend with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/html-minifier">HTML Minifier</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Minify and optimize HTML for production</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/css-minifier">CSS Minifier</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Minify and optimize CSS stylesheets</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/json-formatter">JSON Formatter</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Format, validate, and minify JSON data</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #ea580c 0%, #f97316 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Minify JavaScript for Faster Pages</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Reduce JavaScript file size, improve interactivity, and boost Lighthouse performance scores. Fast, private, and free. No account required.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/js-minifier" class="btn btn-primary btn-lg">Minify JS Now</a>
+                    <a href="../tools/css-minifier" class="btn btn-secondary btn-lg">Minify CSS</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Local processing  No file uploads  Variable mangling  Instant results  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Optimization Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/js-minifier">JS Minifier</a></li>
+                        <li><a href="../tools/css-minifier">CSS Minifier</a></li>
+                        <li><a href="../tools/html-minifier">HTML Minifier</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

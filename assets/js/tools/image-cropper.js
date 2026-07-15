@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var x = parseInt(document.getElementById('crop-x').value) || 0;
         var y = parseInt(document.getElementById('crop-y').value) || 0;
 
-        progressSection.style.display = '';
+        progressSection.style.display = 'block';
         applyBtn.disabled = true;
         progressText.textContent = 'Cropping image...';
         progressFill.style.width = '50%';

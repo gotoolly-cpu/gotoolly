@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Compare - Diff Two JSON Objects | GoToolly</title>
+    <meta name="description" content="Compare two JSON objects side by side and see added, removed, and modified keys. A fast, free, client-side JSON diff tool.">
+    <meta name="keywords" content="json compare, json diff, compare json, json validator, json checker, online json compare">
+    <link rel="canonical" href="https://gotoolly.com/tools/json-compare">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/json-compare">
+    <meta property="og:title" content="JSON Compare - Diff Two JSON Objects | GoToolly">
+    <meta property="og:description" content="Compare two JSON objects side by side and see added, removed, and modified keys.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/json-compare">
+    <meta name="twitter:title" content="JSON Compare - Diff Two JSON Objects | GoToolly">
+    <meta name="twitter:description" content="Compare two JSON objects side by side and see added, removed, and modified keys.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"JSON Compare","url":"https://gotoolly.com/tools/json-compare","description":"Compare two JSON objects side by side and see added, removed, and modified keys.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Side-by-side diff","Color-coded output"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"JSON Compare"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the JSON Compare tool work?","acceptedAnswer":{"@type":"Answer","text":"Paste two JSON objects into the input fields and click Compare. The tool will highlight added, removed, and modified keys with color-coded diff output."}},{"@type":"Question","name":"Is my JSON data uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens in your browser. Your JSON data never leaves your device."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.json-container{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-bottom:var(--space-4)}.json-textarea{width:100%;min-height:400px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text);tab-size:2}.json-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.json-output{border:1px solid var(--color-border);border-radius:12px;overflow:auto;max-height:448px;background:#1e1e2e;padding:var(--space-3);font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);color:#cdd6f4;white-space:pre-wrap;word-break:break-word}.json-actions{display:flex;gap:var(--space-2);margin-bottom:var(--space-4);flex-wrap:wrap}.diff-added{color:#a6e3a1;background:rgba(166,227,161,.1);display:block;padding:2px 4px;border-radius:3px}.diff-removed{color:#f38ba8;background:rgba(243,139,168,.1);display:block;padding:2px 4px;border-radius:3px;text-decoration:line-through}.diff-modified{color:#fab387;background:rgba(250,179,135,.1);display:block;padding:2px 4px;border-radius:3px}.diff-unchanged{color:var(--color-text-light);display:block;padding:2px 4px}.diff-header{font-weight:600;margin:var(--space-3) 0 var(--space-1);display:block;font-size:var(--text-sm)}.diff-separator{border:none;border-top:1px solid var(--color-border);margin:var(--space-2) 0}.no-diff{color:#a6e3a1;text-align:center;padding:var(--space-8);font-weight:600}@media(max-width:768px){.json-container{grid-template-columns:1fr}.json-textarea{min-height:200px}}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="../about" class="nav-link">About</a><a href="../contact" class="nav-link">Contact</a></nav></div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>JSON Compare</h1>
+                <p class="page-description">Compare two JSON objects side by side and see added, removed, and modified keys instantly.</p>
+                <p style="margin-top:var(--space-3);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No sign-up &bull; No server uploads &bull; 100% browser-based</p>
+            </div>
+
+            <div class="json-container">
+                <div>
+                    <label for="json-a" style="font-weight:600;margin-bottom:var(--space-2);display:block">JSON A (Original)</label>
+                    <textarea id="json-a" class="json-textarea" placeholder='Paste first JSON here...\n\nExample:\n{"name":"John","age":30,"city":"NYC"}'></textarea>
+                </div>
+                <div>
+                    <label for="json-b" style="font-weight:600;margin-bottom:var(--space-2);display:block">JSON B (Modified)</label>
+                    <textarea id="json-b" class="json-textarea" placeholder='Paste second JSON here...\n\nExample:\n{"name":"John","age":31,"city":"LA","email":"john@example.com"}'></textarea>
+                </div>
+            </div>
+
+            <div class="json-actions">
+                <button id="compare-btn" class="btn btn-primary btn-lg">Compare</button>
+                <button id="copy-btn" class="btn btn-outline btn-lg">Copy Results</button>
+                <button id="clear-btn" class="btn btn-outline btn-lg">Clear</button>
+            </div>
+
+            <div id="diff-output" class="json-output" style="max-height:500px">
+                <div style="color:var(--color-text-light);text-align:center;padding:var(--space-8)">Differences will appear here</div>
+            </div>
+
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>JSON Formatter</h3><p>Format, validate, and syntax-highlight JSON data.</p><div class="card-footer"><a href="./json-formatter" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>JSON to YAML</h3><p>Convert JSON data to YAML format instantly.</p><div class="card-footer"><a href="./json-to-yaml" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>JSON to CSV</h3><p>Convert JSON arrays to CSV spreadsheet format.</p><div class="card-footer"><a href="./json-to-csv" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+            </section>
+
+            <section class="content-section" style="margin-top:var(--space-4)">
+                <div class="section-header"><h2>Privacy Notice</h2></div>
+                <p style="color:var(--color-text-light);font-size:var(--text-sm)">All processing happens entirely in your browser. Your JSON data is never uploaded to any server. Once you close this page, all data is gone.</p>
+            </section>
+
+            <p style="margin-top: var(--space-4); text-align: center;">
+                <a href="../guides/json-compare" style="color: var(--color-primary);">Read Guide: How to Compare JSON Objects <i class="fas fa-arrow-right"></i></a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools/qr-code-generator">QR Code Generator</a></li><li><a href="/tools/password-generator">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+
+    <script defer src="../assets/js/main.min.js"></script>
+    <script>
+    (function(){
+        var inputA=document.getElementById('json-a'),inputB=document.getElementById('json-b'),output=document.getElementById('diff-output'),compareBtn=document.getElementById('compare-btn'),copyBtn=document.getElementById('copy-btn'),clearBtn=document.getElementById('clear-btn');
+
+        function deepCompare(a,b,path){
+            var diffs=[];
+            if(a===b)return diffs;
+            if(typeof a!==typeof b){diffs.push({type:'modified',path:path,oldVal:JSON.stringify(a),newVal:JSON.stringify(b)});return diffs;}
+            if(a===null||b===null||typeof a!=='object'){diffs.push({type:'modified',path:path,oldVal:JSON.stringify(a),newVal:JSON.stringify(b)});return diffs;}
+            if(Array.isArray(a)&&Array.isArray(b)){
+                var maxLen=Math.max(a.length,b.length);
+                for(var i=0;i<maxLen;i++){
+                    var p=path+'['+i+']';
+                    if(i>=a.length)diffs.push({type:'added',path:p,newVal:JSON.stringify(b[i])});
+                    else if(i>=b.length)diffs.push({type:'removed',path:p,oldVal:JSON.stringify(a[i])});
+                    else diffs=diffs.concat(deepCompare(a[i],b[i],p));
+                }
+                return diffs;
+            }
+            if(Array.isArray(a)!==Array.isArray(b)){diffs.push({type:'modified',path:path,oldVal:JSON.stringify(a),newVal:JSON.stringify(b)});return diffs;}
+            var allKeys=Object.keys(Object.assign({},a,b));
+            for(var k=0;k<allKeys.length;k++){
+                var key=allKeys[k],p2=path?(path+'.'+key):key;
+                if(!(key in a))diffs.push({type:'added',path:p2,newVal:JSON.stringify(b[key])});
+                else if(!(key in b))diffs.push({type:'removed',path:p2,oldVal:JSON.stringify(a[key])});
+                else diffs=diffs.concat(deepCompare(a[key],b[key],p2));
+            }
+            return diffs;
+        }
+
+        function renderDiff(diffs){
+            if(diffs.length===0)return '<div class="no-diff">JSON objects are identical</div>';
+            var html='';
+            var added=diffs.filter(function(d){return d.type==='added'});
+            var removed=diffs.filter(function(d){return d.type==='removed'});
+            var modified=diffs.filter(function(d){return d.type==='modified'});
+            if(added.length){
+                html+='<span class="diff-header" style="color:#a6e3a1">Added ('+added.length+')</span>';
+                for(var i=0;i<added.length;i++)html+='<span class="diff-added">+ '+added[i].path+': '+added[i].newVal+'</span>';
+            }
+            if(removed.length){
+                html+='<span class="diff-header" style="color:#f38ba8">Removed ('+removed.length+')</span>';
+                for(var j=0;j<removed.length;j++)html+='<span class="diff-removed">- '+removed[j].path+': '+removed[j].oldVal+'</span>';
+            }
+            if(modified.length){
+                html+='<span class="diff-header" style="color:#fab387">Modified ('+modified.length+')</span>';
+                for(var k=0;k<modified.length;k++)html+='<span class="diff-modified">~ '+modified[k].path+': '+modified[k].oldVal+' → '+modified[k].newVal+'</span>';
+            }
+            return html;
+        }
+
+        compareBtn.addEventListener('click',function(){
+            var rawA=inputA.value.trim(),rawB=inputB.value.trim();
+            if(!rawA&&!rawB){output.innerHTML='<div style="color:var(--color-text-light);text-align:center;padding:var(--space-8)">Please enter JSON in both fields</div>';return;}
+            try{var objA=JSON.parse(rawA);}catch(e){output.innerHTML='<div style="color:#f38ba8;text-align:center;padding:var(--space-4)">JSON A Error: '+e.message+'</div>';return;}
+            try{var objB=JSON.parse(rawB);}catch(e){output.innerHTML='<div style="color:#f38ba8;text-align:center;padding:var(--space-4)">JSON B Error: '+e.message+'</div>';return;}
+            var diffs=deepCompare(objA,objB,'');
+            output.innerHTML=renderDiff(diffs);
+        });
+
+        copyBtn.addEventListener('click',function(){
+            var text=output.innerText||output.textContent;
+            if(!text||text.indexOf('will appear')>-1)return;
+            navigator.clipboard.writeText(text).then(function(){copyBtn.textContent='Copied!';setTimeout(function(){copyBtn.textContent='Copy Results';},2000);});
+        });
+
+        clearBtn.addEventListener('click',function(){
+            inputA.value='';inputB.value='';
+            output.innerHTML='<div style="color:var(--color-text-light);text-align:center;padding:var(--space-8)">Differences will appear here</div>';
+        });
+    })();
+    </script>
+</body>
+</html>

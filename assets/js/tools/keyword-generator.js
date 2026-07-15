@@ -115,7 +115,9 @@ function initKeywordGenerator() {
     initEventListeners();
 
     window.copyKeyword = function(text) {
-        navigator.clipboard.writeText(text);
+        navigator.clipboard.writeText(text).then(function() {
+            if (typeof showNotification === 'function') showNotification('Copied!');
+        }).catch(function() {});
     };
     
     window.keywordGenerator = {

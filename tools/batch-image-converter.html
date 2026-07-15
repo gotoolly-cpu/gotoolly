@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batch Image Converter - Convert Multiple Images | GoToolly</title>
+    <meta name="description" content="Convert multiple JPG, PNG, WebP images at once. Batch format converter with quality control. Free, private, browser-based.">
+    <meta name="keywords" content="batch image converter, convert multiple images, image format converter bulk, jpg to png batch, webp converter">
+    <link rel="canonical" href="https://gotoolly.com/tools/batch-image-converter">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/batch-image-converter">
+    <meta property="og:title" content="Batch Image Converter - Convert Multiple Images Online | GoToolly">
+    <meta property="og:description" content="Convert multiple JPG, PNG, WebP images at once. Batch format converter with quality control. Free, private, browser-based.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/batch-image-converter">
+    <meta name="twitter:title" content="Batch Image Converter - Convert Multiple Images Online | GoToolly">
+    <meta name="twitter:description" content="Convert multiple JPG, PNG, WebP images at once. Batch format converter with quality control. Free, private, browser-based.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <style>
+        .hero-section{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:var(--space-6) 0;margin-bottom:var(--space-6);border-radius:12px}
+        .hero-content{display:grid;grid-template-columns:2fr 1fr;gap:var(--space-4);align-items:center}
+        .hero-text h1{font-size:2rem;margin:0 0 var(--space-2)}
+        .hero-text p{margin:0;opacity:.95}
+        .hero-badges{display:flex;gap:var(--space-2);margin-top:var(--space-3);flex-wrap:wrap}
+        .hero-badge{background:rgba(255,255,255,.15);padding:4px 12px;border-radius:999px;font-size:var(--text-sm);font-weight:500}
+        .hero-stats{display:grid;gap:var(--space-3)}
+        .stat-card{background:rgba(255,255,255,.08);padding:var(--space-3);border-radius:8px;text-align:center}
+        .stat-number{font-weight:700;font-size:1.25rem}
+        .tool-workspace{background:var(--color-surface);border-radius:12px;padding:var(--space-5);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+        .workspace-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:var(--space-3);border-bottom:1px solid var(--color-border);padding-bottom:var(--space-3)}
+        .workspace-header h2{margin:0;font-size:1.25rem}
+        .file-counter{background:var(--color-primary);color:#fff;padding:6px 14px;border-radius:999px;font-weight:600;font-size:.9rem}
+        .upload-area{border:2px dashed var(--color-border);border-radius:12px;padding:var(--space-6);text-align:center;cursor:pointer;transition:all .18s ease;background-color:var(--color-bg-alt);display:block}
+        .upload-area:hover{border-color:var(--color-primary);background-color:rgba(37,99,235,.04);transform:translateY(-2px)}
+        .upload-area svg{width:56px;height:56px;color:var(--color-primary);margin-bottom:var(--space-3)}
+        #file-list{display:none;margin-top:var(--space-3)}
+        .file-list-item{display:flex;align-items:center;gap:var(--space-3);padding:var(--space-2) var(--space-3);background:var(--color-bg-alt);border-radius:8px;margin-bottom:var(--space-2)}
+        .file-list-item img{width:40px;height:40px;object-fit:cover;border-radius:4px}
+        .file-list-item .file-info{flex:1;font-size:var(--text-sm)}
+        .file-list-item .file-format{font-size:var(--text-xs);color:var(--color-text-light)}
+        .settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3);margin-top:var(--space-3)}
+        .settings-grid .form-group{margin-bottom:0}
+        .settings-grid .form-label{font-size:var(--text-sm);font-weight:600;margin-bottom:4px;display:block}
+        .settings-grid select,.settings-grid input{width:100%;padding:8px 10px;border:1px solid var(--color-border);border-radius:6px;font-size:var(--text-sm);box-sizing:border-box}
+        .btn-row{display:flex;gap:var(--space-3);margin-top:var(--space-3)}
+        .btn-row button{flex:1}
+        .progress-section{display:none;margin-top:var(--space-4)}
+        .per-file-progress{margin-top:var(--space-2)}
+        .per-file-item{display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-1);font-size:var(--text-sm)}
+        .per-file-item .file-progress-bar{flex:1;height:4px;background:var(--color-border);border-radius:2px;overflow:hidden}
+        .per-file-item .file-progress-fill{height:100%;background:var(--color-primary);width:0%;transition:width .2s}
+        .results-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:var(--space-3);margin-top:var(--space-3)}
+        .result-item{background:var(--color-bg-alt);border-radius:8px;padding:var(--space-3);text-align:center}
+        .result-item img{max-width:100%;height:100px;object-fit:contain;border-radius:4px;margin-bottom:var(--space-2)}
+        .result-item .result-name{font-size:var(--text-xs);word-break:break-all}
+        .privacy-badge{display:flex;align-items:center;gap:var(--space-2);background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;padding:10px 16px;border-radius:8px;margin-top:var(--space-4);font-size:var(--text-sm);font-weight:500}
+        .privacy-badge i{font-size:1rem}
+        .max-notice{font-size:var(--text-xs);color:var(--color-text-light);margin-top:var(--space-1)}
+        @media(max-width:900px){.hero-content{grid-template-columns:1fr;gap:var(--space-3)}.hero-text h1{font-size:1.6rem}.tool-workspace{padding:var(--space-4)}.settings-grid{grid-template-columns:1fr}.upload-area{padding:var(--space-4);min-height:120px}.upload-area svg{width:48px;height:48px}}
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s}
+        .skip-link:focus{top:0}
+    </style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"Batch Image Converter","url":"https://gotoolly.com/tools/batch-image-converter","description":"Convert multiple JPG, PNG, WebP images at once. Batch format converter with quality control. Free, private, browser-based.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Batch conversion","JPG/PNG/WebP formats","Quality control"]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Batch Image Converter","item":"https://gotoolly.com/tools/batch-image-converter"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many images can I convert at once?","acceptedAnswer":{"@type":"Answer","text":"You can upload and convert up to 20 images at a time. For larger batches, process in multiple rounds."}},{"@type":"Question","name":"What formats are supported?","acceptedAnswer":{"@type":"Answer","text":"Input: JPG, PNG, WebP. Output: JPG, PNG, WebP. All processing is done locally in your browser."}},{"@type":"Question","name":"Can I download all images at once?","acceptedAnswer":{"@type":"Answer","text":"If JSZip is loaded, you can download all converted images as a ZIP file. Otherwise, you can download each image individually."}},{"@type":"Question","name":"Does quality affect file size?","acceptedAnswer":{"@type":"Answer","text":"Yes. Higher quality produces larger files. For web use, 80-90% quality offers a good balance between file size and visual quality."}},{"@type":"Question","name":"Is my image uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All conversions are performed entirely in your browser. Your images never leave your device."}}]}
+    </script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="site-header"><div class="container"><div class="header-content"><a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a><nav class="main-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="/about" class="nav-link">About</a><a href="/contact" class="nav-link">Contact</a></nav><button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></div><div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="/about" class="nav-link">About</a><a href="/contact" class="nav-link">Contact</a></nav></div></div></header>
+<main id="main-content" class="main-content"><div class="container">
+    <div class="hero-section"><div class="hero-content"><div class="hero-text"><h1>Batch Image Converter</h1><p>Convert multiple images between JPG, PNG, and WebP formats at once. Set quality, bulk download. Completely private and local.</p><div class="hero-badges"><span class="hero-badge">Up to 20 Files</span><span class="hero-badge">Batch Download</span><span class="hero-badge">Free Forever</span></div></div><div class="hero-stats"><div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Formats</div></div><div class="stat-card"><div class="stat-number">20</div><div class="stat-label">Max Files</div></div></div></div></div>
+    <div class="tool-workspace">
+        <div class="workspace-header"><div><h2>Upload & Convert</h2><p style="margin:0;color:var(--color-text-light)">Upload multiple images, choose target format and quality, convert all at once</p></div><div class="file-counter" id="file-count">0 files</div></div>
+        <label for="file-input" class="upload-area" style="margin:0;display:block;width:100%;box-sizing:border-box;position:relative">
+            <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp" multiple style="position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;z-index:2" aria-label="Select images to convert">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <p style="margin:0;font-weight:600">Drag images here or <span style="color:var(--color-primary);text-decoration:underline;cursor:pointer">click to browse</span></p>
+            <p style="margin:var(--space-2) 0 0;font-size:var(--text-sm);color:var(--color-text-light)">JPG, PNG, WebP — Up to 20 files, 10 MB each</p>
+        </label>
+        <div id="file-list">
+            <p style="font-weight:600;margin-bottom:var(--space-2);font-size:var(--text-sm)">Selected Files</p>
+            <div id="file-list-items"></div>
+            <p class="max-notice">Maximum 20 files per batch. Process in multiple rounds for more.</p>
+        </div>
+        <div class="settings-grid">
+            <div class="form-group"><label class="form-label" for="target-format">Target Format</label><select id="target-format"><option value="jpeg">JPEG</option><option value="png">PNG</option><option value="webp">WebP</option></select></div>
+            <div class="form-group"><label class="form-label" for="quality-slider">Quality: <span id="quality-value">90%</span></label><input type="range" id="quality-slider" min="10" max="100" value="90" step="5"></div>
+        </div>
+        <div class="btn-row">
+            <button id="convert-btn" class="btn btn-primary btn-lg" disabled><i class="fas fa-exchange-alt"></i> Convert All</button>
+            <button id="reset-btn" class="btn btn-outline btn-lg"><i class="fas fa-redo"></i> Reset</button>
+        </div>
+        <div id="progress-section" class="progress-section">
+            <div class="progress-bar" style="height:6px;background:var(--color-border);border-radius:3px;overflow:hidden"><div id="progress-fill" style="width:0%;background:var(--color-primary);height:100%;transition:width .2s"></div></div>
+            <div style="display:flex;justify-content:space-between;margin-top:var(--space-2);font-size:var(--text-sm)"><span id="progress-text">Ready</span><span id="progress-percent">0%</span></div>
+            <div class="per-file-progress" id="per-file-progress"></div>
+        </div>
+        <div id="results-area" style="display:none;margin-top:var(--space-3)">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-2)"><p style="font-weight:600;margin:0;font-size:var(--text-sm)">Converted Files</p><button id="download-all-btn" class="btn btn-primary btn-sm"><i class="fas fa-download"></i> Download All</button></div>
+            <div class="results-grid" id="results-grid"></div>
+        </div>
+        <div class="privacy-badge"><i class="fas fa-shield-alt"></i><span>Your images never leave your device. Processing happens locally inside your browser.</span></div>
+    </div>
+    <section class="content-section">
+        <div class="section-header"><h2>How It Works</h2></div>
+        <div class="tools-grid" style="grid-template-columns:repeat(3,1fr)">
+            <div class="card tool-card"><h3>1. Upload Images</h3><p>Select up to 20 JPG, PNG, or WebP images. Thumbnails show in a file list.</p></div>
+            <div class="card tool-card"><h3>2. Set Options</h3><p>Choose target format and adjust quality. All images convert to the same format.</p></div>
+            <div class="card tool-card"><h3>3. Convert &amp; Download</h3><p>Click Convert All, then download individually or all at once as ZIP.</p></div>
+        </div>
+    </section>
+    <section class="content-section"><div class="section-header"><h2>Frequently Asked Questions</h2></div>
+        <div class="faq-list">
+            <div class="faq-item"><h3>How many images can I convert at once?</h3><p>You can upload and convert up to 20 images at a time. For larger batches, process in multiple rounds.</p></div>
+            <div class="faq-item"><h3>What formats are supported?</h3><p>Input: JPG, PNG, WebP. Output: JPG, PNG, WebP. All processing is done locally in your browser.</p></div>
+            <div class="faq-item"><h3>Can I download all images at once?</h3><p>If JSZip is loaded, you can download all converted images as a ZIP file. Otherwise, you can download each image individually.</p></div>
+            <div class="faq-item"><h3>Does quality affect file size?</h3><p>Yes. Higher quality produces larger files. For web use, 80-90% quality offers a good balance between file size and visual quality.</p></div>
+            <div class="faq-item"><h3>Is my image uploaded to a server?</h3><p>No. All conversions are performed entirely in your browser. Your images never leave your device.</p></div>
+        </div>
+    </section>
+    <section class="content-section"><div class="section-header"><h2>Related Tools</h2></div><div class="tools-grid">
+        <div class="card tool-card"><h3>Image Compressor</h3><p>Reduce image file sizes without quality loss.</p><div class="card-footer"><a href="./image-compressor" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+        <div class="card tool-card"><h3>Screenshot to PDF</h3><p>Convert screenshots and images to PDF documents.</p><div class="card-footer"><a href="./screenshot-to-pdf" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+        <div class="card tool-card"><h3>Image Editor</h3><p>Crop, resize, rotate, and flip images with ease.</p><div class="card-footer"><a href="./image-editor" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+    </div></section>
+</div></main>
+<footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools/qr-code-generator">QR Code Generator</a></li><li><a href="/tools/password-generator">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+<script defer src="../assets/js/main.min.js"></script>
+<script>document.getElementById('current-year').textContent=new Date().getFullYear();if('serviceWorker'in navigator){navigator.serviceWorker.register('/sw.js').then(function(r){console.log('[ServiceWorker] Registered:',r.scope)}).catch(function(e){console.warn('[ServiceWorker] Registration failed:',e)})}</script>
+<script defer src="../assets/js/tools/batch-image-converter.min.js"></script>
+</body>
+</html>

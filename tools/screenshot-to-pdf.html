@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screenshot to PDF - Convert Images to PDF Online | GoToolly</title>
+    <meta name="description" content="Convert screenshots and images to PDF documents. Choose page size, orientation, margins. Drag to reorder. Free, private, browser-based.">
+    <meta name="keywords" content="screenshot to pdf, image to pdf, convert images to pdf, jpg to pdf, png to pdf, make pdf from images">
+    <link rel="canonical" href="https://gotoolly.com/tools/screenshot-to-pdf">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/screenshot-to-pdf">
+    <meta property="og:title" content="Screenshot to PDF - Convert Images to PDF Online | GoToolly">
+    <meta property="og:description" content="Convert screenshots and images to PDF documents. Choose page size, orientation, margins. Drag to reorder. Free, private, browser-based.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/screenshot-to-pdf">
+    <meta name="twitter:title" content="Screenshot to PDF - Convert Images to PDF Online | GoToolly">
+    <meta name="twitter:description" content="Convert screenshots and images to PDF documents. Choose page size, orientation, margins. Drag to reorder. Free, private, browser-based.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <style>
+        .hero-section{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:var(--space-6) 0;margin-bottom:var(--space-6);border-radius:12px}
+        .hero-content{display:grid;grid-template-columns:2fr 1fr;gap:var(--space-4);align-items:center}
+        .hero-text h1{font-size:2rem;margin:0 0 var(--space-2)}
+        .hero-text p{margin:0;opacity:.95}
+        .hero-badges{display:flex;gap:var(--space-2);margin-top:var(--space-3);flex-wrap:wrap}
+        .hero-badge{background:rgba(255,255,255,.15);padding:4px 12px;border-radius:999px;font-size:var(--text-sm);font-weight:500}
+        .hero-stats{display:grid;gap:var(--space-3)}
+        .stat-card{background:rgba(255,255,255,.08);padding:var(--space-3);border-radius:8px;text-align:center}
+        .stat-number{font-weight:700;font-size:1.25rem}
+        .tool-workspace{background:var(--color-surface);border-radius:12px;padding:var(--space-5);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+        .workspace-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:var(--space-3);border-bottom:1px solid var(--color-border);padding-bottom:var(--space-3)}
+        .workspace-header h2{margin:0;font-size:1.25rem}
+        .file-counter{background:var(--color-primary);color:#fff;padding:6px 14px;border-radius:999px;font-weight:600;font-size:.9rem}
+        .upload-area{border:2px dashed var(--color-border);border-radius:12px;padding:var(--space-6);text-align:center;cursor:pointer;transition:all .18s ease;background-color:var(--color-bg-alt);display:block}
+        .upload-area:hover{border-color:var(--color-primary);background-color:rgba(37,99,235,.04);transform:translateY(-2px)}
+        .upload-area svg{width:56px;height:56px;color:var(--color-primary);margin-bottom:var(--space-3)}
+        .two-col{display:grid;grid-template-columns:1fr 280px;gap:var(--space-4);margin-top:var(--space-3)}
+        .thumb-list{background:var(--color-bg-alt);border-radius:8px;padding:var(--space-3);min-height:100px}
+        .thumb-item{display:flex;align-items:center;gap:var(--space-2);padding:var(--space-2);background:#fff;border-radius:6px;margin-bottom:var(--space-2);cursor:grab;border:1px solid var(--color-border)}
+        .thumb-item:active{cursor:grabbing}
+        .thumb-item.dragging{opacity:.5}
+        .thumb-item .thumb-img{width:48px;height:48px;object-fit:cover;border-radius:4px;flex-shrink:0}
+        .thumb-item .thumb-info{flex:1;font-size:var(--text-sm);overflow:hidden}
+        .thumb-item .thumb-info .thumb-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .thumb-item .thumb-info .thumb-dims{font-size:var(--text-xs);color:var(--color-text-light)}
+        .thumb-item .thumb-actions{display:flex;gap:4px}
+        .thumb-item .thumb-actions button{background:none;border:none;cursor:pointer;color:var(--color-text-light);padding:4px;font-size:var(--text-sm)}
+        .thumb-item .thumb-actions button:hover{color:var(--color-primary)}
+        .settings-panel{background:#fff;border:1px solid var(--color-border);border-radius:8px;padding:var(--space-3)}
+        .settings-panel .form-group{margin-bottom:var(--space-2)}
+        .settings-panel .form-label{font-size:var(--text-sm);font-weight:600;margin-bottom:4px;display:block}
+        .settings-panel select,.settings-panel input[type=number]{width:100%;padding:6px 8px;border:1px solid var(--color-border);border-radius:6px;font-size:var(--text-sm);box-sizing:border-box}
+        .btn-row{display:flex;gap:var(--space-3);margin-top:var(--space-3)}
+        .btn-row button{flex:1}
+        .progress-section{display:none;margin-top:var(--space-4)}
+        .privacy-badge{display:flex;align-items:center;gap:var(--space-2);background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;padding:10px 16px;border-radius:8px;margin-top:var(--space-4);font-size:var(--text-sm);font-weight:500}
+        .privacy-badge i{font-size:1rem}
+        @media(max-width:900px){.hero-content{grid-template-columns:1fr;gap:var(--space-3)}.hero-text h1{font-size:1.6rem}.tool-workspace{padding:var(--space-4)}.two-col{grid-template-columns:1fr}.upload-area{padding:var(--space-4);min-height:120px}.upload-area svg{width:48px;height:48px}}
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s}
+        .skip-link:focus{top:0}
+    </style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"Screenshot to PDF","url":"https://gotoolly.com/tools/screenshot-to-pdf","description":"Convert screenshots and images to PDF documents. Choose page size, orientation, margins. Drag to reorder. Free, private, browser-based.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Drag-and-drop reorder","A4 and Letter sizes","Portrait and landscape","Custom margins"]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Screenshot to PDF","item":"https://gotoolly.com/tools/screenshot-to-pdf"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What page sizes are available?","acceptedAnswer":{"@type":"Answer","text":"A4 (210x297mm) and Letter (8.5x11in) page sizes are supported, in both portrait and landscape orientations."}},{"@type":"Question","name":"Can I reorder images before converting?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can drag and drop thumbnails to reorder, or use the up/down buttons. The order determines the PDF page order."}},{"@type":"Question","name":"What image formats can I use?","acceptedAnswer":{"@type":"Answer","text":"PNG, JPG, and WebP images are supported. Each image becomes one page in the PDF."}},{"@type":"Question","name":"How are images fitted to the page?","acceptedAnswer":{"@type":"Answer","text":"Images are scaled to fit within the page dimensions while respecting the margin settings. Aspect ratio is preserved. Portrait images work best in portrait mode."}},{"@type":"Question","name":"Is my image uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All PDF generation is done entirely in your browser using the pdf-lib library. Your images never leave your device."}}]}
+    </script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="site-header"><div class="container"><div class="header-content"><a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a><nav class="main-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="/about" class="nav-link">About</a><a href="/contact" class="nav-link">Contact</a></nav><button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></div><div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="/about" class="nav-link">About</a><a href="/contact" class="nav-link">Contact</a></nav></div></div></header>
+<main id="main-content" class="main-content"><div class="container">
+    <div class="hero-section"><div class="hero-content"><div class="hero-text"><h1>Screenshot to PDF</h1><p>Turn screenshots and images into a PDF document. Reorder pages, choose layout, and download. Powered by pdf-lib, entirely local.</p><div class="hero-badges"><span class="hero-badge">pdf-lib Powered</span><span class="hero-badge">Drag &amp; Drop</span><span class="hero-badge">Free Forever</span></div></div><div class="hero-stats"><div class="stat-card"><div class="stat-number">2</div><div class="stat-label">Page Sizes</div></div><div class="stat-card"><div class="stat-number">A4</div><div class="stat-label">Letter</div></div></div></div></div>
+    <div class="tool-workspace">
+        <div class="workspace-header"><div><h2>Upload & Convert</h2><p style="margin:0;color:var(--color-text-light)">Upload images, reorder, set page options, then generate PDF</p></div><div class="file-counter" id="page-count">0 pages</div></div>
+        <label for="file-input" class="upload-area" style="margin:0;display:block;width:100%;box-sizing:border-box;position:relative">
+            <input type="file" id="file-input" accept="image/png,image/jpeg,image/webp" multiple style="position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;z-index:2" aria-label="Select images for PDF">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <p style="margin:0;font-weight:600">Drag images here or <span style="color:var(--color-primary);text-decoration:underline;cursor:pointer">click to browse</span></p>
+            <p style="margin:var(--space-2) 0 0;font-size:var(--text-sm);color:var(--color-text-light)">PNG, JPG, WebP — Each image becomes one PDF page</p>
+        </label>
+        <div class="two-col" id="workspace-content" style="display:none">
+            <div>
+                <p style="font-weight:600;margin-bottom:var(--space-2);font-size:var(--text-sm)">Pages <span style="font-weight:400;color:var(--color-text-light)">(drag to reorder)</span></p>
+                <div class="thumb-list" id="thumb-list"></div>
+            </div>
+            <div class="settings-panel">
+                <div class="form-group"><label class="form-label" for="page-size">Page Size</label><select id="page-size"><option value="a4">A4 (210x297mm)</option><option value="letter">Letter (8.5x11in)</option></select></div>
+                <div class="form-group"><label class="form-label" for="orientation">Orientation</label><select id="orientation"><option value="portrait">Portrait</option><option value="landscape">Landscape</option></select></div>
+                <div class="form-group"><label class="form-label" for="margin">Margin (mm)</label><input type="number" id="margin" min="0" max="50" value="10"></div>
+                <div class="btn-row" style="flex-direction:column">
+                    <button id="generate-btn" class="btn btn-primary btn-lg" style="width:100%"><i class="fas fa-file-pdf"></i> Generate PDF</button>
+                    <button id="reset-btn" class="btn btn-outline btn-lg" style="width:100%"><i class="fas fa-redo"></i> Reset</button>
+                </div>
+            </div>
+        </div>
+        <div id="progress-section" class="progress-section">
+            <div class="progress-bar" style="height:6px;background:var(--color-border);border-radius:3px;overflow:hidden"><div id="progress-fill" style="width:0%;background:var(--color-primary);height:100%;transition:width .2s"></div></div>
+            <div style="display:flex;justify-content:space-between;margin-top:var(--space-2);font-size:var(--text-sm)"><span id="progress-text">Generating PDF...</span><span id="progress-percent">0%</span></div>
+        </div>
+        <div class="privacy-badge"><i class="fas fa-shield-alt"></i><span>Your images never leave your device. Processing happens locally inside your browser.</span></div>
+    </div>
+    <section class="content-section">
+        <div class="section-header"><h2>How It Works</h2></div>
+        <div class="tools-grid" style="grid-template-columns:repeat(3,1fr)">
+            <div class="card tool-card"><h3>1. Upload Images</h3><p>Drop PNG, JPG, or WebP files. Each image becomes one page in the PDF.</p></div>
+            <div class="card tool-card"><h3>2. Arrange &amp; Configure</h3><p>Drag to reorder pages. Set page size, orientation, and margins.</p></div>
+            <div class="card tool-card"><h3>3. Generate PDF</h3><p>Click Generate PDF. Images are embedded using pdf-lib. Download instantly.</p></div>
+        </div>
+    </section>
+    <section class="content-section"><div class="section-header"><h2>Frequently Asked Questions</h2></div>
+        <div class="faq-list">
+            <div class="faq-item"><h3>What page sizes are available?</h3><p>A4 (210x297mm) and Letter (8.5x11in) page sizes are supported, in both portrait and landscape orientations.</p></div>
+            <div class="faq-item"><h3>Can I reorder images before converting?</h3><p>Yes. You can drag and drop thumbnails to reorder, or use the up/down buttons. The order determines the PDF page order.</p></div>
+            <div class="faq-item"><h3>What image formats can I use?</h3><p>PNG, JPG, and WebP images are supported. Each image becomes one page in the PDF.</p></div>
+            <div class="faq-item"><h3>How are images fitted to the page?</h3><p>Images are scaled to fit within the page dimensions while respecting the margin settings. Aspect ratio is preserved.</p></div>
+            <div class="faq-item"><h3>Is my image uploaded to a server?</h3><p>No. All PDF generation is done entirely in your browser using the pdf-lib library. Your images never leave your device.</p></div>
+        </div>
+    </section>
+    <section class="content-section"><div class="section-header"><h2>Related Tools</h2></div><div class="tools-grid">
+        <div class="card tool-card"><h3>Batch Image Converter</h3><p>Convert multiple images between formats at once.</p><div class="card-footer"><a href="./batch-image-converter" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+        <div class="card tool-card"><h3>JPG to PDF</h3><p>Convert JPG images to PDF documents.</p><div class="card-footer"><a href="./jpg-to-pdf" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+        <div class="card tool-card"><h3>PNG to PDF</h3><p>Convert PNG images to PDF documents.</p><div class="card-footer"><a href="./png-to-pdf" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+    </div></section>
+</div></main>
+<footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools/qr-code-generator">QR Code Generator</a></li><li><a href="/tools/password-generator">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script defer src="../assets/js/main.min.js"></script>
+<script>document.getElementById('current-year').textContent=new Date().getFullYear();if('serviceWorker'in navigator){navigator.serviceWorker.register('/sw.js').then(function(r){console.log('[ServiceWorker] Registered:',r.scope)}).catch(function(e){console.warn('[ServiceWorker] Registration failed:',e)})}</script>
+<script defer src="../assets/js/tools/screenshot-to-pdf.min.js"></script>
+</body>
+</html>

@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Background Remover | GoToolly - Professional Online Tool</title>
-    <meta name="description" content="Remove image backgrounds instantly with AI. 100% browser-based, no uploads, privacy guaranteed.">
+    <title>Background Remover | GoToolly</title>
+    <meta name="description" content="Remove image backgrounds instantly. 100% browser-based, no uploads, privacy guaranteed.">
+    <meta name="keywords" content="background remover, remove background online, transparent background, image background eraser, photo background remover, browser-based tool, privacy-focused">
     <!-- Canonical -->
     <link rel="canonical" href="https://gotoolly.com/tools/background-removal">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gotoolly.com/tools/background-removal">
-    <meta property="og:title" content="AI Background Remover | GoToolly - Professional Online Tool">
-    <meta property="og:description" content="Remove image backgrounds instantly with AI. 100% browser-based, no uploads, privacy guaranteed.">
+    <meta property="og:title" content="Background Remover | GoToolly - Professional Online Tool">
+    <meta property="og:description" content="Remove image backgrounds instantly. 100% browser-based, no uploads, privacy guaranteed.">
     <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
@@ -20,8 +21,8 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://gotoolly.com/tools/background-removal">
-    <meta name="twitter:title" content="AI Background Remover | GoToolly - Professional Online Tool">
-    <meta name="twitter:description" content="Remove image backgrounds instantly with AI. 100% browser-based, no uploads, privacy guaranteed.">
+    <meta name="twitter:title" content="Background Remover | GoToolly - Professional Online Tool">
+    <meta name="twitter:description" content="Remove image backgrounds instantly. 100% browser-based, no uploads, privacy guaranteed.">
     <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
     <meta name="twitter:image:alt" content="GoToolly Logo">
     <meta name="twitter:creator" content="@GoToolly">
@@ -557,7 +558,7 @@
     {
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        "name": "AI Background Remover",
+        "name": "Background Remover",
         "url": "https://gotoolly.com/tools/background-removal",
         "description": "Remove image backgrounds instantly with AI. 100% browser-based, no uploads, privacy guaranteed.",
         "applicationCategory": "UtilitiesApplication",
@@ -636,18 +637,11 @@
                         <div style="width: 56px; height: 56px; background: rgba(255,255,255,0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(10px);">
                             <i class="fas fa-magic" style="font-size: 28px;"></i>
                         </div>
-                        <h1 style="font-size: 2.5rem; font-weight: 700; margin: 0; letter-spacing: -0.5px;">AI Background Remover</h1>
+                        <h1 style="font-size: 2.5rem; font-weight: 700; margin: 0; letter-spacing: -0.5px;">Background Remover</h1>
                     </div>
                     <p style="font-size: 1.125rem; color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; max-width: 800px;">
-                        Remove backgrounds from images instantly using advanced AI. Works 100% in your browser � no uploads, your privacy is protected.
+                        Remove backgrounds from images instantly. Works 100% in your browser — no uploads, your privacy is protected.
                     </p>
-                    <div class="model-status" id="modelStatus">
-                        <i class="fas fa-spinner fa-spin"></i>
-                        <span>Loading AI models...</span>
-                    </div>
-                    <button id="loadModelsBtn" class="btn btn-secondary" style="margin-left: 1rem; display: none;">
-                        <i class="fas fa-cloud-download-alt"></i> Load AI Models
-                    </button>
                 </div>
             </section>
 
@@ -672,39 +666,6 @@
                         <button class="btn btn-secondary" onclick="document.getElementById('fileInput').click()">
                             <i class="fas fa-folder-open"></i> Choose File
                         </button>
-                    </div>
-
-                    <div class="control-group">
-                        <label for="modelSelect">AI Model</label>
-                        <select id="modelSelect" class="select-control">
-                            <option value="smart">Smart (Auto Detect)</option>
-                            <option value="person">People & Portraits</option>
-                            <option value="product">Products & Objects</option>
-                            <option value="logo">Logos & Text</option>
-                            <option value="fast">Fast Processing</option>
-                        </select>
-                    </div>
-
-                    <div class="control-group">
-                        <label>Processing Options</label>
-                        <div class="checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="hairProtection" checked>
-                                <span>Hair & fine detail protection</span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="edgeRefinement" checked>
-                                <span>Edge refinement</span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="holeFilling" checked>
-                                <span>Fill small holes</span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="autoCleanup" checked>
-                                <span>Auto edge cleanup</span>
-                            </label>
-                        </div>
                     </div>
 
                     <div class="control-group">
@@ -797,7 +758,7 @@
                         </div>
                         <div class="stat-item">
                             <div class="stat-value" id="accuracyScore">0%</div>
-                            <div class="stat-label">AI Confidence</div>
+                            <div class="stat-label">Mode</div>
                         </div>
                     </div>
                 </div>
@@ -896,10 +857,12 @@
                     <div>
                         <h4 style="margin-bottom: 0.75rem; color: var(--dark);">
                             <i class="fas fa-cogs" style="color: var(--primary); margin-right: 0.5rem;"></i>
-                            2. AI Processing
+                            2. Advanced Processing
+
+
                         </h4>
                         <p style="color: var(--gray); font-size: 0.875rem;">
-                            Our AI analyzes the image and removes the background with precision.
+                            Our tool analyzes the image and removes the background with precision.
                         </p>
                     </div>
                     <div>
@@ -1059,8 +1022,8 @@
                 processingOverlay: document.getElementById('processingOverlay'),
                 processStep: document.getElementById('processStep'),
                 progressFill: document.getElementById('progressFill'),
-                modelStatus: document.getElementById('modelStatus'),
-                loadModelsBtn: document.getElementById('loadModelsBtn'),
+                modelStatus: null,
+                loadModelsBtn: null,
                 processBtn: document.getElementById('processBtn'),
                 downloadBtn: document.getElementById('downloadBtn'),
                 copyBtn: document.getElementById('copyBtn'),
@@ -1073,7 +1036,7 @@
                 cleanupValue: document.getElementById('cleanupValue'),
                 brushSizeSlider: document.getElementById('brushSizeSlider'),
                 brushSizeValue: document.getElementById('brushSizeValue'),
-                modelSelect: document.getElementById('modelSelect'),
+                modelSelect: null,
                 outputFormat: document.getElementById('outputFormat'),
                 toast: document.getElementById('toast'),
                 toastMessage: document.getElementById('toastMessage'),
@@ -1123,7 +1086,7 @@
                 elements.uploadArea.addEventListener('drop', handleDrop, false);
                 
                 // Model loading
-                elements.loadModelsBtn.addEventListener('click', loadAIModels);
+                if (elements.loadModelsBtn) elements.loadModelsBtn.addEventListener('click', loadAIModels);
                 
                 // Processing
                 elements.processBtn.addEventListener('click', processImage);
@@ -1233,62 +1196,13 @@
                 }
             }
             
-            // AI Model management
+            // Model management (no-op - basic processing only)
             async function checkAIModels() {
-                elements.modelStatus.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Checking AI models...';
-                
-                try {
-                    // Check if TensorFlow.js is available
-                    if (typeof tf === 'undefined') {
-                        throw new Error('TensorFlow.js not loaded');
-                    }
-                    
-                    // Check if BodyPix is available
-                    if (typeof bodyPix === 'undefined') {
-                        throw new Error('BodyPix not loaded');
-                    }
-                    
-                    state.aiModels.loaded = true;
-                    state.aiModels.error = null;
-                    
-                    elements.modelStatus.innerHTML = '<i class="fas fa-check-circle"></i> AI models ready';
-                    elements.modelStatus.className = 'model-status ready';
-                    elements.loadModelsBtn.style.display = 'none';
-                    
-                } catch (error) {
-                    state.aiModels.error = error.message;
-                    
-                    elements.modelStatus.innerHTML = '<i class="fas fa-exclamation-triangle"></i> AI models not available';
-                    elements.modelStatus.className = 'model-status error';
-                    elements.loadModelsBtn.style.display = 'inline-block';
-                    
-                    showToast('Using basic processing mode', 'warning');
-                }
+                state.aiModels.loaded = false;
             }
             
             async function loadAIModels() {
-                elements.loadModelsBtn.disabled = true;
-                elements.modelStatus.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading AI models...';
-                elements.modelStatus.className = 'model-status loading';
-                
-                try {
-                    // Load TensorFlow.js
-                    await loadScript('https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.8.0/dist/tf.min.js');
-                    
-                    // Load BodyPix
-                    await loadScript('https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix@2.0.5/dist/body-pix.min.js');
-                    
-                    // Re-check models
-                    await checkAIModels();
-                    
-                    showToast('AI models loaded successfully', 'success');
-                    
-                } catch (error) {
-                    console.error('Error loading AI models:', error);
-                    showToast('Failed to load AI models', 'error');
-                } finally {
-                    elements.loadModelsBtn.disabled = false;
-                }
+                showToast('Advanced models not available in this version', 'info');
             }
             
             // Image processing
@@ -1296,6 +1210,7 @@
                 if (!state.originalImage || state.processing) return;
                 
                 state.processing = true;
+                var startTime = Date.now();
                 updateUI();
                 
                 try {
@@ -1321,7 +1236,7 @@
                     let resultData;
                     
                     if (state.aiModels.loaded) {
-                        // Use AI processing
+                        // Use advanced processing
                         resultData = await processWithAI(imageData);
                     } else {
                         // Use basic processing
@@ -1357,8 +1272,8 @@
                     
                     // Update stats
                     updateStats({
-                        processingTime: '1.2s',
-                        accuracyScore: state.aiModels.loaded ? '94%' : '82%'
+                        processingTime: ((Date.now() - startTime) / 1000).toFixed(1) + 's',
+                        accuracyScore: state.aiModels.loaded ? 'AI' : 'Basic'
                     });
                     
                     setTimeout(() => {
@@ -1376,22 +1291,14 @@
             }
             
             async function processWithAI(imageData) {
-                // This would use TensorFlow.js/BodyPix for segmentation
-                // For now, return a simulated result
-                updateProgress(40, 'Running AI segmentation...');
-                
-                await new Promise(resolve => setTimeout(resolve, 800));
-                
-                // Simulate AI processing by creating a basic mask
+                updateProgress(40, 'Running segmentation...');
+                await new Promise(resolve => setTimeout(resolve, 200));
                 return createBasicMask(imageData);
             }
             
             async function processBasic(imageData) {
                 updateProgress(40, 'Running basic segmentation...');
-                
-                await new Promise(resolve => setTimeout(resolve, 500));
-                
-                // Use simple color-based segmentation
+                await new Promise(resolve => setTimeout(resolve, 100));
                 return createBasicMask(imageData);
             }
             
@@ -1423,14 +1330,34 @@
             }
             
             function applyPostProcessing(imageData) {
-                // Apply edge softness
-                const edgeValue = parseInt(elements.edgeSlider.value) / 100;
-                
-                // Apply cleanup
-                const cleanupValue = parseInt(elements.cleanupSlider.value) / 100;
-                
-                // Here you would apply actual post-processing
-                // For now, return the original
+                var edgeValue = parseInt(elements.edgeSlider.value) / 100;
+                if (edgeValue >= 1) return imageData;
+                var data = imageData.data;
+                var w = imageData.width;
+                var h = imageData.height;
+                var threshold = Math.round(255 * (1 - edgeValue));
+                for (var i = 0; i < data.length; i += 4) {
+                    if (data[i + 3] > 0 && data[i + 3] < 255) continue;
+                    if (data[i + 3] === 0) {
+                        var x = (i / 4) % w;
+                        var y = Math.floor((i / 4) / w);
+                        var isEdge = false;
+                        for (var dy = -1; dy <= 1 && !isEdge; dy++) {
+                            for (var dx = -1; dx <= 1 && !isEdge; dx++) {
+                                if (dx === 0 && dy === 0) continue;
+                                var nx = x + dx, ny = y + dy;
+                                if (nx >= 0 && nx < w && ny >= 0 && ny < h) {
+                                    var ni = (ny * w + nx) * 4;
+                                    if (data[ni + 3] > 128) isEdge = true;
+                                }
+                            }
+                        }
+                        if (isEdge) {
+                            var alpha = Math.min(255, threshold);
+                            data[i + 3] = alpha;
+                        }
+                    }
+                }
                 return imageData;
             }
             
@@ -1631,10 +1558,66 @@
             }
             
             function cleanupEdges() {
+                if (!state.processingCanvas || !state.resultCanvas) {
+                    showToast('Process an image first', 'warning');
+                    return;
+                }
+                var srcCtx = state.processingCanvas.getContext('2d');
+                var srcData = srcCtx.getImageData(0, 0, state.processingCanvas.width, state.processingCanvas.height);
+                var d = srcData.data;
+                var w = srcData.width;
+                var h = srcData.height;
+                var cleanupStrength = parseInt(elements.cleanupSlider.value) / 100;
+                var radius = Math.max(1, Math.round(cleanupStrength * 3));
+                for (var i = 0; i < d.length; i += 4) {
+                    if (d[i + 3] > 0 && d[i + 3] < 255) {
+                        var x = (i / 4) % w;
+                        var y = Math.floor((i / 4) / w);
+                        var opaqueNeighbors = 0;
+                        var totalNeighbors = 0;
+                        for (var dy = -radius; dy <= radius; dy++) {
+                            for (var dx = -radius; dx <= radius; dx++) {
+                                if (dx === 0 && dy === 0) continue;
+                                var nx = x + dx, ny = y + dy;
+                                if (nx >= 0 && nx < w && ny >= 0 && ny < h) {
+                                    var ni = (ny * w + nx) * 4;
+                                    totalNeighbors++;
+                                    if (d[ni + 3] > 128) opaqueNeighbors++;
+                                }
+                            }
+                        }
+                        var ratio = opaqueNeighbors / totalNeighbors;
+                        if (ratio > 0.5) d[i + 3] = 255;
+                        else if (ratio < 0.2) d[i + 3] = 0;
+                    }
+                }
+                var resultCtx = state.resultCanvas.getContext('2d');
+                resultCtx.putImageData(srcData, 0, 0);
+                state.processedImage = state.resultCanvas.toDataURL('image/png');
+                elements.resultImage.src = state.processedImage;
                 showToast('Edge cleanup applied', 'success');
             }
             
             function enhanceResult() {
+                if (!state.resultCanvas) {
+                    showToast('Process an image first', 'warning');
+                    return;
+                }
+                var ctx = state.resultCanvas.getContext('2d');
+                var imageData = ctx.getImageData(0, 0, state.resultCanvas.width, state.resultCanvas.height);
+                var d = imageData.data;
+                var qualityValue = parseInt(elements.qualitySlider.value) / 100;
+                for (var i = 0; i < d.length; i += 4) {
+                    if (d[i + 3] > 128) {
+                        var factor = 1 + (qualityValue - 0.5) * 0.4;
+                        d[i] = Math.min(255, Math.round(d[i] * factor));
+                        d[i + 1] = Math.min(255, Math.round(d[i + 1] * factor));
+                        d[i + 2] = Math.min(255, Math.round(d[i + 2] * factor));
+                    }
+                }
+                ctx.putImageData(imageData, 0, 0);
+                state.processedImage = state.resultCanvas.toDataURL('image/png');
+                elements.resultImage.src = state.processedImage;
                 showToast('Image enhanced', 'success');
             }
             

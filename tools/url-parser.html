@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Parser - Break Down URL Components | GoToolly</title>
+    <meta name="description" content="Parse any URL into its components: protocol, hostname, port, pathname, query params, hash, and more. Free, private, browser-based tool.">
+    <meta name="keywords" content="url parser, url analyzer, break down url, url components, parse url, url decomposition, url analyzer tool">
+    <link rel="canonical" href="https://gotoolly.com/tools/url-parser">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/url-parser">
+    <meta property="og:title" content="URL Parser - Break Down URL Components | GoToolly">
+    <meta property="og:description" content="Parse any URL into its components: protocol, hostname, port, pathname, query params, hash, and more.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/url-parser">
+    <meta name="twitter:title" content="URL Parser - Break Down URL Components | GoToolly">
+    <meta name="twitter:description" content="Parse any URL into its components: protocol, hostname, port, pathname, query params, hash, and more.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"URL Parser","url":"https://gotoolly.com/tools/url-parser","description":"Parse any URL into its components: protocol, hostname, port, pathname, query params, hash, and more.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Parse all URL components","Visual color-coded breakdown","Copy individual components"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"URL Parser"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a URL parser?","acceptedAnswer":{"@type":"Answer","text":"A URL parser breaks down a URL into its individual components such as protocol, hostname, port, pathname, query parameters, and hash fragment. This helps developers understand and manipulate URL structures."}},{"@type":"Question","name":"What are the components of a URL?","acceptedAnswer":{"@type":"Answer","text":"A URL typically consists of: protocol (http/https), authentication (username:password), hostname (domain or IP), port number, path (resource location), query string (key-value parameters), and hash (fragment identifier)."}},{"@type":"Question","name":"Why should I parse a URL instead of reading it manually?","acceptedAnswer":{"@type":"Answer","text":"Parsing a URL programmatically ensures accuracy, handles edge cases like encoded characters, and makes it easy to extract or modify specific components without errors."}},{"@type":"Question","name":"Is my URL data stored on a server?","acceptedAnswer":{"@type":"Answer","text":"No. All parsing happens entirely in your browser using the JavaScript URL API. Your URL data never leaves your device."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.url-input-box{width:100%;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);background:var(--color-surface);color:var(--color-text)}.url-input-box:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.url-component-list{display:flex;flex-direction:column;gap:var(--space-2)}.url-component{display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);transition:border-color .2s}.url-component:hover{border-color:var(--color-primary)}.url-component-label{font-size:var(--text-xs);font-weight:600;text-transform:uppercase;letter-spacing:.05em;min-width:100px;flex-shrink:0}.url-component-value{font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);word-break:break-all;flex:1}.url-component-copy{background:none;border:1px solid var(--color-border);border-radius:4px;padding:4px 8px;cursor:pointer;color:var(--color-text-light);font-size:var(--text-xs);flex-shrink:0;transition:all .2s}.url-component-copy:hover{border-color:var(--color-primary);color:var(--color-primary)}.visual-url{padding:var(--space-4);border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);word-break:break-all;line-height:2}.vu-protocol{color:#f59e0b}.vu-auth{color:#a78bfa}.vu-host{color:#10b981}.vu-port{color:#f97316}.vu-path{color:#3b82f6}.vu-query{color:#ef4444}.vu-hash{color:#ec4899}.vu-eq{color:var(--color-text-light)}.toast{position:fixed;bottom:20px;right:20px;background:#10b981;color:#fff;padding:10px 20px;border-radius:8px;font-size:var(--text-sm);z-index:999;opacity:0;transition:opacity .3s}.toast.show{opacity:1}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/tools" class="nav-link active">Tools</a>
+                <a href="/guides" class="nav-link">Guides</a>
+                <a href="../about" class="nav-link">About</a>
+                <a href="../contact" class="nav-link">Contact</a>
+            </nav></div>
+        </div>
+    </header>
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>URL Parser</h1>
+                <p class="page-description">Break down any URL into its individual components. Parse protocol, hostname, port, path, query parameters, and hash fragments instantly.</p>
+            </div>
+            <div class="tool-layout">
+                <div class="tool-interface">
+                    <div class="tool-header">
+                        <h2>Parse a URL</h2>
+                        <p>Enter any URL below to see its components</p>
+                    </div>
+                    <div style="margin-bottom:var(--space-3)">
+                        <label for="url-input"><i class="fas fa-link" style="color:var(--color-primary);margin-right:6px"></i> Enter URL</label>
+                        <input type="url" id="url-input" class="url-input-box" placeholder="https://example.com:8080/path/to/page?key=value&foo=bar#section" value="https://user:pass@example.com:8080/path/to/page?key=value&foo=bar#section">
+                    </div>
+                    <div class="tool-actions">
+                        <button id="parse-btn" class="btn btn-primary btn-lg"><i class="fas fa-search" aria-hidden="true"></i> Parse URL</button>
+                        <button id="clear-btn" class="btn btn-secondary"><i class="fas fa-redo" aria-hidden="true"></i> Clear</button>
+                    </div>
+                    <div id="visual-url" class="visual-url" style="margin-top:var(--space-3)"></div>
+                    <div id="components-output" class="url-component-list" style="margin-top:var(--space-4)"></div>
+                </div>
+                <div class="tool-sidebar">
+                    <div class="card"><h3>How It Works</h3><ol><li>Enter any valid URL in the input field</li><li>Click Parse to break it down</li><li>View the color-coded visual URL</li><li>Copy individual components</li></ol></div>
+                    <div class="card"><h3>URL Components</h3><ul><li><strong>Protocol</strong> - http, https, ftp, etc.</li><li><strong>Origin</strong> - Protocol + Host + Port</li><li><strong>Hostname</strong> - Domain or IP address</li><li><strong>Port</strong> - Server port number</li><li><strong>Pathname</strong> - Resource location</li><li><strong>Search</strong> - Query parameters</li><li><strong>Hash</strong> - Fragment identifier</li></ul></div>
+                </div>
+            </div>
+            <section class="content-section">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>URL Encoder / Decoder</h3><p>Encode and decode URLs instantly. Convert special characters to URL-safe format.</p><div class="card-footer"><a href="./url-encoder" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Query String Parser</h3><p>Parse URL query parameters into key-value pairs with ease.</p><div class="card-footer"><a href="./query-string-parser" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>URL Slug Generator</h3><p>Create clean, SEO-friendly URL slugs from any text.</p><div class="card-footer"><a href="./url-slug-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+            </section>
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
+                <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-3)">
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What is a URL parser?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">A URL parser breaks down a URL into its individual components such as protocol, hostname, port, pathname, query parameters, and hash fragment. This helps developers understand and manipulate URL structures.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What are the components of a URL?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">A URL typically consists of: protocol (http/https), authentication (username:password), hostname (domain or IP), port number, path (resource location), query string (key-value parameters), and hash (fragment identifier).</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Why should I parse a URL instead of reading it manually?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Parsing a URL programmatically ensures accuracy, handles edge cases like encoded characters, and makes it easy to extract or modify specific components without errors.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Is my URL data stored on a server?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">No. All parsing happens entirely in your browser using the JavaScript URL API. Your URL data never leaves your device.</p></div>
+                </div>
+            </section>
+
+            <p style="margin-top: var(--space-4); text-align: center;">
+                <a href="../guides/url-parser" style="color: var(--color-primary);">Read Guide: URL Parser Guide <i class="fas fa-arrow-right"></i></a>
+            </p>
+        </div>
+    </main>
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+    <script defer src="../assets/js/main.min.js"></script>
+    <script>
+    (function(){
+        const urlInput=document.getElementById('url-input');
+        const parseBtn=document.getElementById('parse-btn');
+        const clearBtn=document.getElementById('clear-btn');
+        const visualUrl=document.getElementById('visual-url');
+        const componentsOutput=document.getElementById('components-output');
+        const componentColors={protocol:'#f59e0b',auth:'#a78bfa',host:'#10b981',port:'#f97316',path:'#3b82f6',query:'#ef4444',hash:'#ec4899'};
+        const componentLabels={protocol:'Protocol',auth:'Auth',hostname:'Hostname',origin:'Origin',port:'Port',pathname:'Pathname',search:'Search',hash:'Hash',href:'Full URL',username:'Username',password:'Password'};
+        function showToast(msg){
+            let t=document.querySelector('.toast');if(!t){t=document.createElement('div');t.className='toast';document.body.appendChild(t)}
+            t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000);
+        }
+        function copyText(text){navigator.clipboard.writeText(text).then(()=>showToast('Copied!'))}
+        function colorizeUrl(urlStr){
+            try{const u=new URL(urlStr);let html='';
+                if(u.protocol!=='')html+='<span class="vu-protocol">'+escapeHtml(u.protocol)+'</span>';
+                if(u.username){html+='<span class="vu-auth">'+escapeHtml(u.username);if(u.password)html+=':'+escapeHtml(u.password);html+='@</span>';}
+                html+='<span class="vu-host">'+escapeHtml(u.hostname)+'</span>';
+                if(u.port)html+='<span class="vu-port">:'+escapeHtml(u.port)+'</span>';
+                if(u.pathname&&u.pathname!=='/')html+='<span class="vu-path">'+escapeHtml(u.pathname)+'</span>';
+                if(u.search)html+='<span class="vu-query">'+escapeHtml(u.search)+'</span>';
+                if(u.hash)html+='<span class="vu-hash">'+escapeHtml(u.hash)+'</span>';
+                return html;
+            }catch(e){return '<span style="color:#ef4444">Invalid URL</span>';}
+        }
+        function escapeHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+        function parseUrl(){
+            const raw=urlInput.value.trim();
+            if(!raw){visualUrl.innerHTML='<span style="color:var(--color-text-light)">Enter a URL to see the visual breakdown</span>';componentsOutput.innerHTML='';return;}
+            try{
+                const u=new URL(raw);
+                visualUrl.innerHTML=colorizeUrl(raw);
+                const parts=[
+                    {key:'href',label:'Full URL',value:u.href,color:null},
+                    {key:'origin',label:'Origin',value:u.origin,color:componentColors.host},
+                    {key:'protocol',label:'Protocol',value:u.protocol,color:componentColors.protocol},
+                    {key:'username',label:'Username',value:u.username||'(none)',color:componentColors.auth},
+                    {key:'password',label:'Password',value:u.password?'********':'(none)',color:componentColors.auth},
+                    {key:'hostname',label:'Hostname',value:u.hostname,color:componentColors.host},
+                    {key:'port',label:'Port',value:u.port||'(default)',color:componentColors.port},
+                    {key:'pathname',label:'Pathname',value:u.pathname,color:componentColors.path},
+                    {key:'search',label:'Search',value:u.search||'(none)',color:componentColors.query},
+                    {key:'hash',label:'Hash',value:u.hash||'(none)',color:componentColors.hash}
+                ];
+                componentsOutput.innerHTML=parts.map(p=>'<div class="url-component"><span class="url-component-label" style="color:'+(p.color||'var(--color-text)')+'">'+p.label+'</span><span class="url-component-value">'+escapeHtml(p.value)+'</span><button class="url-component-copy" onclick="(\''+escapeHtml(p.value).replace(/'/g,"\\'")+'\')" title="Copy '+p.label+'"><i class="fas fa-copy"></i></button></div>').join('');
+            }catch(e){
+                visualUrl.innerHTML='<span style="color:#ef4444">Invalid URL: '+escapeHtml(e.message)+'</span>';
+                componentsOutput.innerHTML='';
+            }
+        }
+        document.querySelectorAll('.url-component-copy').forEach(b=>b.addEventListener('click',function(){copyText(this.getAttribute('data-value'))}));
+        componentsOutput.addEventListener('click',function(e){const btn=e.target.closest('.url-component-copy');if(btn){const val=btn.closest('.url-component').querySelector('.url-component-value').textContent;copyText(val);}});
+        parseBtn.addEventListener('click',parseUrl);
+        clearBtn.addEventListener('click',function(){urlInput.value='';visualUrl.innerHTML='';componentsOutput.innerHTML='';});
+        urlInput.addEventListener('keydown',function(e){if(e.key==='Enter')parseUrl()});
+        parseUrl();
+    })();
+    </script>
+</body>
+</html>

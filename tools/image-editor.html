@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -204,6 +204,11 @@
             margin-bottom: var(--space-4);
             border-bottom: 1px solid var(--color-border);
             padding-bottom: var(--space-4);
+        }
+        
+        .workspace-header .header-content {
+            display: block;
+            height: auto;
         }
         
         .header-content h2 {
@@ -984,9 +989,9 @@
                             Transform your images with enterprise-grade tools. Convert between formats, resize with precision, and optimize for web�all with complete privacy.
                         </p>
                         <div class="hero-features">
-                            <div class="feature-badge">?? 100% Private</div>
-                            <div class="feature-badge">? Instant Processing</div>
-                            <div class="feature-badge">?? Mobile Friendly</div>
+                            <div class="feature-badge"><i class="fas fa-shield-alt"></i> 100% Private</div>
+                            <div class="feature-badge"><i class="fas fa-bolt"></i> Instant Processing</div>
+                            <div class="feature-badge"><i class="fas fa-mobile-alt"></i> Mobile Friendly</div>
                         </div>
                     </div>
                     <div class="hero-stats">
@@ -1016,14 +1021,14 @@
                     <h2 class="nav-title">Choose Your Tool</h2>
                     <div class="tool-options">
                         <div class="tool-option active" data-tab="converter">
-                            <div class="option-icon">??</div>
+                            <div class="option-icon"><i class="fas fa-crop-alt"></i></div>
                             <div class="option-content">
                                 <h3>Format Converter</h3>
                                 <p>Transform images between JPG, PNG, WebP, and AVIF formats</p>
                             </div>
                         </div>
                         <div class="tool-option" data-tab="resizer">
-                            <div class="option-icon">??</div>
+                            <div class="option-icon"><i class="fas fa-crop-alt"></i></div>
                             <div class="option-content">
                                 <h3>Image Resizer</h3>
                                 <p>Resize images by pixels, percentage, or aspect ratio</p>
@@ -1041,8 +1046,9 @@
                                     <h2>Format Converter</h2>
                                     <p>Professional image format conversion with optimized settings</p>
                                 </div>
-                                <div class="header-stats">
+                                <div style="display:flex;align-items:center;gap:var(--space-3)">
                                     <span id="converter-file-count" class="file-counter">0 files ready</span>
+                                    <a href="../guides/compress-images-for-web" class="btn btn-secondary btn-sm">Read Guide</a>
                                 </div>
                             </div>
 
@@ -1064,7 +1070,7 @@
                                 <div class="upload-info">
                                     <div class="info-grid">
                                         <div class="info-item">
-                                            <div class="info-icon">??</div>
+                                            <div class="info-icon"><i class="fas fa-info-circle"></i></div>
                                             <div class="info-text">
                                                 <strong>Private Processing</strong>
                                                 <span>Files never leave your browser</span>
@@ -1078,7 +1084,7 @@
                                             </div>
                                         </div>
                                         <div class="info-item">
-                                            <div class="info-icon">??</div>
+                                            <div class="info-icon"><i class="fas fa-info-circle"></i></div>
                                             <div class="info-text">
                                                 <strong>Batch Processing</strong>
                                                 <span>Convert multiple images at once</span>
@@ -1206,7 +1212,7 @@
                             <!-- Action Panel -->
                             <div class="action-panel">
                                 <button id="converter-convert-btn" class="btn-primary btn-large" disabled>
-                                    <span class="btn-icon">??</span>
+                                    <span class="btn-icon"><i class="fas fa-image"></i></span>
                                     <span class="btn-text">Convert Images</span>
                                 </button>
                                 <button id="converter-reset-btn" class="btn-secondary btn-large">
@@ -1219,6 +1225,14 @@
 
                     <!-- Resizer Tab -->
                     <div id="resizer" class="tab-content">
+                        <div class="tool-workspace">
+                            <div class="workspace-header">
+                                <div class="header-content">
+                                    <h2>Image Resizer</h2>
+                                    <p>Resize images by pixels, percentage, or aspect ratio</p>
+                                </div>
+                                <a href="../guides/resize-images-properly" class="btn btn-secondary btn-sm">Read Guide</a>
+                            </div>
                         <div class="form-section">
                             <h3 style="margin-bottom: var(--space-4);">Step 1: Select Image</h3>
                             <label for="resizer-image-input" class="file-drop-zone" id="resizer-drop-zone" style="margin: 0; display: block; width: 100%; box-sizing: border-box;">
@@ -1360,17 +1374,18 @@
                                         <p id="resizer-result-dimensions"></p>
                                         <p id="resizer-result-size"></p>
                                     </div>
-                                    <a id="resizer-download-btn" class="result-download" download="resized-image.png">?? Download</a>
+                                    <a id="resizer-download-btn" class="result-download" download="resized-image.png"><i class="fas fa-download"></i> Download</a>
                                 </div>
                             </div>
                         </div>
+                    </div>
                     </div>
 
                     <!-- Results Area (Converter) -->
                     <div id="converter-results-area" class="results-workspace" style="display: none;">
                         <div class="results-header">
                             <div class="header-content">
-                                <h2>?? Conversion Results</h2>
+                                <h2><i class="fas fa-sync-alt"></i> Conversion Results</h2>
                                 <p>Your converted images are ready for download</p>
                             </div>
                             <div class="results-actions">
@@ -1458,17 +1473,17 @@
                 
                 <div class="tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4);">
                     <div class="card" style="padding: var(--space-4);">
-                        <h3 style="margin: 0 0 var(--space-2); font-size: 1rem;">?? What's the difference between JPEG and PNG?</h3>
+                        <h3 style="margin: 0 0 var(--space-2); font-size: 1rem;"><i class="fas fa-question-circle"></i> What's the difference between JPEG and PNG?</h3>
                         <p style="margin: 0; font-size: var(--text-sm); line-height: 1.4;">JPEG uses lossy compression and is best for photographs. PNG uses lossless compression and supports transparency.</p>
                     </div>
                     
                     <div class="card" style="padding: var(--space-4);">
-                        <h3 style="margin: 0 0 var(--space-2); font-size: 1rem;">??? Should I use WebP or AVIF?</h3>
+                        <h3 style="margin: 0 0 var(--space-2); font-size: 1rem;"><i class="fas fa-question-circle"></i> Should I use WebP or AVIF?</h3>
                         <p style="margin: 0; font-size: var(--text-sm); line-height: 1.4;">WebP offers excellent compression with good browser support. AVIF provides even better compression but has limited support.</p>
                     </div>
                     
                     <div class="card" style="padding: var(--space-4);">
-                        <h3 style="margin: 0 0 var(--space-2); font-size: 1rem;">?? Can I convert multiple images?</h3>
+                        <h3 style="margin: 0 0 var(--space-2); font-size: 1rem;"><i class="fas fa-question-circle"></i> Can I convert multiple images?</h3>
                         <p style="margin: 0; font-size: var(--text-sm); line-height: 1.4;">Yes, select multiple images for batch conversion. All images will be converted using the same settings.</p>
                     </div>
                     
@@ -1491,7 +1506,17 @@
                         </div>
                         <h3 style="margin: 0 0 var(--space-1); font-size: 1.1rem;">Image Optimization Guide</h3>
                         <p style="margin: 0 0 var(--space-3); font-size: var(--text-sm); color: var(--color-text-light);">Learn best practices for converting and optimizing images for different uses.</p>
-                        <a href="/guides/compress-images-for-web" class="btn btn-primary btn-sm" style="font-size: var(--text-sm); padding: var(--space-2) var(--space-3);">Read Guide ?</a>
+                        <a href="/guides/compress-images-for-web" class="btn btn-primary btn-sm" style="font-size: var(--text-sm); padding: var(--space-2) var(--space-3);">Read Guide</a>
+                    </div>
+                    <div class="card guide-card" style="padding: var(--space-4);">
+                        <div class="card-icon" style="margin-bottom: var(--space-3);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 40px; height: 40px;">
+                                <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 style="margin: 0 0 var(--space-1); font-size: 1.1rem;">Image Resizing Guide</h3>
+                        <p style="margin: 0 0 var(--space-3); font-size: var(--text-sm); color: var(--color-text-light);">How to resize images properly while maintaining quality and aspect ratio.</p>
+                        <a href="/guides/resize-images-properly" class="btn btn-primary btn-sm" style="font-size: var(--text-sm); padding: var(--space-2) var(--space-3);">Read Guide</a>
                     </div>
                 </div>
             </section>

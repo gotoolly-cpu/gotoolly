@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Encode/Decode HTML Entities: Guide 2026 | GoToolly</title>
+    <meta name="description" content="Master HTML entity encoding and decoding. Learn to escape special characters, prevent XSS, and properly format HTML content with our step-by-step guide.">
+    <meta name="keywords" content="html encoder, html decoder, html entities, escape html, html encoding guide, html entity encode, decode html, special characters html">
+    <link rel="canonical" href="https://gotoolly.com/guides/html-encoder">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/html-encoder">
+    <meta property="og:title" content="How to Encode/Decode HTML Entities: Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Master HTML entity encoding and decoding. Learn to escape special characters, prevent XSS, and properly format HTML content with our step-by-step guide.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/html-encoder">
+    <meta name="twitter:title" content="How to Encode/Decode HTML Entities: Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Master HTML entity encoding and decoding. Learn to escape special characters, prevent XSS, and properly format HTML content with our step-by-step guide.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+    
+    <style>
+        .page-header { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><text x="10" y="30" font-family="monospace" font-size="12">&amp;amp;</text><text x="45" y="50" font-family="monospace" font-size="10">&amp;lt;</text><text x="20" y="75" font-family="monospace" font-size="12">&amp;gt;</text></svg>'); background-size: 300px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #8b5cf6; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(139, 92, 246, 0.1); border-left: 4px solid #8b5cf6; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .entity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6); margin: var(--space-10) 0; }
+        .entity-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-6); border: 1px solid var(--color-border); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .entity-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .code-example { background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(124, 58, 237, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(139, 92, 246, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        .split-view { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); margin: var(--space-6) 0; }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .entity-grid { grid-template-columns: 1fr; } .split-view { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Encode/Decode HTML Entities: Complete Guide 2026", "description": "Master HTML entity encoding and decoding. Learn to escape special characters, prevent XSS, and properly format HTML content with our step-by-step guide.", "url": "https://gotoolly.com/guides/html-encoder", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/html-encoder" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "HTML Encoder", "item": "https://gotoolly.com/guides/html-encoder"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are HTML entities?","acceptedAnswer":{"@type":"Answer","text":"HTML entities are special codes that represent reserved characters in HTML. For example, &amp;lt; represents the less-than sign (&lt;), and &amp;amp; represents the ampersand (&amp;). They prevent browsers from interpreting these characters as HTML code."}},{"@type":"Question","name":"When should I encode HTML?","acceptedAnswer":{"@type":"Answer","text":"Always encode HTML when displaying user-generated content, code snippets, or any text that contains characters like &lt;, &gt;, &amp;, or quotes that could be interpreted as HTML markup. This prevents broken layouts and XSS security vulnerabilities."}},{"@type":"Question","name":"What is the difference between encode and decode?","acceptedAnswer":{"@type":"Answer","text":"Encoding converts special characters to their HTML entity equivalents (e.g., &lt; becomes &amp;lt;). Decoding reverses the process, converting entities back to their original characters. Both operations are safe and reversible."}},{"@type":"Question","name":"Does encoding affect SEO?","acceptedAnswer":{"@type":"Answer","text":"Proper HTML encoding does not negatively impact SEO. Search engines correctly interpret HTML entities. In fact, encoding special characters in meta descriptions and titles can help ensure your content displays correctly in search results."}},{"@type":"Question","name":"Is the tool safe for sensitive data?","acceptedAnswer":{"@type":"Answer","text":"Yes. All encoding and decoding happens entirely in your browser. No data is sent to any server, making it completely safe for processing sensitive or confidential content."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Encode/Decode HTML Entities: Complete Guide 2026</h1>
+                <p class="page-description">
+                    Learn everything about HTML entity encoding and decoding. Escape special characters, prevent XSS vulnerabilities, and properly format HTML content for the web.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/html-encoder" class="btn btn-primary btn-lg">Encode/Decode HTML Entities</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  Instant conversion  Bidirectional  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>Why HTML Entity Encoding Matters</h2>
+                    <p>HTML entities are the backbone of safe, standards-compliant web content. When you include characters like <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, or quotes in your HTML, the browser interprets them as markup rather than text. Encoding converts these reserved characters into entity codes that display correctly without breaking your page. This is critical for displaying code snippets, user-generated content, and any text that includes HTML-reserved characters.</p>
+                </section>
+
+                <section>
+                    <h2>Common HTML Entities Reference</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr><th>Character</th><th>Entity Name</th><th>Entity Number</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>&lt;</td><td><code>&amp;lt;</code></td><td><code>&amp;#60;</code></td><td>Less than</td></tr>
+                            <tr><td>&gt;</td><td><code>&amp;gt;</code></td><td><code>&amp;#62;</code></td><td>Greater than</td></tr>
+                            <tr><td>&amp;</td><td><code>&amp;amp;</code></td><td><code>&amp;#38;</code></td><td>Ampersand</td></tr>
+                            <tr><td>&quot;</td><td><code>&amp;quot;</code></td><td><code>&amp;#34;</code></td><td>Double quote</td></tr>
+                            <tr><td>&apos;</td><td><code>&amp;apos;</code></td><td><code>&amp;#39;</code></td><td>Single quote (apostrophe)</td></tr>
+                            <tr><td>&nbsp;</td><td><code>&amp;nbsp;</code></td><td><code>&amp;#160;</code></td><td>Non-breaking space</td></tr>
+                            <tr><td>&copy;</td><td><code>&amp;copy;</code></td><td><code>&amp;#169;</code></td><td>Copyright</td></tr>
+                            <tr><td>&reg;</td><td><code>&amp;reg;</code></td><td><code>&amp;#174;</code></td><td>Registered trademark</td></tr>
+                            <tr><td>&euro;</td><td><code>&amp;euro;</code></td><td><code>&amp;#8364;</code></td><td>Euro currency</td></tr>
+                            <tr><td>&mdash;</td><td><code>&amp;mdash;</code></td><td><code>&amp;#8212;</code></td><td>Em dash</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>Step-by-Step: Using the HTML Encoder/Decoder</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Choose Mode: Encode or Decode</h3>
+                                <p>Open the <a href="../tools/html-encoder">HTML Encoder/Decoder</a> and select whether you want to encode or decode. Encode converts special characters to entities; decode converts entities back to characters.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Enter Your Text</h3>
+                                <p>Paste or type the text you want to process in the input area. The tool updates instantly as you type, showing the encoded or decoded result in the output pane.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Review the Result</h3>
+                                <p>Check the output to verify the conversion is correct. The tool handles all standard HTML entities including named entities, numeric entities, and hex entities. Special and non-ASCII characters are also supported.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Copy or Switch Modes</h3>
+                                <p>Copy the result to your clipboard or switch between encode and decode modes to verify round-trip conversion. Download the result as a text file if needed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Security: Preventing XSS with HTML Encoding</h2>
+                    <p>Cross-Site Scripting (XSS) is one of the most common web security vulnerabilities. It occurs when attackers inject malicious scripts into web pages by exploiting unsanitized user input. HTML entity encoding is your first line of defense. By encoding characters like <code>&lt;</code> and <code>&gt;</code>, you ensure that user-supplied content is displayed as text rather than executed as code.</p>
+                    
+                    <div class="code-example">
+                        <strong>Vulnerable (no encoding):</strong>
+                        User input: &lt;script&gt;alert('XSS')&lt;/script&gt;
+                        Result: Script executes in browser!
+
+                        <strong>Safe (with encoding):</strong>
+                        User input: &amp;lt;script&amp;gt;alert('XSS')&amp;lt;/script&amp;gt;
+                        Result: &lt;script&gt;alert('XSS')&lt;/script&gt; (displayed as text)
+                    </div>
+
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Always encode user content</strong> - Any content from users, databases, or third-party APIs should be HTML-encoded before display. This simple step prevents the majority of XSS vulnerabilities.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Use context-specific encoding</strong> - HTML encoding is for HTML body content. Use URL encoding for URLs, JavaScript encoding for script contexts, and CSS encoding for style contexts. Each context has different escaping rules.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Double encoding</strong> - Be careful not to double-encode content that has already been encoded. Use our Decoder first to check if content is already encoded before applying additional encoding.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Practical Use Cases</h2>
+                    <div class="entity-grid">
+                        <div class="entity-card">
+                            <div style="font-size: 2.5rem; margin-bottom: var(--space-4); text-align: center;">&lt;/&gt;</div>
+                            <h3 style="margin-top: 0;">Code Snippets</h3>
+                            <p>Display programming code on web pages without the browser interpreting it. Essential for tutorials, documentation, and developer blogs.</p>
+                        </div>
+                        <div class="entity-card">
+                            <div style="font-size: 2.5rem; margin-bottom: var(--space-4); text-align: center;">&#9998;</div>
+                            <h3 style="margin-top: 0;">Content Management</h3>
+                            <p>Ensure user comments, forum posts, and CMS content display safely. Encode special characters to prevent formatting issues and injection attacks.</p>
+                        </div>
+                        <div class="entity-card">
+                            <div style="font-size: 2.5rem; margin-bottom: var(--space-4); text-align: center;">&#128274;</div>
+                            <h3 style="margin-top: 0;">Email & Forms</h3>
+                            <p>Encode HTML entities in email content and form submissions to ensure proper rendering across different email clients and browsers.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What are HTML entities?</h3>
+                        <p>HTML entities are special codes that represent reserved characters in HTML. For example, <code>&amp;lt;</code> represents the less-than sign (&lt;), and <code>&amp;amp;</code> represents the ampersand (&amp;). They prevent browsers from interpreting these characters as HTML code.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>When should I encode HTML?</h3>
+                        <p>Always encode HTML when displaying user-generated content, code snippets, or any text that contains characters like &lt;, &gt;, &amp;, or quotes that could be interpreted as HTML markup. This prevents broken layouts and XSS security vulnerabilities.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What is the difference between encode and decode?</h3>
+                        <p>Encoding converts special characters to their HTML entity equivalents (e.g., <code>&lt;</code> becomes <code>&amp;lt;</code>). Decoding reverses the process, converting entities back to their original characters. Both operations are safe and reversible.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Does encoding affect SEO?</h3>
+                        <p>Proper HTML encoding does not negatively impact SEO. Search engines correctly interpret HTML entities. In fact, encoding special characters in meta descriptions and titles can help ensure your content displays correctly in search results.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is the tool safe for sensitive data?</h3>
+                        <p>Yes. All encoding and decoding happens entirely in your browser. No data is sent to any server, making it completely safe for processing sensitive or confidential content.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Complete Web Development Suite</h2>
+                    <p>Boost your web development workflow with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/url-encoder">URL Encoder/Decoder</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Encode and decode URLs and query parameters</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/base64-encoder">Base64 Encoder/Decoder</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Encode and decode Base64 strings and files</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/html-minifier">HTML Minifier</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Minify and optimize HTML for production</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Encode and Decode HTML Entities Instantly</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Escape HTML characters, prevent XSS, and ensure your content displays correctly. Fast, private, and free. No account required.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/html-encoder" class="btn btn-primary btn-lg">Encode/Decode Now</a>
+                    <a href="../tools/url-encoder" class="btn btn-secondary btn-lg">URL Encoder</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Local processing  No file uploads  Bidirectional  Instant results  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Encoding Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/html-encoder">HTML Encoder</a></li>
+                        <li><a href="../tools/url-encoder">URL Encoder</a></li>
+                        <li><a href="../tools/base64-encoder">Base64 Encoder</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

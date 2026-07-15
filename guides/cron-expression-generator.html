@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Generate Cron Expressions: Guide 2026 | GoToolly</title>
+    <meta name="description" content="Step-by-step guide to create cron expressions with a visual builder. Learn cron syntax for scheduling tasks on Linux servers.">
+    <meta name="keywords" content="cron expression generator guide, cron syntax, cron schedule, linux cron, cron job scheduling, crontab, cron expression builder">
+    <link rel="canonical" href="https://gotoolly.com/guides/cron-expression-generator">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/cron-expression-generator">
+    <meta property="og:title" content="How to Generate Cron Expressions: Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Step-by-step guide to create cron expressions with a visual builder. Learn cron syntax for scheduling tasks on Linux servers.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/cron-expression-generator">
+    <meta name="twitter:title" content="How to Generate Cron Expressions: Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Step-by-step guide to create cron expressions with a visual builder. Learn cron syntax for scheduling tasks on Linux servers.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+
+    <style>
+        .page-header { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.08"><rect width="100" height="100" fill="white"/><text x="6" y="25" font-family="monospace" font-size="8">* * * * *</text><text x="6" y="45" font-family="monospace" font-size="8">0 9 * * 1</text><text x="6" y="65" font-family="monospace" font-size="8">*/5 * * * *</text><text x="6" y="85" font-family="monospace" font-size="8">CRON</text></svg>'); background-size: 250px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #fa709a; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(250, 112, 154, 0.1); border-left: 4px solid #fa709a; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .code-example { background: linear-gradient(135deg, rgba(250, 112, 154, 0.05) 0%, rgba(254, 225, 64, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(250, 112, 154, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        .use-case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .use-case-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .use-case-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Generate Cron Expressions: Complete Guide 2026", "description": "Step-by-step guide to create cron expressions with a visual builder. Learn cron syntax for scheduling tasks on Linux servers.", "url": "https://gotoolly.com/guides/cron-expression-generator", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/cron-expression-generator" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "Cron Expression Generator Guide", "item": "https://gotoolly.com/guides/cron-expression-generator"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a cron expression?","acceptedAnswer":{"@type":"Answer","text":"A cron expression is a string of five fields separated by spaces that define a schedule for running tasks. The fields are: minute (0-59), hour (0-23), day of month (1-31), month (1-12), and day of week (0-7, where 0 and 7 are Sunday). Each field can contain specific values, ranges, lists, or wildcards."}},{"@type":"Question","name":"How do I run a task every 5 minutes?","acceptedAnswer":{"@type":"Answer","text":"Use the expression \"*/5 * * * *\". The */5 in the minute field means \"every 5 minutes\". The asterisks in the other fields mean \"every\" - so every hour, every day, every month, every day of the week."}},{"@type":"Question","name":"How does the visual builder work?","acceptedAnswer":{"@type":"Answer","text":"The cron expression builder provides dropdown menus and form fields for each of the five cron fields. As you select values, the tool generates the corresponding cron expression in real time. It also shows a human-readable description and calculates the next scheduled execution times."}},{"@type":"Question","name":"What is the difference between day of month and day of week?","acceptedAnswer":{"@type":"Answer","text":"Day of month (field 3) specifies which day of the month to run (e.g., 15 for the 15th). Day of week (field 5) specifies which day of the week (0-7, where 0 is Sunday). If both fields are specified (not *), the task runs when either condition is met."}},{"@type":"Question","name":"Does this tool actually run cron jobs?","acceptedAnswer":{"@type":"Answer","text":"No, this tool only generates and describes cron expressions. It helps you create the correct syntax for use in your crontab files or scheduling systems. You still need to configure the actual cron job on your Linux server or scheduling platform."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Generate Cron Expressions: Complete Guide 2026</h1>
+                <p class="page-description">
+                    Master cron syntax for scheduling tasks on Linux servers. Learn to create precise cron expressions using our visual builder, from simple daily schedules to complex recurring patterns for automation.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/cron-expression-generator" class="btn btn-primary btn-lg">Build Cron Expressions</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  Visual builder  Human-readable preview  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>What is Cron?</h2>
+                    <p>
+                        Cron is a time-based job scheduler in Unix-like operating systems. It enables users and system administrators to schedule commands or scripts to run automatically at specific times, dates, or intervals. The name comes from the Greek word "chronos" (time), and the cron daemon (crond) runs in the background, checking every minute for scheduled tasks. Cron is an essential tool for server automation, system maintenance, and recurring data processing tasks.
+                    </p>
+                    <p>
+                        A cron expression defines the schedule using five fields that specify minute, hour, day of month, month, and day of week. Each field supports specific values, wildcards, ranges, lists, and step values. While the syntax is powerful, it can be difficult to construct correctly — that's where a visual cron expression builder helps, providing an intuitive interface that generates the correct syntax and shows a human-readable description of the schedule.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Cron Expression Syntax</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr><th>Field</th><th>Allowed Values</th><th>Wildcards</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Minute</strong></td><td>0 - 59</td><td><code>*</code>, <code>*/n</code>, <code>1,15</code>, <code>10-30</code></td><td>Minute of the hour</td></tr>
+                            <tr><td><strong>Hour</strong></td><td>0 - 23</td><td><code>*</code>, <code>*/n</code>, <code>9,17</code>, <code>8-18</code></td><td>Hour of the day (24-hour)</td></tr>
+                            <tr><td><strong>Day of Month</strong></td><td>1 - 31</td><td><code>*</code>, <code>*/n</code>, <code>1,15</code>, <code>1-15</code></td><td>Day of the month</td></tr>
+                            <tr><td><strong>Month</strong></td><td>1 - 12 (or JAN - DEC)</td><td><code>*</code>, <code>*/n</code>, <code>1-6</code>, <code>JUN-SEP</code></td><td>Month of the year</td></tr>
+                            <tr><td><strong>Day of Week</strong></td><td>0 - 7 (0 and 7 = SUN)</td><td><code>*</code>, <code>*/n</code>, <code>1-5</code>, <code>MON-FRI</code></td><td>Day of the week</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="code-example">
+                        <strong>Cron Expression Format:</strong><br>
+                        &nbsp;&nbsp;* &nbsp;&nbsp;&nbsp;&nbsp;* &nbsp;&nbsp;&nbsp;&nbsp;* &nbsp;&nbsp;&nbsp;&nbsp;* &nbsp;&nbsp;&nbsp;&nbsp;*<br>
+                        &nbsp;MIN &nbsp;HOUR &nbsp;DOM &nbsp;MON &nbsp;DOW<br><br>
+                        <strong>Special Characters:</strong><br>
+                        <code>*</code> — Any value (every)<br>
+                        <code>,</code> — List separator (e.g., 1,15)<br>
+                        <code>-</code> — Range (e.g., 9-17)<br>
+                        <code>/</code> — Step value (e.g., */5 = every 5)<br>
+                        <code>L</code> — Last (some extended implementations)<br>
+                        <code>#</code> — Nth occurrence (some extended implementations)
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Common Cron Schedule Examples</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr><th>Schedule</th><th>Expression</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Every minute</td><td><code>* * * * *</code></td><td>Run every single minute</td></tr>
+                            <tr><td>Every 5 minutes</td><td><code>*/5 * * * *</code></td><td>Run every 5 minutes</td></tr>
+                            <tr><td>Every hour</td><td><code>0 * * * *</code></td><td>Run at the start of every hour</td></tr>
+                            <tr><td>Daily at midnight</td><td><code>0 0 * * *</code></td><td>Run at 00:00 every day</td></tr>
+                            <tr><td>Daily at 9 AM</td><td><code>0 9 * * *</code></td><td>Run at 09:00 every day</td></tr>
+                            <tr><td>Weekdays at 9 AM</td><td><code>0 9 * * 1-5</code></td><td>Run at 09:00 Monday-Friday</td></tr>
+                            <tr><td>Every Monday at midnight</td><td><code>0 0 * * 1</code></td><td>Run at 00:00 every Monday</td></tr>
+                            <tr><td>Monthly on the 1st at 2 AM</td><td><code>0 2 1 * *</code></td><td>Run at 02:00 on the 1st of every month</td></tr>
+                            <tr><td>Every 30 minutes, 9-5 weekdays</td><td><code>*/30 9-17 * * 1-5</code></td><td>Run every 30 minutes, 9 AM to 5 PM, Monday-Friday</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="pro-tip">
+                        <p><strong> Quick tip:</strong> The cron expression <code>0 0 * * *</code> (daily at midnight) is one of the most commonly used schedules. Use it for daily backups, log rotation, report generation, and data cleanup tasks.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 id="step-by-step">Step-by-Step: Build a Cron Expression</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Open the Cron Expression Builder</h3>
+                                <p>Navigate to the <a href="../tools/cron-expression-generator">Cron Expression Generator</a> tool. You'll see a visual interface with dropdowns and form fields for each of the five cron expression fields.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Set the Minute and Hour</h3>
+                                <p>Use the dropdown menus to specify the minute (0-59) and hour (0-23) for your schedule. For recurring intervals, use step values like "Every 5 minutes" or "Every 2 hours." The expression updates in real time as you make selections.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Configure Days and Months</h3>
+                                <p>Set the day of month, month, and day of week fields. Choose specific values, ranges (e.g., Monday-Friday), or wildcards for "every." The tool shows a human-readable description of your schedule below the expression.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Copy and Use the Expression</h3>
+                                <p>Once satisfied, copy the generated cron expression. Add it to your crontab file with <code>crontab -e</code> or use it in your scheduling platform (Jenkins, Airflow, AWS CloudWatch, Kubernetes CronJob, etc.).</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Common Cron Use Cases</h2>
+                    <div class="use-case-grid">
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128587;</div>
+                            <h4 style="margin: var(--space-2) 0;">System Maintenance</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Schedule log rotation, temporary file cleanup, disk usage checks, and security updates during off-peak hours (e.g., daily at 3 AM).</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128200;</div>
+                            <h4 style="margin: var(--space-2) 0;">Data Backup</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Automate database dumps and file backups. Schedule full backups weekly on Sundays and incremental backups daily. Use timestamps in backup filenames.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128230;</div>
+                            <h4 style="margin: var(--space-2) 0;">Report Generation</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Generate and email daily sales reports, weekly analytics summaries, and monthly performance dashboards automatically without manual intervention.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128269;</div>
+                            <h4 style="margin: var(--space-2) 0;">Monitoring & Alerts</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Run health checks, uptime monitoring, and resource usage checks at regular intervals. Send alerts when metrics exceed thresholds via email or webhook.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Best Practices for Cron Scheduling</h2>
+                    <ul>
+                        <li><strong>Use human-readable comments:</strong> Always add comments to your crontab entries explaining what each job does. Future you (and your team) will thank you. Example: <code># Daily backup at 2 AM</code>.</li>
+                        <li><strong>Avoid peak hours:</strong> Schedule resource-intensive tasks during off-peak hours. Early morning (2 AM - 5 AM) is typically ideal for backups, maintenance, and batch processing.</li>
+                        <li><strong>Use absolute paths:</strong> Cron runs with a limited environment. Always use absolute paths for commands, scripts, and output files. Set <code>PATH</code> explicitly if needed.</li>
+                        <li><strong>Redirect output and errors:</strong> Always capture stdout and stderr to log files. Use <code>&gt;&gt; /var/log/job.log 2&gt;&amp;1</code> to avoid filling the system mail queue and to maintain an audit trail.</li>
+                        <li><strong>Randomize start times:</strong> If multiple cron jobs run at the same interval, stagger their start times to avoid resource contention. Instead of <code>0 * * * *</code> for all jobs, use <code>0</code>, <code>15</code>, <code>30</code>, <code>45</code>.</li>
+                        <li><strong>Monitor cron execution:</strong> Implement health checks for critical cron jobs. Use monitoring tools to alert you if a scheduled job fails or doesn't complete within the expected window.</li>
+                        <li><strong>Test expressions before deploying:</strong> Use the cron expression builder to verify your expression and preview the next execution times before adding it to production servers.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Limitations to Consider</h2>
+                    <ul>
+                        <li><strong>Does not validate against actual cron daemon behavior:</strong> The tool generates syntactically correct cron expressions based on standard cron format, but different cron implementations (Vixie cron, cronie, anacron, dcron) may have subtle differences in behavior.</li>
+                        <li><strong>No calendar awareness:</strong> The tool doesn't account for holidays, business days, or special scheduling requirements. For complex scheduling (e.g., "last business day of the month"), use a scripting layer on top of cron.</li>
+                        <li><strong>Standard 5-field format only:</strong> The tool generates standard Unix cron expressions with five fields. Some schedulers use extended formats with a sixth field for year (quartz, AWS), which are not covered here.</li>
+                        <li><strong>Non-standard special strings:</strong> Some cron implementations support special strings like <code>@daily</code>, <code>@weekly</code>, <code>@reboot</code>. This tool focuses on standard numeric expressions for maximum compatibility.</li>
+                        <li><strong>No timezone support:</strong> Standard cron expressions are evaluated in the server's local timezone. For cross-timezone scheduling, use tools like Jenkins or Airflow that provide timezone-aware scheduling.</li>
+                    </ul>
+                    <div class="pro-tip">
+                        <p><strong> Compatibility note:</strong> The generated expressions follow the standard POSIX cron format. They work with most popular cron implementations including Vixie cron, cronie, and dcron. For cloud schedulers (AWS CloudWatch, GCP Cloud Scheduler), check the documentation for any format differences.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is a cron expression?</h3>
+                        <p>A cron expression is a string of five fields separated by spaces that define a schedule for running tasks. The fields are: minute (0-59), hour (0-23), day of month (1-31), month (1-12), and day of week (0-7, where 0 and 7 are Sunday). Each field can contain specific values, ranges, lists, or wildcards.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do I run a task every 5 minutes?</h3>
+                        <p>Use the expression <code>*/5 * * * *</code>. The */5 in the minute field means "every 5 minutes". The asterisks in the other fields mean "every" — so every hour, every day, every month, every day of the week.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How does the visual builder work?</h3>
+                        <p>The cron expression builder provides dropdown menus and form fields for each of the five cron fields. As you select values, the tool generates the corresponding cron expression in real time. It also shows a human-readable description and calculates the next scheduled execution times.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What is the difference between day of month and day of week?</h3>
+                        <p>Day of month (field 3) specifies which day of the month to run (e.g., 15 for the 15th). Day of week (field 5) specifies which day of the week (0-7, where 0 is Sunday). If both fields are specified (not *), the task runs when either condition is met.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Does this tool actually run cron jobs?</h3>
+                        <p>No, this tool only generates and describes cron expressions. It helps you create the correct syntax for use in your crontab files or scheduling systems. You still need to configure the actual cron job on your Linux server or scheduling platform.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is my data private when using this tool?</h3>
+                        <p>Yes, all cron expression generation happens entirely in your browser. No data is sent to any server, keeping your schedules and configuration information completely private on your device.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Related Tools</h2>
+                    <p>Complement your scheduling and automation workflow with these tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/unix-timestamp-converter">Unix Timestamp Converter</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Convert between Unix timestamps and human-readable dates</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/json-formatter">JSON Formatter</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Format and validate JSON data for configuration files</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/uuid-generator">UUID Generator</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Generate unique identifiers for job tracking and logging</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Build Cron Expressions Instantly</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Create cron expressions with a visual builder. See human-readable descriptions and next execution previews. Fast, private, and free. No account required.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/cron-expression-generator" class="btn btn-primary btn-lg">Build Cron Expressions</a>
+                    <a href="../tools/unix-timestamp-converter" class="btn btn-secondary btn-lg">Unix Timestamp Converter</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Visual builder  Human-readable preview  Real-time updates  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Dev Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/cron-expression-generator">Cron Expression Generator</a></li>
+                        <li><a href="../tools/unix-timestamp-converter">Unix Timestamp Converter</a></li>
+                        <li><a href="../tools/json-formatter">JSON Formatter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

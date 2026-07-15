@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Resizer - Resize Images Online Free | GoToolly</title>
+    <meta name="description" content="Free online image resizer. Resize images by width, height, or percentage. Supports JPG, PNG, WebP. Client-side processing with no uploads.">
+    <meta name="keywords" content="image resizer, resize image, resize photo, image resize online, change image dimensions">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://gotoolly.com/tools/image-resizer">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/image-resizer">
+    <meta property="og:title" content="Image Resizer - Resize Images Online Free | GoToolly">
+    <meta property="og:description" content="Free online image resizer. Resize images by width, height, or percentage. Supports JPG, PNG, WebP. Client-side processing with no uploads.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/image-resizer">
+    <meta name="twitter:title" content="Image Resizer - Resize Images Online Free | GoToolly">
+    <meta name="twitter:description" content="Free online image resizer. Resize images by width, height, or percentage. Supports JPG, PNG, WebP. Client-side processing with no uploads.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    
+    <!-- Favicon & Manifest -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    
+    <!-- Critical CSS: preload and non-blocking load -->
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: var(--space-6) 0;
+            margin-bottom: var(--space-6);
+            border-radius: 12px;
+        }
+        .hero-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--space-4);
+            align-items: center;
+        }
+        .hero-text h1 { font-size: 2rem; margin: 0 0 var(--space-2); }
+        .hero-text p { margin: 0; opacity: 0.95; }
+        .hero-badges { display: flex; gap: var(--space-2); margin-top: var(--space-3); flex-wrap: wrap; }
+        .hero-badge { background: rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 999px; font-size: var(--text-sm); font-weight: 500; }
+        .hero-stats { display: grid; gap: var(--space-3); }
+        .stat-card { background: rgba(255,255,255,0.08); padding: var(--space-3); border-radius: 8px; text-align: center; }
+        .stat-number { font-weight: 700; font-size: 1.25rem; }
+
+        .tool-workspace {
+            background: var(--color-surface);
+            border-radius: 12px;
+            padding: var(--space-5);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+        .workspace-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-3); border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-3); }
+        .workspace-header h2 { margin: 0; font-size: 1.25rem; }
+
+        .file-drop-zone, .upload-area {
+            border: 2px dashed var(--color-border);
+            border-radius: 12px;
+            padding: var(--space-6);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            background-color: var(--color-bg-alt);
+            display: block;
+        }
+        .file-drop-zone:hover, .upload-area:hover { border-color: var(--color-primary); background-color: rgba(37, 99, 235, 0.04); transform: translateY(-2px); }
+        .file-drop-zone svg, .upload-area svg { width: 56px; height: 56px; color: var(--color-primary); margin-bottom: var(--space-3); }
+
+        #settings-panel { display: none; margin-top: var(--space-4); }
+        #settings-panel.show { display: block; }
+
+        .resize-preview-wrap { margin-bottom: var(--space-4); text-align: center; background: var(--color-bg-alt); border-radius: 8px; padding: var(--space-3); }
+        .resize-preview-wrap canvas, .resize-preview-wrap img { max-width: 100%; border-radius: 8px; display: block; margin: 0 auto; }
+
+        .resize-controls { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+        .resize-mode-select { margin-bottom: var(--space-3); }
+        .resize-mode-select select { width: 100%; padding: 8px 12px; border: 1px solid var(--color-border); border-radius: 6px; font-size: var(--text-sm); background: var(--color-bg-alt); }
+        .dimension-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+        .dimension-inputs .form-group { margin-bottom: 0; }
+        .dimension-inputs input { width: 100%; padding: 8px 10px; border: 1px solid var(--color-border); border-radius: 6px; font-size: var(--text-sm); box-sizing: border-box; }
+        .dimension-label { font-size: var(--text-sm); font-weight: 600; margin-bottom: 4px; display: block; }
+
+        .setting-group { margin-bottom: var(--space-3); }
+        .setting-group label { font-size: var(--text-sm); font-weight: 600; margin-bottom: 4px; display: block; }
+        .setting-group select, .setting-group input[type="range"] { width: 100%; padding: 8px 10px; border: 1px solid var(--color-border); border-radius: 6px; font-size: var(--text-sm); box-sizing: border-box; }
+        .range-row { display: flex; align-items: center; gap: var(--space-3); }
+        .range-row input[type="range"] { flex: 1; }
+        .range-value { min-width: 45px; font-weight: 500; text-align: right; }
+        .checkbox-row { display: flex; align-items: center; gap: var(--space-2); margin-top: var(--space-2); }
+        .checkbox-row input { width: auto; }
+        .checkbox-row label { font-weight: 500; font-size: var(--text-sm); margin: 0; cursor: pointer; }
+
+        .dims-comparison { font-size: var(--text-sm); color: var(--color-text-light); text-align: center; margin-top: var(--space-2); }
+        .dims-comparison strong { color: var(--color-text); }
+
+        .btn-row { display: flex; gap: var(--space-3); margin-top: var(--space-3); }
+        .btn-row button { flex: 1; }
+
+        .progress-section { display: none; margin-top: var(--space-4); }
+
+        .privacy-badge { display: flex; align-items: center; gap: var(--space-2); background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; padding: 10px 16px; border-radius: 8px; margin-top: var(--space-4); font-size: var(--text-sm); font-weight: 500; }
+        .privacy-badge i { font-size: 1rem; }
+
+        @media (max-width: 900px) {
+            .hero-content { grid-template-columns: 1fr; gap: var(--space-3); }
+            .hero-text h1 { font-size: 1.6rem; }
+            .tool-workspace { padding: var(--space-4); }
+            .resize-controls { grid-template-columns: 1fr; }
+            .file-drop-zone, .upload-area { padding: var(--space-4); min-height: 120px; }
+            .file-drop-zone svg, .upload-area svg { width: 48px; height: 48px; }
+        }
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-primary);
+            color: white;
+            padding: 8px 16px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Image Resizer",
+        "url": "https://gotoolly.com/tools/image-resizer",
+        "description": "Free online image resizer. Resize images by width, height, or percentage. Supports JPG, PNG, WebP. Client-side processing with no uploads.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Free to use",
+            "No account required",
+            "Client-side processing",
+            "Privacy-focused",
+            "Aspect ratio lock",
+            "Multiple output formats"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gotoolly.com/tools"},
+            {"@type": "ListItem", "position": 3, "name": "Image Resizer", "item": "https://gotoolly.com/tools/image-resizer"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I resize an image without losing quality?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For best quality when resizing, keep the aspect ratio locked and avoid upscaling beyond 200%. Use PNG or WebP output for lossless results. JPG compression may cause artifacts at low quality settings."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I resize multiple images at once?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "This tool resizes one image at a time. For batch resizing, use the Image Compressor tool which includes batch resize functionality."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What image formats are supported?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can upload JPG, PNG, and WebP images. The resized output can be saved as JPG, PNG, or WebP format."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my image uploaded to your server?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. All resizing is performed entirely in your browser using the HTML5 Canvas API. Your images never leave your device."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the maximum image size I can resize?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "There is no hard file size limit. However, very large images may slow down processing depending on your device's memory and CPU capabilities. Most standard photos (up to 20 MB) work well."
+                }
+            }
+        ]
+    }
+    </script>
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+<!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg">
+                    <span class="logo-text">GoToolly</span>
+                </a>
+                
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <!-- Hero -->
+            <div class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Image Resizer</h1>
+                        <p>
+                            Resize images to any dimension with precision control. Choose from width, height, or percentage scaling. Everything happens in your browser.
+                        </p>
+                        <div class="hero-badges">
+                            <span class="hero-badge">100% Private</span>
+                            <span class="hero-badge">No Upload</span>
+                            <span class="hero-badge">Free Forever</span>
+                        </div>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Resize Modes</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Output Formats</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workspace -->
+            <div class="tool-workspace">
+                <div class="workspace-header">
+                    <div>
+                        <h2>Resize Image</h2>
+                        <p style="margin: 0; color: var(--color-text-light);">Upload an image, choose your resize options, and download the result</p>
+                    </div>
+                    <a href="../guides/resize-images-properly" style="color: var(--color-primary); font-size: var(--text-sm); font-weight: 500; text-decoration: none;">Read Guide <i class="fas fa-arrow-right" style="font-size: 0.75rem;"></i></a>
+                </div>
+
+                <!-- Upload -->
+                <label for="file-input" class="file-drop-zone upload-area" style="margin: 0; display: block; width: 100%; box-sizing: border-box; position: relative;">
+                    <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; z-index: 2;" aria-label="Select an image to resize">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p style="margin: 0; font-weight: 600;">Drag an image here or <span style="color: var(--color-primary); text-decoration: underline; cursor: pointer;">click to browse</span></p>
+                    <p style="margin: var(--space-2) 0 0; font-size: var(--text-sm); color: var(--color-text-light);">JPG, PNG, or WebP</p>
+                </label>
+
+                <!-- Settings Panel -->
+                <div id="settings-panel">
+                    <!-- Preview -->
+                    <div class="resize-preview-wrap">
+                        <div id="image-preview-container"></div>
+                        <p class="dims-comparison">Original: <strong id="original-dims">0 x 0</strong></p>
+                    </div>
+
+                    <div class="resize-controls">
+                        <!-- Left column: resize mode & dimensions -->
+                        <div>
+                            <div class="resize-mode-select">
+                                <label for="resize-mode" class="dimension-label">Resize Mode</label>
+                                <select id="resize-mode">
+                                    <option value="width">By Width</option>
+                                    <option value="height">By Height</option>
+                                    <option value="percentage">By Percentage</option>
+                                </select>
+                            </div>
+
+                            <div id="dimension-fields" class="dimension-inputs">
+                                <div class="form-group">
+                                    <label class="dimension-label" for="resize-width">Width (px)</label>
+                                    <input type="number" id="resize-width" min="1" max="10000" placeholder="width">
+                                </div>
+                                <div class="form-group">
+                                    <label class="dimension-label" for="resize-height">Height (px)</label>
+                                    <input type="number" id="resize-height" min="1" max="10000" placeholder="height">
+                                </div>
+                            </div>
+
+                            <div id="percent-field" class="form-group" style="display: none;">
+                                <label class="dimension-label" for="resize-percent">Scale (%)</label>
+                                <div class="range-row">
+                                    <input type="range" id="resize-percent" min="10" max="300" value="50" step="5">
+                                    <span class="range-value" id="percent-value">50%</span>
+                                </div>
+                            </div>
+
+                            <div class="checkbox-row">
+                                <input type="checkbox" id="keep-aspect" checked>
+                                <label for="keep-aspect">Keep aspect ratio</label>
+                            </div>
+
+                            <p class="dims-comparison" style="margin-top: var(--space-2);">New: <strong id="new-dims">-</strong></p>
+                        </div>
+
+                        <!-- Right column: format & quality -->
+                        <div>
+                            <div class="setting-group">
+                                <label for="output-format">Output Format</label>
+                                <select id="output-format">
+                                    <option value="image/jpeg">JPEG</option>
+                                    <option value="image/png">PNG</option>
+                                    <option value="image/webp">WebP</option>
+                                </select>
+                            </div>
+
+                            <div class="setting-group">
+                                <label for="quality">Quality</label>
+                                <div class="range-row">
+                                    <input type="range" id="quality" min="10" max="100" value="92" step="1">
+                                    <span class="range-value" id="quality-value">92%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="btn-row">
+                        <button id="resize-btn" class="btn btn-primary btn-lg" disabled>
+                            <i class="fas fa-expand-arrows-alt"></i> Resize &amp; Download
+                        </button>
+                        <button id="reset-btn" class="btn btn-outline btn-lg">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                    </div>
+
+                    <!-- Progress -->
+                    <div id="progress-section" class="progress-section">
+                        <div class="progress-bar" style="height: 6px; background: var(--color-border); border-radius: 3px; overflow: hidden;">
+                            <div id="progress-fill" style="width: 0%; background: var(--color-primary); height: 100%; transition: width 0.2s;"></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: var(--space-2); font-size: var(--text-sm);">
+                            <span id="progress-text">Processing...</span>
+                            <span id="progress-percent">0%</span>
+                        </div>
+                    </div>
+
+                    <!-- Privacy Badge -->
+                    <div class="privacy-badge">
+                        <i class="fas fa-lock" aria-hidden="true"></i>
+                        <span>Your images never leave your device. Processing happens locally inside your browser.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works -->
+            <section class="content-section" aria-labelledby="how-it-works-heading">
+                <div class="section-header">
+                    <h2 id="how-it-works-heading">How It Works</h2>
+                </div>
+                <div class="tools-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="card step-card">
+                        <h3><span style="background: var(--color-primary); color: white; border-radius: 50%; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 0.9rem;">1</span> Upload</h3>
+                        <p>Select or drag a JPG, PNG, or WebP image onto the upload area.</p>
+                    </div>
+                    <div class="card step-card">
+                        <h3><span style="background: var(--color-primary); color: white; border-radius: 50%; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 0.9rem;">2</span> Resize</h3>
+                        <p>Choose your resize mode (width, height, or percentage) and adjust settings like aspect ratio lock and output format.</p>
+                    </div>
+                    <div class="card step-card">
+                        <h3><span style="background: var(--color-primary); color: white; border-radius: 50%; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 0.9rem;">3</span> Download</h3>
+                        <p>Click resize and the new image is generated instantly in your browser. Download it directly.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="content-section" aria-labelledby="faq-heading">
+                <div class="section-header">
+                    <h2 id="faq-heading">Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="card faq-item">
+                        <h3>How do I resize an image without losing quality?</h3>
+                        <p>For best quality, keep the aspect ratio locked and avoid upscaling beyond 200%. Use PNG or WebP output for lossless results. JPG compression may cause artifacts at low quality settings.</p>
+                    </div>
+                    <div class="card faq-item">
+                        <h3>Can I resize multiple images at once?</h3>
+                        <p>This tool resizes one image at a time. For batch resizing, use the Image Compressor tool which includes batch resize functionality.</p>
+                    </div>
+                    <div class="card faq-item">
+                        <h3>What image formats are supported?</h3>
+                        <p>You can upload JPG, PNG, and WebP images. The resized output can be saved as JPG, PNG, or WebP format.</p>
+                    </div>
+                    <div class="card faq-item">
+                        <h3>Is my image uploaded to your server?</h3>
+                        <p>No. All resizing is performed entirely in your browser using the HTML5 Canvas API. Your images never leave your device.</p>
+                    </div>
+                    <div class="card faq-item">
+                        <h3>What is the maximum image size I can resize?</h3>
+                        <p>There is no hard file size limit. However, very large images may slow down processing depending on your device's memory and CPU capabilities. Most standard photos (up to 20 MB) work well.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Tools -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Related Tools</h2>
+                </div>
+                <div class="tools-grid">
+                    <div class="card tool-card">
+                        <h3>Image Cropper</h3>
+                        <p>Crop images to any size with preset and custom aspect ratios.</p>
+                        <div class="card-footer">
+                            <a href="./image-cropper" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>Image Compressor</h3>
+                        <p>Reduce image file sizes without quality loss. Batch processing included.</p>
+                        <div class="card-footer">
+                            <a href="./image-compressor" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>Image Editor</h3>
+                        <p>Convert, resize, and edit images by dimensions, percentage, or aspect ratio.</p>
+                        <div class="card-footer">
+                            <a href="./image-editor" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">
+                        Free, privacy-focused online tools that work entirely in your browser.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Popular Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="/tools/image-compressor">Image Compressor</a></li>
+                        <li><a href="/tools/pdf-compressor">PDF Compressor</a></li>
+                        <li><a href="/tools/word-counter">Word Counter</a></li>
+                        <li><a href="/tools/qr-code-generator">QR Code Generator</a></li>
+                        <li><a href="/tools/password-generator">Password Generator</a></li>
+                        <li><a href="/tools">View All Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span id="current-year">2026</span> GoToolly. All rights reserved.
+                </div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script defer src="../assets/js/main.min.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(function(registration) {
+                    console.log('[ServiceWorker] Registered:', registration.scope);
+                })
+                .catch(function(error) {
+                    console.warn('[ServiceWorker] Registration failed:', error);
+                });
+        }
+    </script>
+    <script defer src="../assets/js/tools/image-resizer.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV to JSON Converter | GoToolly</title>
+    <meta name="description" content="Convert CSV data to formatted JSON instantly. Handles quoted fields and custom delimiters. Free, private, browser-based CSV to JSON converter.">
+    <meta name="keywords" content="csv to json, convert csv to json, csv json converter, csv parser, csv to array">
+    <link rel="canonical" href="https://gotoolly.com/tools/csv-to-json">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/csv-to-json">
+    <meta property="og:title" content="CSV to JSON Converter | GoToolly">
+    <meta property="og:description" content="Convert CSV data to formatted JSON instantly.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/csv-to-json">
+    <meta name="twitter:title" content="CSV to JSON Converter | GoToolly">
+    <meta name="twitter:description" content="Convert CSV data to formatted JSON instantly.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"CSV to JSON Converter","url":"https://gotoolly.com/tools/csv-to-json","description":"Convert CSV data to formatted JSON instantly.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Custom delimiters","Quoted field support"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"CSV to JSON"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I convert CSV to JSON?","acceptedAnswer":{"@type":"Answer","text":"Paste your CSV data in the input area and click Convert. The formatted JSON output will appear below."}},{"@type":"Question","name":"Does it handle quoted fields?","acceptedAnswer":{"@type":"Answer","text":"Yes. The parser correctly handles quoted fields that contain commas, newlines, and escaped quotes."}},{"@type":"Question","name":"Is my data uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens in your browser. Your data never leaves your device."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.converter-container{margin-bottom:var(--space-4)}.converter-textarea{width:100%;min-height:300px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text);tab-size:2}.converter-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.json-output{border:1px solid var(--color-border);border-radius:12px;overflow:auto;max-height:350px;background:#1e1e2e;padding:var(--space-3);font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);color:#cdd6f4;white-space:pre-wrap;word-break:break-word}.json-actions{display:flex;gap:var(--space-2);margin-bottom:var(--space-4);flex-wrap:wrap;align-items:center}.options-group{display:flex;gap:var(--space-4);margin-bottom:var(--space-4);flex-wrap:wrap}.option-field{display:flex;align-items:center;gap:var(--space-2)}.option-field label{font-size:var(--text-sm);color:var(--color-text-light);white-space:nowrap}.option-field input{width:48px;padding:4px 8px;border:1px solid var(--color-border);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);background:var(--color-surface);color:var(--color-text);text-align:center}.option-field input:focus{outline:2px solid var(--color-primary);outline-offset:-1px}@media(max-width:768px){.converter-textarea{min-height:200px}}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="../about" class="nav-link">About</a><a href="../contact" class="nav-link">Contact</a></nav></div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>CSV to JSON Converter</h1>
+                <p class="page-description">Convert CSV data to formatted JSON instantly. Handles quoted fields and custom delimiters.</p>
+                <p style="margin-top:var(--space-3);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No sign-up &bull; No server uploads &bull; 100% browser-based</p>
+            </div>
+
+            <div class="options-group">
+                <div class="option-field">
+                    <label for="delimiter">Delimiter:</label>
+                    <input type="text" id="delimiter" value="," maxlength="3">
+                </div>
+                <div class="option-field">
+                    <label for="quote-char">Quote:</label>
+                    <input type="text" id="quote-char" value='"' maxlength="3">
+                </div>
+            </div>
+
+            <div class="converter-container">
+                <label for="csv-input" style="font-weight:600;margin-bottom:var(--space-2);display:block">CSV Input</label>
+                <textarea id="csv-input" class="converter-textarea" placeholder='Paste CSV data here...\n\nExample:\nname,age,city\nJohn,30,NYC\nJane,25,LA'></textarea>
+            </div>
+
+            <div class="json-actions">
+                <button id="convert-btn" class="btn btn-primary btn-lg">Convert to JSON</button>
+                <button id="download-btn" class="btn btn-outline btn-lg">Download JSON</button>
+                <button id="copy-btn" class="btn btn-outline btn-lg">Copy JSON</button>
+                <button id="clear-btn" class="btn btn-outline btn-lg">Clear</button>
+            </div>
+
+            <label for="json-output" style="font-weight:600;margin-bottom:var(--space-2);display:block">JSON Output</label>
+            <div id="json-output" class="json-output">
+                <div style="color:var(--color-text-light);text-align:center;padding:var(--space-8)">JSON output will appear here</div>
+            </div>
+
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>JSON to CSV</h3><p>Convert JSON arrays to CSV format.</p><div class="card-footer"><a href="./json-to-csv" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>JSON Formatter</h3><p>Format, validate, and syntax-highlight JSON data.</p><div class="card-footer"><a href="./json-formatter" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>YAML to JSON</h3><p>Convert YAML data to JSON format.</p><div class="card-footer"><a href="./yaml-to-json" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+            </section>
+
+            <section class="content-section" style="margin-top:var(--space-4)">
+                <div class="section-header"><h2>Privacy Notice</h2></div>
+                <p style="color:var(--color-text-light);font-size:var(--text-sm)">All processing happens entirely in your browser. Your data is never uploaded to any server. Once you close this page, all data is gone.</p>
+            </section>
+
+            <p style="margin-top: var(--space-4); text-align: center;">
+                <a href="../guides/csv-to-json" style="color: var(--color-primary);">Read Guide: CSV to JSON Conversion <i class="fas fa-arrow-right"></i></a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools/qr-code-generator">QR Code Generator</a></li><li><a href="/tools/password-generator">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+
+    <script defer src="../assets/js/main.min.js"></script>
+    <script>
+    (function(){
+        var input=document.getElementById('csv-input'),output=document.getElementById('json-output'),convertBtn=document.getElementById('convert-btn'),downloadBtn=document.getElementById('download-btn'),copyBtn=document.getElementById('copy-btn'),clearBtn=document.getElementById('clear-btn'),delimiterInput=document.getElementById('delimiter'),quoteInput=document.getElementById('quote-char');
+        var lastJSON='';
+
+        function parseCSVLine(line,delimiter,quoteChar){
+            var fields=[];var current='';var inQuotes=false;var i=0;
+            while(i<line.length){
+                var ch=line[i];
+                if(inQuotes){
+                    if(ch===quoteChar){
+                        if(i+1<line.length&&line[i+1]===quoteChar){
+                            current+=quoteChar;i++;
+                        }else{
+                            inQuotes=false;
+                        }
+                    }else{
+                        current+=ch;
+                    }
+                }else{
+                    if(ch===quoteChar){
+                        inQuotes=true;
+                    }else if(ch===delimiter){
+                        fields.push(current);current='';
+                    }else{
+                        current+=ch;
+                    }
+                }
+                i++;
+            }
+            fields.push(current);
+            return fields;
+        }
+
+        function parseCSV(csv,delimiter,quoteChar){
+            var lines=[];var current='';var inQuotes=false;
+            for(var i=0;i<csv.length;i++){
+                var ch=csv[i];
+                if(ch===quoteChar){inQuotes=!inQuotes;}
+                if(ch==='\n'&&!inQuotes){lines.push(current);current='';}
+                else{current+=ch;}
+            }
+            if(current.trim())lines.push(current);
+            lines=lines.filter(function(l){return l.trim()!=='';});
+            if(lines.length<2)return[];
+            var headers=parseCSVLine(lines[0],delimiter,quoteChar);
+            var result=[];
+            for(var r=1;r<lines.length;r++){
+                var values=parseCSVLine(lines[r],delimiter,quoteChar);
+                var obj={};
+                for(var c=0;c<headers.length;c++){
+                    var key=headers[c].trim();
+                    var val=c<values.length?values[c].trim():'';
+                    if(val==='')obj[key]=null;
+                    else if(val==='true')obj[key]=true;
+                    else if(val==='false')obj[key]=false;
+                    else if(val==='null')obj[key]=null;
+                    else if(/^-?\d+$/.test(val))obj[key]=parseInt(val,10);
+                    else if(/^-?\d+\.\d+$/.test(val))obj[key]=parseFloat(val);
+                    else obj[key]=val;
+                }
+                result.push(obj);
+            }
+            return result;
+        }
+
+        convertBtn.addEventListener('click',function(){
+            var raw=input.value.trim();
+            if(!raw){output.innerHTML='<div style="color:var(--color-text-light);text-align:center;padding:var(--space-8)">Please enter CSV data</div>';return;}
+            var delimiter=delimiterInput.value||',';
+            var quoteChar=quoteInput.value||'"';
+            try{
+                var result=parseCSV(raw,delimiter,quoteChar);
+                if(result.length===0){output.innerHTML='<div style="color:var(--color-text-light);text-align:center;padding:var(--space-4)">No data rows found</div>';return;}
+                lastJSON=JSON.stringify(result,null,2);
+                output.textContent=lastJSON;
+            }catch(e){
+                output.innerHTML='<div style="color:#f38ba8;text-align:center;padding:var(--space-4)">Error: '+e.message+'</div>';
+            }
+        });
+
+        downloadBtn.addEventListener('click',function(){
+            if(!lastJSON)return;
+            var blob=new Blob([lastJSON],{type:'application/json;charset=utf-8;'});
+            var url=URL.createObjectURL(blob);
+            var a=document.createElement('a');
+            a.href=url;a.download='data.json';
+            document.body.appendChild(a);a.click();
+            document.body.removeChild(a);URL.revokeObjectURL(url);
+        });
+
+        copyBtn.addEventListener('click',function(){
+            if(!lastJSON)return;
+            navigator.clipboard.writeText(lastJSON).then(function(){copyBtn.textContent='Copied!';setTimeout(function(){copyBtn.textContent='Copy JSON';},2000);});
+        });
+
+        clearBtn.addEventListener('click',function(){
+            input.value='';lastJSON='';
+            output.innerHTML='<div style="color:var(--color-text-light);text-align:center;padding:var(--space-8)">JSON output will appear here</div>';
+        });
+    })();
+    </script>
+</body>
+</html>

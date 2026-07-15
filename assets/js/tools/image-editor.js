@@ -96,12 +96,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (converterImages.length > 0) {
             const reader = new FileReader();
             reader.onload = function(e) {
-                const previewArea = document.querySelector('.converter-label');
-                previewArea.innerHTML = `
-                    <img src="${e.target.result}" class="image-preview" alt="Preview" style="width: 48px; height: 48px; object-fit: cover; border-radius: 4px;">
-                    <span>${converterImages.length} image${converterImages.length > 1 ? 's' : ''} ready</span>
-                `;
-                previewArea.classList.add('has-content');
+                const previewArea = document.querySelector('#converter .upload-area .upload-content');
+                if (previewArea) {
+                    previewArea.innerHTML = `
+                        <img src="${e.target.result}" class="image-preview" alt="Preview" style="width: 48px; height: 48px; object-fit: cover; border-radius: 4px;">
+                        <span>${converterImages.length} image${converterImages.length > 1 ? 's' : ''} ready</span>
+                    `;
+                }
             };
             reader.readAsDataURL(converterImages[0]);
         }
@@ -137,12 +138,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (converterImages.length > 0) {
             const reader = new FileReader();
             reader.onload = function(e) {
-                const previewArea = document.querySelector('.converter-label');
-                previewArea.innerHTML = `
-                    <img src="${e.target.result}" class="image-preview" alt="Preview" style="width: 48px; height: 48px; object-fit: cover; border-radius: 4px;">
-                    <span>${converterImages.length} image${converterImages.length > 1 ? 's' : ''} ready</span>
-                `;
-                previewArea.classList.add('has-content');
+                const previewArea = document.querySelector('#converter .upload-area .upload-content');
+                if (previewArea) {
+                    previewArea.innerHTML = `
+                        <img src="${e.target.result}" class="image-preview" alt="Preview" style="width: 48px; height: 48px; object-fit: cover; border-radius: 4px;">
+                        <span>${converterImages.length} image${converterImages.length > 1 ? 's' : ''} ready</span>
+                    `;
+                }
             };
             reader.readAsDataURL(converterImages[0]);
         }
@@ -274,15 +276,21 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                     
                     if (format === 'avif') {
-                        const testCanvas = document.createElement('canvas');
+                        var testCanvas = document.createElement('canvas');
                         testCanvas.width = 1;
                         testCanvas.height = 1;
-                        if (!testCanvas.toBlob(function() {}, 'image/avif')) {
-                            reject(new Error('AVIF format is not supported by your browser. Please choose a different format.'));
-                            return;
-                        }
+                        testCanvas.toBlob(function(avifBlob) {
+                            if (!avifBlob) {
+                                reject(new Error('AVIF format is not supported by your browser. Please choose a different format.'));
+                                return;
+                            }
+                            doConvert();
+                        }, 'image/avif');
+                        return;
                     }
+                    doConvert();
 
+                    function doConvert() {
                     canvas.toBlob(function(blob) {
                         if (!blob) {
                             reject(new Error('Failed to convert image. Your browser may not support this format.'));
@@ -305,6 +313,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             url: URL.createObjectURL(blob)
                         });
                     }, mimeType, quality);
+                    }
                 };
                 
                 img.onerror = function() {

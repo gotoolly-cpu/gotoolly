@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator - Free Online Tool | GoToolly</title>
+    <meta name="description" content="Calculate your Body Mass Index (BMI) using metric or imperial units. See your BMI category and healthy weight range. Free, private, browser-based.">
+    <meta name="keywords" content="bmi calculator, body mass index, bmi chart, healthy weight, weight calculator, fitness tool, health calculator">
+    <link rel="canonical" href="https://gotoolly.com/tools/bmi-calculator">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/bmi-calculator">
+    <meta property="og:title" content="BMI Calculator | GoToolly">
+    <meta property="og:description" content="Calculate your Body Mass Index (BMI) using metric or imperial units. See your BMI category and healthy weight range.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/bmi-calculator">
+    <meta name="twitter:title" content="BMI Calculator | GoToolly">
+    <meta name="twitter:description" content="Calculate your Body Mass Index (BMI) using metric or imperial units.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"BMI Calculator","url":"https://gotoolly.com/tools/bmi-calculator","description":"Calculate your Body Mass Index (BMI) using metric or imperial units. See your BMI category and healthy weight range.","applicationCategory":"HealthApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Metric and imperial","BMI categories","Healthy weight range","Color-coded results"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"BMI Calculator"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is BMI?","acceptedAnswer":{"@type":"Answer","text":"Body Mass Index (BMI) is a value derived from weight and height used to screen for weight categories that may lead to health problems."}},{"@type":"Question","name":"How is BMI calculated?","acceptedAnswer":{"@type":"Answer","text":"BMI = weight (kg) / height (m)². For imperial: BMI = (weight in lbs / height in inches²) × 703."}},{"@type":"Question","name":"Is BMI a diagnostic tool?","acceptedAnswer":{"@type":"Answer","text":"No. BMI is a screening tool, not a diagnostic. Consult a healthcare provider for proper health assessment."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.bmi-container{max-width:640px;margin:0 auto var(--space-4)}.bmi-card{border:1px solid var(--color-border);border-radius:12px;padding:var(--space-4)}.bmi-toggle{display:flex;gap:var(--space-1);margin-bottom:var(--space-4);background:var(--color-bg);border-radius:8px;padding:var(--space-1)}.bmi-toggle-btn{padding:var(--space-2) var(--space-4);border:none;border-radius:6px;cursor:pointer;font-weight:500;font-size:var(--text-sm);background:transparent;color:var(--color-text);flex:1;transition:all .2s}.bmi-toggle-btn.active{background:var(--color-primary);color:#fff}.bmi-form-group{margin-bottom:var(--space-3)}.bmi-form-group label{display:block;font-weight:500;margin-bottom:var(--space-1);font-size:var(--text-sm)}.bmi-input{width:100%;padding:var(--space-2) var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-size:var(--text-base);background:var(--color-surface);color:var(--color-text);box-sizing:border-box}.bmi-input:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.bmi-input-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-2)}.bmi-result{border-radius:12px;padding:var(--space-4);margin-top:var(--space-4);text-align:center}.bmi-result.underweight{background:rgba(56,189,248,.1);border:2px solid #38bdf8}.bmi-result.normal{background:rgba(16,185,129,.1);border:2px solid #10b981}.bmi-result.overweight{background:rgba(245,158,11,.1);border:2px solid #f59e0b}.bmi-result.obese{background:rgba(239,68,68,.1);border:2px solid #ef4444}.bmi-value{font-size:var(--text-3xl);font-weight:700;font-family:'JetBrains Mono',monospace}.bmi-category{font-size:var(--text-lg);font-weight:600;margin-top:var(--space-1)}.bmi-range{margin-top:var(--space-3);padding-top:var(--space-3);border-top:1px solid var(--color-border)}.bmi-range-title{font-weight:600;margin-bottom:var(--space-2)}.bmi-bar{position:relative;height:12px;background:linear-gradient(90deg,#38bdf8 0%,#38bdf8 18.5%,#10b981 18.5%,#10b981 24.9%,#f59e0b 25%,#f59e0b 29.9%,#ef4444 30%,#ef4444 100%);border-radius:6px;margin-bottom:var(--space-2)}.bmi-bar-indicator{position:absolute;top:-4px;width:4px;height:20px;background:var(--color-text);border-radius:2px;transition:left .3s}.bmi-labels{display:flex;justify-content:space-between;font-size:var(--text-xs);color:var(--color-text-light)}.bmi-disclaimer{margin-top:var(--space-3);padding:var(--space-3);background:var(--color-bg);border-radius:8px;font-size:var(--text-xs);color:var(--color-text-light);border-left:3px solid var(--color-primary)}.bmi-actions{display:flex;gap:var(--space-2);margin-top:var(--space-3);flex-wrap:wrap}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="../about" class="nav-link">About</a><a href="../contact" class="nav-link">Contact</a></nav></div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>BMI Calculator</h1>
+                <p class="page-description">Calculate your Body Mass Index (BMI) using metric or imperial units. See your BMI category and healthy weight range.</p>
+                <p style="margin-top:var(--space-3);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No sign-up &bull; No server uploads &bull; 100% browser-based</p>
+            </div>
+
+            <div class="bmi-container">
+                <div class="bmi-card">
+                    <div class="bmi-toggle">
+                        <button id="bmi-metric-btn" class="bmi-toggle-btn active">Metric (cm / kg)</button>
+                        <button id="bmi-imperial-btn" class="bmi-toggle-btn">Imperial (ft / in / lbs)</button>
+                    </div>
+
+                    <div id="bmi-metric" class="bmi-metric">
+                        <div class="bmi-form-group">
+                            <label for="bmi-height-cm">Height (cm)</label>
+                            <input type="text" id="bmi-height-cm" class="bmi-input" placeholder="e.g. 175" inputmode="decimal">
+                        </div>
+                        <div class="bmi-form-group">
+                            <label for="bmi-weight-kg">Weight (kg)</label>
+                            <input type="text" id="bmi-weight-kg" class="bmi-input" placeholder="e.g. 70" inputmode="decimal">
+                        </div>
+                    </div>
+
+                    <div id="bmi-imperial" class="bmi-imperial" style="display:none">
+                        <div class="bmi-form-group">
+                            <label for="bmi-height-ft">Height</label>
+                            <div class="bmi-input-row">
+                                <input type="text" id="bmi-height-ft" class="bmi-input" placeholder="Feet" inputmode="decimal">
+                                <input type="text" id="bmi-height-in" class="bmi-input" placeholder="Inches" inputmode="decimal">
+                            </div>
+                        </div>
+                        <div class="bmi-form-group">
+                            <label for="bmi-weight-lbs">Weight (lbs)</label>
+                            <input type="text" id="bmi-weight-lbs" class="bmi-input" placeholder="e.g. 154" inputmode="decimal">
+                        </div>
+                    </div>
+
+                    <button id="bmi-calculate-btn" class="btn btn-primary btn-lg" style="width:100%">Calculate BMI</button>
+
+                    <div id="bmi-result" class="bmi-result" style="display:none">
+                        <div class="bmi-value" id="bmi-value">--</div>
+                        <div class="bmi-category" id="bmi-category">--</div>
+                        <div class="bmi-range">
+                            <div class="bmi-range-title">BMI Categories</div>
+                            <div class="bmi-bar">
+                                <div class="bmi-bar-indicator" id="bmi-bar-indicator" style="left:50%"></div>
+                            </div>
+                            <div class="bmi-labels"><span>Underweight<br>&lt; 18.5</span><span>Normal<br>18.5 - 24.9</span><span>Overweight<br>25 - 29.9</span><span>Obese<br>30+</span></div>
+                        </div>
+                        <div class="bmi-range" id="bmi-healthy-range">
+                            <div class="bmi-range-title">Healthy Weight Range (BMI 18.5 - 24.9)</div>
+                            <div id="bmi-range-value" style="font-weight:600">--</div>
+                        </div>
+                    </div>
+
+                    <div class="bmi-disclaimer">
+                        <strong>Medical Disclaimer:</strong> BMI is a screening tool, not a diagnostic tool. It does not account for muscle mass, bone density, body composition, or ethnic differences. Please consult a qualified healthcare provider for a proper health assessment.
+                    </div>
+
+                    <div class="bmi-actions">
+                        <button id="bmi-copy-btn" class="btn btn-outline btn-sm">Copy Result</button>
+                        <button id="bmi-clear-btn" class="btn btn-outline btn-sm">Clear</button>
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top:var(--space-4);text-align:center"><a href="/guides/bmi-calculator" style="color:var(--color-primary)">Read Guide: How to Calculate BMI &rarr;</a></p>
+
+            <section class="content-section">
+                <div class="section-header"><h2>How It Works</h2></div>
+                <div class="content-body">
+                    <p>Enter your height and weight to calculate your Body Mass Index. The tool categorizes your result and shows your healthy weight range.</p>
+                    <ul>
+                        <li><strong>Metric:</strong> Enter height in centimeters and weight in kilograms. BMI = weight (kg) / height (m)&sup2;</li>
+                        <li><strong>Imperial:</strong> Enter height in feet and inches and weight in pounds. BMI = (weight / height&sup2;) &times; 703</li>
+                        <li><strong>Categories:</strong> Underweight (&lt;18.5), Normal (18.5-24.9), Overweight (25-29.9), Obese (30+)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
+                <div class="faq-list">
+                    <div class="faq-item"><div class="faq-question">What is a healthy BMI?</div><div class="faq-answer">A BMI between 18.5 and 24.9 is considered healthy for most adults. Below 18.5 is underweight, 25-29.9 is overweight, and 30+ is obese.</div></div>
+                    <div class="faq-item"><div class="faq-question">Is BMI accurate for athletes?</div><div class="faq-answer">BMI may overestimate body fat in athletes and those with high muscle mass. It does not distinguish between muscle and fat.</div></div>
+                    <div class="faq-item"><div class="faq-question">Is this tool a substitute for medical advice?</div><div class="faq-answer">No. This is for informational purposes only. Always consult a healthcare professional for health-related decisions.</div></div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>Percentage Calculator</h3><p>Calculate percentages, increases, decreases, and differences.</p><div class="card-footer"><a href="./percentage-calculator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Unit Converter</h3><p>Convert between units of length, weight, temperature, and more.</p><div class="card-footer"><a href="./unit-converter" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Age Calculator</h3><p>Calculate your exact age in years, months, days, hours, minutes, and seconds.</p><div class="card-footer"><a href="./age-calculator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools/qr-code-generator">QR Code Generator</a></li><li><a href="/tools/password-generator">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+
+    <script defer src="../assets/js/main.min.js"></script>
+    <script defer src="../assets/js/tools/bmi-calculator.min.js"></script>
+</body>
+</html>

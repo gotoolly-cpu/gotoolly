@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Format XML: Complete Guide 2026 | GoToolly</title>
+    <meta name="description" content="Master XML formatting and beautification. Learn to pretty-print XML, validate syntax, organize complex documents, and follow best practices for clean XML code.">
+    <meta name="keywords" content="xml formatter, format xml, xml beautifier, xml pretty printer, xml formatting guide, xml code formatter, beautify xml online, xml validator">
+    <link rel="canonical" href="https://gotoolly.com/guides/xml-formatter">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/xml-formatter">
+    <meta property="og:title" content="How to Format XML: Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Master XML formatting and beautification. Learn to pretty-print XML, validate syntax, organize complex documents, and follow best practices for clean XML code.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/xml-formatter">
+    <meta name="twitter:title" content="How to Format XML: Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Master XML formatting and beautification. Learn to pretty-print XML, validate syntax, organize complex documents, and follow best practices for clean XML code.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+    
+    <style>
+        .page-header { background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><text x="10" y="30" font-family="monospace" font-size="12">&lt;xml&gt;</text><text x="45" y="55" font-family="monospace" font-size="10">&lt;/xml&gt;</text><text x="20" y="75" font-family="monospace" font-size="10">&lt;tag/&gt;</text></svg>'); background-size: 300px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #06b6d4; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(6, 182, 212, 0.1); border-left: 4px solid #06b6d4; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .feature-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        .code-example { background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(8, 145, 178, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(6, 182, 212, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .features-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Format XML: Complete Guide 2026", "description": "Master XML formatting and beautification. Learn to pretty-print XML, validate syntax, organize complex documents, and follow best practices for clean XML code.", "url": "https://gotoolly.com/guides/xml-formatter", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/xml-formatter" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "XML Formatter", "item": "https://gotoolly.com/guides/xml-formatter"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is XML formatting?","acceptedAnswer":{"@type":"Answer","text":"XML formatting, also called pretty-printing, adds proper indentation, line breaks, and spacing to XML documents. This makes the hierarchical structure of XML readable without changing the data or markup."}},{"@type":"Question","name":"Does the formatter validate XML?","acceptedAnswer":{"@type":"Answer","text":"Yes, our XML Formatter includes built-in validation. It checks for well-formedness including matching tags, proper nesting, correct attribute syntax, and valid entity references. Errors are reported with line numbers."}},{"@type":"Question","name":"Can I minify XML after formatting?","acceptedAnswer":{"@type":"Answer","text":"Yes, the tool includes both format and minify modes. Format adds indentation for readability, while minify removes all unnecessary whitespace to reduce file size for production or transmission."}},{"@type":"Question","name":"What is the difference between well-formed and valid XML?","acceptedAnswer":{"@type":"Answer","text":"Well-formed XML follows basic syntax rules (matching tags, proper nesting). Valid XML additionally conforms to a DTD or XML Schema definition. Our formatter checks for well-formedness, not schema validation."}},{"@type":"Question","name":"Is my XML data private?","acceptedAnswer":{"@type":"Answer","text":"Yes, all formatting happens entirely in your browser. No XML data is sent to any server. Your documents never leave your device, making it safe for formatting sensitive configuration or data files."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Format XML: Complete Guide 2026</h1>
+                <p class="page-description">
+                    Transform compressed XML into beautifully structured, readable documents. Learn XML formatting best practices, validation, and how to work with complex XML data.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/xml-formatter" class="btn btn-primary btn-lg">Format XML Now</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  Instant formatting  Built-in validation  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>Why XML Formatting Matters</h2>
+                    <p>XML remains a critical format for data exchange, configuration files, web services (SOAP), and document storage. However, XML is notoriously verbose and can be difficult to read in its raw form. XML formatting, also known as pretty-printing, transforms compressed or minified XML into a structured, indented hierarchy that reveals the document's organization at a glance. This is essential for debugging configuration files, reviewing API responses, and maintaining XML-based projects.</p>
+                </section>
+
+                <section>
+                    <h2>Step-by-Step: Formatting XML</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Input Your XML</h3>
+                                <p>Open the <a href="../tools/xml-formatter">XML Formatter</a> and paste your XML code into the input area. The tool handles everything from small config files to large XML documents with complex nesting.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Choose Format or Minify</h3>
+                                <p>Select your desired output: Format adds proper indentation and line breaks for readability, or Minify compresses the XML by removing all unnecessary whitespace for production use or transmission.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Customize Indentation</h3>
+                                <p>Configure indentation style: choose between 2 spaces, 4 spaces, or tabs. Preview the formatted output in real time as you adjust settings. The tool also shows line numbers for easier navigation.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Copy or Download</h3>
+                                <p>Copy the formatted XML to your clipboard for use in your project. Download the result as an .xml file. The tool also highlights syntax errors with detailed messages to help you fix invalid XML.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Before & After: XML Formatting Example</h2>
+                    <div class="code-example">
+                        <strong>Before (minified):</strong>
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;note&gt;&lt;to&gt;User&lt;/to&gt;&lt;from&gt;Admin&lt;/from&gt;&lt;heading&gt;Reminder&lt;/heading&gt;&lt;body&gt;Format your XML!&lt;/body&gt;&lt;/note&gt;
+
+                        <strong>After (formatted):</strong>
+                        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                        &lt;note&gt;
+                            &lt;to&gt;User&lt;/to&gt;
+                            &lt;from&gt;Admin&lt;/from&gt;
+                            &lt;heading&gt;Reminder&lt;/heading&gt;
+                            &lt;body&gt;Format your XML!&lt;/body&gt;
+                        &lt;/note&gt;
+                    </div>
+                </section>
+
+                <section>
+                    <h2>XML Formatting Features</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#9989;</div>
+                            <h4 style="margin: var(--space-2) 0;">Syntax Validation</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Built-in XML parser validates well-formedness: checks matching tags, proper nesting, valid attributes, and correct entity usage.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128259;</div>
+                            <h4 style="margin: var(--space-2) 0;">Custom Indentation</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Choose between 2-space, 4-space, or tab indentation. Consistent indentation makes the XML hierarchy immediately visible.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128196;</div>
+                            <h4 style="margin: var(--space-2) 0;">CDATA Handling</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Properly formats CDATA sections and preserves their content without escaping. Essential for XML containing code or rich text.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128200;</div>
+                            <h4 style="margin: var(--space-2) 0;">Namespace Support</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Handles XML namespaces correctly, preserving prefixes and maintaining proper namespace scope throughout the document.</p>
+                        </div>
+                    </div>
+
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Always validate before production use</strong> - Always run XML through a validator after manual editing. A missing closing tag can break your entire application or data pipeline.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Use comments sparingly</strong> - XML comments can add significant bloat. Keep them minimal and use them only for sections that truly need explanation.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Consider JSON as an alternative</strong> - For modern applications, JSON is often more readable and compact than XML. Use XML when you need schema validation, namespaces, or work with legacy systems.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>XML vs Other Data Formats</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr><th>Feature</th><th>XML</th><th>JSON</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Readability</td><td>More verbose, needs formatting</td><td>Naturally compact and readable</td></tr>
+                            <tr><td>Schema validation</td><td>DTD, XSD (strong)</td><td>JSON Schema (optional)</td></tr>
+                            <tr><td>Namespaces</td><td>Built-in support</td><td>Not supported natively</td></tr>
+                            <tr><td>Comments</td><td>Supported</td><td>Not supported</td></tr>
+                            <tr><td>Data types</td><td>All text (typed via schema)</td><td>Native types (number, boolean, etc.)</td></tr>
+                            <tr><td>Parsing speed</td><td>Slower (SAX, DOM)</td><td>Faster (native JavaScript object)</td></tr>
+                            <tr><td>Best for</td><td>Document storage, SOAP, config files</td><td>Web APIs, config, data exchange</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>Common XML Use Cases</h2>
+                    <ul>
+                        <li><strong>Configuration Files:</strong> Maven POM, Ant build files, Spring beans, web.xml, and many Java/enterprise frameworks use XML for configuration.</li>
+                        <li><strong>Web Services (SOAP):</strong> SOAP APIs rely on XML for both requests and responses, with WSDL files describing service interfaces.</li>
+                        <li><strong>Document Storage:</strong> DocBook, DITA, and XHTML use XML for structured document authoring and publishing.</li>
+                        <li><strong>Data Exchange:</strong> RSS/Atom feeds, SVG graphics, Office Open XML (docx, xlsx), and industry-specific standards use XML.</li>
+                        <li><strong>UI Layouts:</strong> Android layouts, WPF/XAML, and other UI frameworks use XML-based markup for interface design.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is XML formatting?</h3>
+                        <p>XML formatting, also called pretty-printing, adds proper indentation, line breaks, and spacing to XML documents. This makes the hierarchical structure of XML readable without changing the data or markup.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Does the formatter validate XML?</h3>
+                        <p>Yes, our XML Formatter includes built-in validation. It checks for well-formedness including matching tags, proper nesting, correct attribute syntax, and valid entity references. Errors are reported with line numbers.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I minify XML after formatting?</h3>
+                        <p>Yes, the tool includes both format and minify modes. Format adds indentation for readability, while minify removes all unnecessary whitespace to reduce file size for production or transmission.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What is the difference between well-formed and valid XML?</h3>
+                        <p>Well-formed XML follows basic syntax rules (matching tags, proper nesting). Valid XML additionally conforms to a DTD or XML Schema definition. Our formatter checks for well-formedness, not schema validation.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is my XML data private?</h3>
+                        <p>Yes, all formatting happens entirely in your browser. No XML data is sent to any server. Your documents never leave your device, making it safe for formatting sensitive configuration or data files.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Complete Developer Tool Suite</h2>
+                    <p>Enhance your development workflow with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/json-formatter">JSON Formatter</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Format, validate, and beautify JSON data</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/sql-formatter">SQL Formatter</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Format and beautify SQL queries</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/html-minifier">HTML Minifier</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Minify and optimize HTML for production</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Format XML Documents Instantly</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Transform compressed XML into beautiful, structured documents. Validate syntax and customize formatting. Fast, private, and free. No account required.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/xml-formatter" class="btn btn-primary btn-lg">Format XML Now</a>
+                    <a href="../tools/json-formatter" class="btn btn-secondary btn-lg">Format JSON</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Local processing  Built-in validation  Format/Minify modes  Instant results  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Developer Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/xml-formatter">XML Formatter</a></li>
+                        <li><a href="../tools/sql-formatter">SQL Formatter</a></li>
+                        <li><a href="../tools/json-formatter">JSON Formatter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

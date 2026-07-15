@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var progressFill = document.getElementById('progress-fill');
         var progressPercent = document.getElementById('progress-percent');
         var progressText = document.getElementById('progress-text');
-        progressSection.style.display = '';
+        progressSection.style.display = 'block';
         applyBtn.disabled = true;
 
         try {

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to View and Edit CSV Files: Guide 2026 | GoToolly</title>
+    <meta name="description" content="Master CSV file viewing and editing. Learn to open CSV files, manipulate tabular data, handle delimiters, sort and filter data">
+    <meta name="keywords" content="csv viewer, csv editor, edit csv, view csv, csv file, csv online, csv editor online, comma separated values, csv guide, csv spreadsheet">
+    <link rel="canonical" href="https://gotoolly.com/guides/csv-viewer">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/csv-viewer">
+    <meta property="og:title" content="How to View and Edit CSV Files: Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Master CSV file viewing and editing. Learn to open CSV files, manipulate tabular data, handle delimiters, sort and filter data, and convert between formats in your browser.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/csv-viewer">
+    <meta name="twitter:title" content="How to View and Edit CSV Files: Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Master CSV file viewing and editing. Learn to open CSV files, manipulate tabular data, handle delimiters, sort and filter data, and convert between formats in your browser.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+    
+    <style>
+        .page-header { background: linear-gradient(135deg, #64748b 0%, #475569 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><text x="10" y="30" font-family="monospace" font-size="12">col1,col2</text><text x="35" y="55" font-family="monospace" font-size="10">val1,val2</text><text x="20" y="75" font-family="monospace" font-size="10">CSV</text></svg>'); background-size: 300px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #64748b; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(100, 116, 139, 0.1); border-left: 4px solid #64748b; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .feature-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        .code-example { background: linear-gradient(135deg, rgba(100, 116, 139, 0.05) 0%, rgba(71, 85, 105, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(100, 116, 139, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .features-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to View and Edit CSV Files: Complete Guide 2026", "description": "Master CSV file viewing and editing. Learn to open CSV files, manipulate tabular data, handle delimiters, sort and filter data, and convert between formats in your browser.", "url": "https://gotoolly.com/guides/csv-viewer", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/csv-viewer" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "CSV Viewer", "item": "https://gotoolly.com/guides/csv-viewer"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a CSV file?","acceptedAnswer":{"@type":"Answer","text":"CSV (Comma-Separated Values) is a simple file format for storing tabular data. Each line represents a row, and columns are separated by a delimiter (usually a comma). CSV files can be opened by spreadsheet applications, databases, and text editors."}},{"@type":"Question","name":"Can I edit CSV data directly in the tool?","acceptedAnswer":{"@type":"Answer","text":"Our CSV Viewer is designed for viewing and basic manipulation (sorting, filtering). For advanced editing of individual cells, we recommend downloading the data and editing in a spreadsheet application like Excel or Google Sheets."}},{"@type":"Question","name":"What delimiters are supported?","acceptedAnswer":{"@type":"Answer","text":"The tool supports comma (,), semicolon (;), tab (\\t), pipe (|), and space delimiters. It can auto-detect the delimiter from your data, or you can select it manually for precise control."}},{"@type":"Question","name":"Is there a file size limit?","acceptedAnswer":{"@type":"Answer","text":"The tool processes CSV files entirely in your browser. Very large files (millions of rows) may affect performance depending on your device. For extremely large datasets, consider using a dedicated data analysis tool."}},{"@type":"Question","name":"Is my CSV data kept private?","acceptedAnswer":{"@type":"Answer","text":"Yes, all CSV processing happens entirely in your browser. No data is uploaded to any server. Your files never leave your device, making it completely safe for sensitive business or personal data."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to View and Edit CSV Files: Complete Guide 2026</h1>
+                <p class="page-description">
+                    Master CSV file handling directly in your browser. Learn to open, view, sort, filter, and manipulate CSV data without uploading files to any server.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/csv-viewer" class="btn btn-primary btn-lg">Open CSV Viewer</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  Instant parsing  File upload support  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>Why a Browser-Based CSV Viewer?</h2>
+                    <p>CSV files are everywhere: exported from databases, spreadsheets, analytics tools, and CRM systems. But not everyone has Excel or Google Sheets installed, and opening large CSV files in text editors is painful with data crammed into unreadable rows of comma-separated text. A browser-based CSV viewer solves these problems: it parses your data instantly, displays it in a clean table, and lets you sort, filter, and explore your data without any software installation or file uploads to external servers.</p>
+                </section>
+
+                <section>
+                    <h2>Step-by-Step: Using the CSV Viewer</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Open or Upload Your CSV</h3>
+                                <p>Open the <a href="../tools/csv-viewer">CSV Viewer</a> and paste your CSV data directly into the text area or use the file upload button to select a .csv file from your device. The tool reads the file instantly without uploading it anywhere.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Configure Parsing Options</h3>
+                                <p>Select the delimiter used by your file: comma, semicolon, tab, pipe, or space. Choose whether the first row contains headers. The tool auto-detects these settings but lets you override them for precise control.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>View and Explore Data</h3>
+                                <p>Your CSV data appears in a clean, sortable table. Click column headers to sort ascending or descending. Use the search box to filter rows. The tool displays row count, column count, and data preview for quick analysis.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Export or Copy</h3>
+                                <p>Copy the table data back to CSV format, download as a .csv file, or export to JSON format. The processed data is ready for use in spreadsheets, databases, or analysis tools.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>CSV Viewer Features</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128200;</div>
+                            <h4 style="margin: var(--space-2) 0;">Sortable Columns</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Click any column header to sort data in ascending or descending order. Useful for finding the highest values, alphabetizing, or spotting outliers.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128269;</div>
+                            <h4 style="margin: var(--space-2) 0;">Search & Filter</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Filter rows by keyword across all columns. The search updates in real time and shows matching row counts, making it easy to find specific records.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128196;</div>
+                            <h4 style="margin: var(--space-2) 0;">Multiple Delimiters</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Supports comma, semicolon, tab, pipe, and space delimiters. Auto-detection identifies the delimiter automatically from your data.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128230;</div>
+                            <h4 style="margin: var(--space-2) 0;">Export Options</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Export your data back to CSV or convert to JSON. Copy to clipboard or download as a file for use in your preferred tools and workflows.</p>
+                        </div>
+                    </div>
+
+                    <div class="code-example">
+                        <strong>Sample CSV Data:</strong>
+                        Name,Email,Role,Salary
+                        Alice Johnson,alice@example.com,Engineer,85000
+                        Bob Smith,bob@example.com,Designer,72000
+                        Carol Davis,carol@example.com,Manager,95000
+
+                        <strong>Rendered as Table:</strong>
+                        | Name | Email | Role | Salary |
+                        |---|---|---|---|
+                        | Alice Johnson | alice@example.com | Engineer | 85000 |
+                        | Bob Smith | bob@example.com | Designer | 72000 |
+                        | Carol Davis | carol@example.com | Manager | 95000 |
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Common CSV Challenges and Solutions</h2>
+                    <h3>Handling Commas Within Data</h3>
+                    <p>CSV files sometimes contain commas within data fields (e.g., addresses like "123 Main St, Suite 100"). These values should be quoted in the CSV file. The CSV Viewer handles quoted fields correctly, ignoring commas inside quotes.</p>
+                    
+                    <h3>Encoding Issues</h3>
+                    <p>CSV files from different sources may use different character encodings. Our viewer handles UTF-8, ASCII, and common Western encodings. For files with special characters, ensure the CSV is saved as UTF-8 for best compatibility.</p>
+
+                    <h3>Empty and Missing Values</h3>
+                    <p>CSV files often have missing data represented as empty fields or placeholders like NULL, N/A, or -. The viewer displays these as-is and the search/filter handles them gracefully.</p>
+
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Check the header row</strong> - Ensure the first row of your CSV contains clear, unique column headers. Headers make sorting, filtering, and data analysis much easier.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Use consistent delimiters</strong> - Mixing delimiters in the same file causes parsing errors. If you need to change delimiters, use a text editor's find-and-replace before importing.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Quote fields with special characters</strong> - When creating CSV files, wrap any field containing commas, line breaks, or quotes in double quotes to ensure proper parsing.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>CSV Best Practices</h2>
+                    <ul>
+                        <li><strong>Always include headers:</strong> Header rows make CSV files self-documenting and essential for correct parsing in most tools.</li>
+                        <li><strong>Use UTF-8 encoding:</strong> UTF-8 ensures compatibility with modern applications and properly handles international characters and special symbols.</li>
+                        <li><strong>Be consistent with delimiters:</strong> Choose one delimiter and use it throughout. Comma is the standard, but semicolon is common in regions where comma is used as decimal separator.</li>
+                        <li><strong>Quote values containing delimiters:</strong> Wrap any field that contains the delimiter character, line breaks, or double quotes in double quotes.</li>
+                        <li><strong>Escape double quotes properly:</strong> Within a quoted field, represent double quotes as two double quotes (""). For example: <code>"He said ""Hello"""</code>.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Common Use Cases for CSV Files</h2>
+                    <ul>
+                        <li><strong>Data Export and Import:</strong> Export data from databases, CRM systems, analytics tools, and accounting software for analysis and reporting.</li>
+                        <li><strong>Spreadsheet Data Exchange:</strong> Transfer data between Excel, Google Sheets, Apple Numbers, and LibreOffice Calc using CSV as the interchange format.</li>
+                        <li><strong>Mail Merge and Contacts:</strong> Prepare mailing lists, contact imports, and email campaign recipient lists in CSV format.</li>
+                        <li><strong>Data Analysis and Reporting:</strong> Export query results, generate reports, and prepare data for visualization tools like Tableau and Power BI.</li>
+                        <li><strong>Machine Learning Datasets:</strong> CSV is the most common format for ML training data, with each row representing a sample and columns representing features.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is a CSV file?</h3>
+                        <p>CSV (Comma-Separated Values) is a simple file format for storing tabular data. Each line represents a row, and columns are separated by a delimiter (usually a comma). CSV files can be opened by spreadsheet applications, databases, and text editors.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I edit CSV data directly in the tool?</h3>
+                        <p>Our CSV Viewer is designed for viewing and basic manipulation (sorting, filtering). For advanced editing of individual cells, we recommend downloading the data and editing in a spreadsheet application like Excel or Google Sheets.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What delimiters are supported?</h3>
+                        <p>The tool supports comma (,), semicolon (;), tab (\t), pipe (|), and space delimiters. It can auto-detect the delimiter from your data, or you can select it manually for precise control.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is there a file size limit?</h3>
+                        <p>The tool processes CSV files entirely in your browser. Very large files (millions of rows) may affect performance depending on your device. For extremely large datasets, consider using a dedicated data analysis tool.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is my CSV data kept private?</h3>
+                        <p>Yes, all CSV processing happens entirely in your browser. No data is uploaded to any server. Your files never leave your device, making it completely safe for sensitive business or personal data.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Complete Data Processing Suite</h2>
+                    <p>Enhance your data workflow with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/text-cleaner">Text Cleaner</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Clean up CSV data by removing extra spaces and empty lines</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/duplicate-line-remover">Remove Duplicate Lines</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Remove duplicate rows from CSV and other text files</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/json-formatter">JSON Formatter</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Convert CSV data to JSON format for web development</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #475569 0%, #64748b 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">View and Analyze CSV Files Instantly</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Open, sort, filter, and explore CSV data directly in your browser. No uploads, no software installation, no data leaving your device. Fast, private, and free.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/csv-viewer" class="btn btn-primary btn-lg">Open CSV Viewer</a>
+                    <a href="../tools/json-formatter" class="btn btn-secondary btn-lg">Convert to JSON</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Local processing  File upload support  Sortable table  Instant results  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Data Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/csv-viewer">CSV Viewer</a></li>
+                        <li><a href="../tools/text-cleaner">Text Cleaner</a></li>
+                        <li><a href="../tools/duplicate-line-remover">Remove Duplicates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

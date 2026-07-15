@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Checker & Verifier | GoToolly</title>
+    <meta name="description" content="Compare original text against an existing hash to verify file integrity. Supports MD5, SHA-1, SHA-256, SHA-512. Free, private, browser-based.">
+    <meta name="keywords" content="hash checker, hash verifier, hash validator, check hash, compare hash, md5 checker, sha256 checker, hash verification tool">
+    <link rel="canonical" href="https://gotoolly.com/tools/hash-checker">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/hash-checker">
+    <meta property="og:title" content="Hash Checker & Verifier | GoToolly">
+    <meta property="og:description" content="Compare original text against an existing hash to verify file integrity. Supports MD5, SHA-1, SHA-256, SHA-512.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/hash-checker">
+    <meta name="twitter:title" content="Hash Checker & Verifier | GoToolly">
+    <meta name="twitter:description" content="Compare original text against an existing hash to verify file integrity. Supports MD5, SHA-1, SHA-256, SHA-512.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Hash Checker & Verifier","url":"https://gotoolly.com/tools/hash-checker","description":"Compare original text against an existing hash to verify file integrity. Supports MD5, SHA-1, SHA-256, SHA-512.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","MD5 verification","SHA-1 verification","SHA-256 verification","SHA-512 verification","Clear match/no match results"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Hash Checker"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does hash checking work?","acceptedAnswer":{"@type":"Answer","text":"Enter the original text, paste the hash you want to verify, select the algorithm, and click Verify. The tool computes the hash of your text and compares it to the provided hash — case-insensitively."}},{"@type":"Question","name":"Which hash algorithms are supported?","acceptedAnswer":{"@type":"Answer","text":"This tool supports MD5, SHA-1, SHA-256, and SHA-512. Select the algorithm that matches the hash you are verifying."}},{"@type":"Question","name":"Is my data uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All hash computation and comparison happens entirely in your browser. Your text and hashes never leave your device."}},{"@type":"Question","name":"Can I verify a file hash?","acceptedAnswer":{"@type":"Answer","text":"You can paste the text content of a file and compare its hash. For large files, compute the hash on your system and paste both the original text and the expected hash for comparison."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.hc-container{max-width:640px;margin:0 auto var(--space-4)}.hc-field{margin-bottom:var(--space-4)}.hc-label{font-weight:600;margin-bottom:var(--space-2);display:block}.hc-textarea{width:100%;min-height:100px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text);box-sizing:border-box}.hc-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.hc-select{padding:var(--space-2) var(--space-3);border:1px solid var(--color-border);border-radius:6px;background:var(--color-surface);color:var(--color-text);font-size:var(--text-sm);min-width:160px}.hc-result{margin-top:var(--space-4);padding:var(--space-4);border-radius:12px;text-align:center;font-size:var(--text-lg);font-weight:700;display:none}.hc-result.match{display:block;background:rgba(16,185,129,.1);color:#059669;border:2px solid #059669}.hc-result.no-match{display:block;background:rgba(239,68,68,.1);color:#dc2626;border:2px solid #dc2626}.hc-result .sub{font-size:var(--text-sm);font-weight:400;margin-top:var(--space-2);color:var(--color-text-light)}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="../about" class="nav-link">About</a><a href="../contact" class="nav-link">Contact</a></nav></div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Hash Checker & Verifier</h1>
+                <p class="page-description">Compare original text against an existing hash to verify file integrity. Supports MD5, SHA-1, SHA-256, SHA-512. Free, private, browser-based.</p>
+                <p style="margin-top:var(--space-3);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No sign-up &bull; No server uploads &bull; 100% browser-based</p>
+            </div>
+
+            <div class="hc-container">
+                <div class="hc-field">
+                    <label class="hc-label" for="hc-text">Original Text</label>
+                    <textarea id="hc-text" class="hc-textarea" placeholder="Enter the original text..."></textarea>
+                </div>
+
+                <div class="hc-field">
+                    <label class="hc-label" for="hc-hash">Expected Hash</label>
+                    <textarea id="hc-hash" class="hc-textarea" placeholder="Paste the hash to compare against..." rows="2"></textarea>
+                </div>
+
+                <div class="hc-field">
+                    <label class="hc-label" for="hc-algo">Algorithm</label>
+                    <select id="hc-algo" class="hc-select">
+                        <option value="md5">MD5</option>
+                        <option value="sha1">SHA-1</option>
+                        <option value="sha256" selected>SHA-256</option>
+                        <option value="sha512">SHA-512</option>
+                    </select>
+                </div>
+
+                <div class="tool-actions" style="margin-bottom:var(--space-4)">
+                    <button id="verify-btn" class="btn btn-primary btn-lg">Verify Hash</button>
+                    <button id="clear-btn" class="btn btn-outline btn-lg">Clear</button>
+                </div>
+
+                <div id="hc-result" class="hc-result"></div>
+            </div>
+
+            <section class="content-section">
+                <div class="section-header"><h2>How It Works</h2></div>
+                <div class="tools-grid" style="grid-template-columns:repeat(3,1fr)">
+                    <div class="card step-card"><h3><span style="background:var(--color-primary);color:white;border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;margin-right:8px;font-size:.9rem">1</span> Enter Data</h3><p>Paste the original text and the hash you want to verify. Select the algorithm used to create the original hash.</p></div>
+                    <div class="card step-card"><h3><span style="background:var(--color-primary);color:white;border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;margin-right:8px;font-size:.9rem">2</span> Compute & Compare</h3><p>The tool computes the hash of your text using the selected algorithm and compares it to the provided hash.</p></div>
+                    <div class="card step-card"><h3><span style="background:var(--color-primary);color:white;border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;margin-right:8px;font-size:.9rem">3</span> See the Result</h3><p>A clear green check or red cross tells you whether the hashes match. The computed hash is shown for your reference.</p></div>
+                </div>
+            </section>
+
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
+                <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-3)">
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">How does hash checking work?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Enter the original text, paste the hash you want to verify, select the algorithm, and click Verify. The tool computes the hash of your text and compares it to the provided hash — case-insensitively.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Which hash algorithms are supported?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">This tool supports MD5, SHA-1, SHA-256, and SHA-512. Select the algorithm that matches the hash you are verifying.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Is my data uploaded to a server?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">No. All hash computation and comparison happens entirely in your browser. Your text and hashes never leave your device.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Can I verify a file hash?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">You can paste the text content of a file and compare its hash. For large files, compute the hash on your system and paste both the original text and the expected hash for comparison.</p></div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>Hash Generator</h3><p>Generate MD5, SHA-1, SHA-256, and SHA-512 hashes.</p><div class="card-footer"><a href="./hash-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Password Strength Checker</h3><p>Analyze password strength and entropy.</p><div class="card-footer"><a href="./password-strength-checker" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>JWT Decoder</h3><p>Decode JSON Web Tokens and inspect header, payload, and signature.</p><div class="card-footer"><a href="./jwt-decoder" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+                <p style="margin-top:var(--space-4);text-align:center"><a href="/guides/hash-checker" style="color:var(--color-primary)">Read Guide: Hash Checker Guide &rarr;</a></p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools/qr-code-generator">QR Code Generator</a></li><li><a href="/tools/password-generator">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+
+    <script defer src="../assets/js/main.min.js"></script>
+    <script defer src="../assets/js/tools/hash-checker.min.js"></script>
+</body>
+</html>

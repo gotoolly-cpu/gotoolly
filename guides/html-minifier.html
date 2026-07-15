@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Minify HTML: Complete Guide 2026 | GoToolly</title>
+    <meta name="description" content="Master HTML minification. Learn to reduce HTML file size, remove unnecessary whitespace and comments, optimize web performance, and improve page load speed.">
+    <meta name="keywords" content="html minifier, minify html, html compression, html optimizer, html minification, reduce html size, web performance, page speed optimization">
+    <link rel="canonical" href="https://gotoolly.com/guides/html-minifier">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/html-minifier">
+    <meta property="og:title" content="How to Minify HTML: Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Master HTML minification. Learn to reduce HTML file size, remove unnecessary whitespace and comments, optimize web performance, and improve page load speed.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/html-minifier">
+    <meta name="twitter:title" content="How to Minify HTML: Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Master HTML minification. Learn to reduce HTML file size, remove unnecessary whitespace and comments, optimize web performance, and improve page load speed.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+    
+    <style>
+        .page-header { background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><text x="10" y="30" font-family="monospace" font-size="12">&lt;!-- --&gt;</text><text x="50" y="55" font-family="monospace" font-size="10">minify</text><text x="20" y="75" font-family="monospace" font-size="10">compress</text></svg>'); background-size: 300px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #eab308; color: black; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(234, 179, 8, 0.1); border-left: 4px solid #eab308; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .benefit-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        .code-example { background: linear-gradient(135deg, rgba(234, 179, 8, 0.05) 0%, rgba(202, 138, 4, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(234, 179, 8, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .benefits-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Minify HTML: Complete Guide 2026", "description": "Master HTML minification. Learn to reduce HTML file size, remove unnecessary whitespace and comments, optimize web performance, and improve page load speed.", "url": "https://gotoolly.com/guides/html-minifier", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/html-minifier" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "HTML Minifier", "item": "https://gotoolly.com/guides/html-minifier"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is HTML minification?","acceptedAnswer":{"@type":"Answer","text":"HTML minification is the process of removing unnecessary characters from HTML code without changing its functionality. This includes removing whitespace, comments, line breaks, and redundant attributes to reduce file size."}},{"@type":"Question","name":"Does HTML minification break my website?","acceptedAnswer":{"@type":"Answer","text":"No, when done correctly, minification only removes characters that are not required for rendering. However, it's important to test minified output, especially with inline CSS and JavaScript that may rely on specific whitespace."}},{"@type":"Question","name":"How much file size can I save?","acceptedAnswer":{"@type":"Answer","text":"Typical HTML minification saves 15-30% of the original file size. Files with extensive comments, indentation, and whitespace can see savings of 40% or more. The tool shows exact before/after statistics."}},{"@type":"Question","name":"Should I minify both HTML and CSS/JS?","acceptedAnswer":{"@type":"Answer","text":"Yes, for best results, minify all three. Minified HTML + CSS + JS can significantly reduce page load time. Use GoToolly's CSS Minifier and JS Minifier alongside the HTML Minifier."}},{"@type":"Question","name":"Is the minification reversible?","acceptedAnswer":{"@type":"Answer","text":"Minification is a one-way optimization. While you can reformat minified HTML with an HTML formatter, the original comments and formatting are permanently removed. Always keep your original source files."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Minify HTML: Complete Guide 2026</h1>
+                <p class="page-description">
+                    Optimize your HTML for faster page loads and better Core Web Vitals. Learn why minification matters, how to use an HTML minifier, and best practices for production-ready HTML.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/html-minifier" class="btn btn-primary btn-lg">Minify HTML Now</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  Instant optimization  Size statistics  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>Why HTML Minification Matters in 2026</h2>
+                    <p>Page speed is more critical than ever. Google's Core Web Vitals directly impact search rankings, and users expect pages to load in under two seconds. HTML minification is one of the simplest and most effective optimizations you can make. By removing unnecessary whitespace, comments, and redundant code, you reduce file size, decrease bandwidth usage, and improve time-to-first-byte (TTFB).</p>
+                </section>
+
+                <section>
+                    <h2>Step-by-Step: Minifying HTML</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Input Your HTML</h3>
+                                <p>Open the <a href="../tools/html-minifier">HTML Minifier</a> and paste your HTML code into the input area. You can paste a full HTML document or just a fragment. The tool handles both.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Configure Minification Options</h3>
+                                <p>Choose which optimizations to apply: remove comments, collapse whitespace, remove empty attributes, remove optional tags, and minify inline CSS and JavaScript. Each option can be toggled independently.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Preview the Minified Output</h3>
+                                <p>The tool displays the minified HTML instantly, along with before/after statistics showing character count, line count, and size reduction percentage. Review the output to ensure everything looks correct.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Copy or Download</h3>
+                                <p>Copy the minified HTML to your clipboard for use in your build process, or download it as a .html file. The tool also provides a formatted version option if you need to review the structure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>What HTML Minification Removes</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr><th>Item</th><th>Example</th><th>After Minification</th><th>Reason</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Whitespace</td><td><code>&lt;div &gt; ... &lt;/div &gt;</code></td><td><code>&lt;div&gt;...&lt;/div&gt;</code></td><td>Reduces file size</td></tr>
+                            <tr><td>HTML Comments</td><td><code>&lt;!-- header --&gt;</code></td><td>Removed</td><td>Not needed for rendering</td></tr>
+                            <tr><td>Line Breaks</td><td>Multiple newlines</td><td>Single line</td><td>Reduces character count</td></tr>
+                            <tr><td>Optional Tags</td><td><code>&lt;/li&gt;, &lt;/td&gt;</code></td><td>Removed where optional</td><td>Browsers infer them</td></tr>
+                            <tr><td>Empty Attributes</td><td><code>attr=""</code></td><td><code>attr</code></td><td>Shorter syntax</td></tr>
+                            <tr><td>Quotes (where safe)</td><td><code>class="foo"</code></td><td><code>class=foo</code></td><td>When no spaces in value</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="code-example">
+                        <strong>Before (230 chars):</strong>
+                        &lt;!-- Navigation --&gt;
+                        &lt;nav class="main-nav"&gt;
+                            &lt;a href="/" class="nav-link"&gt; Home &lt;/a&gt;
+                            &lt;a href="/about" class="nav-link"&gt; About &lt;/a&gt;
+                        &lt;/nav&gt;
+
+                        <strong>After (107 chars):</strong>
+                        &lt;nav class=main-nav&gt;&lt;a href=/ class=nav-link&gt;Home&lt;/a&gt;&lt;a href=/about class=nav-link&gt;About&lt;/a&gt;&lt;/nav&gt;
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Benefits of HTML Minification</h2>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#9889;</div>
+                            <h4 style="margin: var(--space-2) 0;">Faster Load Times</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Smaller files download faster, especially on mobile networks with limited bandwidth.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128200;</div>
+                            <h4 style="margin: var(--space-2) 0;">Better Core Web Vitals</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Reduced HTML size improves LCP, FID, and CLS scores directly impacting SEO rankings.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128179;</div>
+                            <h4 style="margin: var(--space-2) 0;">Lower Bandwidth Costs</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Less data transferred means lower hosting and CDN costs, especially at scale.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128269;</div>
+                            <h4 style="margin: var(--space-2) 0;">SEO Improvement</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Google rewards fast-loading pages with better search rankings and visibility.</p>
+                        </div>
+                    </div>
+
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Always keep source files</strong> - Minification removes comments and formatting. Keep your original, well-formatted HTML files for development and only deploy minified versions.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Combine with other minifiers</strong> - For best results, use the HTML Minifier together with the CSS Minifier and JS Minifier to optimize your entire frontend stack.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Integrate into your build process</strong> - Add HTML minification to your CI/CD pipeline or build tools. Many frameworks like Next.js, Vite, and Webpack have plugins that automate this.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>HTML Minification Best Practices</h2>
+                    <ul>
+                        <li><strong>Test after minification:</strong> Always preview minified pages in different browsers to ensure rendering is unchanged.</li>
+                        <li><strong>Be careful with <code>&lt;pre&gt;</code> and <code>&lt;textarea&gt;</code>:</strong> These elements preserve whitespace. Ensure the minifier doesn't collapse spaces inside them.</li>
+                        <li><strong>Use conditional comments carefully:</strong> Internet Explorer conditional comments can break if whitespace is removed incorrectly.</li>
+                        <li><strong>Monitor inline scripts:</strong> JavaScript within <code>&lt;script&gt;</code> tags may be sensitive to comment and whitespace removal.</li>
+                        <li><strong>Measure the impact:</strong> Use Lighthouse, PageSpeed Insights, or WebPageTest to measure the performance improvement from minification.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is HTML minification?</h3>
+                        <p>HTML minification is the process of removing unnecessary characters from HTML code without changing its functionality. This includes removing whitespace, comments, line breaks, and redundant attributes to reduce file size.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Does HTML minification break my website?</h3>
+                        <p>No, when done correctly, minification only removes characters that are not required for rendering. However, it's important to test minified output, especially with inline CSS and JavaScript that may rely on specific whitespace.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How much file size can I save?</h3>
+                        <p>Typical HTML minification saves 15-30% of the original file size. Files with extensive comments, indentation, and whitespace can see savings of 40% or more. The tool shows exact before/after statistics.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Should I minify both HTML and CSS/JS?</h3>
+                        <p>Yes, for best results, minify all three. Minified HTML + CSS + JS can significantly reduce page load time. Use GoToolly's CSS Minifier and JS Minifier alongside the HTML Minifier.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is the minification reversible?</h3>
+                        <p>Minification is a one-way optimization. While you can reformat minified HTML with an HTML formatter, the original comments and formatting are permanently removed. Always keep your original source files.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Complete Web Optimization Suite</h2>
+                    <p>Optimize your entire web stack with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/css-minifier">CSS Minifier</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Minify and optimize CSS stylesheets for production</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/js-minifier">JS Minifier</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Minify and compress JavaScript files</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/json-formatter">JSON Formatter</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Format and validate JSON data</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #ca8a04 0%, #eab308 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Minify HTML for Faster Pages</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Reduce HTML file size, improve Core Web Vitals, and boost your search rankings. Fast, private, and free. No account required.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/html-minifier" class="btn btn-primary btn-lg">Minify HTML Now</a>
+                    <a href="../tools/css-minifier" class="btn btn-secondary btn-lg">Minify CSS</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Local processing  No file uploads  Size statistics  Instant results  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Optimization Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/html-minifier">HTML Minifier</a></li>
+                        <li><a href="../tools/css-minifier">CSS Minifier</a></li>
+                        <li><a href="../tools/js-minifier">JS Minifier</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

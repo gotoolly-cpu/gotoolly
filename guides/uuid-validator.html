@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Validate UUIDs and Detect Their Version: Complete Guide 2026 | GoToolly</title>
+    <meta name="description" content="Learn to validate UUIDs, detect their version (v1, v4, v5), understand UUID structure, and implement proper UUID validation in your applications.">
+    <meta name="keywords" content="uuid validator, uuid validation, uuid version, uuid v4, uuid v1, unique identifier, guid validation, uuid format, uuid structure">
+    <link rel="canonical" href="https://gotoolly.com/guides/uuid-validator">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/uuid-validator">
+    <meta property="og:title" content="How to Validate UUIDs and Detect Their Version: Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Learn to validate UUIDs, detect their version, understand UUID structure, and implement proper UUID validation in your applications.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/uuid-validator">
+    <meta name="twitter:title" content="How to Validate UUIDs and Detect Their Version: Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Learn to validate UUIDs, detect their version, understand UUID structure, and implement proper UUID validation in your applications.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+    <style>
+        .page-header { background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><text x="5" y="30" font-family="monospace" font-size="8">550e8400</text><text x="5" y="55" font-family="monospace" font-size="8">e29b-41d4</text><text x="5" y="75" font-family="monospace" font-size="8">a716-4466</text></svg>'); background-size: 300px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #0ea5e9; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(14, 165, 233, 0.1); border-left: 4px solid #0ea5e9; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .use-case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .use-case-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        .code-example { background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(2, 132, 199, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(14, 165, 233, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .use-case-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Validate UUIDs and Detect Their Version: Complete Guide 2026", "description": "Learn to validate UUIDs, detect their version, understand UUID structure, and implement proper UUID validation in your applications.", "url": "https://gotoolly.com/guides/uuid-validator", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/uuid-validator" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "UUID Validator", "item": "https://gotoolly.com/guides/uuid-validator"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a UUID?","acceptedAnswer":{"@type":"Answer","text":"A UUID (Universally Unique Identifier) is a 128-bit identifier formatted as 32 hexadecimal characters separated by hyphens into five groups (8-4-4-4-12). It is designed to be unique across all devices and time without requiring a central coordination authority. The most common format is UUID v4, which uses random numbers."}},{"@type":"Question","name":"How do you validate a UUID?","acceptedAnswer":{"@type":"Answer","text":"A valid UUID follows the format 8-4-4-4-12 hexadecimal characters. The regex pattern /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i validates the basic structure. You can also check the version byte (character 14) and variant bits (character 19) for stricter validation."}},{"@type":"Question","name":"What are the different UUID versions?","acceptedAnswer":{"@type":"Answer","text":"UUID v1 uses timestamp and MAC address. UUID v2 is a DCE security version (rarely used). UUID v3 uses MD5 hash of a namespace and name. UUID v4 uses random numbers (most common). UUID v5 uses SHA-1 hash of a namespace and name. UUID v6, v7, and v8 are newer proposals with improved timestamp ordering and compatibility."}},{"@type":"Question","name":"Is UUID v4 truly random?","acceptedAnswer":{"@type":"Answer","text":"UUID v4 generates 122 random bits (out of 128 total, with 6 bits reserved for version and variant). With a cryptographically secure random number generator, the probability of collision is astronomically low: approximately 1 in 2^122, making it practically impossible to generate duplicates."}},{"@type":"Question","name":"Can UUIDs be reversed or decoded?","acceptedAnswer":{"@type":"Answer","text":"UUID v1 contains a timestamp and MAC address that could theoretically reveal information about when and where it was generated. UUID v4 and v5 contain no meaningful embedded information and cannot be decoded. For privacy-sensitive applications, use UUID v4 or v7 instead of v1."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Validate UUIDs and Detect Their Version</h1>
+                <p class="page-description">Validate any UUID instantly, detect its version, and understand the structure and generation method behind each unique identifier. Essential for database design and API development.</p>
+                <div style="margin-top: var(--space-6); position: relative;"><a href="../tools/uuid-validator" class="btn btn-primary btn-lg">Validate a UUID</a></div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">No uploads  Instant validation  Version detection  No sign-up</p>
+            </div>
+            <article class="guide-content">
+                <section>
+                    <h2>Why UUID Validation Matters</h2>
+                    <p>UUIDs (Universally Unique Identifiers) have become the standard for generating unique identifiers in distributed systems, databases, APIs, and web applications. Unlike auto-incrementing integers, UUIDs can be generated independently by any system without coordination, making them ideal for microservices architectures, client-side record creation, and offline-capable applications. However, not all UUIDs are created equal. Different versions use different generation methods, have different security properties, and are suitable for different use cases. Validating that a UUID is correctly formatted, detecting its version, and understanding its generation method are essential tasks for developers working with APIs, databases, and identity systems. Invalid UUIDs can cause database errors, API failures, and security vulnerabilities. This guide covers everything you need to know about UUID validation and version detection.</p>
+                </section>
+                <section>
+                    <h2>UUID Structure Explained</h2>
+                    <p>A UUID is a 128-bit value represented as 32 hexadecimal characters divided into five groups separated by hyphens. The standard format is 8-4-4-4-12, and the hexadecimal characters are typically lowercase.</p>
+                    <div class="code-example">
+                        <strong>UUID Format Breakdown:</strong>
+                        550e8400-e29b-41d4-a716-446655440000
+                        |________| |____| |____| |____| |__________|
+                            8        4      4      4         12
+
+                        <strong>Character Positions:</strong>
+                        Position  14 (hex char 14) = Version (1-5)
+                        Position  19 (hex char 19) = Variant (8, 9, a, b)
+
+                        <strong>Example UUID v4:</strong>
+                        6ba7b810-9dad-11d1-80b4-00c04fd430c8
+                                 ^--- Version = 4
+                                      ^-- Variant = 9 (binary 10xx)
+                    </div>
+                    <table class="comparison-table">
+                        <thead><tr><th>UUID Version</th><th>Generation Method</th><th>Variant</th><th>Use Case</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Version 1</strong></td><td>Timestamp + MAC address</td><td>10xx</td><td>Legacy systems, time-ordered sequences</td></tr>
+                            <tr><td><strong>Version 3</strong></td><td>MD5 hash of namespace + name</td><td>10xx</td><td>Deterministic IDs from input data</td></tr>
+                            <tr><td><strong>Version 4</strong></td><td>Random numbers</td><td>10xx</td><td>General purpose (most common)</td></tr>
+                            <tr><td><strong>Version 5</strong></td><td>SHA-1 hash of namespace + name</td><td>10xx</td><td>Deterministic IDs (preferred over v3)</td></tr>
+                            <tr><td><strong>Version 7</strong></td><td>Timestamp + random (ordered)</td><td>10xx</td><td>Database primary keys, sorted IDs</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>Step-by-Step: Using the UUID Validator</h2>
+                    <div class="step-container">
+                        <div class="step-item"><div class="step-number">1</div><div class="step-content"><h3>Enter a UUID</h3><p>Open the <a href="../tools/uuid-validator">UUID Validator</a> and paste or type any string you want to validate. The tool accepts UUIDs with or without hyphens, in uppercase or lowercase.</p></div></div>
+                        <div class="step-item"><div class="step-number">2</div><div class="step-content"><h3>Check Validation Result</h3><p>The tool immediately tells you whether the input is a valid UUID. If valid, it displays the canonical formatted version. If invalid, it explains what is wrong with the input.</p></div></div>
+                        <div class="step-item"><div class="step-number">3</div><div class="step-content"><h3>Detect the UUID Version</h3><p>For valid UUIDs, the tool identifies the version (v1, v3, v4, v5, v7, or other). It explains the generation method used and what that version is best suited for.</p></div></div>
+                        <div class="step-item"><div class="step-number">4</div><div class="step-content"><h3>Copy or Generate New UUIDs</h3><p>Copy the validated UUID or generate a new UUID v4 for your use case. The tool provides both hyphenated and non-hyphenated formats for different requirements.</p></div></div>
+                    </div>
+                </section>
+                <section>
+                    <h2>Common Use Cases</h2>
+                    <div class="use-case-grid">
+                        <div class="use-case-card"><div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128451;</div><h4 style="margin: var(--space-2) 0;">Database Primary Keys</h4><p style="margin: 0; font-size: var(--text-sm);">Use UUIDs as primary keys in databases to enable distributed ID generation, prevent ID guessing attacks, and support offline data creation.</p></div>
+                        <div class="use-case-card"><div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128640;</div><h4 style="margin: var(--space-2) 0;">API Identifiers</h4><p style="margin: 0; font-size: var(--text-sm);">Use UUIDs as resource identifiers in REST and GraphQL APIs to avoid exposing sequential IDs and support client-generated IDs.</p></div>
+                        <div class="use-case-card"><div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128274;</div><h4 style="margin: var(--space-2) 0;">Session Tokens</h4><p style="margin: 0; font-size: var(--text-sm);">Generate UUIDs as session tokens, API keys, and temporary identifiers. UUID v4 provides sufficient randomness for non-cryptographic token generation.</p></div>
+                        <div class="use-case-card"><div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128269;</div><h4 style="margin: var(--space-2) 0;">Data Validation</h4><p style="margin: 0; font-size: var(--text-sm);">Validate UUIDs in API requests, form submissions, and database queries to prevent injection attacks and ensure data integrity.</p></div>
+                    </div>
+                </section>
+                <section>
+                    <h2>Programmatic UUID Validation</h2>
+                    <div class="code-example">
+                        <strong>JavaScript (Regex Validation):</strong>
+                        const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+                        uuidRegex.test('550e8400-e29b-41d4-a716-446655440000'); // true
+                        uuidRegex.test('not-a-uuid'); // false
+
+                        <strong>JavaScript (Version Detection):</strong>
+                        function getUUIDVersion(uuid) {
+                            return parseInt(uuid.charAt(14), 16);
+                        }
+                        getUUIDVersion('550e8400-e29b-41d4-a716-446655440000'); // 4
+
+                        <strong>Python:</strong>
+                        import uuid
+                        u = uuid.UUID('550e8400-e29b-41d4-a716-446655440000')
+                        print(u.version)   # 4
+                        print(u.variant)   # RFC 4122
+
+                        <strong>Java:</strong>
+                        UUID uuid = UUID.fromString("550e8400-e29b-41d4-a716-446655440000");
+                        int version = uuid.version(); // 4
+                    </div>
+                    <div class="pro-tip"><p><strong>Tip:</strong> <strong>Always validate UUIDs at API boundaries</strong> - Reject malformed UUIDs before they reach your database layer. Use strict regex validation for input and the built-in UUID parser for internal processing.</p></div>
+                    <div class="pro-tip"><p><strong>Tip:</strong> <strong>Accept both hyphenated and non-hyphenated formats</strong> - Some systems generate UUIDs without hyphens (e.g., <code>550e8400e29b41d4a716446655440000</code>). Normalize to the hyphenated format before storage.</p></div>
+                    <div class="pro-tip"><p><strong>Tip:</strong> <strong>Choose UUID v7 for database keys</strong> - UUID v7 is time-ordered, making it index-friendly and eliminating the write hotspots that random UUID v4 can cause in B-tree indexes.</p></div>
+                </section>
+                <section>
+                    <h2>Best Practices for UUID Usage</h2>
+                    <ul>
+                        <li><strong>Use UUID v4 for general purposes:</strong> UUID v4 provides excellent uniqueness with no coordination required. It is the most widely supported and understood version.</li>
+                        <li><strong>Use UUID v7 for database primary keys:</strong> UUID v7 is time-ordered, which improves database index performance and avoids the fragmentation issues of random UUIDs in B-tree indexes.</li>
+                        <li><strong>Store UUIDs in canonical format:</strong> Always store UUIDs with hyphens in lowercase (<code>550e8400-e29b-41d4-a716-446655440000</code>). Normalize on input rather than storing multiple formats.</li>
+                        <li><strong>Validate before database operations:</strong> Always validate UUID format before using it in SQL queries or ORM operations. Invalid UUIDs cause database errors and potential SQL injection vulnerabilities.</li>
+                        <li><strong>Do not use UUIDs as secrets:</strong> UUIDs are identifiers, not authentication tokens. They are predictable (especially v1) and should never be used for access control, passwords, or session authentication.</li>
+                        <li><strong>Consider UUID v5 for deterministic IDs:</strong> When you need the same input to always produce the same UUID (e.g., for deduplication), use UUID v5 with a consistent namespace and name.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Common Mistakes to Avoid</h2>
+                    <ul>
+                        <li><strong>Using UUID v1 in modern applications:</strong> UUID v1 exposes the MAC address and timestamp of the generating machine. Use UUID v4 or v7 instead to avoid information leakage.</li>
+                        <li><strong>Not validating UUID format in API inputs:</strong> Accepting unvalidated UUID strings can lead to SQL injection, NoSQL injection, and application crashes. Always validate the format before processing.</li>
+                        <li><strong>Using uppercase UUIDs inconsistently:</strong> While UUIDs are case-insensitive, mixing cases in your database can cause comparison issues. Standardize on lowercase.</li>
+                        <li><strong>Ignoring the variant and version bits:</strong> A string that matches the 8-4-4-4-12 hex pattern is not necessarily a valid UUID. Check that the version digit (position 14) is 1-8 and the variant bits (position 19) are correct.</li>
+                        <li><strong>Generating UUIDs client-side for security tokens:</strong> Browser-based random generators may not use cryptographically secure randomness. For security-sensitive tokens, generate UUIDs server-side using a CSPRNG.</li>
+                        <li><strong>Assuming UUIDs are sortable:</strong> UUID v4 is random and not sortable by time. If you need time-ordered IDs, use UUID v1 (with caveats) or UUID v7.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Privacy and Security Considerations</h2>
+                    <p>UUIDs have different privacy implications depending on their version and how they are used:</p>
+                    <ul>
+                        <li><strong>UUID v1 leaks information:</strong> Version 1 UUIDs embed the MAC address of the generating machine and a timestamp. This can be used to identify the generating device and the time of creation. Avoid v1 in client-facing applications.</li>
+                        <li><strong>UUIDs are not secrets:</strong> Never use UUIDs as authentication tokens, passwords, or access keys. They are identifiers, not secrets. If exposed, they should not grant any access or reveal sensitive information.</li>
+                        <li><strong>Prevent UUID enumeration:</strong> Sequential or predictable UUIDs (like v1) can be enumerated by attackers to discover other resources. Use UUID v4 or v7 to prevent this.</li>
+                        <li><strong>Sanitize UUID inputs:</strong> Always validate UUID inputs to prevent injection attacks. Even though UUIDs have a limited character set, unvalidated inputs can be used for SQL injection or NoSQL injection.</li>
+                        <li><strong>Client-side only processing:</strong> Our UUID Validator processes everything in your browser. No UUID data is sent to any server, ensuring complete privacy for your validation needs.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h3>What is a UUID?</h3><p>A UUID (Universally Unique Identifier) is a 128-bit identifier formatted as 32 hexadecimal characters separated by hyphens into five groups (8-4-4-4-12). It is designed to be unique across all devices and time without requiring a central coordination authority. The most common format is UUID v4, which uses random numbers.</p></div>
+                    <div class="faq-item"><h3>How do you validate a UUID?</h3><p>A valid UUID follows the format 8-4-4-4-12 hexadecimal characters. The regex pattern <code>/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i</code> validates the basic structure. You can also check the version byte (character 14) and variant bits (character 19) for stricter validation.</p></div>
+                    <div class="faq-item"><h3>What are the different UUID versions?</h3><p>UUID v1 uses timestamp and MAC address. UUID v2 is a DCE security version (rarely used). UUID v3 uses MD5 hash of a namespace and name. UUID v4 uses random numbers (most common). UUID v5 uses SHA-1 hash of a namespace and name. UUID v7 is a newer proposal with improved timestamp ordering for database use.</p></div>
+                    <div class="faq-item"><h3>Is UUID v4 truly random?</h3><p>UUID v4 generates 122 random bits (out of 128 total, with 6 bits reserved for version and variant). With a cryptographically secure random number generator, the probability of collision is astronomically low: approximately 1 in 2^122, making it practically impossible to generate duplicates.</p></div>
+                    <div class="faq-item"><h3>Can UUIDs be reversed or decoded?</h3><p>UUID v1 contains a timestamp and MAC address that could theoretically reveal information about when and where it was generated. UUID v4 and v5 contain no meaningful embedded information and cannot be decoded. For privacy-sensitive applications, use UUID v4 or v7 instead of v1.</p></div>
+                </section>
+                <section>
+                    <h2>Complete Web Development Suite</h2>
+                    <p>Enhance your web development workflow with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);"><h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/base64-encoder">Base64 Encoder/Decoder</a></h4><p style="margin: 0; font-size: var(--text-sm);">Encode and decode Base64 strings and data</p></div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);"><h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/json-formatter">JSON Formatter</a></h4><p style="margin: 0; font-size: var(--text-sm);">Format, validate, and beautify JSON data</p></div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);"><h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/url-encoder">URL Encoder/Decoder</a></h4><p style="margin: 0; font-size: var(--text-sm);">Encode and decode URLs with special characters</p></div>
+                    </div>
+                </section>
+            </article>
+            <section style="background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Validate Any UUID Instantly</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">Check UUID validity, detect versions, and generate new UUIDs. Essential for database design, API development, and data validation. Fast, private, and free.</p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);"><a href="../tools/uuid-validator" class="btn btn-primary btn-lg">Validate a UUID</a><a href="../tools/json-formatter" class="btn btn-secondary btn-lg">Format JSON</a></div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">Local processing  No file uploads  Version detection  Instant results  No sign-up</p>
+            </section>
+        </div>
+    </main>
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section"><h3>GoToolly</h3><p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p></div>
+                <div class="footer-section"><h3>Encoding Tools</h3><ul class="footer-links"><li><a href="../tools/url-encoder">URL Encoder</a></li><li><a href="../tools/html-encoder">HTML Encoder</a></li><li><a href="../tools/base64-encoder">Base64 Encoder</a></li></ul></div>
+                <div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div>
+                <div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

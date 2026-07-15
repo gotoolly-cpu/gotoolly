@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var strokeWidthSlider = document.getElementById('stroke-width');
     var strokeWidthValue = document.getElementById('stroke-width-value');
 
-    fontSizeSlider.addEventListener('input', function() { fontSizeValue.textContent = fontSizeSlider.value + 'px'; });
-    strokeWidthSlider.addEventListener('input', function() { strokeWidthValue.textContent = strokeWidthSlider.value + 'px'; });
+    if (fontSizeSlider) fontSizeSlider.addEventListener('input', function() { fontSizeValue.textContent = fontSizeSlider.value + 'px'; });
+    if (strokeWidthSlider) strokeWidthSlider.addEventListener('input', function() { strokeWidthValue.textContent = strokeWidthSlider.value + 'px'; });
 
     function showNotification(message, isError) {
         var existing = document.querySelector('.notification');
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var bottomText = document.getElementById('bottom-text').value.toUpperCase();
         if (!topText && !bottomText) { showNotification('Enter some text for the meme', true); return; }
 
-        progressSection.style.display = '';
+        progressSection.style.display = 'block';
         applyBtn.disabled = true;
         progressText.textContent = 'Creating meme...';
         progressFill.style.width = '50%';

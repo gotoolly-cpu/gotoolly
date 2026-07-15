@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Minify CSS: Complete Guide 2026 | GoToolly</title>
+    <meta name="description" content="Master CSS minification. Learn to reduce CSS file size, remove unused styles, optimize stylesheets">
+    <meta name="keywords" content="css minifier, minify css, css compression, css optimizer, css minification, reduce css size, web performance, stylesheet optimization">
+    <link rel="canonical" href="https://gotoolly.com/guides/css-minifier">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/css-minifier">
+    <meta property="og:title" content="How to Minify CSS: Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Master CSS minification. Learn to reduce CSS file size, remove unused styles, optimize stylesheets, and improve website performance with proper CSS optimization.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/css-minifier">
+    <meta name="twitter:title" content="How to Minify CSS: Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Master CSS minification. Learn to reduce CSS file size, remove unused styles, optimize stylesheets, and improve website performance with proper CSS optimization.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+    
+    <style>
+        .page-header { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><text x="10" y="30" font-family="monospace" font-size="12">.class {</text><text x="40" y="55" font-family="monospace" font-size="10">color:#fff</text><text x="15" y="75" font-family="monospace" font-size="10">}</text></svg>'); background-size: 300px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #3b82f6; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(59, 130, 246, 0.1); border-left: 4px solid #3b82f6; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .tech-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        .code-example { background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(37, 99, 235, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(59, 130, 246, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .tech-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Minify CSS: Complete Guide 2026", "description": "Master CSS minification. Learn to reduce CSS file size, remove unused styles, optimize stylesheets, and improve website performance with proper CSS optimization.", "url": "https://gotoolly.com/guides/css-minifier", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/css-minifier" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "CSS Minifier", "item": "https://gotoolly.com/guides/css-minifier"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is CSS minification?","acceptedAnswer":{"@type":"Answer","text":"CSS minification removes unnecessary characters from CSS code such as whitespace, comments, line breaks, and reduces property values without affecting how styles are rendered. This makes CSS files smaller and faster to download."}},{"@type":"Question","name":"Can minified CSS cause layout issues?","acceptedAnswer":{"@type":"Answer","text":"No, properly minified CSS renders identically to the original. Minification only removes characters that browsers ignore during rendering. However, always test after minification, especially for complex layouts."}},{"@type":"Question","name":"How much can I reduce CSS file size?","acceptedAnswer":{"@type":"Answer","text":"Typical CSS minification saves 30-50% of the original file size. Files with extensive comments, long property names, and verbose formatting can see savings of 60% or more. The tool shows exact reduction statistics."}},{"@type":"Question","name":"Should I use a CSS preprocessor alongside minification?","acceptedAnswer":{"@type":"Answer","text":"Yes, CSS preprocessors like Sass or Less are useful during development for organizing code. However, they generate regular CSS that should still be minified for production. Minification is a separate optimization step."}},{"@type":"Question","name":"Can I revert minified CSS?","acceptedAnswer":{"@type":"Answer","text":"Minified CSS can be reformatted for readability, but original comments and specific formatting choices are permanently removed. Always keep your source CSS files and only deploy minified versions."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Minify CSS: Complete Guide 2026</h1>
+                <p class="page-description">
+                    Optimize your CSS stylesheets for faster page loads and better performance. Learn CSS minification techniques, tools, and best practices for production-ready styles.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/css-minifier" class="btn btn-primary btn-lg">Minify CSS Now</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  Instant optimization  Size statistics  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>Why CSS Minification Is Essential</h2>
+                    <p>CSS is often the largest render-blocking resource on a web page. Every kilobyte of unused or verbose CSS delays the rendering of your page and hurts user experience. CSS minification removes everything that isn't needed for rendering: whitespace, comments, line breaks, and redundant properties. The result is a leaner stylesheet that downloads faster, parses quicker, and helps you achieve better Lighthouse scores and Core Web Vitals.</p>
+                </section>
+
+                <section>
+                    <h2>Step-by-Step: Minifying CSS</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Input Your CSS</h3>
+                                <p>Open the <a href="../tools/css-minifier">CSS Minifier</a> and paste your CSS code into the input area. You can paste a complete stylesheet or just individual rule sets.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Configure Optimization Options</h3>
+                                <p>Choose which optimizations to apply: remove comments, collapse whitespace, remove trailing semicolons, shorten hex colors (e.g., #ffffff to #fff), and merge identical selectors.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Preview Minified CSS</h3>
+                                <p>The tool shows the minified CSS instantly with before/after statistics including character count, line count, and percentage reduction. Scroll through to verify no rules were broken.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Copy or Download</h3>
+                                <p>Copy the minified CSS to your clipboard for direct use in your project. Download it as a .css file for your build pipeline or deployment process.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>CSS Minification Optimizations</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr><th>Optimization</th><th>Before</th><th>After</th><th>Saving</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Whitespace removal</td><td>Indented properties</td><td>Single line</td><td>~15-25%</td></tr>
+                            <tr><td>Comment removal</td><td><code>/* Header */</code></td><td>Removed</td><td>Varies</td></tr>
+                            <tr><td>Hex shortening</td><td><code>#ffffff</code></td><td><code>#fff</code></td><td>30% per color</td></tr>
+                            <tr><td>Zero units</td><td><code>0px</code></td><td><code>0</code></td><td>2-3 chars each</td></tr>
+                            <tr><td>Last semicolon</td><td><code>color:red;</code></td><td><code>color:red</code></td><td>1 char each</td></tr>
+                            <tr><td>Property shorthand</td><td><code>margin: 1px 2px 1px 2px;</code></td><td><code>margin: 1px 2px;</code></td><td>Significant</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="code-example">
+                        <strong>Before (245 chars):</strong>
+                        .container {
+                            margin: 0 auto;
+                            padding: 20px 15px 20px 15px;
+                            background-color: #ffffff;
+                            border-radius: 4px 4px 4px 4px;
+                        }
+                        
+                        <strong>After (82 chars):</strong>
+                        .container{margin:0 auto;padding:20px 15px;background:#fff;border-radius:4px}
+                    </div>
+                </section>
+
+                <section>
+                    <h2>CSS Optimization Techniques</h2>
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#127912;</div>
+                            <h4 style="margin: var(--space-2) 0;">Shorthand Properties</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Combine margin, padding, border, and background properties into shorthand forms. This reduces repetition and file size significantly.</p>
+                        </div>
+                        <div class="tech-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">#</div>
+                            <h4 style="margin: var(--space-2) 0;">Color Optimization</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Shorten hex colors to 3 digits where possible (#ffffff to #fff). Use color names for common colors when they are shorter than hex values.</p>
+                        </div>
+                        <div class="tech-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">0</div>
+                            <h4 style="margin: var(--space-2) 0;">Zero Value Removal</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Remove units from zero values (0px to 0) and drop leading zeros from decimal values (0.5em to .5em). Small savings add up across large stylesheets.</p>
+                        </div>
+                        <div class="tech-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128259;</div>
+                            <h4 style="margin: var(--space-2) 0;">Vendor Prefix Management</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Organize vendor prefixes efficiently and remove outdated prefixes for browsers that no longer need them. Modern build tools like Autoprefixer automate this.</p>
+                        </div>
+                    </div>
+
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Remove unused CSS</strong> - Use Chrome DevTools coverage tab or a tool like PurifyCSS to identify and remove CSS rules that aren't used on any page before minification.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Combine CSS files</strong> - Reduce HTTP requests by combining multiple CSS files into one before minification. This is especially effective for small stylesheets.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Use CSS preprocessors wisely</strong> - Sass, Less, and Stylus can generate verbose CSS if not configured properly. Review output before minification to catch any bloat.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>CSS Minification Best Practices</h2>
+                    <ul>
+                        <li><strong>Test visually after minification:</strong> Always preview your site with minified CSS to ensure nothing is broken, especially for complex layouts and animations.</li>
+                        <li><strong>Keep source maps during development:</strong> Use source maps to map minified CSS back to your original source files for easier debugging.</li>
+                        <li><strong>Integrate into build process:</strong> Add CSS minification to your Webpack, Vite, or Gulp build pipeline for automatic optimization on every build.</li>
+                        <li><strong>Use Gzip or Brotli compression:</strong> Minified CSS compresses even better with server-level compression. Enable Gzip or Brotli on your web server for maximum savings.</li>
+                        <li><strong>Monitor file size over time:</strong> Track your CSS bundle size as your project grows. Set budgets to prevent stylesheet bloat.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is CSS minification?</h3>
+                        <p>CSS minification removes unnecessary characters from CSS code such as whitespace, comments, line breaks, and reduces property values without affecting how styles are rendered. This makes CSS files smaller and faster to download.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can minified CSS cause layout issues?</h3>
+                        <p>No, properly minified CSS renders identically to the original. Minification only removes characters that browsers ignore during rendering. However, always test after minification, especially for complex layouts.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How much can I reduce CSS file size?</h3>
+                        <p>Typical CSS minification saves 30-50% of the original file size. Files with extensive comments, long property names, and verbose formatting can see savings of 60% or more. The tool shows exact reduction statistics.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Should I use a CSS preprocessor alongside minification?</h3>
+                        <p>Yes, CSS preprocessors like Sass or Less are useful during development for organizing code. However, they generate regular CSS that should still be minified for production. Minification is a separate optimization step.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I revert minified CSS?</h3>
+                        <p>Minified CSS can be reformatted for readability, but original comments and specific formatting choices are permanently removed. Always keep your source CSS files and only deploy minified versions.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Complete Web Optimization Suite</h2>
+                    <p>Optimize your entire frontend with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/html-minifier">HTML Minifier</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Minify and optimize HTML for production</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/js-minifier">JS Minifier</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Minify and compress JavaScript files</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/color-picker">Color Converter</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Convert between color formats (HEX, RGB, HSL)</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Minify CSS for Faster Pages</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Reduce CSS file size, improve page load speed, and boost your Lighthouse scores. Fast, private, and free. No account required.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/css-minifier" class="btn btn-primary btn-lg">Minify CSS Now</a>
+                    <a href="../tools/js-minifier" class="btn btn-secondary btn-lg">Minify JS</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Local processing  No file uploads  Color shortening  Instant results  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Optimization Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/css-minifier">CSS Minifier</a></li>
+                        <li><a href="../tools/html-minifier">HTML Minifier</a></li>
+                        <li><a href="../tools/js-minifier">JS Minifier</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

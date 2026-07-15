@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heading Structure Checker - H1-H6 SEO Analyzer | GoToolly</title>
+    <meta name="description" content="Analyze heading hierarchy in HTML. Extract all H1-H6 tags, show structure tree, and warn about missing H1, skipped levels, multiple H1s, and empty headings.">
+    <meta name="keywords" content="heading structure checker, h1 checker, heading hierarchy analyzer, seo heading tool, html heading validator, h1 h6 checker">
+    <link rel="canonical" href="https://gotoolly.com/tools/heading-structure-checker">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/heading-structure-checker">
+    <meta property="og:title" content="Heading Structure Checker - H1-H6 SEO Analyzer | GoToolly">
+    <meta property="og:description" content="Analyze heading hierarchy in HTML. Extract H1-H6 tags and warn about SEO issues like missing H1 or skipped levels.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/heading-structure-checker">
+    <meta name="twitter:title" content="Heading Structure Checker - H1-H6 SEO Analyzer | GoToolly">
+    <meta name="twitter:description" content="Analyze heading hierarchy in HTML. Extract H1-H6 tags and warn about SEO issues like missing H1 or skipped levels.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Heading Structure Checker","url":"https://gotoolly.com/tools/heading-structure-checker","description":"Analyze heading hierarchy in HTML for SEO optimization.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Hierarchy visualization","SEO issue detection"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Heading Structure Checker"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is heading structure important for SEO?","acceptedAnswer":{"@type":"Answer","text":"Heading structure helps search engines understand the hierarchy and topics of your content. A proper H1-H6 structure improves accessibility and can help your content rank better."}},{"@type":"Question","name":"How many H1 tags should a page have?","acceptedAnswer":{"@type":"Answer","text":"Each page should have exactly one H1 tag that describes the main topic. Multiple H1 tags can confuse search engines about the page's primary focus."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.check-form{margin-bottom:var(--space-4)}.check-textarea{width:100%;min-height:250px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text);tab-size:2}.check-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.check-actions{display:flex;gap:var(--space-2);margin-bottom:var(--space-4);flex-wrap:wrap}.check-output{border:1px solid var(--color-border);border-radius:12px;padding:var(--space-4);background:var(--color-surface)}.check-output h3{margin-bottom:var(--space-3);font-size:var(--text-base)}.heading-tree{padding:var(--space-3);background:#1e1e2e;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);color:#cdd6f4;margin-bottom:var(--space-4)}.tree-node{padding:4px 0;display:flex;align-items:flex-start;gap:var(--space-2)}.tree-indent{color:var(--color-text-light);white-space:pre;user-select:none}.tree-tag{font-weight:600;min-width:30px}.tree-tag.h1{color:#f38ba8}.tree-tag.h2{color:#fab387}.tree-tag.h3{color:#f9e2af}.tree-tag.h4{color:#a6e3a1}.tree-tag.h5{color:#89dceb}.tree-tag.h6{color:#cba6f7}.tree-text{color:#cdd6f4}.tree-empty{color:#6c7086;font-style:italic}.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:var(--space-3);margin-bottom:var(--space-4)}.stat-card{padding:var(--space-3);border-radius:8px;background:rgba(255,255,255,.05);text-align:center}.stat-card .stat-value{font-size:var(--text-2xl);font-weight:700;color:var(--color-primary)}.stat-card .stat-label{font-size:var(--text-xs);color:var(--color-text-light);margin-top:var(--space-1)}.issue-list{margin-top:var(--space-3)}.issue-item{display:flex;align-items:flex-start;gap:var(--space-2);padding:var(--space-2);font-size:var(--text-sm);border-radius:4px;margin-bottom:var(--space-1)}.issue-item.error{background:rgba(239,68,68,.1);color:#ef4444}.issue-item.warning{background:rgba(245,158,11,.1);color:#f59e0b}.issue-item.success{background:rgba(34,197,94,.1);color:#22c55e}.issue-icon{flex-shrink:0;font-weight:700}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="../about" class="nav-link">About</a><a href="../contact" class="nav-link">Contact</a></nav></div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Heading Structure Checker</h1>
+                <p class="page-description">Analyze heading hierarchy in HTML for proper SEO structure and accessibility.</p>
+                <p style="margin-top:var(--space-3);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No sign-up &bull; No server uploads &bull; 100% browser-based</p>
+            </div>
+
+            <div class="check-form">
+                <label for="html-input" style="font-weight:600;margin-bottom:var(--space-2);display:block">Paste HTML Source Code</label>
+                <textarea id="html-input" class="check-textarea" placeholder="Paste your HTML here...&#10;&#10;Example:&#10;<h1>Main Title</h1>&#10;<h2>Section</h2>&#10;<h3>Subsection</h3>"></textarea>
+            </div>
+
+            <div class="check-actions">
+                <button id="check-btn" class="btn btn-primary btn-lg">Check Headings</button>
+                <button id="clear-btn" class="btn btn-outline btn-lg">Clear</button>
+            </div>
+
+            <div id="check-output" class="check-output">
+                <div style="color:var(--color-text-light);text-align:center;padding:var(--space-8)">Heading analysis results will appear here</div>
+            </div>
+
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>Meta Length Checker</h3><p>Check title and description lengths for SEO optimization.</p><div class="card-footer"><a href="./meta-length-checker" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Canonical URL Checker</h3><p>Validate canonical URLs and detect common issues.</p><div class="card-footer"><a href="./canonical-url-checker" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Article Schema Generator</h3><p>Generate Article JSON-LD structured data for SEO.</p><div class="card-footer"><a href="./article-schema-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+            </section>
+
+            <section class="content-section" style="margin-top:var(--space-4)">
+                <div class="section-header"><h2>Privacy Notice</h2></div>
+                <p style="color:var(--color-text-light);font-size:var(--text-sm)">All processing happens entirely in your browser. Your HTML data is never uploaded to any server. Once you close this page, all data is gone.</p>
+            </section>
+
+            <p style="margin-top: var(--space-4); text-align: center;">
+                <a href="../guides/heading-structure-checker" style="color: var(--color-primary);">Read Guide: How to Structure Headings for SEO <i class="fas fa-arrow-right"></i></a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools/qr-code-generator">QR Code Generator</a></li><li><a href="/tools/password-generator">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+
+    <script defer src="../assets/js/main.min.js"></script>
+    <script>
+    (function(){
+        var htmlInput=document.getElementById('html-input'),output=document.getElementById('check-output'),checkBtn=document.getElementById('check-btn'),clearBtn=document.getElementById('clear-btn');
+
+        function stripTags(html){
+            var tmp=document.createElement('div');tmp.innerHTML=html;return tmp.textContent||tmp.innerText||'';
+        }
+
+        checkBtn.addEventListener('click',function(){
+            var html=htmlInput.value.trim();
+            if(!html){output.innerHTML='<div style="color:#f38ba8;text-align:center;padding:var(--space-4)">Please paste some HTML to analyze.</div>';return;}
+            var regex=/<(h[1-6])[^>]*>([\s\S]*?)<\/\1>/gi;
+            var headings=[];var match;
+            while((match=regex.exec(html))!==null){
+                headings.push({tag:match[1].toLowerCase(),level:parseInt(match[1].charAt(1)),text:stripTags(match[2]).trim()});
+            }
+            var counts={1:0,2:0,3:0,4:0,5:0,6:0};
+            headings.forEach(function(h){counts[h.level]++;});
+            var total=headings.length;
+
+            var html2='<h3>Heading Summary</h3>';
+            html2+='<div class="stats-grid">';
+            html2+='<div class="stat-card"><div class="stat-value">'+total+'</div><div class="stat-label">Total</div></div>';
+            html2+='<div class="stat-card"><div class="stat-value">'+counts[1]+'</div><div class="stat-label">H1</div></div>';
+            html2+='<div class="stat-card"><div class="stat-value">'+counts[2]+'</div><div class="stat-label">H2</div></div>';
+            html2+='<div class="stat-card"><div class="stat-value">'+counts[3]+'</div><div class="stat-label">H3</div></div>';
+            html2+='<div class="stat-card"><div class="stat-value">'+counts[4]+'</div><div class="stat-label">H4</div></div>';
+            html2+='<div class="stat-card"><div class="stat-value">'+counts[5]+'</div><div class="stat-label">H5</div></div>';
+            html2+='<div class="stat-card"><div class="stat-value">'+counts[6]+'</div><div class="stat-label">H6</div></div>';
+            html2+='</div>';
+
+            html2+='<div class="heading-tree">';
+            headings.forEach(function(h,i){
+                var indent='  '.repeat(h.level-1);
+                var prefix=h.level===1?'▸ ':h.level===2?'  ├ ':'  '.repeat(h.level-1)+'└ ';
+                var textClass=h.text?'tree-text':'tree-empty';
+                var displayText=h.text||'(empty heading)';
+                html2+='<div class="tree-node"><span class="tree-indent">'+indent+'</span><span class="tree-tag '+h.tag+'">'+h.tag.toUpperCase()+'</span> <span class="'+textClass+'">'+displayText+'</span></div>';
+            });
+            if(headings.length===0)html2+='<div style="color:var(--color-text-light)">No headings found in the provided HTML.</div>';
+            html2+='</div>';
+
+            html2+='<h3>Issues &amp; Recommendations</h3><div class="issue-list">';
+            if(total===0)html2+='<div class="issue-item error"><span class="issue-icon">✗</span>No heading tags found. Add headings to structure your content.</div>';
+            if(counts[1]===0&&total>0)html2+='<div class="issue-item error"><span class="issue-icon">✗</span>No H1 tag found. Every page should have exactly one H1 tag.</div>';
+            if(counts[1]>1)html2+='<div class="issue-item warning"><span class="issue-icon">!</span>Multiple H1 tags found ('+counts[1]+'). Use only one H1 per page for best SEO.</div>';
+            var emptyCount=headings.filter(function(h){return!h.text;}).length;
+            if(emptyCount>0)html2+='<div class="issue-item warning"><span class="issue-icon">!</span>'+emptyCount+' empty heading tag(s) found. Fill headings with descriptive text.</div>';
+            var skipped=false;
+            for(var i=1;i<headings.length;i++){
+                if(headings[i].level>headings[i-1].level+1){
+                    skipped=true;
+                    html2+='<div class="issue-item warning"><span class="issue-icon">!</span>Heading level skipped: '+headings[i-1].tag.toUpperCase()+' → '+headings[i].tag.toUpperCase()+' (at "'+headings[i].text.substring(0,30)+'"). Avoid skipping heading levels for proper hierarchy.</div>';
+                }
+            }
+            if(!skipped&&headings.length>1)html2+='<div class="issue-item success"><span class="issue-icon">✓</span>No skipped heading levels detected.</div>';
+            if(counts[1]===1&&emptyCount===0&&total>0)html2+='<div class="issue-item success"><span class="issue-icon">✓</span>Page has a single H1 tag with content.</div>';
+            html2+='</div>';
+
+            output.innerHTML=html2;
+        });
+
+        clearBtn.addEventListener('click',function(){
+            htmlInput.value='';
+            output.innerHTML='<div style="color:var(--color-text-light);text-align:center;padding:var(--space-8)">Heading analysis results will appear here</div>';
+        });
+    })();
+    </script>
+</body>
+</html>

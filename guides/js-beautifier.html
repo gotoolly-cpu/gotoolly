@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Beautify and Format JavaScript Code | Complete Guide 2026 | GoToolly</title>
+    <meta name="description" content="Learn how to beautify and format JavaScript code for better readability and debugging. Master JS formatting techniques, indentation standards, and clean code organization with practical examples.">
+    <meta name="keywords" content="js beautifier, format javascript, beautify javascript code, js formatter, javascript prettify, js indentation, clean javascript, js code formatting, javascript linter">
+    <link rel="canonical" href="https://gotoolly.com/guides/js-beautifier">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/js-beautifier">
+    <meta property="og:title" content="How to Beautify and Format JavaScript Code | Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Learn how to beautify and format JavaScript code for better readability and debugging. Master JS formatting techniques, indentation standards, and clean code organization with practical examples.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/js-beautifier">
+    <meta name="twitter:title" content="How to Beautify and Format JavaScript Code | Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Learn how to beautify and format JavaScript code for better readability and debugging. Master JS formatting techniques, indentation standards, and clean code organization with practical examples.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+    
+    <style>
+        .page-header { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><text x="10" y="30" font-family="monospace" font-size="12">fn() {}</text><text x="50" y="55" font-family="monospace" font-size="10">beautify</text><text x="20" y="75" font-family="monospace" font-size="10">js format</text></svg>'); background-size: 300px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #f59e0b; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(245, 158, 11, 0.1); border-left: 4px solid #f59e0b; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .benefit-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        .code-example { background: linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, rgba(217, 119, 6, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(245, 158, 11, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .benefits-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Beautify and Format JavaScript Code: Complete Guide 2026", "description": "Learn how to beautify and format JavaScript code for better readability and debugging. Master JS formatting techniques, indentation standards, and clean code organization with practical examples.", "url": "https://gotoolly.com/guides/js-beautifier", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/js-beautifier" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "JS Beautifier", "item": "https://gotoolly.com/guides/js-beautifier"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a JavaScript beautifier?","acceptedAnswer":{"@type":"Answer","text":"A JavaScript beautifier is a tool that reformats minified or messy JS code into a clean, properly indented, and readable structure. It adds consistent spacing, line breaks, and indentation to functions, loops, conditionals, and object literals without changing the code's behavior."}},{"@type":"Question","name":"Does beautifying JavaScript change how it runs?","acceptedAnswer":{"@type":"Answer","text":"No, beautifying JavaScript only reformats whitespace and indentation. The actual logic, variable names, function calls, and execution flow remain identical. The beautified code produces the exact same results as the original minified version."}},{"@type":"Question","name":"Can I beautify minified JavaScript?","acceptedAnswer":{"@type":"Answer","text":"Yes, JavaScript beautifiers are specifically designed to take minified or obfuscated JS code and expand it into a well-formatted, readable structure. This is essential for debugging, understanding third-party libraries, and learning from open-source code."}},{"@type":"Question","name":"What JavaScript formatting options are available?","acceptedAnswer":{"@type":"Answer","text":"Most JS beautifiers offer options for indent style (tabs or spaces), indent size, brace placement (same line or new line), whether to use semicolons, how to format function parameters, and how to handle arrow functions and template literals."}},{"@type":"Question","name":"Should I beautify JavaScript for development?","acceptedAnswer":{"@type":"Answer","text":"Yes, always work with well-formatted JavaScript during development. Minified code is nearly impossible to debug effectively. Use beautified code for development and debugging, then minify during your build process for production deployment to optimize load times."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Beautify and Format JavaScript Code</h1>
+                <p class="page-description">
+                    Transform minified or hard-to-read JavaScript into clean, properly indented, and maintainable code. Learn professional JS formatting for faster debugging and collaboration.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/js-beautifier" class="btn btn-primary btn-lg">Beautify JavaScript Now</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  Instant formatting  Indentation options  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>Why JavaScript Beautification Matters in 2026</h2>
+                    <p>JavaScript is the most widely used programming language on the web, powering everything from simple form validations to complex single-page applications. Production JavaScript is almost always minified to reduce file size and improve load performance. However, minified code is virtually unreadable, making debugging, code review, and maintenance extremely difficult. A JavaScript beautifier transforms compressed, single-line code back into a properly structured and readable format.</p>
+                    <p>In professional development environments, code readability is not optional. Teams need to understand each other's code, review pull requests efficiently, and onboard new developers quickly. Well-formatted JavaScript with consistent indentation, clear function boundaries, and logical spacing makes all of these tasks dramatically easier. Whether you are working with your own code, third-party libraries, or legacy scripts, beautification provides the clarity needed to work effectively.</p>
+                </section>
+
+                <section>
+                    <h2>Step-by-Step: Beautifying JavaScript</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Input Your JavaScript Code</h3>
+                                <p>Open the <a href="../tools/js-beautifier">JS Beautifier</a> and paste your JavaScript code into the input area. You can paste a complete script, a single function, or minified code. The tool handles all sizes and formats without performance issues.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Configure Formatting Options</h3>
+                                <p>Choose your preferred indentation style: tabs or spaces, and set the indent size. You can also configure brace placement (same line or new line for functions), whether to use semicolons, and how to format arrow functions and object literals.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Review the Formatted Output</h3>
+                                <p>The tool displays your beautified JavaScript instantly with proper indentation and clear structure. Functions, loops, and conditionals are clearly delineated. Variable declarations and function calls are properly spaced for readability.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Copy or Download</h3>
+                                <p>Copy the formatted JavaScript to your clipboard or download it as a .js file. Use the beautified output for debugging, code review, learning, or as your development source file. The formatted code is ready for immediate use.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>What JavaScript Beautification Changes</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr><th>Element</th><th>Before</th><th>After</th><th>Purpose</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Indentation</td><td>No indentation</td><td>Consistent nested indentation</td><td>Shows scope and nesting</td></tr>
+                            <tr><td>Line Breaks</td><td>All code on one line</td><td>One statement per line</td><td>Easy to read and debug</td></tr>
+                            <tr><td>Brace Placement</td><td>Inconsistent or compressed</td><td>Consistent placement</td><td>Clear block boundaries</td></tr>
+                            <tr><td>Spacing</td><td>No spaces around operators</td><td>Proper spacing everywhere</td><td>Improves readability</td></tr>
+                            <tr><td>Function Formatting</td><td>Compressed parameters</td><td>Readable parameter lists</td><td>Easy to understand signatures</td></tr>
+                            <tr><td>Chained Methods</td><td>All on one line</td><td>Each method on its own line</td><td>Clear method chains</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="code-example">
+                        <strong>Before (Minified):</strong><br>
+                        function fetchUserData(id){return fetch("/api/users/"+id).then(r=>r.json()).then(data=>{const{name,email,preferences}=data;return{fullName:name,emailAddress:email,settings:preferences,isActive:true}}).catch(e=>{console.error("Failed to fetch user:",e);return null})}<br><br>
+
+                        <strong>After (Beautified):</strong><br>
+                        function fetchUserData(id) {<br>
+                        &nbsp;&nbsp;return fetch("/api/users/" + id)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;.then(r =&gt; r.json())<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;.then(data =&gt; {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const { name, email, preferences } = data;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fullName: name,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;emailAddress: email,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;settings: preferences,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isActive: true<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;})<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;.catch(e =&gt; {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.error("Failed to fetch user:", e);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return null;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;});<br>
+                        }
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Benefits of JavaScript Beautification</h2>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128269;</div>
+                            <h4 style="margin: var(--space-2) 0;">Faster Debugging</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Readable code lets you set breakpoints, trace execution flow, and identify bugs in minutes instead of hours.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128270;</div>
+                            <h4 style="margin: var(--space-2) 0;">Better Code Review</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Formatted code makes pull request reviews thorough and efficient, catching bugs before they reach production.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128218;</div>
+                            <h4 style="margin: var(--space-2) 0;">Learning Tool</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Beautifying minified libraries and frameworks helps you understand their implementation and techniques.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128736;</div>
+                            <h4 style="margin: var(--space-2) 0;">Safer Refactoring</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Well-formatted code reduces the risk of introducing bugs during refactoring and code optimization.</p>
+                        </div>
+                    </div>
+
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Beautify before debugging</strong> - When you encounter a bug in minified production JavaScript, beautify it first. Reading formatted code makes identifying the root cause significantly faster.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Use with source maps</strong> - For production debugging, combine beautification with source maps to map minified code back to your original formatted source files.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Standardize your team's format</strong> - Agree on formatting rules (indent size, semicolons, quote style) and use the beautifier to enforce consistency across the entire codebase.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>JavaScript Beautification Best Practices</h2>
+                    <ul>
+                        <li><strong>Choose a consistent style guide:</strong> Adopt an established style guide like Airbnb, Google, or StandardJS. Configure the beautifier to match your chosen style for consistent output.</li>
+                        <li><strong>Preserve semicolon usage:</strong> Decide on semicolons and stick with it. The beautifier can add or remove semicolons, but mixing styles within a project creates confusion.</li>
+                        <li><strong>Don't beautify production code:</strong> Always minify JavaScript for production deployment. Use beautified code only during development, debugging, and code review.</li>
+                        <li><strong>Beautify third-party code carefully:</strong> When modifying libraries or vendor scripts, beautify for reading but avoid committing changes that conflict with the original author's formatting.</li>
+                        <li><strong>Combine with linting:</strong> After beautifying, run a linter like ESLint to catch logical errors, unused variables, and other issues that formatting alone cannot detect.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is a JavaScript beautifier?</h3>
+                        <p>A JavaScript beautifier is a tool that reformats minified or messy JS code into a clean, properly indented, and readable structure. It adds consistent spacing, line breaks, and indentation to functions, loops, conditionals, and object literals without changing the code's behavior.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Does beautifying JavaScript change how it runs?</h3>
+                        <p>No, beautifying JavaScript only reformats whitespace and indentation. The actual logic, variable names, function calls, and execution flow remain identical. The beautified code produces the exact same results as the original minified version.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I beautify minified JavaScript?</h3>
+                        <p>Yes, JavaScript beautifiers are specifically designed to take minified or obfuscated JS code and expand it into a well-formatted, readable structure. This is essential for debugging, understanding third-party libraries, and learning from open-source code.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What JavaScript formatting options are available?</h3>
+                        <p>Most JS beautifiers offer options for indent style (tabs or spaces), indent size, brace placement (same line or new line), whether to use semicolons, how to format function parameters, and how to handle arrow functions and template literals.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Should I beautify JavaScript for development?</h3>
+                        <p>Yes, always work with well-formatted JavaScript during development. Minified code is nearly impossible to debug effectively. Use beautified code for development and debugging, then minify during your build process for production deployment to optimize load times.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Related Tools</h2>
+                    <p>Complete your JavaScript workflow with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/js-minifier">JS Minifier</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Compress JavaScript files for production deployment</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/html-beautifier">HTML Beautifier</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Format HTML code alongside your JavaScript</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/css-beautifier">CSS Beautifier</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Format CSS stylesheets for consistent project code</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Beautify Your JavaScript Today</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Transform unreadable JavaScript into clean, properly formatted code. Fast, private, and free. No account required.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/js-beautifier" class="btn btn-primary btn-lg">Beautify JavaScript Now</a>
+                    <a href="../tools/js-minifier" class="btn btn-secondary btn-lg">Minify JavaScript</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Local processing  No file uploads  Configurable options  Instant results  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Optimization Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/html-minifier">HTML Minifier</a></li>
+                        <li><a href="../tools/css-minifier">CSS Minifier</a></li>
+                        <li><a href="../tools/js-minifier">JS Minifier</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

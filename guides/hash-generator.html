@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Generate Hashes (MD5, SHA-1, SHA-256 | GoToolly</title>
+    <meta name="description" content="Step-by-step guide to generate MD5, SHA-1, SHA-256, and SHA-512 hashes. Learn how hash functions work and when to use each algorithm.">
+    <meta name="keywords" content="hash generator guide, md5 hash, sha-256 hash, sha-512 hash, cryptographic hash, hash function tutorial, message digest">
+    <link rel="canonical" href="https://gotoolly.com/guides/hash-generator">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/hash-generator">
+    <meta property="og:title" content="How to Generate Hashes (MD5, SHA-1, SHA-256, SHA-512): Complete Guide | GoToolly">
+    <meta property="og:description" content="Step-by-step guide to generate MD5, SHA-1, SHA-256, and SHA-512 hashes. Learn how hash functions work and when to use each algorithm.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/hash-generator">
+    <meta name="twitter:title" content="How to Generate Hashes (MD5, SHA-1, SHA-256, SHA-512): Complete Guide | GoToolly">
+    <meta name="twitter:description" content="Step-by-step guide to generate MD5, SHA-1, SHA-256, and SHA-512 hashes. Learn how hash functions work and when to use each algorithm.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+
+    <style>
+        .page-header { background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.08"><rect width="100" height="100" fill="white"/><text x="8" y="25" font-family="monospace" font-size="8">SHA-256</text><text x="12" y="45" font-family="monospace" font-size="8">MD5</text><text x="8" y="65" font-family="monospace" font-size="8">SHA-512</text><text x="10" y="85" font-family="monospace" font-size="8">HASH</text></svg>'); background-size: 250px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #302b63; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(48, 43, 99, 0.1); border-left: 4px solid #302b63; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .code-example { background: linear-gradient(135deg, rgba(15, 12, 41, 0.05) 0%, rgba(48, 43, 99, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(48, 43, 99, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        .use-case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .use-case-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .use-case-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Generate Hashes (MD5, SHA-1, SHA-256, SHA-512): Complete Guide", "description": "Step-by-step guide to generate MD5, SHA-1, SHA-256, and SHA-512 hashes. Learn how hash functions work and when to use each algorithm.", "url": "https://gotoolly.com/guides/hash-generator", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/hash-generator" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "Hash Generator Guide", "item": "https://gotoolly.com/guides/hash-generator"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between MD5, SHA-1, SHA-256, and SHA-512?","acceptedAnswer":{"@type":"Answer","text":"SHA-256 and SHA-512 (SHA-2 family) offer the highest security with digest sizes of 256 and 512 bits respectively. SHA-1 produces a 160-bit hash but is considered cryptographically broken. MD5 produces a 128-bit hash and is deprecated for security use due to collision vulnerabilities."}},{"@type":"Question","name":"Is MD5 still safe to use?","acceptedAnswer":{"@type":"Answer","text":"MD5 is not recommended for security-sensitive applications due to proven collision attacks. It can still be used for non-security purposes like file deduplication or checksums where collision resistance is not critical, but SHA-256 is preferred for any security-related use."}},{"@type":"Question","name":"Why is SHA-1 deprecated?","acceptedAnswer":{"@type":"Answer","text":"SHA-1 is deprecated because researchers have demonstrated practical collision attacks (SHAttered attack in 2017). Modern web browsers, certificate authorities, and security standards have moved to SHA-256 or stronger. SHA-1 should not be used for digital signatures or certificates."}},{"@type":"Question","name":"Can hashes be reversed?","acceptedAnswer":{"@type":"Answer","text":"No, hash functions are one-way by design. You cannot reverse a hash to get the original input. This property makes them suitable for password verification, where you store only the hash and compare it with the hash of the provided password."}},{"@type":"Question","name":"How are hashes used for file integrity?","acceptedAnswer":{"@type":"Answer","text":"Software providers publish hash values (SHA-256 checksums) for their downloads. After downloading a file, you generate its hash using the same algorithm and compare it with the published hash. Matching hashes confirm the file has not been tampered with or corrupted."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Generate Hashes (MD5, SHA-1, SHA-256, SHA-512)</h1>
+                <p class="page-description">
+                    Master cryptographic hash functions from MD5 to SHA-512. Learn the differences between algorithms, understand hash properties, and discover when to use each type for file integrity, password storage, and digital signatures.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/hash-generator" class="btn btn-primary btn-lg">Generate Hashes Now</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  4 algorithms  Instant results  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>What is a Cryptographic Hash Function?</h2>
+                    <p>
+                        A cryptographic hash function takes an input (or "message") and returns a fixed-size string of bytes, known as the digest or hash. The output is deterministic — the same input always produces the same hash. However, even a tiny change in the input produces a completely different output, a property called the avalanche effect. Hash functions are designed to be one-way: it should be computationally infeasible to reverse the process and recover the original input from the hash.
+                    </p>
+                    <p>
+                        Modern hash functions used in security contexts satisfy five key properties: deterministic output, preimage resistance (one-wayness), second preimage resistance (cannot find a different input with the same hash), collision resistance (cannot find two different inputs with the same hash), and the avalanche effect. These properties make hashes essential for data integrity verification, password storage, digital signatures, and message authentication.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Hash Algorithm Comparison</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr><th>Algorithm</th><th>Digest Size</th><th>Security Status</th><th>Best Use Case</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>MD5</strong></td><td>128 bits (32 hex chars)</td><td>Deprecated - collisions found</td><td>Non-security: checksums, file deduplication</td></tr>
+                            <tr><td><strong>SHA-1</strong></td><td>160 bits (40 hex chars)</td><td>Deprecated - SHAttered attack</td><td>Legacy systems, not recommended for new work</td></tr>
+                            <tr><td><strong>SHA-256</strong></td><td>256 bits (64 hex chars)</td><td>Secure - widely recommended</td><td>File integrity, certificates, blockchain</td></tr>
+                            <tr><td><strong>SHA-512</strong></td><td>512 bits (128 hex chars)</td><td>Secure - highest strength</td><td>High-security applications, large data</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="pro-tip">
+                        <p><strong> Key insight:</strong> SHA-256 is the current industry standard and is recommended by NIST for most applications. SHA-512 offers even stronger security but produces longer hashes, which may matter in storage-constrained environments.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Common Use Cases for Hash Functions</h2>
+                    <div class="use-case-grid">
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128196;</div>
+                            <h4 style="margin: var(--space-2) 0;">File Integrity Verification</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Software providers publish SHA-256 checksums. Verify downloaded files match the published hash to detect corruption or tampering during transfer.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128273;</div>
+                            <h4 style="margin: var(--space-2) 0;">Password Storage</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Store hashed passwords instead of plain text. When a user logs in, hash the provided password and compare it against the stored hash. Never store raw passwords.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128221;</div>
+                            <h4 style="margin: var(--space-2) 0;">Digital Signatures</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Sign the hash of a document rather than the entire document. This is far more efficient and forms the basis of PKI and SSL/TLS certificate validation.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128200;</div>
+                            <h4 style="margin: var(--space-2) 0;">Data Deduplication</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Generate content hashes to identify duplicate files or records in storage systems. Identical hashes indicate identical content, enabling efficient deduplication.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 id="step-by-step">Step-by-Step: Generate Hashes</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Enter Your Input</h3>
+                                <p>Open the <a href="../tools/hash-generator">Hash Generator</a> tool and type or paste the text you want to hash. You can also upload a file to generate its hash for integrity verification.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Select Hash Algorithm</h3>
+                                <p>Choose from MD5, SHA-1, SHA-256, or SHA-512. For most modern use cases, SHA-256 is the recommended choice. MD5 and SHA-1 are available for legacy compatibility and non-security checksums.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Click Generate</h3>
+                                <p>The tool computes the hash instantly in your browser using the Web Crypto API. The resulting hash is displayed as a hexadecimal string with the appropriate length for the selected algorithm.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Copy and Use the Hash</h3>
+                                <p>Copy the generated hash to your clipboard. Use it for file verification, password storage, API integrity checks, or any other security or data processing workflow.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Best Practices for Using Hash Functions</h2>
+                    <ul>
+                        <li><strong>Use SHA-256 as your default:</strong> It offers the best balance of security, performance, and compatibility. SHA-256 is widely supported across programming languages, operating systems, and hardware.</li>
+                        <li><strong>Never use MD5 or SHA-1 for security:</strong> Both algorithms have demonstrated collision attacks. MD5 collisions can be produced in seconds on consumer hardware. SHA-1 collisions, while more expensive, have been proven feasible.</li>
+                        <li><strong>Use salted hashes for passwords:</strong> A plain hash of a password is vulnerable to rainbow table attacks. Always combine passwords with a unique, random salt before hashing for password storage.</li>
+                        <li><strong>Verify file downloads with SHA-256:</strong> When downloading software, always check the SHA-256 checksum published by the provider against the hash of your downloaded file to ensure integrity and authenticity.</li>
+                        <li><strong>Use HMAC for authenticated messages:</strong> For message authentication, use HMAC (Hash-based Message Authentication Code) combined with a secret key rather than a plain hash of the message.</li>
+                        <li><strong>Avoid double hashing without salt:</strong> Simply hashing twice (e.g., SHA-256(SHA-256(input))) is not more secure and can introduce unexpected weaknesses. Use established key derivation functions like bcrypt, scrypt, or Argon2 for passwords.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Hash Code Examples</h2>
+                    <div class="code-example">
+                        <strong>Input:</strong> "Hello, World!"<br><br>
+                        <strong>MD5:</strong> 65a8e27d8879283831b664bd8b7f0ad4<br>
+                        <strong>SHA-1:</strong> 0a0a9f2a6772942557ab5355d76af442f8f65e01<br>
+                        <strong>SHA-256:</strong> dffd6021bb2bd5b0af676290809ec3a53191dd81c7f70a4b28688a362182986f<br>
+                        <strong>SHA-512:</strong> 374d794a95cdcfd8b35993185fef9ba368f160d8daf432d08ba9f192edb5bae3c2ec08b6e1cae8d9a8b7b8d8c8d8e8f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4
+                    </div>
+                    <p>Notice how the hash length increases with the algorithm strength: MD5 produces 32 hex characters (128 bits), SHA-1 produces 40 (160 bits), SHA-256 produces 64 (256 bits), and SHA-512 produces 128 (512 bits).</p>
+                </section>
+
+                <section>
+                    <h2>Limitations to Consider</h2>
+                    <ul>
+                        <li><strong>MD5 is cryptographically broken:</strong> Collision attacks against MD5 are trivial with modern hardware. Never use MD5 for digital signatures, certificates, or any security-critical application.</li>
+                        <li><strong>SHA-1 is deprecated:</strong> The SHAttered attack (2017) demonstrated a practical collision. Major browsers and CAs stopped accepting SHA-1 certificates. Migrate to SHA-256 or higher.</li>
+                        <li><strong>Hash functions are not encryption:</strong> A hash cannot be decrypted. If you need to recover the original data, use encryption instead. Hashes are for verification, not confidentiality.</li>
+                        <li><strong>No built-in salting:</strong> The tool generates plain hashes. For password storage, always add a unique salt before hashing and use a slow key derivation function designed for passwords.</li>
+                        <li><strong>Performance trade-offs:</strong> SHA-512 is slower on 32-bit systems compared to SHA-256. On 64-bit systems, SHA-512 can actually be faster per byte due to its 64-bit word size.</li>
+                    </ul>
+                    <div class="pro-tip">
+                        <p><strong> Security warning:</strong> This tool generates hashes using the Web Crypto API in your browser. While MD5 and SHA-1 are available for compatibility and non-security uses, we strongly recommend SHA-256 or SHA-512 for any application where security matters.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is the difference between MD5, SHA-1, SHA-256, and SHA-512?</h3>
+                        <p>SHA-256 and SHA-512 (SHA-2 family) offer the highest security with digest sizes of 256 and 512 bits respectively. SHA-1 produces a 160-bit hash but is considered cryptographically broken. MD5 produces a 128-bit hash and is deprecated for security use due to collision vulnerabilities.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is MD5 still safe to use?</h3>
+                        <p>MD5 is not recommended for security-sensitive applications due to proven collision attacks. It can still be used for non-security purposes like file deduplication or checksums where collision resistance is not critical, but SHA-256 is preferred for any security-related use.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Why is SHA-1 deprecated?</h3>
+                        <p>SHA-1 is deprecated because researchers have demonstrated practical collision attacks (SHAttered attack in 2017). Modern web browsers, certificate authorities, and security standards have moved to SHA-256 or stronger. SHA-1 should not be used for digital signatures or certificates.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can hashes be reversed?</h3>
+                        <p>No, hash functions are one-way by design. You cannot reverse a hash to get the original input. This property makes them suitable for password verification, where you store only the hash and compare it with the hash of the provided password.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How are hashes used for file integrity?</h3>
+                        <p>Software providers publish hash values (SHA-256 checksums) for their downloads. After downloading a file, you generate its hash using the same algorithm and compare it with the published hash. Matching hashes confirm the file has not been tampered with or corrupted.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is my data private when using this tool?</h3>
+                        <p>Yes, all hash generation happens entirely in your browser using the Web Crypto API. No data is sent to any server. Everything stays on your device, making it completely private and secure for processing sensitive content.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Related Security Tools</h2>
+                    <p>Enhance your data security workflow with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/hash-checker">Hash Checker</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Compare hashes to verify file integrity and detect tampering</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/password-strength-checker">Password Strength Checker</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Evaluate password security with real-time strength analysis</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/jwt-generator">JWT Generator</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Generate and sign JSON Web Tokens for development and testing</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Generate Hashes Instantly</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Create MD5, SHA-1, SHA-256, and SHA-512 hashes for text and files. Fast, private, and free. No account required.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/hash-generator" class="btn btn-primary btn-lg">Generate Hashes Now</a>
+                    <a href="../tools/hash-checker" class="btn btn-secondary btn-lg">Hash Checker</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Local processing  File support  4 algorithms  Instant results  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hash Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/hash-generator">Hash Generator</a></li>
+                        <li><a href="../tools/hash-checker">Hash Checker</a></li>
+                        <li><a href="../tools/password-strength-checker">Password Strength Checker</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

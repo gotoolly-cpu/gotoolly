@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Convert XML to JSON Format | Complete Guide 2026 | GoToolly</title>
+    <meta name="description" content="Learn how to convert XML to JSON for modern web development. Master XML-to-JSON conversion techniques, understand structural differences, and implement reliable data transformation with step-by-step examples.">
+    <meta name="keywords" content="xml to json, convert xml to json, xml json converter, xml to json online, xml to javascript object, parse xml to json, xml json transformation, data conversion, xml parser">
+    <link rel="canonical" href="https://gotoolly.com/guides/xml-to-json">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/xml-to-json">
+    <meta property="og:title" content="How to Convert XML to JSON Format | Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Learn how to convert XML to JSON for modern web development. Master XML-to-JSON conversion techniques, understand structural differences, and implement reliable data transformation with step-by-step examples.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/xml-to-json">
+    <meta name="twitter:title" content="How to Convert XML to JSON Format | Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Learn how to convert XML to JSON for modern web development. Master XML-to-JSON conversion techniques, understand structural differences, and implement reliable data transformation with step-by-step examples.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+
+    <style>
+        .page-header { background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: '; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><text x="10" y="30" font-family="monospace" font-size="10">xml json</text><text x="50" y="55" font-family="monospace" font-size="10">convert</text><text x="20" y="75" font-family="monospace" font-size="10">transform</text></svg>'); background-size: 300px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #f97316; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(249, 115, 22, 0.1); border-left: 4px solid #f97316; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .benefit-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        .code-example { background: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, rgba(234, 88, 12, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(249, 115, 22, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .benefits-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json>
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Convert XML to JSON Format: Complete Guide 2026", "description": "Learn how to convert XML to JSON for modern web development. Master XML-to-JSON conversion techniques, understand structural differences, and implement reliable data transformation with step-by-step examples.", "url": "https://gotoolly.com/guides/xml-to-json", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/xml-to-json" } }
+    </script>
+    <script type="application/ld+json>
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "XML to JSON", "item": "https://gotoolly.com/guides/xml-to-json"} ] }
+    </script>
+    <script type="application/ld+json>
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is XML to JSON conversion?","acceptedAnswer":{"@type":"Answer","text":"XML to JSON conversion is the process of transforming XML data into JSON format. XML uses a tag-based structure with opening and closing elements, while JSON uses key-value pairs and arrays. The conversion maps XML elements and attributes to their JSON equivalents for use in modern web applications."}},{"@type":"Question","name":"Why would I need to convert XML to JSON?","acceptedAnswer":{"@type":"Answer","text":"Many legacy systems, APIs, and data feeds still use XML format, while modern web frameworks and JavaScript applications prefer JSON. Converting XML to JSON allows you to integrate legacy data sources with contemporary applications, simplifying data processing and reducing the complexity of parsing XML in client-side code."}},{"@type":"Question","name":"Does XML to JSON conversion lose information?","acceptedAnswer":{"@type":"Answer","text":"When done correctly, XML to JSON conversion preserves all data content. However, some structural nuances may be lost, such as XML comments, processing instructions, and the distinction between attributes and child elements. A good converter handles these mappings intelligently to minimize data loss."}},{"@type":"Question","name":"Can I convert any XML to JSON?","acceptedAnswer":{"@type":"Answer","text":"Yes, any well-formed XML can be converted to JSON. However, some XML structures map more naturally than others. XML with mixed content or heavy use of namespaces may require additional handling."}},{"@type":"Question","name":"Is the conversion reversible?","acceptedAnswer":{"@type":"Answer","text":"JSON to XML conversion is possible but may not perfectly reconstruct the original XML. Some XML-specific features like attributes, namespaces, and processing instructions may not have direct JSON equivalents."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Convert XML to JSON Format</h1>
+                <p class="page-description">Bridge the gap between legacy XML data and modern JSON-based applications. Learn reliable XML-to-JSON conversion techniques with practical examples and best practices.</p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/xml-to-json" class="btn btn-primary btn-lg">Convert XML to JSON Now</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">No uploads  Instant conversion  Preserves data  No sign-up</p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>Why XML to JSON Conversion Matters in 2026</h2>
+                    <p>XML was once the dominant data format for web services, configuration files, and data interchange. While JSON has become the preferred format for modern web applications and APIs, countless systems still generate, consume, and store data in XML. Enterprise databases, SOAP web services, RSS feeds, sitemaps, and legacy APIs continue to produce XML output that modern JavaScript frameworks cannot consume directly. XML to JSON conversion bridges this gap, enabling seamless integration between old and new systems.</p>
+                    <p>Understanding how to convert XML to JSON is essential for developers working with data migration, API integration, and frontend modernization. The conversion process is more than a simple format swap. XML and JSON have fundamentally different structures. XML uses elements, attributes, namespaces, and mixed content, while JSON uses objects, arrays, and key-value pairs. A reliable conversion strategy preserves data integrity while mapping these structural differences into clean, usable JSON output.</p>
+                </section>
+
+                <section>
+                    <h2>Step-by-Step: Converting XML to JSON</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Input Your XML Data</h3>
+                                <p>Open the <a href="../tools/xml-to-json">XML to JSON Converter</a> and paste your XML data into the input area. You can paste a complete XML document, a fragment, or raw data from an API response. The tool parses all valid XML structures.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Configure Conversion Options</h3>
+                                <p>Choose how to handle XML attributes, whether to include XML namespaces in the output, how to handle repeated elements, and whether to format the JSON output with indentation. These options let you control exactly how the conversion maps XML structures to JSON.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Review the JSON Output</h3>
+                                <p>The tool displays your converted JSON instantly. Review the output to verify that all data was preserved, attributes are mapped correctly, and the structure makes sense for your use case. The tool highlights any structural issues it encounters.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Copy or Download</h3>
+                                <p>Copy the converted JSON to your clipboard or download it as a .json file. Use the output in your JavaScript applications, APIs, databases, or any system that consumes JSON data. The conversion is ready for immediate use.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>XML vs JSON: Structural Comparison</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr><th>Feature</th><th>XML</th><th>JSON</th><th>Conversion Impact</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Data Format</td><td>Tag-based markup</td><td>Key-value pairs</td><td>Tags become keys</td></tr>
+                            <tr><td>Attributes</td><td>Inline on elements</td><td>No native equivalent</td><td>Mapped to special keys</td></tr>
+                            <tr><td>Arrays</td><td>Repeated elements</td><td>Native array syntax</td><td>Grouped into arrays</td></tr>
+                            <tr><td>Namespaces</td><td>Full support</td><td>No native support</td><td>Flattened or prefixed</td></tr>
+                            <tr><td>Comments</td><td>Supported</td><td>Not supported</td><td>Lost during conversion</td></tr>
+                            <tr><td>Text Content</td><td>Mixed with elements</td><td>Separate value</td><td>Maps to text key</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="code-example">
+                        <strong>XML Input:</strong><br>
+                        &lt;catalog&gt;<br>
+                          &lt;book id="1" category="fiction"&gt;<br>
+                            &lt;title&gt;The Great Gatsby&lt;/title&gt;<br>
+                            &lt;author&gt;F. Scott Fitzgerald&lt;/author&gt;<br>
+                            &lt;price currency="USD"&gt;12.99&lt;/price&gt;<br>
+                          &lt;/book&gt;<br>
+                          &lt;book id="2" category="non-fiction"&gt;<br>
+                            &lt;title&gt;Sapiens&lt;/title&gt;<br>
+                            &lt;author&gt;Yuval Noah Harari&lt;/author&gt;<br>
+                            &lt;price currency="USD"&gt;15.99&lt;/price&gt;<br>
+                          &lt;/book&gt;<br>
+                        &lt;/catalog&gt;<br><br>
+                        <strong>JSON Output:</strong><br>
+                        {<br>
+                          "catalog": {<br>
+                            "book": [<br>
+                              {<br>
+                                "@id": "1", "@category": "fiction",<br>
+                                "title": "The Great Gatsby",<br>
+                                "author": "F. Scott Fitzgerald",<br>
+                                "price": { "@currency": "USD", "#text": "12.99" }<br>
+                              },<br>
+                              {<br>
+                                "@id": "2", "@category": "non-fiction",<br>
+                                "title": "Sapiens",<br>
+                                "author": "Yuval Noah Harari",<br>
+                                "price": { "@currency": "USD", "#text": "15.99" }<br>
+                              }<br>
+                            ]<br>
+                          }<br>
+                        }
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Benefits of XML to JSON Conversion</h2>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128260;</div>
+                            <h4 style="margin: var(--space-2) 0;">Legacy System Integration</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Connect older XML-based APIs and services with modern JavaScript applications and frameworks.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#9889;</div>
+                            <h4 style="margin: var(--space-2) 0;">Simpler Parsing</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">JSON is natively supported in JavaScript, eliminating the need for complex XML parsing libraries.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128202;</div>
+                            <h4 style="margin: var(--space-2) 0;">Reduced File Size</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">JSON is typically 30-50% smaller than equivalent XML, reducing bandwidth and storage requirements.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128640;</div>
+                            <h4 style="margin: var(--space-2) 0;">Modern Tooling</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">JSON works with modern databases, NoSQL systems, and cloud services that XML cannot easily access.</p>
+                        </div>
+                    </div>
+
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Verify attribute handling</strong> - XML attributes do not have a direct JSON equivalent. Different converters handle attributes differently, some using @ prefixes and others flattening them. Choose the approach that matches your application.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Handle arrays carefully</strong> - When an XML element appears only once, it becomes an object. When it repeats, it becomes an array. This inconsistency can cause bugs. Consider wrapping single elements in arrays for consistency.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Test with edge cases</strong> - Try your conversion with empty elements, deeply nested structures, elements with mixed text and child elements, and XML with namespaces to ensure robust handling.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>XML to JSON Conversion Best Practices</h2>
+                    <ul>
+                        <li><strong>Validate XML before converting:</strong> Ensure your XML is well-formed before conversion. Malformed XML can produce unexpected JSON output or cause the converter to fail entirely.</li>
+                        <li><strong>Document your attribute mapping:</strong> Different teams may use different conventions for handling XML attributes in JSON. Document your chosen approach and apply it consistently across all conversions.</li>
+                        <li><strong>Handle namespaces explicitly:</strong> XML namespaces add complexity to conversion. Decide whether to preserve, flatten, or strip namespaces based on your application requirements.</li>
+                        <li><strong>Test round-trip conversion:</strong> If you need to convert JSON back to XML later, verify that the conversion is lossless by performing a round-trip test and comparing the output.</li>
+                        <li><strong>Consider data validation:</strong> After conversion, validate the JSON output against an expected schema to catch structural issues or data corruption early.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is XML to JSON conversion?</h3>
+                        <p>XML to JSON conversion is the process of transforming XML data into JSON format. XML uses a tag-based structure with opening and closing elements, while JSON uses key-value pairs and arrays. The conversion maps XML elements and attributes to their JSON equivalents for use in modern web applications.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Why would I need to convert XML to JSON?</h3>
+                        <p>Many legacy systems, APIs, and data feeds still use XML format, while modern web frameworks and JavaScript applications prefer JSON. Converting XML to JSON allows you to integrate legacy data sources with contemporary applications, simplifying data processing and reducing the complexity of parsing XML in client-side code.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Does XML to JSON conversion lose information?</h3>
+                        <p>When done correctly, XML to JSON conversion preserves all data content. However, some structural nuances may be lost, such as XML comments, processing instructions, and the distinction between attributes and child elements. A good converter handles these mappings intelligently to minimize data loss.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I convert any XML to JSON?</h3>
+                        <p>Yes, any well-formed XML can be converted to JSON. However, some XML structures map more naturally than others. XML with mixed content or heavy use of namespaces may require additional handling. The converter should handle standard XML patterns and provide clear output for edge cases.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is the conversion reversible?</h3>
+                        <p>JSON to XML conversion is possible but may not perfectly reconstruct the original XML. Some XML-specific features like attributes, namespaces, and processing instructions may not have direct JSON equivalents. For round-trip conversions, ensure your conversion tool handles these mappings appropriately.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Related Tools</h2>
+                    <p>Enhance your data transformation workflow with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/json-formatter">JSON Formatter</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Format and validate converted JSON output</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/html-minifier">HTML Minifier</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Minify HTML files for web deployment</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/css-beautifier">CSS Beautifier</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Format CSS stylesheets for consistent code</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #ea580c 0%, #f97316 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Convert XML to JSON Today</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">Bridge legacy XML systems with modern JSON-based applications. Fast, private, and free. No account required.</p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/xml-to-json" class="btn btn-primary btn-lg">Convert XML to JSON</a>
+                    <a href="../tools/json-formatter" class="btn btn-secondary btn-lg">Format JSON</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">Local processing  No file uploads  Data preservation  Instant results  No sign-up</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Optimization Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/html-minifier">HTML Minifier</a></li>
+                        <li><a href="../tools/css-minifier">CSS Minifier</a></li>
+                        <li><a href="../tools/js-minifier">JS Minifier</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
