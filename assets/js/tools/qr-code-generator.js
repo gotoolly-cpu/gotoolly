@@ -41,10 +41,10 @@ document.addEventListener('DOMContentLoaded', function () {
         mecard: 'Enter name, phone, and email separated by commas in the text area.'
     };
     var jsBarcodeFormats = {
-        code128: 'CODE128', code39: 'CODE39', code93: 'CODE93', itf14: 'ITF-14',
+        code128: 'CODE128', code39: 'CODE39', code93: null, itf14: 'ITF14',
         ean13: 'EAN13', ean8: 'EAN8', upca: 'UPC', upce: 'UPCE',
-        datamatrix: 'DATAMATRIX', pdf417: 'PDF417',
-        isbn13: 'ISBN', isbn10: 'EAN13'
+        datamatrix: null, pdf417: null,
+        isbn13: 'EAN13', isbn10: 'EAN13'
     };
 
     var barcodeDisplay = document.getElementById('barcodeDisplay');
@@ -406,12 +406,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
             generateQRCode(type, data);
-        } else if (type === 'datamatrix' || type === 'pdf417') {
-            if (typeof JsBarcode === 'undefined') {
-                showStatus(formStatus, 'Barcode library failed to load. Please refresh the page.', 'error');
-                return;
-            }
-            generate2DBarcode(type, data);
+        } else if (!jsBarcodeFormats[type]) {
+            showStatus(formStatus, a[type] + ' is not supported by the browser barcode engine. Try Code-128, EAN-13, or QR Code instead.', 'error');
         } else {
             if (typeof JsBarcode === 'undefined') {
                 showStatus(formStatus, 'Barcode library failed to load. Please refresh the page.', 'error');
@@ -469,25 +465,6 @@ document.addEventListener('DOMContentLoaded', function () {
             generateFromCanvas(type, canvas);
         } catch (e) {
             showStatus(formStatus, 'Barcode generation failed: ' + e.message, 'error');
-        }
-    }
-
-    function generate2DBarcode(type, data) {
-        var canvas = document.createElement('canvas');
-        try {
-            JsBarcode(canvas, data, {
-                format: jsBarcodeFormats[type],
-                width: 2,
-                height: 100,
-                displayValue: true,
-                margin: 10,
-                background: '#ffffff',
-                lineColor: '#000000'
-            });
-            currentCanvas = canvas;
-            generateFromCanvas(type, canvas);
-        } catch (e) {
-            showStatus(formStatus, typeNames[type] + ' generation failed: ' + e.message + '. This format may require an additional library.', 'error');
         }
     }
 
