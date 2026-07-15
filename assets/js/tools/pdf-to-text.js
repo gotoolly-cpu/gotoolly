@@ -205,6 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const url = URL.createObjectURL(textBlob);
             downloadBtn.href = url;
             downloadBtn.download = 'document.txt';
+            downloadBtn.onclick = function() { setTimeout(function() { URL.revokeObjectURL(url); }, 100); };
             
             resultFilename.textContent = 'document.txt';
             resultPages.textContent = `Pages: ${pages.length}`;
@@ -226,8 +227,6 @@ document.addEventListener('DOMContentLoaded', function() {
         pages.forEach((page, index) => {
             if (index > 0) {
                 textContent += '\n\n' + '='.repeat(80) + '\nPAGE ' + (index + 1) + '\n' + '='.repeat(80) + '\n\n';
-            } else {
-                textContent += page + '\n\n';
             }
             textContent += page;
         });

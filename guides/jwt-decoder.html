@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Decode JWT Tokens: Complete Guide 2026 | GoToolly</title>
+    <meta name="description" content="Step-by-step guide to decode JSON Web Tokens and inspect header, payload, and signature. Learn JWT structure and how tokens work.">
+    <meta name="keywords" content="jwt decoder guide, decode jwt, json web token, jwt structure, jwt header payload signature, jwt inspector, token debugging">
+    <link rel="canonical" href="https://gotoolly.com/guides/jwt-decoder">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/jwt-decoder">
+    <meta property="og:title" content="How to Decode JWT Tokens: Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Step-by-step guide to decode JSON Web Tokens and inspect header, payload, and signature. Learn JWT structure and how tokens work.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/jwt-decoder">
+    <meta name="twitter:title" content="How to Decode JWT Tokens: Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Step-by-step guide to decode JSON Web Tokens and inspect header, payload, and signature. Learn JWT structure and how tokens work.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+
+    <style>
+        .page-header { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.08"><rect width="100" height="100" fill="white"/><text x="8" y="30" font-family="monospace" font-size="8">HEADER</text><text x="6" y="55" font-family="monospace" font-size="8">PAYLOAD</text><text x="12" y="80" font-family="monospace" font-size="8">SIGN</text></svg>'); background-size: 250px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #f5576c; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(245, 87, 108, 0.1); border-left: 4px solid #f5576c; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .code-example { background: linear-gradient(135deg, rgba(240, 147, 251, 0.05) 0%, rgba(245, 87, 108, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(245, 87, 108, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; word-break: break-all; }
+        .use-case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .use-case-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .use-case-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Decode JWT Tokens: Complete Guide 2026", "description": "Step-by-step guide to decode JSON Web Tokens and inspect header, payload, and signature. Learn JWT structure and how tokens work.", "url": "https://gotoolly.com/guides/jwt-decoder", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/jwt-decoder" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "JWT Decoder Guide", "item": "https://gotoolly.com/guides/jwt-decoder"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a JWT token?","acceptedAnswer":{"@type":"Answer","text":"A JWT (JSON Web Token) is a compact, URL-safe token that represents claims between two parties. It consists of three Base64-encoded parts separated by dots: header, payload, and signature. JWTs are commonly used for authentication and API authorization."}},{"@type":"Question","name":"Is it safe to decode a JWT?","acceptedAnswer":{"@type":"Answer","text":"Yes, decoding a JWT is safe because the header and payload are only Base64-encoded, not encrypted. Anyone with the token can read them. The security lies in the signature, which requires the secret key to generate and verify. Never put sensitive data in a JWT payload."}},{"@type":"Question","name":"Can this tool verify JWT signatures?","acceptedAnswer":{"@type":"Answer","text":"No, this tool only decodes the Base64-encoded header and payload. Signature verification requires the secret key and is not performed by this tool. Use our JWT Generator for signing, or a server-side library for production verification."}},{"@type":"Question","name":"What do the three JWT parts mean?","acceptedAnswer":{"@type":"Answer","text":"The header contains metadata like the signing algorithm (e.g., HS256) and token type (JWT). The payload contains the claims (statements about the user and metadata). The signature is created by signing the encoded header and payload with a secret key to verify integrity."}},{"@type":"Question","name":"Is my token data private when using this tool?","acceptedAnswer":{"@type":"Answer","text":"Yes, all decoding happens entirely in your browser. No data is sent to any server. Your tokens remain completely private and are never transmitted or stored anywhere."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Decode JWT Tokens: Complete Guide 2026</h1>
+                <p class="page-description">
+                    Decode and inspect JSON Web Tokens to understand their structure. Learn how the header, payload, and signature work together to enable secure authentication and API authorization in modern web applications.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/jwt-decoder" class="btn btn-primary btn-lg">Decode JWT Now</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  Instant decode  Inspect claims  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>What is a JSON Web Token?</h2>
+                    <p>
+                        A JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way to securely transmit information between parties as a JSON object. JWTs are digitally signed, meaning they can be verified and trusted. The token is composed of three Base64-encoded segments separated by dots: <code>header.payload.signature</code>. Each segment plays a distinct role in the token's structure and security model.
+                    </p>
+                    <p>
+                        JWTs are widely used in modern web applications for stateless authentication, single sign-on (SSO), and API authorization flows like OAuth 2.0 and OpenID Connect. Their compact size makes them suitable for URL parameters, HTTP headers, and mobile environments where bandwidth is limited. Understanding how to decode and inspect JWTs is essential for developers, security engineers, and anyone working with API authentication.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Understanding JWT Structure</h2>
+                    <div class="code-example">
+                        <strong>Complete JWT Example:</strong><br>
+                        eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.<br>
+                        eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.<br>
+                        SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+                    </div>
+                    <p>The three parts of a JWT serve different purposes:</p>
+                    <ul>
+                        <li><strong>Header (first part):</strong> Contains metadata about the token, typically the type (JWT) and the signing algorithm (e.g., HS256, RS256, ES256). The header determines how the signature was created and must be verified.</li>
+                        <li><strong>Payload (second part):</strong> Contains the claims — statements about an entity (typically the user) and additional metadata. Claims can be registered (standardized like <code>sub</code>, <code>iat</code>, <code>exp</code>), public, or private. Never put sensitive information in the payload as it's only Base64-encoded, not encrypted.</li>
+                        <li><strong>Signature (third part):</strong> Created by taking the encoded header and payload, concatenating them with a dot, and signing the result with a secret key (HMAC) or private key (RSA/ECDSA). The signature verifies that the token hasn't been tampered with.</li>
+                    </ul>
+                    <div class="pro-tip">
+                        <p><strong> Security note:</strong> JWT header and payload are <strong>not encrypted</strong> — they are only Base64-encoded. Anyone with access to the token can read the contents. Never store passwords, API keys, or other secrets in a JWT payload.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Common JWT Use Cases</h2>
+                    <div class="use-case-grid">
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128274;</div>
+                            <h4 style="margin: var(--space-2) 0;">Authentication</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">After a user logs in, the server issues a JWT. The client sends this token with each subsequent request. The server validates the signature to authenticate the user without maintaining session state.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128279;</div>
+                            <h4 style="margin: var(--space-2) 0;">API Authorization</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">JWTs encode user roles and permissions in claims. APIs check these claims to enforce access control on specific endpoints, enabling fine-grained authorization without database lookups.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128101;</div>
+                            <h4 style="margin: var(--space-2) 0;">Single Sign-On (SSO)</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">JWTs are the backbone of modern SSO systems. A user authenticates once with an identity provider, which issues a JWT. This token is then accepted by multiple service providers within the same ecosystem.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128260;</div>
+                            <h4 style="margin: var(--space-2) 0;">Information Exchange</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">JWTs securely transmit information between parties. Because they are signed, you can verify the sender's identity and ensure the content hasn't changed. This is useful for secure inter-service communication.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 id="step-by-step">Step-by-Step: Decode a JWT</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Copy Your JWT Token</h3>
+                                <p>Get the JWT token from your application. You can find it in your browser's local storage, an HTTP cookie, the Authorization header of API requests, or the URL fragment (common in OAuth flows).</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Paste into the Decoder</h3>
+                                <p>Open the <a href="../tools/jwt-decoder">JWT Decoder</a> tool and paste your token into the input field. The tool automatically parses the three Base64-encoded segments and displays the decoded header and payload as formatted JSON.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Inspect the Header</h3>
+                                <p>Review the decoded header to see the signing algorithm (<code>alg</code>) and token type. Common algorithms include HS256 (HMAC with SHA-256), RS256 (RSA with SHA-256), and ES256 (ECDSA with SHA-256).</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Examine the Payload Claims</h3>
+                                <p>Review the decoded payload to understand the token's claims. Standard claims include <code>sub</code> (subject), <code>iat</code> (issued at), <code>exp</code> (expiration), and <code>iss</code> (issuer). Custom claims may include user roles, permissions, or other application-specific data.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Standard JWT Claims Reference</h2>
+                    <table class="comparison-table" style="width:100%;border-collapse:collapse;margin:var(--space-6)0;">
+                        <thead>
+                            <tr><th>Claim</th><th>Full Name</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>iss</code></td><td>Issuer</td><td>Identifies the principal that issued the JWT</td></tr>
+                            <tr><td><code>sub</code></td><td>Subject</td><td>Identifies the subject of the JWT (usually the user ID)</td></tr>
+                            <tr><td><code>aud</code></td><td>Audience</td><td>Identifies the recipients the JWT is intended for</td></tr>
+                            <tr><td><code>exp</code></td><td>Expiration Time</td><td>Unix timestamp after which the JWT expires</td></tr>
+                            <tr><td><code>nbf</code></td><td>Not Before</td><td>Unix timestamp before which the JWT is not valid</td></tr>
+                            <tr><td><code>iat</code></td><td>Issued At</td><td>Unix timestamp when the JWT was issued</td></tr>
+                            <tr><td><code>jti</code></td><td>JWT ID</td><td>Unique identifier for the JWT (prevents replay attacks)</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> The <code>exp</code> (expiration) claim is critical for security. A JWT without an expiration claim could be used indefinitely if stolen. Always check that the token hasn't expired before trusting its contents.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Best Practices for Working with JWTs</h2>
+                    <ul>
+                        <li><strong>Never store secrets in the payload:</strong> JWT payloads are Base64-encoded, not encrypted. Anyone with the token can decode and read the claims. Use JWE (JSON Web Encryption) if you need confidentiality.</li>
+                        <li><strong>Always validate the signature server-side:</strong> Client-side tools can decode JWTs for debugging, but always verify the signature on your server before trusting the token's claims.</li>
+                        <li><strong>Check the algorithm:</strong> Verify that the token uses an expected algorithm. A known attack involves changing the algorithm from RS256 to HS256 and using the public key as the HMAC secret. Always validate the algorithm server-side.</li>
+                        <li><strong>Use short expiration times:</strong> Keep JWT lifetimes short (15-60 minutes for access tokens) to limit the damage if a token is compromised. Use refresh tokens for longer-lived sessions.</li>
+                        <li><strong>Use HTTPS exclusively:</strong> Always transmit JWTs over HTTPS to prevent token interception. A stolen JWT grants the attacker the same privileges as the legitimate user for the token's lifetime.</li>
+                        <li><strong>Implement token revocation:</strong> While JWTs are designed to be stateless, maintain a token blacklist or use short expiry with refresh tokens to handle scenarios like user logout or compromised tokens.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Limitations to Consider</h2>
+                    <ul>
+                        <li><strong>This tool only decodes — it does not verify signatures:</strong> The JWT Decoder displays the Base64-decoded header and payload but does not validate the signature. Signature verification requires the secret key (for HMAC) or public key (for RSA/ECDSA).</li>
+                        <li><strong>No encryption:</strong> JWTs are signed, not encrypted. Anyone who intercepts a JWT can read its contents. For sensitive data, use JWE (JSON Web Encryption) or pass the token over HTTPS only.</li>
+                        <li><strong>Payload readability:</strong> Because the payload is only Base64-encoded, it is immediately readable by anyone. Avoid storing personally identifiable information (PII) or sensitive business data in JWT claims.</li>
+                        <li><strong>Debugging purposes only:</strong> The decoder is intended for development, debugging, and learning. Do not rely solely on decoded JWT data for security decisions — always perform server-side signature verification.</li>
+                    </ul>
+                    <div class="pro-tip">
+                        <p><strong> Security warning:</strong> This tool decodes the Base64-encoded parts of a JWT. It does NOT verify the cryptographic signature. Decoding a JWT does not mean the token is valid, authentic, or untampered. Always verify signatures server-side before trusting a JWT.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is a JWT token?</h3>
+                        <p>A JWT (JSON Web Token) is a compact, URL-safe token that represents claims between two parties. It consists of three Base64-encoded parts separated by dots: header, payload, and signature. JWTs are commonly used for authentication and API authorization.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is it safe to decode a JWT?</h3>
+                        <p>Yes, decoding a JWT is safe because the header and payload are only Base64-encoded, not encrypted. Anyone with the token can read them. The security lies in the signature, which requires the secret key to generate and verify. Never put sensitive data in a JWT payload.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can this tool verify JWT signatures?</h3>
+                        <p>No, this tool only decodes the Base64-encoded header and payload. Signature verification requires the secret key and is not performed by this tool. Use our JWT Generator for signing, or a server-side library for production verification.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What do the three JWT parts mean?</h3>
+                        <p>The header contains metadata like the signing algorithm (e.g., HS256) and token type (JWT). The payload contains the claims (statements about the user and metadata). The signature is created by signing the encoded header and payload with a secret key to verify integrity.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What happens if a JWT expires?</h3>
+                        <p>When a JWT's expiration time (exp claim) has passed, the token is no longer considered valid. The server rejects the token and the user must re-authenticate or use a refresh token to obtain a new JWT. This limits the window of vulnerability for stolen tokens.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is my token data private when using this tool?</h3>
+                        <p>Yes, all decoding happens entirely in your browser. No data is sent to any server. Your tokens remain completely private and are never transmitted or stored anywhere.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Related JWT Tools</h2>
+                    <p>Enhance your JWT workflow with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/jwt-generator">JWT Generator</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Generate and sign JWTs for development and testing with multiple algorithms</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/hash-generator">Hash Generator</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Generate cryptographic hashes for data integrity verification</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/base64-encoder">Base64 Encoder/Decoder</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Encode and decode Base64 strings for data conversion</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Decode JWT Tokens Instantly</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Inspect JWT header, payload, and claims in seconds. Perfect for developers debugging authentication flows. Fast, private, and free. No account required.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/jwt-decoder" class="btn btn-primary btn-lg">Decode JWT Now</a>
+                    <a href="../tools/jwt-generator" class="btn btn-secondary btn-lg">JWT Generator</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Local processing  Formatted JSON  Claim inspector  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>JWT Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/jwt-decoder">JWT Decoder</a></li>
+                        <li><a href="../tools/jwt-generator">JWT Generator</a></li>
+                        <li><a href="../tools/base64-encoder">Base64 Encoder</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

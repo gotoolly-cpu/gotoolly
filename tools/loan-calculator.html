@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculator - Free Online Tool | GoToolly</title>
+    <meta name="description" content="Calculate monthly loan payments, total interest, and total repayment. View amortization schedule. Free, private, browser-based.">
+    <meta name="keywords" content="loan calculator, amortization calculator, mortgage calculator, monthly payment calculator, loan repayment, interest calculator">
+    <link rel="canonical" href="https://gotoolly.com/tools/loan-calculator">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/loan-calculator">
+    <meta property="og:title" content="Loan Calculator | GoToolly">
+    <meta property="og:description" content="Calculate monthly loan payments, total interest, and total repayment. View amortization schedule.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/loan-calculator">
+    <meta name="twitter:title" content="Loan Calculator | GoToolly">
+    <meta name="twitter:description" content="Calculate monthly loan payments, total interest, and total repayment.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loan Calculator","url":"https://gotoolly.com/tools/loan-calculator","description":"Calculate monthly loan payments, total interest, and total repayment. View amortization schedule.","applicationCategory":"FinanceApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Amortization schedule","Monthly payment","Total interest","Total repayment","Print schedule"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Loan Calculator"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are monthly payments calculated?","acceptedAnswer":{"@type":"Answer","text":"Monthly payments are calculated using the standard amortization formula: M = P × [r(1+r)^n] / [(1+r)^n - 1], where P is principal, r is monthly interest rate, and n is number of payments."}},{"@type":"Question","name":"What is an amortization schedule?","acceptedAnswer":{"@type":"Answer","text":"An amortization schedule shows each payment's breakdown into principal and interest, and the remaining balance over the life of the loan."}},{"@type":"Question","name":"Is this tool free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no limits, no sign-up, and no data sent to any server."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.lc-container{max-width:720px;margin:0 auto var(--space-4)}.lc-card{border:1px solid var(--color-border);border-radius:12px;padding:var(--space-4)}.lc-form-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-3);margin-bottom:var(--space-4)}.lc-form-group label{display:block;font-weight:500;margin-bottom:var(--space-1);font-size:var(--text-sm)}.lc-input{width:100%;padding:var(--space-2) var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-size:var(--text-base);background:var(--color-surface);color:var(--color-text);box-sizing:border-box}.lc-input:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.lc-results{display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-3);margin-bottom:var(--space-4)}.lc-result-item{border:1px solid var(--color-border);border-radius:8px;padding:var(--space-3);text-align:center}.lc-result-value{font-size:var(--text-xl);font-weight:700;color:var(--color-primary);font-family:'JetBrains Mono',monospace;margin-bottom:var(--space-1)}.lc-result-label{font-size:var(--text-xs);color:var(--color-text-light)}.lc-schedule{overflow-x:auto;margin-top:var(--space-3)}.lc-schedule table{width:100%;border-collapse:collapse;font-size:var(--text-sm)}.lc-schedule th{padding:var(--space-2);text-align:right;border-bottom:2px solid var(--color-border);font-weight:600;white-space:nowrap}.lc-schedule th:first-child{text-align:center}.lc-schedule td{padding:var(--space-2);text-align:right;border-bottom:1px solid var(--color-border);font-family:'JetBrains Mono',monospace;font-size:var(--text-xs)}.lc-schedule td:first-child{text-align:center}.lc-schedule tr:hover{background:var(--color-surface)}.lc-schedule .total-row{font-weight:700;border-top:2px solid var(--color-primary)}.lc-actions{display:flex;gap:var(--space-2);margin-top:var(--space-3);flex-wrap:wrap}.lc-disclaimer{margin-top:var(--space-3);padding:var(--space-3);background:var(--color-bg);border-radius:8px;font-size:var(--text-xs);color:var(--color-text-light);border-left:3px solid var(--color-primary)}@media(max-width:600px){.lc-form-grid,.lc-results{grid-template-columns:1fr}}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="../about" class="nav-link">About</a><a href="../contact" class="nav-link">Contact</a></nav></div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Loan Calculator</h1>
+                <p class="page-description">Calculate monthly loan payments, total interest, and total repayment. View amortization schedule. Free, private, browser-based.</p>
+                <p style="margin-top:var(--space-3);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No sign-up &bull; No server uploads &bull; 100% browser-based</p>
+            </div>
+
+            <div class="lc-container">
+                <div class="lc-card">
+                    <div class="lc-form-grid">
+                        <div class="lc-form-group">
+                            <label for="lc-amount">Loan Amount ($)</label>
+                            <input type="text" id="lc-amount" class="lc-input" placeholder="e.g. 10000" inputmode="decimal">
+                        </div>
+                        <div class="lc-form-group">
+                            <label for="lc-rate">Annual Interest Rate (%)</label>
+                            <input type="text" id="lc-rate" class="lc-input" placeholder="e.g. 5.5" inputmode="decimal">
+                        </div>
+                        <div class="lc-form-group">
+                            <label for="lc-term">Loan Term (years)</label>
+                            <input type="text" id="lc-term" class="lc-input" placeholder="e.g. 5" inputmode="decimal">
+                        </div>
+                    </div>
+
+                    <button id="lc-calculate-btn" class="btn btn-primary btn-lg" style="width:100%">Calculate</button>
+
+                    <div class="lc-results" id="lc-results" style="display:none;margin-top:var(--space-4)">
+                        <div class="lc-result-item">
+                            <div class="lc-result-value" id="lc-monthly">$--</div>
+                            <div class="lc-result-label">Monthly Payment</div>
+                        </div>
+                        <div class="lc-result-item">
+                            <div class="lc-result-value" id="lc-total-interest">$--</div>
+                            <div class="lc-result-label">Total Interest</div>
+                        </div>
+                        <div class="lc-result-item">
+                            <div class="lc-result-value" id="lc-total-repayment">$--</div>
+                            <div class="lc-result-label">Total Repayment</div>
+                        </div>
+                    </div>
+
+                    <div id="lc-schedule" class="lc-schedule" style="display:none">
+                        <h3 style="margin-bottom:var(--space-2)">Amortization Schedule</h3>
+                        <div style="max-height:400px;overflow-y:auto">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Period</th>
+                                        <th>Payment</th>
+                                        <th>Principal</th>
+                                        <th>Interest</th>
+                                        <th>Balance</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="lc-schedule-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="lc-actions">
+                        <button id="lc-copy-btn" class="btn btn-outline btn-sm">Copy Results</button>
+                        <button id="lc-print-btn" class="btn btn-outline btn-sm">Print Schedule</button>
+                        <button id="lc-clear-btn" class="btn btn-outline btn-sm">Clear</button>
+                    </div>
+
+                    <div class="lc-disclaimer">
+                        <strong>Disclaimer:</strong> This calculator provides estimates for informational purposes only. Actual loan terms may vary. Consult a financial professional for specific loan advice.
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top:var(--space-4);text-align:center"><a href="/guides/loan-calculator" style="color:var(--color-primary)">Read Guide: How to Calculate Loans &rarr;</a></p>
+
+            <section class="content-section">
+                <div class="section-header"><h2>How It Works</h2></div>
+                <div class="content-body">
+                    <p>Enter your loan details to calculate monthly payments using the standard amortization formula. The tool generates a full amortization schedule showing each payment's breakdown.</p>
+                    <ul>
+                        <li><strong>Formula:</strong> M = P &times; [r(1+r)^n] / [(1+r)^n - 1], where P = principal, r = monthly interest rate (annual rate / 12), n = total payments (years &times; 12)</li>
+                        <li><strong>Results:</strong> View monthly payment, total interest paid, and total amount repaid over the loan term.</li>
+                        <li><strong>Amortization Schedule:</strong> See each payment's allocation between principal and interest, plus remaining balance.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
+                <div class="faq-list">
+                    <div class="faq-item"><div class="faq-question">What is an amortization schedule?</div><div class="faq-answer">An amortization schedule is a table showing each loan payment's breakdown into principal and interest portions, and the remaining balance after each payment.</div></div>
+                    <div class="faq-item"><div class="faq-question">How does the interest rate affect my payments?</div><div class="faq-answer">Higher interest rates increase both your monthly payment and total interest paid over the life of the loan. Even a small rate difference can significantly affect total cost.</div></div>
+                    <div class="faq-item"><div class="faq-question">Is this tool free?</div><div class="faq-answer">Yes, completely free with no limits, no sign-up required, and no data sent to any server.</div></div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>Percentage Calculator</h3><p>Calculate percentages, increases, decreases, and differences.</p><div class="card-footer"><a href="./percentage-calculator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>BMI Calculator</h3><p>Calculate your Body Mass Index and check your weight category.</p><div class="card-footer"><a href="./bmi-calculator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Age Calculator</h3><p>Calculate your exact age in years, months, days, hours, minutes, and seconds.</p><div class="card-footer"><a href="./age-calculator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools/qr-code-generator">QR Code Generator</a></li><li><a href="/tools/password-generator">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+
+    <script defer src="../assets/js/main.min.js"></script>
+    <script defer src="../assets/js/tools/loan-calculator.min.js"></script>
+</body>
+</html>

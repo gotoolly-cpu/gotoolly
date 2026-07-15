@@ -1,582 +1,371 @@
 /* ============================================
    GO TOOLLY - BARCODE GENERATOR
    ============================================ */
-
 document.addEventListener('DOMContentLoaded', function() {
-    // DOM Elements
-    const generateBtns = document.querySelectorAll('.generate-btn');
-    const clearBtn = document.getElementById('clearBtn');
-    const copyBtn = document.getElementById('copyBtn');
-    const viewBtn = document.getElementById('viewBtn');
-    const downloadBtn = document.getElementById('downloadBtn');
-    const barcodeDisplay = document.getElementById('barcodeDisplay');
-    const fullscreenModal = document.getElementById('fullscreenModal');
-    const fullscreenClose = document.getElementById('fullscreenClose');
-    const fullscreenImage = document.getElementById('fullscreenImage');
-    const formContainers = document.querySelectorAll('.form-container');
-    
-    // State
-    let currentBarcodeType = 'qrcode'; // Match the selected type in HTML
-    let currentBarcodeImage = null;
-    let currentBarcodeData = '';
-    
-    // Initialize
-    initEventListeners();
-    updateFormDisplay();
-    
-    function initEventListeners() {
-        // Use event delegation for better performance and to handle dynamic content
-        const barcodeTypesContainer = document.querySelector('.barcode-types');
-        if (barcodeTypesContainer) {
-            barcodeTypesContainer.addEventListener('click', function(e) {
-                const target = e.target;
-                
-                // Handle category header clicks
-                if (target.closest('.category-header')) {
-                    const header = target.closest('.category-header');
-                    toggleCategory(header);
-                    return;
-                }
-                
-                // Handle type option clicks
-                if (target.closest('.type-option')) {
-                    const option = target.closest('.type-option');
-                    selectBarcodeType(option);
-                    return;
-                }
-            });
+    const typeSelect = document.getElementById('barcode-type');
+    const textInput = document.getElementById('barcode-text');
+    const sizeInput = document.getElementById('barcode-size');
+    const sizeValue = document.getElementById('size-value');
+    const marginInput = document.getElementById('barcode-margin');
+    const marginValue = document.getElementById('margin-value');
+    const generateBtn = document.getElementById('generate-btn');
+    const downloadPng = document.getElementById('download-png');
+    const downloadSvg = document.getElementById('download-svg');
+    const canvas = document.getElementById('barcode-canvas');
+    const placeholder = document.getElementById('barcode-placeholder');
+    const status = document.getElementById('barcode-status');
+
+    let currentBarcodeData = null;
+
+    sizeInput.addEventListener('input', function() { sizeValue.textContent = this.value + 'px'; });
+    marginInput.addEventListener('input', function() { marginValue.textContent = this.value + 'px'; });
+
+    typeSelect.addEventListener('change', function() {
+        const hints = {
+            code128: 'Enter alphanumeric text',
+            code39: 'Uppercase letters, digits, and -.$/+%',
+            ean13: 'Enter 12 digits (checksum auto-calculated)',
+            ean8: 'Enter 7 digits (checksum auto-calculated)',
+            upca: 'Enter 11 digits (checksum auto-calculated)',
+            upce: 'Enter 6 digits (checksum auto-calculated)'
+        };
+        textInput.placeholder = hints[this.value] || 'Enter text';
+        if (['ean13','ean8','upca','upce'].includes(this.value)) {
+            textInput.value = textInput.value.replace(/\D/g,'').slice(0,12);
         }
-        
-        // Generate buttons (support multiple placements across forms)
-        if (generateBtns && generateBtns.length) {
-            generateBtns.forEach(btn => btn.addEventListener('click', generateBarcode));
-        }
-        
-        // Clear button
-        if (clearBtn) {
-            clearBtn.addEventListener('click', clearAll);
-        }
-        
-        // Control buttons
-        if (copyBtn) copyBtn.addEventListener('click', copyBarcode);
-        if (viewBtn) viewBtn.addEventListener('click', viewFullscreen);
-        if (downloadBtn) downloadBtn.addEventListener('click', downloadBarcode);
-        
-        // Fullscreen modal
-        if (fullscreenClose) fullscreenClose.addEventListener('click', closeFullscreen);
-        if (fullscreenModal) {
-            fullscreenModal.addEventListener('click', (e) => {
-                if (e.target === fullscreenModal) {
-                    closeFullscreen();
-                }
-            });
-        }
-        
-        // Keyboard shortcuts
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && fullscreenModal && fullscreenModal.classList.contains('active')) {
-                closeFullscreen();
-            }
-        });
-    }
-    
-    function toggleCategory(header) {
-        const category = header.dataset.category;
-        const content = document.getElementById(`${category}-content`);
-        
-        if (!content) return;
-        
-        // Toggle active class on header
-        header.classList.toggle('active');
-        
-        // Toggle active class on content
-        content.classList.toggle('active');
-    }
-    
-    function selectBarcodeType(option) {
-        const selectedType = option.dataset.type;
-        const selectedText = option.textContent.trim();
-        
-        if (!selectedType) {
-            return;
-        }
-        
-        // Remove selected class from all type options
-        document.querySelectorAll('.type-option').forEach(opt => {
-            opt.classList.remove('selected');
-        });
-        
-        // Add selected class to clicked option
-        option.classList.add('selected');
-        
-        // Update current type
-        currentBarcodeType = selectedType;
-        
-        // Update form display
-        updateFormDisplay();
-        
-        // Clear previous barcode
-        clearBarcode();
-    }
-    
-    function updateFormDisplay() {
-        // Hide all forms
-        formContainers.forEach(container => container.classList.remove('active'));
-        
-        // If no barcode type is selected, don't show any form
-        if (!currentBarcodeType) {
-            return;
-        }
-        
-        // Show appropriate form based on barcode type
-        let targetForm = 'form-generic'; // Default
-        
-        if (currentBarcodeType === 'vcard' || currentBarcodeType === 'mecard') {
-            targetForm = 'form-vcard';
-        } else if (['ean13', 'ean8', 'upca', 'upce'].includes(currentBarcodeType)) {
-            targetForm = 'form-ean';
-        } else if (['isbn13', 'isbn10'].includes(currentBarcodeType)) {
-            targetForm = 'form-isbn';
-        }
-        
-        const targetContainer = document.getElementById(targetForm);
-        if (targetContainer) {
-            targetContainer.classList.add('active');
-        }
-        
-        // Initialize with default values for selected type
-        initializeFormWithDefaults();
-    }
-    
-    function initializeFormWithDefaults() {
-        if (currentBarcodeType === 'qrcode') {
-            document.getElementById('content').value = 'https://www.example.com';
-        } else if (currentBarcodeType === 'vcard') {
-            document.getElementById('firstName').value = 'John';
-            document.getElementById('lastName').value = 'Doe';
-            document.getElementById('phone').value = '+1 (555) 123-4567';
-            document.getElementById('email').value = 'john@example.com';
-            document.getElementById('company').value = 'Example Corp';
-        } else if (currentBarcodeType === 'ean13') {
-            document.getElementById('numericCode').value = '5901234123457';
-        } else if (currentBarcodeType === 'isbn13') {
-            document.getElementById('isbnNumber').value = '978-3-16-148410-0';
-        }
-    }
-    
+    });
+
+    generateBtn.addEventListener('click', generateBarcode);
+
     function generateBarcode() {
-        const data = collectFormData();
-        
-        if (!currentBarcodeType) {
-            alert('Please select a barcode type first.');
-            return;
+        const type = typeSelect.value;
+        let text = textInput.value.trim();
+        if (!text) { status.textContent = 'Please enter data'; return; }
+        try {
+            let bars = [];
+            let encodedText = text;
+            switch (type) {
+                case 'code128': bars = encodeCode128(text); encodedText = text; break;
+                case 'code39': bars = encodeCode39(text); encodedText = text.toUpperCase(); break;
+                case 'ean13': bars = encodeEAN13(text); encodedText = formatEAN13(text); break;
+                case 'ean8': bars = encodeEAN8(text); encodedText = formatEAN8(text); break;
+                case 'upca': bars = encodeUPCA(text); encodedText = formatUPCA(text); break;
+                case 'upce': bars = encodeUPCE(text); encodedText = formatUPCE(text); break;
+            }
+            if (!bars || bars.length === 0) throw new Error('Encoding failed');
+            currentBarcodeData = { type, text, bars, encodedText };
+            drawBarcode(currentBarcodeData);
+            placeholder.style.display = 'none';
+            canvas.style.display = 'block';
+            downloadPng.disabled = false;
+            downloadSvg.disabled = false;
+            status.textContent = 'Barcode generated: ' + type.toUpperCase() + ' | Text: ' + encodedText;
+        } catch (e) {
+            status.textContent = 'Error: ' + e.message;
         }
-        
-        if (!validateData(data)) {
-            return;
-        }
-        
-        currentBarcodeData = data.content;
-        
-        // Generate barcode based on type
-        if (is2DBarcode(currentBarcodeType)) {
-            generate2DBarcode(data);
-        } else {
-            generateLinearBarcode(data);
-        }
-    }
-    
-    function clearAll() {
-        // Reset barcode type selection
-        currentBarcodeType = '';
-        
-        // Clear all form inputs
-        document.querySelectorAll('input, textarea').forEach(input => {
-            input.value = '';
-        });
-        
-        // Remove all selections from barcode types
-        document.querySelectorAll('.type-option').forEach(opt => {
-            opt.classList.remove('selected');
-        });
-        
-        // Update form display and clear barcode
-        updateFormDisplay();
-        clearBarcode();
     }
 
-    function collectFormData() {
-        const activeForm = document.querySelector('.form-container.active');
-        const data = { type: currentBarcodeType };
-        
-        if (activeForm.id === 'form-vcard') {
-            // Collect vCard data
-            const firstName = document.getElementById('firstName').value.trim();
-            const lastName = document.getElementById('lastName').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const company = document.getElementById('company').value.trim();
-            const jobTitle = document.getElementById('title') ? document.getElementById('title').value.trim() : '';
-            
-            data.firstName = firstName;
-            data.lastName = lastName;
-            data.phone = phone;
-            data.email = email;
-            data.company = company;
-            data.jobTitle = jobTitle;
-            
-            // Format vCard content
-            data.content = formatVCard(firstName, lastName, phone, email, company, jobTitle);
-        } else if (activeForm.id === 'form-ean') {
-            // Collect numeric code
-            data.content = document.getElementById('numericCode').value.trim();
-        } else if (activeForm.id === 'form-isbn') {
-            // Collect ISBN
-            data.content = document.getElementById('isbnNumber').value.trim().replace(/[-\s]/g, '');
-        } else {
-            // Generic content
-            data.content = document.getElementById('content').value.trim();
+    function drawBarcode(data) {
+        const size = parseInt(sizeInput.value);
+        const margin = parseInt(marginInput.value);
+        const barHeight = size * 0.55;
+        const ctx = canvas.getContext('2d');
+        canvas.width = size;
+        canvas.height = barHeight + margin * 2 + 40;
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        const totalModules = data.bars.reduce(function(s, b) { return s + b; }, 0);
+        const availableWidth = size - margin * 2;
+        const moduleWidth = availableWidth / totalModules;
+
+        let x = margin;
+        ctx.fillStyle = '#000000';
+        for (let i = 0; i < data.bars.length; i++) {
+            if (i % 2 === 0) {
+                const w = data.bars[i] * moduleWidth;
+                ctx.fillRect(x, margin, w, barHeight);
+            }
+            x += data.bars[i] * moduleWidth;
         }
-        
-        return data;
+
+        ctx.fillStyle = '#000000';
+        ctx.font = (barHeight * 0.08) + 'px monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText(data.encodedText, size / 2, margin + barHeight + 24);
     }
-    
-    function validateData(data) {
-        if (!data.content) {
-            alert('Please enter data to generate a barcode.');
-            return false;
+
+    downloadPng.addEventListener('click', function() {
+        if (!currentBarcodeData) return;
+        drawBarcode(currentBarcodeData);
+        const link = document.createElement('a');
+        link.download = 'barcode-' + currentBarcodeData.type + '.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    });
+
+    downloadSvg.addEventListener('click', function() {
+        if (!currentBarcodeData) return;
+        const size = parseInt(sizeInput.value);
+        const margin = parseInt(marginInput.value);
+        const barHeight = size * 0.55;
+        const totalModules = currentBarcodeData.bars.reduce(function(s, b) { return s + b; }, 0);
+        const availableWidth = size - margin * 2;
+        const moduleWidth = availableWidth / totalModules;
+        const svgH = barHeight + margin * 2 + 40;
+
+        let rects = '';
+        let x = margin;
+        for (let i = 0; i < currentBarcodeData.bars.length; i++) {
+            if (i % 2 === 0) {
+                const w = currentBarcodeData.bars[i] * moduleWidth;
+                rects += '<rect x="' + x.toFixed(2) + '" y="' + margin + '" width="' + w.toFixed(2) + '" height="' + barHeight + '" fill="#000"/>';
+            }
+            x += currentBarcodeData.bars[i] * moduleWidth;
         }
-        
-        // Type-specific validations
-        if (['ean13', 'ean8', 'upca', 'upce', 'itf14'].includes(currentBarcodeType)) {
-            // Remove any non-digit characters
-            const cleanedContent = data.content.replace(/\D/g, '');
-            
-            if (cleanedContent.length === 0) {
-                alert('Please enter numeric digits for this barcode type.');
-                return false;
-            }
-            
-            const lengthRanges = {
-                'ean13': { min: 12, max: 13, name: 'EAN-13', hint: '12 or 13 digits' },
-                'ean8': { min: 7, max: 8, name: 'EAN-8', hint: '7 or 8 digits' },
-                'upca': { min: 11, max: 12, name: 'UPC-A', hint: '11 or 12 digits' },
-                'upce': { min: 6, max: 8, name: 'UPC-E', hint: '6, 7, or 8 digits' },
-                'itf14': { min: 13, max: 14, name: 'ITF-14', hint: '13 or 14 digits' }
-            };
-            
-            const range = lengthRanges[currentBarcodeType];
-            if (range && (cleanedContent.length < range.min || cleanedContent.length > range.max)) {
-                alert(`${range.name} requires ${range.hint}.\n\nYou entered ${cleanedContent.length} digits.`);
-                return false;
-            }
-            
-            // Update data.content with cleaned version
-            data.content = cleanedContent;
-        }
-        
-        if (['isbn13', 'isbn10'].includes(currentBarcodeType)) {
-            const cleanedContent = data.content.replace(/\D/g, '');
-            
-            if (!/^\d+$/.test(cleanedContent)) {
-                alert('Please enter only numeric digits for ISBN.');
-                return false;
-            }
-            
-            const expectedLength = currentBarcodeType === 'isbn13' ? 13 : 10;
-            if (cleanedContent.length !== expectedLength && cleanedContent.length !== expectedLength - 1) {
-                alert(`ISBN-${expectedLength === 13 ? '13' : '10'} requires ${expectedLength - 1} or ${expectedLength} digits.\n\nYou entered ${cleanedContent.length} digits.`);
-                return false;
-            }
-            
-            data.content = cleanedContent;
-        }
-        
-        return true;
+
+        const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + svgH + '" viewBox="0 0 ' + size + ' ' + svgH + '">' +
+            '<rect width="' + size + '" height="' + svgH + '" fill="#fff"/>' +
+            rects +
+            '<text x="' + (size / 2) + '" y="' + (margin + barHeight + 24) + '" font-family="monospace" font-size="' + (barHeight * 0.08) + '" text-anchor="middle" fill="#000">' + escapeXml(currentBarcodeData.encodedText) + '</text></svg>';
+
+        const blob = new Blob([svg], { type: 'image/svg+xml' });
+        const link = document.createElement('a');
+        link.download = 'barcode-' + currentBarcodeData.type + '.svg';
+        link.href = URL.createObjectURL(blob);
+        link.click();
+        URL.revokeObjectURL(link.href);
+    });
+
+    function escapeXml(s) {
+        return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
     }
-    
-    function getExpectedLength(type) {
-        const lengths = {
-            'ean13': 12, // JsBarcode can calculate check digit from 12
-            'ean8': 7,
-            'upca': 11,
-            'upce': 6
+
+    function calculateCheckDigit(code) {
+        let sum = 0;
+        for (let i = 0; i < code.length; i++) {
+            sum += parseInt(code[i]) * (i % 2 === 0 ? 1 : 3);
+        }
+        return (10 - (sum % 10)) % 10;
+    }
+
+    function encodeCode39(s) {
+        const code39Map = {
+            '0':'101001101101','1':'110100101011','2':'101100101011','3':'110110010101',
+            '4':'101001101011','5':'110100110101','6':'101100110101','7':'101001011011',
+            '8':'110100101101','9':'101100101101','A':'110101001011','B':'101101001011',
+            'C':'110110100101','D':'101011001011','E':'110101100101','F':'101101100101',
+            'G':'101010011011','H':'110101001101','I':'101101001101','J':'101011001101',
+            'K':'110101010011','L':'101101010011','M':'110110101001','N':'101011010011',
+            'O':'110101101001','P':'101101101001','Q':'101010110011','R':'110101011001',
+            'S':'101101011001','T':'101011011001','U':'110010101011','V':'100110101011',
+            'W':'110011010101','X':'100101101011','Y':'110010110101','Z':'100110110101',
+            '-':'100101011011','.':'110010101101',' ':'100110101101','$':'100100100101',
+            '/':'100100101001','+':'100101001001','%':'101001001001','*':'100101101101'
         };
-        return lengths[type];
+        const upper = s.toUpperCase();
+        let result = [1,0,1,0,0,1,0,1,1,0,1]; // start *
+        for (let c of upper) {
+            const pattern = code39Map[c];
+            if (!pattern) throw new Error('Character "' + c + '" not supported in Code 39');
+            for (let bit of pattern) result.push(parseInt(bit));
+            result.push(0); // intercharacter gap
+        }
+        // end *
+        const endPattern = code39Map['*'];
+        for (let bit of endPattern) result.push(parseInt(bit));
+        result.push(1,0,0,1,0,1,1,0,1);
+        return result;
     }
-    
-    function formatVCard(firstName, lastName, phone, email, company, jobTitle) {
-        let vcard = 'BEGIN:VCARD\nVERSION:3.0\n';
-        
-        if (firstName || lastName) {
-            vcard += `FN:${firstName} ${lastName}\n`;
-            vcard += `N:${lastName};${firstName};;;\n`;
-        }
-        
-        if (company) {
-            vcard += `ORG:${company}\n`;
-        }
-        
-        if (jobTitle) {
-            vcard += `TITLE:${jobTitle}\n`;
-        }
-        
-        if (phone) {
-            vcard += `TEL;TYPE=CELL:${phone}\n`;
-        }
-        
-        if (email) {
-            vcard += `EMAIL;TYPE=WORK:${email}\n`;
-        }
-        
-        vcard += 'END:VCARD';
-        
-        return vcard;
-    }
-    
-    function is2DBarcode(type) {
-        return ['qrcode', 'qrcode-mobile', 'qrcode-event', 'datamatrix', 'datamatrix-mobile', 'datamatrix-event', 'pdf417', 'vcard', 'mecard'].includes(type);
-    }
-    
-    function generate2DBarcode(data) {
-        const size = 500;
-        
-        // Use the QRCode library if available for better quality
-        if (typeof QRCode !== 'undefined' && (currentBarcodeType.includes('qrcode') || currentBarcodeType === 'vcard' || currentBarcodeType === 'mecard')) {
-            const canvas = document.createElement('canvas');
-            QRCode.toCanvas(canvas, data.content, {
-                width: size,
-                margin: 2,
-                color: {
-                    dark: '#000000',
-                    light: '#ffffff'
-                }
-            }, function(error) {
-                if (error) {
-                    console.error('QRCode generation error:', error);
-                    // Fallback to API
-                    const apiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(data.content)}`;
-                    displayBarcode(apiUrl);
-                } else {
-                    const dataUrl = canvas.toDataURL('image/png');
-                    displayBarcode(dataUrl);
-                }
-            });
-        } else {
-            // Fallback to API for QR codes and other 2D formats
-            const apiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(data.content)}`;
-            displayBarcode(apiUrl);
-        }
-    }
-    
-    function generateLinearBarcode(data) {
-        // Guard: if somehow called with a 2D type, redirect to generate2DBarcode
-        if (is2DBarcode(currentBarcodeType)) {
-            generate2DBarcode(data);
-            return;
-        }
-        
-        // Use JsBarcode library for proper barcode generation
-        if (typeof JsBarcode === 'undefined') {
-            console.error('JsBarcode library not loaded');
-            alert('Barcode library not loaded. Please refresh the page.');
-            return;
-        }
-        
-        // Create an img element (JsBarcode works well with img elements)
-        const img = document.createElement('img');
-        
-        // Map our barcode types to JsBarcode format names
-        // Note: JsBarcode format names are case-insensitive for most formats
-        const formatMap = {
-            'code128': 'CODE128',
-            'code39': 'CODE39',
-            'code93': 'CODE128', // CODE93 may not be available in older versions, fallback to CODE128
-            'itf14': 'ITF14',
-            'ean13': 'EAN13',
-            'ean8': 'EAN8',
-            'upca': 'UPC',
-            'upce': 'UPCE',
-            'isbn13': 'EAN13',
-            'isbn10': 'CODE128'
+
+    function encodeCode128(s) {
+        const code128B = {
+            ' ':0,'!':1,'"':2,'#':3,'$':4,'%':5,'&':6,'\'':7,'(':8,')':9,'*':10,'+':11,
+            ',':12,'-':13,'.':14,'/':15,'0':16,'1':17,'2':18,'3':19,'4':20,'5':21,'6':22,
+            '7':23,'8':24,'9':25,':':26,';':27,'<':28,'=':29,'>':30,'?':31,'@':32,'A':33,
+            'B':34,'C':35,'D':36,'E':37,'F':38,'G':39,'H':40,'I':41,'J':42,'K':43,'L':44,
+            'M':45,'N':46,'O':47,'P':48,'Q':49,'R':50,'S':51,'T':52,'U':53,'V':54,'W':55,
+            'X':56,'Y':57,'Z':58,'[':59,'\\':60,']':61,'^':62,'_':63,'`':64,'a':65,'b':66,
+            'c':67,'d':68,'e':69,'f':70,'g':71,'h':72,'i':73,'j':74,'k':75,'l':76,'m':77,
+            'n':78,'o':79,'p':80,'q':81,'r':82,'s':83,'t':84,'u':85,'v':86,'w':87,'x':88,
+            'y':89,'z':90,'{':91,'|':92,'}':93,'~':94
         };
-        
-        const format = formatMap[currentBarcodeType] || 'CODE128';
-        
-        // Validate and prepare data for specific formats
-        let barcodeData = data.content;
-        
-        // For EAN/UPC formats, ensure proper length and numeric only
-        if (['EAN13', 'EAN8', 'UPC', 'UPCE', 'ITF14'].includes(format)) {
-            barcodeData = barcodeData.replace(/\D/g, ''); // Remove non-digits
+        const encTable = [
+            [2,1,2,2,2,2],[2,2,2,1,2,2],[2,2,2,2,2,1],[1,2,1,2,2,3],[1,2,1,3,2,2],
+            [1,3,1,2,2,2],[1,2,2,2,1,3],[1,2,2,3,1,2],[1,3,2,2,1,2],[2,2,1,2,1,3],
+            [2,2,1,3,1,2],[2,3,1,2,1,2],[1,1,2,2,3,2],[1,2,2,1,3,2],[1,2,2,2,3,1],
+            [1,1,3,2,2,2],[1,2,3,1,2,2],[1,2,3,2,2,1],[2,2,3,2,1,1],[2,2,1,1,3,2],
+            [2,2,1,2,3,1],[2,1,3,2,1,2],[2,2,3,1,1,2],[3,1,2,1,3,1],[3,1,1,2,2,2],
+            [3,2,1,1,2,2],[3,2,1,2,2,1],[3,1,2,2,1,2],[3,2,2,1,1,2],[3,2,2,2,1,1],
+            [2,1,2,1,2,3],[2,1,2,3,2,1],[2,3,2,1,2,1],[1,1,1,3,2,3],[1,3,1,1,2,3],
+            [1,3,1,3,2,1],[1,1,2,3,1,3],[1,3,2,1,1,3],[1,3,2,3,1,1],[2,1,1,3,1,3],
+            [2,3,1,1,1,3],[2,3,1,3,1,1],[1,1,2,1,3,3],[1,1,2,3,3,1],[1,3,2,1,3,1],
+            [1,1,3,1,2,3],[1,1,3,3,2,1],[1,3,3,1,2,1],[3,1,3,1,2,1],[2,1,1,3,3,1],
+            [2,3,1,1,3,1],[2,1,3,1,1,3],[2,1,3,3,1,1],[2,1,3,1,3,1],[3,1,1,1,2,3],
+            [3,1,1,3,2,1],[3,3,1,1,2,1],[3,1,2,1,1,3],[3,1,2,3,1,1],[3,3,2,1,1,1],
+            [3,1,4,1,1,1],[2,2,1,4,1,1],[4,3,1,1,1,1],[1,1,1,2,2,4],[1,1,1,4,2,2],
+            [1,2,1,1,2,4],[1,2,1,4,2,1],[1,4,1,1,2,2],[1,4,1,2,2,1],[1,1,2,2,1,4],
+            [1,1,2,4,1,2],[1,2,2,1,1,4],[1,2,2,4,1,1],[1,4,2,1,1,2],[1,4,2,2,1,1],
+            [2,4,1,2,1,1],[2,2,1,1,1,4],[4,1,3,1,1,1],[2,4,1,1,1,2],[1,3,4,1,1,1],
+            [1,1,1,2,4,2],[1,2,1,1,4,2],[1,2,1,2,4,1],[1,1,4,2,1,2],[1,2,4,1,1,2],
+            [1,2,4,2,1,1],[4,1,1,2,1,2],[4,2,1,1,1,2],[4,2,1,2,1,1],[2,1,2,1,4,1],
+            [2,1,4,1,2,1],[4,1,2,1,2,1],[1,1,1,1,4,3],[1,1,1,3,4,1],[1,3,1,1,4,1],
+            [1,1,4,1,1,3],[1,1,4,3,1,1],[4,1,1,1,1,3],[4,1,1,3,1,1],[1,1,3,1,4,1],
+            [1,1,4,1,3,1],[3,1,1,1,4,1],[4,1,1,1,3,1],[2,1,1,4,1,2],[2,1,1,2,1,4],
+            [2,1,1,2,3,2],[2,3,3,1,1,1,2]
+        ];
+        let chars = [];
+        for (let c of s) {
+            if (code128B[c] === undefined) throw new Error('Character "' + c + '" not supported in Code 128');
+            chars.push(code128B[c]);
         }
-        
-        try {
-            // Use JsBarcode with the img element
-            JsBarcode(img, barcodeData, {
-                format: format,
-                width: 3,
-                height: 120,
-                displayValue: true,
-                fontSize: 20,
-                font: 'Arial',
-                fontOptions: 'bold',
-                textAlign: 'center',
-                textPosition: 'bottom',
-                textMargin: 10,
-                margin: 20,
-                background: '#ffffff',
-                lineColor: '#000000'
-            });
-            
-            // The img.src is now a data URL
-            displayBarcode(img.src);
-            
-        } catch (error) {
-            console.error('Barcode generation error:', error);
-            
-            // Provide helpful error messages based on format
-            let helpMessage = '';
-            if (format === 'EAN13') {
-                helpMessage = 'EAN-13 requires exactly 12 or 13 digits.';
-            } else if (format === 'EAN8') {
-                helpMessage = 'EAN-8 requires exactly 7 or 8 digits.';
-            } else if (format === 'UPC') {
-                helpMessage = 'UPC-A requires exactly 11 or 12 digits.';
-            } else if (format === 'UPCE') {
-                helpMessage = 'UPC-E requires 6, 7, or 8 digits.';
-            } else if (format === 'ITF14') {
-                helpMessage = 'ITF-14 requires exactly 13 or 14 digits.';
-            } else if (format === 'CODE39') {
-                helpMessage = 'CODE39 supports: A-Z, 0-9, space, and - . $ / + %';
-            }
-            
-            alert(`Error generating ${format} barcode.\n\n${helpMessage}\n\nError: ${error.message}`);
+        let check = 104; // Start Code B
+        let values = [104];
+        for (let i = 0; i < chars.length; i++) {
+            values.push(chars[i]);
+            check += chars[i] * (i + 1);
         }
-    }
-    
-    function displayBarcode(imageSrc) {
-        const img = document.createElement('img');
-        img.src = imageSrc;
-        img.alt = 'Generated Barcode';
-        img.className = 'barcode-image';
-        
-        img.onload = function() {
-            currentBarcodeImage = img;
-            barcodeDisplay.innerHTML = '';
-            barcodeDisplay.appendChild(img);
-            barcodeDisplay.classList.add('has-content');
-            
-            // Enable control buttons
-            copyBtn.disabled = false;
-            viewBtn.disabled = false;
-            downloadBtn.disabled = false;
-        };
-        
-        img.onerror = function() {
-            alert('Error generating barcode. Please try again.');
-            console.error('Failed to load barcode image');
-        };
-    }
-    
-    function clearBarcode() {
-        barcodeDisplay.innerHTML = '<div class="placeholder-text">Select barcode type and enter data, then click "Generate Barcode" to see your result here.</div>';
-        barcodeDisplay.classList.remove('has-content');
-        
-        // Disable control buttons
-        copyBtn.disabled = true;
-        viewBtn.disabled = true;
-        downloadBtn.disabled = true;
-        
-        currentBarcodeImage = null;
-        currentBarcodeData = '';
-    }
-    
-    function copyBarcode() {
-        if (!currentBarcodeImage) {
-            alert('Please generate a barcode first');
-            return;
+        values.push(check % 103);
+        values.push(106); // Stop
+        let result = [];
+        for (let v of values) {
+            const enc = encTable[v];
+            if (!enc) continue;
+            for (let w of enc) result.push(w);
+            if (v !== values[values.length - 1]) result.push(1);
         }
-        
-        try {
-            // Copy image to clipboard
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            
-            canvas.width = currentBarcodeImage.naturalWidth;
-            canvas.height = currentBarcodeImage.naturalHeight;
-            
-            ctx.drawImage(currentBarcodeImage, 0, 0);
-            
-            canvas.toBlob(function(blob) {
-                const item = new ClipboardItem({ 'image/png': blob });
-                navigator.clipboard.write([item]).then(function() {
-                    // Show success feedback
-                    const originalText = copyBtn.innerHTML;
-                    copyBtn.innerHTML = '<svg class="control-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Copied!';
-                    setTimeout(() => {
-                        copyBtn.innerHTML = originalText;
-                    }, 2000);
-                }).catch(function(error) {
-                    console.error('Copy failed:', error);
-                    alert('Failed to copy barcode. Please try downloading instead.');
-                });
-            });
-        } catch (error) {
-            console.error('Copy error:', error);
-            alert('Failed to copy barcode. Please try downloading instead.');
-        }
+        return result;
     }
-    
-    function viewFullscreen() {
-        if (!currentBarcodeImage) {
-            alert('Please generate a barcode first');
-            return;
+
+    function encodeEAN13(s) {
+        const parity = [
+            [1,1,1,1,1,1],[1,1,0,1,0,0],[1,1,0,0,1,0],[1,1,0,0,0,1],[1,0,1,1,0,0],
+            [1,0,0,1,1,0],[1,0,0,0,1,1],[1,0,1,0,0,1],[1,0,1,0,1,0],[1,0,0,1,0,1]
+        ];
+        const Lcodes = [
+            [3,2,1,1],[2,2,2,1],[2,1,2,2],[1,4,1,1],[1,1,3,2],[1,2,3,1],[1,1,1,4],[1,3,1,2],[1,2,1,3],[3,1,1,2]
+        ];
+        const Rcodes = [
+            [1,1,2,3],[1,2,2,2],[2,2,1,2],[1,1,4,1],[2,3,1,1],[1,2,1,3],[4,1,1,1],[2,1,3,1],[3,1,2,1],[2,1,1,3]
+        ];
+        let digits = s.replace(/\D/g,'').split('').map(Number);
+        if (digits.length < 12) throw new Error('EAN-13 requires at least 12 digits');
+        digits = digits.slice(0,12);
+        const check = calculateCheckDigit(digits.join(''));
+        digits.push(check);
+        let result = [1,1,1]; // start guard
+        const p = parity[digits[0]];
+        for (let i = 1; i <= 6; i++) {
+            const d = digits[i];
+            let enc = p[i - 1] ? Rcodes[d] : Lcodes[d];
+            for (let w of enc) result.push(w);
+            if (i < 6) result.push(0,1);
         }
-        
-        fullscreenImage.src = currentBarcodeImage.src;
-        fullscreenModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-    
-    function closeFullscreen() {
-        fullscreenModal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-    
-    function downloadBarcode() {
-        if (!currentBarcodeImage) {
-            alert('Please generate a barcode first');
-            return;
+        result.push(1,1,1,1,1); // middle guard
+        for (let i = 7; i <= 12; i++) {
+            const enc = Rcodes[digits[i]];
+            for (let w of enc) result.push(w);
+            if (i < 12) result.push(0,1);
         }
-        
-        try {
-            const link = document.createElement('a');
-            link.href = currentBarcodeImage.src;
-            
-            // Generate filename based on type and content
-            const timestamp = new Date().toISOString().slice(0, 10);
-            const sanitizedContent = currentBarcodeData.substring(0, 20).replace(/[^a-zA-Z0-9]/g, '_');
-            link.download = `${currentBarcodeType}_${sanitizedContent}_${timestamp}.png`;
-            
-            link.style.display = 'none';
-            document.body.appendChild(link);
-            link.click();
-            
-            setTimeout(() => {
-                document.body.removeChild(link);
-            }, 100);
-        } catch (error) {
-            console.error('Download error:', error);
-            alert('Error downloading barcode. Please try again.');
-        }
+        result.push(1,1,1); // end guard
+        return result;
     }
-    
-    // Public API
-    window.barcodeGenerator = {
-        generateBarcode,
-        copyBarcode,
-        viewFullscreen,
-        downloadBarcode
-    };
+
+    function formatEAN13(s) {
+        let d = s.replace(/\D/g,'').slice(0,12);
+        if (d.length < 12) d = d.padEnd(12,'0');
+        d += calculateCheckDigit(d);
+        return d;
+    }
+
+    function encodeEAN8(s) {
+        const Lcodes = [
+            [3,2,1,1],[2,2,2,1],[2,1,2,2],[1,4,1,1],[1,1,3,2],[1,2,3,1],[1,1,1,4],[1,3,1,2],[1,2,1,3],[3,1,1,2]
+        ];
+        const Rcodes = [
+            [1,1,2,3],[1,2,2,2],[2,2,1,2],[1,1,4,1],[2,3,1,1],[1,2,1,3],[4,1,1,1],[2,1,3,1],[3,1,2,1],[2,1,1,3]
+        ];
+        let digits = s.replace(/\D/g,'').split('').map(Number);
+        if (digits.length < 7) throw new Error('EAN-8 requires at least 7 digits');
+        digits = digits.slice(0,7);
+        const check = calculateCheckDigit(digits.join(''));
+        digits.push(check);
+        let result = [1,1,1];
+        for (let i = 0; i < 4; i++) {
+            const enc = Lcodes[digits[i]];
+            for (let w of enc) result.push(w);
+            if (i < 3) result.push(0,1);
+        }
+        result.push(1,1,1,1,1);
+        for (let i = 4; i < 8; i++) {
+            const enc = Rcodes[digits[i]];
+            for (let w of enc) result.push(w);
+            if (i < 7) result.push(0,1);
+        }
+        result.push(1,1,1);
+        return result;
+    }
+
+    function formatEAN8(s) {
+        let d = s.replace(/\D/g,'').slice(0,7);
+        if (d.length < 7) d = d.padEnd(7,'0');
+        d += calculateCheckDigit(d);
+        return d;
+    }
+
+    function encodeUPCA(s) {
+        const Lcodes = [
+            [3,2,1,1],[2,2,2,1],[2,1,2,2],[1,4,1,1],[1,1,3,2],[1,2,3,1],[1,1,1,4],[1,3,1,2],[1,2,1,3],[3,1,1,2]
+        ];
+        const Rcodes = [
+            [1,1,2,3],[1,2,2,2],[2,2,1,2],[1,1,4,1],[2,3,1,1],[1,2,1,3],[4,1,1,1],[2,1,3,1],[3,1,2,1],[2,1,1,3]
+        ];
+        let digits = s.replace(/\D/g,'').split('').map(Number);
+        if (digits.length < 11) throw new Error('UPC-A requires at least 11 digits');
+        digits = digits.slice(0,11);
+        const check = calculateCheckDigit(digits.join(''));
+        digits.push(check);
+        let result = [1,1,1];
+        for (let i = 0; i < 6; i++) {
+            const enc = Lcodes[digits[i]];
+            for (let w of enc) result.push(w);
+            if (i < 5) result.push(0,1);
+        }
+        result.push(1,1,1,1,1);
+        for (let i = 6; i < 12; i++) {
+            const enc = Rcodes[digits[i]];
+            for (let w of enc) result.push(w);
+            if (i < 11) result.push(0,1);
+        }
+        result.push(1,1,1);
+        return result;
+    }
+
+    function formatUPCA(s) {
+        let d = s.replace(/\D/g,'').slice(0,11);
+        if (d.length < 11) d = d.padEnd(11,'0');
+        d += calculateCheckDigit(d);
+        return d;
+    }
+
+    function encodeUPCE(s) {
+        const UPC_E_PATTERNS = [
+            [3,2,1,1],[2,2,2,1],[2,1,2,2],[1,4,1,1],[1,1,3,2],[1,2,3,1],[1,1,1,4],[1,3,1,2],[1,2,1,3],[3,1,1,2]
+        ];
+        let digits = s.replace(/\D/g,'').split('').map(Number);
+        if (digits.length < 6) throw new Error('UPC-E requires at least 6 digits');
+        digits = digits.slice(0,6);
+        let result = [1,1,1];
+        for (let i = 0; i < 6; i++) {
+            const enc = UPC_E_PATTERNS[digits[i]];
+            for (let w of enc) result.push(w);
+            if (i < 5) result.push(0,1);
+        }
+        result.push(1,1,1,1,1,1);
+        return result;
+    }
+
+    function formatUPCE(s) {
+        return s.replace(/\D/g,'').slice(0,6).padEnd(6,'0');
+    }
 });

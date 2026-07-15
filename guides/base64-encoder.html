@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Encode/Decode Base64: Complete Guide 2026 | GoToolly</title>
+    <meta name="description" content="Master Base64 encoding and decoding. Learn to convert binary data to text, embed images in HTML, transfer data safely, and work with Base64 in any context.">
+    <meta name="keywords" content="base64 encoder, base64 decoder, base64 encode, base64 decode, base64 guide, encode base64 online, binary to text, data uri">
+    <link rel="canonical" href="https://gotoolly.com/guides/base64-encoder">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/base64-encoder">
+    <meta property="og:title" content="How to Encode/Decode Base64: Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Master Base64 encoding and decoding. Learn to convert binary data to text, embed images in HTML, transfer data safely, and work with Base64 in any context.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/base64-encoder">
+    <meta name="twitter:title" content="How to Encode/Decode Base64: Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Master Base64 encoding and decoding. Learn to convert binary data to text, embed images in HTML, transfer data safely, and work with Base64 in any context.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+    
+    <style>
+        .page-header { background: linear-gradient(135deg, #ec4899 0%, #db2777 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><text x="10" y="30" font-family="monospace" font-size="10">BASE64</text><text x="35" y="55" font-family="monospace" font-size="10">ENCODE</text><text x="20" y="80" font-family="monospace" font-size="10">DECODE</text></svg>'); background-size: 300px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #ec4899; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(236, 72, 153, 0.1); border-left: 4px solid #ec4899; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .use-case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .use-case-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        .code-example { background: linear-gradient(135deg, rgba(236, 72, 153, 0.05) 0%, rgba(219, 39, 119, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(236, 72, 153, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .use-case-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Encode/Decode Base64: Complete Guide 2026", "description": "Master Base64 encoding and decoding. Learn to convert binary data to text, embed images in HTML, transfer data safely, and work with Base64 in any context.", "url": "https://gotoolly.com/guides/base64-encoder", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/base64-encoder" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "Base64 Encoder", "item": "https://gotoolly.com/guides/base64-encoder"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Base64 encoding?","acceptedAnswer":{"@type":"Answer","text":"Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format. It uses 64 characters (A-Z, a-z, 0-9, +, /) and is commonly used for embedding binary data in text-based formats like HTML, JSON, and XML."}},{"@type":"Question","name":"Why does Base64 make data larger?","acceptedAnswer":{"@type":"Answer","text":"Base64 encoding increases data size by approximately 33%. This is because every 3 bytes of binary data are encoded as 4 ASCII characters. The overhead is the trade-off for making binary data safely transportable through text-only systems."}},{"@type":"Question","name":"Can Base64 be used for encryption?","acceptedAnswer":{"@type":"Answer","text":"No, Base64 is an encoding scheme, not encryption. It does not provide any security or confidentiality. Anyone can decode Base64-encoded data. For sensitive data, use proper encryption like AES or RSA before encoding."}},{"@type":"Question","name":"What are common uses of Base64?","acceptedAnswer":{"@type":"Answer","text":"Common uses include embedding images in HTML/CSS via data URIs, encoding binary attachments in email (MIME), storing binary data in JSON, transmitting data in URLs, and encoding credentials in HTTP Basic Authentication headers."}},{"@type":"Question","name":"Is my data private when using this tool?","acceptedAnswer":{"@type":"Answer","text":"Yes, all encoding and decoding happens entirely in your browser. No data is sent to any server, making it completely safe for processing sensitive or confidential content, including images and documents."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Encode/Decode Base64: Complete Guide 2026</h1>
+                <p class="page-description">
+                    Understand Base64 encoding from the ground up. Learn to convert binary data to text, create data URIs for images, transfer data safely, and decode Base64 back to its original form.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/base64-encoder" class="btn btn-primary btn-lg">Encode/Decode Base64</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  Instant conversion  File support  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>What is Base64 Encoding?</h2>
+                    <p>
+                        Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format. It works by converting every 3 bytes of binary data (24 bits) into 4 ASCII characters using a 64-character alphabet consisting of A-Z, a-z, 0-9, +, and /. This makes binary data safely transportable through systems that only handle text, such as email, JSON, XML, and URLs.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Step-by-Step: Using the Base64 Encoder/Decoder</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Select Mode and Input Type</h3>
+                                <p>Open the <a href="../tools/base64-encoder">Base64 Encoder/Decoder</a> and choose Encode or Decode mode. You can input text directly, upload a file (images, documents, etc.), or paste Base64 strings for decoding.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Enter or Upload Your Data</h3>
+                                <p>Type or paste text content, or use the file upload to select a binary file. The tool processes images, PDFs, ZIP files, and any other binary format. For encoding files, the tool converts the entire binary content to a Base64 string.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>View the Result</h3>
+                                <p>The encoded or decoded result appears instantly. For file encoding, the tool also generates a data URI that you can use directly in HTML <code>src</code> attributes or CSS <code>url()</code> values.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Copy, Download, or Use as Data URI</h3>
+                                <p>Copy the result to your clipboard, download the decoded binary as a file, or use the generated data URI for embedding images and other binary assets directly in web pages.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Common Base64 Use Cases</h2>
+                    <div class="use-case-grid">
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128247;</div>
+                            <h4 style="margin: var(--space-2) 0;">Data URIs for Images</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Embed small images directly in HTML/CSS using data URIs, reducing HTTP requests and improving page load speed for icons and small graphics.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#9993;</div>
+                            <h4 style="margin: var(--space-2) 0;">Email Attachments (MIME)</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Email systems use Base64 to encode binary attachments into text for safe transmission through SMTP servers that only handle ASCII text.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128220;</div>
+                            <h4 style="margin: var(--space-2) 0;">JSON & API Data</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Store and transmit binary data within JSON payloads in REST and GraphQL APIs, enabling file uploads and binary data exchange in text-based APIs.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128274;</div>
+                            <h4 style="margin: var(--space-2) 0;">Authentication</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">HTTP Basic Authentication uses Base64 to encode username:password pairs (though this is not secure on its own and should use HTTPS).</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Base64 Encoding Explained with Examples</h2>
+                    <div class="code-example">
+                        <strong>Example 1: Encoding Text</strong>
+                        Input: "Hello"
+                        Encoded: SGVsbG8=
+
+                        <strong>Example 2: Data URI for an Image</strong>
+                        &lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUg..." alt="Embedded Image"&gt;
+
+                        <strong>Example 3: Decoding</strong>
+                        Input: UHJpdmFjeSBpcyBpbXBvcnRhbnQ=
+                        Decoded: "Privacy is important"
+                    </div>
+
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Not for encryption</strong> - Base64 is encoding, not encryption. Never use it to protect sensitive data. Always use proper encryption algorithms like AES for confidentiality.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Watch for padding</strong> - Base64 strings end with <code>=</code> or <code>==</code> padding characters. These indicate the original data length wasn't a multiple of 3 bytes. Not all Base64 implementations use padding consistently.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Size consideration</strong> - Base64 increases data size by about 33%. For large files, consider whether the size increase is acceptable or if alternative transmission methods would be more efficient.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Base64 vs Other Encoding Schemes</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr><th>Scheme</th><th>Alphabet Size</th><th>Overhead</th><th>Best For</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Base64</strong></td><td>64 characters</td><td>~33%</td><td>Binary data in text, email attachments, data URIs</td></tr>
+                            <tr><td><strong>Base64 URL</strong></td><td>64 characters</td><td>~33%</td><td>URLs and filenames (uses - and _ instead of + and /)</td></tr>
+                            <tr><td><strong>Base32</strong></td><td>32 characters</td><td>~60%</td><td>Case-insensitive contexts, human-readable codes</td></tr>
+                            <tr><td><strong>Hex</strong></td><td>16 characters</td><td>100%</td><td>Debugging, low-level programming, hashes</td></tr>
+                            <tr><td><strong>Ascii85</strong></td><td>85 characters</td><td>~25%</td><td>Adobe PostScript, binary data in text</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>Best Practices for Base64</h2>
+                    <ul>
+                        <li><strong>Use Base64 URL-safe variant for web:</strong> When encoding for URLs or filenames, use URL-safe Base64 which replaces <code>+</code> with <code>-</code> and <code>/</code> with <code>_</code>.</li>
+                        <li><strong>Avoid for large files in HTML:</strong> Embedding large Base64 strings in HTML blocks initial rendering. Use Base64 only for small assets (under 10KB).</li>
+                        <li><strong>Always validate Base64 strings:</strong> When decoding, ensure the string is valid Base64 format to avoid errors. Our tool handles this automatically.</li>
+                        <li><strong>Consider browser caching:</strong> Base64-encoded images in HTML are not cached separately. External image files benefit from browser caching and CDN delivery.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is Base64 encoding?</h3>
+                        <p>Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format. It uses 64 characters (A-Z, a-z, 0-9, +, /) and is commonly used for embedding binary data in text-based formats like HTML, JSON, and XML.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Why does Base64 make data larger?</h3>
+                        <p>Base64 encoding increases data size by approximately 33%. This is because every 3 bytes of binary data are encoded as 4 ASCII characters. The overhead is the trade-off for making binary data safely transportable through text-only systems.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can Base64 be used for encryption?</h3>
+                        <p>No, Base64 is an encoding scheme, not encryption. It does not provide any security or confidentiality. Anyone can decode Base64-encoded data. For sensitive data, use proper encryption like AES or RSA before encoding.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What are common uses of Base64?</h3>
+                        <p>Common uses include embedding images in HTML/CSS via data URIs, encoding binary attachments in email (MIME), storing binary data in JSON, transmitting data in URLs, and encoding credentials in HTTP Basic Authentication headers.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is my data private when using this tool?</h3>
+                        <p>Yes, all encoding and decoding happens entirely in your browser. No data is sent to any server, making it completely safe for processing sensitive or confidential content, including images and documents.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Complete Encoding & Security Suite</h2>
+                    <p>Enhance your data processing workflow with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/html-encoder">HTML Encoder/Decoder</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Encode and decode HTML entities for safe web display</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/url-encoder">URL Encoder/Decoder</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Encode and decode URLs and query parameters</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/url-slug-generator">URL Slug Generator</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Generate clean, SEO-friendly URL slugs</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #db2777 0%, #ec4899 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Encode and Decode Base64 Instantly</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Convert binary data to Base64 strings and back. Supports text, images, and files. Fast, private, and free. No account required.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/base64-encoder" class="btn btn-primary btn-lg">Encode/Decode Now</a>
+                    <a href="../tools/html-encoder" class="btn btn-secondary btn-lg">HTML Encoder</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Local processing  File upload support  Data URIs  Instant results  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Encoding Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/base64-encoder">Base64 Encoder</a></li>
+                        <li><a href="../tools/html-encoder">HTML Encoder</a></li>
+                        <li><a href="../tools/url-encoder">URL Encoder</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

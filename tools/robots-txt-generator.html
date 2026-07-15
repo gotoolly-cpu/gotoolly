@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robots.txt Generator - Create robots.txt Files | GoToolly</title>
+    <meta name="description" content="Generate robots.txt files for your website. Set allow/disallow rules, sitemap URLs, crawl delays, and user-agent directives easily.">
+    <meta name="keywords" content="robots.txt generator, robots.txt creator, robots.txt tool, seo robots, crawl rules, sitemap directive, robots file">
+    <link rel="canonical" href="https://gotoolly.com/tools/robots-txt-generator">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/robots-txt-generator">
+    <meta property="og:title" content="Robots.txt Generator - Create robots.txt Files | GoToolly">
+    <meta property="og:description" content="Generate robots.txt files for your website. Set allow/disallow rules, sitemap URLs, crawl delays, and user-agent directives easily.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/robots-txt-generator">
+    <meta name="twitter:title" content="Robots.txt Generator - Create robots.txt Files | GoToolly">
+    <meta name="twitter:description" content="Generate robots.txt files for your website. Set allow/disallow rules, sitemap URLs, crawl delays, and user-agent directives easily.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Robots.txt Generator","url":"https://gotoolly.com/tools/robots-txt-generator","description":"Generate robots.txt files for your website with allow/disallow rules, sitemap URLs, and crawl delays.","applicationCategory":"SEOApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Download as file","Multiple user-agents"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Robots.txt Generator"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a robots.txt file?","acceptedAnswer":{"@type":"Answer","text":"A robots.txt file tells search engine crawlers which pages or directories they can or cannot access on your website."}},{"@type":"Question","name":"How do I use the generated robots.txt?","acceptedAnswer":{"@type":"Answer","text":"Copy the generated text and place it in the root directory of your website (e.g., https://example.com/robots.txt)."}},{"@type":"Question","name":"Is my data stored anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens in your browser. Your data never leaves your device."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.tool-form{display:grid;gap:var(--space-4);margin-bottom:var(--space-4)}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)}.form-group{display:flex;flex-direction:column;gap:var(--space-2)}.form-group label{font-weight:600;font-size:var(--text-sm)}.form-group input,.form-group select{width:100%;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-size:var(--text-sm);background:var(--color-surface);color:var(--color-text)}.form-group input:focus,.form-group select:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.rules-container{border:1px solid var(--color-border);border-radius:8px;padding:var(--space-3);background:var(--color-surface)}.rule-row{display:grid;grid-template-columns:120px 1fr auto;gap:var(--space-2);align-items:center;margin-bottom:var(--space-2)}.rule-row select,.rule-row input{padding:var(--space-2);border:1px solid var(--color-border);border-radius:6px;font-size:var(--text-sm);background:#fff;color:var(--color-text)}.remove-rule{background:none;border:none;color:#f38ba8;cursor:pointer;font-size:var(--text-lg);padding:4px 8px}.add-rule{display:inline-flex;align-items:center;gap:var(--space-2);background:none;border:1px dashed var(--color-border);border-radius:8px;padding:var(--space-2) var(--space-3);color:var(--color-primary);cursor:pointer;font-size:var(--text-sm)}.add-rule:hover{border-color:var(--color-primary)}.code-output{border:1px solid var(--color-border);border-radius:12px;overflow:auto;max-height:400px;background:#1e1e2e;padding:var(--space-3);font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);color:#cdd6f4;white-space:pre-wrap;word-break:break-word}@media(max-width:768px){.form-row{grid-template-columns:1fr}.rule-row{grid-template-columns:1fr;gap:var(--space-2)}}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="../about" class="nav-link">About</a><a href="../contact" class="nav-link">Contact</a></nav></div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Robots.txt Generator</h1>
+                <p class="page-description">Generate a complete robots.txt file for your website. Control search engine crawling with allow/disallow rules, sitemap URLs, and crawl delay settings.</p>
+                <p style="margin-top:var(--space-3);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No sign-up &bull; No server uploads &bull; 100% browser-based</p>
+            </div>
+
+            <div class="tool-form">
+                <div class="form-group">
+                    <label for="user-agent">User-Agent</label>
+                    <select id="user-agent">
+                        <option value="*">All robots (*)</option>
+                        <option value="Googlebot">Googlebot</option>
+                        <option value="Bingbot">Bingbot</option>
+                        <option value="Slurp">Yahoo Slurp</option>
+                        <option value="DuckDuckBot">DuckDuckBot</option>
+                        <option value="Baiduspider">Baiduspider</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Crawl Rules</label>
+                    <div class="rules-container" id="rules-container">
+                        <div class="rule-row" data-idx="0">
+                            <select class="rule-type"><option value="disallow">Disallow</option><option value="allow">Allow</option></select>
+                            <input type="text" class="rule-path" placeholder="/private/">
+                            <button class="remove-rule" title="Remove rule">&times;</button>
+                        </div>
+                    </div>
+                    <button class="add-rule" id="add-rule" type="button">+ Add Rule</button>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="sitemap-url">Sitemap URL</label>
+                        <input type="url" id="sitemap-url" placeholder="https://example.com/sitemap.xml">
+                    </div>
+                    <div class="form-group">
+                        <label for="crawl-delay">Crawl Delay (seconds)</label>
+                        <input type="number" id="crawl-delay" placeholder="10" min="1" max="30">
+                    </div>
+                </div>
+            </div>
+
+            <div style="display:flex;gap:var(--space-2);margin-bottom:var(--space-4);flex-wrap:wrap">
+                <button id="generate-btn" class="btn btn-primary btn-lg">Generate robots.txt</button>
+                <button id="copy-btn" class="btn btn-outline btn-lg">Copy to Clipboard</button>
+                <button id="download-btn" class="btn btn-outline btn-lg">Download File</button>
+            </div>
+
+            <div id="output" class="code-output">
+                <div style="color:var(--color-text-light);text-align:center;padding:var(--space-8)">Generated robots.txt will appear here</div>
+            </div>
+
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>Robots.txt Validator</h3><p>Validate and analyze your robots.txt file for errors.</p><div class="card-footer"><a href="./robots-txt-validator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>XML Sitemap Generator</h3><p>Generate XML sitemaps for your website's pages.</p><div class="card-footer"><a href="./xml-sitemap-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Meta Tag Generator</h3><p>Create SEO meta tags for your webpages.</p><div class="card-footer"><a href="./meta-tag-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>SERP Preview</h3><p>Preview how your page appears in Google search results.</p><div class="card-footer"><a href="./serp-preview" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+            </section>
+
+            <section class="content-section" style="margin-top:var(--space-4)">
+                <div class="section-header"><h2>Privacy Notice</h2></div>
+                <p style="color:var(--color-text-light);font-size:var(--text-sm)">All processing happens entirely in your browser. Your data is never uploaded to any server. Once you close this page, all data is gone.</p>
+            </section>
+
+            <p style="margin-top: var(--space-4); text-align: center;">
+                <a href="../guides/robots-txt-generator" style="color: var(--color-primary);">Read Guide: How to Create an Effective robots.txt File <i class="fas fa-arrow-right"></i></a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools/qr-code-generator">QR Code Generator</a></li><li><a href="/tools/password-generator">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+
+    <script defer src="../assets/js/main.min.js"></script>
+    <script>
+    (function(){
+        var container=document.getElementById('rules-container'),output=document.getElementById('output');
+
+        document.getElementById('add-rule').addEventListener('click',function(){
+            var row=document.createElement('div');
+            row.className='rule-row';
+            row.innerHTML='<select class="rule-type"><option value="disallow">Disallow</option><option value="allow">Allow</option></select><input type="text" class="rule-path" placeholder="/private/"><button class="remove-rule" title="Remove rule">&times;</button>';
+            container.appendChild(row);
+        });
+
+        container.addEventListener('click',function(e){
+            if(e.target.classList.contains('remove-rule')){
+                var rows=container.querySelectorAll('.rule-row');
+                if(rows.length>1)e.target.closest('.rule-row').remove();
+            }
+        });
+
+        document.getElementById('generate-btn').addEventListener('click',function(){
+            var ua=document.getElementById('user-agent').value;
+            var sitemap=document.getElementById('sitemap-url').value.trim();
+            var delay=document.getElementById('crawl-delay').value;
+            var lines=['# robots.txt generated by GoToolly',''];
+
+            lines.push('User-agent: '+ua);
+            var rules=container.querySelectorAll('.rule-row');
+            for(var i=0;i<rules.length;i++){
+                var type=rules[i].querySelector('.rule-type').value;
+                var path=rules[i].querySelector('.rule-path').value.trim();
+                if(path){
+                    lines.push(type.charAt(0).toUpperCase()+type.slice(1)+': '+path);
+                }
+            }
+            if(delay&&parseInt(delay)>0)lines.push('Crawl-delay: '+delay);
+            lines.push('');
+            if(sitemap)lines.push('Sitemap: '+sitemap);
+
+            output.textContent=lines.join('\n');
+        });
+
+        document.getElementById('copy-btn').addEventListener('click',function(){
+            var text=output.textContent||'';
+            if(!text||text.indexOf('will appear')>-1)return;
+            navigator.clipboard.writeText(text).then(function(){var b=document.getElementById('copy-btn');b.textContent='Copied!';setTimeout(function(){b.textContent='Copy to Clipboard';},2000);});
+        });
+
+        document.getElementById('download-btn').addEventListener('click',function(){
+            var text=output.textContent||'';
+            if(!text||text.indexOf('will appear')>-1)return;
+            var blob=new Blob([text],{type:'text/plain'});
+            var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='robots.txt';a.click();URL.revokeObjectURL(a.href);
+        });
+    })();
+    </script>
+</body>
+</html>

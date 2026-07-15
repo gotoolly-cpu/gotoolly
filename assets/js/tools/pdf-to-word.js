@@ -233,6 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var url = URL.createObjectURL(blob);
             downloadBtn.href = url;
             downloadBtn.download = 'document.docx';
+            downloadBtn.onclick = function() { setTimeout(function() { URL.revokeObjectURL(url); }, 100); };
 
             resultPages.textContent = pages.length + ' page' + (pages.length !== 1 ? 's' : '');
             resultSize.textContent = formatSize(blob.size);

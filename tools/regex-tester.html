@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Tester - Test Regular Expressions Online | GoToolly</title>
+    <meta name="description" content="Test regular expressions in real time. See matches highlighted in your text with match details. Free, private, browser-based tool.">
+    <meta name="keywords" content="regex tester, regular expression tester, regex test, regex match, regex pattern tester, regex flags, regex validator">
+    <link rel="canonical" href="https://gotoolly.com/tools/regex-tester">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/regex-tester">
+    <meta property="og:title" content="Regex Tester - Test Regular Expressions Online | GoToolly">
+    <meta property="og:description" content="Test regular expressions in real time. See matches highlighted in your text with match details.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/regex-tester">
+    <meta name="twitter:title" content="Regex Tester - Test Regular Expressions Online | GoToolly">
+    <meta name="twitter:description" content="Test regular expressions in real time. See matches highlighted in your text with match details.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Regex Tester","url":"https://gotoolly.com/tools/regex-tester","description":"Test regular expressions in real time. See matches highlighted in your text with match details.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Live matching","Highlight matches","Match details","Flags support"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Regex Tester"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the regex tester work?","acceptedAnswer":{"@type":"Answer","text":"Type your regular expression pattern and test text. Matches are highlighted in real time. You can set flags like global, case-insensitive, multiline, dotall, and unicode."}},{"@type":"Question","name":"What regex flags are supported?","acceptedAnswer":{"@type":"Answer","text":"The tool supports g (global), i (case-insensitive), m (multiline), s (dotall), and u (unicode) flags. Toggle them on or off to see how they affect matching."}},{"@type":"Question","name":"Can I see details about each match?","acceptedAnswer":{"@type":"Answer","text":"Yes. Below the test text, you can see a list of all matches with their position (index) and captured groups. The match count is also displayed."}},{"@type":"Question","name":"Is my text uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens entirely in your browser. Your text never leaves your device."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.regex-inputs{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-bottom:var(--space-3)}.regex-field{width:100%;padding:var(--space-2) var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);background:var(--color-surface);color:var(--color-text)}.regex-field:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.regex-flags{display:flex;gap:var(--space-2);margin-bottom:var(--space-3);flex-wrap:wrap}.regex-flags label{display:flex;align-items:center;gap:4px;font-size:var(--text-sm);cursor:pointer;padding:4px 10px;border:1px solid var(--color-border);border-radius:6px;transition:all .2s}.regex-flags label:has(input:checked){border-color:var(--color-primary);background:rgba(99,102,241,.08)}.regex-textarea{width:100%;min-height:200px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text)}.regex-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.regex-highlight{width:100%;min-height:200px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);background:var(--color-surface);overflow-y:auto;white-space:pre-wrap;word-break:break-word;line-height:1.6}.regex-highlight mark{background:#fde68a;color:var(--color-text);border-radius:2px;padding:1px 0}.regex-error{color:#dc2626;font-size:var(--text-sm);margin-top:var(--space-1)}.match-details{margin-top:var(--space-3)}.match-details table{width:100%;border-collapse:collapse;font-size:var(--text-xs);font-family:'JetBrains Mono',monospace}.match-details th,.match-details td{padding:6px 10px;border:1px solid var(--color-border);text-align:left}.match-details th{background:var(--color-bg);font-weight:600}.match-row:nth-child(even){background:var(--color-bg)}.match-count{font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-2)}.regex-pattern-wrapper{position:relative}.regex-slash{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--color-text-light);font-family:'JetBrains Mono',monospace;pointer-events:none}.regex-field{padding-left:24px}@media(max-width:768px){.regex-inputs{grid-template-columns:1fr}}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/tools" class="nav-link active">Tools</a>
+                <a href="/guides" class="nav-link">Guides</a>
+                <a href="../about" class="nav-link">About</a>
+                <a href="../contact" class="nav-link">Contact</a>
+            </nav></div>
+        </div>
+    </header>
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Regex Tester</h1>
+                <p class="page-description">Test regular expressions in real time. Your text is processed entirely inside your browser. See matches highlighted and review match details.</p>
+            </div>
+            <div class="tool-layout">
+                <div class="tool-interface">
+                    <div class="tool-header">
+                        <h2>Test Your Regex Pattern</h2>
+                        <p>Enter a regex pattern, set flags, and see matches highlighted in your test text</p>
+                    </div>
+                    <div class="regex-inputs">
+                        <div>
+                            <label for="pattern"><i class="fas fa-code" style="color:var(--color-primary);margin-right:6px"></i> Regex Pattern</label>
+                            <div style="position:relative"><input id="pattern" class="regex-field" type="text" placeholder="[a-z]+" style="padding-left:24px"><span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--color-text-light);font-family:'JetBrains Mono',monospace;pointer-events:none">/</span></div>
+                        </div>
+                        <div>
+                            <label><i class="fas fa-flag" style="color:#8b5cf6;margin-right:6px"></i> Flags</label>
+                            <div class="regex-flags" style="margin-bottom:0">
+                                <label><input type="checkbox" id="flag-g" checked> g</label>
+                                <label><input type="checkbox" id="flag-i"> i</label>
+                                <label><input type="checkbox" id="flag-m"> m</label>
+                                <label><input type="checkbox" id="flag-s"> s</label>
+                                <label><input type="checkbox" id="flag-u"> u</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="regex-error" class="regex-error" style="display:none"></div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+                        <div>
+                            <label for="test-text"><i class="fas fa-file-alt" style="color:var(--color-primary);margin-right:6px"></i> Test Text</label>
+                            <textarea id="test-text" class="regex-textarea" placeholder="Enter test text here..."></textarea>
+                        </div>
+                        <div>
+                            <label for="highlighted"><i class="fas fa-highlighter" style="color:#8b5cf6;margin-right:6px"></i> Matches</label>
+                            <div id="highlighted" class="regex-highlight"></div>
+                        </div>
+                    </div>
+                    <div id="match-area" class="match-details" style="display:none">
+                        <div class="match-count" id="match-count">0 matches</div>
+                        <div id="match-table-wrapper"></div>
+                    </div>
+                </div>
+                <div class="tool-sidebar">
+                    <div class="card"><h3>How It Works</h3><ol><li>Enter a regex pattern (without delimiters)</li><li>Toggle flags: g (global), i (case-insensitive), m (multiline), s (dotall), u (unicode)</li><li>Type or paste test text and see matches highlighted</li><li>Review match details below the text</li></ol></div>
+                    <div class="card"><h3>Common Patterns</h3><ul><li><code>\d+</code> – Digits</li><li><code>\w+</code> – Word characters</li><li><code>[a-zA-Z]+</code> – Letters only</li><li><code>\bword\b</code> – Whole word</li><li><code>^start</code> – Start of line</li><li><code>end$</code> – End of line</li></ul></div>
+                </div>
+            </div>
+            <section class="content-section">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>JSON Formatter</h3><p>Format, validate, and prettify JSON data.</p><div class="card-footer"><a href="./json-formatter" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>URL Encoder / Decoder</h3><p>Encode and decode URLs for web use.</p><div class="card-footer"><a href="./url-encoder" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Text Cleaner</h3><p>Remove extra spaces, line breaks, and formatting issues.</p><div class="card-footer"><a href="./text-cleaner" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+            </section>
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
+                <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-3)">
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">How does the regex tester work?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Type your regular expression pattern and test text. Matches are highlighted in real time. You can set flags like global, case-insensitive, multiline, dotall, and unicode.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What regex flags are supported?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">The tool supports g (global), i (case-insensitive), m (multiline), s (dotall), and u (unicode) flags. Toggle them on or off to see how they affect matching.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Can I see details about each match?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Yes. Below the test text, you can see a list of all matches with their position (index) and captured groups. The match count is also displayed.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Is my text uploaded to a server?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">No. All processing happens entirely in your browser. Your text never leaves your device.</p></div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+    <script defer src="../assets/js/main.min.js"></script>
+    <script defer src="../assets/js/tools/regex-tester.min.js"></script>
+</body>
+</html>

@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         el.className = 'notification' + (isError ? ' error' : '');
         el.textContent = message;
         document.body.appendChild(el);
-        setTimeout(function() { el.remove(); }, 3500);
+        setTimeout(function() { el.remove(); }, 4000);
     }
 
     function formatFileSize(bytes) {
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     applyBtn.addEventListener('click', function() {
         if (!currentFile) return;
-        progressSection.style.display = '';
+        progressSection.style.display = 'block';
         progressSection.classList.add('show');
         applyBtn.disabled = true;
         progressText.textContent = 'Removing metadata...';
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
         img.onload = function() {
             progressFill.style.width = '60%';
             progressPercent.textContent = '60%';
-            progressText.textContent = 'Re-drawing image...';
+            progressText.textContent = 'Re-drawing image on canvas...';
 
             var canvas = document.createElement('canvas');
             canvas.width = img.naturalWidth;
@@ -115,22 +115,57 @@ document.addEventListener('DOMContentLoaded', function() {
             var quality = outputType === 'image/jpeg' ? 0.92 : undefined;
 
             canvas.toBlob(function(blob) {
+                if (!blob) {
+                    showNotification('Failed to process image. Try a different format.', true);
+                    applyBtn.disabled = false;
+                    progressSection.style.display = 'none';
+                    return;
+                }
+
                 progressFill.style.width = '100%';
                 progressPercent.textContent = '100%';
                 progressText.textContent = 'Done!';
 
-                var url = URL.createObjectURL(blob);
-                var a = document.createElement('a');
-                a.href = url;
-                var baseName = currentFile.name.replace(/\.[^.]+$/, '');
-                a.download = baseName + '_clean' + outputExt;
-                document.body.appendChild(a);
-                a.click();
-                setTimeout(function() { document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
-
                 var savings = ((1 - blob.size / currentFile.size) * 100).toFixed(1);
+                var baseName = currentFile.name.replace(/\.[^.]+$/, '');
+                var newName = baseName + '_clean' + outputExt;
+
+                // Show result panel instead of auto-downloading
+                var resultHtml = '<div style="padding:var(--space-4);background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.3);border-radius:12px;margin-top:var(--space-4)">' +
+                    '<div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-3)">' +
+                    '<div style="width:40px;height:40px;border-radius:50%;background:rgba(16,185,129,.15);display:flex;align-items:center;justify-content:center"><i class="fas fa-check" style="color:#10b981;font-size:1.1rem"></i></div>' +
+                    '<div><p style="margin:0;font-weight:600;color:#10b981">Metadata Removed Successfully</p>' +
+                    '<p style="margin:2px 0 0;font-size:var(--text-xs);color:var(--color-text-light)">' + formatFileSize(currentFile.size) + ' → ' + formatFileSize(blob.size) + ' (' + savings + '% smaller)</p></div></div>' +
+                    '<div style="display:flex;gap:var(--space-2);flex-wrap:wrap">' +
+                    '<button id="download-result-btn" class="btn btn-primary" style="flex:1;min-width:150px"><i class="fas fa-download" aria-hidden="true"></i> Download ' + newName + '</button>' +
+                    '<button id="new-file-btn" class="btn btn-secondary" style="flex:1;min-width:120px"><i class="fas fa-plus" aria-hidden="true"></i> Process Another</button>' +
+                    '</div></div>';
+
+                exifPreview.innerHTML = resultHtml;
+
+                // Wire up download button
+                var dlBtn = document.getElementById('download-result-btn');
+                if (dlBtn) {
+                    dlBtn.addEventListener('click', function() {
+                        var url = URL.createObjectURL(blob);
+                        var a = document.createElement('a');
+                        a.href = url;
+                        a.download = newName;
+                        document.body.appendChild(a);
+                        a.click();
+                        setTimeout(function() { document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
+                    });
+                }
+
+                // Wire up new file button
+                var newBtn = document.getElementById('new-file-btn');
+                if (newBtn) {
+                    newBtn.addEventListener('click', function() {
+                        resetBtn.click();
+                    });
+                }
+
                 showNotification('Metadata removed! File size reduced by ' + savings + '%');
-                applyBtn.disabled = false;
             }, outputType, quality);
         };
         img.src = URL.createObjectURL(currentFile);

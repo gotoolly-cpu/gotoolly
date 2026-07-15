@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    if (typeof PDFLib === 'undefined') {
+        if (typeof window.showNotification === 'function') { window.showNotification('PDF library failed to load. Please refresh the page.', 'error'); }
+        return;
+    }
     const MAX_FILE_SIZE = 50 * 1024 * 1024;
 
     let currentFile = null;

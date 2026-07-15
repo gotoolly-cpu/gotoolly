@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Beautifier - Format &amp; Pretty Print JS | GoToolly</title>
+    <meta name="description" content="Beautify and format your JavaScript code online. Add proper indentation, line breaks, and clean structure. Free, private, browser-based JS beautifier.">
+    <meta name="keywords" content="javascript beautifier, format javascript, prettify js, js formatter, js indenter">
+    <link rel="canonical" href="https://gotoolly.com/tools/js-beautifier">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/js-beautifier">
+    <meta property="og:title" content="JavaScript Beautifier - Format &amp; Pretty Print JS | GoToolly">
+    <meta property="og:description" content="Beautify and format your JavaScript code online. Add proper indentation, line breaks, and clean structure.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/js-beautifier">
+    <meta name="twitter:title" content="JavaScript Beautifier - Format &amp; Pretty Print JS | GoToolly">
+    <meta name="twitter:description" content="Beautify and format your JavaScript code online. Add proper indentation, line breaks, and clean structure.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"JavaScript Beautifier","url":"https://gotoolly.com/tools/js-beautifier","description":"Beautify and format your JavaScript code online. Add proper indentation, line breaks, and clean structure.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Configurable indent size","Preserve newlines option"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"JavaScript Beautifier"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the JavaScript beautifier do?","acceptedAnswer":{"@type":"Answer","text":"It formats minified or messy JavaScript code by adding proper indentation, line breaks, and structure, making code readable and maintainable."}},{"@type":"Question","name":"Can I preserve original newlines?","acceptedAnswer":{"@type":"Answer","text":"Yes. The beautifier offers an option to preserve existing line breaks while still adding proper indentation."}},{"@type":"Question","name":"Is my JavaScript uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens entirely in your browser. Your code never leaves your device."}},{"@type":"Question","name":"Does it handle ES6+ syntax?","acceptedAnswer":{"@type":"Answer","text":"Yes. The beautifier handles modern JavaScript syntax including arrow functions, template literals, destructuring, and more."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.minifier-textarea{width:100%;min-height:250px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text)}.minifier-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.result-box{background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px;padding:var(--space-4);font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);white-space:pre-wrap;word-break:break-word;max-height:400px;overflow-y:auto;margin-bottom:var(--space-3)}.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);margin-top:var(--space-4)}.stat-box{background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px;padding:var(--space-4);text-align:center}.stat-value{font-size:var(--text-2xl);font-weight:700;color:var(--color-primary)}.stat-label{font-size:var(--text-xs);color:var(--color-text-light);margin-top:var(--space-1);text-transform:uppercase;letter-spacing:.05em}.tool-actions{display:flex;gap:var(--space-3);margin-top:var(--space-4);flex-wrap:wrap}.options-row{display:flex;gap:var(--space-3);margin-top:var(--space-3);flex-wrap:wrap;align-items:center}.option-group{display:flex;align-items:center;gap:var(--space-2)}.option-group label{font-size:var(--text-sm);color:var(--color-text-light);margin:0}.option-group select,.option-group input[type="checkbox"]{padding:6px 10px;border:1px solid var(--color-border);border-radius:6px;font-size:var(--text-sm);background:var(--color-surface);color:var(--color-text)}@media(max-width:768px){.stats-grid{grid-template-columns:1fr}}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/tools" class="nav-link active">Tools</a>
+                <a href="/guides" class="nav-link">Guides</a>
+                <a href="../about" class="nav-link">About</a>
+                <a href="../contact" class="nav-link">Contact</a>
+            </nav></div>
+        </div>
+    </header>
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>JavaScript Beautifier</h1>
+                <p class="page-description">Format and beautify your JavaScript code with proper indentation. Turn minified JS into clean, readable code.</p>
+            </div>
+            <div class="tool-layout">
+                <div class="tool-interface">
+                    <div class="tool-header">
+                        <h2>Beautify JavaScript</h2>
+                        <p>Paste your JavaScript code below</p>
+                    </div>
+                    <label for="js-input"><i class="fas fa-code" style="color:var(--color-primary);margin-right:6px"></i> JavaScript Input</label>
+                    <textarea id="js-input" class="minifier-textarea" placeholder="Paste your minified or messy JavaScript here..." rows="10"></textarea>
+                    <div class="options-row">
+                        <div class="option-group">
+                            <label for="indent-size">Indent Size:</label>
+                            <select id="indent-size">
+                                <option value="2">2 spaces</option>
+                                <option value="4" selected>4 spaces</option>
+                                <option value="8">8 spaces</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <input type="checkbox" id="preserve-newlines" checked>
+                            <label for="preserve-newlines">Preserve newlines</label>
+                        </div>
+                    </div>
+                    <div class="tool-actions">
+                        <button id="beautify-btn" class="btn btn-primary btn-lg"><i class="fas fa-magic" aria-hidden="true"></i> Beautify</button>
+                        <button id="reset-btn" class="btn btn-secondary"><i class="fas fa-redo" aria-hidden="true"></i> Reset</button>
+                    </div>
+                    <div id="result-area" class="result-area" style="display:none">
+                        <h3><i class="fas fa-check-circle" style="color:#10b981"></i> Beautified JavaScript</h3>
+                        <div id="result-text" class="result-box"></div>
+                        <div class="tool-actions">
+                            <button id="copy-btn" class="btn btn-primary btn-sm"><i class="fas fa-copy"></i> Copy Result</button>
+                            <button id="download-btn" class="btn btn-secondary btn-sm"><i class="fas fa-download"></i> Download</button>
+                        </div>
+                    </div>
+                    <div id="stats" class="stats-grid" style="display:none">
+                        <div class="stat-box"><div class="stat-value" id="stat-original">0</div><div class="stat-label">Original Size</div></div>
+                        <div class="stat-box"><div class="stat-value" id="stat-beautified">0</div><div class="stat-label">Beautified Size</div></div>
+                        <div class="stat-box"><div class="stat-value" id="stat-lines">0</div><div class="stat-label">Lines</div></div>
+                    </div>
+                </div>
+                <div class="tool-sidebar">
+                    <div class="card"><h3>How It Works</h3><ol><li>Paste your JavaScript code</li><li>Choose indent size &amp; options</li><li>Click Beautify</li><li>Copy or download the result</li></ol></div>
+                    <div class="card"><h3>Features</h3><ul><li>Configurable indent size</li><li>Preserve newlines option</li><li>Handles functions &amp; loops</li><li>Supports ES6+ syntax</li></ul></div>
+                    <div class="card"><p style="font-size:var(--text-xs);color:var(--color-text-light);margin:0">Your text is processed entirely inside your browser.</p></div>
+                </div>
+            </div>
+            <section class="content-section">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>JS Minifier</h3><p>Minify your JavaScript code by removing comments and whitespace.</p><div class="card-footer"><a href="./js-minifier" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>HTML Beautifier</h3><p>Format and indent your HTML code.</p><div class="card-footer"><a href="./html-beautifier" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>CSS Beautifier</h3><p>Format and pretty-print your CSS code.</p><div class="card-footer"><a href="./css-beautifier" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+            </section>
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
+                <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-3)">
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What does the JavaScript beautifier do?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">It formats minified or messy JavaScript code by adding proper indentation, line breaks, and structure, making code readable and maintainable.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Can I preserve original newlines?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Yes. The beautifier offers an option to preserve existing line breaks while still adding proper indentation.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Is my JavaScript uploaded to a server?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">No. All processing happens entirely in your browser. Your code never leaves your device.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Does it handle ES6+ syntax?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Yes. The beautifier handles modern JavaScript syntax including arrow functions, template literals, destructuring, and more.</p></div>
+                </div>
+            </section>
+
+            <p style="margin-top: var(--space-4); text-align: center;">
+                <a href="../guides/js-beautifier" style="color: var(--color-primary);">Read Guide: JavaScript Beautifier Guide <i class="fas fa-arrow-right"></i></a>
+            </p>
+        </div>
+    </main>
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+    <script defer src="../assets/js/main.min.js"></script>
+    <script>
+    (function(){
+        const input=document.getElementById('js-input');
+        const resultArea=document.getElementById('result-area');
+        const resultText=document.getElementById('result-text');
+        const stats=document.getElementById('stats');
+        function beautify(js,indentStr,preserveNewlines){
+            js=js.replace(/\/\*[\s\S]*?\*\//g,function(m){return preserveNewlines?'\n':' '}).replace(/\/\/[^\n]*/g,function(m){return preserveNewlines?'\n':' '});
+            let result='';let level=0;let i=0;
+            let inSingleStr=false,inDoubleStr=false,inTemplate=false,inRegex=false;
+            function skipStrings(){
+                if(js[i]==='"'&&!inSingleStr&&!inTemplate&&!inRegex){inDoubleStr=!inDoubleStr}
+                else if(js[i]==="'"&&!inDoubleStr&&!inTemplate&&!inRegex){inSingleStr=!inSingleStr}
+                else if(js[i]==='`'&&!inSingleStr&&!inDoubleStr&&!inRegex){inTemplate=!inTemplate}
+                else if(js[i]==='/'&&!inSingleStr&&!inDoubleStr&&!inTemplate){
+                    if(js[i+1]==='/'||js[i+1]==='*')return true;
+                    if(result.trim().length===0||result.trimEnd().slice(-1)==='{'||result.trimEnd().slice(-1)==='}'||result.trimEnd().slice(-1)===';'||result.trimEnd().slice(-1)==='('||result.trimEnd().slice(-1)===','||result.trimEnd().slice(-1)==='=')inRegex=true;
+                    else if(inRegex&&js[i-1]!==='\\')inRegex=false;
+                }
+                return false;
+            }
+            while(i<js.length){
+                if(inSingleStr||inDoubleStr||inTemplate||inRegex){
+                    if(inRegex&&js[i]==='/'&&js[i-1]!=='\\')inRegex=false;
+                    else if(inSingleStr&&js[i]==="'"&&js[i-1]!=='\\')inSingleStr=false;
+                    else if(inDoubleStr&&js[i]==='"'&&js[i-1]!=='\\')inDoubleStr=false;
+                    else if(inTemplate&&js[i]==='`'&&js[i-1]!=='\\')inTemplate=false;
+                    result+=js[i];i++;continue;
+                }
+                if(skipStrings()){i++;continue}
+                if(js[i]==='{'||js[i]==='('){
+                    result+=js[i]=='{'?' {\n':'(';
+                    level++;i++;
+                    while(js[i]===' '||js[i]==='\n'||js[i]==='\r')i++;
+                    if(js[i]!=='}'&&js[i]!==')')result+=indentStr.repeat(level);
+                    continue;
+                }
+                if(js[i]==='}'||js[i]===')'){
+                    if(js[i]===')'){result+=')';i++;continue}
+                    level=Math.max(0,level-1);
+                    result+='\n'+indentStr.repeat(level)+'}\n';
+                    while(js[i+1]===' ')i++;
+                    if(js[i+1]===';'){i++;result+=';'}
+                    if(js[i+1]==='\n'&&preserveNewlines){i++;result+='\n'}
+                    i++;result+=indentStr.repeat(level);continue;
+                }
+                if(js[i]===';'){result+=';\n'+indentStr.repeat(level);i++;continue}
+                if(js[i]===','){result+=',\n'+indentStr.repeat(level);i++;continue}
+                if(js[i]==='\n'||js[i]==='\r'){if(preserveNewlines){result+='\n'+indentStr.repeat(level)}i++;continue}
+                if(js[i]===' '||js[i]==='\t'){
+                    if(result.length>0&&result[result.length-1]!==' '&&result[result.length-1]!=='\n')result+=' ';
+                    while(js[i+1]===' '||js[i+1]==='\t')i++;
+                    i++;continue;
+                }
+                result+=js[i];i++;
+            }
+            return result.replace(/\n{3,}/g,'\n\n').replace(/[ \t]+\n/g,'\n').trim()+'\n';
+        }
+        document.getElementById('beautify-btn').addEventListener('click',function(){
+            let code=input.value.trim();if(!code){return}
+            let size=parseInt(document.getElementById('indent-size').value);
+            let preserveNewlines=document.getElementById('preserve-newlines').checked;
+            let indentStr=' '.repeat(size);
+            let beautified=beautify(code,indentStr,preserveNewlines);
+            resultText.textContent=beautified;resultArea.style.display='';stats.style.display='';
+            document.getElementById('stat-original').textContent=code.length+' chars';
+            document.getElementById('stat-beautified').textContent=beautified.length+' chars';
+            document.getElementById('stat-lines').textContent=beautified.split('\n').length;
+        });
+        document.getElementById('reset-btn').addEventListener('click',function(){
+            input.value='';resultArea.style.display='none';stats.style.display='none';
+        });
+        document.getElementById('copy-btn').addEventListener('click',function(){
+            navigator.clipboard.writeText(resultText.textContent).then(function(){
+                let btn=document.getElementById('copy-btn');btn.textContent='Copied!';
+                setTimeout(function(){btn.innerHTML='<i class="fas fa-copy"></i> Copy Result'},2000);
+            });
+        });
+        document.getElementById('download-btn').addEventListener('click',function(){
+            let blob=new Blob([resultText.textContent],{type:'application/javascript'});
+            let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='beautified.js';a.click();
+        });
+    })();
+    </script>
+</body>
+</html>

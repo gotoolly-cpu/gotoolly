@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Parse URLs and Understand Their Components: Complete Guide 2026 | GoToolly</title>
+    <meta name="description" content="Learn how to parse URLs and understand every component from protocol to fragment. A complete developer guide to URL structure, query strings, and path segments.">
+    <meta name="keywords" content="url parser, parse url, url components, url structure, protocol, hostname, pathname, query string, fragment, url anatomy">
+    <link rel="canonical" href="https://gotoolly.com/guides/url-parser">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/url-parser">
+    <meta property="og:title" content="How to Parse URLs and Understand Their Components: Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Learn how to parse URLs and understand every component from protocol to fragment. A complete developer guide to URL structure, query strings, and path segments.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/url-parser">
+    <meta name="twitter:title" content="How to Parse URLs and Understand Their Components: Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Learn how to parse URLs and understand every component from protocol to fragment. A complete developer guide to URL structure, query strings, and path segments.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+    
+    <style>
+        .page-header { background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><text x="10" y="30" font-family="monospace" font-size="12">https://</text><text x="40" y="55" font-family="monospace" font-size="10">domain.com</text><text x="15" y="75" font-family="monospace" font-size="10">/path?q=1</text></svg>'); background-size: 300px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #0ea5e9; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(14, 165, 233, 0.1); border-left: 4px solid #0ea5e9; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .use-case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .use-case-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        .code-example { background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(2, 132, 199, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(14, 165, 233, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .use-case-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Parse URLs and Understand Their Components: Complete Guide 2026", "description": "Learn how to parse URLs and understand every component from protocol to fragment. A complete developer guide to URL structure, query strings, and path segments.", "url": "https://gotoolly.com/guides/url-parser", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/url-parser" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "URL Parser", "item": "https://gotoolly.com/guides/url-parser"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the main components of a URL?","acceptedAnswer":{"@type":"Answer","text":"A URL consists of five main components: the protocol (scheme), authority (which includes the hostname and optional port), path, query string, and fragment identifier. For example, in https://example.com:443/path/page?q=search#section, the protocol is https, the authority is example.com:443, the path is /path/page, the query is q=search, and the fragment is section."}},{"@type":"Question","name":"What is the difference between a URL and a URI?","acceptedAnswer":{"@type":"Answer","text":"A URI (Uniform Resource Identifier) is the broader term that encompasses both URLs (Uniform Resource Locators) and URNs (Uniform Resource Names). A URL identifies a resource by its location (address), while a URI is any identifier for a resource. All URLs are URIs, but not all URIs are URLs."}},{"@type":"Question","name":"How do you parse a URL in JavaScript?","acceptedAnswer":{"@type":"Answer","text":"You can use the built-in URL constructor in modern JavaScript: const url = new URL('https://example.com/path?q=search'). This provides properties like protocol, hostname, port, pathname, search, and hash. For Node.js, use the url module: const parsed = new URL('https://example.com/path?q=search')."}},{"@type":"Question","name":"Why is URL parsing important for security?","acceptedAnswer":{"@type":"Answer","text":"URL parsing is critical for security because attackers can craft malicious URLs to bypass authentication, perform open redirect attacks, or inject malicious content. Proper parsing helps validate URLs, prevent SSRF attacks, and ensure that redirects point to legitimate destinations."}},{"@type":"Question","name":"What is a query string in a URL?","acceptedAnswer":{"@type":"Answer","text":"A query string is the part of a URL that follows the question mark (?). It contains key-value pairs separated by ampersands (&). For example, in ?page=2&sort=asc&filter=active, the query string has three parameters: page, sort, and filter."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Parse URLs and Understand Their Components</h1>
+                <p class="page-description">
+                    Break down any URL into its individual parts. Learn the anatomy of URLs, extract protocols, hosts, paths, query parameters, and fragments with confidence.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/url-parser" class="btn btn-primary btn-lg">Parse a URL Now</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  Instant parsing  Full component extraction  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>Why URL Parsing Matters</h2>
+                    <p>Every web request, API call, and hyperlink on the internet is built on URLs. A URL is not just a string of characters; it is a structured data format with specific rules and components. Understanding how to parse a URL means being able to extract meaningful information from that structure: which protocol is being used, which server is being contacted, which resource is being requested, and what parameters are being passed. For web developers, security engineers, SEO professionals, and anyone working with web technologies, URL parsing is a foundational skill that impacts routing decisions, request validation, logging analytics, and security auditing. Misunderstanding URL structure can lead to broken links, security vulnerabilities, and incorrect data extraction.</p>
+                </section>
+
+                <section>
+                    <h2>Anatomy of a URL</h2>
+                    <p>A Uniform Resource Locator follows a well-defined structure defined by RFC 3986. Understanding each part of this structure is the first step toward effective URL parsing.</p>
+
+                    <div class="code-example">
+                        <strong>Full URL Breakdown:</strong>
+                        https://www.example.com:443/path/to/resource?search=hello&page=1&lang=en#results
+
+                        protocol:   https
+                        authority:  www.example.com:443
+                        hostname:   www.example.com
+                        port:       443
+                        path:       /path/to/resource
+                        query:      search=hello&page=1&lang=en
+                        fragment:   results
+                    </div>
+
+                    <table class="comparison-table">
+                        <thead>
+                            <tr><th>Component</th><th>Description</th><th>Example</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Protocol/Scheme</strong></td><td>The method used to access the resource (http, https, ftp, mailto, etc.)</td><td><code>https</code></td></tr>
+                            <tr><td><strong>Authority</strong></td><td>The hostname and optional port, sometimes including credentials</td><td><code>www.example.com:443</code></td></tr>
+                            <tr><td><strong>Hostname</strong></td><td>The domain name or IP address of the server</td><td><code>www.example.com</code></td></tr>
+                            <tr><td><strong>Port</strong></td><td>The network port number (default is 80 for http, 443 for https)</td><td><code>443</code></td></tr>
+                            <tr><td><strong>Path</strong></td><td>The specific resource location on the server, separated by slashes</td><td><code>/path/to/resource</code></td></tr>
+                            <tr><td><strong>Query String</strong></td><td>Parameters passed to the server, starting with ? and separated by &amp;</td><td><code>search=hello&amp;page=1</code></td></tr>
+                            <tr><td><strong>Fragment</strong></td><td>A pointer to a specific section within the resource, starting with #</td><td><code>results</code></td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>Step-by-Step: Using the URL Parser</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Enter a URL</h3>
+                                <p>Open the <a href="../tools/url-parser">URL Parser</a> and paste any valid URL into the input field. You can enter full URLs with protocols, partial URLs, or even complex URLs with multiple query parameters and fragments.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Review the Parsed Components</h3>
+                                <p>The tool instantly decomposes the URL into its individual parts: protocol, hostname, port, path, query parameters, and fragment. Each component is clearly labeled and displayed in a structured format for easy reading.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Inspect Query Parameters</h3>
+                                <p>Query parameters are extracted as key-value pairs, making it easy to see every parameter name and its corresponding value. This is especially useful for debugging API calls, validating redirect URLs, and auditing tracking parameters.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Copy or Export Results</h3>
+                                <p>Copy the individual components or the entire parsed result to your clipboard. Use the output in your code, documentation, or debugging workflow. Switch between different URLs to compare their structures.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Common URL Formats You Will Encounter</h2>
+                    <div class="code-example">
+                        <strong>Standard HTTPS URL:</strong>
+                        https://api.example.com/v2/users?limit=50&amp;offset=0
+
+                        <strong>URL with Port:</strong>
+                        http://localhost:3000/dashboard
+
+                        <strong>URL with Fragment:</strong>
+                        https://docs.example.com/guide/setup#installation
+
+                        <strong>URL with Authentication:</strong>
+                        https://user:password@example.com/private
+
+                        <strong>URL with Encoded Characters:</strong>
+                        https://example.com/search?q=hello%20world&amp;lang=en
+
+                        <strong>Mailto URI:</strong>
+                        mailto:someone@example.com?subject=Hello
+
+                        <strong>FTP URL:</strong>
+                        ftp://files.example.com/public/document.pdf
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Key Features of URL Parsing</h2>
+                    <div class="use-case-grid">
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128268;</div>
+                            <h4 style="margin: var(--space-2) 0;">Protocol Detection</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Identify whether a URL uses HTTP, HTTPS, FTP, mailto, or any other scheme. This is essential for routing decisions and security policy enforcement.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#127760;</div>
+                            <h4 style="margin: var(--space-2) 0;">Hostname Extraction</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Extract the domain name or IP address to determine which server the request targets. Useful for CORS policies, allowlists, and server configuration.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128193;</div>
+                            <h4 style="margin: var(--space-2) 0;">Path Segmentation</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Break down the URL path into individual segments for route matching, breadcrumbs, and resource identification in web applications and APIs.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128273;</div>
+                            <h4 style="margin: var(--space-2) 0;">Query String Analysis</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Parse and validate query parameters to debug API requests, extract search filters, and analyze URL-based analytics and tracking configurations.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Programmatic URL Parsing</h2>
+                    <p>Most modern languages and frameworks provide built-in URL parsing capabilities. Here is how you can parse URLs programmatically in popular languages.</p>
+
+                    <div class="code-example">
+                        <strong>JavaScript (Browser & Node.js):</strong>
+                        const url = new URL('https://example.com:8080/path?q=search#top');
+                        console.log(url.protocol);   // "https:"
+                        console.log(url.hostname);   // "example.com"
+                        console.log(url.port);       // "8080"
+                        console.log(url.pathname);   // "/path"
+                        console.log(url.search);     // "?q=search"
+                        console.log(url.hash);       // "#top"
+
+                        <strong>Python:</strong>
+                        from urllib.parse import urlparse
+                        parsed = urlparse('https://example.com/path?q=search#top')
+                        print(parsed.scheme)     # "https"
+                        print(parsed.netloc)     # "example.com"
+                        print(parsed.path)       # "/path"
+                        print(parsed.query)      # "q=search"
+                        print(parsed.fragment)   # "top"
+
+                        <strong>PHP:</strong>
+                        $url = parse_url('https://example.com:8080/path?q=search#top');
+                        print_r($url);
+                        // Array ( [scheme] => https [host] => example.com [port] => 8080
+                        //   [path] => /path [query] => q=search [fragment] => top )
+                    </div>
+
+                    <div class="pro-tip">
+                        <p><strong>Tip:</strong> <strong>Always use built-in parsers</strong> instead of writing regex-based URL parsers. Native parsers handle edge cases like encoded characters, international domain names, IPv6 addresses, and malformed URLs far more reliably than manual parsing.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong>Tip:</strong> <strong>Validate before parsing</strong> - Wrap URL parsing in try-catch blocks. Malformed input can throw exceptions. For example, <code>new URL('not a url')</code> throws a TypeError in JavaScript.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong>Tip:</strong> <strong>Be careful with relative URLs</strong> - The URL constructor requires a base URL when parsing relative references. Use <code>new URL(relative, base)</code> to resolve relative paths correctly.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Best Practices for URL Parsing</h2>
+                    <ul>
+                        <li><strong>Always use a proper URL parser:</strong> Avoid regex-based parsing. Native parsers handle edge cases like encoded characters, IPv6 addresses, and authentication sections that regex cannot reliably match.</li>
+                        <li><strong>Decode percent-encoded values:</strong> After parsing, decode percent-encoded characters to get the original values. URL-encoded strings may contain unreadable sequences like %20 for spaces.</li>
+                        <li><strong>Normalize URLs before comparison:</strong> URLs can represent the same resource in different ways. Normalize them by lowercasing the scheme and host, removing default ports, and resolving relative paths before comparing.</li>
+                        <li><strong>Handle malformed input gracefully:</strong> User-provided URLs may be incomplete, misspelled, or contain invalid characters. Always validate and handle parsing errors instead of assuming well-formed input.</li>
+                        <li><strong>Respect the fragment identifier:</strong> The fragment (#) is never sent to the server in HTTP requests. It is handled entirely by the client browser, so it is useful for client-side routing and in-page navigation but irrelevant for API requests.</li>
+                        <li><strong>Consider security implications:</strong> Never trust parsed URLs from unvalidated sources. Attackers can craft URLs that bypass security checks. Always validate parsed components against your expected patterns.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Common Mistakes to Avoid</h2>
+                    <ul>
+                        <li><strong>Treating the query string as part of the path:</strong> The path and query string are separate components. The path identifies the resource; the query string provides parameters for it. Do not concatenate them.</li>
+                        <li><strong>Ignoring URL encoding:</strong> Query parameters and path segments may contain percent-encoded characters. Decoding these is necessary to read the actual values, but forgetting to encode when constructing URLs leads to broken links.</li>
+                        <li><strong>Assuming default ports:</strong> HTTPS defaults to port 443 and HTTP to port 80. When these ports are explicitly included in the URL, they are technically redundant but still valid. Your parser should handle both cases.</li>
+                        <li><strong>Confusing URL encoding with HTML encoding:</strong> URL encoding uses percent signs (%20), while HTML encoding uses entities (&amp;amp;). They serve different purposes and are not interchangeable.</li>
+                        <li><strong>Not handling case sensitivity:</strong> The scheme and hostname are case-insensitive per RFC 3986, but the path and query string are case-sensitive. A URL parser should normalize scheme and host to lowercase.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Privacy and Security Considerations</h2>
+                    <p>URL parsing is not just a technical task; it has significant privacy and security implications. URLs can contain sensitive information such as authentication credentials, personal identifiers, session tokens, and API keys. When parsing URLs in your applications, be aware of the following:</p>
+                    <ul>
+                        <li><strong>Strip credentials:</strong> Never log or expose the userinfo section (username:password) of URLs, as this can leak credentials into logs, error messages, and analytics.</li>
+                        <li><strong>Sanitize query strings:</strong> Query parameters often contain user-supplied data. Never pass parsed query values directly into SQL queries, HTML templates, or shell commands without proper sanitization.</li>
+                        <li><strong>Validate redirect URLs:</strong> If your application uses URLs for redirects, always validate that the target is on an allowed domain to prevent open redirect attacks.</li>
+                        <li><strong>Avoid logging full URLs:</strong> URLs may contain PII or tokens. Redact sensitive query parameters before storing URLs in logs or analytics systems.</li>
+                        <li><strong>Client-side processing only:</strong> Our URL Parser tool processes everything in your browser. No URL data is sent to any server, ensuring complete privacy for sensitive URLs.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What are the main components of a URL?</h3>
+                        <p>A URL consists of five main components: the protocol (scheme), authority (which includes the hostname and optional port), path, query string, and fragment identifier. For example, in <code>https://example.com:443/path/page?q=search#section</code>, the protocol is <code>https</code>, the authority is <code>example.com:443</code>, the path is <code>/path/page</code>, the query is <code>q=search</code>, and the fragment is <code>section</code>.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What is the difference between a URL and a URI?</h3>
+                        <p>A URI (Uniform Resource Identifier) is the broader term that encompasses both URLs (Uniform Resource Locators) and URNs (Uniform Resource Names). A URL identifies a resource by its location (address), while a URI is any identifier for a resource. All URLs are URIs, but not all URIs are URLs.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do you parse a URL in JavaScript?</h3>
+                        <p>You can use the built-in <code>URL</code> constructor in modern JavaScript: <code>const url = new URL('https://example.com/path?q=search')</code>. This provides properties like <code>protocol</code>, <code>hostname</code>, <code>port</code>, <code>pathname</code>, <code>search</code>, and <code>hash</code>. For Node.js, the same <code>URL</code> class is available globally since Node.js 10.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Why is URL parsing important for security?</h3>
+                        <p>URL parsing is critical for security because attackers can craft malicious URLs to bypass authentication, perform open redirect attacks, or inject malicious content. Proper parsing helps validate URLs, prevent SSRF attacks, and ensure that redirects point to legitimate destinations.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What is a query string in a URL?</h3>
+                        <p>A query string is the part of a URL that follows the question mark (?). It contains key-value pairs separated by ampersands (&amp;). For example, in <code>?page=2&amp;sort=asc&amp;filter=active</code>, the query string has three parameters: <code>page</code>, <code>sort</code>, and <code>filter</code>.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Complete Web Development Suite</h2>
+                    <p>Enhance your web development workflow with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/query-string-parser">Query String Parser</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Parse and manipulate URL query parameters with ease</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/url-encoder">URL Encoder/Decoder</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Encode and decode URLs with special characters</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/url-slug-generator">URL Slug Generator</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Generate clean, SEO-friendly URL slugs from text</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Parse Any URL Instantly</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Break down complex URLs into their individual components. Extract protocols, hostnames, paths, query parameters, and fragments. Fast, private, and free.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/url-parser" class="btn btn-primary btn-lg">Parse a URL Now</a>
+                    <a href="../tools/query-string-parser" class="btn btn-secondary btn-lg">Parse Query Strings</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Local processing  No file uploads  Full component extraction  Instant results  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Encoding Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/url-encoder">URL Encoder</a></li>
+                        <li><a href="../tools/html-encoder">HTML Encoder</a></li>
+                        <li><a href="../tools/base64-encoder">Base64 Encoder</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

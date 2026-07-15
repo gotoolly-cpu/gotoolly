@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPG to PNG - Convert JPEG to PNG Online Free | GoToolly</title>
+    <meta name="description" content="Free online JPG to PNG converter. Batch convert JPEG images to lossless PNG format. 100% browser-based, no uploads, unlimited use.">
+    <meta name="keywords" content="jpg to png, jpeg to png, convert jpg to png, image converter, batch jpg to png">
+
+    <link rel="canonical" href="https://gotoolly.com/tools/jpg-to-png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/jpg-to-png">
+    <meta property="og:title" content="JPG to PNG - Convert JPEG to PNG Online Free | GoToolly">
+    <meta property="og:description" content="Free online JPG to PNG converter. Batch convert JPEG images to lossless PNG format. 100% browser-based, no uploads, unlimited use.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/jpg-to-png">
+    <meta name="twitter:title" content="JPG to PNG - Convert JPEG to PNG Online Free | GoToolly">
+    <meta name="twitter:description" content="Free online JPG to PNG converter. Batch convert JPEG images to lossless PNG format. 100% browser-based, no uploads, unlimited use.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    
+    <style>
+        .hero-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: var(--space-6) 0; margin-bottom: var(--space-6); border-radius: 12px; }
+        .hero-content { display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-4); align-items: center; }
+        .hero-text h1 { font-size: 2rem; margin: 0 0 var(--space-2); }
+        .hero-text p { margin: 0; opacity: 0.95; }
+        .hero-badges { display: flex; gap: var(--space-2); margin-top: var(--space-3); flex-wrap: wrap; }
+        .hero-badge { background: rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 999px; font-size: var(--text-sm); font-weight: 500; }
+        .hero-stats { display: grid; gap: var(--space-3); }
+        .stat-card { background: rgba(255,255,255,0.08); padding: var(--space-3); border-radius: 8px; text-align: center; }
+        .stat-number { font-weight: 700; font-size: 1.25rem; }
+
+        .tool-workspace { background: var(--color-surface); border-radius: 12px; padding: var(--space-5); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+        .workspace-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-3); border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-3); }
+        .workspace-header h2 { margin: 0; font-size: 1.25rem; }
+        .file-counter { background: var(--color-primary); color: white; padding: 6px 12px; border-radius: 999px; font-weight: 600; font-size: 0.9rem; }
+
+        .file-drop-zone, .upload-area { border: 2px dashed var(--color-border); border-radius: 12px; padding: var(--space-6); text-align: center; cursor: pointer; transition: all 0.18s ease; background-color: var(--color-bg-alt); display: block; }
+        .file-drop-zone:hover, .upload-area:hover { border-color: var(--color-primary); background-color: rgba(37, 99, 235, 0.04); transform: translateY(-2px); }
+        .file-drop-zone svg, .upload-area svg { width: 56px; height: 56px; color: var(--color-primary); margin-bottom: var(--space-3); }
+
+        .file-list { display: none; margin-top: var(--space-4); }
+        .file-items { display: grid; gap: var(--space-2); }
+        .file-item { display: flex; align-items: center; gap: var(--space-3); background: var(--color-bg-alt); padding: var(--space-3); border-radius: 8px; border: 1px solid var(--color-border); }
+        .file-thumb { width: 48px; height: 48px; border-radius: 4px; object-fit: cover; background: #fff; flex-shrink: 0; }
+        .file-info { flex: 1; min-width: 0; }
+        .file-name { font-size: var(--text-sm); font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .file-size { font-size: var(--text-xs); color: var(--color-text-light); }
+
+        .btn-row { display: flex; gap: var(--space-3); margin-top: var(--space-4); }
+        .btn-row button { flex: 1; }
+
+        .progress-section { display: none; margin-top: var(--space-4); }
+
+        .results-area { display: none; margin-top: var(--space-4); }
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--space-3); margin-top: var(--space-3); }
+        .result-item { background: var(--color-bg-alt); border-radius: 8px; padding: var(--space-3); text-align: center; border: 1px solid var(--color-border); }
+        .result-item canvas, .result-item img { max-width: 100%; max-height: 120px; border-radius: 4px; }
+        .result-name { font-size: var(--text-xs); font-weight: 500; margin-top: var(--space-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .result-sizes { font-size: var(--text-xs); color: var(--color-text-light); }
+        .result-item button { width: 100%; margin-top: 6px; font-size: var(--text-sm); padding: 6px; }
+
+        .privacy-badge { display: flex; align-items: center; gap: var(--space-2); background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; padding: 10px 16px; border-radius: 8px; margin-top: var(--space-4); font-size: var(--text-sm); font-weight: 500; }
+        .privacy-badge i { font-size: 1rem; }
+
+        @media (max-width: 900px) {
+            .hero-content { grid-template-columns: 1fr; gap: var(--space-3); }
+            .hero-text h1 { font-size: 1.6rem; }
+            .tool-workspace { padding: var(--space-4); }
+            .file-drop-zone, .upload-area { padding: var(--space-4); min-height: 120px; }
+            .file-drop-zone svg, .upload-area svg { width: 48px; height: 48px; }
+            .results-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "WebApplication", "name": "JPG to PNG Converter", "url": "https://gotoolly.com/tools/jpg-to-png", "description": "Free online JPG to PNG converter. Batch convert JPEG images to lossless PNG format. 100% browser-based, no uploads.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web Browser)", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }, "featureList": ["Free to use", "No account required", "Client-side processing", "Privacy-focused", "Batch conversion", "Lossless output"] }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gotoolly.com/tools"},
+        {"@type": "ListItem", "position": 3, "name": "JPG to PNG", "item": "https://gotoolly.com/tools/jpg-to-png"}
+    ]}
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        { "@type": "Question", "name": "Why convert JPG to PNG?", "acceptedAnswer": { "@type": "Answer", "text": "PNG is a lossless format, meaning no quality is lost during saving. It's ideal for images with text, sharp edges, or when you need to edit and re-save without quality degradation." }},
+        { "@type": "Question", "name": "Will the PNG be larger than the JPG?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, typically PNG files are larger than JPEG because PNG uses lossless compression. The trade-off is perfect quality for larger file size." }},
+        { "@type": "Question", "name": "Does PNG support transparency?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, PNG supports alpha transparency. However, since the source is JPEG (which has no transparency), the resulting PNG will have a fully opaque background." }},
+        { "@type": "Question", "name": "Is my image uploaded to a server?", "acceptedAnswer": { "@type": "Answer", "text": "No. All conversion happens entirely in your browser. Your images never leave your device." }}
+    ]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>JPG to PNG Converter</h1>
+                        <p>Convert JPEG images to lossless PNG format. Batch processing supported. All processing happens locally in your browser.</p>
+                        <div class="hero-badges">
+                            <span class="hero-badge">100% Private</span>
+                            <span class="hero-badge">Lossless Output</span>
+                            <span class="hero-badge">Free Forever</span>
+                        </div>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-card"><div class="stat-number">Batch</div><div class="stat-label">Multiple files</div></div>
+                        <div class="stat-card"><div class="stat-number">Local</div><div class="stat-label">No uploads</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-workspace">
+                <div class="workspace-header">
+                    <div>
+                        <h2>Convert JPG to PNG</h2>
+                        <p style="margin: 0; color: var(--color-text-light);">Upload JPEG images and convert them to lossless PNG format</p>
+                    </div>
+                    <div class="file-counter" id="file-count">0</div>
+                </div>
+
+                <label for="file-input" class="file-drop-zone upload-area" style="margin: 0; display: block; width: 100%; box-sizing: border-box; position: relative;">
+                    <input type="file" id="file-input" accept="image/jpeg" multiple style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; z-index: 2;" aria-label="Select JPG images">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p style="margin: 0; font-weight: 600;">Drag JPG images here or <span style="color: var(--color-primary); text-decoration: underline; cursor: pointer;">click to browse</span></p>
+                    <p style="margin: var(--space-2) 0 0; font-size: var(--text-sm); color: var(--color-text-light);">JPEG files only</p>
+                </label>
+
+                <div id="file-list" class="file-list">
+                    <p style="font-weight: 600; margin-bottom: var(--space-2); font-size: var(--text-sm);">Selected Files</p>
+                    <div id="file-items" class="file-items"></div>
+                </div>
+
+                <div class="btn-row">
+                    <button id="convert-btn" class="btn btn-primary btn-lg" disabled>
+                        <i class="fas fa-exchange-alt"></i> Convert to PNG
+                    </button>
+                    <button id="download-all-btn" class="btn btn-outline btn-lg" disabled style="display: none;">
+                        <i class="fas fa-download"></i> Download All
+                    </button>
+                    <button id="reset-btn" class="btn btn-outline btn-lg">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                </div>
+
+                <div id="progress-section" class="progress-section">
+                    <div class="progress-bar" style="height: 6px; background: var(--color-border); border-radius: 3px; overflow: hidden;">
+                        <div id="progress-fill" style="width: 0%; background: var(--color-primary); height: 100%; transition: width 0.2s;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-top: var(--space-2); font-size: var(--text-sm);">
+                        <span id="progress-text">Processing...</span>
+                        <span id="progress-percent">0%</span>
+                    </div>
+                </div>
+
+                <div id="results-area" class="results-area">
+                    <p style="font-weight: 600; margin-bottom: var(--space-2); font-size: var(--text-sm);">Results</p>
+                    <div id="results-grid" class="results-grid"></div>
+                </div>
+
+                <div class="privacy-badge">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <span>Your images never leave your device. Processing happens locally inside your browser.</span>
+                </div>
+            </div>
+
+            <section class="content-section" aria-labelledby="how-it-works-heading">
+                <div class="section-header">
+                    <h2 id="how-it-works-heading">How It Works</h2>
+                </div>
+                <div class="tools-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="card step-card">
+                        <h3><span style="background: var(--color-primary); color: white; border-radius: 50%; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 0.9rem;">1</span> Upload JPG</h3>
+                        <p>Select one or more JPEG images from your device.</p>
+                    </div>
+                    <div class="card step-card">
+                        <h3><span style="background: var(--color-primary); color: white; border-radius: 50%; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 0.9rem;">2</span> Convert</h3>
+                        <p>Click convert. Each image is rendered onto a canvas and exported as a lossless PNG.</p>
+                    </div>
+                    <div class="card step-card">
+                        <h3><span style="background: var(--color-primary); color: white; border-radius: 50%; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 0.9rem;">3</span> Download</h3>
+                        <p>Download individual PNG files or all at once. Compare file sizes before and after.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" aria-labelledby="faq-heading">
+                <div class="section-header">
+                    <h2 id="faq-heading">Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="card faq-item">
+                        <h3>Why convert JPG to PNG?</h3>
+                        <p>PNG is a lossless format, meaning no quality is lost during saving. It's ideal for images with text, sharp edges, or when you need to edit and re-save without quality degradation.</p>
+                    </div>
+                    <div class="card faq-item">
+                        <h3>Will the PNG be larger than the JPG?</h3>
+                        <p>Yes, typically PNG files are larger than JPEG because PNG uses lossless compression. The trade-off is perfect quality for larger file size.</p>
+                    </div>
+                    <div class="card faq-item">
+                        <h3>Does PNG support transparency?</h3>
+                        <p>Yes, PNG supports alpha transparency. However, since the source is JPEG (which has no transparency), the resulting PNG will have a fully opaque background.</p>
+                    </div>
+                    <div class="card faq-item">
+                        <h3>Is my image uploaded to a server?</h3>
+                        <p>No. All conversion happens entirely in your browser. Your images never leave your device.</p>
+                    </div>
+                    <div class="card faq-item">
+                        <h3>Can I convert multiple JPG files at once?</h3>
+                        <p>Yes. Select multiple JPEG files and they will all be converted. You can download them individually or use the "Download All" button for a ZIP archive.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Related Tools</h2>
+                </div>
+                <div class="tools-grid">
+                    <div class="card tool-card">
+                        <h3>PNG to JPG</h3>
+                        <p>Convert PNG images to JPEG format with quality and background color control.</p>
+                        <div class="card-footer">
+                            <a href="./png-to-jpg" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>WebP Converter</h3>
+                        <p>Convert images to and from WebP format with quality control.</p>
+                        <div class="card-footer">
+                            <a href="./webp-converter" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>Image Compressor</h3>
+                        <p>Reduce image file sizes without noticeable quality loss.</p>
+                        <div class="card-footer">
+                            <a href="./image-compressor" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Popular Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="/tools/image-compressor">Image Compressor</a></li>
+                        <li><a href="/tools/pdf-compressor">PDF Compressor</a></li>
+                        <li><a href="/tools/word-counter">Word Counter</a></li>
+                        <li><a href="/tools/qr-code-generator">QR Code Generator</a></li>
+                        <li><a href="/tools/password-generator">Password Generator</a></li>
+                        <li><a href="/tools">View All Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script defer src="../assets/js/main.min.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(function(registration) { console.log('[ServiceWorker] Registered:', registration.scope); })
+                .catch(function(error) { console.warn('[ServiceWorker] Registration failed:', error); });
+        }
+    </script>
+    <script defer src="../assets/js/tools/jpg-to-png.js"></script>
+</body>
+</html>

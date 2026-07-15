@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Beautify and Format HTML Code | Complete Guide 2026 | GoToolly</title>
+    <meta name="description" content="Learn how to beautify and format HTML code for better readability. Master indentation, structure, and clean HTML formatting with step-by-step examples and best practices.">
+    <meta name="keywords" content="html beautifier, format html, beautify html code, html formatter, html indentation, clean html, html prettify, html code formatting, readable html">
+    <link rel="canonical" href="https://gotoolly.com/guides/html-beautifier">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/html-beautifier">
+    <meta property="og:title" content="How to Beautify and Format HTML Code | Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Learn how to beautify and format HTML code for better readability. Master indentation, structure, and clean HTML formatting with step-by-step examples and best practices.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/html-beautifier">
+    <meta name="twitter:title" content="How to Beautify and Format HTML Code | Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Learn how to beautify and format HTML code for better readability. Master indentation, structure, and clean HTML formatting with step-by-step examples and best practices.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+    
+    <style>
+        .page-header { background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><text x="10" y="30" font-family="monospace" font-size="12">&lt;div&gt;</text><text x="50" y="55" font-family="monospace" font-size="10">beautify</text><text x="20" y="75" font-family="monospace" font-size="10">format</text></svg>'); background-size: 300px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #0ea5e9; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(14, 165, 233, 0.1); border-left: 4px solid #0ea5e9; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .benefit-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        .code-example { background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(2, 132, 199, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(14, 165, 233, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .benefits-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Beautify and Format HTML Code: Complete Guide 2026", "description": "Learn how to beautify and format HTML code for better readability. Master indentation, structure, and clean HTML formatting with step-by-step examples and best practices.", "url": "https://gotoolly.com/guides/html-beautifier", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/html-beautifier" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "HTML Beautifier", "item": "https://gotoolly.com/guides/html-beautifier"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an HTML beautifier?","acceptedAnswer":{"@type":"Answer","text":"An HTML beautifier is a tool that reformats messy or minified HTML code into a clean, properly indented, and human-readable structure. It adds consistent indentation, line breaks, and spacing without changing the actual functionality of the code."}},{"@type":"Question","name":"Does beautifying HTML change how it renders?","acceptedAnswer":{"@type":"Answer","text":"No, beautifying HTML only reformats the whitespace and indentation. The rendered output in a browser remains exactly the same. The tool preserves all tags, attributes, and content while making the source code easier to read and maintain."}},{"@type":"Question","name":"Can I beautify minified HTML?","acceptedAnswer":{"@type":"Answer","text":"Yes, one of the primary uses of an HTML beautifier is to take minified or compressed HTML and expand it back into a well-formatted, readable structure. This is especially useful when you need to understand or edit code that was previously minified."}},{"@type":"Question","name":"What indentation options are available?","acceptedAnswer":{"@type":"Answer","text":"Most HTML beautifiers let you choose between tabs and spaces for indentation, as well as the indent size (2 spaces, 4 spaces, etc.). You can also configure whether to indent inner content of inline elements and how to handle nested tags."}},{"@type":"Question","name":"Should I beautify HTML before committing to version control?","acceptedAnswer":{"@type":"Answer","text":"It depends on your workflow. Many teams prefer consistent formatting in source files for readability and code review. However, if you deploy minified versions, keep your source formatted and minify only during the build process."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Beautify and Format HTML Code</h1>
+                <p class="page-description">
+                    Transform messy, minified, or inconsistent HTML into clean, readable, and properly indented code. Learn the essential techniques for professional HTML formatting.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/html-beautifier" class="btn btn-primary btn-lg">Beautify HTML Now</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  Instant formatting  Indentation options  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>Why HTML Beautification Matters in 2026</h2>
+                    <p>Writing clean, well-formatted HTML is a cornerstone of professional web development. Whether you are working with hand-written markup, code generated by CMS platforms, or minified output from build tools, having properly formatted HTML is essential for collaboration, debugging, and long-term maintainability. When code is hard to read, developers waste time deciphering structure instead of building features. An HTML beautifier solves this by automatically applying consistent indentation, line breaks, and spacing across your entire codebase.</p>
+                    <p>In team environments, inconsistent formatting creates friction during code reviews and increases the risk of merge conflicts. Automated formatting eliminates subjective style debates and ensures every team member produces identically structured output. For legacy projects or codebases with mixed formatting standards, a beautifier provides a fast path to consistency without manual effort.</p>
+                </section>
+
+                <section>
+                    <h2>Step-by-Step: Beautifying HTML</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Input Your HTML Code</h3>
+                                <p>Open the <a href="../tools/html-beautifier">HTML Beautifier</a> and paste your HTML code into the input area. You can paste a complete HTML document, a partial fragment, or minified code. The tool handles all variations and sizes efficiently.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Configure Formatting Options</h3>
+                                <p>Choose your preferred indentation style: tabs or spaces, and set the indent size (2 or 4 spaces are most common). You can also configure options like whether to wrap attributes, how to handle line length, and whether to add extra blank lines between sections.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Review the Formatted Output</h3>
+                                <p>The tool displays your beautified HTML instantly with proper indentation and clean structure. Compare it with the original to verify the formatting meets your expectations. The tool preserves all tags, attributes, and content while reorganizing whitespace.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Copy or Download</h3>
+                                <p>Copy the formatted HTML to your clipboard or download it as a .html file. Use the beautified output in your development workflow, version control, or documentation. The formatted code is ready for immediate use.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>What HTML Beautification Changes</h2>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr><th>Element</th><th>Before</th><th>After</th><th>Purpose</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Indentation</td><td>No indentation or inconsistent</td><td>Consistent nested indentation</td><td>Shows document hierarchy</td></tr>
+                            <tr><td>Line Breaks</td><td>All on one line or random breaks</td><td>One element per line</td><td>Improves readability</td></tr>
+                            <tr><td>Attribute Alignment</td><td>Mixed spacing</td><td>Consistent spacing</td><td>Clean attribute presentation</td></tr>
+                            <tr><td>Nested Tags</td><td>Hard to track nesting depth</td><td>Clear visual nesting</td><td>Prevents structural errors</td></tr>
+                            <tr><td>Blank Lines</td><td>None or excessive</td><td>Logical section separators</td><td>Visual organization</td></tr>
+                            <tr><td>Self-Closing Tags</td><td>Mixed formats</td><td>Consistent format</td><td>Uniform style throughout</td></tr>
+                        </tbody>
+                    </table>
+
+                    <div class="code-example">
+                        <strong>Before (Minified):</strong><br>
+                        &lt;div class=container&gt;&lt;header class=site-header&gt;&lt;nav class=main-nav&gt;&lt;a href="/" class=nav-link&gt;Home&lt;/a&gt;&lt;a href="/about" class=nav-link&gt;About&lt;/a&gt;&lt;/nav&gt;&lt;/header&gt;&lt;main&gt;&lt;h1&gt;Welcome&lt;/h1&gt;&lt;p&gt;Content here&lt;/p&gt;&lt;/main&gt;&lt;/div&gt;
+
+                        <strong>After (Beautified):</strong><br>
+                        &lt;div class="container"&gt;
+                            &lt;header class="site-header"&gt;
+                                &lt;nav class="main-nav"&gt;
+                                    &lt;a href="/" class="nav-link"&gt;Home&lt;/a&gt;
+                                    &lt;a href="/about" class="nav-link"&gt;About&lt;/a&gt;
+                                &lt;/nav&gt;
+                            &lt;/header&gt;
+                            &lt;main&gt;
+                                &lt;h1&gt;Welcome&lt;/h1&gt;
+                                &lt;p&gt;Content here&lt;/p&gt;
+                            &lt;/main&gt;
+                        &lt;/div&gt;
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Benefits of HTML Beautification</h2>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128187;</div>
+                            <h4 style="margin: var(--space-2) 0;">Easier Debugging</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Well-formatted code makes it simple to identify misplaced tags, missing attributes, and structural errors.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128101;</div>
+                            <h4 style="margin: var(--space-2) 0;">Better Collaboration</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Consistent formatting ensures team members can quickly understand and work with any file.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128736;</div>
+                            <h4 style="margin: var(--space-2) 0;">Easier Maintenance</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Clean structure reduces time spent understanding code during updates and refactoring.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128196;</div>
+                            <h4 style="margin: var(--space-2) 0;">Cleaner Version Control</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Formatted diffs in Git become meaningful rather than showing entire files as changed.</p>
+                        </div>
+                    </div>
+
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Use consistent team standards</strong> - Agree on indentation size and attribute wrapping style across your team. The HTML Beautifier lets you configure these options to match your preferred style.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Combine with validation</strong> - After beautifying HTML, run it through an <a href="../tools/html-validator">HTML Validator</a> to catch any structural errors that may have been hidden in messy code.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong> Tip:</strong> <strong>Integrate with your editor</strong> - Most code editors support format-on-save. Configure your editor to use consistent settings that match the beautifier output for seamless workflow.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>HTML Beautification Best Practices</h2>
+                    <ul>
+                        <li><strong>Choose 2 or 4 spaces consistently:</strong> The most common convention is 2 spaces for compact HTML or 4 spaces for traditional formatting. Pick one and apply it everywhere.</li>
+                        <li><strong>Preserve meaningful whitespace:</strong> Content inside <code>&lt;pre&gt;</code> and <code>&lt;textarea&gt;</code> tags is whitespace-sensitive. Ensure your beautifier does not alter these elements.</li>
+                        <li><strong>Don't beautify deployed code:</strong> Use beautified HTML for development and source control. Minify for production deployment to get the best of both worlds.</li>
+                        <li><strong>Review auto-generated output:</strong> HTML from CMS platforms, page builders, or code generators may have unusual nesting. Always review beautified output for correctness.</li>
+                        <li><strong>Use as a learning tool:</strong> Beautifying documentation examples and open-source templates helps you understand their structure and learn best practices.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is an HTML beautifier?</h3>
+                        <p>An HTML beautifier is a tool that reformats messy or minified HTML code into a clean, properly indented, and human-readable structure. It adds consistent indentation, line breaks, and spacing without changing the actual functionality of the code.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Does beautifying HTML change how it renders?</h3>
+                        <p>No, beautifying HTML only reformats the whitespace and indentation. The rendered output in a browser remains exactly the same. The tool preserves all tags, attributes, and content while making the source code easier to read and maintain.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can I beautify minified HTML?</h3>
+                        <p>Yes, one of the primary uses of an HTML beautifier is to take minified or compressed HTML and expand it back into a well-formatted, readable structure. This is especially useful when you need to understand or edit code that was previously minified.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What indentation options are available?</h3>
+                        <p>Most HTML beautifiers let you choose between tabs and spaces for indentation, as well as the indent size (2 spaces, 4 spaces, etc.). You can also configure whether to indent inner content of inline elements and how to handle nested tags.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Should I beautify HTML before committing to version control?</h3>
+                        <p>It depends on your workflow. Many teams prefer consistent formatting in source files for readability and code review. However, if you deploy minified versions, keep your source formatted and minify only during the build process.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Related Tools</h2>
+                    <p>Enhance your web development workflow with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/html-minifier">HTML Minifier</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Compress HTML files for production deployment</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/html-validator">HTML Validator</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Check HTML code for errors and compliance issues</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/css-beautifier">CSS Beautifier</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Format and beautify CSS stylesheets</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Beautify Your HTML Today</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Transform messy HTML into clean, readable, and professionally formatted code. Fast, private, and free. No account required.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/html-beautifier" class="btn btn-primary btn-lg">Beautify HTML Now</a>
+                    <a href="../tools/css-beautifier" class="btn btn-secondary btn-lg">Beautify CSS</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Local processing  No file uploads  Configurable options  Instant results  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Optimization Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/html-minifier">HTML Minifier</a></li>
+                        <li><a href="../tools/css-minifier">CSS Minifier</a></li>
+                        <li><a href="../tools/js-minifier">JS Minifier</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

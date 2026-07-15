@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator | GoToolly</title>
+    <meta name="description" content="Calculate percentages: X% of Y, percentage increase/decrease, percentage difference, and reverse percentage. Free, private, browser-based.">
+    <meta name="keywords" content="percentage calculator, percent calculator, percentage increase, percentage decrease, percentage difference, reverse percentage">
+    <link rel="canonical" href="https://gotoolly.com/tools/percentage-calculator">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/percentage-calculator">
+    <meta property="og:title" content="Percentage Calculator | GoToolly">
+    <meta property="og:description" content="Calculate percentages: X% of Y, percentage increase/decrease, percentage difference, and reverse percentage.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/percentage-calculator">
+    <meta name="twitter:title" content="Percentage Calculator | GoToolly">
+    <meta name="twitter:description" content="Calculate percentages: X% of Y, percentage increase/decrease, percentage difference, and reverse percentage.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Percentage Calculator","url":"https://gotoolly.com/tools/percentage-calculator","description":"Calculate percentages: X% of Y, percentage increase/decrease, percentage difference, and reverse percentage.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","6 calculation modes","Live results","Copy results"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Percentage Calculator"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate X% of Y?","acceptedAnswer":{"@type":"Answer","text":"Use the first calculator mode. Enter X as the percentage and Y as the number. The result is X ÷ 100 × Y."}},{"@type":"Question","name":"How do I calculate percentage increase?","acceptedAnswer":{"@type":"Answer","text":"Use the 'Percentage Increase' mode. Enter the original value and the new value. The tool calculates ((new - original) ÷ original) × 100."}},{"@type":"Question","name":"Is this tool free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no limits, no sign-up, and no data sent to any server."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.pc-tabs{display:flex;gap:var(--space-1);margin-bottom:var(--space-4);flex-wrap:wrap}.pc-tab{padding:var(--space-2) var(--space-3);border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);color:var(--color-text);cursor:pointer;font-size:var(--text-sm);font-weight:500;transition:all .2s}.pc-tab:hover{border-color:var(--color-primary)}.pc-tab.active{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}.pc-section{border:1px solid var(--color-border);border-radius:12px;padding:var(--space-4)}.pc-mode{display:none}.pc-mode.active{display:block}.pc-form-group{margin-bottom:var(--space-3)}.pc-form-group label{display:block;font-weight:500;margin-bottom:var(--space-1);font-size:var(--text-sm)}.pc-input{width:100%;padding:var(--space-2) var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-size:var(--text-base);background:var(--color-surface);color:var(--color-text);box-sizing:border-box}.pc-input:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.pc-result{background:var(--color-bg);border-radius:8px;padding:var(--space-4);margin-top:var(--space-3);text-align:center}.pc-result-value{font-size:var(--text-2xl);font-weight:700;color:var(--color-primary)}.pc-result-label{font-size:var(--text-sm);color:var(--color-text-light);margin-top:var(--space-1)}.pc-result-formula{font-size:var(--text-xs);color:var(--color-text-light);margin-top:var(--space-2);font-style:italic}.pc-actions{display:flex;gap:var(--space-2);margin-top:var(--space-3);flex-wrap:wrap}.pc-two-col{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)}@media(max-width:600px){.pc-two-col{grid-template-columns:1fr}}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="../about" class="nav-link">About</a><a href="../contact" class="nav-link">Contact</a></nav></div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Percentage Calculator</h1>
+                <p class="page-description">Calculate percentages: X% of Y, percentage increase/decrease, percentage difference, and reverse percentage. Free, private, browser-based.</p>
+                <p style="margin-top:var(--space-3);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No sign-up &bull; No server uploads &bull; 100% browser-based</p>
+            </div>
+
+            <div class="pc-tabs" id="pc-tabs">
+                <button class="pc-tab active" data-mode="pct-of">X% of Y</button>
+                <button class="pc-tab" data-mode="what-pct">X is what % of Y</button>
+                <button class="pc-tab" data-mode="increase">% Increase</button>
+                <button class="pc-tab" data-mode="decrease">% Decrease</button>
+                <button class="pc-tab" data-mode="difference">% Difference</button>
+                <button class="pc-tab" data-mode="reverse">Reverse %</button>
+            </div>
+
+            <div class="pc-section">
+                <div id="mode-pct-of" class="pc-mode active">
+                    <h2 style="margin-bottom:var(--space-3)">What is X% of Y?</h2>
+                    <div class="pc-two-col">
+                        <div class="pc-form-group"><label for="pct-of-x">X (Percentage)</label><div style="display:flex;align-items:center;gap:var(--space-1)"><input type="text" id="pct-of-x" class="pc-input" placeholder="e.g. 20" inputmode="decimal"><span style="font-weight:600;font-size:var(--text-lg)">%</span></div></div>
+                        <div class="pc-form-group"><label for="pct-of-y">Y (Number)</label><input type="text" id="pct-of-y" class="pc-input" placeholder="e.g. 200" inputmode="decimal"></div>
+                    </div>
+                    <div class="pc-result">
+                        <div class="pc-result-value" id="pct-of-result">--</div>
+                        <div class="pc-result-label" id="pct-of-label">Enter values above</div>
+                    </div>
+                </div>
+
+                <div id="mode-what-pct" class="pc-mode">
+                    <h2 style="margin-bottom:var(--space-3)">X is what percent of Y?</h2>
+                    <div class="pc-two-col">
+                        <div class="pc-form-group"><label for="what-pct-x">X (Value)</label><input type="text" id="what-pct-x" class="pc-input" placeholder="e.g. 30" inputmode="decimal"></div>
+                        <div class="pc-form-group"><label for="what-pct-y">Y (Total)</label><input type="text" id="what-pct-y" class="pc-input" placeholder="e.g. 150" inputmode="decimal"></div>
+                    </div>
+                    <div class="pc-result">
+                        <div class="pc-result-value" id="what-pct-result">--</div>
+                        <div class="pc-result-label" id="what-pct-label">Enter values above</div>
+                    </div>
+                </div>
+
+                <div id="mode-increase" class="pc-mode">
+                    <h2 style="margin-bottom:var(--space-3)">Percentage Increase</h2>
+                    <div class="pc-two-col">
+                        <div class="pc-form-group"><label for="inc-from">Original Value</label><input type="text" id="inc-from" class="pc-input" placeholder="e.g. 100" inputmode="decimal"></div>
+                        <div class="pc-form-group"><label for="inc-to">New Value</label><input type="text" id="inc-to" class="pc-input" placeholder="e.g. 150" inputmode="decimal"></div>
+                    </div>
+                    <div class="pc-result">
+                        <div class="pc-result-value" id="inc-result">--</div>
+                        <div class="pc-result-label" id="inc-label">Enter values above</div>
+                    </div>
+                </div>
+
+                <div id="mode-decrease" class="pc-mode">
+                    <h2 style="margin-bottom:var(--space-3)">Percentage Decrease</h2>
+                    <div class="pc-two-col">
+                        <div class="pc-form-group"><label for="dec-from">Original Value</label><input type="text" id="dec-from" class="pc-input" placeholder="e.g. 200" inputmode="decimal"></div>
+                        <div class="pc-form-group"><label for="dec-to">New Value</label><input type="text" id="dec-to" class="pc-input" placeholder="e.g. 150" inputmode="decimal"></div>
+                    </div>
+                    <div class="pc-result">
+                        <div class="pc-result-value" id="dec-result">--</div>
+                        <div class="pc-result-label" id="dec-label">Enter values above</div>
+                    </div>
+                </div>
+
+                <div id="mode-difference" class="pc-mode">
+                    <h2 style="margin-bottom:var(--space-3)">Percentage Difference</h2>
+                    <div class="pc-two-col">
+                        <div class="pc-form-group"><label for="diff-x">Value X</label><input type="text" id="diff-x" class="pc-input" placeholder="e.g. 100" inputmode="decimal"></div>
+                        <div class="pc-form-group"><label for="diff-y">Value Y</label><input type="text" id="diff-y" class="pc-input" placeholder="e.g. 150" inputmode="decimal"></div>
+                    </div>
+                    <div class="pc-result">
+                        <div class="pc-result-value" id="diff-result">--</div>
+                        <div class="pc-result-label" id="diff-label">Enter values above</div>
+                    </div>
+                </div>
+
+                <div id="mode-reverse" class="pc-mode">
+                    <h2 style="margin-bottom:var(--space-3)">Reverse Percentage</h2>
+                    <p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-3)">X is Y% of what number?</p>
+                    <div class="pc-two-col">
+                        <div class="pc-form-group"><label for="rev-x">X (Result)</label><input type="text" id="rev-x" class="pc-input" placeholder="e.g. 50" inputmode="decimal"></div>
+                        <div class="pc-form-group"><label for="rev-y">Y (Percentage)</label><div style="display:flex;align-items:center;gap:var(--space-1)"><input type="text" id="rev-y" class="pc-input" placeholder="e.g. 25" inputmode="decimal"><span style="font-weight:600;font-size:var(--text-lg)">%</span></div></div>
+                    </div>
+                    <div class="pc-result">
+                        <div class="pc-result-value" id="rev-result">--</div>
+                        <div class="pc-result-label" id="rev-label">Enter values above</div>
+                    </div>
+                </div>
+
+                <div class="pc-actions">
+                    <button id="pc-copy-btn" class="btn btn-outline btn-sm">Copy Result</button>
+                    <button id="pc-clear-btn" class="btn btn-outline btn-sm">Clear All</button>
+                </div>
+            </div>
+
+            <p style="margin-top:var(--space-4);text-align:center"><a href="/guides/percentage-calculator" style="color:var(--color-primary)">Read Guide: How to Calculate Percentages &rarr;</a></p>
+
+            <section class="content-section">
+                <div class="section-header"><h2>How It Works</h2></div>
+                <div class="content-body">
+                    <p>Select the type of percentage calculation you need, enter the values, and get instant results. All calculations are performed entirely in your browser.</p>
+                    <ul>
+                        <li><strong>X% of Y:</strong> Multiply Y by X divided by 100. Formula: (X / 100) &times; Y</li>
+                        <li><strong>X is what % of Y:</strong> Divide X by Y, then multiply by 100. Formula: (X / Y) &times; 100</li>
+                        <li><strong>Percentage Increase:</strong> ((New - Original) / Original) &times; 100</li>
+                        <li><strong>Percentage Decrease:</strong> ((Original - New) / Original) &times; 100</li>
+                        <li><strong>Percentage Difference:</strong> (|X - Y| / ((X + Y) / 2)) &times; 100</li>
+                        <li><strong>Reverse Percentage:</strong> (X / Y) &times; 100</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
+                <div class="faq-list">
+                    <div class="faq-item"><div class="faq-question">What is the difference between percentage increase and percentage difference?</div><div class="faq-answer">Percentage increase measures growth from an original value to a new value. Percentage difference measures the relative difference between two values without designating one as the original.</div></div>
+                    <div class="faq-item"><div class="faq-question">What is reverse percentage?</div><div class="faq-answer">Reverse percentage finds the original number when you know a part and its percentage. For example, if 50 is 25% of a number, the answer is 200.</div></div>
+                    <div class="faq-item"><div class="faq-question">Is this tool free?</div><div class="faq-answer">Yes, completely free with no limits, no sign-up required, and no data sent to any server.</div></div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>Unit Converter</h3><p>Convert between units of length, weight, temperature, and more.</p><div class="card-footer"><a href="./unit-converter" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>BMI Calculator</h3><p>Calculate your Body Mass Index and check your weight category.</p><div class="card-footer"><a href="./bmi-calculator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Loan Calculator</h3><p>Calculate monthly payments and view amortization schedules.</p><div class="card-footer"><a href="./loan-calculator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools/qr-code-generator">QR Code Generator</a></li><li><a href="/tools/password-generator">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+
+    <script defer src="../assets/js/main.min.js"></script>
+    <script defer src="../assets/js/tools/percentage-calculator.min.js"></script>
+</body>
+</html>

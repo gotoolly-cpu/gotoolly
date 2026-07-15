@@ -1034,37 +1034,39 @@
         </div>
 
         <!-- Related Tools -->
-        <section class="content-section">
-            <div class="section-header">
-                <h2>Related Tools</h2>
+        <div class="container">
+        <section class="content-section" style="margin-top: 3rem;">
+            <div class="section-header" style="text-align: left;">
+                <h2 style="font-size: 1.25rem;">Related Tools</h2>
             </div>
-            <div class="tools-grid">
-                <div class="card tool-card">
-                    <h3>Image Compressor</h3>
-                    <p>Reduce image file sizes without losing quality.</p>
+            <div class="tools-grid" style="text-align: left;">
+                <div class="card tool-card" style="padding: 1rem;">
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.25rem;">Image Compressor</h3>
+                    <p style="font-size: 0.8rem; margin-bottom: 0.5rem;">Reduce image file sizes without losing quality.</p>
                     <div class="card-footer">
                         <a href="./image-compressor" class="btn btn-primary btn-sm">Use Tool</a>
                     </div>
                 </div>
-                <div class="card tool-card">
-                    <h3>Password Generator</h3>
-                    <p>Generate strong, secure passwords instantly.</p>
+                <div class="card tool-card" style="padding: 1rem;">
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.25rem;">Password Generator</h3>
+                    <p style="font-size: 0.8rem; margin-bottom: 0.5rem;">Generate strong, secure passwords instantly.</p>
                     <div class="card-footer">
                         <a href="./password-generator" class="btn btn-primary btn-sm">Use Tool</a>
                     </div>
                 </div>
-                <div class="card tool-card">
-                    <h3>Favicon Generator</h3>
-                    <p>Create professional favicons from text or images.</p>
+                <div class="card tool-card" style="padding: 1rem;">
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.25rem;">Favicon Generator</h3>
+                    <p style="font-size: 0.8rem; margin-bottom: 0.5rem;">Create professional favicons from text or images.</p>
                     <div class="card-footer">
                         <a href="./favicon-generator" class="btn btn-primary btn-sm">Use Tool</a>
                     </div>
                 </div>
             </div>
-            <p style="margin-top: var(--space-4); text-align: center;">
+            <p style="margin-top: var(--space-3); text-align: left; font-size: 0.85rem;">
                 <a href="../guides/create-qr-code-for-marketing" style="color: var(--color-primary);">Read Guide: Create QR Code for Marketing ?</a>
             </p>
         </section>
+        </div>
     </main>
     
     <!-- Footer -->
@@ -1129,7 +1131,7 @@
     <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
     
     <script defer src="/assets/js/main.min.js"></script>
-    <script src="/assets/js/tools/barcode-generator.min.js"></script>
+    <script src="/assets/js/tools/qr-code-generator.min.js"></script>
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>

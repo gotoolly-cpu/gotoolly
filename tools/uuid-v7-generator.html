@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UUID v7 Generator - Free Online Tool | GoToolly</title>
+    <meta name="description" content="Generate time-ordered UUID v7 identifiers with bulk generation. Understand the differences between UUID v4 and v7. Free, private, browser-based.">
+    <meta name="keywords" content="uuid v7, uuid v7 generator, time-ordered uuid, uuid generator, uuid7, time-based uuid, uuid version 7">
+    <link rel="canonical" href="https://gotoolly.com/tools/uuid-v7-generator">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/uuid-v7-generator">
+    <meta property="og:title" content="UUID v7 Generator | GoToolly">
+    <meta property="og:description" content="Generate time-ordered UUID v7 identifiers with bulk generation. Understand the differences between UUID v4 and v7.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/uuid-v7-generator">
+    <meta name="twitter:title" content="UUID v7 Generator | GoToolly">
+    <meta name="twitter:description" content="Generate time-ordered UUID v7 identifiers with bulk generation. Understand the differences between UUID v4 and v7.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"UUID v7 Generator","url":"https://gotoolly.com/tools/uuid-v7-generator","description":"Generate time-ordered UUID v7 identifiers with bulk generation. Understand the differences between UUID v4 and v7.","applicationCategory":"DeveloperApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","UUID v7 standard","Time-ordered IDs","Bulk generation","Copy to clipboard"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"UUID v7 Generator"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is UUID v7?","acceptedAnswer":{"@type":"Answer","text":"UUID v7 is a time-ordered UUID that uses a Unix timestamp (milliseconds) as the first 48 bits, followed by version bits and random data. This makes UUIDs sortable by creation time."}},{"@type":"Question","name":"How is UUID v7 different from UUID v4?","acceptedAnswer":{"@type":"Answer","text":"UUID v4 is purely random. UUID v7 embeds a timestamp, making values sortable and more efficient for database indexing. v7 is ideal for primary keys in databases where sort order matters."}},{"@type":"Question","name":"Can I generate multiple UUIDs at once?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can generate between 1 and 100 UUID v7 identifiers at once. Each UUID gets the same timestamp for bulk generation."}},{"@type":"Question","name":"Is my data uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All UUID generation happens in your browser using the Web Crypto API. Nothing is sent to any server."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.uuid7-output{background:var(--color-surface);border:2px solid var(--color-border);border-radius:12px;padding:var(--space-4);font-family:'JetBrains Mono',monospace;font-size:var(--text-lg);text-align:center;word-break:break-all;margin-bottom:var(--space-4);min-height:60px;display:flex;align-items:center;justify-content:center;color:var(--color-primary);font-weight:600;transition:border-color .2s}.uuid7-output:hover{border-color:var(--color-primary)}.uuid7-batch{background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px;padding:var(--space-4);max-height:300px;overflow-y:auto;margin-bottom:var(--space-4)}.uuid7-batch-item{display:flex;align-items:center;gap:var(--space-2);padding:var(--space-2);border-bottom:1px solid var(--color-border);font-family:'JetBrains Mono',monospace;font-size:var(--text-sm)}.uuid7-batch-item:last-child{border-bottom:none}.uuid7-batch-item .num{color:var(--color-text-light);min-width:30px;font-size:var(--text-xs)}.uuid7-batch-item .val{flex:1;word-break:break-all}.uuid7-batch-item .copy-single{background:none;border:none;cursor:pointer;color:var(--color-text-light);padding:4px;font-size:var(--text-xs)}.uuid7-batch-item .copy-single:hover{color:var(--color-primary)}.uuid7-controls{display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center;margin-bottom:var(--space-4)}.uuid7-count{display:flex;align-items:center;gap:var(--space-2)}.uuid7-count label{font-size:var(--text-sm);font-weight:500}.uuid7-count select,.uuid7-count input{padding:var(--space-2) var(--space-3);border:1px solid var(--color-border);border-radius:6px;background:var(--color-surface);color:var(--color-text);font-size:var(--text-sm)}.uuid7-compare{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-bottom:var(--space-4)}.uuid7-compare .card{padding:var(--space-4)}.uuid7-compare h3{margin:0 0 var(--space-2);font-size:var(--text-base)}.uuid7-compare p{margin:0;font-size:var(--text-sm);color:var(--color-text-light)}.uuid7-compare .tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:var(--text-xs);font-weight:600;margin-bottom:var(--space-2)}.tag-v4{background:rgba(99,102,241,.1);color:#6366f1}.tag-v7{background:rgba(16,185,129,.1);color:#059669}@media(max-width:768px){.uuid7-compare{grid-template-columns:1fr}}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="../about" class="nav-link">About</a><a href="../contact" class="nav-link">Contact</a></nav></div>
+        </div>
+    </header>
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>UUID v7 Generator</h1>
+                <p class="page-description">Generate time-ordered UUID v7 identifiers with bulk generation. Understand the differences between UUID v4 and v7. Free, private, browser-based.</p>
+                <p style="margin-top:var(--space-3);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No sign-up &bull; No server uploads &bull; 100% browser-based</p>
+            </div>
+            <div class="uuid7-output" id="uuid7-output">Click generate to create a UUID v7</div>
+            <div class="uuid7-controls">
+                <button id="generate-btn" class="btn btn-primary btn-lg">Generate UUID v7</button>
+                <button id="copy-btn" class="btn btn-outline btn-lg">Copy</button>
+                <button id="download-btn" class="btn btn-outline btn-lg">Download TXT</button>
+                <div class="uuid7-count">
+                    <label for="uuid7-count">Count:</label>
+                    <input type="number" id="uuid7-count" min="1" max="100" value="1" style="width:70px">
+                </div>
+            </div>
+            <div id="batch-output" class="uuid7-batch" style="display:none"></div>
+            <section class="content-section">
+                <div class="section-header"><h2>UUID v4 vs v7 Comparison</h2></div>
+                <div class="uuid7-compare">
+                    <div class="card"><span class="tag tag-v4">UUID v4</span><h3>Random (v4)</h3><p>All 122 bits of data are randomly generated using cryptographically secure randomness. UUID v4 values are not sortable and have no temporal relationship. Best for anonymized identifiers where time ordering is not needed.</p></div>
+                    <div class="card"><span class="tag tag-v7">UUID v7</span><h3>Time-Ordered (v7)</h3><p>First 48 bits encode a Unix timestamp in milliseconds, making values sortable by creation time. The remaining 74 bits are random. Ideal for database primary keys, event IDs, and any use case where chronological ordering is beneficial.</p></div>
+                </div>
+            </section>
+            <section class="content-section">
+                <div class="section-header"><h2>How It Works</h2></div>
+                <div class="tools-grid" style="grid-template-columns:repeat(3,1fr)">
+                    <div class="card step-card"><h3><span style="background:var(--color-primary);color:white;border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;margin-right:8px;font-size:.9rem">1</span> Timestamp</h3><p>The current Unix timestamp in milliseconds is captured. This becomes the first 48 bits of the UUID, ensuring time-ordering.</p></div>
+                    <div class="card step-card"><h3><span style="background:var(--color-primary);color:white;border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;margin-right:8px;font-size:.9rem">2</span> Version & Random</h3><p>Version bits (0111 for v7) are set, and the remaining 74 bits are filled with cryptographically secure random data.</p></div>
+                    <div class="card step-card"><h3><span style="background:var(--color-primary);color:white;border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;margin-right:8px;font-size:.9rem">3</span> Output</h3><p>The 128-bit value is formatted as a standard UUID string with hyphens. Copy single values or download bulk lists as TXT.</p></div>
+                </div>
+            </section>
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
+                <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-3)">
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What is UUID v7?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">UUID v7 is a time-ordered UUID that uses a Unix timestamp (milliseconds) as the first 48 bits, followed by version bits and random data. This makes UUIDs sortable by creation time.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">How is UUID v7 different from UUID v4?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">UUID v4 is purely random. UUID v7 embeds a timestamp, making values sortable and more efficient for database indexing. v7 is ideal for primary keys in databases where sort order matters.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Can I generate multiple UUIDs at once?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Yes. You can generate between 1 and 100 UUID v7 identifiers at once. Each UUID gets the same timestamp for bulk generation.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Is my data uploaded to a server?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">No. All UUID generation happens in your browser using the Web Crypto API. Nothing is sent to any server.</p></div>
+                </div>
+            </section>
+            <section class="content-section">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>UUID Generator</h3><p>Generate random UUID v4 strings for databases and APIs.</p><div class="card-footer"><a href="./uuid-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Random Number Generator</h3><p>Generate random numbers with custom ranges and precision.</p><div class="card-footer"><a href="./random-number-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>JWT Generator</h3><p>Generate and decode JSON Web Tokens for authentication.</p><div class="card-footer"><a href="./jwt-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+                <p style="margin-top:var(--space-4);text-align:center"><a href="/guides/uuid-v7-generator" style="color:var(--color-primary)">Read Guide: UUID v7 Explained &rarr;</a></p>
+            </section>
+        </div>
+    </main>
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools/qr-code-generator">QR Code Generator</a></li><li><a href="/tools/password-generator">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+    <script defer src="../assets/js/main.min.js"></script>
+    <script defer src="../assets/js/tools/uuid-v7-generator.min.js"></script>
+</body>
+</html>

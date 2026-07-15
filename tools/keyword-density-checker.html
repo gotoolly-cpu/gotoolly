@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyword Density Checker - Analyze Keyword Frequency | GoToolly</title>
+    <meta name="description" content="Check keyword density in text content. Get word count, top keywords by frequency, density percentages, one-word and two-word phrases, and over-optimization warnings.">
+    <meta name="keywords" content="keyword density checker, keyword frequency analyzer, word count tool, seo keyword analysis, keyword density calculator, content analysis tool">
+    <link rel="canonical" href="https://gotoolly.com/tools/keyword-density-checker">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/keyword-density-checker">
+    <meta property="og:title" content="Keyword Density Checker - Analyze Keyword Frequency | GoToolly">
+    <meta property="og:description" content="Check keyword density in text content. Get word count, top keywords, density percentages, and over-optimization warnings.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/keyword-density-checker">
+    <meta name="twitter:title" content="Keyword Density Checker - Analyze Keyword Frequency | GoToolly">
+    <meta name="twitter:description" content="Check keyword density in text content. Get word count, top keywords, density percentages, and over-optimization warnings.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Keyword Density Checker","url":"https://gotoolly.com/tools/keyword-density-checker","description":"Analyze keyword density in text content for SEO optimization.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Word frequency analysis","Over-optimization warnings"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Keyword Density Checker"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is keyword density?","acceptedAnswer":{"@type":"Answer","text":"Keyword density is the percentage of times a keyword or phrase appears in a piece of content relative to the total word count. It helps SEO professionals gauge keyword usage."}},{"@type":"Question","name":"What is a good keyword density?","acceptedAnswer":{"@type":"Answer","text":"Most SEO experts recommend a keyword density between 1-3%. Over 3% may trigger over-optimization warnings and could be seen as keyword stuffing by search engines."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.density-form{margin-bottom:var(--space-4)}.density-textarea{width:100%;min-height:250px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:inherit;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text)}.density-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.density-actions{display:flex;gap:var(--space-2);margin-bottom:var(--space-4);flex-wrap:wrap}.density-output{border:1px solid var(--color-border);border-radius:12px;padding:var(--space-4);background:var(--color-surface)}.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--space-3);margin-bottom:var(--space-4)}.stat-card{padding:var(--space-3);border-radius:8px;background:rgba(255,255,255,.05);text-align:center}.stat-card .stat-value{font-size:var(--text-2xl);font-weight:700;color:var(--color-primary)}.stat-card .stat-label{font-size:var(--text-xs);color:var(--color-text-light);margin-top:var(--space-1)}.keyword-table{width:100%;border-collapse:collapse;font-size:var(--text-sm)}.keyword-table th{text-align:left;padding:var(--space-2);border-bottom:2px solid var(--color-border);font-weight:600;color:var(--color-text-light)}.keyword-table td{padding:var(--space-2);border-bottom:1px solid var(--color-border)}.keyword-table .bar{height:8px;background:var(--color-primary);border-radius:4px;transition:width .3s}.keyword-table .bar.warning{background:#f59e0b}.keyword-table .bar.danger{background:#ef4444}.section-title{font-weight:600;margin:var(--space-4) 0 var(--space-2);font-size:var(--text-base)}.over-optimization{padding:var(--space-3);border-radius:8px;margin-top:var(--space-3);font-size:var(--text-sm)}.over-optimization.ok{background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.3)}.over-optimization.warn{background:rgba(245,158,11,.1);color:#f59e0b;border:1px solid rgba(245,158,11,.3)}.over-optimization.danger{background:rgba(239,68,68,.1);color:#ef4444;border:1px solid rgba(239,68,68,.3)}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="../about" class="nav-link">About</a><a href="../contact" class="nav-link">Contact</a></nav></div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Keyword Density Checker</h1>
+                <p class="page-description">Analyze keyword density in your text content to optimize for search engines.</p>
+                <p style="margin-top:var(--space-3);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No sign-up &bull; No server uploads &bull; 100% browser-based</p>
+            </div>
+
+            <div class="density-form">
+                <label for="text-input" style="font-weight:600;margin-bottom:var(--space-2);display:block">Paste Your Text Content</label>
+                <textarea id="text-input" class="density-textarea" placeholder="Paste your article or blog post content here to analyze keyword density..."></textarea>
+            </div>
+
+            <div class="density-actions">
+                <button id="analyze-btn" class="btn btn-primary btn-lg">Analyze Density</button>
+                <button id="clear-btn" class="btn btn-outline btn-lg">Clear</button>
+            </div>
+
+            <div id="density-output" class="density-output">
+                <div style="color:var(--color-text-light);text-align:center;padding:var(--space-8)">Keyword density results will appear here</div>
+            </div>
+
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>Meta Length Checker</h3><p>Check title and description lengths for SEO optimization.</p><div class="card-footer"><a href="./meta-length-checker" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Heading Structure Checker</h3><p>Analyze heading hierarchy for proper SEO structure.</p><div class="card-footer"><a href="./heading-structure-checker" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Canonical URL Checker</h3><p>Validate canonical URLs and detect common issues.</p><div class="card-footer"><a href="./canonical-url-checker" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+            </section>
+
+            <section class="content-section" style="margin-top:var(--space-4)">
+                <div class="section-header"><h2>Privacy Notice</h2></div>
+                <p style="color:var(--color-text-light);font-size:var(--text-sm)">All processing happens entirely in your browser. Your text data is never uploaded to any server. Once you close this page, all data is gone.</p>
+            </section>
+
+            <p style="margin-top: var(--space-4); text-align: center;">
+                <a href="../guides/keyword-density-checker" style="color: var(--color-primary);">Read Guide: How to Optimize Keyword Density for SEO <i class="fas fa-arrow-right"></i></a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools/qr-code-generator">QR Code Generator</a></li><li><a href="/tools/password-generator">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+
+    <script defer src="../assets/js/main.min.js"></script>
+    <script>
+    (function(){
+        var textInput=document.getElementById('text-input'),output=document.getElementById('density-output'),analyzeBtn=document.getElementById('analyze-btn'),clearBtn=document.getElementById('clear-btn');
+        var stopWords={'the':1,'a':1,'an':1,'and':1,'or':1,'but':1,'in':1,'on':1,'at':1,'to':1,'for':1,'of':1,'with':1,'by':1,'from':1,'is':1,'was':1,'are':1,'were':1,'be':1,'been':1,'being':1,'have':1,'has':1,'had':1,'do':1,'does':1,'did':1,'will':1,'would':1,'could':1,'should':1,'may':1,'might':1,'shall':1,'can':1,'it':1,'its':1,'this':1,'that':1,'these':1,'those':1,'i':1,'you':1,'he':1,'she':1,'we':1,'they':1,'me':1,'him':1,'her':1,'us':1,'them':1,'my':1,'your':1,'his':1,'our':1,'their':1,'what':1,'which':1,'who':1,'whom':1,'where':1,'when':1,'why':1,'how':1,'all':1,'each':1,'every':1,'both':1,'few':1,'more':1,'most':1,'other':1,'some':1,'such':1,'no':1,'not':1,'only':1,'own':1,'same':1,'so':1,'than':1,'too':1,'very':1,'just':1,'about':1,'also':1,'here':1,'there':1,'as':1,'if':1,'then':1,'else':1,'after':1,'before':1,'between':1,'into':1,'through':1,'during':1,'up':1,'down':1,'out':1,'off':1,'over':1,'under':1,'again':1,'further':1,'once':1,'now':1,'get':1,'got':1,'make':1,'made':1,'go':1,'went':1,'going':1,'come':1,'came':1,'know':1,'knew':1,'think':1,'thought':1,'see':1,'saw':1,'want':1,'look':1,'looked':1,'use':1,'used':1,'find':1,'found':1,'give':1,'gave':1,'tell':1,'told':1,'say':1,'said':1,'take':1,'took':1,'one':1,'two':1,'new':1,'like':1,'time':1,'much':1,'well':1,'way':1,'even':1,'back':1,'many':1,'first':1,'still':1,'while':1,'since':1,'because':1,'however':1,'yet':1,'already':1,'though':1,'put':1,'set':1,'need':1,'try':1,'ask':1,'work':1,'seem':1,'feel':1,'keep':1,'let':1,'begin':1,'show':1,'hear':1,'play':1,'run':1,'move':1,'live':1,'believe':1,'happen':1,'must':1,'never':1,'often':1,'always':1,'sometimes':1,'sure':1,'together':1,'rather':1,'quite':1,'thing':1,'things':1,'right':1,'really':1,'going':1,'going':1,'something':1,'everything':1,'anything':1,'nothing':1,'lot':1,'without':1,'another':1,'within':1,'along':1,'behind':1,'across':1,'enough':1,'done':1,'around':1,'sure':1,'part':1,'good':1,'great':1,'long':1,'little':1,'old':1,'different':1,'small':1,'large':1,'next':1,'early':1,'young':1,'important':1,'last':1,'able':1,'say':1,'says':1,'using':1,'use':1,'make':1,'made':1};
+
+        function getWords(text){
+            return text.toLowerCase().replace(/[^a-z0-9\s'-]/g,' ').replace(/\s+/g,' ').trim().split(' ').filter(function(w){return w.length>1;});
+        }
+
+        function getPhrases(words,n){
+            var phrases={};
+            for(var i=0;i<=words.length-n;i++){
+                var phrase=words.slice(i,i+n).join(' ');
+                if(!phrase.match(/^\d+$/))phrases[phrase]=(phrases[phrase]||0)+1;
+            }
+            return phrases;
+        }
+
+        function sortByCount(obj){
+            return Object.keys(obj).map(function(k){return{word:k,count:obj[k]};}).sort(function(a,b){return b.count-a.count;});
+        }
+
+        analyzeBtn.addEventListener('click',function(){
+            var text=textInput.value.trim();
+            if(!text){output.innerHTML='<div style="color:#f38ba8;text-align:center;padding:var(--space-4)">Please paste some text to analyze.</div>';return;}
+            var words=getWords(text);
+            var totalWords=words.length;
+            var filteredWords=words.filter(function(w){return!stopWords[w];});
+            var singleWords={};
+            for(var i=0;i<filteredWords.length;i++){singleWords[filteredWords[i]]=(singleWords[filteredWords[i]]||0)+1;}
+            var twoWordPhrases=getPhrases(filteredWords,2);
+            var sortedSingle=sortByCount(singleWords).slice(0,15);
+            var sortedTwo=sortByCount(twoWordPhrases).slice(0,10);
+            var sentences=text.split(/[.!?]+/).filter(function(s){return s.trim().length>0;}).length||1;
+            var chars=text.length;
+            var readingTime=Math.ceil(totalWords/200);
+
+            var maxDensity=sortedSingle.length>0?((sortedSingle[0].count/totalWords)*100):0;
+            var warningClass='ok',warningText='Keyword density looks good. Your content is well-balanced.';
+            if(maxDensity>5){warningClass='danger';warningText='Warning: Keyword density is very high ('+maxDensity.toFixed(1)+'%). This may be considered keyword stuffing.';}
+            else if(maxDensity>3){warningClass='warn';warningText='Caution: Keyword density is above 3% ('+maxDensity.toFixed(1)+'%). Consider diversifying your vocabulary.';}
+
+            var html='<div class="stats-grid">';
+            html+='<div class="stat-card"><div class="stat-value">'+totalWords+'</div><div class="stat-label">Total Words</div></div>';
+            html+='<div class="stat-card"><div class="stat-value">'+chars+'</div><div class="stat-label">Characters</div></div>';
+            html+='<div class="stat-card"><div class="stat-value">'+sentences+'</div><div class="stat-label">Sentences</div></div>';
+            html+='<div class="stat-card"><div class="stat-value">'+readingTime+' min</div><div class="stat-label">Reading Time</div></div>';
+            html+='</div>';
+
+            html+='<div class="over-optimization '+warningClass+'">'+warningText+'</div>';
+
+            html+='<div class="section-title">Top Single Keywords</div>';
+            html+='<table class="keyword-table"><thead><tr><th>Keyword</th><th>Count</th><th>Density</th><th></th></tr></thead><tbody>';
+            for(var j=0;j<sortedSingle.length;j++){
+                var kw=sortedSingle[j],density=((kw.count/totalWords)*100);
+                var barClass=density>5?'danger':density>3?'warning':'';
+                html+='<tr><td><strong>'+kw.word+'</strong></td><td>'+kw.count+'</td><td>'+density.toFixed(2)+'%</td><td style="width:40%"><div class="bar '+barClass+'" style="width:'+Math.min(density*10,100)+'%"></div></td></tr>';
+            }
+            html+='</tbody></table>';
+
+            html+='<div class="section-title">Top Two-Word Phrases</div>';
+            html+='<table class="keyword-table"><thead><tr><th>Phrase</th><th>Count</th><th>Density</th><th></th></tr></thead><tbody>';
+            for(var k=0;k<sortedTwo.length;k++){
+                var ph=sortedTwo[k],pd=((ph.count/totalWords)*100);
+                html+='<tr><td><strong>'+ph.word+'</strong></td><td>'+ph.count+'</td><td>'+pd.toFixed(2)+'%</td><td style="width:40%"><div class="bar" style="width:'+Math.min(pd*10,100)+'%"></div></td></tr>';
+            }
+            html+='</tbody></table>';
+
+            output.innerHTML=html;
+        });
+
+        clearBtn.addEventListener('click',function(){
+            textInput.value='';
+            output.innerHTML='<div style="color:var(--color-text-light);text-align:center;padding:var(--space-8)">Keyword density results will appear here</div>';
+        });
+    })();
+    </script>
+</body>
+</html>

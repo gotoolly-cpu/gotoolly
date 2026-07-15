@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Editor - Write Markdown with Live | GoToolly</title>
+    <meta name="description" content="Write Markdown with a live preview. Download as .md or .html, copy HTML output, fullscreen editor. Free, private, browser-based tool.">
+    <meta name="keywords" content="markdown editor, live preview markdown, write markdown, markdown to html, markdown download">
+    <link rel="canonical" href="https://gotoolly.com/tools/markdown-editor">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/markdown-editor">
+    <meta property="og:title" content="Markdown Editor - Write Markdown with Live Preview | GoToolly">
+    <meta property="og:description" content="Write Markdown with a live preview. Download as .md or .html, copy HTML output, fullscreen editor.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/markdown-editor">
+    <meta name="twitter:title" content="Markdown Editor - Write Markdown with Live Preview | GoToolly">
+    <meta name="twitter:description" content="Write Markdown with a live preview. Download as .md or .html, copy HTML output, fullscreen editor.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Markdown Editor","url":"https://gotoolly.com/tools/markdown-editor","description":"Write Markdown with a live preview. Download as .md or .html, copy HTML output, fullscreen editor.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Live preview","Download .md and .html","Fullscreen mode"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Markdown Editor"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a Markdown editor?","acceptedAnswer":{"@type":"Answer","text":"A Markdown editor lets you write formatted text using simple syntax like # for headings, ** for bold, and - for lists. This tool shows a live preview as you type."}},{"@type":"Question","name":"Can I download my Markdown as HTML?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can download the rendered output as an HTML file, or download the raw Markdown .md file. You can also copy the generated HTML to your clipboard."}},{"@type":"Question","name":"Does the editor work offline?","acceptedAnswer":{"@type":"Answer","text":"All processing happens in your browser. Once the page is loaded, the editor works without an internet connection. Nothing is uploaded to any server."}},{"@type":"Question","name":"Is my text uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens entirely in your browser. Your text never leaves your device."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.md-editor{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);min-height:400px}.md-editor.fullscreen{position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;padding:var(--space-4);background:var(--color-bg);margin:0}.md-editor textarea{width:100%;min-height:400px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text);line-height:1.6}.md-editor textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.md-preview{padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);overflow-y:auto;min-height:400px;line-height:1.7}.md-preview h1,.md-preview h2,.md-preview h3{margin-top:0;margin-bottom:var(--space-2)}.md-preview h1{font-size:var(--text-2xl);border-bottom:1px solid var(--color-border);padding-bottom:var(--space-1)}.md-preview h2{font-size:var(--text-xl);border-bottom:1px solid var(--color-border);padding-bottom:var(--space-1)}.md-preview h3{font-size:var(--text-lg)}.md-preview p{margin:0 0 var(--space-2)}.md-preview ul,.md-preview ol{padding-left:var(--space-5);margin:0 0 var(--space-2)}.md-preview li{margin-bottom:var(--space-1)}.md-preview code{padding:2px 6px;background:var(--color-bg);border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:.9em}.md-preview pre code{display:block;padding:var(--space-3);overflow-x:auto}.md-preview a{color:var(--color-primary)}.md-preview blockquote{border-left:4px solid var(--color-primary);padding:var(--space-2) var(--space-3);margin:0 0 var(--space-2);background:var(--color-bg);border-radius:0 8px 8px 0}.md-preview img{max-width:100%;border-radius:8px}.md-editor textarea,.md-preview{height:calc(100vh - 350px)}.stat-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;background:var(--color-bg);border-radius:20px;font-size:var(--text-xs);color:var(--color-text-light)}@media(max-width:768px){.md-editor{grid-template-columns:1fr}}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/tools" class="nav-link active">Tools</a>
+                <a href="/guides" class="nav-link">Guides</a>
+                <a href="../about" class="nav-link">About</a>
+                <a href="../contact" class="nav-link">Contact</a>
+            </nav></div>
+        </div>
+    </header>
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Markdown Editor</h1>
+                <p class="page-description">Write and preview Markdown in real time. Your text is processed entirely inside your browser. Download as .md or .html, or copy the rendered HTML.</p>
+            </div>
+            <div class="tool-layout">
+                <div class="tool-interface">
+                    <div class="tool-header">
+                        <h2>Editor</h2>
+                        <p>Type Markdown on the left, see the rendered preview on the right</p>
+                    </div>
+                    <div id="editor-stats" style="display:flex;gap:var(--space-2);margin-bottom:var(--space-3);flex-wrap:wrap">
+                        <span class="stat-badge"><i class="fas fa-font" style="color:var(--color-primary)"></i> Words: <strong id="word-count">0</strong></span>
+                        <span class="stat-badge"><i class="fas fa-text-height" style="color:var(--color-primary)"></i> Characters: <strong id="char-count">0</strong></span>
+                    </div>
+                    <div class="md-editor" id="md-editor">
+                        <textarea id="md-input" placeholder="Type Markdown here...&#10;&#10;# Heading&#10;**Bold** *Italic*&#10;- List item&#10;&#10;[Link](https://example.com)"></textarea>
+                        <div id="md-preview" class="md-preview"></div>
+                    </div>
+                    <div class="tool-actions" style="margin-top:var(--space-3)">
+                        <button id="fullscreen-btn" class="btn btn-secondary btn-sm"><i class="fas fa-expand" aria-hidden="true"></i> Fullscreen</button>
+                        <button id="download-md-btn" class="btn btn-primary btn-sm"><i class="fas fa-download" aria-hidden="true"></i> Download .md</button>
+                        <button id="download-html-btn" class="btn btn-primary btn-sm"><i class="fas fa-file-code" aria-hidden="true"></i> Download .html</button>
+                        <button id="copy-html-btn" class="btn btn-secondary btn-sm"><i class="fas fa-copy" aria-hidden="true"></i> Copy HTML</button>
+                    </div>
+                </div>
+                <div class="tool-sidebar">
+                    <div class="card"><h3>How It Works</h3><ol><li>Type Markdown syntax on the left pane</li><li>See formatted preview update live on the right</li><li>Download as .md or .html file</li><li>Copy rendered HTML to clipboard</li></ol></div>
+                    <div class="card"><h3>Markdown Syntax</h3><ul><li><code># Heading</code> – Heading 1</li><li><code>**bold**</code> – Bold text</li><li><code>*italic*</code> – Italic text</li><li><code>[text](url)</code> – Link</li><li><code>- item</code> – Bullet list</li><li><code>`code`</code> – Inline code</li></ul></div>
+                </div>
+            </div>
+            <section class="content-section">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>Markdown to HTML</h3><p>Convert Markdown to HTML with live preview.</p><div class="card-footer"><a href="./markdown-to-html" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>HTML to Markdown</h3><p>Convert HTML back to Markdown format.</p><div class="card-footer"><a href="./html-to-markdown" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>HTML Encoder / Decoder</h3><p>Encode and decode HTML entities in your text.</p><div class="card-footer"><a href="./html-encoder" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+            </section>
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
+                <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-3)">
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What is a Markdown editor?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">A Markdown editor lets you write formatted text using simple syntax like # for headings, ** for bold, and - for lists. This tool shows a live preview as you type.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Can I download my Markdown as HTML?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Yes. You can download the rendered output as an HTML file, or download the raw Markdown .md file. You can also copy the generated HTML to your clipboard.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Does the editor work offline?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">All processing happens in your browser. Once the page is loaded, the editor works without an internet connection. Nothing is uploaded to any server.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Can I use images in Markdown?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Yes. Use the syntax ![alt text](image-url) to embed images. The preview panel will render them inline if they are accessible from your browser.</p></div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+    <script defer src="../assets/js/main.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script defer src="../assets/js/tools/markdown-editor.min.js"></script>
+</body>
+</html>

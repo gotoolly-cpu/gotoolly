@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Generator (MD5, SHA-1, SHA-256, SHA-512) | GoToolly</title>
+    <meta name="description" content="Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text. Instantly compute multiple hash types. Free, private, browser-based.">
+    <meta name="keywords" content="hash generator, md5 generator, sha1 generator, sha256 generator, sha512 generator, hash calculator, hash tool, online hash">
+    <link rel="canonical" href="https://gotoolly.com/tools/hash-generator">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/hash-generator">
+    <meta property="og:title" content="Hash Generator (MD5, SHA-1, SHA-256, SHA-512) | GoToolly">
+    <meta property="og:description" content="Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text. Instantly compute multiple hash types.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/hash-generator">
+    <meta name="twitter:title" content="Hash Generator (MD5, SHA-1, SHA-256, SHA-512) | GoToolly">
+    <meta name="twitter:description" content="Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text. Instantly compute multiple hash types.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Hash Generator","url":"https://gotoolly.com/tools/hash-generator","description":"Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text. Instantly compute multiple hash types.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","MD5 support","SHA-1 support","SHA-256 support","SHA-512 support","Copy individual hashes"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Hash Generator"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What hash algorithms are supported?","acceptedAnswer":{"@type":"Answer","text":"This tool supports MD5, SHA-1, SHA-256, and SHA-512. You can generate one or all hash types simultaneously from any text input."}},{"@type":"Question","name":"What is the difference between MD5 and SHA-256?","acceptedAnswer":{"@type":"Answer","text":"SHA-256 is more secure than MD5. MD5 produces a 128-bit hash and is faster but has known vulnerabilities. SHA-256 produces a 256-bit hash and is recommended for security-sensitive applications."}},{"@type":"Question","name":"Is my text uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All hash computation happens entirely in your browser using the Web Crypto API and JavaScript. Your text never leaves your device."}},{"@type":"Question","name":"Can I hash an entire file?","acceptedAnswer":{"@type":"Answer","text":"Currently this tool accepts text input only. For file hashing, check our Hash Checker tool which supports file upload for verification."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.hg-container{max-width:640px;margin:0 auto var(--space-4)}.hg-textarea{width:100%;min-height:150px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text);box-sizing:border-box}.hg-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.hg-options{display:flex;flex-wrap:wrap;gap:var(--space-3);margin:var(--space-4) 0;padding:var(--space-4);background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px}.hg-checkbox{display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-sm);font-weight:500;cursor:pointer;padding:var(--space-2) var(--space-3);border:1px solid var(--color-border);border-radius:6px;transition:border-color .2s,background .2s;user-select:none}.hg-checkbox:hover{border-color:var(--color-primary)}.hg-checkbox input[type="checkbox"]{accent-color:var(--color-primary);width:16px;height:16px;cursor:pointer}.hg-checkbox.active{border-color:var(--color-primary);background:rgba(99,102,241,.08)}.hg-results{margin-top:var(--space-4)}.hg-result-row{display:flex;align-items:center;gap:var(--space-2);padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;margin-bottom:var(--space-2);background:var(--color-surface)}.hg-result-row .hg-label{font-weight:600;min-width:80px;font-size:var(--text-sm)}.hg-result-row .hg-value{flex:1;font-family:'JetBrains Mono',monospace;font-size:var(--text-xs);word-break:break-all;color:var(--color-text-light)}.hg-result-row .hg-copy{background:none;border:1px solid var(--color-border);border-radius:6px;padding:4px 10px;font-size:var(--text-xs);cursor:pointer;color:var(--color-text-light);white-space:nowrap;transition:all .2s}.hg-result-row .hg-copy:hover{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="../about" class="nav-link">About</a><a href="../contact" class="nav-link">Contact</a></nav></div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Hash Generator</h1>
+                <p class="page-description">Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text. Instantly compute multiple hash types. Free, private, browser-based.</p>
+                <p style="margin-top:var(--space-3);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No sign-up &bull; No server uploads &bull; 100% browser-based</p>
+            </div>
+
+            <div class="hg-container">
+                <div style="display:flex;gap:var(--space-2);margin-bottom:var(--space-3);flex-wrap:wrap">
+                    <label class="checkbox-label" style="font-size:var(--text-sm)"><input type="checkbox" id="live-mode"> Auto-generate as I type</label>
+                </div>
+                <textarea id="hg-input" class="hg-textarea" placeholder="Enter text to hash...&#10;&#10;Example: Hello, World!"></textarea>
+
+                <div class="hg-options" id="hg-options">
+                    <label class="hg-checkbox active"><input type="checkbox" value="md5" checked> MD5</label>
+                    <label class="hg-checkbox active"><input type="checkbox" value="sha1" checked> SHA-1</label>
+                    <label class="hg-checkbox active"><input type="checkbox" value="sha256" checked> SHA-256</label>
+                    <label class="hg-checkbox active"><input type="checkbox" value="sha512" checked> SHA-512</label>
+                </div>
+
+                <div class="tool-actions" style="margin-bottom:var(--space-4)">
+                    <button id="generate-btn" class="btn btn-primary btn-lg">Generate Hashes</button>
+                    <button id="clear-btn" class="btn btn-outline btn-lg">Clear</button>
+                </div>
+
+                <div id="hg-results" class="hg-results" style="display:none"></div>
+            </div>
+
+            <section class="content-section">
+                <div class="section-header"><h2>How It Works</h2></div>
+                <div class="tools-grid" style="grid-template-columns:repeat(3,1fr)">
+                    <div class="card step-card"><h3><span style="background:var(--color-primary);color:white;border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;margin-right:8px;font-size:.9rem">1</span> Enter Text</h3><p>Type or paste any text into the input area. You can hash single words, sentences, or entire paragraphs.</p></div>
+                    <div class="card step-card"><h3><span style="background:var(--color-primary);color:white;border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;margin-right:8px;font-size:.9rem">2</span> Select Algorithms</h3><p>Choose which hash algorithms to compute: MD5, SHA-1, SHA-256, and/or SHA-512. Select one or all.</p></div>
+                    <div class="card step-card"><h3><span style="background:var(--color-primary);color:white;border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;margin-right:8px;font-size:.9rem">3</span> Copy Results</h3><p>Each hash is displayed with its own copy button. Click to copy any hash to your clipboard instantly.</p></div>
+                </div>
+            </section>
+
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
+                <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-3)">
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What hash algorithms are supported?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">This tool supports MD5, SHA-1, SHA-256, and SHA-512. You can generate one or all hash types simultaneously from any text input.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What is the difference between MD5 and SHA-256?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">SHA-256 is more secure than MD5. MD5 produces a 128-bit hash and is faster but has known vulnerabilities. SHA-256 produces a 256-bit hash and is recommended for security-sensitive applications.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Is my text uploaded to a server?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">No. All hash computation happens entirely in your browser using the Web Crypto API and JavaScript. Your text never leaves your device.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Can I hash an entire file?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Currently this tool accepts text input only. For file hashing, check our Hash Checker tool which supports file upload for verification.</p></div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>Hash Checker</h3><p>Compare original text against an existing hash to verify integrity.</p><div class="card-footer"><a href="./hash-checker" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Password Strength Checker</h3><p>Analyze password strength and entropy.</p><div class="card-footer"><a href="./password-strength-checker" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>JWT Generator</h3><p>Build and generate JSON Web Tokens for development.</p><div class="card-footer"><a href="./jwt-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+                <p style="margin-top:var(--space-4);text-align:center"><a href="/guides/hash-generator" style="color:var(--color-primary)">Read Guide: Hash Generator Guide &rarr;</a></p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools/qr-code-generator">QR Code Generator</a></li><li><a href="/tools/password-generator">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+
+    <script defer src="../assets/js/main.min.js"></script>
+    <script defer src="../assets/js/tools/hash-generator.min.js"></script>
+</body>
+</html>

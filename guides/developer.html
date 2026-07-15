@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Tools Guides - JSON, XML, HTML, CSS, Encoding | GoToolly</title>
+    <meta name="description" content="Step-by-step guides for developer tools. Format JSON, minify HTML/CSS/JS, encode Base64, test regex, decode JWTs, compare data formats, beautify code, and more.">
+    <meta name="keywords" content="developer guides, json formatter, xml formatter, html minifier, css minifier, js minifier, base64 encoder, jwt decoder, hash generator, regex tester, code beautifier, developer tools">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/guides/developer">
+    <meta property="og:title" content="Developer Tools Guides - JSON, XML, HTML, CSS, Encoding | GoToolly">
+    <meta property="og:description" content="Step-by-step guides for developer tools. Format JSON, minify HTML/CSS/JS, encode Base64, test regex, decode JWTs, compare data formats, beautify code, and more.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo - Privacy-first tools">
+    <meta property="og:site_name" content="GoToolly">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/developer">
+    <meta name="twitter:title" content="Developer Tools Guides - JSON, XML, HTML, CSS, Encoding | GoToolly">
+    <meta name="twitter:description" content="Step-by-step guides for developer tools. Format JSON, minify HTML/CSS/JS, encode Base64, test regex, decode JWTs, compare data formats, beautify code, and more.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://gotoolly.com/guides/developer">
+    
+    <!-- Favicon & Manifest -->
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../../assets/images/logo-192.png">
+    <link rel="manifest" href="../../site.webmanifest">
+    
+    <!-- Critical CSS: preload and non-blocking load -->
+    <link rel="preload" href="../../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../../assets/css/styles.min.css"></noscript>    
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Developer Tools Guides - GoToolly",
+        "headline": "29 Developer Tool Guides — Step by Step",
+        "description": "Step-by-step guides for developer tools. Format JSON, minify HTML/CSS/JS, encode Base64, test regex, decode JWTs, compare data formats, beautify code, and more.",
+        "url": "https://gotoolly.com/guides/developer",
+        "author": {
+            "@type": "Organization",
+            "name": "GoToolly",
+            "url": "https://gotoolly.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "GoToolly",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://gotoolly.com/assets/images/logo-512.png"
+            }
+        },
+        "image": "https://gotoolly.com/assets/images/logo-512.png",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://gotoolly.com/guides/developer"
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "item": "https://gotoolly.com/guides/format-json-data", "name": "JSON Formatter Guide"},
+                {"@type": "ListItem", "position": 2, "item": "https://gotoolly.com/guides/xml-formatter", "name": "XML Formatter Guide"},
+                {"@type": "ListItem", "position": 3, "item": "https://gotoolly.com/guides/html-minifier", "name": "HTML Minifier Guide"},
+                {"@type": "ListItem", "position": 4, "item": "https://gotoolly.com/guides/css-minifier", "name": "CSS Minifier Guide"},
+                {"@type": "ListItem", "position": 5, "item": "https://gotoolly.com/guides/js-minifier", "name": "JavaScript Minifier Guide"},
+                {"@type": "ListItem", "position": 6, "item": "https://gotoolly.com/guides/html-encoder", "name": "HTML Encoder Guide"},
+                {"@type": "ListItem", "position": 7, "item": "https://gotoolly.com/guides/base64-encoder", "name": "Base64 Encoder Guide"},
+                {"@type": "ListItem", "position": 8, "item": "https://gotoolly.com/guides/url-encoder", "name": "URL Encoder Guide"},
+                {"@type": "ListItem", "position": 9, "item": "https://gotoolly.com/guides/regex-tester", "name": "Regex Tester Guide"},
+                {"@type": "ListItem", "position": 10, "item": "https://gotoolly.com/guides/jwt-decoder", "name": "JWT Decoder Guide"},
+                {"@type": "ListItem", "position": 11, "item": "https://gotoolly.com/guides/jwt-generator", "name": "JWT Generator Guide"},
+                {"@type": "ListItem", "position": 12, "item": "https://gotoolly.com/guides/hash-generator", "name": "Hash Generator Guide"},
+                {"@type": "ListItem", "position": 13, "item": "https://gotoolly.com/guides/hash-checker", "name": "Hash Checker Guide"},
+                {"@type": "ListItem", "position": 14, "item": "https://gotoolly.com/guides/json-compare", "name": "JSON Compare Guide"},
+                {"@type": "ListItem", "position": 15, "item": "https://gotoolly.com/guides/json-escape-unescape", "name": "JSON Escape Unescape Guide"},
+                {"@type": "ListItem", "position": 16, "item": "https://gotoolly.com/guides/json-to-yaml", "name": "JSON to YAML Guide"},
+                {"@type": "ListItem", "position": 17, "item": "https://gotoolly.com/guides/yaml-to-json", "name": "YAML to JSON Guide"},
+                {"@type": "ListItem", "position": 18, "item": "https://gotoolly.com/guides/json-to-csv", "name": "JSON to CSV Guide"},
+                {"@type": "ListItem", "position": 19, "item": "https://gotoolly.com/guides/csv-to-json", "name": "CSV to JSON Guide"},
+                {"@type": "ListItem", "position": 20, "item": "https://gotoolly.com/guides/xml-to-json", "name": "XML to JSON Guide"},
+                {"@type": "ListItem", "position": 21, "item": "https://gotoolly.com/guides/html-beautifier", "name": "HTML Beautifier Guide"},
+                {"@type": "ListItem", "position": 22, "item": "https://gotoolly.com/guides/html-validator", "name": "HTML Validator Guide"},
+                {"@type": "ListItem", "position": 23, "item": "https://gotoolly.com/guides/css-beautifier", "name": "CSS Beautifier Guide"},
+                {"@type": "ListItem", "position": 24, "item": "https://gotoolly.com/guides/js-beautifier", "name": "JavaScript Beautifier Guide"},
+                {"@type": "ListItem", "position": 25, "item": "https://gotoolly.com/guides/url-parser", "name": "URL Parser Guide"},
+                {"@type": "ListItem", "position": 26, "item": "https://gotoolly.com/guides/query-string-parser", "name": "Query String Parser Guide"},
+                {"@type": "ListItem", "position": 27, "item": "https://gotoolly.com/guides/http-status-lookup", "name": "HTTP Status Lookup Guide"},
+                {"@type": "ListItem", "position": 28, "item": "https://gotoolly.com/guides/mime-type-lookup", "name": "MIME Type Lookup Guide"},
+                {"@type": "ListItem", "position": 29, "item": "https://gotoolly.com/guides/uuid-validator", "name": "UUID Validator Guide"}
+            ]
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"},
+            {"@type": "ListItem", "position": 3, "name": "Developer Guides"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I format or validate JSON data?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use the JSON Formatter tool. Paste your JSON string and the tool instantly validates, formats with indentation, or minifies it. You can also fix common JSON errors like trailing commas and missing quotes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I minify HTML, CSS, and JavaScript without losing functionality?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The HTML, CSS, and JavaScript Minifier tools remove whitespace, comments, and unnecessary characters without affecting functionality. This reduces file sizes and improves page load speeds."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I encode and decode Base64 strings?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use the Base64 Encoder tool to encode text or files into Base64 format, and decode Base64 back to plain text. All encoding and decoding happens locally in your browser — nothing is uploaded."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is JWT and how do I decode a token?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "JWT (JSON Web Token) is a compact token format used for authentication. Use the JWT Decoder to paste your token and instantly see the decoded header, payload, and signature — all processed locally."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I convert between JSON, YAML, XML, and CSV formats?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. GoToolly offers converters between all major data formats: JSON to YAML, YAML to JSON, JSON to CSV, CSV to JSON, and XML to JSON. All conversions happen in your browser with no data uploads."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-primary);
+            color: white;
+            padding: 8px 16px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+        .category-hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #4f46e5 100%);
+            color: #fff;
+            padding: var(--space-12) var(--space-6);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            margin-bottom: var(--space-10);
+        }
+        .category-hero h1 {
+            color: #fff;
+            margin-bottom: var(--space-3);
+            font-size: var(--text-3xl);
+        }
+        .category-hero .page-description {
+            color: rgba(255,255,255,.9);
+            font-size: var(--text-lg);
+            max-width: 42rem;
+            margin: 0 auto var(--space-6);
+            line-height: 1.6;
+        }
+        .category-hero .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,.15);
+            color: #fff;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: var(--text-sm);
+            font-weight: 600;
+            margin-bottom: var(--space-4);
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--space-5) 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="../../assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32">
+                    <span class="logo-text">GoToolly</span>
+                </a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="category-hero">
+                <div class="hero-badge">29 Developer Tool Guides — Step by Step</div>
+                <h1>Developer Tools Guides</h1>
+                <p class="page-description">
+                    Step-by-step guides for developer tools. Format JSON, minify HTML/CSS/JS, encode Base64, test regex, decode JWTs, compare data formats, beautify code, and more.
+                </p>
+            </div>
+
+            <!-- Featured Guides -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Featured Developer Guides</h2>
+                    <p class="section-description">The most popular developer tool guides to get you started quickly.</p>
+                </div>
+                <div class="guides-grid">
+                    <div class="card guide-card">
+                        <h3>JSON Formatter</h3>
+                        <p>Format, validate, and minify JSON data. Fix common JSON errors, beautify minified JSON, and convert to readable formats — all in your browser.</p>
+                        <div class="card-footer">
+                            <a href="/guides/format-json-data" class="btn btn-primary btn-sm btn-full">Read Guide</a>
+                        </div>
+                    </div>
+                    <div class="card guide-card">
+                        <h3>HTML Minifier</h3>
+                        <p>Compress HTML files by removing whitespace, comments, and unnecessary characters. Reduce file sizes and improve page load speeds for production.</p>
+                        <div class="card-footer">
+                            <a href="/guides/html-minifier" class="btn btn-primary btn-sm btn-full">Read Guide</a>
+                        </div>
+                    </div>
+                    <div class="card guide-card">
+                        <h3>JWT Decoder</h3>
+                        <p>Decode JWT tokens instantly to inspect headers, payloads, and signatures. Debug authentication issues with fully local, private token inspection.</p>
+                        <div class="card-footer">
+                            <a href="/guides/jwt-decoder" class="btn btn-primary btn-sm btn-full">Read Guide</a>
+                        </div>
+                    </div>
+                    <div class="card guide-card">
+                        <h3>Base64 Encoder</h3>
+                        <p>Encode text and files to Base64 format, or decode Base64 strings back to plain text. Perfect for data URI creation and email attachments.</p>
+                        <div class="card-footer">
+                            <a href="/guides/base64-encoder" class="btn btn-primary btn-sm btn-full">Read Guide</a>
+                        </div>
+                    </div>
+                    <div class="card guide-card">
+                        <h3>Regex Tester</h3>
+                        <p>Test regular expressions with real-time matching, highlighting, and capture groups. Debug and refine your patterns before using them in code.</p>
+                        <div class="card-footer">
+                            <a href="/guides/regex-tester" class="btn btn-primary btn-sm btn-full">Read Guide</a>
+                        </div>
+                    </div>
+                    <div class="card guide-card">
+                        <h3>JSON Compare</h3>
+                        <p>Compare two JSON objects side by side and highlight differences. Identify added, removed, or changed values in nested structures instantly.</p>
+                        <div class="card-footer">
+                            <a href="/guides/json-compare" class="btn btn-primary btn-sm btn-full">Read Guide</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- All Developer Guides -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>All Developer Tool Guides</h2>
+                    <p class="section-description">Browse our complete collection of developer tool tutorials organized by category.</p>
+                </div>
+                <div class="tools-grid">
+                    <div class="card"><h3>JSON Formatter</h3><p>Format, validate, and minify JSON data.</p><div class="card-footer"><a href="/guides/format-json-data" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>XML Formatter</h3><p>Format and validate XML documents with indentation.</p><div class="card-footer"><a href="/guides/xml-formatter" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>HTML Minifier</h3><p>Compress HTML files by removing whitespace and comments.</p><div class="card-footer"><a href="/guides/html-minifier" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>CSS Minifier</h3><p>Minify CSS files to reduce load times.</p><div class="card-footer"><a href="/guides/css-minifier" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>JavaScript Minifier</h3><p>Compress JavaScript files for production.</p><div class="card-footer"><a href="/guides/js-minifier" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>HTML Encoder</h3><p>Encode and decode HTML entities safely.</p><div class="card-footer"><a href="/guides/html-encoder" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>Base64 Encoder</h3><p>Encode and decode Base64 strings and files.</p><div class="card-footer"><a href="/guides/base64-encoder" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>URL Encoder</h3><p>Encode and decode URLs for safe transmission.</p><div class="card-footer"><a href="/guides/url-encoder" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>Regex Tester</h3><p>Test regular expressions with real-time matching and highlighting.</p><div class="card-footer"><a href="/guides/regex-tester" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>JWT Decoder</h3><p>Decode JWT tokens and inspect headers and payloads.</p><div class="card-footer"><a href="/guides/jwt-decoder" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>JWT Generator</h3><p>Build and generate JWT tokens for development.</p><div class="card-footer"><a href="/guides/jwt-generator" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>Hash Generator</h3><p>Generate MD5, SHA-1, SHA-256, and SHA-512 hashes.</p><div class="card-footer"><a href="/guides/hash-generator" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>Hash Checker</h3><p>Verify data integrity with hash comparison.</p><div class="card-footer"><a href="/guides/hash-checker" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>JSON Compare</h3><p>Compare two JSON objects and highlight differences.</p><div class="card-footer"><a href="/guides/json-compare" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>JSON Escape / Unescape</h3><p>Escape and unescape JSON strings with special characters.</p><div class="card-footer"><a href="/guides/json-escape-unescape" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>JSON to YAML</h3><p>Convert JSON data to YAML format.</p><div class="card-footer"><a href="/guides/json-to-yaml" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>YAML to JSON</h3><p>Convert YAML files to JSON format.</p><div class="card-footer"><a href="/guides/yaml-to-json" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>JSON to CSV</h3><p>Convert JSON data to CSV spreadsheet format.</p><div class="card-footer"><a href="/guides/json-to-csv" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>CSV to JSON</h3><p>Convert CSV files to structured JSON format.</p><div class="card-footer"><a href="/guides/csv-to-json" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>XML to JSON</h3><p>Convert XML documents to JSON format.</p><div class="card-footer"><a href="/guides/xml-to-json" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>HTML Beautifier</h3><p>Format and indent HTML code for readability.</p><div class="card-footer"><a href="/guides/html-beautifier" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>HTML Validator</h3><p>Validate HTML markup and find errors.</p><div class="card-footer"><a href="/guides/html-validator" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>CSS Beautifier</h3><p>Format and beautify CSS code with proper indentation.</p><div class="card-footer"><a href="/guides/css-beautifier" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>JavaScript Beautifier</h3><p>Format and beautify JavaScript code for readability.</p><div class="card-footer"><a href="/guides/js-beautifier" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>URL Parser</h3><p>Parse URLs into components: protocol, host, path, and more.</p><div class="card-footer"><a href="/guides/url-parser" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>Query String Parser</h3><p>Parse and decode URL query string parameters.</p><div class="card-footer"><a href="/guides/query-string-parser" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>HTTP Status Lookup</h3><p>Look up HTTP status codes and their descriptions.</p><div class="card-footer"><a href="/guides/http-status-lookup" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>MIME Type Lookup</h3><p>Look up MIME types for file extensions and vice versa.</p><div class="card-footer"><a href="/guides/mime-type-lookup" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                    <div class="card"><h3>UUID Validator</h3><p>Validate UUID strings and check their version and format.</p><div class="card-footer"><a href="/guides/uuid-validator" class="btn btn-outline btn-sm btn-full">Read Guide</a></div></div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I format or validate JSON data?</h3>
+                    <p>Use the JSON Formatter tool. Paste your JSON string and the tool instantly validates, formats with indentation, or minifies it. You can also fix common JSON errors like trailing commas and missing quotes.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I minify HTML, CSS, and JavaScript without losing functionality?</h3>
+                    <p>Yes. The HTML, CSS, and JavaScript Minifier tools remove whitespace, comments, and unnecessary characters without affecting functionality. This reduces file sizes and improves page load speeds.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I encode and decode Base64 strings?</h3>
+                    <p>Use the Base64 Encoder tool to encode text or files into Base64 format, and decode Base64 back to plain text. All encoding and decoding happens locally in your browser — nothing is uploaded.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What is JWT and how do I decode a token?</h3>
+                    <p>JWT (JSON Web Token) is a compact token format used for authentication. Use the JWT Decoder to paste your token and instantly see the decoded header, payload, and signature — all processed locally.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I convert between JSON, YAML, XML, and CSV formats?</h3>
+                    <p>Yes. GoToolly offers converters between all major data formats: JSON to YAML, YAML to JSON, JSON to CSV, CSV to JSON, and XML to JSON. All conversions happen in your browser with no data uploads.</p>
+                </div>
+            </section>
+
+            <!-- Related Categories -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Related Guide Categories</h2>
+                    <p class="section-description">Explore more step-by-step guides for other GoToolly categories.</p>
+                </div>
+                <div class="guides-grid">
+                    <div class="card guide-card">
+                        <h3>PDF Guides</h3>
+                        <p>Merge, split, convert, compress, and secure PDF files with 27 step-by-step tutorials.</p>
+                        <div class="card-footer">
+                            <a href="/guides/pdf" class="btn btn-outline btn-sm btn-full">View PDF Guides</a>
+                        </div>
+                    </div>
+                    <div class="card guide-card">
+                        <h3>Image Guides</h3>
+                        <p>Compress, resize, convert, crop, and optimize images with detailed visual guides.</p>
+                        <div class="card-footer">
+                            <a href="/guides/image" class="btn btn-outline btn-sm btn-full">View Image Guides</a>
+                        </div>
+                    </div>
+                    <div class="card guide-card">
+                        <h3>Text & Writing Guides</h3>
+                        <p>Word counters, text diff, readability checkers, and text transformation tools.</p>
+                        <div class="card-footer">
+                            <a href="/guides/text" class="btn btn-outline btn-sm btn-full">View Text Guides</a>
+                        </div>
+                    </div>
+                    <div class="card guide-card">
+                        <h3>Utility Guides</h3>
+                        <p>Generators, calculators, converters, and everyday utility tools explained step by step.</p>
+                        <div class="card-footer">
+                            <a href="/guides/utilities" class="btn btn-outline btn-sm btn-full">View Utility Guides</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">
+                        Free, privacy-focused online tools that work entirely in your browser.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Popular Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="/tools/image-compressor">Image Compressor</a></li>
+                        <li><a href="/tools/pdf-compressor">PDF Compressor</a></li>
+                        <li><a href="/tools/word-counter">Word Counter</a></li>
+                        <li><a href="/tools/qr-code-generator">QR Code Generator</a></li>
+                        <li><a href="/tools/password-generator">Password Generator</a></li>
+                        <li><a href="/tools">View All Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span id="current-year">2026</span> GoToolly. All rights reserved.
+                </div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="../../assets/js/main.min.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

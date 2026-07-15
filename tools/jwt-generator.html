@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JWT Generator - Free Online Tool | GoToolly</title>
+    <meta name="description" content="Build and generate JSON Web Tokens (JWT) for development and testing. Choose algorithm, custom header and payload. Free, private, browser-based.">
+    <meta name="keywords" content="jwt generator, jwt builder, create jwt, json web token generator, jwt token generator, jwt encoder, jwt tool">
+    <link rel="canonical" href="https://gotoolly.com/tools/jwt-generator">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/jwt-generator">
+    <meta property="og:title" content="JWT Generator | GoToolly">
+    <meta property="og:description" content="Build and generate JSON Web Tokens (JWT) for development and testing. Choose algorithm, custom header and payload.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/jwt-generator">
+    <meta name="twitter:title" content="JWT Generator | GoToolly">
+    <meta name="twitter:description" content="Build and generate JSON Web Tokens (JWT) for development and testing. Choose algorithm, custom header and payload.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"JWT Generator","url":"https://gotoolly.com/tools/jwt-generator","description":"Build and generate JSON Web Tokens (JWT) for development and testing. Choose algorithm, custom header and payload.","applicationCategory":"DeveloperApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","HS256/HS384/HS512 support","Custom header and payload","Secret key input","Copy generated token"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"JWT Generator"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What algorithms are supported for JWT signing?","acceptedAnswer":{"@type":"Answer","text":"This tool supports HS256 (HMAC-SHA256), HS384 (HMAC-SHA384), HS512 (HMAC-SHA512), and unsigned tokens (alg: none). All signing is done locally using the Web Crypto API."}},{"@type":"Question","name":"Can I use this for production JWTs?","acceptedAnswer":{"@type":"Answer","text":"This tool is intended for development and testing purposes. For production use, always use a proper server-side library with secure key management."}},{"@type":"Question","name":"Is my secret key uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All JWT generation and signing happens entirely in your browser. Your secret key never leaves your device."}},{"@type":"Question","name":"What is the 'none' algorithm?","acceptedAnswer":{"@type":"Answer","text":"The 'none' algorithm produces an unsigned JWT with an empty signature. This is useful for testing but should never be used in production as it provides no integrity verification."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.jwtg-container{max-width:640px;margin:0 auto var(--space-4)}.jwtg-field{margin-bottom:var(--space-4)}.jwtg-label{font-weight:600;margin-bottom:var(--space-2);display:block}.jwtg-textarea{width:100%;min-height:80px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text);box-sizing:border-box}.jwtg-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.jwtg-output{background:var(--color-surface);border:2px solid var(--color-border);border-radius:12px;padding:var(--space-3);font-family:'JetBrains Mono',monospace;font-size:var(--text-xs);word-break:break-all;min-height:60px;display:flex;align-items:center;justify-content:center;color:var(--color-text-light);transition:border-color .2s;margin-top:var(--space-4)}.jwtg-output.has-token{color:var(--color-text);border-color:var(--color-primary);justify-content:flex-start}.jwtg-note{padding:var(--space-3);background:rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.3);border-radius:8px;font-size:var(--text-sm);color:#b45309;margin-top:var(--space-4)}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="../about" class="nav-link">About</a><a href="../contact" class="nav-link">Contact</a></nav></div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>JWT Generator</h1>
+                <p class="page-description">Build and generate JSON Web Tokens (JWT) for development and testing. Choose algorithm, custom header and payload. Free, private, browser-based.</p>
+                <p style="margin-top:var(--space-3);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No sign-up &bull; No server uploads &bull; 100% browser-based</p>
+            </div>
+
+            <div class="jwtg-container">
+                <div class="jwtg-field">
+                    <label class="jwtg-label" for="jwtg-algo">Algorithm</label>
+                    <select id="jwtg-algo" style="padding:var(--space-2) var(--space-3);border:1px solid var(--color-border);border-radius:6px;background:var(--color-surface);color:var(--color-text);font-size:var(--text-sm);min-width:200px">
+                        <option value="HS256">HS256 (HMAC-SHA256)</option>
+                        <option value="HS384">HS384 (HMAC-SHA384)</option>
+                        <option value="HS512">HS512 (HMAC-SHA512)</option>
+                        <option value="none">None (unsigned)</option>
+                    </select>
+                </div>
+
+                <div class="jwtg-field">
+                    <label class="jwtg-label" for="jwtg-header">Header (JSON)</label>
+                    <textarea id="jwtg-header" class="jwtg-textarea" rows="4">{"alg":"HS256","typ":"JWT"}</textarea>
+                </div>
+
+                <div class="jwtg-field">
+                    <label class="jwtg-label" for="jwtg-payload">Payload (JSON)</label>
+                    <textarea id="jwtg-payload" class="jwtg-textarea" rows="5">{"sub":"1234567890","name":"John Doe","iat":1516239022}</textarea>
+                </div>
+
+                <div class="jwtg-field" id="jwtg-secret-field">
+                    <label class="jwtg-label" for="jwtg-secret">Secret Key</label>
+                    <input type="text" id="jwtg-secret" style="width:100%;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);background:var(--color-surface);color:var(--color-text);box-sizing:border-box" placeholder="Enter your secret key..." value="your-secret-key">
+                </div>
+
+                <div class="tool-actions" style="margin-bottom:var(--space-4)">
+                    <button id="generate-btn" class="btn btn-primary btn-lg">Generate Token</button>
+                    <button id="copy-btn" class="btn btn-outline btn-lg">Copy Token</button>
+                    <button id="clear-btn" class="btn btn-outline btn-lg">Clear</button>
+                </div>
+
+                <div id="jwtg-output" class="jwtg-output">Generated JWT will appear here</div>
+
+                <div class="jwtg-note">
+                    <strong>For development and testing only.</strong> This tool is intended for local development and testing purposes. Never use generated JWTs in production without proper server-side validation and secure key management.
+                </div>
+            </div>
+
+            <section class="content-section">
+                <div class="section-header"><h2>How It Works</h2></div>
+                <div class="tools-grid" style="grid-template-columns:repeat(3,1fr)">
+                    <div class="card step-card"><h3><span style="background:var(--color-primary);color:white;border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;margin-right:8px;font-size:.9rem">1</span> Configure</h3><p>Select the signing algorithm, edit the header and payload JSON, and provide a secret key for HMAC algorithms.</p></div>
+                    <div class="card step-card"><h3><span style="background:var(--color-primary);color:white;border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;margin-right:8px;font-size:.9rem">2</span> Generate</h3><p>The tool base64url-encodes the header and payload, computes the HMAC signature using the Web Crypto API, and assembles the final JWT.</p></div>
+                    <div class="card step-card"><h3><span style="background:var(--color-primary);color:white;border-radius:50%;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;margin-right:8px;font-size:.9rem">3</span> Copy & Use</h3><p>Copy the generated token with one click. Use it in your API tests, development environment, or JWT debugging workflow.</p></div>
+                </div>
+            </section>
+
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
+                <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-3)">
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What algorithms are supported for JWT signing?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">This tool supports HS256 (HMAC-SHA256), HS384 (HMAC-SHA384), HS512 (HMAC-SHA512), and unsigned tokens (alg: none). All signing is done locally using the Web Crypto API.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Can I use this for production JWTs?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">This tool is intended for development and testing purposes. For production use, always use a proper server-side library with secure key management.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Is my secret key uploaded to a server?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">No. All JWT generation and signing happens entirely in your browser. Your secret key never leaves your device.</p></div>
+                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What is the 'none' algorithm?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">The 'none' algorithm produces an unsigned JWT with an empty signature. This is useful for testing but should never be used in production as it provides no integrity verification.</p></div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>JWT Decoder</h3><p>Decode JWT tokens and inspect header, payload, and signature.</p><div class="card-footer"><a href="./jwt-decoder" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Hash Generator</h3><p>Generate MD5, SHA-1, SHA-256, and SHA-512 hashes.</p><div class="card-footer"><a href="./hash-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>UUID Generator</h3><p>Generate random UUID v4 strings instantly.</p><div class="card-footer"><a href="./uuid-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+                <p style="margin-top:var(--space-4);text-align:center"><a href="/guides/jwt-generator" style="color:var(--color-primary)">Read Guide: JWT Generator Guide &rarr;</a></p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools/qr-code-generator">QR Code Generator</a></li><li><a href="/tools/password-generator">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+
+    <script defer src="../assets/js/main.min.js"></script>
+    <script defer src="../assets/js/tools/jwt-generator.min.js"></script>
+</body>
+</html>

@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var rotation = parseInt(rotationSlider.value);
         var pos = getSelectedPosition();
 
-        progressSection.style.display = '';
+        progressSection.style.display = 'block';
         applyBtn.disabled = true;
         progressText.textContent = 'Adding watermark...';
         progressFill.style.width = '30%';

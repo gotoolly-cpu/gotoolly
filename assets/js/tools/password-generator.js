@@ -60,10 +60,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function generateMultiple() {
+        var passwords = [];
         for (let i = 0; i < 5; i++) {
-            generatePassword();
-            // In real implementation, add to list
+            var chars = '';
+            if (document.getElementById('uppercase').checked) chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            if (document.getElementById('lowercase').checked) chars += 'abcdefghijklmnopqrstuvwxyz';
+            if (document.getElementById('numbers').checked) chars += '0123456789';
+            if (document.getElementById('symbols').checked) chars += '!@#$%^&*()_+-=[]{}|;:,.<>?';
+            if (!chars) chars = 'abcdefghijklmnopqrstuvwxyz';
+            var len = parseInt(document.getElementById('length').value) || 16;
+            var pw = '';
+            var values = new Uint32Array(len);
+            crypto.getRandomValues(values);
+            for (var j = 0; j < len; j++) pw += chars.charAt(values[j] % chars.length);
+            passwords.push(pw);
         }
+        passwordText.textContent = passwords.join('\n');
+        updateStrength(passwords[0]);
     }
     
     function updateStrength(password) {

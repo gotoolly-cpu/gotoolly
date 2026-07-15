@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Parse and Build URL Query Parameters: Complete Guide 2026 | GoToolly</title>
+    <meta name="description" content="Master URL query string parsing and construction. Learn to read, modify, and build query parameters for APIs, search URLs, and web applications.">
+    <meta name="keywords" content="query string parser, url parameters, query parameters, query string, url query, key value pairs, api parameters, search params">
+    <link rel="canonical" href="https://gotoolly.com/guides/query-string-parser">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/query-string-parser">
+    <meta property="og:title" content="How to Parse and Build URL Query Parameters: Complete Guide 2026 | GoToolly">
+    <meta property="og:description" content="Master URL query string parsing and construction. Learn to read, modify, and build query parameters for APIs, search URLs, and web applications.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/query-string-parser">
+    <meta name="twitter:title" content="How to Parse and Build URL Query Parameters: Complete Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Master URL query string parsing and construction. Learn to read, modify, and build query parameters for APIs, search URLs, and web applications.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+    
+    <style>
+        .page-header { background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><text x="10" y="30" font-family="monospace" font-size="12">?key=value</text><text x="40" y="55" font-family="monospace" font-size="10">&amp;page=2</text><text x="15" y="75" font-family="monospace" font-size="10">&amp;sort=asc</text></svg>'); background-size: 300px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #0ea5e9; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(14, 165, 233, 0.1); border-left: 4px solid #0ea5e9; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .use-case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .use-case-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        .code-example { background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(2, 132, 199, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(14, 165, 233, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .use-case-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "How to Parse and Build URL Query Parameters: Complete Guide 2026", "description": "Master URL query string parsing and construction. Learn to read, modify, and build query parameters for APIs, search URLs, and web applications.", "url": "https://gotoolly.com/guides/query-string-parser", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/query-string-parser" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "Query String Parser", "item": "https://gotoolly.com/guides/query-string-parser"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a query string in a URL?","acceptedAnswer":{"@type":"Answer","text":"A query string is the portion of a URL that follows the question mark character. It contains one or more key-value pairs separated by ampersands. For example, in https://example.com/search?q=hello&page=2, the query string is q=hello&page=2, containing two parameters: q with value hello and page with value 2."}},{"@type":"Question","name":"How do you parse query parameters in JavaScript?","acceptedAnswer":{"@type":"Answer","text":"In modern JavaScript, use the URLSearchParams API: const params = new URLSearchParams(window.location.search); const value = params.get('key'). Alternatively, use the URL constructor: const url = new URL(window.location.href); const value = url.searchParams.get('key'). Both approaches handle URL encoding automatically."}},{"@type":"Question","name":"What is the difference between ? and # in a URL?","acceptedAnswer":{"@type":"Answer","text":"The question mark (?) introduces the query string, which is sent to the server and can be read by backend code. The hash (#) introduces the fragment identifier, which is never sent to the server and is handled entirely by the browser. Query parameters affect data retrieval; fragments affect page scrolling or client-side routing."}},{"@type":"Question","name":"Why are spaces encoded as + in query strings?","acceptedAnswer":{"@type":"Answer","text":"The application/x-www-form-urlencoded encoding scheme, used by HTML forms, encodes spaces as + (plus) signs instead of %20. This convention originated from early web standards and is still widely used in POST request bodies and query strings generated by form submissions."}},{"@type":"Question","name":"Can a URL have duplicate query parameters?","acceptedAnswer":{"@type":"Answer","text":"Yes. A URL can have multiple parameters with the same key. For example, ?color=red&color=blue is valid. This is commonly used for array-like values, filtering by multiple options, or in frameworks that expect repeated keys. Use getAll() in JavaScript or similar methods in other languages to retrieve all values."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>How to Parse and Build URL Query Parameters</h1>
+                <p class="page-description">
+                    Master the art of working with URL query strings. Learn to read, modify, construct, and debug query parameters for APIs, search functionality, and web applications.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/query-string-parser" class="btn btn-primary btn-lg">Parse Query String</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  Instant parsing  Key-value extraction  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>Why Query String Parsing Matters</h2>
+                    <p>Query strings are the primary mechanism for passing data to web servers through URLs. Every search query, filter selection, pagination click, and API request parameter flows through the query string. For web developers, the ability to reliably parse, validate, construct, and manipulate query parameters is essential for building robust applications. A malformed query string can break API calls, cause incorrect search results, or introduce security vulnerabilities. Understanding query string syntax, encoding rules, and edge cases ensures that your applications handle URL parameters correctly across all platforms and browsers. Whether you are debugging an API response, building a dynamic search interface, or auditing analytics tracking parameters, query string parsing is a skill you will use every day.</p>
+                </section>
+
+                <section>
+                    <h2>Query String Structure</h2>
+                    <p>A query string begins with the question mark character (?) and contains key-value pairs. Each pair consists of a key and a value separated by an equals sign (=). Multiple pairs are separated by ampersands (&amp;). Values can be URL-encoded to handle special characters safely.</p>
+
+                    <div class="code-example">
+                        <strong>Basic Query String:</strong>
+                        ?search=laptop&amp;category=electronics&amp;sort=price_asc
+
+                        keys:   search, category, sort
+                        values: laptop, electronics, price_asc
+
+                        <strong>Complex Query String:</strong>
+                        ?q=hello+world&amp;page=2&amp;filter%5B0%5D=active&amp;lang=en&amp;debug=true
+
+                        decoded: q=hello world, page=2, filter[0]=active, lang=en, debug=true
+                    </div>
+
+                    <table class="comparison-table">
+                        <thead>
+                            <tr><th>Syntax Element</th><th>Symbol</th><th>Purpose</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Query String Start</td><td><code>?</code></td><td>Marks the beginning of query parameters</td></tr>
+                            <tr><td>Key-Value Separator</td><td><code>=</code></td><td>Separates parameter name from its value</td></tr>
+                            <tr><td>Pair Separator</td><td><code>&amp;</code></td><td>Separates multiple parameters</td></tr>
+                            <tr><td>Space Encoding</td><td><code>+</code> or <code>%20</code></td><td>Represents space characters in values</td></tr>
+                            <tr><td>Array Notation</td><td><code>key[]=</code></td><td>Passes arrays as parameter values</td></tr>
+                            <tr><td>Encoded Characters</td><td><code>%xx</code></td><td>Percent-encodes special characters</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>Step-by-Step: Using the Query String Parser</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Input a Query String or Full URL</h3>
+                                <p>Open the <a href="../tools/query-string-parser">Query String Parser</a> and enter either a complete URL or just the query string portion. The tool handles both formats and extracts the parameters regardless of the input format.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>View Extracted Parameters</h3>
+                                <p>Each parameter is displayed as a clearly labeled key-value pair. Encoded values are automatically decoded for readability. Duplicate parameters and nested structures like arrays are also properly displayed.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Add, Edit, or Remove Parameters</h3>
+                                <p>Modify the parsed parameters interactively. Add new key-value pairs, change existing values, or remove unnecessary parameters. The tool reconstructs the valid query string in real time as you make changes.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Copy the Rebuilt Query String</h3>
+                                <p>Once you have the parameters you need, copy the reconstructed query string to your clipboard. Use it directly in API calls, form actions, or redirect URLs. The output is properly encoded and ready to use.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Programmatic Query String Handling</h2>
+                    <p>Every major programming language provides tools for working with query strings. Here are the most common approaches used in modern web development.</p>
+
+                    <div class="code-example">
+                        <strong>JavaScript (URLSearchParams):</strong>
+                        const params = new URLSearchParams('?page=2&amp;sort=desc&amp;q=hello');
+                        params.get('page');      // "2"
+                        params.getAll('sort');   // ["desc"]
+                        params.has('q');         // true
+                        params.toString();      // "page=2&amp;sort=desc&amp;q=hello"
+
+                        <strong>Python (urllib.parse):</strong>
+                        from urllib.parse import parse_qs, urlencode
+                        params = parse_qs('page=2&amp;sort=desc&amp;q=hello')
+                        # {'page': ['2'], 'sort': ['desc'], 'q': ['hello']}
+                        urlencode({'page': 3, 'q': 'world'})
+                        # "page=3&amp;q=world"
+
+                        <strong>PHP:</strong>
+                        parse_str('page=2&amp;sort=desc&amp;q=hello', $params);
+                        echo $params['page'];  // "2"
+                        echo http_build_query(['page' => 3, 'q' => 'world']);
+                        // "page=3&amp;q=world"
+                    </div>
+
+                    <div class="pro-tip">
+                        <p><strong>Tip:</strong> <strong>Always encode values when building query strings</strong> - Use <code>URLSearchParams</code> in JavaScript or <code>urlencode()</code> in Python instead of manually concatenating strings. This prevents injection attacks and ensures special characters are handled correctly.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong>Tip:</strong> <strong>Watch out for duplicate keys</strong> - Some APIs and frameworks expect multiple values for the same key (e.g., <code>?color=red&amp;color=blue</code>). Use <code>getAll()</code> in JavaScript or <code>parse_qs()</code> in Python with <code>doseq=True</code> to handle these cases.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <p><strong>Tip:</strong> <strong>Remove empty parameters</strong> - Query strings like <code>?page=&amp;sort=</code> contain empty values that can cause unexpected behavior. Clean up parameters before sending requests.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Common Use Cases</h2>
+                    <div class="use-case-grid">
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128269;</div>
+                            <h4 style="margin: var(--space-2) 0;">Search Interfaces</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Parse and construct search query parameters for e-commerce filters, database queries, and content management systems with complex filtering requirements.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128640;</div>
+                            <h4 style="margin: var(--space-2) 0;">API Development</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Build and validate query parameters for REST and GraphQL APIs, including pagination, sorting, filtering, and field selection parameters.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128200;</div>
+                            <h4 style="margin: var(--space-2) 0;">Analytics Tracking</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Read and audit UTM parameters, campaign tags, and tracking identifiers in marketing URLs to verify correct attribution and data collection.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128274;</div>
+                            <h4 style="margin: var(--space-2) 0;">Security Auditing</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Inspect query parameters for sensitive data exposure, injection attacks, and information leakage in URL-based authentication and session management.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Best Practices for Query String Handling</h2>
+                    <ul>
+                        <li><strong>Use libraries instead of manual parsing:</strong> Never split query strings manually with string operations. Built-in APIs like <code>URLSearchParams</code> and <code>parse_qs()</code> handle encoding, edge cases, and malformed input correctly.</li>
+                        <li><strong>Encode all user-supplied values:</strong> When building URLs from user input, always encode parameter values to prevent URL injection and special character issues.</li>
+                        <li><strong>Keep query strings short:</strong> Some servers and proxies have URL length limits. If you have many parameters or large values, consider using POST requests instead.</li>
+                        <li><strong>Use consistent parameter naming:</strong> Adopt a naming convention (camelCase, snake_case, or kebab-case) and stick to it across your application and APIs.</li>
+                        <li><strong>Validate parameter types:</strong> Query string values are always strings. Convert them to the appropriate type (numbers, booleans, arrays) in your application code after parsing.</li>
+                        <li><strong>Remove sensitive data from URLs:</strong> Never put passwords, tokens, or personally identifiable information in query strings. They appear in browser history, server logs, and referrer headers.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Common Mistakes to Avoid</h2>
+                    <ul>
+                        <li><strong>Double encoding parameters:</strong> Encoding a value that is already encoded produces incorrect results. For example, <code>%20</code> encoded again becomes <code>%2520</code>. Always decode first or use proper encoding functions.</li>
+                        <li><strong>Forgetting to encode special characters:</strong> Characters like <code>&amp;</code>, <code>=</code>, <code>#</code>, and <code>+</code> have special meaning in URLs. If they appear in values, they must be encoded or the query string will be parsed incorrectly.</li>
+                        <li><strong>Using # in query parameters:</strong> The hash character starts a fragment identifier and is never sent to the server. If a value contains <code>#</code>, it must be encoded as <code>%23</code>.</li>
+                        <li><strong>Ignoring empty values:</strong> Parameters like <code>?key=</code> have an empty string value, while <code>?key</code> may be treated as having no value at all. Be explicit about whether a parameter should have a value.</li>
+                        <li><strong>Not handling URL-encoded plus signs:</strong> In query strings, <code>+</code> represents a space. If your value actually needs a plus sign, encode it as <code>%2B</code>.</li>
+                        <li><strong>Assuming parameter order matters:</strong> Most servers process parameters regardless of order, but some APIs or caching systems may be affected by parameter ordering. Do not rely on order unless documented.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Privacy and Security Considerations</h2>
+                    <p>Query parameters are visible in browser history, server logs, referrer headers, and analytics tools. This visibility makes them a potential security and privacy risk if not handled properly:</p>
+                    <ul>
+                        <li><strong>Never store secrets in query strings:</strong> API keys, passwords, and tokens should be sent in request headers or POST bodies, not in URL query parameters.</li>
+                        <li><strong>Sanitize all query values:</strong> User-supplied query parameters can contain malicious content. Never use raw query values in SQL queries, HTML output, or system commands without proper sanitization.</li>
+                        <li><strong>Avoid exposing PII:</strong> Personal information like email addresses, phone numbers, or user IDs in query strings can leak through referrer headers and browser history.</li>
+                        <li><strong>Use POST for sensitive data:</strong> For login forms, payment processing, and any operation involving sensitive data, use POST requests instead of GET with query parameters.</li>
+                        <li><strong>Client-side only processing:</strong> Our Query String Parser operates entirely in your browser. No data is transmitted to any server, ensuring complete privacy for your URL analysis.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What is a query string in a URL?</h3>
+                        <p>A query string is the portion of a URL that follows the question mark character. It contains one or more key-value pairs separated by ampersands. For example, in <code>https://example.com/search?q=hello&amp;page=2</code>, the query string is <code>q=hello&amp;page=2</code>, containing two parameters: <code>q</code> with value <code>hello</code> and <code>page</code> with value <code>2</code>.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do you parse query parameters in JavaScript?</h3>
+                        <p>In modern JavaScript, use the <code>URLSearchParams</code> API: <code>const params = new URLSearchParams(window.location.search); const value = params.get('key')</code>. Alternatively, use the <code>URL</code> constructor: <code>const url = new URL(window.location.href); const value = url.searchParams.get('key')</code>. Both approaches handle URL encoding automatically.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What is the difference between ? and # in a URL?</h3>
+                        <p>The question mark (?) introduces the query string, which is sent to the server and can be read by backend code. The hash (#) introduces the fragment identifier, which is never sent to the server and is handled entirely by the browser. Query parameters affect data retrieval; fragments affect page scrolling or client-side routing.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Why are spaces encoded as + in query strings?</h3>
+                        <p>The <code>application/x-www-form-urlencoded</code> encoding scheme, used by HTML forms, encodes spaces as <code>+</code> (plus) signs instead of <code>%20</code>. This convention originated from early web standards and is still widely used in POST request bodies and query strings generated by form submissions.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can a URL have duplicate query parameters?</h3>
+                        <p>Yes. A URL can have multiple parameters with the same key. For example, <code>?color=red&amp;color=blue</code> is valid. This is commonly used for array-like values, filtering by multiple options, or in frameworks that expect repeated keys. Use <code>getAll()</code> in JavaScript or similar methods in other languages to retrieve all values.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Complete Web Development Suite</h2>
+                    <p>Enhance your web development workflow with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/url-parser">URL Parser</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Break down any URL into its individual components</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/url-encoder">URL Encoder/Decoder</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Encode and decode URLs with special characters</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/http-status-lookup">HTTP Status Lookup</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Look up HTTP status codes and their meanings</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Parse Query Strings Instantly</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Extract, edit, and rebuild URL query parameters with ease. Debug API calls, audit tracking URLs, and construct clean query strings. Fast, private, and free.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/query-string-parser" class="btn btn-primary btn-lg">Parse Query String</a>
+                    <a href="../tools/url-parser" class="btn btn-secondary btn-lg">Parse Full URL</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Local processing  No file uploads  Key-value extraction  Instant results  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Encoding Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/url-encoder">URL Encoder</a></li>
+                        <li><a href="../tools/html-encoder">HTML Encoder</a></li>
+                        <li><a href="../tools/base64-encoder">Base64 Encoder</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

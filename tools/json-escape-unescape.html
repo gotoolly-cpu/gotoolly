@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Escape & Unescape - Encode/Decode JSON Strings | GoToolly</title>
+    <meta name="description" content="Escape and unescape JSON strings instantly. Convert special characters to JSON-safe sequences and back. Free, private, browser-based tool.">
+    <meta name="keywords" content="json escape, json unescape, json encode, json decode, escape json string, unescape json string, json special characters">
+    <link rel="canonical" href="https://gotoolly.com/tools/json-escape-unescape">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/json-escape-unescape">
+    <meta property="og:title" content="JSON Escape & Unescape - Encode/Decode JSON Strings | GoToolly">
+    <meta property="og:description" content="Escape and unescape JSON strings instantly.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/json-escape-unescape">
+    <meta name="twitter:title" content="JSON Escape & Unescape - Encode/Decode JSON Strings | GoToolly">
+    <meta name="twitter:description" content="Escape and unescape JSON strings instantly.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"JSON Escape & Unescape","url":"https://gotoolly.com/tools/json-escape-unescape","description":"Escape and unescape JSON strings instantly.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Escape special chars","Unescape JSON sequences"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"JSON Escape & Unescape"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does JSON escaping do?","acceptedAnswer":{"@type":"Answer","text":"JSON escaping converts special characters like newlines, tabs, and quotes into their backslash-escaped equivalents (e.g. \\n, \\t, \\\") so the string is safe to embed inside JSON."}},{"@type":"Question","name":"Is my data uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens in your browser. Your data never leaves your device."}}]}</script>
+    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.escape-container{margin-bottom:var(--space-4)}.escape-textarea{width:100%;min-height:300px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text);tab-size:2}.escape-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.json-output{border:1px solid var(--color-border);border-radius:12px;overflow:auto;max-height:350px;background:#1e1e2e;padding:var(--space-3);font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);color:#cdd6f4;white-space:pre-wrap;word-break:break-word}.json-actions{display:flex;gap:var(--space-2);margin-bottom:var(--space-4);flex-wrap:wrap}@media(max-width:768px){.escape-textarea{min-height:200px}}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="../about" class="nav-link">About</a><a href="../contact" class="nav-link">Contact</a></nav></div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>JSON Escape & Unescape</h1>
+                <p class="page-description">Escape and unescape JSON strings instantly. Convert special characters to JSON-safe sequences and back.</p>
+                <p style="margin-top:var(--space-3);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No sign-up &bull; No server uploads &bull; 100% browser-based</p>
+            </div>
+
+            <div class="escape-container">
+                <label for="escape-input" style="font-weight:600;margin-bottom:var(--space-2);display:block">Input</label>
+                <textarea id="escape-input" class="escape-textarea" placeholder='Paste text here...\n\nExample:\nLine one\nLine two with "quotes" and \ backslash'></textarea>
+            </div>
+
+            <div class="json-actions">
+                <button id="escape-btn" class="btn btn-primary btn-lg">Escape</button>
+                <button id="unescape-btn" class="btn btn-primary btn-lg">Unescape</button>
+                <button id="copy-btn" class="btn btn-outline btn-lg">Copy Output</button>
+                <button id="clear-btn" class="btn btn-outline btn-lg">Clear</button>
+            </div>
+
+            <label for="escape-output" style="font-weight:600;margin-bottom:var(--space-2);display:block">Output</label>
+            <div id="escape-output" class="json-output">
+                <div style="color:var(--color-text-light);text-align:center;padding:var(--space-8)">Result will appear here</div>
+            </div>
+
+            <section class="content-section" style="margin-top:var(--space-8)">
+                <div class="section-header"><h2>Related Tools</h2></div>
+                <div class="tools-grid">
+                    <div class="card tool-card"><h3>JSON Formatter</h3><p>Format, validate, and syntax-highlight JSON data.</p><div class="card-footer"><a href="./json-formatter" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>Base64 Encoder/Decoder</h3><p>Encode and decode Base64 strings instantly.</p><div class="card-footer"><a href="./base64-encoder" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                    <div class="card tool-card"><h3>URL Encoder/Decoder</h3><p>Encode and decode URLs and query parameters.</p><div class="card-footer"><a href="./url-encoder" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                </div>
+            </section>
+
+            <section class="content-section" style="margin-top:var(--space-4)">
+                <div class="section-header"><h2>Privacy Notice</h2></div>
+                <p style="color:var(--color-text-light);font-size:var(--text-sm)">All processing happens entirely in your browser. Your data is never uploaded to any server. Once you close this page, all data is gone.</p>
+            </section>
+
+            <p style="margin-top: var(--space-4); text-align: center;">
+                <a href="../guides/json-escape-unescape" style="color: var(--color-primary);">Read Guide: How to Escape JSON Strings <i class="fas fa-arrow-right"></i></a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor">Image Compressor</a></li><li><a href="/tools/pdf-compressor">PDF Compressor</a></li><li><a href="/tools/word-counter">Word Counter</a></li><li><a href="/tools/qr-code-generator">QR Code Generator</a></li><li><a href="/tools/password-generator">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+
+    <script defer src="../assets/js/main.min.js"></script>
+    <script>
+    (function(){
+        var input=document.getElementById('escape-input'),output=document.getElementById('escape-output'),escapeBtn=document.getElementById('escape-btn'),unescapeBtn=document.getElementById('unescape-btn'),copyBtn=document.getElementById('copy-btn'),clearBtn=document.getElementById('clear-btn');
+
+        function escapeJSON(str){
+            return str.replace(/\\/g,'\\\\').replace(/"/g,'\\"').replace(/\n/g,'\\n').replace(/\r/g,'\\r').replace(/\t/g,'\\t').replace(/\b/g,'\\b').replace(/\f/g,'\\f').replace(/[\x00-\x1f]/g,function(c){
+                var hex=c.charCodeAt(0).toString(16);
+                return '\\u'+'0000'.slice(hex.length)+hex;
+            });
+        }
+
+        function unescapeJSON(str){
+            var result=str.replace(/\\n/g,'\n').replace(/\\r/g,'\r').replace(/\\t/g,'\t').replace(/\\b/g,'\b').replace(/\\f/g,'\f').replace(/\\"/g,'"').replace(/\\\\/g,'\\').replace(/\\u([0-9a-fA-F]{4})/g,function(m,hex){
+                return String.fromCharCode(parseInt(hex,16));
+            });
+            return result;
+        }
+
+        escapeBtn.addEventListener('click',function(){
+            var val=input.value;
+            if(!val){output.innerHTML='<div style="color:var(--color-text-light);text-align:center;padding:var(--space-8)">Please enter text to escape</div>';return;}
+            output.textContent=escapeJSON(val);
+        });
+
+        unescapeBtn.addEventListener('click',function(){
+            var val=input.value;
+            if(!val){output.innerHTML='<div style="color:var(--color-text-light);text-align:center;padding:var(--space-8)">Please enter text to unescape</div>';return;}
+            output.textContent=unescapeJSON(val);
+        });
+
+        copyBtn.addEventListener('click',function(){
+            var text=output.innerText||output.textContent;
+            if(!text||text.indexOf('will appear')>-1||text.indexOf('Please enter')>-1)return;
+            navigator.clipboard.writeText(text).then(function(){copyBtn.textContent='Copied!';setTimeout(function(){copyBtn.textContent='Copy Output';},2000);});
+        });
+
+        clearBtn.addEventListener('click',function(){
+            input.value='';
+            output.innerHTML='<div style="color:var(--color-text-light);text-align:center;padding:var(--space-8)">Result will appear here</div>';
+        });
+    })();
+    </script>
+</body>
+</html>

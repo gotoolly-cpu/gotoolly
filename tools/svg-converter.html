@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Converter - Convert SVG to PNG or JPG Free | GoToolly</title>
+    <meta name="description" content="Free online SVG converter. Convert SVG files to high-quality PNG or JPG images. Supports 1x, 2x, 3x resolution. Browser-based rendering with canvas API.">
+    <meta name="keywords" content="svg converter, svg to png, svg to jpg, convert svg, svg to image, vector to raster">
+
+    <link rel="canonical" href="https://gotoolly.com/tools/svg-converter">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/svg-converter">
+    <meta property="og:title" content="SVG Converter - Convert SVG to PNG or JPG Online Free | GoToolly">
+    <meta property="og:description" content="Free online SVG converter. Convert SVG files to high-quality PNG or JPG images. Supports 1x, 2x, 3x resolution. Browser-based rendering with canvas API.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/svg-converter">
+    <meta name="twitter:title" content="SVG Converter - Convert SVG to PNG or JPG Online Free | GoToolly">
+    <meta name="twitter:description" content="Free online SVG converter. Convert SVG files to high-quality PNG or JPG images. Supports 1x, 2x, 3x resolution. Browser-based rendering with canvas API.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    
+    <style>
+        .hero-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: var(--space-6) 0; margin-bottom: var(--space-6); border-radius: 12px; }
+        .hero-content { display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-4); align-items: center; }
+        .hero-text h1 { font-size: 2rem; margin: 0 0 var(--space-2); }
+        .hero-text p { margin: 0; opacity: 0.95; }
+        .hero-badges { display: flex; gap: var(--space-2); margin-top: var(--space-3); flex-wrap: wrap; }
+        .hero-badge { background: rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 999px; font-size: var(--text-sm); font-weight: 500; }
+        .hero-stats { display: grid; gap: var(--space-3); }
+        .stat-card { background: rgba(255,255,255,0.08); padding: var(--space-3); border-radius: 8px; text-align: center; }
+        .stat-number { font-weight: 700; font-size: 1.25rem; }
+
+        .tool-workspace { background: var(--color-surface); border-radius: 12px; padding: var(--space-5); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+        .workspace-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-3); border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-3); }
+        .workspace-header h2 { margin: 0; font-size: 1.25rem; }
+
+        .file-drop-zone, .upload-area { border: 2px dashed var(--color-border); border-radius: 12px; padding: var(--space-6); text-align: center; cursor: pointer; transition: all 0.18s ease; background-color: var(--color-bg-alt); display: block; }
+        .file-drop-zone:hover, .upload-area:hover { border-color: var(--color-primary); background-color: rgba(37, 99, 235, 0.04); transform: translateY(-2px); }
+        .file-drop-zone svg, .upload-area svg { width: 56px; height: 56px; color: var(--color-primary); margin-bottom: var(--space-3); }
+
+        #settings-panel { display: none; margin-top: var(--space-4); }
+        #settings-panel.show { display: block; }
+
+        .preview-wrap { margin-bottom: var(--space-4); text-align: center; background: var(--color-bg-alt); border-radius: 8px; padding: var(--space-3); }
+        .preview-wrap img, .preview-wrap canvas { max-width: 100%; max-height: 300px; border-radius: 8px; display: block; margin: 0 auto; }
+
+        .controls-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+
+        .setting-group { margin-bottom: var(--space-3); }
+        .setting-group label { font-size: var(--text-sm); font-weight: 600; margin-bottom: 4px; display: block; }
+        .setting-group select, .setting-group input[type="number"] { width: 100%; padding: 8px 10px; border: 1px solid var(--color-border); border-radius: 6px; font-size: var(--text-sm); box-sizing: border-box; }
+
+        .range-row { display: flex; align-items: center; gap: var(--space-3); }
+        .range-row input[type="range"] { flex: 1; }
+        .range-value { min-width: 45px; font-weight: 500; text-align: right; }
+
+        .resolution-btns { display: flex; gap: var(--space-2); }
+        .resolution-btn { padding: 6px 14px; border-radius: 6px; border: 1px solid var(--color-border); background: var(--color-bg-alt); cursor: pointer; font-size: var(--text-sm); font-weight: 500; transition: all 0.15s ease; }
+        .resolution-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+        .resolution-btn.active { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
+
+        .color-row { display: flex; align-items: center; gap: var(--space-2); }
+        .color-row input[type="color"] { width: 48px; height: 40px; border: 1px solid var(--color-border); border-radius: 6px; padding: 2px; cursor: pointer; }
+
+        .btn-row { display: flex; gap: var(--space-3); margin-top: var(--space-3); }
+        .btn-row button { flex: 1; }
+
+        .progress-section { display: none; margin-top: var(--space-4); }
+
+        .results-area { display: none; margin-top: var(--space-4); }
+        .result-box { background: var(--color-bg-alt); border-radius: 8px; padding: var(--space-4); text-align: center; border: 1px solid var(--color-border); }
+        .result-box canvas, .result-box img { max-width: 100%; max-height: 200px; border-radius: 4px; }
+
+        .privacy-badge { display: flex; align-items: center; gap: var(--space-2); background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; padding: 10px 16px; border-radius: 8px; margin-top: var(--space-4); font-size: var(--text-sm); font-weight: 500; }
+        .privacy-badge i { font-size: 1rem; }
+
+        .limitation-note { background: #fef3c7; border: 1px solid #fde68a; color: #92400e; padding: 10px 16px; border-radius: 8px; margin-top: var(--space-3); font-size: var(--text-sm); }
+
+        @media (max-width: 900px) {
+            .hero-content { grid-template-columns: 1fr; gap: var(--space-3); }
+            .hero-text h1 { font-size: 1.6rem; }
+            .tool-workspace { padding: var(--space-4); }
+            .controls-grid { grid-template-columns: 1fr; }
+            .file-drop-zone, .upload-area { padding: var(--space-4); min-height: 120px; }
+            .file-drop-zone svg, .upload-area svg { width: 48px; height: 48px; }
+        }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "WebApplication", "name": "SVG Converter", "url": "https://gotoolly.com/tools/svg-converter", "description": "Free online SVG converter. Convert SVG files to high-quality PNG or JPG images with resolution options. Browser-based rendering.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (Web Browser)", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }, "featureList": ["Free to use", "No account required", "Client-side processing", "Privacy-focused", "Multi-resolution output", "Background color option"] }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gotoolly.com/tools"},
+        {"@type": "ListItem", "position": 3, "name": "SVG Converter", "item": "https://gotoolly.com/tools/svg-converter"}
+    ]}
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        { "@type": "Question", "name": "How does SVG to PNG conversion work?", "acceptedAnswer": { "@type": "Answer", "text": "The SVG is rendered onto an HTML canvas element using drawImage. The canvas then exports the result as PNG or JPEG. This works for most SVGs but may fail for those with external references or unsupported CSS features." }},
+        { "@type": "Question", "name": "Why might SVG rendering fail?", "acceptedAnswer": { "@type": "Answer", "text": "SVGs with external resources (images, fonts loaded from URLs) may fail due to CORS/same-origin restrictions. Some advanced SVG or CSS features may also not render correctly on canvas. The tool will notify you if rendering fails." }},
+        { "@type": "Question", "name": "What resolution options are available?", "acceptedAnswer": { "@type": "Answer", "text": "You can export at 1x (original size), 2x (double resolution, ideal for Retina displays), 3x, or a custom scale factor." }},
+        { "@type": "Question", "name": "Is my SVG uploaded to a server?", "acceptedAnswer": { "@type": "Answer", "text": "No. All SVG rendering and conversion happens entirely in your browser. Your files never leave your device." }}
+    ]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>SVG Converter</h1>
+                        <p>Convert SVG vector graphics to high-quality PNG or JPEG raster images. Choose from multiple resolution scales. All processing is local.</p>
+                        <div class="hero-badges">
+                            <span class="hero-badge">100% Private</span>
+                            <span class="hero-badge">HiDPI Export</span>
+                            <span class="hero-badge">Free Forever</span>
+                        </div>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-card"><div class="stat-number">Vector</div><div class="stat-label">to Raster</div></div>
+                        <div class="stat-card"><div class="stat-number">3x</div><div class="stat-label">Max Resolution</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-workspace">
+                <div class="workspace-header">
+                    <div>
+                        <h2>Convert SVG</h2>
+                        <p style="margin: 0; color: var(--color-text-light);">Upload an SVG file, configure output settings, and download as PNG or JPG</p>
+                    </div>
+                </div>
+
+                <label for="file-input" class="file-drop-zone upload-area" style="margin: 0; display: block; width: 100%; box-sizing: border-box; position: relative;">
+                    <input type="file" id="file-input" accept=".svg,image/svg+xml" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; z-index: 2;" aria-label="Select an SVG file">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p style="margin: 0; font-weight: 600;">Drag an SVG file here or <span style="color: var(--color-primary); text-decoration: underline; cursor: pointer;">click to browse</span></p>
+                    <p style="margin: var(--space-2) 0 0; font-size: var(--text-sm); color: var(--color-text-light);">SVG files only</p>
+                </label>
+
+                <div id="settings-panel">
+                    <!-- Preview -->
+                    <div class="preview-wrap">
+                        <div id="preview-container"></div>
+                        <p class="dims-comparison" style="font-size: var(--text-sm); color: var(--color-text-light); margin-top: var(--space-2);">SVG size: <strong id="svg-dims">-</strong></p>
+                    </div>
+
+                    <div class="controls-grid">
+                        <!-- Left: Output format & resolution -->
+                        <div>
+                            <div class="setting-group">
+                                <label for="output-format">Output Format</label>
+                                <select id="output-format">
+                                    <option value="image/png">PNG (with transparency)</option>
+                                    <option value="image/jpeg">JPEG</option>
+                                </select>
+                            </div>
+
+                            <div class="setting-group">
+                                <label>Resolution</label>
+                                <div class="resolution-btns">
+                                    <button class="resolution-btn active" data-scale="1">1x</button>
+                                    <button class="resolution-btn" data-scale="2">2x</button>
+                                    <button class="resolution-btn" data-scale="3">3x</button>
+                                    <button class="resolution-btn" data-scale="custom">Custom</button>
+                                </div>
+                            </div>
+
+                            <div class="setting-group" id="custom-scale-group" style="display: none;">
+                                <label for="custom-scale">Scale Factor</label>
+                                <div class="range-row">
+                                    <input type="range" id="custom-scale" min="0.5" max="5" value="2" step="0.25">
+                                    <span class="range-value" id="custom-scale-value">2x</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Background & quality -->
+                        <div>
+                            <div class="setting-group">
+                                <label for="bg-color">Background Color</label>
+                                <div class="color-row">
+                                    <input type="color" id="bg-color" value="#ffffff">
+                                    <span id="bg-color-hex" style="font-size: var(--text-sm); color: var(--color-text-light);">#ffffff</span>
+                                    <label style="font-size: var(--text-sm); font-weight: 400; margin: 0; display: flex; align-items: center; gap: 4px; cursor: pointer;">
+                                        <input type="checkbox" id="bg-transparent" checked> Transparent
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-group" id="quality-group">
+                                <label for="quality">JPEG Quality</label>
+                                <div class="range-row">
+                                    <input type="range" id="quality" min="10" max="100" value="92" step="1">
+                                    <span class="range-value" id="quality-value">92%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="limitation-note">
+                        <i class="fas fa-info-circle" aria-hidden="true" style="margin-right: 6px;"></i>
+                        <strong>Limitation:</strong> SVG-to-canvas conversion uses <code>drawImage</code> on an Image element. This works for most SVGs but may fail for SVGs with external references (fonts, images loaded from URLs) due to browser security restrictions.
+                    </div>
+
+                    <div class="btn-row">
+                        <button id="convert-btn" class="btn btn-primary btn-lg" disabled>
+                            <i class="fas fa-exchange-alt"></i> Convert &amp; Download
+                        </button>
+                        <button id="reset-btn" class="btn btn-outline btn-lg">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                    </div>
+
+                    <div id="progress-section" class="progress-section">
+                        <div class="progress-bar" style="height: 6px; background: var(--color-border); border-radius: 3px; overflow: hidden;">
+                            <div id="progress-fill" style="width: 0%; background: var(--color-primary); height: 100%; transition: width 0.2s;"></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: var(--space-2); font-size: var(--text-sm);">
+                            <span id="progress-text">Processing...</span>
+                            <span id="progress-percent">0%</span>
+                        </div>
+                    </div>
+
+                    <div id="results-area" class="results-area">
+                        <p style="font-weight: 600; margin-bottom: var(--space-2); font-size: var(--text-sm);">Result</p>
+                        <div class="result-box">
+                            <div id="result-container"></div>
+                            <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-top: var(--space-2);">Output: <strong id="result-dims">-</strong> | Size: <strong id="result-size">-</strong></p>
+                            <button id="download-btn" class="btn btn-primary btn-sm" style="margin-top: var(--space-2);">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="privacy-badge">
+                        <i class="fas fa-lock" aria-hidden="true"></i>
+                        <span>Your images never leave your device. Processing happens locally inside your browser.</span>
+                    </div>
+                </div>
+            </div>
+
+            <section class="content-section" aria-labelledby="how-it-works-heading">
+                <div class="section-header">
+                    <h2 id="how-it-works-heading">How It Works</h2>
+                </div>
+                <div class="tools-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="card step-card">
+                        <h3><span style="background: var(--color-primary); color: white; border-radius: 50%; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 0.9rem;">1</span> Upload SVG</h3>
+                        <p>Drag or select your SVG file. The SVG is rendered as an image for preview.</p>
+                    </div>
+                    <div class="card step-card">
+                        <h3><span style="background: var(--color-primary); color: white; border-radius: 50%; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 0.9rem;">2</span> Configure</h3>
+                        <p>Choose output format (PNG or JPEG), resolution scale, background color, and quality.</p>
+                    </div>
+                    <div class="card step-card">
+                        <h3><span style="background: var(--color-primary); color: white; border-radius: 50%; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 0.9rem;">3</span> Download</h3>
+                        <p>The SVG is rendered onto a canvas and exported as a raster image at your chosen resolution.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" aria-labelledby="faq-heading">
+                <div class="section-header">
+                    <h2 id="faq-heading">Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="card faq-item">
+                        <h3>How does SVG to PNG conversion work?</h3>
+                        <p>The SVG is rendered onto an HTML canvas element using <code>drawImage</code>. The canvas then exports the result as PNG or JPEG. This works for most SVGs but may fail for those with external references or unsupported CSS features.</p>
+                    </div>
+                    <div class="card faq-item">
+                        <h3>Why might SVG rendering fail?</h3>
+                        <p>SVGs with external resources (images, fonts loaded from URLs) may fail due to CORS/same-origin restrictions. Some advanced SVG or CSS features may also not render correctly on canvas. The tool will show an error message if rendering fails.</p>
+                    </div>
+                    <div class="card faq-item">
+                        <h3>What resolution options are available?</h3>
+                        <p>You can export at 1x (original size), 2x (double resolution, ideal for Retina displays), 3x, or a custom scale factor from 0.5x to 5x.</p>
+                    </div>
+                    <div class="card faq-item">
+                        <h3>Is my SVG uploaded to a server?</h3>
+                        <p>No. All SVG rendering and conversion happens entirely in your browser. Your files never leave your device.</p>
+                    </div>
+                    <div class="card faq-item">
+                        <h3>Can I preserve the transparent background?</h3>
+                        <p>Yes. When outputting PNG format, you can keep the background transparent. For JPEG, the background color is used since JPEG does not support transparency.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Related Tools</h2>
+                </div>
+                <div class="tools-grid">
+                    <div class="card tool-card">
+                        <h3>Image Resizer</h3>
+                        <p>Resize raster images to any dimension with precision control.</p>
+                        <div class="card-footer">
+                            <a href="./image-resizer" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>Favicon Generator</h3>
+                        <p>Generate favicons from your images and SVGs for your website.</p>
+                        <div class="card-footer">
+                            <a href="./favicon-generator" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <h3>Image Compressor</h3>
+                        <p>Reduce image file sizes without noticeable quality loss.</p>
+                        <div class="card-footer">
+                            <a href="./image-compressor" class="btn btn-primary btn-sm">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Popular Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="/tools/image-compressor">Image Compressor</a></li>
+                        <li><a href="/tools/pdf-compressor">PDF Compressor</a></li>
+                        <li><a href="/tools/word-counter">Word Counter</a></li>
+                        <li><a href="/tools/qr-code-generator">QR Code Generator</a></li>
+                        <li><a href="/tools/password-generator">Password Generator</a></li>
+                        <li><a href="/tools">View All Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="../assets/js/main.min.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(function(registration) { console.log('[ServiceWorker] Registered:', registration.scope); })
+                .catch(function(error) { console.warn('[ServiceWorker] Registration failed:', error); });
+        }
+    </script>
+    <script defer src="../assets/js/tools/svg-converter.js"></script>
+</body>
+</html>

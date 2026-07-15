@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Status Codes: Complete Reference Guide 2026 | GoToolly</title>
+    <meta name="description" content="Complete HTTP status code reference for web developers. Understand every 1xx, 2xx, 3xx, 4xx, and 5xx status code, its meaning, and when to use it in APIs and web applications.">
+    <meta name="keywords" content="http status codes, http 200, http 404, http 500, http 301, http 302, status code reference, rest api status codes, web development">
+    <link rel="canonical" href="https://gotoolly.com/guides/http-status-lookup">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/http-status-lookup">
+    <meta property="og:title" content="HTTP Status Codes: Complete Reference Guide 2026 | GoToolly">
+    <meta property="og:description" content="Complete HTTP status code reference for web developers. Understand every 1xx, 2xx, 3xx, 4xx, and 5xx status code, its meaning, and when to use it.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="511">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/http-status-lookup">
+    <meta name="twitter:title" content="HTTP Status Codes: Complete Reference Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Complete HTTP status code reference for web developers. Understand every 1xx, 2xx, 3xx, 4xx, and 5xx status code, its meaning, and when to use it.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet">
+    
+    <style>
+        .page-header { background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); position: relative; overflow: hidden; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" opacity="0.1"><rect width="100" height="100" fill="white"/><text x="10" y="30" font-family="monospace" font-size="12">200 OK</text><text x="40" y="55" font-family="monospace" font-size="10">404 Not</text><text x="15" y="75" font-family="monospace" font-size="10">500 Error</text></svg>'); background-size: 300px; }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); position: relative; }
+        .page-description { color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 48rem; margin: 0 auto var(--space-6); line-height: 1.6; position: relative; }
+        .guide-content { max-width: 800px; margin: 0 auto; }
+        .step-container { counter-reset: step-counter; margin: var(--space-10) 0; }
+        .step-item { position: relative; padding-left: 80px; margin-bottom: var(--space-8); min-height: 60px; }
+        .step-item:last-child { margin-bottom: 0; }
+        .step-number { position: absolute; left: 0; top: 0; background: #0ea5e9; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: var(--text-xl); }
+        .step-content h3 { margin-top: 0; margin-bottom: var(--space-2); }
+        .faq-item { border-bottom: 1px solid var(--color-border); padding: var(--space-5) 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .pro-tip { background: rgba(14, 165, 233, 0.1); border-left: 4px solid #0ea5e9; padding: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: var(--space-4) 0; }
+        .use-case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0; }
+        .use-case-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4); text-align: center; }
+        .code-example { background: linear-gradient(135deg, rgba(14, 165, 233, 0.05) 0%, rgba(2, 132, 199, 0.05) 100%); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; border: 1px solid rgba(14, 165, 233, 0.2); font-family: 'JetBrains Mono', monospace; font-size: var(--text-sm); line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: var(--space-6) 0; }
+        .comparison-table th, .comparison-table td { border: 1px solid var(--color-border); padding: var(--space-3); text-align: left; }
+        .comparison-table thead { background-color: var(--color-surface-secondary); }
+        @media (max-width: 768px) { .step-item { padding-left: 0; padding-top: 70px; } .step-number { position: static; margin-bottom: var(--space-4); } .use-case-grid { grid-template-columns: 1fr; } }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "TechArticle", "headline": "HTTP Status Codes: Complete Reference Guide 2026", "description": "Complete HTTP status code reference for web developers. Understand every 1xx, 2xx, 3xx, 4xx, and 5xx status code, its meaning, and when to use it in APIs and web applications.", "url": "https://gotoolly.com/guides/http-status-lookup", "author": { "@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com" }, "publisher": { "@type": "Organization", "name": "GoToolly", "logo": { "@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png" } }, "image": "https://gotoolly.com/assets/images/logo-512.png", "mainEntityOfPage": { "@type": "WebPage", "@id": "https://gotoolly.com/guides/http-status-lookup" } }
+    </script>
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"}, {"@type": "ListItem", "position": 3, "name": "HTTP Status Lookup", "item": "https://gotoolly.com/guides/http-status-lookup"} ] }
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the five classes of HTTP status codes?","acceptedAnswer":{"@type":"Answer","text":"HTTP status codes are divided into five classes: 1xx (Informational) indicates the request was received and is being processed; 2xx (Success) indicates the request was successfully received and processed; 3xx (Redirection) indicates further action is needed to complete the request; 4xx (Client Error) indicates the request contains bad syntax or cannot be fulfilled; 5xx (Server Error) indicates the server failed to fulfill a valid request."}},{"@type":"Question","name":"What is the difference between 301 and 302 redirects?","acceptedAnswer":{"@type":"Answer","text":"301 Moved Permanently indicates the resource has permanently moved to a new URL. Search engines transfer link equity to the new URL. 302 Found is a temporary redirect; the original URL should be used again. Search engines keep the original URL indexed. Use 301 for permanent changes and 302 for temporary ones."}},{"@type":"Question","name":"What does HTTP 429 Too Many Requests mean?","acceptedAnswer":{"@type":"Answer","text":"HTTP 429 indicates the client has sent too many requests in a given time period (rate limiting). The server may include a Retry-After header specifying how long to wait before retrying. This is commonly used in APIs to prevent abuse and ensure fair resource usage across clients."}},{"@type":"Question","name":"What is the difference between 401 and 403?","acceptedAnswer":{"@type":"Answer","text":"401 Unauthorized means the client is not authenticated (no valid credentials). The server should respond with a WWW-Authenticate header indicating how to authenticate. 403 Forbidden means the client is authenticated but does not have permission to access the resource. Authentication succeeds but authorization fails."}},{"@type":"Question","name":"Should I use 404 or 410 for deleted content?","acceptedAnswer":{"@type":"Answer","text":"Use 404 Not Found when the resource does not exist or its existence is unknown. Use 410 Gone when the resource has been permanently deleted and will never be available at that URL again. 410 is more specific and tells search engines to stop indexing the URL."}}]}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>HTTP Status Codes: Complete Reference Guide</h1>
+                <p class="page-description">
+                    Understand every HTTP response status code. From 100 Continue to 511 Network Authentication Required, this comprehensive reference covers what each code means, when to use it, and common pitfalls.
+                </p>
+                <div style="margin-top: var(--space-6); position: relative;">
+                    <a href="../tools/http-status-lookup" class="btn btn-primary btn-lg">Look Up a Status Code</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8); position: relative;">
+                    No uploads  Instant lookup  All codes covered  No sign-up
+                </p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>Why HTTP Status Codes Matter</h2>
+                    <p>Every HTTP response from a web server includes a three-digit status code that communicates the outcome of the request. These codes are the universal language of the web, used by browsers, APIs, CDNs, load balancers, and monitoring tools to understand what happened during a request. For web developers, API designers, and DevOps engineers, a thorough understanding of HTTP status codes is essential for building reliable applications, debugging failed requests, designing intuitive APIs, and maintaining healthy web services. Using the wrong status code can confuse clients, break caching, harm SEO rankings, and make debugging significantly harder. This guide provides a complete reference for every standard HTTP status code along with practical guidance on when and how to use each one.</p>
+                </section>
+
+                <section>
+                    <h2>The Five Classes of HTTP Status Codes</h2>
+                    <p>HTTP status codes are organized into five classes based on their first digit. Each class represents a broad category of response type.</p>
+
+                    <table class="comparison-table">
+                        <thead>
+                            <tr><th>Class</th><th>Range</th><th>Meaning</th><th>Common Examples</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>1xx</strong> Informational</td><td>100-199</td><td>Request received, continuing process</td><td>100 Continue, 101 Switching Protocols</td></tr>
+                            <tr><td><strong>2xx</strong> Success</td><td>200-299</td><td>Request successfully received and processed</td><td>200 OK, 201 Created, 204 No Content</td></tr>
+                            <tr><td><strong>3xx</strong> Redirection</td><td>300-399</td><td>Further action needed to complete request</td><td>301 Moved Permanently, 304 Not Modified</td></tr>
+                            <tr><td><strong>4xx</strong> Client Error</td><td>400-499</td><td>Request contains bad syntax or cannot be fulfilled</td><td>400 Bad Request, 404 Not Found, 429 Too Many Requests</td></tr>
+                            <tr><td><strong>5xx</strong> Server Error</td><td>500-599</td><td>Server failed to fulfill a valid request</td><td>500 Internal Server Error, 503 Service Unavailable</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>Step-by-Step: Using the HTTP Status Code Lookup</h2>
+                    <div class="step-container">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Enter a Status Code</h3>
+                                <p>Open the <a href="../tools/http-status-lookup">HTTP Status Code Lookup</a> and type any three-digit HTTP status code into the search field. You can enter codes like 200, 404, or 500 to instantly retrieve the full details.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Read the Description</h3>
+                                <p>The tool displays the official name of the status code, its class category, and a clear description of what the code means in the context of HTTP communication.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>View Usage Guidelines</h3>
+                                <p>See practical guidance on when and how to use the status code, common scenarios where it appears, and best practices for handling it in your applications.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Explore Related Codes</h3>
+                                <p>Browse related status codes and compare similar codes to choose the right one for your use case. Switch between codes quickly without re-entering your search.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Essential Status Codes Every Developer Must Know</h2>
+                    <div class="code-example">
+                        <strong>Most Common Success Codes:</strong>
+                        200 OK               - Standard successful response
+                        201 Created          - Resource was created successfully
+                        204 No Content       - Success but no response body
+                        206 Partial Content  - Partial resource returned (range requests)
+
+                        <strong>Most Common Redirect Codes:</strong>
+                        301 Moved Permanently  - Resource permanently moved
+                        302 Found              - Temporary redirect
+                        304 Not Modified       - Use cached version
+                        307 Temporary Redirect - Preserve request method
+                        308 Permanent Redirect - Preserve request method permanently
+
+                        <strong>Most Common Client Error Codes:</strong>
+                        400 Bad Request          - Malformed syntax
+                        401 Unauthorized         - Authentication required
+                        403 Forbidden            - Insufficient permissions
+                        404 Not Found            - Resource does not exist
+                        405 Method Not Allowed   - HTTP method not supported
+                        409 Conflict             - Resource state conflict
+                        422 Unprocessable Entity - Validation errors
+                        429 Too Many Requests    - Rate limit exceeded
+
+                        <strong>Most Common Server Error Codes:</strong>
+                        500 Internal Server Error - Unexpected server failure
+                        502 Bad Gateway          - Invalid upstream response
+                        503 Service Unavailable  - Server temporarily overloaded
+                        504 Gateway Timeout      - Upstream server too slow
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Common Use Cases</h2>
+                    <div class="use-case-grid">
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128640;</div>
+                            <h4 style="margin: var(--space-2) 0;">API Design</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Choose the right status codes for your REST and GraphQL APIs to communicate response outcomes clearly to client applications and third-party integrators.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128269;</div>
+                            <h4 style="margin: var(--space-2) 0;">Debugging</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Quickly identify what went wrong during a failed HTTP request by looking up the status code returned by the server and understanding its meaning.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128200;</div>
+                            <h4 style="margin: var(--space-2) 0;">SEO & Redirects</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Use the correct redirect status codes (301, 302, 308) to manage site migrations, URL changes, and link equity preservation for search engine optimization.</p>
+                        </div>
+                        <div class="use-case-card">
+                            <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128737;</div>
+                            <h4 style="margin: var(--space-2) 0;">Error Handling</h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Build robust error handling in your applications by properly interpreting and responding to different status code categories in client and server code.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Best Practices for HTTP Status Codes</h2>
+                    <ul>
+                        <li><strong>Use the most specific code available:</strong> Do not return 200 for errors or 500 for client mistakes. Use the most specific status code that accurately describes the response outcome.</li>
+                        <li><strong>Include a descriptive reason phrase:</strong> While the status code number is what matters programmatically, the reason phrase helps developers debugging with browser DevTools and curl.</li>
+                        <li><strong>Return 201 with a Location header:</strong> When creating resources via POST, return 201 with a Location header pointing to the newly created resource.</li>
+                        <li><strong>Use 422 for validation errors:</strong> When request syntax is valid but the data fails validation rules, return 422 Unprocessable Entity instead of 400 Bad Request.</li>
+                        <li><strong>Implement Retry-After for 429 and 503:</strong> When rate limiting or temporarily overloaded, include a Retry-After header to tell clients when they can retry.</li>
+                        <li><strong>Log and monitor status codes:</strong> Track the distribution of status codes in your applications. A spike in 5xx codes indicates server problems; a spike in 4xx codes may indicate client bugs or abuse.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Common Mistakes to Avoid</h2>
+                    <ul>
+                        <li><strong>Returning 200 for errors:</strong> Some APIs return 200 with an error message in the body. This breaks standard HTTP tooling, monitoring, and makes debugging harder. Use appropriate 4xx or 5xx codes instead.</li>
+                        <li><strong>Using 302 for permanent redirects:</strong> 302 is temporary. Use 301 for permanent URL changes to preserve search engine rankings and allow clients to update their bookmarks.</li>
+                        <li><strong>Sending 401 without WWW-Authenticate:</strong> The 401 status code requires a WWW-Authenticate header indicating how to authenticate. Without it, clients do not know how to proceed.</li>
+                        <li><strong>Using 403 instead of 401:</strong> 401 means unauthenticated (not logged in); 403 means unauthorized (logged in but no permission). Mixing these up confuses clients about whether they need to log in or need more permissions.</li>
+                        <li><strong>Not handling 304 caching correctly:</strong> A 304 response means the cached version is still valid. Failing to implement proper cache headers alongside 304 responses can cause stale content issues.</li>
+                        <li><strong>Using 500 for all server errors:</strong> Be more specific when possible. Use 502 for bad gateway responses, 503 for temporary overload, 504 for upstream timeouts, and 500 only for truly unexpected failures.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Privacy and Security Considerations</h2>
+                    <p>HTTP status codes can reveal information about your server infrastructure and application behavior. Consider these security implications:</p>
+                    <ul>
+                        <li><strong>Avoid detailed error messages in 5xx responses:</strong> Stack traces and internal error details in server error responses can expose sensitive information about your infrastructure. Log these details server-side and return generic messages to clients.</li>
+                        <li><strong>Do not leak information through status codes:</strong> Returning different status codes for non-existent resources depending on whether they once existed (404 vs 410) can allow attackers to enumerate your data.</li>
+                        <li><strong>Implement rate limiting with 429:</strong> Protect your APIs from abuse by returning 429 Too Many Requests with appropriate Retry-After headers when clients exceed request limits.</li>
+                        <li><strong>Use 407 Proxy Authentication Required carefully:</strong> This code can reveal the presence of proxy servers in your architecture. Use it only when necessary.</li>
+                        <li><strong>Client-side lookup only:</strong> Our HTTP Status Code Lookup tool processes your query entirely in the browser. No data is sent to any server, ensuring complete privacy for your debugging sessions.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>What are the five classes of HTTP status codes?</h3>
+                        <p>HTTP status codes are divided into five classes: <strong>1xx</strong> (Informational) indicates the request was received and is being processed; <strong>2xx</strong> (Success) indicates the request was successfully received and processed; <strong>3xx</strong> (Redirection) indicates further action is needed to complete the request; <strong>4xx</strong> (Client Error) indicates the request contains bad syntax or cannot be fulfilled; <strong>5xx</strong> (Server Error) indicates the server failed to fulfill a valid request.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What is the difference between 301 and 302 redirects?</h3>
+                        <p><strong>301 Moved Permanently</strong> indicates the resource has permanently moved to a new URL. Search engines transfer link equity to the new URL. <strong>302 Found</strong> is a temporary redirect; the original URL should be used again. Search engines keep the original URL indexed. Use 301 for permanent changes and 302 for temporary ones.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What does HTTP 429 Too Many Requests mean?</h3>
+                        <p>HTTP 429 indicates the client has sent too many requests in a given time period (rate limiting). The server may include a <code>Retry-After</code> header specifying how long to wait before retrying. This is commonly used in APIs to prevent abuse and ensure fair resource usage across clients.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What is the difference between 401 and 403?</h3>
+                        <p><strong>401 Unauthorized</strong> means the client is not authenticated (no valid credentials). The server should respond with a <code>WWW-Authenticate</code> header indicating how to authenticate. <strong>403 Forbidden</strong> means the client is authenticated but does not have permission to access the resource. Authentication succeeds but authorization fails.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Should I use 404 or 410 for deleted content?</h3>
+                        <p>Use <strong>404 Not Found</strong> when the resource does not exist or its existence is unknown. Use <strong>410 Gone</strong> when the resource has been permanently deleted and will never be available at that URL again. 410 is more specific and tells search engines to stop indexing the URL.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Complete Web Development Suite</h2>
+                    <p>Enhance your web development workflow with these complementary tools:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/mime-type-lookup">MIME Type Lookup</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Look up MIME types for file extensions and content types</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/url-parser">URL Parser</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Break down URLs into their individual components</p>
+                        </div>
+                        <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/base64-encoder">Base64 Encoder/Decoder</a></h4>
+                            <p style="margin: 0; font-size: var(--text-sm);">Encode and decode Base64 strings and data</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+
+            <section style="background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%); color: white; padding: var(--space-10); border-radius: var(--radius-xl); text-align: center; margin: var(--space-12) 0;">
+                <h2 style="color: white; margin-bottom: var(--space-3);">Look Up Any HTTP Status Code</h2>
+                <p style="color: rgba(255, 255, 255, 0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6);">
+                    Quickly find the meaning and usage of any HTTP status code. Essential for API development, debugging, and web server configuration. Fast, private, and free.
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6);">
+                    <a href="../tools/http-status-lookup" class="btn btn-primary btn-lg">Look Up Status Code</a>
+                    <a href="../tools/mime-type-lookup" class="btn btn-secondary btn-lg">Look Up MIME Type</a>
+                </div>
+                <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">
+                    Local processing  No file uploads  All codes covered  Instant results  No sign-up
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Encoding Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/url-encoder">URL Encoder</a></li>
+                        <li><a href="../tools/html-encoder">HTML Encoder</a></li>
+                        <li><a href="../tools/base64-encoder">Base64 Encoder</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+                });
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                        mobileMenu.classList.remove('active');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
