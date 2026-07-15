@@ -401,29 +401,54 @@ document.addEventListener('DOMContentLoaded', function () {
         var data = prepareBarcodeData(type, raw);
 
         if (type === 'qrcode' || type === 'vcard' || type === 'mecard') {
+            if (typeof qrcode === 'undefined') {
+                showStatus(formStatus, 'QR code library failed to load. Please refresh the page.', 'error');
+                return;
+            }
             generateQRCode(type, data);
         } else if (type === 'datamatrix' || type === 'pdf417') {
+            if (typeof JsBarcode === 'undefined') {
+                showStatus(formStatus, 'Barcode library failed to load. Please refresh the page.', 'error');
+                return;
+            }
             generate2DBarcode(type, data);
         } else {
+            if (typeof JsBarcode === 'undefined') {
+                showStatus(formStatus, 'Barcode library failed to load. Please refresh the page.', 'error');
+                return;
+            }
             generateLinearBarcode(type, data);
         }
     }
 
     function generateQRCode(type, data) {
-        var canvas = document.createElement('canvas');
-        QRCode.toCanvas(canvas, data, {
-            width: 300,
-            margin: 2,
-            color: { dark: '#000000', light: '#ffffff' },
-            errorCorrectionLevel: 'M'
-        }, function (error) {
-            if (error) {
-                showStatus(formStatus, 'QR Code generation failed: ' + (error.message || error), 'error');
-                return;
+        try {
+            var qr = qrcode(0, 'M');
+            qr.addData(data);
+            qr.make();
+            var moduleCount = qr.getModuleCount();
+            var cellSize = Math.max(1, Math.floor(300 / moduleCount));
+            var margin = cellSize * 4;
+            var size = moduleCount * cellSize + margin * 2;
+            var canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, size, size);
+            ctx.fillStyle = '#000000';
+            for (var r = 0; r < moduleCount; r++) {
+                for (var c = 0; c < moduleCount; c++) {
+                    if (qr.isDark(r, c)) {
+                        ctx.fillRect(c * cellSize + margin, r * cellSize + margin, cellSize, cellSize);
+                    }
+                }
             }
             currentCanvas = canvas;
             generateFromCanvas(type, canvas);
-        });
+        } catch (e) {
+            showStatus(formStatus, 'QR Code generation failed: ' + (e.message || e), 'error');
+        }
     }
 
     function generateLinearBarcode(type, data) {
