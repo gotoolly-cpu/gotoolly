@@ -438,6 +438,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
             generateQRCode(type, data);
+        } else if (type === 'datamatrix') {
+            generateDataMatrix(data);
+        } else if (type === 'pdf417') {
+            generatePDF417(data);
         } else if (!jsBarcodeFormats[type]) {
             showStatus(formStatus, typeNames[type] + ' is not supported by the browser barcode engine. Try Code-128, EAN-13, or QR Code instead.', 'error');
         } else if (type === 'code93') {
@@ -543,6 +547,48 @@ document.addEventListener('DOMContentLoaded', function () {
             generateFromCanvas('code93', canvas);
         } catch (e) {
             showStatus(formStatus, 'Code-93 generation failed: ' + (e.message || e), 'error');
+        }
+    }
+
+    function generateDataMatrix(data) {
+        try {
+            if (typeof DATAMatrix === 'undefined') {
+                showStatus(formStatus, 'Data Matrix library failed to load. Please refresh the page.', 'error');
+                return;
+            }
+            var svg = DATAMatrix({ msg: data, dim: 300, pad: 2, pal: ["#000", "#fff"] });
+            var svgData = new XMLSerializer().serializeToString(svg);
+            var canvas = document.createElement('canvas');
+            var ctx = canvas.getContext('2d');
+            var img = new Image();
+            img.onload = function () {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+                currentCanvas = canvas;
+                generateFromCanvas('datamatrix', canvas);
+            };
+            img.onerror = function () {
+                showStatus(formStatus, 'Failed to render Data Matrix image.', 'error');
+            };
+            img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgData);
+        } catch (e) {
+            showStatus(formStatus, 'Data Matrix generation failed: ' + (e.message || e), 'error');
+        }
+    }
+
+    function generatePDF417(data) {
+        try {
+            if (typeof PDF417 === 'undefined') {
+                showStatus(formStatus, 'PDF417 library failed to load. Please refresh the page.', 'error');
+                return;
+            }
+            var canvas = document.createElement('canvas');
+            PDF417.draw(data, canvas);
+            currentCanvas = canvas;
+            generateFromCanvas('pdf417', canvas);
+        } catch (e) {
+            showStatus(formStatus, 'PDF417 generation failed: ' + (e.message || e), 'error');
         }
     }
 
