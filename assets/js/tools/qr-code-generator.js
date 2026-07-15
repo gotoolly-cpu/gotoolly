@@ -47,6 +47,10 @@ document.addEventListener('DOMContentLoaded', function () {
         isbn13: 'EAN13', isbn10: 'EAN13'
     };
 
+    var jsBarcodeDataLengths = {
+        EAN13: [12, 13], EAN8: [7, 8], UPC: [11, 12], UPCE: [6, 7, 8], ITF14: [14]
+    };
+
     var barcodeDisplay = document.getElementById('barcodeDisplay');
     var barcodeInfo = document.getElementById('barcodeInfo');
     var resultStatus = document.getElementById('result-status');
@@ -203,7 +207,12 @@ document.addEventListener('DOMContentLoaded', function () {
             case 'isbn10':
                 digits = trimmed.replace(/[^0-9Xx]/g, '').slice(0, 9).toUpperCase();
                 while (digits.length < 9) digits += '0';
-                return digits + calculateCheckDigitISBN10(digits);
+                var isbn13FromIsbn10 = '978' + digits.slice(0, 9);
+                return isbn13FromIsbn10 + calculateCheckDigitEAN(isbn13FromIsbn10);
+            case 'itf14':
+                digits = trimmed.replace(/\D/g, '').slice(0, 14);
+                while (digits.length < 14) digits = '0' + digits;
+                return digits;
             case 'code39':
             case 'code93':
                 return trimmed.toUpperCase();
@@ -464,7 +473,7 @@ document.addEventListener('DOMContentLoaded', function () {
             currentCanvas = canvas;
             generateFromCanvas(type, canvas);
         } catch (e) {
-            showStatus(formStatus, 'Barcode generation failed: ' + e.message, 'error');
+            showStatus(formStatus, 'Barcode generation failed: ' + (e.message || e), 'error');
         }
     }
 
