@@ -41,11 +41,33 @@ document.addEventListener('DOMContentLoaded', function () {
         mecard: 'Enter name, phone, and email separated by commas in the text area.'
     };
     var jsBarcodeFormats = {
-        code128: 'CODE128', code39: 'CODE39', code93: null, itf14: 'ITF14',
+        code128: 'CODE128', code39: 'CODE39', code93: 'CODE93', itf14: 'ITF14',
         ean13: 'EAN13', ean8: 'EAN8', upca: 'UPC', upce: 'UPCE',
         datamatrix: null, pdf417: null,
         isbn13: 'EAN13', isbn10: 'EAN13'
     };
+
+    var code93Values = {
+        '0':0,'1':1,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,
+        'A':10,'B':11,'C':12,'D':13,'E':14,'F':15,'G':16,'H':17,'I':18,'J':19,
+        'K':20,'L':21,'M':22,'N':23,'O':24,'P':25,'Q':26,'R':27,'S':28,'T':29,
+        'U':30,'V':31,'W':32,'X':33,'Y':34,'Z':35,'-':36,'.':37,' ':38,
+        '$':39,'/':40,'+':41,'%':42
+    };
+    var code93Patterns = [
+        [1,3,1,1,1,2],[1,1,1,2,1,3],[1,1,1,3,1,2],[1,1,1,4,1,1],
+        [1,2,1,1,1,3],[1,2,1,2,1,2],[1,2,1,3,1,1],[1,1,1,1,1,4],
+        [1,3,1,2,1,1],[1,4,1,1,1,1],[2,1,1,1,1,3],[2,1,1,2,1,2],
+        [2,1,1,3,1,1],[2,2,1,1,1,2],[2,2,1,2,1,1],[2,3,1,1,1,1],
+        [1,1,2,1,1,3],[1,1,2,2,1,2],[1,1,2,3,1,1],[1,2,2,1,1,2],
+        [1,3,2,1,1,1],[1,1,1,1,2,3],[1,1,1,2,2,2],[1,1,1,3,2,1],
+        [1,2,1,1,2,2],[1,3,1,1,2,1],[2,1,2,1,1,2],[2,1,2,2,1,1],
+        [2,1,1,1,2,2],[2,1,1,2,2,1],[2,2,1,1,1,2],[2,2,1,2,1,1],
+        [1,1,2,1,2,2],[1,1,2,2,2,1],[1,2,2,1,2,1],[1,2,2,2,1,1],
+        [1,2,1,1,3,1],[3,1,1,1,1,2],[3,1,1,2,1,1],[3,2,1,1,1,1],
+        [1,1,2,1,3,1],[1,1,3,1,2,1],[2,1,1,1,3,1]
+    ];
+    var code93StartStop = [1,1,1,1,4,1];
 
     var jsBarcodeDataLengths = {
         EAN13: [12, 13], EAN8: [7, 8], UPC: [11, 12], UPCE: [6, 7, 8], ITF14: [14]
@@ -210,9 +232,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 var isbn13FromIsbn10 = '978' + digits.slice(0, 9);
                 return isbn13FromIsbn10 + calculateCheckDigitEAN(isbn13FromIsbn10);
             case 'itf14':
-                digits = trimmed.replace(/\D/g, '').slice(0, 14);
-                while (digits.length < 14) digits = '0' + digits;
-                return digits;
+                digits = trimmed.replace(/\D/g, '').slice(0, 13);
+                while (digits.length < 13) digits = '0' + digits;
+                return digits + calculateCheckDigitEAN(digits);
             case 'code39':
             case 'code93':
                 return trimmed.toUpperCase();
@@ -417,6 +439,8 @@ document.addEventListener('DOMContentLoaded', function () {
             generateQRCode(type, data);
         } else if (!jsBarcodeFormats[type]) {
             showStatus(formStatus, typeNames[type] + ' is not supported by the browser barcode engine. Try Code-128, EAN-13, or QR Code instead.', 'error');
+        } else if (type === 'code93') {
+            generateCODE93(data);
         } else {
             if (typeof JsBarcode === 'undefined') {
                 showStatus(formStatus, 'Barcode library failed to load. Please refresh the page.', 'error');
@@ -453,6 +477,71 @@ document.addEventListener('DOMContentLoaded', function () {
             generateFromCanvas(type, canvas);
         } catch (e) {
             showStatus(formStatus, 'QR Code generation failed: ' + (e.message || e), 'error');
+        }
+    }
+
+    function generateCODE93(data) {
+        try {
+            var values = [];
+            for (var i = 0; i < data.length; i++) {
+                var ch = data.charAt(i);
+                if (code93Values[ch] === undefined) {
+                    showStatus(formStatus, 'Code-93 accepts uppercase letters, digits, and - . $ / + % SPACE.', 'error');
+                    return;
+                }
+                values.push(code93Values[ch]);
+            }
+            var sumC = 0, weight = 1;
+            for (var i = values.length - 1; i >= 0; i--) {
+                sumC += values[i] * weight;
+                weight++; if (weight > 20) weight = 1;
+            }
+            var checkC = sumC % 47;
+            values.push(checkC);
+            var sumK = 0; weight = 1;
+            for (var i = values.length - 1; i >= 0; i--) {
+                sumK += values[i] * weight;
+                weight++; if (weight > 15) weight = 1;
+            }
+            var checkK = sumK % 47;
+            values.push(checkK);
+            var totalModules = 0;
+            var segments = [];
+            function addPattern(p) {
+                for (var j = 0; j < 6; j++) {
+                    segments.push(p[j]);
+                    totalModules += p[j];
+                }
+            }
+            addPattern(code93StartStop);
+            for (var i = 0; i < values.length; i++) {
+                addPattern(code93Patterns[values[i]]);
+            }
+            addPattern(code93StartStop);
+            segments.push(1);
+            totalModules += 1;
+            var cellSize = 2;
+            var height = 120;
+            var margin = 10;
+            var width = totalModules * cellSize + margin * 2;
+            var canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height + margin * 2;
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            var x = margin;
+            for (var i = 0; i < segments.length; i++) {
+                if (i % 2 === 0) {
+                    ctx.fillStyle = '#000000';
+                    ctx.fillRect(x, margin, segments[i] * cellSize, height);
+                }
+                x += segments[i] * cellSize;
+            }
+            currentCanvas = canvas;
+            generateFromCanvas('code93', canvas);
+        } catch (e) {
+            showStatus(formStatus, 'Code-93 generation failed: ' + (e.message || e), 'error');
         }
     }
 
