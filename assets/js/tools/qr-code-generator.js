@@ -110,7 +110,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function calculateCheckDigitEAN(code) {
         var sum = 0;
         for (var i = 0; i < code.length; i++) {
-            sum += parseInt(code[i], 10) * (i % 2 === 0 ? 3 : 1);
+            var posFromRight = code.length - 1 - i;
+            sum += parseInt(code[i], 10) * (posFromRight % 2 === 0 ? 3 : 1);
         }
         return (10 - (sum % 10)) % 10;
     }
