@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var downloadHtmlBtn = document.getElementById('download-html-btn');
     var copyHtmlBtn = document.getElementById('copy-html-btn');
     var editor = document.getElementById('md-editor');
+    var fullscreenExitBtn = document.getElementById('fullscreen-exit-btn');
 
     var isFullscreen = false;
     var prevScroll = 0;
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         mdInput.addEventListener('input', updatePreview);
         fullscreenBtn.addEventListener('click', toggleFullscreen);
+        fullscreenExitBtn.addEventListener('click', toggleFullscreen);
         downloadMdBtn.addEventListener('click', downloadMd);
         downloadHtmlBtn.addEventListener('click', downloadHtml);
         copyHtmlBtn.addEventListener('click', copyHtml);
