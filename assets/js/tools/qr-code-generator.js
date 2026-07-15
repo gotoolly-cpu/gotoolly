@@ -416,7 +416,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             generateQRCode(type, data);
         } else if (!jsBarcodeFormats[type]) {
-            showStatus(formStatus, a[type] + ' is not supported by the browser barcode engine. Try Code-128, EAN-13, or QR Code instead.', 'error');
+            showStatus(formStatus, typeNames[type] + ' is not supported by the browser barcode engine. Try Code-128, EAN-13, or QR Code instead.', 'error');
         } else {
             if (typeof JsBarcode === 'undefined') {
                 showStatus(formStatus, 'Barcode library failed to load. Please refresh the page.', 'error');
