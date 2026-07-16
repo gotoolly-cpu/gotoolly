@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link.href = URL.createObjectURL(blob);
         link.download = 'cleaned-data.csv';
         link.click();
-        URL.revokeObjectURL(link.href);
+        setTimeout(function() { URL.revokeObjectURL(link.href); }, 100);
     }
 
     function exportJson() {
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link.href = URL.createObjectURL(blob);
         link.download = 'data.json';
         link.click();
-        URL.revokeObjectURL(link.href);
+        setTimeout(function() { URL.revokeObjectURL(link.href); }, 100);
     }
 
     function escapeHtml(str) {

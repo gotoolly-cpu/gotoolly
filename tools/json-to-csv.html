@@ -66,7 +66,7 @@
 
             <div class="converter-container">
                 <label for="json-input" style="font-weight:600;margin-bottom:var(--space-2);display:block">JSON Array Input</label>
-                <textarea id="json-input" class="converter-textarea" placeholder='Paste a JSON array here...\n\nExample:\n[\n  {"name":"John","age":30,"city":"NYC"},\n  {"name":"Jane","age":25,"city":"LA"}\n]'></textarea>
+                <textarea id="json-input" class="converter-textarea" placeholder='Paste a JSON array or object here...\n\nExamples:\n[{"name":"John","age":30},{"name":"Jane","age":25}]\n\nor a single object:\n{"user":"GoToolly","tools":["Formatter","Encoder"]}'></textarea>
             </div>
 
             <div class="json-actions">
@@ -140,7 +140,10 @@
             if(!raw){output.innerHTML='<div style="color:var(--color-text-light);text-align:center;padding:var(--space-8)">Please enter a JSON array</div>';return;}
             var data;
             try{data=JSON.parse(raw);}catch(e){output.innerHTML='<div style="color:#f38ba8;text-align:center;padding:var(--space-4)">JSON Error: '+e.message+'</div>';return;}
-            if(!Array.isArray(data)){output.innerHTML='<div style="color:#f38ba8;text-align:center;padding:var(--space-4)">Input must be a JSON array (e.g. [{...},{...}])</div>';return;}
+            if(!Array.isArray(data)){
+                if(typeof data==='object'&&data!==null){data=[data];}
+                else{output.innerHTML='<div style="color:#f38ba8;text-align:center;padding:var(--space-4)">Input must be a JSON object or array (e.g. {...} or [{...},{...}])</div>';return;}
+            }
             if(data.length===0){output.innerHTML='<div style="color:var(--color-text-light);text-align:center;padding:var(--space-4)">Empty array</div>';return;}
             var flatRows=data.map(function(item){
                 if(typeof item!=='object'||item===null)return{value:csvEscape(item)};

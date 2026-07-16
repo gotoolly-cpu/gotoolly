@@ -340,8 +340,8 @@
                         <button class="aspect-btn" data-ratio="custom">Custom</button>
                     </div>
 
-                    <!-- Crop Inputs -->
-                    <div class="crop-inputs">
+                    <!-- Crop Inputs: Position + Size (Free / Preset modes) -->
+                    <div id="crop-inputs" class="crop-inputs">
                         <div class="form-group">
                             <label class="form-label" for="crop-x">X</label>
                             <input type="number" id="crop-x" min="0" value="0">
@@ -359,6 +359,30 @@
                             <input type="number" id="crop-height" min="1" value="0">
                         </div>
                     </div>
+
+                    <!-- Crop Inputs: Margins (Custom mode) -->
+                    <div id="margin-inputs" class="crop-inputs" style="display:none">
+                        <div class="form-group">
+                            <label class="form-label" for="crop-top">Top</label>
+                            <input type="number" id="crop-top" min="0" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="crop-right">Right</label>
+                            <input type="number" id="crop-right" min="0" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="crop-bottom">Bottom</label>
+                            <input type="number" id="crop-bottom" min="0" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="crop-left">Left</label>
+                            <input type="number" id="crop-left" min="0" value="0">
+                        </div>
+                    </div>
+
+                    <p id="crop-result-info" class="dims-comparison" style="text-align:center;margin-bottom:var(--space-3);display:none">
+                        Crop area: <strong id="crop-result-text">-</strong>
+                    </p>
 
                     <!-- Buttons -->
                     <div class="btn-row">

@@ -92,7 +92,9 @@
         }
         .skip-link:focus {
             top: 0;
-        }    </style>
+        }
+        .tool-interface .btn{width:100%}.tool-actions{display:flex;gap:var(--space-3);width:100%}.tool-actions .btn{flex:1}.checkbox-group{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-2)}@media(max-width:768px){.checkbox-group{grid-template-columns:1fr}}.result-area{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid #86efac;border-radius:12px;padding:var(--space-4);margin-top:var(--space-4)}.result-area h3{margin:0 0 var(--space-3);font-size:1rem;display:flex;align-items:center;gap:8px}.keywords-list{display:flex;flex-direction:column;gap:var(--space-2);margin-bottom:var(--space-3)}.keyword-item{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:8px 12px;font-size:var(--text-sm)}.keyword-item span{font-family:'JetBrains Mono',monospace;color:var(--color-text)}.keyword-item .btn{padding:4px 10px;font-size:12px;white-space:nowrap}.tool-sidebar{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);margin-top:var(--space-6)}.tool-sidebar .card{margin:0}@media(max-width:768px){.tool-sidebar{grid-template-columns:1fr}.tool-actions{flex-direction:column}}
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -160,32 +162,36 @@
                     <div class="form-group">
                         <label>Keyword Types</label>
                         <div class="checkbox-group">
-                            <label>
+                            <label class="checkbox-label">
                                 <input type="checkbox" name="exact" checked>
                                 Exact match
                             </label>
-                            <label>
+                            <label class="checkbox-label">
                                 <input type="checkbox" name="long-tail" checked>
                                 Long-tail variations
                             </label>
-                            <label>
+                            <label class="checkbox-label">
                                 <input type="checkbox" name="questions" checked>
                                 Question format
                             </label>
-                            <label>
+                            <label class="checkbox-label">
                                 <input type="checkbox" name="modifiers" checked>
                                 Common modifiers
                             </label>
                         </div>
                     </div>
                     
-                    <button id="generate-btn" class="btn btn-primary btn-lg">Generate Keywords</button>
+                    <div class="tool-actions">
+                        <button id="generate-btn" class="btn btn-primary btn-lg"><i class="fas fa-search" aria-hidden="true"></i> Generate Keywords</button>
+                    </div>
                     
-                    <div id="results-area" style="display:none;">
-                        <h3>Generated Keywords</h3>
+                    <div id="results-area" class="result-area" style="display:none;">
+                        <h3><i class="fas fa-check-circle" style="color:#10b981"></i> Generated Keywords</h3>
                         <div id="keywords-list" class="keywords-list"></div>
-                        <button id="copy-all-btn" class="btn btn-secondary">Copy All</button>
-                        <button id="reset-btn" class="btn btn-secondary">Clear</button>
+                        <div class="tool-actions">
+                            <button id="copy-all-btn" class="btn btn-primary btn-sm"><i class="fas fa-copy" aria-hidden="true"></i> Copy All</button>
+                            <button id="reset-btn" class="btn btn-secondary btn-sm"><i class="fas fa-redo" aria-hidden="true"></i> Clear</button>
+                        </div>
                     </div>
                 </div>
                 

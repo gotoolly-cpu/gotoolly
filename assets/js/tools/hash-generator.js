@@ -59,12 +59,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 });
             });
+        }).catch(function(err) {
+            results.innerHTML = '<div style="text-align:center;padding:var(--space-4);color:#ef4444;font-size:var(--text-sm)">' + escapeHtml(err.message) + '</div>';
         });
     }
 
     function computeHash(text, algo) {
         if (algo === 'md5') {
             return Promise.resolve(md5(text));
+        }
+        if (typeof crypto === 'undefined' || !crypto.subtle) {
+            return Promise.reject(new Error('Web Crypto API not available. Please use HTTPS.'));
         }
         var name = algo === 'sha1' ? 'SHA-1' : algo === 'sha256' ? 'SHA-256' : 'SHA-512';
         var encoder = new TextEncoder();

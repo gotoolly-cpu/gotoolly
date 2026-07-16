@@ -38,8 +38,10 @@ document.addEventListener('DOMContentLoaded', function() {
             result = code
                 .replace(/\/\/[^\n]*/g, '')
                 .replace(/\/\*[\s\S]*?\*\//g, '')
+                .replace(/\n\s*/g, '\n')
+                .replace(/\n+/g, '\n')
                 .replace(/[ \t]+/g, ' ')
-                .replace(/\n\s*\n/g, '\n')
+                .replace(/\n/g, '')
                 .trim();
 
             new Function(result);

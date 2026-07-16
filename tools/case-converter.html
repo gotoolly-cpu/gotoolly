@@ -94,7 +94,20 @@
         }
         .skip-link:focus {
             top: 0;
-        }    </style>
+        }
+        .text-area-wrapper, .tool-actions { width: 100%; }
+        .text-area { width: 100%; box-sizing: border-box; }
+        .case-options { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: var(--space-4) 0; }
+        .case-options .btn { padding: 10px 8px; font-size: 13px; font-weight: 600; border-radius: 8px; text-align: center; transition: all 0.2s; }
+        .tool-actions { display: flex; gap: var(--space-3); }
+        .tool-actions .btn { flex: 1; }
+        .result-area { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 2px solid #86efac; border-radius: 12px; padding: var(--space-4); margin-top: var(--space-4); }
+        .result-area h3 { margin: 0 0 var(--space-3); font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+        .result-box { background: white; border: 1px solid #d1d5db; border-radius: 8px; padding: var(--space-3); font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.6; white-space: pre-wrap; word-break: break-word; min-height: 60px; text-align: center; }
+        .tool-sidebar { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); margin-top: var(--space-6); }
+        .tool-sidebar .card { margin: 0; }
+        @media (max-width: 768px) { .case-options { grid-template-columns: repeat(2, 1fr); } .tool-sidebar { grid-template-columns: 1fr; } }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -174,8 +187,8 @@
                     </div>
                     
                     <div class="tool-actions">
-                        <button id="copy-btn" class="btn btn-primary btn-lg">Copy Result</button>
-                        <button id="reset-btn" class="btn btn-secondary">Reset</button>
+                        <button id="copy-btn" class="btn btn-primary"><i class="fas fa-copy" aria-hidden="true"></i> Copy Result</button>
+                        <button id="reset-btn" class="btn btn-secondary"><i class="fas fa-redo" aria-hidden="true"></i> Clear Text</button>
                     </div>
                     
                     <div id="result-area" class="result-area" style="display:none;">
@@ -186,28 +199,39 @@
                         <div id="result-text" class="result-box"></div>
                     </div>
                 </div>
+            </div>
+
+            <div class="tool-sidebar">
+                <div class="card">
+                    <h3>How It Works</h3>
+                    <ol>
+                        <li>Paste or type your text</li>
+                        <li>Choose your desired case format</li>
+                        <li>Click to copy the result</li>
+                    </ol>
+                </div>
                 
-                <div class="tool-sidebar">
-                    <div class="card">
-                        <h3>How It Works</h3>
-                        <ol>
-                            <li>Paste or type your text</li>
-                            <li>Choose your desired case format</li>
-                            <li>Click to copy the result</li>
-                        </ol>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>Case Types</h3>
-                        <ul>
-                            <li><strong>Uppercase:</strong> ALL WORDS CAPITALIZED</li>
-                            <li><strong>Lowercase:</strong> all words lowercase</li>
-                            <li><strong>Title Case:</strong> Each Word Capitalized</li>
-                            <li><strong>camelCase:</strong> firstWordLowercase</li>
-                            <li><strong>snake_case:</strong> words_separated_by_underscores</li>
-                            <li><strong>kebab-case:</strong> words-separated-by-hyphens</li>
-                        </ul>
-                    </div>
+                <div class="card">
+                    <h3>Case Types</h3>
+                    <dl class="definition-list">
+                        <dt>UPPERCASE</dt>
+                        <dd>All words capitalized</dd>
+                        
+                        <dt>lowercase</dt>
+                        <dd>All words lowercase</dd>
+                        
+                        <dt>Title Case</dt>
+                        <dd>Each Word Capitalized</dd>
+                        
+                        <dt>camelCase</dt>
+                        <dd>firstWordLowercase</dd>
+                        
+                        <dt>snake_case</dt>
+                        <dd>words_separated_by_underscores</dd>
+                        
+                        <dt>kebab-case</dt>
+                        <dd>words-separated-by-hyphens</dd>
+                    </dl>
                 </div>
             </div>
 

@@ -35,8 +35,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
     
-    <!-- Favicon: provide multiple formats and a preload for reliability (reduces flicker when switching tabs) -->
-    <link rel="preload" href="/assets/images/favicons/favicon-32x32.png" as="image">
+    <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/assets/images/favicons/favicon-32x32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="/assets/images/favicons/favicon-16x16.png" type="image/png" sizes="16x16">
@@ -412,6 +411,12 @@
             color: var(--primary);
         }
         
+        .btn-secondary.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
         .btn-success {
             background: var(--secondary);
             color: white;
@@ -704,12 +709,13 @@
                             </div>
                         </div>
                         
-                        <div class="preview-box transparent-bg">
+                        <div class="preview-box transparent-bg" id="resultPreviewBox" style="position:relative;">
                             <div class="preview-placeholder" id="resultPlaceholder">
                                 <i class="fas fa-cut"></i>
                                 <span>Result</span>
                             </div>
                             <img id="resultImage" alt="Result">
+                            <canvas id="brushOverlay" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;display:none;cursor:none;"></canvas>
                         </div>
                     </div>
 
@@ -1028,14 +1034,16 @@
                 downloadBtn: document.getElementById('downloadBtn'),
                 copyBtn: document.getElementById('copyBtn'),
                 resetBtn: document.getElementById('resetBtn'),
-                edgeSlider: document.getElementById('edgeSlider'),
-                edgeValue: document.getElementById('edgeValue'),
                 qualitySlider: document.getElementById('qualitySlider'),
                 qualityValue: document.getElementById('qualityValue'),
+                edgeSlider: document.getElementById('edgeSlider'),
+                edgeValue: document.getElementById('edgeValue'),
                 cleanupSlider: document.getElementById('cleanupSlider'),
                 cleanupValue: document.getElementById('cleanupValue'),
                 brushSizeSlider: document.getElementById('brushSizeSlider'),
                 brushSizeValue: document.getElementById('brushSizeValue'),
+                brushOverlay: document.getElementById('brushOverlay'),
+                resultPreviewBox: document.getElementById('resultPreviewBox'),
                 modelSelect: null,
                 outputFormat: document.getElementById('outputFormat'),
                 toast: document.getElementById('toast'),
@@ -1063,7 +1071,7 @@
             // Set up all event listeners
             function setupEventListeners() {
                 // File upload
-                elements.uploadArea.addEventListener('click', () => elements.fileInput.click());
+                elements.uploadArea.addEventListener('click', function() { elements.fileInput.click(); });
                 elements.fileInput.addEventListener('change', handleFileSelect);
                 
                 // Drag and drop
@@ -1223,7 +1231,7 @@
                     canvas.width = state.originalImage.width;
                     canvas.height = state.originalImage.height;
                     
-                    const ctx = canvas.getContext('2d');
+                    const ctx = canvas.getContext('2d', { willReadFrequently: true });
                     ctx.drawImage(state.originalImage, 0, 0);
                     
                     state.processingCanvas = canvas;
@@ -1265,10 +1273,14 @@
                     
                     updateProgress(100, 'Complete!');
                     
-                    // Enable download/copy buttons
+                    // Enable download/copy/action buttons
                     elements.downloadBtn.disabled = false;
                     elements.copyBtn.disabled = false;
                     elements.resetBtn.disabled = false;
+                    document.getElementById('brushAdd').disabled = false;
+                    document.getElementById('brushRemove').disabled = false;
+                    document.getElementById('cleanupEdgesBtn').disabled = false;
+                    document.getElementById('enhanceBtn').disabled = false;
                     
                     // Update stats
                     updateStats({
@@ -1312,6 +1324,10 @@
                 // Simple background detection (sample corners)
                 const bgColor = sampleBackgroundColor(data, width, height);
                 
+                // Use edge softness slider to scale the distance threshold (0-100% → 20-80)
+                var edgeVal = parseInt(elements.edgeSlider.value) / 100;
+                var threshold = 20 + edgeVal * 60;
+                
                 // Create mask based on color distance
                 for (let i = 0; i < data.length; i += 4) {
                     const r = data[i];
@@ -1321,7 +1337,7 @@
                     const distance = colorDistance(r, g, b, bgColor[0], bgColor[1], bgColor[2]);
                     
                     // Make similar colors transparent
-                    if (distance < 50) {
+                    if (distance < threshold) {
                         result[i + 3] = 0;
                     }
                 }
@@ -1330,7 +1346,7 @@
             }
             
             function applyPostProcessing(imageData) {
-                var edgeValue = parseInt(elements.edgeSlider.value) / 100;
+                var edgeValue = parseInt(elements.cleanupSlider.value) / 100;
                 if (edgeValue >= 1) return imageData;
                 var data = imageData.data;
                 var w = imageData.width;
@@ -1487,14 +1503,22 @@
             
             // Action functions
             function downloadResult() {
-                if (!state.processedImage) return;
+                if (!state.resultCanvas) return;
                 
-                const link = document.createElement('a');
-                link.download = `background-removed-${Date.now()}.png`;
-                link.href = state.processedImage;
-                link.click();
+                var format = elements.outputFormat.value;
+                var quality = parseInt(elements.qualitySlider.value) / 100;
+                var mimeType = format === 'jpg' ? 'image/jpeg' : format === 'webp' ? 'image/webp' : 'image/png';
+                var ext = format === 'jpg' ? 'jpg' : format;
                 
-                showToast('Image downloaded', 'success');
+                state.resultCanvas.toBlob(function(blob) {
+                    var url = URL.createObjectURL(blob);
+                    var link = document.createElement('a');
+                    link.download = 'background-removed-' + Date.now() + '.' + ext;
+                    link.href = url;
+                    link.click();
+                    URL.revokeObjectURL(url);
+                    showToast('Image downloaded as ' + ext.toUpperCase(), 'success');
+                }, mimeType, quality);
             }
             
             async function copyToClipboard() {
@@ -1524,6 +1548,7 @@
                 state.processingCanvas = null;
                 state.resultCanvas = null;
                 state.processing = false;
+                state.brushMode = null;
                 
                 // Reset UI
                 elements.originalImage.src = '';
@@ -1534,12 +1559,21 @@
                 elements.resultImage.style.display = 'none';
                 elements.resultPlaceholder.style.display = 'block';
                 
+                elements.brushOverlay.style.display = 'none';
+                elements.brushOverlay.style.pointerEvents = 'none';
+                document.getElementById('brushAdd').classList.remove('active');
+                document.getElementById('brushRemove').classList.remove('active');
+                
                 elements.fileInput.value = '';
                 
                 elements.downloadBtn.disabled = true;
                 elements.copyBtn.disabled = true;
                 elements.resetBtn.disabled = true;
                 elements.processBtn.disabled = true;
+                document.getElementById('brushAdd').disabled = true;
+                document.getElementById('brushRemove').disabled = true;
+                document.getElementById('cleanupEdgesBtn').disabled = true;
+                document.getElementById('enhanceBtn').disabled = true;
                 
                 // Reset stats
                 updateStats({
@@ -1553,8 +1587,113 @@
             }
             
             function activateBrush(mode) {
+                if (!state.resultCanvas) {
+                    showToast('Process an image first', 'warning');
+                    return;
+                }
+                
+                // Toggle off if same mode
+                if (state.brushMode === mode) {
+                    state.brushMode = null;
+                    elements.brushOverlay.style.display = 'none';
+                    elements.brushOverlay.style.pointerEvents = 'none';
+                    document.getElementById('brushAdd').classList.remove('active');
+                    document.getElementById('brushRemove').classList.remove('active');
+                    brushDrawing = false;
+                    return;
+                }
+                
                 state.brushMode = mode;
-                showToast(`Brush activated: ${mode === 'add' ? 'Add foreground' : 'Remove foreground'}`, 'info');
+                
+                // Highlight active button
+                document.getElementById('brushAdd').classList.toggle('active', mode === 'add');
+                document.getElementById('brushRemove').classList.toggle('active', mode === 'remove');
+                
+                // Show brush overlay
+                var overlay = elements.brushOverlay;
+                overlay.width = state.resultCanvas.width;
+                overlay.height = state.resultCanvas.height;
+                overlay.style.display = 'block';
+                overlay.style.pointerEvents = 'auto';
+                
+                showToast('Brush: ' + (mode === 'add' ? 'Add foreground' : 'Remove foreground') + ' — paint on result', 'info');
+                
+                // Bind brush events
+                overlay.onmousedown = onBrushDown;
+                overlay.onmousemove = onBrushMove;
+                overlay.onmouseup = onBrushUp;
+                overlay.onmouseleave = onBrushUp;
+            }
+            
+            var brushDrawing = false;
+            
+            function onBrushDown(e) {
+                brushDrawing = true;
+                paintBrush(e);
+            }
+            
+            function onBrushMove(e) {
+                drawBrushCursor(e);
+                if (brushDrawing) paintBrush(e);
+            }
+            
+            function onBrushUp() {
+                brushDrawing = false;
+            }
+            
+            function getBrushCoords(e) {
+                var overlay = elements.brushOverlay;
+                var rect = overlay.getBoundingClientRect();
+                var scaleX = overlay.width / rect.width;
+                var scaleY = overlay.height / rect.height;
+                return {
+                    x: (e.clientX - rect.left) * scaleX,
+                    y: (e.clientY - rect.top) * scaleY
+                };
+            }
+            
+            function paintBrush(e) {
+                var coords = getBrushCoords(e);
+                var ctx = state.resultCanvas.getContext('2d', { willReadFrequently: true });
+                var imgData = ctx.getImageData(0, 0, state.resultCanvas.width, state.resultCanvas.height);
+                var d = imgData.data;
+                var w = imgData.width;
+                var h = imgData.height;
+                var r = state.brushSize;
+                var isAdd = state.brushMode === 'add';
+                
+                var x0 = Math.max(0, Math.floor(coords.x - r));
+                var x1 = Math.min(w - 1, Math.ceil(coords.x + r));
+                var y0 = Math.max(0, Math.floor(coords.y - r));
+                var y1 = Math.min(h - 1, Math.ceil(coords.y + r));
+                
+                for (var y = y0; y <= y1; y++) {
+                    for (var x = x0; x <= x1; x++) {
+                        var dx = x - coords.x;
+                        var dy = y - coords.y;
+                        if (dx * dx + dy * dy <= r * r) {
+                            var idx = (y * w + x) * 4;
+                            d[idx + 3] = isAdd ? 255 : 0;
+                        }
+                    }
+                }
+                
+                ctx.putImageData(imgData, 0, 0);
+                state.processedImage = state.resultCanvas.toDataURL('image/png');
+                elements.resultImage.src = state.processedImage;
+            }
+            
+            function drawBrushCursor(e) {
+                var overlay = elements.brushOverlay;
+                var ctx = overlay.getContext('2d');
+                var coords = getBrushCoords(e);
+                ctx.clearRect(0, 0, overlay.width, overlay.height);
+                
+                ctx.beginPath();
+                ctx.arc(coords.x, coords.y, state.brushSize, 0, Math.PI * 2);
+                ctx.strokeStyle = state.brushMode === 'add' ? '#10b981' : '#ef4444';
+                ctx.lineWidth = 2;
+                ctx.stroke();
             }
             
             function cleanupEdges() {
@@ -1562,7 +1701,7 @@
                     showToast('Process an image first', 'warning');
                     return;
                 }
-                var srcCtx = state.processingCanvas.getContext('2d');
+                var srcCtx = state.processingCanvas.getContext('2d', { willReadFrequently: true });
                 var srcData = srcCtx.getImageData(0, 0, state.processingCanvas.width, state.processingCanvas.height);
                 var d = srcData.data;
                 var w = srcData.width;

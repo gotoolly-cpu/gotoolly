@@ -94,7 +94,37 @@
         }
         .skip-link:focus {
             top: 0;
-        }    </style>
+        }
+        .text-area-wrapper, .tool-actions {
+            width: 100%;
+        }
+        .text-area {
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .tool-sidebar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-4);
+            margin-top: var(--space-6);
+        }
+        .tool-sidebar .card {
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .tool-sidebar {
+                grid-template-columns: 1fr;
+            }
+            #stats {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        }
+        @media (max-width: 480px) {
+            #stats {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -166,83 +196,89 @@
                         <button id="reset-btn" class="btn btn-secondary">Clear Text</button>
                     </div>
                     
-                    <div id="stats" class="stats-grid" style="display:none; margin-top: var(--space-6);">
-                        <div class="stat-box">
-                            <div class="stat-value" id="word-count">0</div>
-                            <div class="stat-label">Words</div>
+                    <div id="stats" class="stats-grid" style="display:none; margin-top: var(--space-6); grid-template-columns: repeat(6, 1fr); gap: 12px;">
+                        <div class="stat-box" style="text-align:center; border-left: 4px solid #2563eb; background: linear-gradient(135deg, #eff6ff, #dbeafe);">
+                            <div style="font-size: 20px; margin-bottom: 6px; color: #2563eb;"><i class="fas fa-font"></i></div>
+                            <div class="stat-value" id="word-count" style="background: none; -webkit-text-fill-color: #1e40af; color: #1e40af;">0</div>
+                            <div class="stat-label" style="text-align:center;">Words</div>
                         </div>
-                        <div class="stat-box">
-                            <div class="stat-value" id="char-count">0</div>
-                            <div class="stat-label">Characters</div>
+                        <div class="stat-box" style="text-align:center; border-left: 4px solid #7c3aed; background: linear-gradient(135deg, #f5f3ff, #ede9fe);">
+                            <div style="font-size: 20px; margin-bottom: 6px; color: #7c3aed;"><i class="fas fa-text-width"></i></div>
+                            <div class="stat-value" id="char-count" style="background: none; -webkit-text-fill-color: #5b21b6; color: #5b21b6;">0</div>
+                            <div class="stat-label" style="text-align:center;">Characters</div>
                         </div>
-                        <div class="stat-box">
-                            <div class="stat-value" id="char-no-space">0</div>
-                            <div class="stat-label">Characters (no spaces)</div>
+                        <div class="stat-box" style="text-align:center; border-left: 4px solid #059669; background: linear-gradient(135deg, #ecfdf5, #d1fae5);">
+                            <div style="font-size: 20px; margin-bottom: 6px; color: #059669;"><i class="fas fa-remove-format"></i></div>
+                            <div class="stat-value" id="char-no-space" style="background: none; -webkit-text-fill-color: #047857; color: #047857;">0</div>
+                            <div class="stat-label" style="text-align:center;">No Spaces</div>
                         </div>
-                        <div class="stat-box">
-                            <div class="stat-value" id="sentence-count">0</div>
-                            <div class="stat-label">Sentences</div>
+                        <div class="stat-box" style="text-align:center; border-left: 4px solid #d97706; background: linear-gradient(135deg, #fffbeb, #fef3c7);">
+                            <div style="font-size: 20px; margin-bottom: 6px; color: #d97706;"><i class="fas fa-terminal"></i></div>
+                            <div class="stat-value" id="sentence-count" style="background: none; -webkit-text-fill-color: #b45309; color: #b45309;">0</div>
+                            <div class="stat-label" style="text-align:center;">Sentences</div>
                         </div>
-                        <div class="stat-box">
-                            <div class="stat-value" id="paragraph-count">0</div>
-                            <div class="stat-label">Paragraphs</div>
+                        <div class="stat-box" style="text-align:center; border-left: 4px solid #dc2626; background: linear-gradient(135deg, #fef2f2, #fecaca);">
+                            <div style="font-size: 20px; margin-bottom: 6px; color: #dc2626;"><i class="fas fa-paragraph"></i></div>
+                            <div class="stat-value" id="paragraph-count" style="background: none; -webkit-text-fill-color: #b91c1c; color: #b91c1c;">0</div>
+                            <div class="stat-label" style="text-align:center;">Paragraphs</div>
                         </div>
-                        <div class="stat-box">
-                            <div class="stat-value" id="reading-time">0 min</div>
-                            <div class="stat-label">Reading Time</div>
+                        <div class="stat-box" style="text-align:center; border-left: 4px solid #0891b2; background: linear-gradient(135deg, #ecfeff, #cffafe);">
+                            <div style="font-size: 20px; margin-bottom: 6px; color: #0891b2;"><i class="fas fa-clock"></i></div>
+                            <div class="stat-value" id="reading-time" style="background: none; -webkit-text-fill-color: #0e7490; color: #0e7490;">0 min</div>
+                            <div class="stat-label" style="text-align:center;">Reading Time</div>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="tool-sidebar">
+                <div class="card">
+                    <h3>How to Use</h3>
+                    <ol>
+                        <li>Paste or type text</li>
+                        <li>Statistics update automatically</li>
+                        <li>Use Clear to reset</li>
+                    </ol>
+                </div>
                 
-                <div class="tool-sidebar">
-                    <div class="card">
-                        <h3>How to Use</h3>
-                        <ol>
-                            <li>Paste or type text</li>
-                            <li>Statistics update automatically</li>
-                            <li>Use Clear to reset</li>
-                        </ol>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>Statistics Guide</h3>
-                        <dl class="definition-list">
-                            <dt>Words</dt>
-                            <dd>Individual terms separated by spaces</dd>
-                            
-                            <dt>Characters</dt>
-                            <dd>All symbols including spaces</dd>
-                            
-                            <dt>No Spaces</dt>
-                            <dd>Character count without whitespace</dd>
-                            
-                            <dt>Sentences</dt>
-                            <dd>Groups ending with . ! ?</dd>
-                            
-                            <dt>Paragraphs</dt>
-                            <dd>Text blocks separated by line breaks</dd>
-                            
-                            <dt>Reading Time</dt>
-                            <dd>Based on 238 words per minute</dd>
-                        </dl>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>Common Limits</h3>
-                        <dl class="definition-list">
-                            <dt>Tweet</dt>
-                            <dd>280 characters</dd>
-                            
-                            <dt>Meta Description</dt>
-                            <dd>160 characters</dd>
-                            
-                            <dt>Email Subject</dt>
-                            <dd>50-60 characters</dd>
-                            
-                            <dt>Page Title</dt>
-                            <dd>50-60 characters</dd>
-                        </dl>
-                    </div>
+                <div class="card">
+                    <h3>Statistics Guide</h3>
+                    <dl class="definition-list">
+                        <dt>Words</dt>
+                        <dd>Individual terms separated by spaces</dd>
+                        
+                        <dt>Characters</dt>
+                        <dd>All symbols including spaces</dd>
+                        
+                        <dt>No Spaces</dt>
+                        <dd>Character count without whitespace</dd>
+                        
+                        <dt>Sentences</dt>
+                        <dd>Groups ending with . ! ?</dd>
+                        
+                        <dt>Paragraphs</dt>
+                        <dd>Text blocks separated by line breaks</dd>
+                        
+                        <dt>Reading Time</dt>
+                        <dd>Based on 238 words per minute</dd>
+                    </dl>
+                </div>
+                
+                <div class="card">
+                    <h3>Common Limits</h3>
+                    <dl class="definition-list">
+                        <dt>Tweet</dt>
+                        <dd>280 characters</dd>
+                        
+                        <dt>Meta Description</dt>
+                        <dd>160 characters</dd>
+                        
+                        <dt>Email Subject</dt>
+                        <dd>50-60 characters</dd>
+                        
+                        <dt>Page Title</dt>
+                        <dd>50-60 characters</dd>
+                    </dl>
                 </div>
             </div>
 

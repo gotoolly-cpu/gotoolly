@@ -90,8 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
         a.download = 'output.md';
         document.body.appendChild(a);
         a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
+        setTimeout(function() { document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
     }
 
     function clearAll() {
