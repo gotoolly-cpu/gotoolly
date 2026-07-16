@@ -141,61 +141,105 @@ document.addEventListener('DOMContentLoaded', function () {
                 var fit = fitToPage.checked;
 
                 progressText.textContent = 'Generating PDF...';
-                progressPercent.textContent = '50%';
-                progressFill.style.width = '50%';
+                progressPercent.textContent = '30%';
+                progressFill.style.width = '30%';
 
                 var pdfDoc = await PDFLib.PDFDocument.create();
                 var pageWidth = orientation === 'landscape' ? 842 : 595;
                 var pageHeight = orientation === 'landscape' ? 595 : 842;
-                var margin = 40;
+                var margin = 36;
                 var usableWidth = pageWidth - 2 * margin;
-                var fontSize = 9;
-                var lineHeight = fontSize * 1.5;
-                var colWidths = [];
-                var headerRow = json[0] || [];
+                var fontSize = 8;
+                var rowH = fontSize * 2;
+                var pad = 4;
+                var headerBg = PDFLib.rgb(0.25, 0.35, 0.55);
+                var headerFg = PDFLib.rgb(1, 1, 1);
+                var altBg = PDFLib.rgb(0.93, 0.94, 0.96);
+                var whiteBg = PDFLib.rgb(1, 1, 1);
+                var borderC = PDFLib.rgb(0.78, 0.78, 0.78);
+                var textC = PDFLib.rgb(0.1, 0.1, 0.1);
+                var emptyC = PDFLib.rgb(0.55, 0.55, 0.55);
 
-                for (var c = 0; c < headerRow.length; c++) {
-                    colWidths[c] = Math.min(usableWidth / Math.max(headerRow.length, 1) * 1.2, 120);
+                while (json.length > 0) {
+                    var lastRow = json[json.length - 1];
+                    var hasData = lastRow.some(function(c) { return c !== undefined && c !== null && c !== ''; });
+                    if (hasData) break;
+                    json.pop();
+                }
+
+                var numCols = 0;
+                json.forEach(function(row) { numCols = Math.max(numCols, row.length); });
+                if (numCols === 0) { notify('No data found in sheet', 'error'); return; }
+
+                var colW = [];
+                for (var ci = 0; ci < numCols; ci++) {
+                    var mx = 0;
+                    for (var ri = 0; ri < json.length; ri++) {
+                        var cv = json[ri] && json[ri][ci] !== undefined ? String(json[ri][ci]) : '';
+                        mx = Math.max(mx, cv.length);
+                    }
+                    colW[ci] = Math.max(mx * fontSize * 0.52 + pad * 2, 18);
+                }
+
+                var totalW = colW.reduce(function(a, b) { return a + b; }, 0);
+                if (fit && totalW > usableWidth) {
+                    var s = (usableWidth - (numCols - 1) * 0.5) / totalW;
+                    colW = colW.map(function(w) { return w * s; });
+                    totalW = colW.reduce(function(a, b) { return a + b; }, 0);
+                }
+
+                var startX = margin + Math.max(0, (usableWidth - totalW) / 2);
+
+                function trunc(t, w) {
+                    var maxC = Math.floor((w - pad * 2) / (fontSize * 0.52));
+                    if (t.length > maxC && maxC > 2) return t.substring(0, maxC - 2) + '\u2026';
+                    return t;
+                }
+
+                function drawHeaderRow(pageRef, yPos) {
+                    var x = startX;
+                    for (var ci = 0; ci < numCols; ci++) {
+                        var w = colW[ci] || 50;
+                        pageRef.drawRectangle({ x: x, y: yPos, width: w, height: rowH, color: headerBg, borderColor: borderC, borderWidth: 0.5 });
+                        var txt = json[0] && json[0][ci] !== undefined ? String(json[0][ci]) : '';
+                        pageRef.drawText(trunc(txt, w), { x: x + pad, y: yPos + (rowH - fontSize) / 2 - 1, size: fontSize, color: headerFg });
+                        x += w;
+                    }
+                }
+
+                function drawDataRow(pageRef, yPos, rowData, isEven) {
+                    var x = startX;
+                    var bg = isEven ? altBg : whiteBg;
+                    for (var ci = 0; ci < numCols; ci++) {
+                        var w = colW[ci] || 50;
+                        pageRef.drawRectangle({ x: x, y: yPos, width: w, height: rowH, color: bg, borderColor: borderC, borderWidth: 0.5 });
+                        var val = rowData && rowData[ci] !== undefined ? String(rowData[ci]) : '';
+                        var display = val === '' ? '-' : val;
+                        pageRef.drawText(trunc(display, w), { x: x + pad, y: yPos + (rowH - fontSize) / 2 - 1, size: fontSize, color: val === '' ? emptyC : textC });
+                        x += w;
+                    }
                 }
 
                 var page = pdfDoc.addPage([pageWidth, pageHeight]);
-                var y = pageHeight - margin;
+                var y = pageHeight - margin - rowH;
 
-                if (headerRow.length > 0) {
-                    var headerText = headerRow.map(function (h, i) {
-                        return padCell(String(h || ''), colWidths[i], fontSize);
-                    }).join(' | ');
-                    page.drawText(headerText, { x: margin, y: y, size: fontSize, color: PDFLib.rgb(0.2, 0.2, 0.2) });
-                    y -= lineHeight + 4;
-                    page.drawLine({
-                        start: { x: margin, y: y },
-                        end: { x: pageWidth - margin, y: y },
-                        thickness: 0.5,
-                        color: PDFLib.rgb(0.6, 0.6, 0.6)
-                    });
-                    y -= 4;
-                }
+                drawHeaderRow(page, y);
+                y -= rowH;
 
+                var drawnRowCount = 0;
                 for (var r = 1; r < json.length; r++) {
-                    if (cancelled) {
-                        notify('Conversion cancelled', 'error');
-                        break;
-                    }
-                    var row = json[r];
-                    if (y < margin + 20) {
+                    if (cancelled) { notify('Conversion cancelled', 'error'); break; }
+                    if (y < margin + rowH) {
                         page = pdfDoc.addPage([pageWidth, pageHeight]);
-                        y = pageHeight - margin;
+                        y = pageHeight - margin - rowH;
+                        drawHeaderRow(page, y);
+                        y -= rowH;
                     }
-                    var text = '';
-                    for (var c2 = 0; c2 < Math.max(row.length, 1); c2++) {
-                        var val = row[c2] !== undefined ? String(row[c2]) : '';
-                        text += padCell(val, colWidths[c2] || 80, fontSize);
-                        if (c2 < Math.max(row.length, 1) - 1) text += ' | ';
-                    }
-                    page.drawText(text, { x: margin, y: y, size: fontSize, color: PDFLib.rgb(0, 0, 0) });
-                    y -= lineHeight;
+                    drawDataRow(page, y, json[r], drawnRowCount % 2 === 1);
+                    y -= rowH;
+                    drawnRowCount++;
 
-                    var pct = Math.round((r / json.length) * 100);
+                    var pct = 30 + Math.round((r / json.length) * 70);
                     progressPercent.textContent = pct + '%';
                     progressFill.style.width = pct + '%';
                     progressText.textContent = 'Processing row ' + r + ' of ' + json.length + '...';
@@ -224,15 +268,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             convertBtn.disabled = false;
             resetBtn.disabled = false;
-        }
-
-        function padCell(text, width, fontSize) {
-            var approxCharWidth = fontSize * 0.6;
-            var maxChars = Math.floor(width / approxCharWidth);
-            if (text.length > maxChars) {
-                return text.substring(0, maxChars - 1) + '\u2026';
-            }
-            return text + ' '.repeat(maxChars - text.length);
         }
 
         function resetTool() {

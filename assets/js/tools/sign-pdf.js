@@ -174,10 +174,22 @@ document.addEventListener('DOMContentLoaded', function() {
             sigOverlayImg.src = signatureDataUrl;
             sigOverlay.classList.add('active');
             applyBtn.disabled = false;
+            updateSigPosition();
         } else {
             sigOverlay.classList.remove('active');
             applyBtn.disabled = true;
         }
+    }
+
+    function updateSigPosition() {
+        if (!signatureDataUrl) return;
+        var size = parseInt(sigSize.value) || 100;
+        var x = parseInt(sigX.value) || 50;
+        var y = parseInt(sigY.value) || 50;
+        sigOverlay.style.left = x + 'px';
+        sigOverlay.style.top = y + 'px';
+        sigOverlayImg.style.width = size + 'px';
+        sigOverlayImg.style.height = 'auto';
     }
 
     document.querySelectorAll('.sig-method-btn').forEach(function(btn) {
@@ -197,6 +209,10 @@ document.addEventListener('DOMContentLoaded', function() {
             ctx.strokeStyle = sigColor.value;
         }
     });
+
+    sigSize.addEventListener('input', updateSigPosition);
+    sigX.addEventListener('input', updateSigPosition);
+    sigY.addEventListener('input', updateSigPosition);
 
     function makeSignatureDraggable() {
         var isDragging = false;
@@ -248,6 +264,8 @@ document.addEventListener('DOMContentLoaded', function() {
             ctx.fillStyle = '#fff';
             ctx.fillRect(0, 0, previewCanvas.width, previewCanvas.height);
             await page.render({ canvasContext: ctx, viewport: scaledViewport }).promise;
+            previewWrap.scrollTop = 0;
+            if (signatureDataUrl) updateSigPosition();
         } catch (err) {
             showNotification('Preview error: ' + err.message, true);
         }

@@ -114,8 +114,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (opts && opts.length > 0) {
                         opts.forEach(function(o) {
                             var opt = document.createElement('option');
-                            opt.value = o;
-                            opt.textContent = o;
+                            var val = o.value !== undefined ? o.value : o;
+                            var label = o.displayValue || val;
+                            opt.value = val;
+                            opt.textContent = label;
                             sel.appendChild(opt);
                         });
                         try { sel.value = field.getSelected(); } catch (e) {}
@@ -165,7 +167,21 @@ document.addEventListener('DOMContentLoaded', function() {
         updateProgress('Processing form...', 0);
     }
 
+    function showStatus(msg, pct) {
+        progressContainer.classList.add('show');
+        updateProgress(msg, pct);
+    }
+
+    function hideStatus() {
+        progressContainer.classList.remove('show');
+        updateProgress('Processing form...', 0);
+    }
+
     function loadPdf(file) {
+        if (typeof PDFLib === 'undefined') {
+            showNotification('PDF library not loaded yet. Please refresh and try again.', true);
+            return;
+        }
         if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) {
             showNotification('Please select a valid PDF file', true);
             return;
@@ -181,14 +197,17 @@ document.addEventListener('DOMContentLoaded', function() {
         fileInfo.classList.add('show');
         formFieldsSection.classList.remove('show');
         resultsPanel.classList.remove('show');
-        progressContainer.classList.remove('show');
+        hideStatus();
+        showStatus('Parsing PDF...', 20);
         var reader = new FileReader();
         reader.onload = async function(e) {
             try {
                 var arr = new Uint8Array(e.target.result);
+                showStatus('Loading PDF structure...', 40);
                 pdfDocRef = await PDFLib.PDFDocument.load(arr, { ignoreEncryption: true });
                 var count = pdfDocRef.getPageCount();
                 filePagesEl.textContent = count + ' page' + (count !== 1 ? 's' : '');
+                showStatus('Detecting form fields...', 60);
                 var form = pdfDocRef.getForm();
                 formFields = [];
                 if (form) {
@@ -201,30 +220,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 formFieldsSection.classList.add('show');
                 renderFields(formFields);
                 if (formFields.length > 0) {
+                    hideStatus();
                     showNotification('Detected ' + formFields.length + ' form field(s)', false);
                 } else {
-                    var hasXFA = false;
-                    try {
-                        var raw = pdfDocRef.context.trailerInfo;
-                        if (raw && raw.Root) {
-                            var catalog = pdfDocRef.context.lookup(raw.Root);
-                            if (catalog && catalog.get && catalog.get(pdfDocRef.context.obj('AcroForm'))) {
-                                var acroForm = catalog.get(pdfDocRef.context.obj('AcroForm'));
-                                if (acroForm && acroForm.get) {
-                                    var xfa = acroForm.get(pdfDocRef.context.obj('XFA'));
-                                    if (xfa) hasXFA = true;
-                                }
-                            }
-                        }
-                    } catch (xfaErr) {}
-                    if (hasXFA) {
-                        showNotification('This PDF uses XFA forms which are not supported. Please use an AcroForm-based PDF.', true);
-                    } else {
-                        showNotification('No fillable form fields found in this PDF', true);
-                    }
+                    showStatus('No fillable fields found', 100);
+                    setTimeout(hideStatus, 1500);
                     fieldsContent.innerHTML = '<div class="empty-fields"><div class="empty-icon">&#128196;</div><p><strong>This PDF doesn\'t have fillable form fields.</strong></p><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-top:var(--space-2);line-height:1.6">This tool works with <strong>interactive PDF forms</strong> (AcroForm) that have clickable text fields, checkboxes, or dropdowns.<br><br>Your PDF appears to be a regular (non-fillable) document. To fill it, you\'ll need a PDF editor or a fillable version of the form.</p></div>';
                 }
             } catch (err) {
+                hideStatus();
                 showNotification('Failed to load PDF: ' + err.message, true);
             }
         };
