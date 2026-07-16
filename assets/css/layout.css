@@ -152,10 +152,51 @@
 
 /* Footer */
 .site-footer {
-  background-color: var(--color-surface);
+  background-color: #1f2937;
+  color: #d1d5db;
   border-top: 1px solid var(--color-border);
   padding: var(--space-12) 0 var(--space-8);
   margin-top: var(--space-16);
+}
+
+.footer-section h3 {
+  font-size: var(--text-lg);
+  color: #fff;
+  margin-bottom: var(--space-4);
+}
+
+.footer-links a {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: var(--text-sm);
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #374151;
+  padding-top: var(--space-6);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.footer-bottom .copyright {
+  font-size: var(--text-sm);
+  color: #9ca3af;
+}
+
+.footer-bottom .legal-links a {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: var(--text-sm);
+}
+
+.footer-bottom .legal-links a:hover {
+  color: #fff;
 }
 
 .footer-grid {
@@ -178,6 +219,7 @@
 
 .footer-section h3 {
   font-size: var(--text-lg);
+  color: #fff;
   margin-bottom: var(--space-4);
 }
 
@@ -215,34 +257,31 @@
 }
 
 .footer-links a {
-  color: var(--color-text-light);
+  color: #9ca3af;
   font-size: var(--text-sm);
 }
 
 .footer-links a:hover {
-  color: var(--color-primary);
+  color: #fff;
 }
 
 .footer-bottom {
-  margin-top: var(--space-8);
-  padding-top: var(--space-8);
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid #374151;
+  padding-top: var(--space-6);
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
   gap: var(--space-4);
-  text-align: center;
 }
 
 @media (min-width: 768px) {
   .footer-bottom {
-    flex-direction: row;
     justify-content: space-between;
   }
 }
 
 .copyright {
-  color: var(--color-text-light);
+  color: #9ca3af;
   font-size: var(--text-sm);
 }
 
@@ -253,7 +292,11 @@
 
 .legal-links a {
   font-size: var(--text-sm);
-  color: var(--color-text-light);
+  color: #9ca3af;
+}
+
+.legal-links a:hover {
+  color: #fff;
 }
 
 /* Main Content */
