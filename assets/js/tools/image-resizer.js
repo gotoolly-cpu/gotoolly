@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var fileInput = document.getElementById('file-input');
     var settingsPanel = document.getElementById('settings-panel');
     var resizeBtn = document.getElementById('resize-btn');
+    var downloadBtn = document.getElementById('download-btn');
     var resetBtn = document.getElementById('reset-btn');
     var previewContainer = document.getElementById('image-preview-container');
     var progressSection = document.getElementById('progress-section');
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var currentImage = null;
     var originalWidth = 0;
     var originalHeight = 0;
+    var downloadBlobUrl = null;
 
     var resizeMode = document.getElementById('resize-mode');
     var resizeWidth = document.getElementById('resize-width');
@@ -189,21 +191,39 @@ document.addEventListener('DOMContentLoaded', function() {
                 progressPercent.textContent = '100%';
                 progressText.textContent = 'Done!';
 
-                var url = URL.createObjectURL(blob);
-                var a = document.createElement('a');
-                a.href = url;
-                var baseName = currentFile.name.replace(/\.[^.]+$/, '');
-                var extMap = { 'image/jpeg': '.jpg', 'image/png': '.png', 'image/webp': '.webp' };
-                a.download = baseName + '_resized_' + newW + 'x' + newH + (extMap[format] || '.jpg');
-                document.body.appendChild(a);
-                a.click();
-                setTimeout(function() { document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
-                showNotification('Image resized to ' + newW + 'x' + newH);
+                if (downloadBlobUrl) URL.revokeObjectURL(downloadBlobUrl);
+                downloadBlobUrl = URL.createObjectURL(blob);
 
+                previewContainer.innerHTML = '';
+                var img = document.createElement('img');
+                img.src = downloadBlobUrl;
+                img.alt = 'Resized image preview';
+                img.style.maxWidth = '100%';
+                img.style.borderRadius = '8px';
+                previewContainer.appendChild(img);
+
+                newDims.textContent = newW + ' x ' + newH;
+                downloadBtn.style.display = '';
                 resizeBtn.disabled = false;
                 progressSection.style.display = 'none';
+                showNotification('Resized to ' + newW + 'x' + newH);
             }, format, quality);
         }, 150);
+    });
+
+    downloadBtn.addEventListener('click', function() {
+        if (!downloadBlobUrl) return;
+        var format = outputFormat.value;
+        var extMap = { 'image/jpeg': '.jpg', 'image/png': '.png', 'image/webp': '.webp' };
+        var baseName = currentFile.name.replace(/\.[^.]+$/, '');
+        var newW = parseInt(resizeWidth.value) || originalWidth;
+        var newH = parseInt(resizeHeight.value) || originalHeight;
+        var a = document.createElement('a');
+        a.href = downloadBlobUrl;
+        a.download = baseName + '_resized_' + newW + 'x' + newH + (extMap[format] || '.jpg');
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function() { document.body.removeChild(a); }, 100);
     });
 
     resetBtn.addEventListener('click', function() {
@@ -213,8 +233,10 @@ document.addEventListener('DOMContentLoaded', function() {
         settingsPanel.classList.remove('show');
         progressSection.style.display = 'none';
         resizeBtn.disabled = true;
+        downloadBtn.style.display = 'none';
         previewContainer.innerHTML = '';
         originalDims.textContent = '0 x 0';
         newDims.textContent = '-';
+        if (downloadBlobUrl) { URL.revokeObjectURL(downloadBlobUrl); downloadBlobUrl = null; }
     });
 });
