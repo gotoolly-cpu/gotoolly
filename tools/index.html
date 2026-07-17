@@ -540,6 +540,9 @@
 
         document.getElementById('tool-search').addEventListener('input', function() {
             searchTerm = this.value.toLowerCase().trim();
+            var hasSearch = searchTerm.length > 0;
+            document.getElementById('popular-tools').style.display = (!hasSearch && currentCat === 'all') ? 'block' : 'none';
+            document.getElementById('recently-added').style.display = (!hasSearch && currentCat === 'all') ? 'block' : 'none';
             renderTools();
         });
 
