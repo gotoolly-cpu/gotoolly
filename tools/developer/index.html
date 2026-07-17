@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Tools - JSON, HTML, CSS, JS, Encoding & More | GoToolly</title>
+    <meta name="description" content="31 developer tools: JSON formatter, HTML minifier, CSS beautifier, JWT decoder, hash generator, Base64 encoder, regex tester, and more.">
+    <meta name="keywords" content="developer tools, json formatter, html minifier, css beautifier, javascript minifier, base64 encoder, jwt decoder, hash generator, regex tester, code formatter, web developer tools">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/developer">
+    <meta property="og:title" content="Developer Tools - JSON, HTML, CSS, JS, Encoding & More | GoToolly">
+    <meta property="og:description" content="31 developer tools: JSON formatter, HTML minifier, CSS beautifier, JWT decoder, hash generator, Base64 encoder, regex tester, and more.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo - Privacy-first tools">
+    <meta property="og:site_name" content="GoToolly">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/developer">
+    <meta name="twitter:title" content="Developer Tools - JSON, HTML, CSS, JS, Encoding & More | GoToolly">
+    <meta name="twitter:description" content="31 developer tools: JSON formatter, HTML minifier, CSS beautifier, JWT decoder, hash generator, Base64 encoder, regex tester, and more.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="canonical" href="https://gotoolly.com/tools/developer">
+
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../../assets/images/logo-192.png">
+    <link rel="manifest" href="../../site.webmanifest">
+
+    <link rel="preload" href="../../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../../assets/css/styles.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Developer Tools - GoToolly",
+        "headline": "31 Developer Tools — JSON, HTML, CSS, JS & Encoding",
+        "description": "31 free browser-based developer tools: JSON formatter, HTML minifier, CSS beautifier, JWT decoder, hash generator, Base64 encoder, regex tester, and more. No uploads required.",
+        "url": "https://gotoolly.com/tools/developer",
+        "author": {
+            "@type": "Organization",
+            "name": "GoToolly",
+            "url": "https://gotoolly.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "GoToolly",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://gotoolly.com/assets/images/logo-512.png"
+            }
+        },
+        "image": "https://gotoolly.com/assets/images/logo-512.png",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://gotoolly.com/tools/developer"
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "item": "https://gotoolly.com/tools/json-formatter", "name": "JSON Formatter & Validator"},
+                {"@type": "ListItem", "position": 2, "item": "https://gotoolly.com/tools/xml-formatter", "name": "XML Formatter"},
+                {"@type": "ListItem", "position": 3, "item": "https://gotoolly.com/tools/html-minifier", "name": "HTML Minifier"},
+                {"@type": "ListItem", "position": 4, "item": "https://gotoolly.com/tools/css-minifier", "name": "CSS Minifier"},
+                {"@type": "ListItem", "position": 5, "item": "https://gotoolly.com/tools/js-minifier", "name": "JavaScript Minifier"},
+                {"@type": "ListItem", "position": 6, "item": "https://gotoolly.com/tools/html-encoder", "name": "HTML Encoder/Decoder"},
+                {"@type": "ListItem", "position": 7, "item": "https://gotoolly.com/tools/base64-encoder", "name": "Base64 Encoder/Decoder"},
+                {"@type": "ListItem", "position": 8, "item": "https://gotoolly.com/tools/url-encoder", "name": "URL Encoder/Decoder"},
+                {"@type": "ListItem", "position": 9, "item": "https://gotoolly.com/tools/regex-tester", "name": "Regex Tester"},
+                {"@type": "ListItem", "position": 10, "item": "https://gotoolly.com/tools/jwt-decoder", "name": "JWT Decoder"},
+                {"@type": "ListItem", "position": 11, "item": "https://gotoolly.com/tools/jwt-generator", "name": "JWT Generator"},
+                {"@type": "ListItem", "position": 12, "item": "https://gotoolly.com/tools/hash-generator", "name": "Hash Generator"},
+                {"@type": "ListItem", "position": 13, "item": "https://gotoolly.com/tools/hash-checker", "name": "Hash Checker"},
+                {"@type": "ListItem", "position": 14, "item": "https://gotoolly.com/tools/json-compare", "name": "JSON Compare"},
+                {"@type": "ListItem", "position": 15, "item": "https://gotoolly.com/tools/json-escape-unescape", "name": "JSON Escape/Unescape"},
+                {"@type": "ListItem", "position": 16, "item": "https://gotoolly.com/tools/json-to-yaml", "name": "JSON to YAML"},
+                {"@type": "ListItem", "position": 17, "item": "https://gotoolly.com/tools/yaml-to-json", "name": "YAML to JSON"},
+                {"@type": "ListItem", "position": 18, "item": "https://gotoolly.com/tools/json-to-csv", "name": "JSON to CSV"},
+                {"@type": "ListItem", "position": 19, "item": "https://gotoolly.com/tools/csv-to-json", "name": "CSV to JSON"},
+                {"@type": "ListItem", "position": 20, "item": "https://gotoolly.com/tools/xml-to-json", "name": "XML to JSON"},
+                {"@type": "ListItem", "position": 21, "item": "https://gotoolly.com/tools/html-beautifier", "name": "HTML Beautifier"},
+                {"@type": "ListItem", "position": 22, "item": "https://gotoolly.com/tools/html-validator", "name": "HTML Validator"},
+                {"@type": "ListItem", "position": 23, "item": "https://gotoolly.com/tools/css-beautifier", "name": "CSS Beautifier"},
+                {"@type": "ListItem", "position": 24, "item": "https://gotoolly.com/tools/js-beautifier", "name": "JavaScript Beautifier"},
+                {"@type": "ListItem", "position": 25, "item": "https://gotoolly.com/tools/url-parser", "name": "URL Parser"},
+                {"@type": "ListItem", "position": 26, "item": "https://gotoolly.com/tools/query-string-parser", "name": "Query String Parser"},
+                {"@type": "ListItem", "position": 27, "item": "https://gotoolly.com/tools/http-status-lookup", "name": "HTTP Status Lookup"},
+                {"@type": "ListItem", "position": 28, "item": "https://gotoolly.com/tools/mime-type-lookup", "name": "MIME Type Lookup"},
+                {"@type": "ListItem", "position": 29, "item": "https://gotoolly.com/tools/uuid-validator", "name": "UUID Validator"},
+                {"@type": "ListItem", "position": 30, "item": "https://gotoolly.com/tools/csv-viewer", "name": "CSV Viewer"},
+                {"@type": "ListItem", "position": 31, "item": "https://gotoolly.com/tools/sql-formatter", "name": "SQL Formatter"}
+            ]
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gotoolly.com/tools"},
+            {"@type": "ListItem", "position": 3, "name": "Developer Tools"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Are these developer tools really free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. All 31 developer tools are completely free with no sign-up required. Every tool runs directly in your browser with no hidden costs or usage limits."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my code or data sent to a server?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. All processing happens locally in your browser using JavaScript. Your code, JSON, HTML, and any other data never leaves your device. Nothing is uploaded, stored, or logged on any server."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use these tools offline?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most tools work offline once the page has loaded, as they rely entirely on client-side JavaScript. You may need an initial connection to load the page assets, but after that the tools function without internet access."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What formats can I convert between?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our tools support conversions between JSON, YAML, CSV, and XML. You can also beautify, minify, validate, encode, and decode HTML, CSS, and JavaScript code."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does the JSON Formatter work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Paste your JSON string and the tool validates the syntax, then pretty-prints it with proper indentation. You can also minify JSON to reduce its size. Syntax errors are highlighted with line numbers for easy debugging."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use the Hash Generator to verify file integrity?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The Hash Generator produces MD5, SHA-1, SHA-256, and SHA-512 hashes for any text input. You can then use the Hash Checker to compare a known hash against your computed hash to verify data integrity."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:white;padding:8px 16px;z-index:100;transition:top .3s}.skip-link:focus{top:0}
+        .category-hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:#fff;padding:var(--space-12) var(--space-6);border-radius:var(--radius-xl);text-align:center;margin-bottom:var(--space-10)}
+        .category-hero h1{color:#fff;margin-bottom:var(--space-3);font-size:var(--text-3xl)}
+        .category-hero .page-description{color:rgba(255,255,255,.9);font-size:var(--text-lg);max-width:42rem;margin:0 auto var(--space-6);line-height:1.6}
+        .category-hero .hero-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;padding:4px 16px;border-radius:20px;font-size:var(--text-sm);font-weight:600;margin-bottom:var(--space-4)}
+        .faq-item{border-bottom:1px solid var(--color-border);padding:var(--space-5) 0}
+        .faq-item:last-child{border-bottom:none}
+    </style>
+
+    <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="../../assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32">
+                    <span class="logo-text">GoToolly</span>
+                </a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="category-hero">
+                <div class="hero-badge">31 Developer Tools — Browser-Based</div>
+                <h1>Developer Tools</h1>
+                <p class="page-description">
+                    Format, minify, validate, encode, and convert your code. JSON, HTML, CSS, JavaScript, XML, YAML, CSV, and more — all processed locally in your browser.
+                </p>
+            </div>
+
+            <!-- Featured Tools -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Featured Developer Tools</h2>
+                    <p class="section-description">The most popular tools developers use every day.</p>
+                </div>
+                <div class="tools-grid">
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M7 7h10M7 12h10M7 17h10"/></svg>
+                        </div>
+                        <h3>JSON Formatter & Validator</h3>
+                        <p>Pretty-print, validate, and minify JSON data. Highlights syntax errors with line numbers.</p>
+                        <div class="card-footer">
+                            <a href="/tools/json-formatter" class="btn btn-primary btn-sm btn-full">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                        </div>
+                        <h3>HTML Minifier</h3>
+                        <p>Minify HTML code to reduce file size. Strip comments, whitespace, and optional tags.</p>
+                        <div class="card-footer">
+                            <a href="/tools/html-minifier" class="btn btn-primary btn-sm btn-full">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#10b981,#059669)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        </div>
+                        <h3>Hash Generator</h3>
+                        <p>Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text input.</p>
+                        <div class="card-footer">
+                            <a href="/tools/hash-generator" class="btn btn-primary btn-sm btn-full">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        </div>
+                        <h3>JWT Decoder</h3>
+                        <p>Decode and inspect JWT tokens. View header, payload, and signature contents.</p>
+                        <div class="card-footer">
+                            <a href="/tools/jwt-decoder" class="btn btn-primary btn-sm btn-full">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#ef4444,#dc2626)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 7h6l-3 5 3 5H3M13 7h6l-3 5 3 5h-6"/></svg>
+                        </div>
+                        <h3>Base64 Encoder/Decoder</h3>
+                        <p>Encode text to Base64 and decode Base64 strings back to plain text.</p>
+                        <div class="card-footer">
+                            <a href="/tools/base64-encoder" class="btn btn-primary btn-sm btn-full">Use Tool</a>
+                        </div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#06b6d4,#0891b2)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M9 12h6M9 16h6M9 8h6"/></svg>
+                        </div>
+                        <h3>Regex Tester</h3>
+                        <p>Test regular expressions with live highlighting and match details.</p>
+                        <div class="card-footer">
+                            <a href="/tools/regex-tester" class="btn btn-primary btn-sm btn-full">Use Tool</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- All Developer Tools -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>All Developer Tools</h2>
+                    <p class="section-description">Browse our complete collection of 31 browser-based developer utilities.</p>
+                </div>
+                <div class="tools-grid">
+                    <!-- JSON Tools -->
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M7 7h10M7 12h10M7 17h10"/></svg>
+                        </div>
+                        <h3>JSON Formatter & Validator</h3>
+                        <p>Format, validate, and minify JSON data with syntax error highlighting.</p>
+                        <div class="card-footer"><a href="/tools/json-formatter" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M8 7h8m-8 4h8m-8 4h8M4 7h.01M4 12h.01M4 17h.01"/></svg>
+                        </div>
+                        <h3>JSON Compare</h3>
+                        <p>Compare two JSON objects and highlight structural and value differences.</p>
+                        <div class="card-footer"><a href="/tools/json-compare" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 7h6l-3 5 3 5H3M13 7h6l-3 5 3 5h-6"/></svg>
+                        </div>
+                        <h3>JSON Escape/Unescape</h3>
+                        <p>Escape special characters in JSON strings or unescape them back to readable text.</p>
+                        <div class="card-footer"><a href="/tools/json-escape-unescape" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16M8 7v10M16 7v10"/></svg>
+                        </div>
+                        <h3>JSON to YAML</h3>
+                        <p>Convert JSON data to clean, human-readable YAML format instantly.</p>
+                        <div class="card-footer"><a href="/tools/json-to-yaml" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16M8 7v10M16 17V7"/></svg>
+                        </div>
+                        <h3>YAML to JSON</h3>
+                        <p>Convert YAML configuration files to valid JSON format.</p>
+                        <div class="card-footer"><a href="/tools/yaml-to-json" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        </div>
+                        <h3>JSON to CSV</h3>
+                        <p>Convert JSON arrays and objects to CSV spreadsheet format.</p>
+                        <div class="card-footer"><a href="/tools/json-to-csv" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        </div>
+                        <h3>CSV to JSON</h3>
+                        <p>Parse CSV data and convert it to structured JSON format.</p>
+                        <div class="card-footer"><a href="/tools/csv-to-json" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+
+                    <!-- XML Tools -->
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#6366f1,#4f46e5)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M7 7h10M7 12h10M7 17h10"/></svg>
+                        </div>
+                        <h3>XML Formatter</h3>
+                        <p>Format and validate XML documents with proper indentation.</p>
+                        <div class="card-footer"><a href="/tools/xml-formatter" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#6366f1,#4f46e5)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16M8 7v10M16 17V7"/></svg>
+                        </div>
+                        <h3>XML to JSON</h3>
+                        <p>Convert XML documents to JSON format with structure preservation.</p>
+                        <div class="card-footer"><a href="/tools/xml-to-json" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+
+                    <!-- HTML Tools -->
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                        </div>
+                        <h3>HTML Minifier</h3>
+                        <p>Minify HTML code by removing whitespace, comments, and optional tags.</p>
+                        <div class="card-footer"><a href="/tools/html-minifier" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                        </div>
+                        <h3>HTML Beautifier</h3>
+                        <p>Beautify and format minified HTML with proper indentation and line breaks.</p>
+                        <div class="card-footer"><a href="/tools/html-beautifier" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <h3>HTML Validator</h3>
+                        <p>Validate HTML markup and find syntax errors with detailed reports.</p>
+                        <div class="card-footer"><a href="/tools/html-validator" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 7h6l-3 5 3 5H3M13 7h6l-3 5 3 5h-6"/></svg>
+                        </div>
+                        <h3>HTML Encoder/Decoder</h3>
+                        <p>Encode special characters to HTML entities or decode them back.</p>
+                        <div class="card-footer"><a href="/tools/html-encoder" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+
+                    <!-- CSS Tools -->
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#ec4899,#d946ef)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                        </div>
+                        <h3>CSS Minifier</h3>
+                        <p>Minify CSS code to reduce file size for faster page loads.</p>
+                        <div class="card-footer"><a href="/tools/css-minifier" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#ec4899,#d946ef)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                        </div>
+                        <h3>CSS Beautifier</h3>
+                        <p>Beautify and format minified CSS with consistent indentation.</p>
+                        <div class="card-footer"><a href="/tools/css-beautifier" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+
+                    <!-- JavaScript Tools -->
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#eab308,#ca8a04)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                        </div>
+                        <h3>JavaScript Minifier</h3>
+                        <p>Minify JavaScript code for production-ready deployments.</p>
+                        <div class="card-footer"><a href="/tools/js-minifier" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#eab308,#ca8a04)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                        </div>
+                        <h3>JavaScript Beautifier</h3>
+                        <p>Beautify and format minified JavaScript with readable indentation.</p>
+                        <div class="card-footer"><a href="/tools/js-beautifier" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+
+                    <!-- SQL & CSV -->
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#f97316,#ea580c)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                        </div>
+                        <h3>SQL Formatter</h3>
+                        <p>Format SQL queries for improved readability and maintenance.</p>
+                        <div class="card-footer"><a href="/tools/sql-formatter" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#f97316,#ea580c)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        </div>
+                        <h3>CSV Viewer</h3>
+                        <p>Upload and view CSV files in an interactive, sortable table.</p>
+                        <div class="card-footer"><a href="/tools/csv-viewer" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+
+                    <!-- Encoding & Decoding -->
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#ef4444,#dc2626)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 7h6l-3 5 3 5H3M13 7h6l-3 5 3 5h-6"/></svg>
+                        </div>
+                        <h3>Base64 Encoder/Decoder</h3>
+                        <p>Encode and decode Base64 strings for data transfer and storage.</p>
+                        <div class="card-footer"><a href="/tools/base64-encoder" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#ef4444,#dc2626)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 12h8M12 8v8"/></svg>
+                        </div>
+                        <h3>URL Encoder/Decoder</h3>
+                        <p>Encode special characters in URLs or decode URL-encoded strings.</p>
+                        <div class="card-footer"><a href="/tools/url-encoder" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+
+                    <!-- URL & Query Tools -->
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#06b6d4,#0891b2)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </div>
+                        <h3>URL Parser</h3>
+                        <p>Parse URLs into protocol, hostname, port, path, and query components.</p>
+                        <div class="card-footer"><a href="/tools/url-parser" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#06b6d4,#0891b2)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M8 7h8m-8 4h8m-8 4h8M4 7h.01M4 12h.01M4 17h.01"/></svg>
+                        </div>
+                        <h3>Query String Parser</h3>
+                        <p>Parse URL query strings into key-value pairs for debugging and analysis.</p>
+                        <div class="card-footer"><a href="/tools/query-string-parser" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+
+                    <!-- Regex & Security -->
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#06b6d4,#0891b2)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M9 12h6M9 16h6M9 8h6"/></svg>
+                        </div>
+                        <h3>Regex Tester</h3>
+                        <p>Test regular expressions with live matching and capture group details.</p>
+                        <div class="card-footer"><a href="/tools/regex-tester" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        </div>
+                        <h3>JWT Decoder</h3>
+                        <p>Decode JWT tokens to view header, payload, and signature.</p>
+                        <div class="card-footer"><a href="/tools/jwt-decoder" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        </div>
+                        <h3>JWT Generator</h3>
+                        <p>Generate JWT tokens with custom headers, payloads, and secrets.</p>
+                        <div class="card-footer"><a href="/tools/jwt-generator" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#10b981,#059669)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        </div>
+                        <h3>Hash Generator</h3>
+                        <p>Generate MD5, SHA-1, SHA-256, and SHA-512 hashes.</p>
+                        <div class="card-footer"><a href="/tools/hash-generator" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#10b981,#059669)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <h3>Hash Checker</h3>
+                        <p>Verify file or text integrity by comparing against known hash values.</p>
+                        <div class="card-footer"><a href="/tools/hash-checker" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#10b981,#059669)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                        </div>
+                        <h3>UUID Validator</h3>
+                        <p>Validate UUID strings and check their version and format.</p>
+                        <div class="card-footer"><a href="/tools/uuid-validator" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+
+                    <!-- HTTP & Lookup -->
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#f97316,#ea580c)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M9 12h6M9 16h6M9 8h6M4 7h16M4 12h16M4 17h16"/></svg>
+                        </div>
+                        <h3>HTTP Status Lookup</h3>
+                        <p>Look up HTTP status codes with descriptions and common use cases.</p>
+                        <div class="card-footer"><a href="/tools/http-status-lookup" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#f97316,#ea580c)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                        </div>
+                        <h3>MIME Type Lookup</h3>
+                        <p>Look up MIME types by file extension or search by type category.</p>
+                        <div class="card-footer"><a href="/tools/mime-type-lookup" class="btn btn-outline btn-sm btn-full">Use Tool</a></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Categories -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Related Categories</h2>
+                    <p class="section-description">Explore more browser-based tool collections.</p>
+                </div>
+                <div class="tools-grid">
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        </div>
+                        <h3>PDF Tools</h3>
+                        <p>Merge, split, compress, convert, and edit PDF documents.</p>
+                        <div class="card-footer"><a href="/tools/pdf/" class="btn btn-outline btn-sm btn-full">Browse PDF Tools</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#10b981,#059669)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        </div>
+                        <h3>Image Tools</h3>
+                        <p>Compress, resize, crop, convert, and edit images.</p>
+                        <div class="card-footer"><a href="/tools/image/" class="btn btn-outline btn-sm btn-full">Browse Image Tools</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        </div>
+                        <h3>Converters</h3>
+                        <p>Convert between PDF, image, and data formats.</p>
+                        <div class="card-footer"><a href="/tools/converters/" class="btn btn-outline btn-sm btn-full">Browse Converters</a></div>
+                    </div>
+                    <div class="card tool-card">
+                        <div class="card-icon" style="background:linear-gradient(135deg,#f97316,#ea580c)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z"/></svg>
+                        </div>
+                        <h3>SEO Tools</h3>
+                        <p>Generate meta tags, sitemaps, schema markup, and analyze SEO.</p>
+                        <div class="card-footer"><a href="/tools/seo/" class="btn btn-outline btn-sm btn-full">Browse SEO Tools</a></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="content-section">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-item">
+                    <h3>Are these developer tools really free?</h3>
+                    <p>Yes. All 31 developer tools are completely free with no sign-up required. Every tool runs directly in your browser with no hidden costs or usage limits.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is my code or data sent to a server?</h3>
+                    <p>No. All processing happens locally in your browser using JavaScript. Your code, JSON, HTML, and any other data never leaves your device. Nothing is uploaded, stored, or logged on any server.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I use these tools offline?</h3>
+                    <p>Most tools work offline once the page has loaded, as they rely entirely on client-side JavaScript. You may need an initial connection to load the page assets, but after that the tools function without internet access.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What formats can I convert between?</h3>
+                    <p>Our tools support conversions between JSON, YAML, CSV, and XML. You can also beautify, minify, validate, encode, and decode HTML, CSS, and JavaScript code.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How does the JSON Formatter work?</h3>
+                    <p>Paste your JSON string and the tool validates the syntax, then pretty-prints it with proper indentation. You can also minify JSON to reduce its size. Syntax errors are highlighted with line numbers for easy debugging.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I use the Hash Generator to verify file integrity?</h3>
+                    <p>Yes. The Hash Generator produces MD5, SHA-1, SHA-256, and SHA-512 hashes for any text input. You can then use the Hash Checker to compare a known hash against your computed hash to verify data integrity.</p>
+                </div>
+            </section>
+
+            <!-- Privacy Statement -->
+            <section class="content-section">
+                <div style="max-width: 32rem; margin: 0 auto; text-align: center; padding: var(--space-8); background-color: var(--color-bg-secondary); border-radius: var(--radius-lg);">
+                    <p style="color: var(--color-text); font-size: var(--text-sm); margin: 0;">
+                        <strong>How these tools work:</strong> All processing happens in your browser. Your code and data are never uploaded to any server. Nothing is logged or stored.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">
+                        Free, privacy-focused online tools that work entirely in your browser.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://x.com/GoToolly" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="https://www.facebook.com/profile.php?id=61591898344203" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                        <a href="https://linkedin.com/in/go-toolly-426b67422" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                        <a href="https://www.instagram.com/gotoolly/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.666.666 1.336 1.079 1.384 2.126.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
+                        <a href="https://www.tiktok.com/@gotoolly26" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+                        <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Popular Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="/tools/image-compressor">Image Compressor</a></li>
+                        <li><a href="/tools/pdf-compressor">PDF Compressor</a></li>
+                        <li><a href="/tools/word-counter">Word Counter</a></li>
+                        <li><a href="/tools/qr-code-generator">QR Code Generator</a></li>
+                        <li><a href="/tools/password-generator">Password Generator</a></li>
+                        <li><a href="/tools">View All Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span id="current-year">2026</span> GoToolly. All rights reserved.
+                </div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="../../assets/js/main.min.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
