@@ -109,6 +109,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 canvas.width = img.naturalWidth;
                 canvas.height = img.naturalHeight;
                 var ctx = canvas.getContext('2d');
+                ctx.imageSmoothingEnabled = true;
+                ctx.imageSmoothingQuality = 'high';
                 ctx.drawImage(img, 0, 0);
 
                 canvas.toBlob(function(blob) {

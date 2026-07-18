@@ -328,6 +328,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function drawImageCover(ctx, img, x, y, w, h) {
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
         const ratio = Math.max(w / img.width, h / img.height);
         const width = img.width * ratio;
         const height = img.height * ratio;
@@ -337,6 +339,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function drawImageContain(ctx, img, x, y, w, h) {
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
         const ratio = Math.min(w / img.width, h / img.height);
         const width = img.width * ratio;
         const height = img.height * ratio;
@@ -388,6 +392,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 canvas.width = size;
                 canvas.height = size;
                 const ctx = canvas.getContext('2d');
+                ctx.imageSmoothingEnabled = true;
+                ctx.imageSmoothingQuality = 'high';
                 
                 // Scale preview to this size
                 const tempCanvas = document.createElement('canvas');

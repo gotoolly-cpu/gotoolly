@@ -177,6 +177,8 @@ document.addEventListener('DOMContentLoaded', function() {
             canvas.width = newW;
             canvas.height = newH;
             var ctx = canvas.getContext('2d');
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
             ctx.drawImage(currentImage, 0, 0, newW, newH);
 
             progressFill.style.width = '60%';

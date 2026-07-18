@@ -137,6 +137,8 @@ document.addEventListener('DOMContentLoaded', function() {
             canvas.width = newSize.width;
             canvas.height = newSize.height;
             var ctx = canvas.getContext('2d');
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
             ctx.save();
             ctx.translate(newSize.width / 2, newSize.height / 2);
             ctx.rotate(rad);
@@ -147,7 +149,10 @@ document.addEventListener('DOMContentLoaded', function() {
             progressPercent.textContent = '80%';
             progressText.textContent = 'Encoding...';
 
-            var outputType = currentFile.type === 'image/png' ? 'image/png' : 'image/jpeg';
+            var outputType = currentFile.type;
+            if (outputType !== 'image/png' && outputType !== 'image/jpeg' && outputType !== 'image/webp') {
+                outputType = 'image/jpeg';
+            }
             var quality = outputType === 'image/jpeg' ? 0.92 : undefined;
 
             canvas.toBlob(function(blob) {

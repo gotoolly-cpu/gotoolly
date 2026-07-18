@@ -104,13 +104,18 @@ document.addEventListener('DOMContentLoaded', function() {
             canvas.width = img.naturalWidth;
             canvas.height = img.naturalHeight;
             var ctx = canvas.getContext('2d');
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
             ctx.drawImage(img, 0, 0);
 
             progressFill.style.width = '85%';
             progressPercent.textContent = '85%';
             progressText.textContent = 'Encoding clean image...';
 
-            var outputType = currentFile.type === 'image/png' ? 'image/png' : 'image/jpeg';
+            var outputType = currentFile.type;
+            if (outputType !== 'image/png' && outputType !== 'image/jpeg' && outputType !== 'image/webp') {
+                outputType = 'image/jpeg';
+            }
             var outputExt = outputType === 'image/png' ? '.png' : '.jpg';
             var quality = outputType === 'image/jpeg' ? 0.92 : undefined;
 

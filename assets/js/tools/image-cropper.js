@@ -276,14 +276,19 @@ document.addEventListener('DOMContentLoaded', function() {
             canvas.width = w;
             canvas.height = h;
             var ctx = canvas.getContext('2d');
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = 'high';
             ctx.drawImage(currentImage, x, y, w, h, 0, 0, w, h);
 
             progressFill.style.width = '80%';
             progressPercent.textContent = '80%';
             progressText.textContent = 'Encoding...';
 
-            var outputType = currentFile.type === 'image/png' ? 'image/png' : 'image/jpeg';
-            var quality = outputType === 'image/jpeg' ? 0.92 : undefined;
+            var outputType = currentFile.type;
+            if (outputType !== 'image/png' && outputType !== 'image/jpeg' && outputType !== 'image/webp') {
+                outputType = 'image/jpeg';
+            }
+            var quality = (outputType === 'image/png') ? undefined : 0.92;
 
             canvas.toBlob(function(blob) {
                 progressFill.style.width = '100%';

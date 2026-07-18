@@ -238,8 +238,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             width = Math.round((width * maxHeight) / height);
                             height = maxHeight;
                         } else if (resizeMode === 'both') {
-                            width = maxWidth;
-                            height = maxHeight;
+                            var scaleW = maxWidth / width;
+                            var scaleH = maxHeight / height;
+                            var scale = Math.min(scaleW, scaleH);
+                            width = Math.round(width * scale);
+                            height = Math.round(height * scale);
                         }
                     }
                     

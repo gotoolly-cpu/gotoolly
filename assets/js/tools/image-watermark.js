@@ -133,6 +133,8 @@ document.addEventListener('DOMContentLoaded', function() {
         canvas.width = currentImage.naturalWidth;
         canvas.height = currentImage.naturalHeight;
         var ctx = canvas.getContext('2d');
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
 
         progressFill.style.width = '50%';
         progressPercent.textContent = '50%';

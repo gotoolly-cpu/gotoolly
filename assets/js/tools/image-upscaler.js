@@ -182,8 +182,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 progressPercent.textContent = '80%';
                 progressText.textContent = 'Encoding...';
 
-                var outputType = currentFile.type === 'image/png' ? 'image/png' : 'image/jpeg';
-                var quality = outputType === 'image/jpeg' ? 0.92 : undefined;
+                var outputType = currentFile.type;
+                if (outputType !== 'image/png' && outputType !== 'image/jpeg' && outputType !== 'image/webp') {
+                    outputType = 'image/jpeg';
+                }
+                var quality = (outputType === 'image/png') ? undefined : 0.92;
 
                 canvas.toBlob(function(blob) {
                     progressFill.style.width = '100%';

@@ -130,6 +130,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 canvas.width = img.naturalWidth;
                 canvas.height = img.naturalHeight;
                 var ctx = canvas.getContext('2d');
+                ctx.imageSmoothingEnabled = true;
+                ctx.imageSmoothingQuality = 'high';
 
                 var rgb = hexToRgb(bg);
                 ctx.fillStyle = 'rgb(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ')';
