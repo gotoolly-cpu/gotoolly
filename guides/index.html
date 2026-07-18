@@ -276,13 +276,14 @@
                     </div>
                 </div>
                 <div class="category-tabs" role="tablist" style="display:flex;gap:var(--space-2);margin-top:var(--space-3);flex-wrap:wrap" aria-label="Guide categories">
-                    <button class="tab-btn active" data-category="all" role="tab" aria-selected="true" aria-controls="guides-panel">All <span class="tab-count">(124)</span></button>
+                    <button class="tab-btn active" data-category="all" role="tab" aria-selected="true" aria-controls="guides-panel">All <span class="tab-count">(134)</span></button>
                     <button class="tab-btn" data-category="pdf" role="tab" aria-selected="false" aria-controls="guides-panel">PDF <span class="tab-count">(25)</span></button>
                     <button class="tab-btn" data-category="image" role="tab" aria-selected="false" aria-controls="guides-panel">Image <span class="tab-count">(19)</span></button>
                     <button class="tab-btn" data-category="text" role="tab" aria-selected="false" aria-controls="guides-panel">Text <span class="tab-count">(11)</span></button>
                     <button class="tab-btn" data-category="developer" role="tab" aria-selected="false" aria-controls="guides-panel">Developer <span class="tab-count">(31)</span></button>
                     <button class="tab-btn" data-category="seo" role="tab" aria-selected="false" aria-controls="guides-panel">SEO <span class="tab-count">(20)</span></button>
                     <button class="tab-btn" data-category="utilities" role="tab" aria-selected="false" aria-controls="guides-panel">Utilities <span class="tab-count">(18)</span></button>
+                    <button class="tab-btn" data-category="archive" role="tab" aria-selected="false" aria-controls="guides-panel">Archive <span class="tab-count">(10)</span></button>
                 </div>
             </div>
 
@@ -290,7 +291,7 @@
             <section class="content-section" id="guides-panel" role="tabpanel">
                 <div class="section-header">
                     <h2>All Guides</h2>
-                    <p class="section-description" id="guides-count">Showing 124 guides</p>
+                    <p class="section-description" id="guides-count">Showing 134 guides</p>
                 </div>
                 <div class="guides-grid" id="all-guides-grid">
                 </div>
@@ -493,11 +494,21 @@
             {title:"Canonical URL Checker Guide",url:"/guides/canonical-url-checker",cat:"seo",desc:"Check and validate canonical URL tags."},
             {title:"Keyword Density Checker Guide",url:"/guides/keyword-density-checker",cat:"seo",desc:"Analyze keyword density for SEO optimization."},
             {title:"Meta Length Checker Guide",url:"/guides/meta-length-checker",cat:"seo",desc:"Check meta tag lengths for Google search results."},
-            {title:"Heading Structure Checker Guide",url:"/guides/heading-structure-checker",cat:"seo",desc:"Analyze heading hierarchy for SEO compliance."}
+            {title:"Heading Structure Checker Guide",url:"/guides/heading-structure-checker",cat:"seo",desc:"Analyze heading hierarchy for SEO compliance."},
+            {title:"ZIP Creator Guide",url:"/guides/zip-creator",cat:"archive",desc:"Learn how to create ZIP archives from multiple files."},
+            {title:"ZIP Extractor Guide",url:"/guides/zip-extractor",cat:"archive",desc:"How to extract files from ZIP archives."},
+            {title:"TAR Creator Guide",url:"/guides/tar-creator",cat:"archive",desc:"Create TAR archives for long-term file storage."},
+            {title:"TAR Extractor Guide",url:"/guides/tar-extractor",cat:"archive",desc:"Extract files from TAR archives."},
+            {title:"GZIP Compressor Guide",url:"/guides/gzip-compressor",cat:"archive",desc:"Compress files with GZIP for smaller file sizes."},
+            {title:"GZIP Extractor Guide",url:"/guides/gzip-extractor",cat:"archive",desc:"Decompress GZIP files back to their original form."},
+            {title:"Archive Viewer Guide",url:"/guides/archive-viewer",cat:"archive",desc:"Preview archive contents without extracting files."},
+            {title:"Archive File Info Guide",url:"/guides/archive-file-info",cat:"archive",desc:"Get detailed information about archive files."},
+            {title:"7Z Extractor Guide",url:"/guides/seven-z-extractor",cat:"archive",desc:"Extract files from 7-Zip compressed archives."},
+            {title:"RAR Extractor Guide",url:"/guides/rar-extractor",cat:"archive",desc:"Extract files from RAR compressed archives."}
         ];
 
-        const catGradients = {pdf:"linear-gradient(135deg,#3b82f6,#1d4ed8)",image:"linear-gradient(135deg,#10b981,#059669)",text:"linear-gradient(135deg,#8b5cf6,#6d28d9)",developer:"linear-gradient(135deg,#0ea5e9,#0284c7)",seo:"linear-gradient(135deg,#f97316,#ea580c)",utilities:"linear-gradient(135deg,#f59e0b,#d97706)"};
-        const catColors = {pdf:"#3b82f6",image:"#10b981",text:"#8b5cf6",developer:"#0ea5e9",seo:"#f97316",utilities:"#f59e0b"};
+        const catGradients = {pdf:"linear-gradient(135deg,#3b82f6,#1d4ed8)",image:"linear-gradient(135deg,#10b981,#059669)",text:"linear-gradient(135deg,#8b5cf6,#6d28d9)",developer:"linear-gradient(135deg,#0ea5e9,#0284c7)",seo:"linear-gradient(135deg,#f97316,#ea580c)",utilities:"linear-gradient(135deg,#f59e0b,#d97706)",archive:"linear-gradient(135deg,#ec4899,#be185d)"};
+        const catColors = {pdf:"#3b82f6",image:"#10b981",text:"#8b5cf6",developer:"#0ea5e9",seo:"#f97316",utilities:"#f59e0b",archive:"#ec4899"};
         let currentCat = 'all';
         let searchTerm = '';
 

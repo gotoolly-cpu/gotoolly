@@ -1,0 +1,419 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Viewer Guide - How to Use | GoToolly</title>
+    <meta name="description" content="Learn how to preview archive contents without extracting. Guide to GoToolly's free Archive Viewer for ZIP, TAR, GZ, 7Z, and RAR files.">
+    <meta name="keywords" content="archive viewer, preview zip contents, view archive files, peek inside archive, archive browser, view tar contents">
+
+    <link rel="canonical" href="https://gotoolly.com/guides/archive-viewer">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/guides/archive-viewer">
+    <meta property="og:title" content="Archive Viewer Guide - How to Use | GoToolly">
+    <meta property="og:description" content="Learn how to preview archive contents without extracting. Guide to GoToolly's free Archive Viewer for ZIP, TAR, GZ, 7Z, and RAR files.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/archive-viewer">
+    <meta name="twitter:title" content="Archive Viewer Guide - How to Use | GoToolly">
+    <meta name="twitter:description" content="Learn how to preview archive contents without extracting. Guide to GoToolly's free Archive Viewer for ZIP, TAR, GZ, 7Z, and RAR files.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <style>
+        .page-header { background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); color: white; padding: var(--space-12) var(--space-6); border-radius: var(--radius-xl); text-align: center; margin-bottom: var(--space-10); }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); }
+        .page-description { color: rgba(255,255,255,0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6); }
+        .cta-container { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6); }
+        .step-box { background: var(--color-surface); border-left: 4px solid var(--color-primary); padding: var(--space-4); margin-bottom: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Archive Viewer Guide: How to Preview Archive Contents Online (2026)",
+        "description": "Learn how to preview archive contents without extracting. Guide to GoToolly's free Archive Viewer for ZIP, TAR, GZ, 7Z, and RAR files.",
+        "url": "https://gotoolly.com/guides/archive-viewer",
+        "author": {"@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com"},
+        "publisher": {"@type": "Organization", "name": "GoToolly", "logo": {"@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png"}},
+        "image": "https://gotoolly.com/assets/images/logo-512.png",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://gotoolly.com/guides/archive-viewer"}
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"},
+            {"@type": "ListItem", "position": 3, "name": "Archive Viewer Guide", "item": "https://gotoolly.com/guides/archive-viewer"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Which archive formats can the Archive Viewer open?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The Archive Viewer supports ZIP, TAR, TAR.GZ, TAR.BZ2, TAR.XZ, GZIP, 7Z, and RAR formats. The tool auto-detects the format when you upload a file."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does viewing an archive extract the files?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. The Archive Viewer only reads and displays the file listing inside an archive. It does not decompress or extract any files. You can then use the appropriate extraction tool to download specific files."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I see compressed and uncompressed file sizes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The viewer displays both the compressed size of each file within the archive and the uncompressed (original) size. This helps you understand the compression ratio and decide which files to extract."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is there a limit to archive size for viewing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The viewer can handle archives up to several gigabytes. The file listing is generated quickly even for large archives since only the header data needs to be read, not the full compressed content."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I view password-protected archives?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For password-protected archives, the viewer will prompt you to enter the password before it can read the archive headers and display the contents. Without the correct password, the file listing cannot be generated."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32"><span class="logo-text">GoToolly</span></a>
+                <nav class="main-nav" aria-label="Main navigation"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link">Tools</a><a href="/guides" class="nav-link active">Guides</a><a href="../about" class="nav-link">About</a><a href="../contact" class="nav-link">Contact</a></nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            </div>
+            <div class="mobile-menu"><nav class="mobile-nav" aria-label="Mobile navigation"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link">Tools</a><a href="/guides" class="nav-link active">Guides</a><a href="../about" class="nav-link">About</a><a href="../contact" class="nav-link">Contact</a></nav></div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>7Z Extractor Guide: How to Open 7-Zip Files Online (2026)</h1>
+                <p class="page-description">Extract 7Z archives directly in your browser using GoToolly's free 7Z Extractor. Open high-compression 7-Zip files without installing desktop software.</p>
+                <p><strong>Extracted in your browser. No uploads to servers. No sign-up.</strong></p>
+                <div class="cta-container">
+                    <a href="../tools/7z-extractor" class="btn btn-primary btn-lg">Extract a 7Z File Now</a>
+                    <a href="#step-by-step" class="btn btn-secondary btn-lg">Jump to Step-by-Step Guide</a>
+                </div>
+            </div>
+
+            <div class="tool-layout">
+                <div>
+                    <article class="content-section">
+
+                        <h2>Introduction: What Is a 7Z File?</h2>
+                        <p>7Z is a compressed archive format created by the 7-Zip open-source project. It uses the LZMA and LZMA2 compression algorithms, which typically achieve 30-70% better compression than standard ZIP files. This makes 7Z a popular choice for distributing large software packages, game mods, compressed backups, and file collections where every megabyte counts.</p>
+                        <p>While 7Z files are best opened with the 7-Zip desktop application, GoToolly's 7Z Extractor lets you decompress and extract 7Z archives directly in your browser. This is especially useful when you are on a mobile device, a shared computer, or a machine where you cannot install software. All decompression happens client-side, keeping your data completely private.</p>
+
+                        <h2>Key Features</h2>
+                        <ul>
+                            <li><strong>LZMA/LZMA2 Decompression:</strong> Full support for the advanced compression algorithms used in 7Z files, providing high-quality decompression of all 7Z archives.</li>
+                            <li><strong>File Preview:</strong> Browse all files and folders inside a 7Z archive before extracting, including file sizes, paths, and the compressed vs uncompressed ratios.</li>
+                            <li><strong>Selective Extraction:</strong> Choose specific files or folders to download instead of extracting the entire archive contents at once.</li>
+                            <li><strong>No Software Installation:</strong> Extract 7Z files in your browser without downloading 7-Zip, WinRAR, or any other desktop application.</li>
+                            <li><strong>Complete Privacy:</strong> All decompression happens in your browser. No file data is ever transmitted to any external server.</li>
+                        </ul>
+
+                        <h2>Common Use Cases</h2>
+                        <ul>
+                            <li><strong>Software Distribution:</strong> Many open-source projects and game mods distribute files as .7z. Extract them on any device without installing 7-Zip.</li>
+                            <li><strong>Large File Transfers:</strong> When someone sends you a 7Z archive, extract its contents on your phone or tablet without needing desktop software.</li>
+                            <li><strong>Backup Recovery:</strong> Decompress 7Z backups created on a different computer where 7-Zip was available but your current device does not have it.</li>
+                            <li><strong>Compression Comparison:</strong> Extract a file from both ZIP and 7Z versions to verify content integrity when comparing compression formats.</li>
+                        </ul>
+
+                        <h2 id="step-by-step">Step-by-Step Tutorial</h2>
+
+                        <div class="step-box">
+                            <h3>Step 1: Open the 7Z Extractor</h3>
+                            <p>Navigate to the GoToolly 7Z Extractor page. The tool loads instantly with a file upload zone. No installation, account, or browser extension is needed.</p>
+                        </div>
+
+                        <div class="step-box">
+                            <h3>Step 2: Upload Your 7Z File</h3>
+                            <p>Click the upload area or drag and drop your .7z file. The tool reads the 7Z header and begins decompression in your browser. Large files may take a few extra seconds to process.</p>
+                        </div>
+
+                        <div class="step-box">
+                            <h3>Step 3: Browse the Contents</h3>
+                            <p>After parsing the archive, the tool displays a complete file listing with folder structure, individual file sizes, and the compressed vs uncompressed sizes. Review the contents to verify the archive contains what you expected.</p>
+                        </div>
+
+                        <div class="step-box">
+                            <h3>Step 4: Select Files to Extract</h3>
+                            <p>Check the files or folders you want to extract. You can select all items at once or pick specific files for selective extraction. This saves time and bandwidth for large archives.</p>
+                        </div>
+
+                        <div class="step-box">
+                            <h3>Step 5: Download Extracted Files</h3>
+                            <p>Click the download button to save the decompressed files to your device. The folder structure is preserved. Individual files can also be downloaded directly. All extraction happens in your browser memory.</p>
+                        </div>
+
+                        <h2>Tips &amp; Best Practices</h2>
+                        <ul>
+                            <li><strong>Check Compression Ratio:</strong> 7Z files often have high compression ratios. Check the uncompressed size before extracting to ensure you have enough disk space.</li>
+                            <li><strong>Verify After Extraction:</strong> For critical files, compare the extracted contents with the original source to ensure decompression was complete and accurate.</li>
+                            <li><strong>Use on Mobile:</strong> The browser extractor is ideal for phones and tablets where 7-Zip desktop software is not available but you need to access a 7Z file.</li>
+                            <li><strong>Alternative Formats:</strong> If your recipient cannot open 7Z files, consider creating a ZIP archive instead using the GoToolly ZIP Creator for universal compatibility.</li>
+                        </ul>
+
+                        <h2>Privacy &amp; Security</h2>
+                        <p>All 7Z decompression happens entirely within your browser using JavaScript. The GoToolly extractor reads the 7Z archive structure and decompresses LZMA/LZMA2 streams locally. No file content is ever sent to any external server. This makes the tool safe for extracting sensitive software packages, confidential backups, and proprietary files. Once you close the browser tab, all data is freed from memory.</p>
+
+                        
+                        <h2>How Client-Side Processing Works</h2>
+                        <p>Modern web browsers provide powerful APIs that make client-side file processing possible without any server involvement. Here is how GoToolly's archive tools leverage these capabilities:</p>
+                        <ul>
+                            <li><strong>File API:</strong> The HTML5 File API allows browsers to read file data directly from the user's device. When you drag and drop or select a file, the browser accesses its contents through this API without uploading anything.</li>
+                            <li><strong>ArrayBuffer and Uint8Array:</strong> Binary file data is loaded into memory as ArrayBuffer objects, which can be manipulated using typed arrays for efficient byte-level operations.</li>
+                            <li><strong>CompressionStream and DecompressionStream:</strong> These modern browser APIs provide native GZIP compression and decompression using the same DEFLATE algorithm as the original gzip utility.</li>
+                            <li><strong>JavaScript Libraries:</strong> For formats like ZIP, TAR, 7Z, and RAR, GoToolly uses optimized JavaScript libraries that parse archive headers and decompress file contents entirely in the browser.</li>
+                            <li><strong>Blob and URL.createObjectURL:</strong> Decompressed files are packaged as Blob objects with temporary URLs that allow direct download to the user's device without server storage.</li>
+                        </ul>
+                        <p>This architecture ensures that your files never leave your browser. There are no API calls to external servers, no file uploads, and no data logging. The entire process from file selection to download happens locally on your device.</p>
+<h2>Browser Compatibility</h2>
+                        <p>The 7Z Extractor works in all modern browsers including Chrome, Firefox, Edge, Safari, and Opera. It uses JavaScript decompression libraries to handle LZMA/LZMA2 streams. No plugins, Java, Flash, or WebGL are needed. For the best experience with very large 7Z archives, we recommend using Chrome or Firefox on a desktop computer with sufficient RAM.</p>
+
+                        <h2>Frequently Asked Questions</h2>
+
+                        <h3>What is the difference between 7Z and ZIP?</h3>
+                        <p>7Z uses LZMA/LZMA2 compression which is typically 30-70% more efficient than ZIP's DEFLATE algorithm. However, ZIP has broader native support across operating systems, while 7Z requires the 7-Zip application or a browser-based extractor.</p>
+
+                        <h3>Can I extract password-protected 7Z files?</h3>
+                        <p>Yes. When you upload a password-protected 7Z archive, the tool will prompt you to enter the password before decompression begins. Without the correct password, extraction cannot proceed.</p>
+
+                        <h3>Are there file size limits for 7Z extraction?</h3>
+                        <p>The extractor can handle 7Z files up to several gigabytes depending on your device's available memory. Very large archives may take longer to process due to the decompression algorithms involved.</p>
+
+                        <h3>Can I extract only specific files from a 7Z archive?</h3>
+                        <p>Yes. The tool displays all contained files and folders, and you can select individual items for extraction rather than downloading the entire archive contents.</p>
+
+                        <h3>Is 7Z compression lossless?</h3>
+                        <p>Yes. 7Z uses lossless compression. The decompressed files are byte-for-byte identical to the originals. No data quality is lost during compression or decompression.</p>
+
+                        
+                        
+                        
+                        <h2>Quick Reference: Archive Format Comparison</h2>
+                        <table class="comparison-table" style="width:100%;border-collapse:collapse;margin:var(--space-6) 0;">
+                            <thead>
+                                <tr>
+                                    <th style="border:1px solid var(--color-border);padding:var(--space-3);text-align:left;background:var(--color-surface-secondary);">Feature</th>
+                                    <th style="border:1px solid var(--color-border);padding:var(--space-3);text-align:left;background:var(--color-surface-secondary);">ZIP</th>
+                                    <th style="border:1px solid var(--color-border);padding:var(--space-3);text-align:left;background:var(--color-surface-secondary);">TAR.GZ</th>
+                                    <th style="border:1px solid var(--color-border);padding:var(--space-3);text-align:left;background:var(--color-surface-secondary);">7Z</th>
+                                    <th style="border:1px solid var(--color-border);padding:var(--space-3);text-align:left;background:var(--color-surface-secondary);">RAR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">Native Windows Support</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">Yes</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">No (Win11 partial)</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">No</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">No</td>
+                                </tr>
+                                <tr>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">Native macOS/Linux</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">Yes</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">Yes</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">No</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">No</td>
+                                </tr>
+                                <tr>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">Compression Ratio</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">Good</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">Good</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">Excellent</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">Very Good</td>
+                                </tr>
+                                <tr>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">Unix Permissions</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">Limited</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">Full</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">Full</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">Limited</td>
+                                </tr>
+                                <tr>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">Encryption</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">Basic (ZIP 2.0)</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">No (use GPG)</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">AES-256</td>
+                                    <td style="border:1px solid var(--color-border);padding:var(--space-3);">AES-128/256</td>
+                                </tr>
+                            </tbody>
+                        </table>
+<h2>History and Evolution of Archive Formats</h2>
+                        <p>Understanding the origins of archive formats helps explain why multiple formats exist and when to use each one:</p>
+                        <ul>
+                            <li><strong>TAR (1979):</strong> Created for Unix tape backups at Bell Labs. The name stands for Tape Archive. Despite being over 45 years old, it remains the standard archival format on Linux and Unix systems due to its simplicity and Unix metadata preservation.</li>
+                            <li><strong>ZIP (1989):</strong> Created by Phil Katz as an improvement over the PKARC format. It quickly became the most widely used archive format due to its combination of bundling and compression with native Windows support.</li>
+                            <li><strong>GZIP (1992):</strong> Created by Jean-loup Gailly as part of the GNU project. Designed as a replacement for the compress utility, it uses the DEFLATE algorithm and became the standard for HTTP content encoding and Linux software distribution.</li>
+                            <li><strong>RAR (1993):</strong> Created by Eugene Roshal (the name stands for Roshal ARchive). It introduced advanced features like recovery records, solid compression, and encryption that were not available in ZIP at the time.</li>
+                            <li><strong>7Z (1999):</strong> Created by Igor Pavlov as part of the 7-Zip open-source project. It uses the LZMA algorithm which provides significantly better compression than DEFLATE, making it popular for distributing large files.</li>
+                        </ul>
+                        <p>Each format was designed to solve specific problems of its era. Today, they coexist because each excels in different scenarios, from universal file sharing (ZIP) to maximum compression (7Z) to Unix system administration (TAR).</p>
+<h2>Choosing the Right Archive Format</h2>
+                        <p>Selecting the correct archive format depends on your use case, target audience, and technical requirements. Here is a quick reference to help you decide:</p>
+                        <ul>
+                            <li><strong>ZIP:</strong> Best for general file sharing across all operating systems. Universal support makes it the safest choice for mixed-OS environments and non-technical recipients.</li>
+                            <li><strong>TAR:</strong> Ideal for Linux server deployments, Docker containers, and system backups. Preserves Unix file permissions, ownership, and symbolic links.</li>
+                            <li><strong>TAR.GZ:</strong> Combines TAR bundling with GZIP compression. The standard format for Linux software packages and server-side file transfers.</li>
+                            <li><strong>7Z:</strong> Provides the best compression ratios. Use when file size is critical and you control the extraction environment.</li>
+                            <li><strong>RAR:</strong> Common in file sharing communities with support for recovery records and strong encryption. Requires specific extraction software.</li>
+                        </ul>
+                        <p>When in doubt, ZIP is the most universally compatible choice. For technical workflows involving Linux systems, TAR.GZ is the industry standard.</p>
+
+                        <h2>Understanding Compression Ratios</h2>
+                        <p>Compression ratio measures how much a file shrinks after compression. A ratio of 3:1 means the compressed file is one-third the size of the original. Different file types compress very differently:</p>
+                        <ul>
+                            <li><strong>Text files (HTML, CSS, JS, JSON, XML):</strong> Typically achieve 60-80% reduction because text contains many repeated patterns that compression algorithms exploit efficiently.</li>
+                            <li><strong>Office documents (DOCX, XLSX, PPTX):</strong> Achieve 50-70% reduction since these are already ZIP-based compressed formats with additional compression possible.</li>
+                            <li><strong>Images (JPEG, PNG, WebP):</strong> Show minimal compression (1-5%) because image formats already use their own optimized compression. GZIP cannot improve on this.</li>
+                            <li><strong>Audio and video (MP3, MP4, AVI):</strong> Show almost no compression (0-2%) since media codecs already maximize compression for their specific content type.</li>
+                            <li><strong>Binary executables:</strong> Achieve moderate compression (20-40%) depending on the executable format and how much redundant data it contains.</li>
+                        </ul>
+                        <p>Understanding these ratios helps you choose the right tool and set realistic expectations for file size reduction.</p>
+<h2>Related Tools</h2>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                            <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                                <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/zip-extractor">ZIP Extractor</a></h4>
+                                <p style="margin:0; font-size:var(--text-sm);">Extract ZIP archives with universal compatibility.</p>
+                            </div>
+                            <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                                <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/tar-extractor">TAR Extractor</a></h4>
+                                <p style="margin:0; font-size:var(--text-sm);">Extract TAR and TAR.GZ archives for Linux use.</p>
+                            </div>
+                            <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                                <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/rar-extractor">RAR Extractor</a></h4>
+                                <p style="margin:0; font-size:var(--text-sm);">Extract RAR archives without WinRAR installed.</p>
+                            </div>
+                        </div>
+
+                        <h2>Related Guides</h2>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                            <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                                <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="/guides/zip-extractor">ZIP Extractor Guide</a></h4>
+                                <p style="margin:0; font-size:var(--text-sm);">Extract ZIP archives in your browser.</p>
+                            </div>
+                            <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                                <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="/guides/rar-extractor">RAR Extractor Guide</a></h4>
+                                <p style="margin:0; font-size:var(--text-sm);">Extract RAR archives without desktop software.</p>
+                            </div>
+                            <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                                <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="/guides/archive-viewer">Archive Viewer Guide</a></h4>
+                                <p style="margin:0; font-size:var(--text-sm);">Preview archive contents before extracting.</p>
+                            </div>
+                        </div>
+
+                        <div class="page-header" style="background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); margin-top: var(--space-12);">
+                            <h2 style="font-size: var(--text-2xl);">Ready to Extract Your 7Z File?</h2>
+                            <p class="page-description">Open any 7-Zip archive in your browser. High-compression LZMA decompression happens locally for complete privacy.</p>
+                            <div class="cta-container">
+                                <a href="../tools/7z-extractor" class="btn btn-primary btn-lg">Extract 7Z Files for Free</a>
+                            </div>
+                            <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">No sign-up required &bull; No server uploads &bull; Processed in your browser</p>
+                        </div>
+
+                    
+                        <h2>Common Mistakes to Avoid</h2>
+
+                        <h3>Mistake 1: Assuming 7Z and ZIP Are Interchangeable</h3>
+                        <p><strong>The Problem:</strong> Attempting to extract a 7Z file with a ZIP extractor, or expecting a ZIP extractor to recognize 7Z format.</p>
+                        <p><strong>Why it Fails:</strong> 7Z and ZIP are completely different archive formats with different internal structures. A ZIP extractor cannot read 7Z headers and will report an error.</p>
+                        <p><strong>Correct Approach:</strong> Always use the 7Z Extractor for .7z files. Use the ZIP Extractor for .zip files. Use the Archive Viewer to identify the format if you are unsure.</p>
+
+                        <h3>Mistake 2: Forgetting About LZMA Memory Requirements</h3>
+                        <p><strong>The Problem:</strong> Attempting to extract very large 7Z archives on devices with limited RAM, causing the browser to become unresponsive or crash.</p>
+                        <p><strong>Why it Fails:</strong> LZMA/LZMA2 decompression requires significant memory, often several times the compressed file size. Mobile devices and older computers may not have enough RAM for very large archives.</p>
+                        <p><strong>Correct Approach:</strong> For 7Z archives larger than 1 GB, use a desktop computer with at least 4 GB of free RAM. Close other browser tabs and applications to maximize available memory.</p>
+
+                        <h3>Mistake 3: Not Checking Archive Encryption</h3>
+                        <p><strong>The Problem:</strong> Uploading an encrypted 7Z archive and expecting immediate extraction without providing a password.</p>
+                        <p><strong>Why it Fails:</strong> Encrypted 7Z archives cannot be read or decompressed without the correct password. The tool will prompt for a password, but if you do not have it, extraction cannot proceed.</p>
+                        <p><strong>Correct Approach:</strong> Confirm you have the correct password before uploading. If you received the archive from someone else, verify the password with the sender. Note that there is no way to recover a lost password.</p>
+
+                        <h3>Mistake 4: Ignoring Extraction Speed Differences</h3>
+                        <p><strong>The Problem:</strong> Expecting 7Z extraction to be as fast as ZIP extraction, then becoming impatient with the slower processing speed.</p>
+                        <p><strong>Why it Fails:</strong> LZMA/LZMA2 compression achieves better ratios than ZIP's DEFLATE but requires more computational power to decompress. This is a tradeoff between file size and extraction speed.</p>
+                        <p><strong>Correct Approach:</strong> Allow extra time for 7Z extraction, especially for large archives or on mobile devices. The slower speed is the cost of the superior compression that made the archive smaller in the first place.</p>
+
+                    
+                </div>
+
+                <div class="tool-sidebar">
+                    <div class="sidebar-section"><h3>Related Tools</h3><ul class="sidebar-links"><li><a href="../tools/7z-extractor">7Z Extractor</a></li><li><a href="../tools/zip-extractor">ZIP Extractor</a></li><li><a href="../tools/tar-extractor">TAR Extractor</a></li><li><a href="../tools/rar-extractor">RAR Extractor</a></li><li><a href="../tools/archive-viewer">Archive Viewer</a></li></ul></div>
+                    <div class="sidebar-section"><h3>Related Guides</h3><ul class="sidebar-links"><li><a href="/guides/zip-extractor">ZIP Extractor Guide</a></li><li><a href="/guides/rar-extractor">RAR Extractor Guide</a></li><li><a href="/guides/archive-viewer">Archive Viewer Guide</a></li></ul></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                    <div class="footer-social">
+                        <a href="https://x.com/GoToolly" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="https://www.facebook.com/profile.php?id=61591898344203" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                        <a href="https://linkedin.com/in/go-toolly-426b67422" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                        <a href="https://www.instagram.com/gotoolly/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
+                        <a href="https://www.tiktok.com/@gotoolly26" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+                        <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="../tools/archive-viewer">Archive Viewer</a></li><li><a href="../tools/image-compressor">Image Compressor</a></li><li><a href="../tools/pdf-compressor">PDF Compressor</a></li><li><a href="../tools/word-counter">Word Counter</a></li><li><a href="../tools/password-generator">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div>
+                <div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="../about">About Us</a></li><li><a href="../contact">Contact</a></li></ul></div>
+                <div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="../legal/privacy-policy">Privacy Policy</a></li><li><a href="../legal/terms-of-service">Terms of Service</a></li><li><a href="../legal/disclaimer">Disclaimer</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="../legal/privacy-policy">Privacy</a><a href="../legal/terms-of-service">Terms</a><a href="../legal/disclaimer">Disclaimer</a><a href="../contact">Contact</a></div></div>
+        </div>
+    </footer>
+    <script defer src="../assets/js/main.min.js"></script>
+</body>
+</html>

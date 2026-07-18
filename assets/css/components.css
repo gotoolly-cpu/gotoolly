@@ -607,3 +607,19 @@ select.form-control {
 .tab-panel.active {
   display: block;
 }
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .alert-warning {
+    background-color: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+  }
+  .alert-error {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+  }
+  .alert-success {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+  }
+}

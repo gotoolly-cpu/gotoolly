@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZIP Extractor Guide - How to Use | GoToolly</title>
+    <meta name="description" content="Step-by-step guide to extract ZIP files in your browser. Learn how to open, preview, and download contents from ZIP archives using GoToolly.">
+    <meta name="keywords" content="zip extractor, extract zip file, open zip archive, unzip files online, decompress zip, view zip contents">
+
+    <link rel="canonical" href="https://gotoolly.com/guides/zip-extractor">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/guides/zip-extractor">
+    <meta property="og:title" content="ZIP Extractor Guide - How to Use | GoToolly">
+    <meta property="og:description" content="Step-by-step guide to extract ZIP files in your browser. Learn how to open, preview, and download contents from ZIP archives using GoToolly.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/zip-extractor">
+    <meta name="twitter:title" content="ZIP Extractor Guide - How to Use | GoToolly">
+    <meta name="twitter:description" content="Step-by-step guide to extract ZIP files in your browser. Learn how to open, preview, and download contents from ZIP archives using GoToolly.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+            color: white;
+            padding: var(--space-12) var(--space-6);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            margin-bottom: var(--space-10);
+        }
+        .page-header h1 { color: white; margin-bottom: var(--space-3); font-size: var(--text-3xl); }
+        .page-description { color: rgba(255,255,255,0.9); font-size: var(--text-lg); max-width: 42rem; margin: 0 auto var(--space-6); }
+        .cta-container { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-6); }
+        .step-box { background: var(--color-surface); border-left: 4px solid var(--color-primary); padding: var(--space-4); margin-bottom: var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "ZIP Extractor Guide: How to Open ZIP Files Online (2026)",
+        "description": "Step-by-step guide to extract ZIP files in your browser. Learn how to open, preview, and download contents from ZIP archives using GoToolly.",
+        "url": "https://gotoolly.com/guides/zip-extractor",
+        "author": {"@type": "Organization", "name": "GoToolly", "url": "https://gotoolly.com"},
+        "publisher": {"@type": "Organization", "name": "GoToolly", "logo": {"@type": "ImageObject", "url": "https://gotoolly.com/assets/images/logo-512.png"}},
+        "image": "https://gotoolly.com/assets/images/logo-512.png",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://gotoolly.com/guides/zip-extractor"}
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"},
+            {"@type": "ListItem", "position": 3, "name": "ZIP Extractor Guide", "item": "https://gotoolly.com/guides/zip-extractor"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Can I extract password-protected ZIP files?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GoToolly's ZIP Extractor supports standard password-protected ZIP archives. When you upload an encrypted ZIP, the tool will prompt you to enter the password before extraction begins."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What happens to my ZIP file after extraction?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "All extraction happens in your browser memory. The original ZIP file and extracted contents are not uploaded to any server and are discarded when you close the tab."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is there a size limit for ZIP files I can extract?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The extractor can handle ZIP files up to several gigabytes depending on your device's available memory. For very large archives (2 GB+), ensure you have enough free RAM for smooth processing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I extract only specific files from a ZIP archive?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. After uploading a ZIP file, the tool displays a list of all contained files and folders. You can select individual files or specific folders to extract rather than downloading the entire archive."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does the extractor preserve folder structures?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The ZIP Extractor maintains the original directory structure of the archive. When you extract all files, folders and subfolders are preserved exactly as they were organized in the original ZIP."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32">
+                    <span class="logo-text">GoToolly</span>
+                </a>
+                <nav class="main-nav" aria-label="Main navigation">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav" aria-label="Mobile navigation">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>ZIP Extractor Guide: How to Open ZIP Files Online (2026)</h1>
+                <p class="page-description">Learn how to extract and preview ZIP archives directly in your browser. Access individual files without installing any software.</p>
+                <p><strong>Extracted in your browser. No uploads to servers. No sign-up.</strong></p>
+                <div class="cta-container">
+                    <a href="../tools/zip-extractor" class="btn btn-primary btn-lg">Extract a ZIP File Now</a>
+                    <a href="#step-by-step" class="btn btn-secondary btn-lg">Jump to Step-by-Step Guide</a>
+                </div>
+            </div>
+
+            <div class="tool-layout">
+                <div>
+                    <article class="content-section">
+
+                        <h2>Introduction: Why Use a Browser-Based ZIP Extractor?</h2>
+                        <p>You received a ZIP file from a colleague, downloaded a resource pack, or found an archive online, but you need to access the contents quickly without installing desktop software. A browser-based ZIP extractor lets you open and extract ZIP archives instantly from any device with a web browser. This is especially useful on shared computers, mobile devices, or locked-down corporate machines where you cannot install applications.</p>
+                        <p>GoToolly's ZIP Extractor reads ZIP files entirely in your browser using JavaScript decompression. The archive never leaves your device, which means it is completely safe for confidential documents, financial records, and sensitive project files.</p>
+
+                        <h2>Key Features</h2>
+                        <ul>
+                            <li><strong>No Installation Required:</strong> Open and extract ZIP files directly in your browser without downloading or installing any software.</li>
+                            <li><strong>File Preview:</strong> Browse the full contents of a ZIP archive before extracting, including file names, sizes, and folder structures.</li>
+                            <li><strong>Selective Extraction:</strong> Choose to extract specific files or folders instead of the entire archive, saving time and bandwidth.</li>
+                            <li><strong>Nested ZIP Support:</strong> The tool can read ZIP files that contain other ZIP files inside them, letting you navigate nested archives.</li>
+                            <li><strong>100% Private:</strong> All decompression happens in your browser. No data is ever sent to any external server.</li>
+                        </ul>
+
+                        <h2>Common Use Cases</h2>
+                        <ul>
+                            <li><strong>Email Attachments:</strong> Quickly extract ZIP attachments received via email without saving them to disk first.</li>
+                            <li><strong>Downloaded Resources:</strong> Open software packages, font bundles, template packs, and asset libraries that come as ZIP files.</li>
+                            <li><strong>Shared Project Files:</strong> Extract project archives shared by teammates or clients, even on devices where you cannot install software.</li>
+                            <li><strong>Mobile Access:</strong> Extract ZIP files on your phone or tablet when you need to access a specific document on the go.</li>
+                        </ul>
+
+                        <h2 id="step-by-step">Step-by-Step Tutorial</h2>
+
+                        <div class="step-box">
+                            <h3>Step 1: Open the ZIP Extractor Tool</h3>
+                            <p>Navigate to the GoToolly ZIP Extractor page. You will see a file upload area ready for your ZIP file. The tool loads instantly with no installation or account creation required.</p>
+                        </div>
+
+                        <div class="step-box">
+                            <h3>Step 2: Upload Your ZIP File</h3>
+                            <p>Click the upload area or drag and drop your ZIP file into the tool. The extractor reads the archive header immediately and displays a preview of its contents within seconds, even for large files.</p>
+                        </div>
+
+                        <div class="step-box">
+                            <h3>Step 3: Browse the Contents</h3>
+                            <p>Review the full file listing inside the ZIP archive. You can see every file and folder, along with their sizes and the compressed size. This helps you verify you have the right archive before extracting anything.</p>
+                        </div>
+
+                        <div class="step-box">
+                            <h3>Step 4: Select Files to Extract</h3>
+                            <p>Choose whether to extract all files or select specific items. You can check individual files or entire folders. This is useful when you only need one or two files from a large archive rather than everything.</p>
+                        </div>
+
+                        <div class="step-box">
+                            <h3>Step 5: Download Extracted Files</h3>
+                            <p>Click the extract or download button. If you selected all files, the tool bundles them into a ready-to-use package. Individual files can be saved directly to your device. The folder structure is preserved throughout.</p>
+                        </div>
+
+                        
+                        <h2>Understanding ZIP Format Basics</h2>
+                        <p>The ZIP format was invented in 1989 by Phil Katz and has become the most universally supported archive format in computing history. Every major operating system can create and extract ZIP files without additional software. ZIP uses the DEFLATE compression algorithm, which provides a good balance between compression speed and file size reduction. Files in a ZIP archive can be individually compressed, meaning you can extract a single file without decompressing the entire archive. The format also supports basic encryption, file comments, and path names in multiple character encodings.</p>
+
+                        <h2>Tips &amp; Best Practices</h2>
+                        <ul>
+                            <li><strong>Preview Before Extracting:</strong> Always review the file list before downloading. This ensures you are extracting the correct archive and helps you select only the files you need.</li>
+                            <li><strong>Check File Sizes:</strong> If the archive contains unexpectedly large files, verify the contents are what you expect before extracting, especially on mobile devices with limited storage.</li>
+                            <li><strong>Use for Quick Access:</strong> When you need a single file from a ZIP archive urgently, the browser extractor is faster than installing software, extracting everything, and then finding the file.</li>
+                            <li><strong>Verify Archive Integrity:</strong> If extraction fails or files appear corrupted, the ZIP archive itself may be damaged. Try re-downloading the original file and extracting again.</li>
+                        </ul>
+
+                        <h2>Privacy &amp; Security</h2>
+                        <p>Your ZIP files are processed entirely in your browser. GoToolly's ZIP Extractor uses the JavaScript DecompressionStream API and the File API to read and decompress archive data locally. No file content is ever transmitted over the internet. Once you close the browser tab, all data is freed from memory. This client-side approach makes the tool safe for extracting confidential business documents, personal records, and any sensitive information contained in ZIP archives.</p>
+
+                        <h2>Browser Compatibility</h2>
+                        <p>The ZIP Extractor works in all modern browsers including Chrome, Firefox, Edge, Safari, and Opera. It uses the HTML5 File API and JavaScript decompression libraries that are built into current browser engines. No plugins, Flash, Java, or WebGL are required. For the smoothest experience with very large ZIP files, we recommend using the latest version of Chrome or Firefox.</p>
+
+                        <h2>Frequently Asked Questions</h2>
+
+                        <h3>Can I extract password-protected ZIP files?</h3>
+                        <p>GoToolly's ZIP Extractor supports standard password-protected ZIP archives. When you upload an encrypted ZIP, the tool will prompt you to enter the password before extraction begins.</p>
+
+                        <h3>What happens to my ZIP file after extraction?</h3>
+                        <p>All extraction happens in your browser memory. The original ZIP file and extracted contents are not uploaded to any server and are discarded when you close the tab.</p>
+
+                        <h3>Is there a size limit for ZIP files I can extract?</h3>
+                        <p>The extractor can handle ZIP files up to several gigabytes depending on your device's available memory. For very large archives (2 GB+), ensure you have enough free RAM for smooth processing.</p>
+
+                        <h3>Can I extract only specific files from a ZIP archive?</h3>
+                        <p>Yes. After uploading a ZIP file, the tool displays a list of all contained files and folders. You can select individual files or specific folders to extract rather than downloading the entire archive.</p>
+
+                        <h3>Does the extractor preserve folder structures?</h3>
+                        <p>Yes. The ZIP Extractor maintains the original directory structure of the archive. When you extract all files, folders and subfolders are preserved exactly as they were organized in the original ZIP.</p>
+
+                        <h2>Related Tools</h2>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                            <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                                <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/zip-creator">ZIP Creator</a></h4>
+                                <p style="margin:0; font-size:var(--text-sm);">Create ZIP archives from multiple files for easy sharing.</p>
+                            </div>
+                            <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                                <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/archive-viewer">Archive Viewer</a></h4>
+                                <p style="margin:0; font-size:var(--text-sm);">Preview archive contents across multiple formats.</p>
+                            </div>
+                            <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                                <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="../tools/archive-file-info">Archive File Info</a></h4>
+                                <p style="margin:0; font-size:var(--text-sm);">Get detailed metadata about your archive files.</p>
+                            </div>
+                        </div>
+
+                        <h2>Related Guides</h2>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+                            <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                                <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="/guides/zip-creator">ZIP Creator Guide</a></h4>
+                                <p style="margin:0; font-size:var(--text-sm);">How to create ZIP archives from your files.</p>
+                            </div>
+                            <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                                <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="/guides/tar-extractor">TAR Extractor Guide</a></h4>
+                                <p style="margin:0; font-size:var(--text-sm);">Extract TAR and TAR.GZ archives in your browser.</p>
+                            </div>
+                            <div style="background: var(--color-surface); padding: var(--space-4); border-radius: var(--radius-md);">
+                                <h4 style="margin-top: 0; margin-bottom: var(--space-2);"><a href="/guides/archive-viewer">Archive Viewer Guide</a></h4>
+                                <p style="margin:0; font-size:var(--text-sm);">Preview the contents of any archive format.</p>
+                            </div>
+                        </div>
+
+                        <div class="page-header" style="background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); margin-top: var(--space-12);">
+                            <h2 style="font-size: var(--text-2xl);">Ready to Extract Your ZIP File?</h2>
+                            <p class="page-description">Open any ZIP archive in seconds. All processing happens locally in your browser for complete privacy.</p>
+                            <div class="cta-container">
+                                <a href="../tools/zip-extractor" class="btn btn-primary btn-lg">Extract ZIP Files for Free</a>
+                            </div>
+                            <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(255,255,255,0.8);">No sign-up required &bull; No server uploads &bull; Processed in your browser</p>
+                        </div>
+
+                    </article>
+                </div>
+
+                <div class="tool-sidebar">
+                    <div class="sidebar-section">
+                        <h3>Related Tools</h3>
+                        <ul class="sidebar-links">
+                            <li><a href="../tools/zip-extractor">ZIP Extractor</a></li>
+                            <li><a href="../tools/zip-creator">ZIP Creator</a></li>
+                            <li><a href="../tools/archive-viewer">Archive Viewer</a></li>
+                            <li><a href="../tools/archive-file-info">Archive File Info</a></li>
+                            <li><a href="../tools/tar-extractor">TAR Extractor</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-section">
+                        <h3>Related Guides</h3>
+                        <ul class="sidebar-links">
+                            <li><a href="/guides/zip-creator">ZIP Creator Guide</a></li>
+                            <li><a href="/guides/tar-extractor">TAR Extractor Guide</a></li>
+                            <li><a href="/guides/archive-viewer">Archive Viewer Guide</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">Free, privacy-focused online tools that work entirely in your browser.</p>
+                    <div class="footer-social">
+                        <a href="https://x.com/GoToolly" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="https://www.facebook.com/profile.php?id=61591898344203" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                        <a href="https://linkedin.com/in/go-toolly-426b67422" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                        <a href="https://www.instagram.com/gotoolly/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
+                        <a href="https://www.tiktok.com/@gotoolly26" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+                        <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Popular Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/zip-extractor">ZIP Extractor</a></li>
+                        <li><a href="../tools/image-compressor">Image Compressor</a></li>
+                        <li><a href="../tools/pdf-compressor">PDF Compressor</a></li>
+                        <li><a href="../tools/word-counter">Word Counter</a></li>
+                        <li><a href="../tools/password-generator">Password Generator</a></li>
+                        <li><a href="/tools">View All Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="../about">About Us</a></li>
+                        <li><a href="../contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="../legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="../legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="../legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="../legal/privacy-policy">Privacy</a>
+                    <a href="../legal/terms-of-service">Terms</a>
+                    <a href="../legal/disclaimer">Disclaimer</a>
+                    <a href="../contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script defer src="../assets/js/main.min.js"></script>
+</body>
+</html>

@@ -501,6 +501,7 @@
   width: 400px; height: 400px;
   background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
   border-radius: 50%;
+  pointer-events: none;
 }
 .cta-section::after {
   content: '';
@@ -509,6 +510,7 @@
   width: 300px; height: 300px;
   background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
   border-radius: 50%;
+  pointer-events: none;
 }
 .cta-title {
   font-size: var(--text-3xl);
@@ -591,4 +593,24 @@
   .faq-question { padding: var(--space-4) var(--space-5); font-size: var(--text-sm); }
   .faq-answer-inner, .faq-card-header { padding-left: var(--space-5); padding-right: var(--space-5); }
   .trust-bar { gap: var(--space-4); }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .stat-card,
+  .benefit-card,
+  .tool-card,
+  .faq-card {
+    background: var(--color-surface);
+    border-color: var(--color-border);
+  }
+  .benefit-card p,
+  .stat-card .stat-label,
+  .tool-card p {
+    color: var(--color-text-light);
+  }
+  .cta-actions .btn-primary {
+    background: white;
+    color: #1d4ed8;
+  }
 }
