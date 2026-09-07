@@ -1,17 +1,19 @@
 /* ============================================
-   GO TOOLLY - RANDOM NAME GENERATOR
+   GO TOOLLY v2.0 - RANDOM NAME GENERATOR
    ============================================ */
+(function(){
+'use strict';
 document.addEventListener('DOMContentLoaded', function() {
-    const genderSelect = document.getElementById('name-gender');
-    const countrySelect = document.getElementById('name-country');
-    const countInput = document.getElementById('name-count');
-    const generateBtn = document.getElementById('generate-names');
-    const nameList = document.getElementById('name-list');
-    const countDisplay = document.getElementById('name-count-display');
-    const copyBtn = document.getElementById('copy-names');
-    const downloadBtn = document.getElementById('download-names');
+    var genderSelect = document.getElementById('name-gender');
+    var countrySelect = document.getElementById('name-country');
+    var countInput = document.getElementById('name-count');
+    var generateBtn = document.getElementById('generate-names');
+    var nameList = document.getElementById('name-list');
+    var countDisplay = document.getElementById('name-count-display');
+    var copyBtn = document.getElementById('copy-names');
+    var downloadBtn = document.getElementById('download-names');
 
-    const DATA = {
+    var DATA = {
         us: {
             male: ['James','Robert','John','Michael','David','William','Richard','Joseph','Thomas','Christopher','Daniel','Matthew','Anthony','Mark','Donald','Steven','Andrew','Paul','Joshua','Kenneth','Kevin','Brian','George','Edward','Ronald','Timothy','Jason','Jeffrey','Ryan','Jacob','Gary','Nicholas','Eric','Jonathan','Stephen','Larry','Justin','Scott','Brandon','Benjamin','Samuel','Raymond','Gregory','Frank','Alexander','Patrick','Jack','Dennis','Jerry','Tyler'],
             female: ['Mary','Patricia','Jennifer','Linda','Barbara','Elizabeth','Susan','Jessica','Sarah','Karen','Lisa','Nancy','Betty','Margaret','Sandra','Ashley','Kimberly','Emily','Donna','Michelle','Carol','Amanda','Dorothy','Melissa','Deborah','Stephanie','Rebecca','Sharon','Laura','Cynthia','Kathleen','Amy','Angela','Shirley','Anna','Brenda','Pamela','Emma','Nicole','Helen','Samantha','Katherine','Christine','Debra','Rachel','Carolyn','Janet','Catherine','Maria','Heather'],
@@ -44,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         japan: {
             male: ['Hiroshi','Kenji','Takashi','Koji','Shinji','Takeshi','Yoshiki','Ryota','Daiki','Sho','Kaito','Sota','Haruki','Yuto','Ren','Yamato','Riku','Minato','Itsuki','Hayato','Shota','Kazuki','Yuma','Kenta','Tsubasa','Shogo','Ryo','Keita','Naoki','Tatsuya'],
-            female: ['Yuki','Sakura','Hina','Rin','Yua','Mio','Akari','Himari','Riko','Aoi','Yuna','Mei','Koharu','Misaki','Saki','Miyu','Momo','Rin','Airi','Nana','Nanami','Kanon','Ayaka','Erika','Miyabi','Natsuki','Rei','Shiori','Tomomi','Yoshiko'],
+            female: ['Yuki','Sakura','Hina','Rin','Yua','Mio','Akari','Himari','Riko','Aoi','Yuna','Mei','Koharu','Misaki','Saki','Miyu','Momo','Airi','Nana','Nanami','Kanon','Ayaka','Erika','Miyabi','Natsuki','Rei','Shiori','Tomomi','Yoshiko'],
             neutral: ['Akira','Haru','Makoto','Masumi','Hikari','Kaoru','Kokoro','Nagisa','Wataru','Subaru']
         },
         india: {
@@ -64,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    const LAST_NAMES = {
+    var LAST_NAMES = {
         us: ['Smith','Johnson','Williams','Brown','Jones','Garcia','Miller','Davis','Rodriguez','Martinez','Hernandez','Lopez','Gonzalez','Wilson','Anderson','Thomas','Taylor','Moore','Jackson','Martin','Lee','Perez','Thompson','White','Harris','Sanchez','Clark','Ramirez','Lewis','Robinson','Walker','Young','Allen','King','Wright','Scott','Torres','Nguyen','Hill','Flores','Green','Adams','Nelson','Baker','Hall','Rivera','Campbell','Mitchell','Carter','Roberts'],
         uk: ['Smith','Jones','Williams','Taylor','Brown','Davies','Evans','Wilson','Thomas','Roberts','Johnson','Lewis','Walker','Robinson','Wood','Thompson','White','Watson','Jackson','Wright','Green','Harris','Cooper','King','Lee','Martin','Clarke','James','Morgan','Hughes','Edwards','Hill','Moore','Clark','Harrison','Scott','Young','Morris','Hall','Ward','Turner','Carter','Phillips','Mitchell','Patel','Adams','Campbell','Anderson','Allen','Cook'],
         france: ['Martin','Bernard','Dubois','Thomas','Robert','Richard','Petit','Durand','Leroy','Moreau','Simon','Laurent','Lefebvre','Michel','Garcia','David','Bertrand','Roux','Vincent','Fournier','Morel','Girard','Andre','Mercier','Dupont','Lambert','Bonnet','Francois','Martinez','Legrand'],
@@ -80,27 +82,27 @@ document.addEventListener('DOMContentLoaded', function() {
     generateBtn.addEventListener('click', generateNames);
 
     function generateNames() {
-        const gender = genderSelect.value;
-        const country = countrySelect.value;
-        const count = Math.min(Math.max(parseInt(countInput.value) || 10, 1), 100);
-        const names = [];
-        const data = DATA[country];
-        const lastNames = LAST_NAMES[country] || LAST_NAMES.us;
+        var gender = genderSelect.value;
+        var country = countrySelect.value;
+        var count = Math.min(Math.max(parseInt(countInput.value) || 10, 1), 100);
+        var names = [];
+        var data = DATA[country] || DATA.us;
+        var lastNames = LAST_NAMES[country] || LAST_NAMES.us;
 
-        for (let i = 0; i < count; i++) {
-            let firstName = '';
-            let g = '';
+        for (var i = 0; i < count; i++) {
+            var firstName = '';
+            var g = '';
             if (gender === 'all') {
-                const genders = ['male','female','neutral'];
+                var genders = ['male','female','neutral'];
                 g = genders[Math.floor(Math.random() * 3)];
-                const pool = data[g] || data.neutral;
+                var pool = data[g] || data.neutral;
                 firstName = pool[Math.floor(Math.random() * pool.length)];
             } else {
                 g = gender;
-                const pool = data[g] || data.neutral;
+                var pool = data[g] || data.neutral;
                 firstName = pool[Math.floor(Math.random() * pool.length)];
             }
-            const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
+            var lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
             names.push({ first: firstName, last: lastName, gender: g, full: firstName + ' ' + lastName });
         }
 
@@ -111,28 +113,47 @@ document.addEventListener('DOMContentLoaded', function() {
         nameList.innerHTML = '';
         countDisplay.textContent = names.length + ' name' + (names.length !== 1 ? 's' : '');
         names.forEach(function(n, i) {
-            const li = document.createElement('li');
+            var li = document.createElement('li');
             li.innerHTML = '<span class="num">' + (i + 1) + '.</span><span class="name">' + escapeHtml(n.full) + '</span><span class="gender">' + n.gender + '</span>';
             nameList.appendChild(li);
         });
     }
 
+    function copyText(text, done) {
+        var fallback = function () {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.top = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch (e) {}
+            ta.remove();
+            done();
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done, fallback);
+        } else {
+            fallback();
+        }
+    }
+
     copyBtn.addEventListener('click', function() {
-        const items = nameList.querySelectorAll('.name');
+        var items = nameList.querySelectorAll('.name');
         if (!items.length) return;
-        const text = Array.from(items).map(function(el) { return el.textContent; }).join('\n');
-        navigator.clipboard.writeText(text).then(function() {
+        var text = Array.prototype.map.call(items, function(el) { return el.textContent; }).join('\n');
+        copyText(text, function() {
             copyBtn.textContent = 'Copied!';
             setTimeout(function() { copyBtn.textContent = 'Copy All'; }, 1500);
         });
     });
 
     downloadBtn.addEventListener('click', function() {
-        const items = nameList.querySelectorAll('.name');
+        var items = nameList.querySelectorAll('.name');
         if (!items.length) return;
-        const text = Array.from(items).map(function(el) { return el.textContent; }).join('\n');
-        const blob = new Blob([text], { type: 'text/plain' });
-        const link = document.createElement('a');
+        var text = Array.prototype.map.call(items, function(el) { return el.textContent; }).join('\n');
+        var blob = new Blob([text], { type: 'text/plain' });
+        var link = document.createElement('a');
         link.download = 'random-names.txt';
         link.href = URL.createObjectURL(blob);
         link.click();
@@ -143,3 +164,4 @@ document.addEventListener('DOMContentLoaded', function() {
         return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 });
+})();

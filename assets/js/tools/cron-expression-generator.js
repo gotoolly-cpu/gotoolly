@@ -1,6 +1,8 @@
 /* ============================================
-   GO TOOLLY - CRON EXPRESSION GENERATOR
+   GO TOOLLY v2.0 - CRON EXPRESSION GENERATOR
    ============================================ */
+(function(){
+'use strict';
 document.addEventListener('DOMContentLoaded', function() {
     var minuteMode = document.getElementById('cron-minute-mode');
     var minuteEvery = document.getElementById('cron-minute-every');
@@ -64,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var n = parseInt(everyEl.value);
             if (isNaN(n) || n < 1) n = 1;
             if (n > max) n = max;
-            return '*/' + n;
+            return n === 1 ? '*' : '*/' + n;
         }
         return specificEl.value;
     }
@@ -95,11 +97,11 @@ document.addEventListener('DOMContentLoaded', function() {
             var dayName = days[parseInt(dowVal)] || dowVal;
             return 'Every ' + dayName + ' at midnight';
         }
-        if (min.startsWith('*/')) {
+        if (min.indexOf('*/') === 0) {
             var n = min.replace('*/', '');
             if (hr === '*' && dom === '*' && mon === '*' && dowVal === '*') return 'Every ' + n + ' minutes';
         }
-        if (hr.startsWith('*/')) {
+        if (hr.indexOf('*/') === 0) {
             var h = hr.replace('*/', '');
             if (min === '0' && dom === '*' && mon === '*' && dowVal === '*') return 'Every ' + h + ' hours';
         }
@@ -115,13 +117,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function parseMinuteDesc(val) {
         if (val === '*') return '';
-        if (val.startsWith('*/')) return 'every ' + val.replace('*/', '') + ' minutes';
+        if (val.indexOf('*/') === 0) return 'every ' + val.replace('*/', '') + ' minutes';
         return 'at minute ' + val;
     }
 
     function parseHourDesc(val) {
         if (val === '*') return '';
-        if (val.startsWith('*/')) return 'every ' + val.replace('*/', '') + ' hours';
+        if (val.indexOf('*/') === 0) return 'every ' + val.replace('*/', '') + ' hours';
         var hour = parseInt(val);
         if (hour === 0) return 'at midnight';
         if (hour === 12) return 'at noon';
@@ -190,10 +192,29 @@ document.addEventListener('DOMContentLoaded', function() {
         update();
     }
 
+    function copyText(text, done) {
+        var fallback = function () {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.top = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch (e) {}
+            ta.remove();
+            done();
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done, fallback);
+        } else {
+            fallback();
+        }
+    }
+
     function copyExpression() {
         var text = expressionDisplay.textContent;
         if (!text) return;
-        navigator.clipboard.writeText(text).then(function() {
+        copyText(text, function() {
             copyBtn.textContent = 'Copied!';
             setTimeout(function() { copyBtn.textContent = 'Copy Expression'; }, 1500);
         });
@@ -215,3 +236,4 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleDomFields();
     update();
 });
+})();

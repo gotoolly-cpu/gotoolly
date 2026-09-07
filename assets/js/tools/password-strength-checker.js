@@ -1,30 +1,32 @@
 /* ============================================
-   GO TOOLLY - PASSWORD STRENGTH CHECKER
+   GO TOOLLY v2.0 - PASSWORD STRENGTH CHECKER
    ============================================ */
+(function(){
+'use strict';
 document.addEventListener('DOMContentLoaded', function() {
-    const input = document.getElementById('password-input');
-    const toggleVis = document.getElementById('toggle-visibility');
-    const meterFill = document.getElementById('meter-fill');
-    const scoreText = document.getElementById('score-text');
-    const commonCheck = document.getElementById('common-check');
-    const details = document.getElementById('ps-details');
-    const chars = document.getElementById('ps-chars');
-    const suggestionsDiv = document.getElementById('ps-suggestions');
-    const suggestionsList = document.getElementById('suggestions-list');
-    const lengthValue = document.getElementById('length-value');
-    const entropyValue = document.getElementById('entropy-value');
-    const poolValue = document.getElementById('pool-value');
-    const crackValue = document.getElementById('crack-value');
-    const upperCount = document.getElementById('upper-count');
-    const lowerCount = document.getElementById('lower-count');
-    const digitCount = document.getElementById('digit-count');
-    const symbolCount = document.getElementById('symbol-count');
-    const charUpper = document.getElementById('char-upper');
-    const charLower = document.getElementById('char-lower');
-    const charDigit = document.getElementById('char-digit');
-    const charSymbol = document.getElementById('char-symbol');
+    var input = document.getElementById('password-input');
+    var toggleVis = document.getElementById('toggle-visibility');
+    var meterFill = document.getElementById('meter-fill');
+    var scoreText = document.getElementById('score-text');
+    var commonCheck = document.getElementById('common-check');
+    var details = document.getElementById('ps-details');
+    var chars = document.getElementById('ps-chars');
+    var suggestionsDiv = document.getElementById('ps-suggestions');
+    var suggestionsList = document.getElementById('suggestions-list');
+    var lengthValue = document.getElementById('length-value');
+    var entropyValue = document.getElementById('entropy-value');
+    var poolValue = document.getElementById('pool-value');
+    var crackValue = document.getElementById('crack-value');
+    var upperCount = document.getElementById('upper-count');
+    var lowerCount = document.getElementById('lower-count');
+    var digitCount = document.getElementById('digit-count');
+    var symbolCount = document.getElementById('symbol-count');
+    var charUpper = document.getElementById('char-upper');
+    var charLower = document.getElementById('char-lower');
+    var charDigit = document.getElementById('char-digit');
+    var charSymbol = document.getElementById('char-symbol');
 
-    const COMMON = [
+    var COMMON = [
         '123456','password','12345678','qwerty','123456789','12345','1234','111111','1234567',
         'sunshine','qwerty123','iloveyou','princess','admin','welcome','666666','abc123','football',
         '123123','monkey','654321','!@#$%^&*','charlie','aa123456','donald','password1','qwerty12345',
@@ -41,40 +43,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
     input.addEventListener('input', analyze);
     toggleVis.addEventListener('click', function() {
-        const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+        var type = input.getAttribute('type') === 'password' ? 'text' : 'password';
         input.setAttribute('type', type);
     });
 
     function analyze() {
-        const pw = input.value;
+        var pw = input.value;
         if (!pw) {
             resetDisplay();
             return;
         }
 
-        const len = pw.length;
-        const hasUpper = /[A-Z]/.test(pw);
-        const hasLower = /[a-z]/.test(pw);
-        const hasDigit = /\d/.test(pw);
-        const hasSymbol = /[^A-Za-z0-9]/.test(pw);
+        var len = pw.length;
+        var hasUpper = /[A-Z]/.test(pw);
+        var hasLower = /[a-z]/.test(pw);
+        var hasDigit = /\d/.test(pw);
+        var hasSymbol = /[^A-Za-z0-9]/.test(pw);
 
-        const upper = (pw.match(/[A-Z]/g) || []).length;
-        const lower = (pw.match(/[a-z]/g) || []).length;
-        const digit = (pw.match(/\d/g) || []).length;
-        const symbol = (pw.match(/[^A-Za-z0-9]/g) || []).length;
+        var upper = (pw.match(/[A-Z]/g) || []).length;
+        var lower = (pw.match(/[a-z]/g) || []).length;
+        var digit = (pw.match(/\d/g) || []).length;
+        var symbol = (pw.match(/[^A-Za-z0-9]/g) || []).length;
 
-        let poolSize = 0;
+        var poolSize = 0;
         if (hasLower) poolSize += 26;
         if (hasUpper) poolSize += 26;
         if (hasDigit) poolSize += 10;
         if (hasSymbol) poolSize += 33;
 
-        const entropy = len > 0 && poolSize > 0 ? len * Math.log2(poolSize) : 0;
-        const score = Math.min(100, Math.round((entropy / 128) * 100));
+        var entropy = len > 0 && poolSize > 0 ? len * Math.log2(poolSize) : 0;
+        var score = Math.min(100, Math.round((entropy / 128) * 100));
 
-        const isCommon = COMMON.indexOf(pw.toLowerCase()) !== -1;
+        var isCommon = COMMON.indexOf(pw.toLowerCase()) !== -1;
 
-        const suggestions = [];
+        var suggestions = [];
         if (len < 8) suggestions.push('Use at least 8 characters (12+ recommended)');
         if (len < 12) suggestions.push('Consider using 12 or more characters for strong security');
         if (!hasLower) suggestions.push('Add lowercase letters');
@@ -92,13 +94,14 @@ document.addEventListener('DOMContentLoaded', function() {
         updateChars(upper, lower, digit, symbol, hasUpper, hasLower, hasDigit, hasSymbol);
         updateSuggestions(suggestions, score, pw);
 
+        commonCheck.style.display = isCommon ? 'block' : 'none';
         details.style.display = 'grid';
         chars.style.display = 'grid';
     }
 
     function updateMeter(score, entropy, isCommon) {
-        let color;
-        let label;
+        var color;
+        var label;
         if (isCommon || entropy < 20) {
             color = '#dc2626';
             label = 'Very Weak';
@@ -132,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
         entropyValue.textContent = entropy.toFixed(1) + ' bits';
         poolValue.textContent = pool + ' chars';
 
-        const cracked = isCommon ? 'instantly (common)' : estimateCrackTime(entropy);
+        var cracked = isCommon ? 'instantly (common)' : estimateCrackTime(entropy);
         crackValue.textContent = cracked;
         crackValue.className = 'value';
         if (isCommon || entropy < 28) crackValue.classList.add('bad');
@@ -160,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
         suggestionsDiv.style.display = 'block';
         suggestionsList.innerHTML = '';
         suggestions.forEach(function(s) {
-            const li = document.createElement('li');
+            var li = document.createElement('li');
             li.textContent = s;
             suggestionsList.appendChild(li);
         });
@@ -188,3 +191,4 @@ document.addEventListener('DOMContentLoaded', function() {
         suggestionsDiv.style.display = 'none';
     }
 });
+})();

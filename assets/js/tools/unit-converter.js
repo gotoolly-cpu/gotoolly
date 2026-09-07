@@ -1,19 +1,23 @@
+/* ============================================
+   GO TOOLLY v2.0 - UNIT CONVERTER
+   ============================================ */
+(function(){
+'use strict';
 document.addEventListener('DOMContentLoaded', function() {
-    const category = document.getElementById('uc-category');
-    const fromValue = document.getElementById('uc-from-value');
-    const toValue = document.getElementById('uc-to-value');
-    const fromUnit = document.getElementById('uc-from-unit');
-    const toUnit = document.getElementById('uc-to-unit');
-    const swapBtn = document.getElementById('uc-swap-btn');
-    const resultDisplay = document.getElementById('uc-result-display');
-    const resultLabel = document.getElementById('uc-result-label');
-    const formulaEl = document.getElementById('uc-formula');
-    const validation = document.getElementById('uc-validation');
-    const copyBtn = document.getElementById('uc-copy-btn');
-    const swapValuesBtn = document.getElementById('uc-swap-values-btn');
-    const clearBtn = document.getElementById('uc-clear-btn');
+    var category = document.getElementById('uc-category');
+    var fromValue = document.getElementById('uc-from-value');
+    var toValue = document.getElementById('uc-to-value');
+    var fromUnit = document.getElementById('uc-from-unit');
+    var toUnit = document.getElementById('uc-to-unit');
+    var swapBtn = document.getElementById('uc-swap-btn');
+    var resultDisplay = document.getElementById('uc-result-display');
+    var resultLabel = document.getElementById('uc-result-label');
+    var formulaEl = document.getElementById('uc-formula');
+    var validation = document.getElementById('uc-validation');
+    var copyBtn = document.getElementById('uc-copy-btn');
+    var clearBtn = document.getElementById('uc-clear-btn');
 
-    const units = {
+    var units = {
         length: {
             base: 'm',
             units: { m: 1, km: 1000, cm: 0.01, mm: 0.001, mi: 1609.344, yd: 0.9144, ft: 0.3048, in: 0.0254, nmi: 1852 }
@@ -61,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    const unitLabels = {
+    var unitLabels = {
         m: 'Meters', km: 'Kilometers', cm: 'Centimeters', mm: 'Millimeters', mi: 'Miles', yd: 'Yards', ft: 'Feet', in: 'Inches', nmi: 'Nautical Miles',
         kg: 'Kilograms', g: 'Grams', mg: 'Milligrams', lb: 'Pounds', oz: 'Ounces', st: 'Stones', ton: 'US Tons', tonne: 'Tonnes',
         C: 'Celsius', F: 'Fahrenheit', K: 'Kelvin',
@@ -76,27 +80,27 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     function populateUnits() {
-        const cat = category.value;
-        const data = units[cat];
-        const unitKeys = Object.keys(data.units);
+        var cat = category.value;
+        var data = units[cat];
+        var unitKeys = Object.keys(data.units);
         fromUnit.innerHTML = '';
         toUnit.innerHTML = '';
         unitKeys.forEach(function(key) {
-            const label = unitLabels[key] || key;
+            var label = unitLabels[key] || key;
             fromUnit.innerHTML += '<option value="' + key + '">' + label + '</option>';
             toUnit.innerHTML += '<option value="' + key + '">' + label + '</option>';
         });
         if (unitKeys.length > 1) {
-            toUnit.selectedIndex = unitKeys.length > 1 ? 1 : 0;
+            toUnit.selectedIndex = 1;
         }
     }
 
     function convert(val, from, to, cat) {
-        const data = units[cat];
+        var data = units[cat];
         if (data.special) {
             return convertTemperature(val, from, to);
         }
-        const baseVal = val * data.units[from];
+        var baseVal = val * data.units[from];
         return baseVal / data.units[to];
     }
 
@@ -122,9 +126,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (from === 'K' && to === 'F') return '(K - 273.15) × 9/5 + 32 = °F';
             return '';
         }
-        const data = units[cat];
-        const fromFactor = data.units[from];
-        const toFactor = data.units[to];
+        var data = units[cat];
+        var fromFactor = data.units[from];
+        var toFactor = data.units[to];
         if (fromFactor === 1 && toFactor === 1) return '';
         if (fromFactor === 1) return '× 1/' + toFactor;
         if (toFactor === 1) return '× ' + fromFactor;
@@ -132,25 +136,32 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function doConversion() {
-        const raw = fromValue.value.trim();
+        var raw = fromValue.value.trim();
         if (!raw) { clearResult(); return; }
-        const val = parseFloat(raw);
+        var val = parseFloat(raw);
         if (isNaN(val)) {
             validation.style.display = 'block';
-            clearResult();
+            toValue.value = '';
+            resultDisplay.textContent = '--';
+            resultLabel.textContent = 'Enter a valid number';
+            formulaEl.textContent = '';
             return;
         }
         validation.style.display = 'none';
-        const cat = category.value;
-        const from = fromUnit.value;
-        const to = toUnit.value;
-        const result = convert(val, from, to, cat);
-        const display = typeof result === 'number' && !Number.isInteger(result) ? result.toFixed(10).replace(/\.?0+$/, '') : result;
+        var cat = category.value;
+        var from = fromUnit.value;
+        var to = toUnit.value;
+        var result = convert(val, from, to, cat);
+        var display = typeof result === 'number' && !isInteger(result) ? result.toFixed(10).replace(/\.?0+$/, '') : result;
         toValue.value = display;
-        resultDisplay.textContent = display + ' ' + unitLabels[to] || to;
+        resultDisplay.textContent = display + ' ' + (unitLabels[to] || to);
         resultLabel.textContent = val + ' ' + (unitLabels[from] || from);
-        const formula = getFormula(from, to, cat);
+        var formula = getFormula(from, to, cat);
         formulaEl.textContent = formula ? 'Formula: ' + formula : '';
+    }
+
+    function isInteger(n) {
+        return n === Math.floor(n);
     }
 
     function clearResult() {
@@ -171,29 +182,41 @@ document.addEventListener('DOMContentLoaded', function() {
     fromValue.addEventListener('input', doConversion);
 
     swapBtn.addEventListener('click', function() {
-        const fromIdx = fromUnit.selectedIndex;
-        const toIdx = toUnit.selectedIndex;
-        fromUnit.selectedIndex = toIdx;
-        toUnit.selectedIndex = fromIdx;
-        doConversion();
-    });
-
-    swapValuesBtn.addEventListener('click', function() {
-        const fromIdx = fromUnit.selectedIndex;
-        const toIdx = toUnit.selectedIndex;
+        var fromIdx = fromUnit.selectedIndex;
+        var toIdx = toUnit.selectedIndex;
         fromUnit.selectedIndex = toIdx;
         toUnit.selectedIndex = fromIdx;
         doConversion();
     });
 
     copyBtn.addEventListener('click', function() {
-        const text = resultDisplay.textContent;
-        if (text === '--') return;
-        navigator.clipboard.writeText(text).then(function() {
+        if (resultDisplay.textContent === '--') return;
+        var text = resultDisplay.textContent;
+        var done = function() {
             copyBtn.textContent = 'Copied!';
             setTimeout(function() { copyBtn.textContent = 'Copy Result'; }, 1500);
-        });
+        };
+        copyText(text, done);
     });
+
+    function copyText(text, done) {
+        var fallback = function () {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.top = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch (e) {}
+            ta.remove();
+            done();
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done, fallback);
+        } else {
+            fallback();
+        }
+    }
 
     clearBtn.addEventListener('click', function() {
         fromValue.value = '';
@@ -202,3 +225,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     populateUnits();
 });
+})();
