@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | GoToolly</title>
     <meta name="description" content="Read GoToolly's Privacy Policy. Learn how we collect, use, and protect your data. No tracking, no ads, 100% browser-based tools.">
-    
-    <!-- Open Graph / Facebook -->
+    <meta name="keywords" content="GoToolly privacy policy, data protection, browser-based tools, no data collection, local processing, privacy first">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gotoolly.com/legal/privacy-policy">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gotoolly.com/legal/privacy-policy">
     <meta property="og:title" content="Privacy Policy | GoToolly">
@@ -16,7 +17,6 @@
     <meta property="og:image:height" content="512">
     <meta property="og:image:alt" content="GoToolly Logo">
     <meta property="og:site_name" content="GoToolly">
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://gotoolly.com/legal/privacy-policy">
     <meta name="twitter:title" content="Privacy Policy | GoToolly">
@@ -24,10 +24,103 @@
     <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
     <meta name="twitter:image:alt" content="GoToolly Logo">
     <meta name="twitter:creator" content="@GoToolly">
-    
-    <link rel="preload" href="../../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../../assets/css/styles.min.css"></noscript>
-  <link rel="canonical" href="https://gotoolly.com/legal/privacy-policy">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+    <link rel="manifest" href="../../site.webmanifest">
+    <link rel="stylesheet" href="../../assets/css/styles.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+
+    <style>
+        :root{
+            --color-success:#16a34a;
+            --color-danger:#dc2626
+        }
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .25s cubic-bezier(.4,0,.2,1)}
+        .skip-link:focus{top:0}
+
+        .hero{background:#0f172a;padding:52px 0 40px;text-align:center}
+        .hero h1{font-size:38px;font-weight:800;color:#fff;line-height:1.2;margin:0 0 14px}
+        .hero h1 .gradient-text{background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-subtitle{font-size:16px;color:#94a3b8;line-height:1.6;margin:0 auto 26px;max-width:640px}
+        .trust-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .trust-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:6px 14px;border-radius:9999px;font-size:13px;font-weight:500;color:#cbd5e1;transition:background .2s}
+        .trust-badge:hover{background:rgba(255,255,255,.1)}
+        .trust-badge svg{width:14px;height:14px;color:#60a5fa}
+
+        .content-wrap{max-width:920px;margin:0 auto;padding:0 24px}
+        .section-heading{text-align:center;margin-bottom:30px}
+        .section-heading h2{font-size:26px;font-weight:700;color:#0f172a;margin:0 0 8px}
+        .section-heading p{font-size:14px;color:#64748b;margin:0}
+        section.block{margin-top:56px}
+
+        .text-center{text-align:center}
+        .last-updated{font-size:12.5px;font-weight:600;color:#2563eb;background:#eff6ff;border:1px solid #dbeafe;border-radius:9999px;padding:6px 14px;display:inline-block;margin:0 0 16px}
+
+        .policy-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:32px;color:#334155;line-height:1.75}
+        .policy-card h2{font-size:16px;font-weight:700;color:#0f172a;margin:28px 0 8px;padding-top:18px;border-top:1px solid #f1f5f9}
+        .policy-card h2:first-child{margin-top:0;padding-top:0;border-top:none}
+        .policy-card p{font-size:14.5px;margin:0 0 12px}
+        .policy-card ul{margin:0 0 12px;padding-left:22px;font-size:14.5px}
+        .policy-card li{margin-bottom:6px}
+        .policy-card strong{color:#0f172a}
+        .policy-card a{color:#2563eb;font-weight:600;text-decoration:none}
+        .policy-card a:hover{text-decoration:underline}
+
+        .faq-section{max-width:920px;margin:0 auto;padding:0 24px}
+        .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+        .faq-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px;transition:border-color .2s}
+        .faq-card:hover{border-color:#cbd5e1}
+        .faq-card h4{font-size:14px;font-weight:700;color:#0f172a;margin:0 0 6px}
+        .faq-card p{font-size:13px;color:#64748b;margin:0;line-height:1.6}
+
+        .related-section{max-width:920px;margin:0 auto;padding:0 24px}
+        .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+        .related-card{display:block;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px;text-decoration:none;transition:all .2s;color:inherit}
+        .related-card:hover{border-color:#c3d4ef;transform:translateY(-3px);box-shadow:0 10px 26px rgba(15,23,42,.08)}
+        .related-card .rc-icon{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#eff6ff,#e0ecff);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+        .related-card .rc-icon svg{width:19px;height:19px;color:var(--color-primary)}
+        .related-card h4{font-size:14px;font-weight:700;color:#0f172a;margin:0 0 6px}
+        .related-card p{font-size:12.5px;color:#64748b;margin:0 0 10px;line-height:1.5}
+        .related-card .rc-btn{font-size:12px;font-weight:700;color:#2563eb;display:inline-flex;align-items:center;gap:5px}
+        .related-card .rc-btn svg{width:13px;height:13px}
+
+        .cta-card{max-width:920px;margin:0 auto;background:linear-gradient(135deg,#2563eb,#7c3aed);border-radius:16px;padding:40px 28px;text-align:center;color:#fff}
+        .cta-card h2{font-size:24px;font-weight:800;margin:0 0 10px}
+        .cta-card p{font-size:14px;color:#dbeafe;margin:0 auto 24px;max-width:520px;line-height:1.6}
+        .cta-card .cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .cta-card .btn{border:none}
+        .cta-card .btn-primary{background:#fff;color:#1d4ed8}
+        .cta-card .btn-primary:hover{background:#eff6ff;color:#1d4ed8}
+        .cta-card .btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5)}
+        .cta-card .btn-outline:hover{background:rgba(255,255,255,.12)}
+
+        @media(max-width:1024px){
+            .related-grid{grid-template-columns:1fr}
+        }
+        @media(max-width:768px){
+            .hero{padding:36px 0 26px}
+            .hero h1{font-size:28px}
+            .hero-subtitle{font-size:14px;margin-bottom:20px}
+            .related-grid{grid-template-columns:1fr}
+            .faq-grid{grid-template-columns:1fr}
+            .policy-card{padding:22px}
+            section.block{margin-top:44px}
+        }
+        @media(max-width:480px){
+            .hero h1{font-size:24px}
+            .policy-card{padding:18px}
+        }
+        @media(prefers-reduced-motion:reduce){
+            *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+        }
+    </style>
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -37,7 +130,6 @@
         "description": "GoToolly's privacy policy. Learn how we handle data, cookies, and protect your privacy."
     }
     </script>
-    
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -48,36 +140,56 @@
         ]
     }
     </script>
-
-    <style>        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--color-primary);
-            color: white;
-            padding: 8px 16px;
-            z-index: 100;
-            transition: top 0.3s;
-        }
-        .skip-link:focus {
-            top: 0;
-        }    </style>
-
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Are my files processed on GoToolly's servers?",
+                "acceptedAnswer": {"@type": "Answer", "text": "No. Files you upload, text you enter, and content you process are handled entirely in your browser using JavaScript. They are not sent to our servers or stored by us."}
+            },
+            {
+                "@type": "Question",
+                "name": "What information does GoToolly collect?",
+                "acceptedAnswer": {"@type": "Answer", "text": "We do not collect the files or text you process. We may collect limited, standard website information such as pages visited, browser type, and device type to operate and improve the service."}
+            },
+            {
+                "@type": "Question",
+                "name": "Does GoToolly use cookies?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Yes. We use small data files to remember your preferences and enable basic website functionality. You can disable cookies in your browser settings."}
+            },
+            {
+                "@type": "Question",
+                "name": "Do you share my data with third parties?",
+                "acceptedAnswer": {"@type": "Answer", "text": "We do not sell or share personal data because we do not collect it. Third-party services such as analytics and advertising providers may collect information according to their own privacy policies."}
+            },
+            {
+                "@type": "Question",
+                "name": "How long do you keep information?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Tool data is never stored by us. Basic usage information and server logs are retained for operational purposes and deleted according to standard practices."}
+            },
+            {
+                "@type": "Question",
+                "name": "How can I ask a privacy question?",
+                "acceptedAnswer": {"@type": "Answer", "text": "Email contact@gotoolly.com and include 'Privacy Policy' in the subject line. We typically reply within a few business days."}
+            }
+        ]
+    }
+    </script>
     <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-<!-- Header -->
+
     <header class="site-header">
         <div class="container">
             <div class="header-content">
-                <!-- Logo -->
                 <a href="/" class="logo">
                     <img src="../../assets/images/logo.svg" alt="GoToolly" class="logo-svg">
                     <span class="logo-text">GoToolly</span>
                 </a>
-                
-                <!-- Desktop Navigation -->
                 <nav class="main-nav">
                     <a href="/" class="nav-link">Home</a>
                     <a href="/tools" class="nav-link">Tools</a>
@@ -85,16 +197,12 @@
                     <a href="/about" class="nav-link">About</a>
                     <a href="/contact" class="nav-link">Contact</a>
                 </nav>
-                
-                <!-- Mobile Menu Button -->
                 <button class="mobile-menu-button" aria-label="Toggle navigation menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
             </div>
-            
-            <!-- Mobile Menu -->
             <div class="mobile-menu">
                 <nav class="mobile-nav">
                     <a href="/" class="nav-link">Home</a>
@@ -107,26 +215,33 @@
         </div>
     </header>
 
-    <main id="main-content" class="main-content">
-        <div class="container">
-            <div class="page-header">
-                <h1>Privacy Policy</h1>
-                <p class="page-description">
-                    Last updated: January 2026
-                </p>
+    <main id="main-content">
+        <section class="hero">
+            <div class="container">
+                <h1>Privacy <span class="gradient-text">Policy</span></h1>
+                <p class="hero-subtitle">Understand what we collect, what we never see, and how your data is handled when you use GoToolly. Your files stay on your device.</p>
+                <div class="trust-badges">
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 01-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 011-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 011.52 0C14.51 3.81 17 5 19 5a1 1 0 011 1z"/></svg>100% file privacy</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>No data collection</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>Transparent by design</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>Questions answered</span>
+                </div>
             </div>
+        </section>
 
-            <article class="content-section">
-                <div class="card">
-                    <div style="padding: var(--space-6);">
+        <section class="block">
+            <div class="container">
+                <div class="content-wrap">
+                    <div class="text-center"><span class="last-updated">Last updated: September 2026</span></div>
+                    <div class="policy-card">
                         <h2>1. Introduction</h2>
                         <p>GoToolly provides free online tools that process files and text in your web browser. This Privacy Policy explains what information we collect and how we handle your data when you visit our website and use our tools.</p>
                         <p>Our tools are designed to work locally in your browser without uploading your files to our servers. However, like most websites, we do collect some basic information about how visitors use our site.</p>
-                        
+
                         <h2>2. Information We Do NOT Collect</h2>
                         <p><strong>Your Tool Data:</strong> Files you upload, text you enter, and content you process using our tools are handled entirely in your browser. This data is not sent to our servers, stored by us, or accessible to GoToolly.</p>
                         <p><strong>Personal Information:</strong> We do not require registration, collect names, email addresses, or other personal details unless you contact us directly.</p>
-                        
+
                         <h2>3. Information We MAY Collect</h2>
                         <p>We may collect limited, standard website information to operate and improve our service:</p>
                         <ul>
@@ -134,7 +249,7 @@
                             <li><strong>Technical Logs:</strong> Server access logs, error reports, and security monitoring data</li>
                             <li><strong>Cookies:</strong> Small data files that remember your preferences and enable website functionality</li>
                         </ul>
-                        
+
                         <h2>4. How Our Tools Work</h2>
                         <p>All GoToolly tools process your files and text locally using JavaScript in your web browser. Your files are not uploaded to our servers. You can verify this by:</p>
                         <ul>
@@ -142,7 +257,7 @@
                             <li>Checking your browser's network activity (developer tools)</li>
                             <li>Observing that processing happens instantly without upload delays</li>
                         </ul>
-                        
+
                         <h2>5. Cookies and Third-Party Services</h2>
                         <p>We use cookies to remember your settings and enable basic website functionality. We may also use third-party services such as:</p>
                         <ul>
@@ -150,7 +265,7 @@
                             <li><strong>Advertising Services:</strong> To display relevant ads that support our free service</li>
                         </ul>
                         <p>These services may collect information according to their own privacy policies. You can disable cookies in your browser settings.</p>
-                        
+
                         <h2>6. How We Use Information</h2>
                         <p>We use the limited information we collect to:</p>
                         <ul>
@@ -159,15 +274,15 @@
                             <li>Identify and fix technical problems</li>
                             <li>Respond to support requests when contacted directly</li>
                         </ul>
-                        
+
                         <h2>7. Data Security</h2>
                         <p>We use standard security practices to protect our website and any information we collect. However, no internet service is completely secure, and we cannot guarantee absolute security of data transmitted over the internet.</p>
                         <p>Since your tool data is processed locally in your browser and not sent to us, it remains under your control throughout the process.</p>
-                        
+
                         <h2>8. Data Retention</h2>
-                        <p><strong>Tool Data:</strong> Not stored by us (processed locally in your browser)</p>
-                        <p><strong>Website Data:</strong> Basic usage information and server logs are retained for operational purposes and deleted according to standard practices</p>
-                        
+                        <p><strong>Tool Data:</strong> Not stored by us (processed locally in your browser).</p>
+                        <p><strong>Website Data:</strong> Basic usage information and server logs are retained for operational purposes and deleted according to standard practices.</p>
+
                         <h2>9. Your Choices</h2>
                         <p>You can:</p>
                         <ul>
@@ -176,20 +291,95 @@
                             <li>Contact us about any privacy concerns</li>
                         </ul>
                         <p>These choices may affect some website functionality but will not impact the core tool processing, which happens in your browser.</p>
-                        
+
                         <h2>10. Changes to This Policy</h2>
                         <p>We may update this Privacy Policy to reflect changes in our practices or legal requirements. Updates will be posted on this page with a new "Last updated" date. Continued use of our website after changes indicates acceptance of the updated policy.</p>
-                        
+
                         <h2>11. Contact Information</h2>
                         <p>For questions about this Privacy Policy or our privacy practices, contact us at:</p>
                         <p><strong>Email:</strong> <a href="mailto:contact@gotoolly.com">contact@gotoolly.com</a></p>
                         <p>Please include "Privacy Policy" in the subject line for faster response.</p>
                     </div>
                 </div>
-            </article>
-        </div>
+            </div>
+        </section>
+
+        <section class="block">
+            <div class="faq-section">
+                <div class="section-heading">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Short answers to the privacy questions we hear most often.</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-card">
+                        <h4>Are my files processed on GoToolly's servers?</h4>
+                        <p>No. Files you upload, text you enter, and content you process are handled entirely in your browser using JavaScript. They are not sent to our servers or stored by us.</p>
+                    </div>
+                    <div class="faq-card">
+                        <h4>What information does GoToolly collect?</h4>
+                        <p>We do not collect the files or text you process. We may collect limited, standard website information such as pages visited, browser type, and device type to operate and improve the service.</p>
+                    </div>
+                    <div class="faq-card">
+                        <h4>Does GoToolly use cookies?</h4>
+                        <p>Yes. We use small data files to remember your preferences and enable basic website functionality. You can disable cookies in your browser settings.</p>
+                    </div>
+                    <div class="faq-card">
+                        <h4>Do you share my data with third parties?</h4>
+                        <p>We do not sell or share personal data because we do not collect it. Third-party services such as analytics and advertising providers may collect information according to their own privacy policies.</p>
+                    </div>
+                    <div class="faq-card">
+                        <h4>How long do you keep information?</h4>
+                        <p>Tool data is never stored by us. Basic usage information and server logs are retained for operational purposes and deleted according to standard practices.</p>
+                    </div>
+                    <div class="faq-card">
+                        <h4>How can I ask a privacy question?</h4>
+                        <p>Email contact@gotoolly.com and include "Privacy Policy" in the subject line. We typically reply within a few business days.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="block">
+            <div class="related-section">
+                <div class="section-heading">
+                    <h2>More Legal Information</h2>
+                    <p>Read the other legal documents or learn more about GoToolly.</p>
+                </div>
+                <div class="related-grid">
+                    <a href="/legal/terms-of-service" class="related-card">
+                        <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+                        <h4>Terms of Service</h4>
+                        <p>The rules and guidelines that govern your use of GoToolly's website and tools.</p>
+                        <span class="rc-btn">Read terms <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                    </a>
+                    <a href="/legal/disclaimer" class="related-card">
+                        <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+                        <h4>Disclaimer</h4>
+                        <p>Important information about tool limitations and the scope of our liability.</p>
+                        <span class="rc-btn">Read disclaimer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                    </a>
+                    <a href="/about" class="related-card">
+                        <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+                        <h4>About GoToolly</h4>
+                        <p>Our mission, principles, and how our browser-based tools keep your data private.</p>
+                        <span class="rc-btn">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="block">
+            <div class="cta-card">
+                <h2>Ready to try a tool?</h2>
+                <p>Every tool works immediately in your browser. No setup, no registration, no uploads.</p>
+                <div class="cta-actions">
+                    <a href="/tools" class="btn btn-primary btn-lg">Browse Tools</a>
+                    <a href="/contact" class="btn btn-outline btn-lg">Contact Us</a>
+                </div>
+            </div>
+        </section>
     </main>
-    
+
     <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
@@ -201,34 +391,32 @@
                     <div class="footer-social">
                         <a href="https://x.com/GoToolly" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                         <a href="https://www.facebook.com/profile.php?id=61591898344203" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                        <a href="https://linkedin.com/in/go-toolly-426b67422" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                        <a href="https://www.youtube.com/@GoToolly" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                         <a href="https://www.instagram.com/gotoolly/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
                         <a href="https://www.tiktok.com/@gotoolly26" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
                         <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></a>
                     </div>
                 </div>
-                
                 <div class="footer-section">
                     <h3>Popular Tools</h3>
                     <ul class="footer-links">
-                        <li><a href="../../tools/image-compressor">Image Compressor</a></li>
-                        <li><a href="../../tools/pdf-compressor">PDF Compressor</a></li>
-                        <li><a href="../../tools/word-counter">Word Counter</a></li>
-                        <li><a href="../../tools/qr-code-generator">QR Code Generator</a></li>
-                        <li><a href="../../tools/password-generator">Password Generator</a></li>
+                        <li><a href="/tools/image-compressor.html">Image Compressor</a></li>
+                        <li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li>
+                        <li><a href="/tools/word-counter.html">Word Counter</a></li>
+                        <li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li>
+                        <li><a href="/tools/password-generator.html">Password Generator</a></li>
                         <li><a href="/tools">View All Tools</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
-                    <h3>Guides</h3>
+                    <h3>Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="../../guides/compress-images-for-web">Compress Images</a></li>
-                        <li><a href="../../guides/reduce-pdf-size-online">Reduce PDF Size</a></li>
-                        <li><a href="../../guides/count-words-accurately">Count Words</a></li>
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h3>Legal</h3>
                     <ul class="footer-links">
@@ -238,10 +426,9 @@
                     </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
                 <div class="copyright">
-                    � <span id="current-year">2026</span> GoToolly. All rights reserved.
+                    &copy; <span id="current-year">2026</span> GoToolly. All rights reserved.
                 </div>
                 <div class="legal-links">
                     <a href="/legal/privacy-policy">Privacy</a>
@@ -252,14 +439,10 @@
             </div>
         </div>
     </footer>
-    
-    <script src="../../assets/js/main.min.js"></script>
+
+    <script defer src="/assets/js/main.min.js"></script>
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
-
-
-
-

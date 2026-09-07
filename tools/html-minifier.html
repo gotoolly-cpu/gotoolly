@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,20 +24,284 @@
     <meta name="twitter:image:alt" content="GoToolly Logo">
     <meta name="twitter:creator" content="@GoToolly">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
     <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="/assets/css/font-awesome.all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/font-awesome.all.min.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"HTML Minifier","url":"https://gotoolly.com/tools/html-minifier","description":"Minify your HTML code instantly. Remove comments, collapse whitespace, and reduce file size.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Preserves pre/code/textarea","Copy to clipboard"]}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"HTML Minifier"}]}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the HTML minifier do?","acceptedAnswer":{"@type":"Answer","text":"It removes HTML comments, collapses multiple spaces into one, removes unnecessary line breaks, and preserves content inside pre, code, and textarea tags."}},{"@type":"Question","name":"Does it preserve pre and code tags?","acceptedAnswer":{"@type":"Answer","text":"Yes. The minifier preserves the whitespace and formatting inside pre, code, and textarea elements to avoid breaking code examples or formatted text."}},{"@type":"Question","name":"Is my HTML uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens entirely in your browser. Your code never leaves your device."}},{"@type":"Question","name":"Will minification break my HTML?","acceptedAnswer":{"@type":"Answer","text":"No. The minifier only removes comments and collapses whitespace, which does not affect the structure or functionality of your HTML."}}]}</script>
-    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.minifier-textarea{width:100%;min-height:250px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text)}.minifier-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.result-box{background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px;padding:var(--space-4);font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);white-space:pre-wrap;word-break:break-word;max-height:400px;overflow-y:auto;margin-bottom:var(--space-3)}.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);margin-top:var(--space-4)}.stat-box{background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px;padding:var(--space-4);text-align:center}.stat-value{font-size:var(--text-2xl);font-weight:700;color:var(--color-primary)}.stat-label{font-size:var(--text-xs);color:var(--color-text-light);margin-top:var(--space-1);text-transform:uppercase;letter-spacing:.05em}.tool-actions{display:flex;gap:var(--space-3);margin-top:var(--space-4);flex-wrap:wrap}@media(max-width:768px){.stats-grid{grid-template-columns:1fr}}</style>
+
+    <style>
+        /* ========== SKIP LINK ========== */
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .25s cubic-bezier(.4,0,.2,1)}
+        .skip-link:focus{top:0}
+
+        /* ========== HERO ========== */
+        .hero{background:#0f172a;padding:40px 0 28px;text-align:center}
+        .hero h1{font-size:40px;font-weight:800;color:#fff;line-height:1.2;margin:0 0 12px}
+        .hero h1 .gradient-text{background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-subtitle{font-size:16px;color:#94a3b8;line-height:1.5;margin:0 0 24px}
+        .trust-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .trust-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:6px 14px;border-radius:9999px;font-size:13px;font-weight:500;color:#cbd5e1;transition:background .2s}
+        .trust-badge:hover{background:rgba(255,255,255,.1)}
+        .trust-badge svg{width:14px;height:14px;color:#60a5fa}
+
+        /* ========== TOOL WORKSPACE ========== */
+        .tool-workspace{max-width:900px;margin:0 auto}
+
+        /* ========== TOOL CARD ========== */
+        .tool-card{background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.04);border:1px solid #e2e8f0;padding:24px;margin-bottom:48px;overflow:visible}
+        .card-header{display:flex;justify-content:space-between;align-items:center}
+        .card-header-left{display:flex;align-items:center;gap:10px}
+        .card-header-left svg{width:18px;height:18px;color:var(--color-primary)}
+        .card-header-left h2{font-size:16.8px;font-weight:600;margin:0;color:#0f172a}
+        .status-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:9999px;font-size:11px;font-weight:600;letter-spacing:.3px;display:none;text-transform:uppercase}
+        .status-badge::before{content:'';width:6px;height:6px;border-radius:50%;flex-shrink:0}
+        .status-badge.ready{display:inline-flex;background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+        .status-badge.ready::before{background:#22c55e}
+        .status-badge.processing{display:inline-flex;background:#fffbeb;color:#92400e;border:1px solid #fde68a}
+        .status-badge.processing::before{background:#f59e0b;animation:pulse-dot 1s ease-in-out infinite}
+        .status-badge.done{display:inline-flex;background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+        .status-badge.done::before{background:#22c55e}
+        .status-badge.error{display:inline-flex;background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+        .status-badge.error::before{background:#ef4444}
+        @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}
+        .card-divider{height:1px;background:#e2e8f0;margin:16px 0 0}
+
+        /* ========== WORKSPACE BODY ========== */
+        .workspace-body{display:flex;flex-direction:column;gap:0}
+
+        /* ========== TEXT INPUT AREA ========== */
+        .text-input-zone{margin-top:20px}
+        .text-input-label{font-size:14px;font-weight:600;color:#0f172a;margin-bottom:8px;display:block}
+        .text-input-wrapper{position:relative}
+        .text-input-wrapper textarea{width:100%;min-height:220px;padding:16px 20px;border:2px solid #e2e8f0;border-radius:14px;font-size:14px;font-family:'JetBrains Mono',monospace;color:#0f172a;background:#f8fafc;line-height:1.6;resize:vertical;transition:border-color .2s,box-shadow .2s;box-sizing:border-box}
+        .text-input-wrapper textarea::placeholder{color:#94a3b8}
+        .text-input-wrapper textarea:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.12);background:#fff}
+        .text-input-hint{font-size:12px;color:#94a3b8;margin-top:6px;padding:0 4px}
+
+        /* ========== ACTION BAR ========== */
+        .action-bar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+        .action-bar .btn-primary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:#2563eb;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .action-bar .btn-primary:hover:not(:disabled){background:#1d4ed8;transform:translateY(-1px);box-shadow:0 8px 25px rgba(37,99,235,.35)}
+        .action-bar .btn-primary:disabled{opacity:.5;cursor:not-allowed}
+        .action-bar .btn-secondary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:#fff;color:#0f172a;border:1px solid #e2e8f0;border-radius:12px;font-size:15px;font-weight:500;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .action-bar .btn-secondary:hover{border-color:#cbd5e1;background:#f8fafc;transform:translateY(-1px)}
+
+        /* ========== EMPTY STATE ========== */
+        .empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 20px;text-align:center}
+        .empty-state svg{width:56px;height:56px;color:#cbd5e1;margin-bottom:16px}
+        .empty-state h3{font-size:18px;font-weight:600;color:#0f172a;margin:0 0 6px}
+        .empty-state p{font-size:14px;color:#64748b;margin:0;line-height:1.6}
+
+        /* ========== GAUGE ========== */
+        .gauge-section{display:flex;flex-direction:column;align-items:center;padding:24px 20px 16px}
+        .gauge-wrap{position:relative;width:240px;height:150px;margin-bottom:12px}
+        .gauge-svg{width:100%;height:100%}
+        .gauge-arc-bg{fill:none;stroke:#e2e8f0;stroke-width:18;stroke-linecap:round}
+        .gauge-arc-fill{fill:none;stroke:#22c55e;stroke-width:18;stroke-linecap:round;transition:stroke-dasharray 1.2s cubic-bezier(.4,0,.2,1),stroke .6s ease}
+        .gauge-center{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);text-align:center}
+        .gauge-value{font-size:44px;font-weight:800;font-family:'JetBrains Mono',monospace;color:#0f172a;line-height:1}
+        .gauge-label{font-size:15px;font-weight:700;margin-top:6px}
+        .gauge-grade{font-size:12px;color:#64748b;margin-top:2px;font-weight:500}
+
+        /* ========== STATS SECTION ========== */
+        .stats-section{padding:0 20px 20px}
+        .stats-title{font-size:14px;font-weight:600;color:#0f172a;margin:0 0 12px}
+        .savings-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+        .savings-grid .stat-box{padding:14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;transition:border-color .2s;text-align:center}
+        .savings-grid .stat-box:hover{border-color:#cbd5e1}
+        .savings-grid .stat-box .stat-label{font-size:11px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px}
+        .savings-grid .stat-box .stat-value{font-size:22px;font-weight:700;font-family:'JetBrains Mono',monospace;color:#0f172a}
+
+        /* ========== PROCESSING REPORT ========== */
+        .report-section{display:none;padding:0 20px 0;margin-bottom:16px}
+        .report-section.show{display:block;animation:fadeSlideIn .4s ease}
+        .report-title{font-size:14px;font-weight:600;color:#0f172a;margin:0 0 12px}
+        .report-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+        .report-card{text-align:center;padding:12px 8px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px}
+        .report-values{display:flex;align-items:center;justify-content:center;gap:4px;font-size:13px;font-weight:600;flex-wrap:wrap}
+        .report-values-center{font-size:14px;font-weight:700;color:#0f172a}
+        .rv-before{color:#64748b;font-weight:500}
+        .rv-arrow{color:#94a3b8;font-size:11px}
+        .rv-after{color:#2563eb}
+        .report-pct{font-size:12px;font-weight:700}
+        .rl{font-size:10px}
+        .status-ok{color:#16a34a}
+        .status-warn{color:#d97706}
+        .report-pct.good{color:#16a34a}.report-pct.ok{color:#22c55e}.report-pct.fair{color:#eab308}.report-pct.low{color:#ef4444}
+
+        /* ========== RESULT BOX ========== */
+        .result-box{background:#1e1e2e;border:1px solid #e2e8f0;border-radius:12px;padding:16px 20px;font-family:'JetBrains Mono',monospace;font-size:13px;white-space:pre-wrap;word-break:break-word;max-height:400px;overflow-y:auto;margin:0 20px 16px;color:#e2e8f0;tab-size:2;line-height:1.5}
+
+        /* ========== EXPORT SECTION ========== */
+        .export-section{display:none;justify-content:center;gap:10px;padding:0 20px 20px;flex-wrap:wrap}
+        .export-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;font-size:13px;font-weight:500;color:#0f172a;cursor:pointer;transition:all .2s}
+        .export-btn:hover{border-color:#2563eb;color:#2563eb;background:#eff6ff}
+        .export-btn svg{width:14px;height:14px}
+
+        /* ========== COMPARISON ========== */
+        .comparison-section{padding:0 20px 20px;display:none}
+        .comparison-title{font-size:14px;font-weight:600;color:#0f172a;margin:0 0 10px}
+        .comparison-select{width:100%;padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:13px;font-family:'Inter',sans-serif;color:#0f172a;background:#f8fafc;margin-bottom:12px;cursor:pointer}
+        .comparison-table{width:100%;border-collapse:collapse;font-size:13px}
+        .comparison-table th{text-align:left;padding:8px 12px;background:#f8fafc;border:1px solid #e2e8f0;font-weight:600;color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.4px}
+        .comparison-table td{padding:8px 12px;border:1px solid #e2e8f0;color:#0f172a;font-family:'JetBrains Mono',monospace}
+        .comp-up{color:#16a34a;font-weight:600}
+        .comp-down{color:#ef4444;font-weight:600}
+        .comp-same{color:#94a3b8}
+
+        /* ========== HISTORY ========== */
+        .history-section{padding:0 20px 20px;display:none}
+        .history-title{font-size:14px;font-weight:600;color:#0f172a;margin:0 0 10px}
+        .history-item{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;margin-bottom:6px;font-size:13px;transition:border-color .2s}
+        .history-item:hover{border-color:#cbd5e1}
+        .history-meta{display:flex;flex-direction:column;gap:2px}
+        .history-time{font-size:11px;color:#64748b}
+        .history-size{font-size:12px;color:#0f172a;font-weight:500}
+        .history-savings{font-size:13px;font-weight:700;font-family:'JetBrains Mono',monospace}
+        .history-savings.positive{color:#16a34a}
+        .history-savings.negative{color:#ef4444}
+
+        /* ========== RESULTS PANEL ========== */
+        .results-panel{display:none;padding:0}
+        .results-panel.show{display:block;animation:fadeSlideIn .4s ease}
+        @keyframes fadeSlideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+        /* ========== LIMITATIONS BOX ========== */
+        .limitations-box{display:none;padding:16px 20px;background:#fffbeb;border:1px solid #fde68a;border-radius:12px;margin-top:16px}
+        .limitations-box.show{display:block}
+        .limitations-box .lim-header{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+        .limitations-box .lim-header svg{width:16px;height:16px;color:#d97706}
+        .limitations-box .lim-header h4{font-size:13px;font-weight:600;color:#92400e;margin:0}
+        .limitations-box ul{margin:0;padding-left:18px}
+        .limitations-box li{font-size:13px;color:#a16207;line-height:1.6;margin-bottom:2px}
+
+        /* ========== RELATED TOOLS ========== */
+        .related-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .related-section .section-intro{font-size:14px;color:#64748b;text-align:center;margin-bottom:24px}
+        .related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+        .related-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit;display:flex;flex-direction:column}
+        .related-card:hover{border-color:#2563eb;box-shadow:0 8px 24px rgba(37,99,235,.1);transform:translateY(-3px)}
+        .related-card .rc-icon{width:32px;height:32px;margin-bottom:12px}
+        .related-card .rc-icon svg{width:32px;height:32px;color:#2563eb;transition:transform .25s cubic-bezier(.4,0,.2,1)}
+        .related-card:hover .rc-icon svg{transform:scale(1.1)}
+        .related-card h4{font-size:15px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .related-card p{font-size:13px;color:#64748b;margin:0 0 16px;flex:1}
+        .related-card .rc-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#2563eb;margin-top:auto;transition:gap .2s}
+        .related-card:hover .rc-btn{gap:10px}
+
+        /* ========== HOW IT WORKS ========== */
+        .how-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .step-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:24px;text-align:center;transition:border-color .2s,box-shadow .2s}
+        .step-card:hover{border-color:rgba(37,99,235,.2);box-shadow:0 2px 8px rgba(37,99,235,.06)}
+        .step-num{width:40px;height:40px;border-radius:50%;background:#eff6ff;color:#2563eb;font-size:16px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-bottom:12px;transition:background .2s}
+        .step-card:hover .step-num{background:#dbeafe}
+        .step-card h4{font-size:15px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .step-card p{font-size:13px;color:#64748b;margin:0}
+
+        /* ========== FAQ ========== */
+        .faq-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .faq-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:border-color .2s}
+        .faq-card:hover{border-color:#cbd5e1}
+        .faq-card h4{font-size:14px;font-weight:600;margin:0 0 8px;color:#0f172a}
+        .faq-card p{font-size:13px;color:#64748b;margin:0;line-height:1.6}
+
+        /* ========== TOAST ========== */
+        .toast{position:fixed;top:16px;right:16px;padding:12px 20px;border-radius:8px;font-size:14px;font-weight:500;z-index:1000;transform:translateX(400px);opacity:0;transition:all .25s cubic-bezier(.4,0,.2,1)}
+        .toast.show{transform:translateX(0);opacity:1}
+        .toast.info{background:#2563eb;color:#fff}
+        .toast.success{background:#10b981;color:#fff}
+        .toast.error{background:#ef4444;color:#fff}
+
+        /* ========== SECTION HEADINGS ========== */
+        .section-heading{text-align:center;margin-bottom:32px}
+        .section-heading h2{font-size:28.8px;font-weight:700;color:#0f172a;margin:0 0 4px}
+
+        /* ========== RESPONSIVE ========== */
+        @media(max-width:1024px){
+            .related-grid{grid-template-columns:repeat(2,1fr)}
+            .faq-grid{grid-template-columns:repeat(2,1fr)}
+            .savings-grid{grid-template-columns:repeat(2,1fr)}
+        }
+        @media(max-width:768px){
+            .hero{padding:32px 0 20px}
+            .hero h1{font-size:28px}
+            .hero-subtitle{font-size:14px;margin-bottom:20px}
+            .trust-badges{gap:8px}
+            .trust-badge{padding:4px 10px;font-size:12px}
+            .tool-card{padding:16px;margin-bottom:32px}
+            .action-bar{grid-template-columns:1fr}
+            .related-grid{grid-template-columns:1fr}
+            .steps-grid{grid-template-columns:1fr}
+            .faq-grid{grid-template-columns:1fr}
+            .savings-grid{grid-template-columns:repeat(2,1fr)}
+            .text-input-wrapper textarea{min-height:180px;padding:14px 16px}
+            .gauge-wrap{width:200px;height:125px}
+            .gauge-value{font-size:34px}
+            .result-box{margin:0 12px 12px;padding:12px 16px}
+        }
+        @media(max-width:480px){
+            .hero{padding:24px 0 16px}
+            .hero h1{font-size:24px}
+            .related-grid{gap:12px}
+            .savings-grid{gap:8px}
+            .savings-grid .stat-box{padding:10px}
+            .savings-grid .stat-box .stat-value{font-size:18px}
+        }
+
+        /* ========== OPTIONS SECTION ========== */
+        .options-section{margin:16px 0 0;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}
+        .options-toggle{display:flex;align-items:center;gap:8px;width:100%;padding:12px 16px;background:#f8fafc;border:none;cursor:pointer;font-size:14px;font-weight:600;color:#0f172a;text-align:left;transition:background .2s}
+        .options-toggle:hover{background:#f1f5f9}
+        .options-toggle .chevron{transition:transform .25s cubic-bezier(.4,0,.2,1);margin-left:auto;color:#94a3b8}
+        .options-toggle[aria-expanded="true"] .chevron{transform:rotate(180deg)}
+        .options-panel{display:none;padding:0 16px 16px;background:#fafbfc;border-top:1px solid #e2e8f0}
+        .options-panel.open{display:block;animation:fadeSlideIn .25s ease}
+        .options-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:6px;padding:12px 0 10px}
+        .opt-checkbox{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:6px;cursor:pointer;font-size:13px;color:#334155;transition:background .15s;user-select:none}
+        .opt-checkbox:hover{background:#f1f5f9}
+        .opt-checkbox input{position:absolute;opacity:0;width:0;height:0}
+        .opt-mark{display:flex;align-items:center;justify-content:center;width:18px;height:18px;border:2px solid #cbd5e1;border-radius:4px;flex-shrink:0;transition:all .2s}
+        .opt-mark svg{width:12px;height:12px;opacity:0;transition:opacity .15s;stroke:#fff}
+        .opt-checkbox input:checked+.opt-mark{background:#2563eb;border-color:#2563eb}
+        .opt-checkbox input:checked+.opt-mark svg{opacity:1}
+        .options-mode{display:flex;align-items:center;gap:12px;padding:10px 0 2px;border-top:1px solid #e2e8f0;font-size:13px}
+        .options-mode-label{font-weight:600;color:#64748b;font-size:12px;text-transform:uppercase;letter-spacing:.3px;margin-right:4px}
+        .opt-radio{display:inline-flex;align-items:center;gap:6px;cursor:pointer;color:#334155;padding:4px 8px;border-radius:6px;transition:background .15s}
+        .opt-radio:hover{background:#f1f5f9}
+        .opt-radio input{position:absolute;opacity:0;width:0;height:0}
+        .radio-dot{width:16px;height:16px;border-radius:50%;border:2px solid #cbd5e1;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+        .radio-dot::after{content:'';width:8px;height:8px;border-radius:50%;background:#2563eb;transform:scale(0);transition:transform .2s cubic-bezier(.4,0,.2,1)}
+        .opt-radio input:checked~.radio-dot{border-color:#2563eb}
+        .opt-radio input:checked~.radio-dot::after{transform:scale(1)}
+        .opt-radio input:checked~span:last-child{color:#0f172a;font-weight:600}
+
+        /* ========== PRINT ========== */
+        @media print{
+            .hero,.site-header,.site-footer,.related-section,.how-section,.faq-section,.action-bar,.export-section,.comparison-section,.history-section,.limitations-box,.status-badge,.empty-state,.toast{display:none !important}
+            .tool-card{box-shadow:none;border:none;padding:0}
+            .results-panel{display:block !important}
+            body{background:#fff}
+        }
+
+        /* ========== REDUCED MOTION ========== */
+        @media(prefers-reduced-motion:reduce){
+            *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+        }
+    </style>
 
     <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
 </head>
@@ -65,69 +329,314 @@
             </nav></div>
         </div>
     </header>
-    <main id="main-content" class="main-content">
+    <main id="main-content">
+
+        <!-- ===== HERO ===== -->
+        <section class="hero">
+            <div class="container">
+                <h1><span class="gradient-text">Minify HTML</span> code instantly</h1>
+                <p class="hero-subtitle">Remove comments, collapse whitespace, and reduce file size. Preserves content inside &lt;pre&gt;, &lt;code&gt;, and &lt;textarea&gt; tags. All processing happens in your browser.</p>
+                <div class="trust-badges">
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        100% Private
+                    </span>
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                        Processed locally
+                    </span>
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Free &amp; unlimited
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TOOL WORKSPACE ===== -->
         <div class="container">
-            <div class="page-header">
-                <h1>HTML Minifier</h1>
-                <p class="page-description">Minify your HTML code by removing comments, collapsing whitespace, and reducing file size. Preserves content inside <code>&lt;pre&gt;</code>, <code>&lt;code&gt;</code>, and <code>&lt;textarea&gt;</code> tags.</p>
+            <div class="tool-workspace">
+
+                <!-- Tool Card -->
+                <div class="tool-card" role="region" aria-label="HTML Minifier workspace">
+
+                    <!-- Card Header -->
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            <h2>HTML Minifier</h2>
+                        </div>
+                        <span class="status-badge" id="status-badge" aria-live="polite"></span>
+                    </div>
+                    <div class="card-divider"></div>
+
+                    <!-- Workspace Body -->
+                    <div class="workspace-body" id="workspace-body">
+
+                        <!-- Text Input Area -->
+                        <div class="text-input-zone">
+                            <label for="html-input" class="text-input-label">Paste Your HTML</label>
+                            <div class="text-input-wrapper">
+                                <textarea id="html-input" placeholder="Paste your HTML code here to minify..." rows="10"></textarea>
+                            </div>
+                            <p class="text-input-hint">Paste any HTML code to remove comments, collapse whitespace, and reduce file size.</p>
+                        </div>
+
+                        <!-- Options Section -->
+                        <div class="options-section" id="options-section">
+                            <button class="options-toggle" id="options-toggle" type="button" aria-expanded="false">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                                <span>Advanced Options</span>
+                                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polyline points="6 9 12 15 18 9"/></svg>
+                            </button>
+                            <div class="options-panel" id="options-panel">
+                                <div class="options-grid">
+                                    <label class="opt-checkbox"><input type="checkbox" id="opt-minify-css" checked><span class="opt-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Minify inline CSS</span></label>
+                                    <label class="opt-checkbox"><input type="checkbox" id="opt-minify-js" checked><span class="opt-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Minify inline JS</span></label>
+                                    <label class="opt-checkbox"><input type="checkbox" id="opt-remove-comments" checked><span class="opt-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Remove comments</span></label>
+                                    <label class="opt-checkbox"><input type="checkbox" id="opt-collapse-whitespace" checked><span class="opt-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Collapse whitespace</span></label>
+                                    <label class="opt-checkbox"><input type="checkbox" id="opt-remove-quotes" checked><span class="opt-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Remove optional quotes</span></label>
+                                    <label class="opt-checkbox"><input type="checkbox" id="opt-boolean-attrs" checked><span class="opt-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Collapse boolean attrs</span></label>
+                                    <label class="opt-checkbox"><input type="checkbox" id="opt-remove-redundant" checked><span class="opt-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Remove redundant attrs</span></label>
+                                    <label class="opt-checkbox"><input type="checkbox" id="opt-preserve-jsonld" checked><span class="opt-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Preserve JSON-LD</span></label>
+                                    <label class="opt-checkbox"><input type="checkbox" id="opt-preserve-templates" checked><span class="opt-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Preserve template syntax</span></label>
+                                </div>
+                                <div class="options-mode">
+                                    <span class="options-mode-label">Mode:</span>
+                                    <label class="opt-radio"><input type="radio" name="opt-mode" value="safe" checked><span class="radio-dot"></span><span>Safe</span></label>
+                                    <label class="opt-radio"><input type="radio" name="opt-mode" value="aggressive"><span class="radio-dot"></span><span>Aggressive</span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Empty State -->
+                        <div class="empty-state" id="empty-state">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                            <h3>No HTML minified yet</h3>
+                            <p>Paste your HTML code above and click <strong>Minify</strong> to see savings, compression ratio, and the minified result.</p>
+                        </div>
+
+                        <!-- Results Panel -->
+                        <div class="results-panel" id="result-area" aria-live="polite">
+
+                            <!-- Gauge -->
+                            <div class="gauge-section">
+                                <div class="gauge-wrap">
+                                    <svg class="gauge-svg" id="savings-gauge" viewBox="0 0 200 120">
+                                        <path class="gauge-arc-bg" d="M20 100 A80 80 0 0 1 180 100" fill="none"/>
+                                        <path class="gauge-arc-fill" id="gauge-arc-fill" d="M20 100 A80 80 0 0 1 180 100" fill="none" stroke-dasharray="0 252" stroke="#22c55e"/>
+                                    </svg>
+                                    <div class="gauge-center">
+                                        <div class="gauge-value" id="gauge-value">0%</div>
+                                        <div class="gauge-label" id="gauge-label">Savings</div>
+                                        <div class="gauge-grade" id="gauge-grade"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Stats -->
+                            <div class="stats-section">
+                                <div class="stats-title">Compression Stats</div>
+                                <div class="savings-grid" id="savings-grid">
+                                    <div class="stat-box"><div class="stat-label">Original</div><div class="stat-value" id="stat-original">0</div></div>
+                                    <div class="stat-box"><div class="stat-label">Minified</div><div class="stat-value" id="stat-minified">0</div></div>
+                                    <div class="stat-box"><div class="stat-label">Savings</div><div class="stat-value" id="stat-savings">0%</div></div>
+                                    <div class="stat-box"><div class="stat-label">Saved</div><div class="stat-value" id="stat-savings-bytes">0</div></div>
+                                </div>
+                            </div>
+
+                            <!-- Processing Report -->
+                            <div class="report-section" id="report-section">
+                                <div class="report-title">Processing Report</div>
+                                <div class="report-grid" id="report-grid">
+                                    <div class="stat-box report-card"><div class="stat-label rl">HTML</div><div class="report-values"><span class="rv-before" id="rpt-html-before">0 B</span><span class="rv-arrow">→</span><span class="rv-after" id="rpt-html-after">0 B</span></div><div class="report-pct" id="rpt-html-pct">0%</div></div>
+                                    <div class="stat-box report-card"><div class="stat-label rl">CSS</div><div class="report-values"><span class="rv-before" id="rpt-css-before">0 B</span><span class="rv-arrow">→</span><span class="rv-after" id="rpt-css-after">0 B</span></div><div class="report-pct" id="rpt-css-pct">0%</div></div>
+                                    <div class="stat-box report-card"><div class="stat-label rl">JS</div><div class="report-values"><span class="rv-before" id="rpt-js-before">0 B</span><span class="rv-arrow">→</span><span class="rv-after" id="rpt-js-after">0 B</span></div><div class="report-pct" id="rpt-js-pct">0%</div></div>
+                                    <div class="stat-box report-card"><div class="stat-label rl">Comments</div><div class="report-values report-values-center" id="rpt-comments">0 removed</div></div>
+                                    <div class="stat-box report-card"><div class="stat-label rl">Whitespace</div><div class="report-values report-values-center" id="rpt-whitespace">0 chars</div></div>
+                                    <div class="stat-box report-card"><div class="stat-label rl">Time</div><div class="report-values report-values-center" id="rpt-time">0 ms</div></div>
+                                    <div class="stat-box report-card"><div class="stat-label rl">Status</div><div class="report-values report-values-center" id="rpt-status"><span class="status-ok">&#10003; Valid</span></div></div>
+                                </div>
+                            </div>
+
+                            <!-- Result Code -->
+                            <div id="result-text" class="result-box"></div>
+
+                            <!-- Export -->
+                            <div class="export-section" id="export-section">
+                                <button class="export-btn" id="export-copy">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                                    Copy Result
+                                </button>
+                                <button class="export-btn" id="export-txt">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                    Download TXT
+                                </button>
+                                <button class="export-btn" id="export-json">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                    Download JSON
+                                </button>
+                                <button class="export-btn" id="export-print">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                                    Print
+                                </button>
+                            </div>
+
+                            <!-- Comparison -->
+                            <div class="comparison-section" id="comparison-section">
+                                <div class="comparison-title">Compare with Previous</div>
+                                <select class="comparison-select" id="comparison-select"></select>
+                                <div id="comparison-table"></div>
+                            </div>
+
+                            <!-- History -->
+                            <div class="history-section" id="history-section">
+                                <div class="history-title">Recent Activity</div>
+                                <div id="history-list"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Action Bar -->
+                    <div class="action-bar" id="action-bar">
+                        <button class="btn-primary" id="minify-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+                            Minify
+                        </button>
+                        <button class="btn-secondary" id="reset-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+                            Reset
+                        </button>
+                    </div>
+
+                    <!-- Limitations Box -->
+                    <div class="limitations-box" id="limitations-box" aria-label="Tool limitations">
+                        <div class="lim-header">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            <h4>What this tool does not do</h4>
+                        </div>
+                        <ul>
+                            <li>Does not reformat or beautify HTML — it only removes comments and whitespace.</li>
+                            <li>Does not remove or alter attributes, class names, or IDs.</li>
+                            <li>Results are based on basic minification, not AST-based optimization.</li>
+                        </ul>
+                    </div>
+
+                </div><!-- /.tool-card -->
+
+            </div><!-- /.tool-workspace -->
+        </div><!-- /.container -->
+
+        <!-- ===== RELATED TOOLS ===== -->
+        <section class="related-section content-section" style="margin-top:48px">
+            <div class="section-heading">
+                <h2>Related Tools</h2>
+                <p class="section-intro">After minifying your HTML, you might also need...</p>
             </div>
-            <div class="tool-layout">
-                <div class="tool-interface">
-                    <div class="tool-header">
-                        <h2>Minify HTML</h2>
-                        <p>Paste your HTML code below</p>
+            <div class="related-grid">
+                <a href="./css-minifier.html" class="related-card">
+                    <div class="rc-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                     </div>
-                    <label for="html-input"><i class="fas fa-code" style="color:var(--color-primary);margin-right:6px"></i> HTML Input</label>
-                    <textarea id="html-input" class="minifier-textarea" placeholder="Paste your HTML code here..." rows="10"></textarea>
-                    <div class="tool-actions">
-                        <button id="minify-btn" class="btn btn-primary btn-lg"><i class="fas fa-compress" aria-hidden="true"></i> Minify</button>
-                        <button id="reset-btn" class="btn btn-secondary"><i class="fas fa-redo" aria-hidden="true"></i> Reset</button>
+                    <h4>CSS Minifier</h4>
+                    <p>Minify your CSS by removing comments and extra whitespace.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./js-minifier.html" class="related-card">
+                    <div class="rc-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 2 12 12 17 22 12 22 7 12 2"/><polyline points="2 12 12 17 22 12"/><polyline points="2 7 12 12 22 7"/></svg>
                     </div>
-                    <div id="result-area" class="result-area" style="display:none">
-                        <h3><i class="fas fa-check-circle" style="color:#10b981"></i> Minified HTML</h3>
-                        <div id="result-text" class="result-box"></div>
-                        <div class="tool-actions"><button id="copy-btn" class="btn btn-primary btn-sm">Copy Result</button></div>
+                    <h4>JS Minifier</h4>
+                    <p>Minify JavaScript by removing comments and unnecessary whitespace.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./text-cleaner.html" class="related-card">
+                    <div class="rc-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
                     </div>
-                    <div id="stats" class="stats-grid" style="display:none">
-                        <div class="stat-box"><div class="stat-value" id="stat-original">0</div><div class="stat-label">Original Size</div></div>
-                        <div class="stat-box"><div class="stat-value" id="stat-minified">0</div><div class="stat-label">Minified Size</div></div>
-                        <div class="stat-box"><div class="stat-value" id="stat-savings">0%</div><div class="stat-label">Savings</div></div>
+                    <h4>Text Cleaner</h4>
+                    <p>Remove extra spaces, line breaks, and formatting issues from text.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./sql-formatter.html" class="related-card">
+                    <div class="rc-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
                     </div>
+                    <h4>SQL Formatter</h4>
+                    <p>Format and beautify SQL queries with proper indentation.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== HOW IT WORKS ===== -->
+        <section class="how-section content-section" style="margin-top:48px">
+            <div class="section-heading">
+                <h2>How It Works</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <h4>Paste your HTML</h4>
+                    <p>Enter or paste any HTML code into the input area.</p>
                 </div>
-                <div class="tool-sidebar">
-                    <div class="card"><h3>How It Works</h3><ol><li>Paste your HTML code</li><li>Click Minify</li><li>Copy the compressed result</li></ol></div>
-                    <div class="card"><h3>Features</h3><ul><li>Removes HTML comments</li><li>Collapses whitespace</li><li>Removes line breaks</li><li>Preserves pre/code/textarea</li></ul></div>
-                    <div class="card"><p style="font-size:var(--text-xs);color:var(--color-text-light);margin:0">Your text is processed entirely inside your browser.</p></div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <h4>Click Minify</h4>
+                    <p>Remove comments, whitespace, and unnecessary line breaks instantly.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <h4>Copy the result</h4>
+                    <p>Export the minified code or save it as a file for production.</p>
                 </div>
             </div>
-            <section class="content-section">
-                <div class="section-header"><h2>Related Tools</h2></div>
-                <div class="tools-grid">
-                    <div class="card tool-card"><h3>CSS Minifier</h3><p>Minify your CSS by removing comments and extra whitespace.</p><div class="card-footer"><a href="./css-minifier" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-                    <div class="card tool-card"><h3>JS Minifier</h3><p>Minify JavaScript by removing comments and unnecessary whitespace.</p><div class="card-footer"><a href="./js-minifier" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-                    <div class="card tool-card"><h3>Text Cleaner</h3><p>Remove extra spaces, line breaks, and formatting issues.</p><div class="card-footer"><a href="./text-cleaner" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+        </section>
+
+        <!-- ===== FAQ ===== -->
+        <section class="faq-section content-section" style="margin-top:48px">
+            <div class="section-heading">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h4>What does the HTML minifier do?</h4>
+                    <p>It removes HTML comments, collapses multiple spaces into one, removes unnecessary line breaks, and preserves content inside pre, code, and textarea tags.</p>
                 </div>
-            </section>
-            <section class="content-section" style="margin-top:var(--space-8)">
-                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
-                <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-3)">
-                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What does the HTML minifier do?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">It removes HTML comments, collapses multiple spaces into one, removes unnecessary line breaks, and preserves content inside pre, code, and textarea tags.</p></div>
-                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Does it preserve pre and code tags?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Yes. The minifier preserves the whitespace and formatting inside pre, code, and textarea elements to avoid breaking code examples or formatted text.</p></div>
-                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Is my HTML uploaded to a server?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">No. All processing happens entirely in your browser. Your code never leaves your device.</p></div>
-                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Will minification break my HTML?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">No. The minifier only removes comments and collapses whitespace, which does not affect the structure or functionality of your HTML.</p></div>
+                <div class="faq-card">
+                    <h4>Does it preserve pre and code tags?</h4>
+                    <p>Yes. The minifier preserves the whitespace and formatting inside pre, code, and textarea elements to avoid breaking code examples or formatted text.</p>
                 </div>
-            </section>
-        </div>
+                <div class="faq-card">
+                    <h4>Is my HTML uploaded to a server?</h4>
+                    <p>No. All processing happens entirely in your browser. Your code never leaves your device.</p>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:var(--space-8)">
+                <a href="/guides/html-minifier" style="color:var(--color-primary);font-weight:600;font-size:var(--text-sm);text-decoration:none;transition:opacity .2s">Read Guide: How to Minify HTML &#10132;</a>
+            </div>
+        </section>
+
     </main>
     <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p>
                     <div class="footer-social">
                         <a href="https://x.com/GoToolly" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                         <a href="https://www.facebook.com/profile.php?id=61591898344203" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                        <a href="https://linkedin.com/in/go-toolly-426b67422" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                        <a href="https://www.youtube.com/@GoToolly" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                         <a href="https://www.instagram.com/gotoolly/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
                         <a href="https://www.tiktok.com/@gotoolly26" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
                         <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></a>
                     </div></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor.html">Image Compressor</a></li><li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li><li><a href="/tools/word-counter.html">Word Counter</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+    <script type="module">
+    import * as HTMLMinifier from 'https://esm.sh/html-minifier@4.0.0';
+    import * as csso from 'https://esm.sh/csso@5.0.5';
+    import * as terser from 'https://esm.sh/terser@5.30.0';
+    window.HTMLMinifier = HTMLMinifier.default || HTMLMinifier;
+    window.csso = csso.default || csso;
+    window.Terser = terser.default || terser;
+    </script>
     <script defer src="../assets/js/main.min.js"></script>
     <script defer src="../assets/js/tools/html-minifier.min.js"></script>
 </body>

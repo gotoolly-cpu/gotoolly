@@ -104,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
         img.src = URL.createObjectURL(file);
         settingsPanel.classList.add('show');
         applyBtn.disabled = false;
+        resetBtn.style.display = '';
 
         resultSlot.style.display = 'none';
         resultPreview.innerHTML = '';
@@ -221,6 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
         resultPreview.innerHTML = '';
         downloadBtn.style.display = 'none';
         backBtn.style.display = 'none';
+        resetBtn.style.display = 'none';
         applyBtn.style.display = '';
         if (resultBlobUrl) { URL.revokeObjectURL(resultBlobUrl); resultBlobUrl = null; }
     });

@@ -12,17 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var processed = false;
     var currentBlob = null;
     var currentFilename = 'archive.tar';
-    function showNotification(message, isError) {
-        var existing = document.querySelector('.notification');
-        if (existing) existing.remove();
-        var el = document.createElement('div');
-        el.className = 'notification' + (isError ? ' error' : '');
-        el.textContent = message;
-        document.body.appendChild(el);
-        setTimeout(function () {
-            el.remove();
-        }, 3500);
-    }
     function formatSize(bytes) {
         if (bytes < 1024) return bytes + ' B';
         if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
@@ -95,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.body.removeChild(a);
                     URL.revokeObjectURL(url);
                 }, 100);
-                showNotification(currentFilename + ' downloaded!');
             });
         applyBtn.style.display = 'none';
         progressSection.style.display = 'none';
@@ -236,9 +224,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 progressPercent.textContent = '100%';
                 progressText.textContent = 'Done!';
                 showDownloadSection('archive.tar', blob);
-                showNotification('TAR archive created successfully!');
             } catch (err) {
-                showNotification('Error creating TAR: ' + err.message, true);
                 applyBtn.disabled = false;
                 progressSection.style.display = 'none';
             }

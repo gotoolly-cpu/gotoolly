@@ -1,10 +1,10 @@
 // Service Worker for Background Removal Tool
 // Enables offline functionality and caches critical resources
 
-const CACHE_VERSION = 'gotoolly-v8';
-const RUNTIME_CACHE = 'gotoolly-runtime-v8';
-const ASSETS_CACHE = 'gotoolly-assets-v8';
-const MODEL_CACHE = 'gotoolly-models-v8';
+const CACHE_VERSION = 'gotoolly-v12';
+const RUNTIME_CACHE = 'gotoolly-runtime-v12';
+const ASSETS_CACHE = 'gotoolly-assets-v12';
+const MODEL_CACHE = 'gotoolly-models-v9';
 
 // Files to cache on install
 const CRITICAL_ASSETS = [
@@ -27,7 +27,6 @@ const MODELS_TO_CACHE = [
 
 // Install event - cache critical assets
 self.addEventListener('install', (event) => {
-    console.log('[ServiceWorker] Install event');
     
     event.waitUntil(
         (async () => {
@@ -39,9 +38,7 @@ self.addEventListener('install', (event) => {
                     return true;
                 }));
                 
-                console.log('[ServiceWorker] Critical assets cached');
             } catch (error) {
-                console.warn('[ServiceWorker] Failed to cache some assets:', error);
             }
             
             // Force the waiting service worker to become the active service worker
@@ -52,7 +49,6 @@ self.addEventListener('install', (event) => {
 
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
-    console.log('[ServiceWorker] Activate event');
     
     event.waitUntil(
         (async () => {
@@ -66,7 +62,6 @@ self.addEventListener('activate', (event) => {
                                     name !== MODEL_CACHE &&
                                     name !== RUNTIME_CACHE)
                     .map(name => {
-                        console.log('[ServiceWorker] Deleting old cache:', name);
                         return caches.delete(name);
                     })
             );
@@ -135,12 +130,10 @@ async function networkFirstStrategy(request) {
         const cached = await caches.match(request);
         
         if (cached) {
-            console.log('[ServiceWorker] Using cached response for:', request.url);
             return cached;
         }
         
         // No cache, return offline page or error
-        console.warn('[ServiceWorker] Network failed and no cache for:', request.url);
         return new Response('Offline - resource not available', {
             status: 503,
             statusText: 'Service Unavailable',
@@ -160,7 +153,6 @@ async function cacheFirstStrategy(request) {
     const cached = await caches.match(request);
     
     if (cached) {
-        console.log('[ServiceWorker] Using cached asset:', request.url);
         
         // Update cache in background (stale-while-revalidate pattern)
         fetch(request)
@@ -172,7 +164,6 @@ async function cacheFirstStrategy(request) {
             })
             .catch(err => {
                 // Network error during background update, ignore
-                console.log('[ServiceWorker] Background update failed:', err.message);
             });
         
         return cached;
@@ -190,7 +181,6 @@ async function cacheFirstStrategy(request) {
         
         return response;
     } catch (error) {
-        console.warn('[ServiceWorker] Network failed for:', request.url);
         return new Response('Offline - resource not available', {
             status: 503,
             statusText: 'Service Unavailable'
@@ -225,7 +215,6 @@ self.addEventListener('message', (event) => {
             break;
             
         default:
-            console.log('[ServiceWorker] Unknown message:', action);
     }
 });
 
@@ -241,15 +230,11 @@ async function cacheModels() {
                 const response = await fetch(modelUrl);
                 if (response.ok) {
                     await cache.put(modelUrl, response);
-                    console.log('[ServiceWorker] Cached model:', modelUrl);
                 }
             } catch (error) {
-                console.warn('[ServiceWorker] Failed to cache model:', modelUrl, error);
             }
         }
     } catch (error) {
-        console.error('[ServiceWorker] Failed to cache models:', error);
     }
 }
 
-console.log('[ServiceWorker] Background Removal Service Worker loaded');

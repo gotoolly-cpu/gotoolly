@@ -11,17 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var archiveFile = null;
     var extractedFiles = [];
     var processed = false;
-    function showNotification(message, isError) {
-        var existing = document.querySelector('.notification');
-        if (existing) existing.remove();
-        var el = document.createElement('div');
-        el.className = 'notification' + (isError ? ' error' : '');
-        el.textContent = message;
-        document.body.appendChild(el);
-        setTimeout(function () {
-            el.remove();
-        }, 3500);
-    }
     function formatSize(bytes) {
         if (bytes < 1024) return bytes + ' B';
         if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
@@ -110,7 +99,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         document.body.removeChild(a);
                         URL.revokeObjectURL(url);
                     }, 100);
-                    showNotification(filesList[0].name + ' downloaded!');
                 } else {
                     loadFflate(function (fflate) {
                         var zipData = {};
@@ -131,7 +119,6 @@ document.addEventListener('DOMContentLoaded', function () {
                             document.body.removeChild(a);
                             URL.revokeObjectURL(url);
                         }, 100);
-                        showNotification('extracted_files.zip downloaded!');
                     });
                 }
             });
@@ -150,9 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
         script.onload = function () {
             callback(window.fflate);
         };
-        script.onerror = function () {
-            showNotification('Failed to load compression library', true);
-        };
+        script.onerror = function () {};
         document.head.appendChild(script);
     }
     var dropZone = document.querySelector('.upload-area');
@@ -234,21 +219,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     progressText.textContent = 'Done!';
                     if (extractedFiles.length > 0) {
                         showExtractSection(extractedFiles, totalSize);
-                        showNotification(
-                            'Extracted ' +
-                                extractedFiles.length +
-                                ' file(s) successfully!',
-                        );
                     } else {
-                        showNotification('No files found in archive', true);
                         applyBtn.disabled = false;
                         progressSection.style.display = 'none';
                     }
                 } catch (err) {
-                    showNotification(
-                        'Error extracting ZIP: ' + err.message,
-                        true,
-                    );
                     applyBtn.disabled = false;
                     progressSection.style.display = 'none';
                 }

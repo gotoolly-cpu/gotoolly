@@ -119,6 +119,9 @@ class PDFSplitter {
         this.extractBtn.addEventListener('click', () => this.performExtraction());
         this.resetBtn.addEventListener('click', () => this.resetTool());
         this.downloadBtn.addEventListener('click', () => this.downloadExtractedPDF());
+        
+        const anotherBtn = document.getElementById('split-another-btn');
+        if (anotherBtn) anotherBtn.addEventListener('click', () => this.resetTool());
     }
     
     handleDragOver(e) {

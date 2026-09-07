@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Format Converter - JPG, PNG, WebP, AVIF | GoToolly</title>
+    <meta name="description" content="Free online image format converter. Convert between JPG, PNG, WebP, and AVIF formats with quality control. 100% browser-based, no uploads.">
+    <meta name="keywords" content="image format converter, convert image format, jpg to png, png to webp, webp converter, avif converter, online image converter">
+    <link rel="canonical" href="https://gotoolly.com/tools/image-format-converter">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gotoolly.com/tools/image-format-converter">
+    <meta property="og:title" content="Image Format Converter - JPG, PNG, WebP, AVIF | GoToolly">
+    <meta property="og:description" content="Free online image format converter. Convert between JPG, PNG, WebP, and AVIF formats with quality control. No uploads required.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/tools/image-format-converter">
+    <meta name="twitter:title" content="Image Format Converter - JPG, PNG, WebP, AVIF | GoToolly">
+    <meta name="twitter:description" content="Free online image format converter. Convert between JPG, PNG, WebP, and AVIF formats with quality control. No uploads required.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/font-awesome.all.min.css"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+
+    <style>
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .25s cubic-bezier(.4,0,.2,1)}.skip-link:focus{top:0}
+        .hero{background:#0f172a;padding:40px 0 28px;text-align:center}
+        .hero h1{font-size:40px;font-weight:800;color:#fff;line-height:1.2;margin:0 0 12px}
+        .hero h1 .gradient-text{background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-subtitle{font-size:16px;color:#94a3b8;line-height:1.5;margin:0 0 24px}
+        .trust-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .trust-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:6px 14px;border-radius:9999px;font-size:13px;font-weight:500;color:#cbd5e1;transition:background .2s}.trust-badge:hover{background:rgba(255,255,255,.1)}.trust-badge svg{width:14px;height:14px;color:#60a5fa}
+
+        .tool-card{background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.04);border:1px solid #e2e8f0;padding:24px;margin-bottom:48px;overflow:visible}
+        .card-header{display:flex;justify-content:space-between;align-items:center}
+        .card-header-left{display:flex;align-items:center;gap:10px}
+        .card-header-left svg{width:18px;height:18px;color:var(--color-primary)}
+        .card-header-left h2{font-size:16.8px;font-weight:600;margin:0;color:#0f172a}
+        .status-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:9999px;font-size:11px;font-weight:600;letter-spacing:.3px;text-transform:uppercase}.status-badge.ready{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+        .card-divider{height:1px;background:#e2e8f0;margin:16px 0 0}
+
+        .upload-area{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 24px;border:2px dashed #e2e8f0;border-radius:16px;background:#f8fafc;cursor:pointer;transition:border-color .2s,background .2s;text-decoration:none;color:inherit;margin-top:20px}
+        .upload-area:hover{border-color:#2563eb;background:rgba(37,99,235,.04)}
+        .upload-area:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.15)}
+        .upload-area.dragover{border-color:#2563eb;background:rgba(37,99,235,.08);box-shadow:0 0 0 4px rgba(37,99,235,.15)}
+        .upload-icon-wrap{width:72px;height:72px;border-radius:16px;background:linear-gradient(135deg,#2563eb,#7c3aed);display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:transform .25s cubic-bezier(.4,0,.2,1)}
+        .upload-area:hover .upload-icon-wrap{transform:scale(1.05)}
+        .upload-icon-wrap svg{width:32px;height:32px;color:#fff;stroke-width:2}
+        .upload-area h3{font-size:16px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .upload-area .upload-subtext{font-size:12px;color:#64748b;margin:0 0 16px}
+
+        .settings-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin-top:20px}
+        .settings-card-header{padding:16px 20px;border-bottom:1px solid #e2e8f0}
+        .settings-card-header h3{font-size:15px;font-weight:600;margin:0;color:#0f172a}
+        .settings-card-body{padding:20px}
+        .form-group{margin-bottom:16px}.form-group:last-child{margin-bottom:0}
+        .form-label{display:block;font-size:13px;font-weight:600;color:#0f172a;margin-bottom:6px}
+        .setting-row{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+        .setting-info .setting-label{font-size:13px;font-weight:600;color:#0f172a}
+        .setting-info .setting-description{font-size:12px;color:#64748b;margin-top:2px}
+        .setting-value{color:#2563eb;font-weight:600}
+        .setting-select{padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:14px;font-weight:500;color:#0f172a;background:#fff;min-width:200px}
+        .setting-select:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+        .quality-visual{display:flex;align-items:center;gap:12px}
+        .quality-visual input[type="range"]{flex:1;-webkit-appearance:none;height:6px;background:#e2e8f0;border-radius:9999px;outline:none}
+        .quality-visual input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;background:#2563eb;border-radius:50%;cursor:pointer;transition:box-shadow .15s}
+        .quality-visual input[type="range"]::-webkit-slider-thumb:hover{box-shadow:0 0 0 4px rgba(37,99,235,.15)}
+        .quality-visual input[type="range"]::-moz-range-thumb{width:18px;height:18px;background:#2563eb;border:none;border-radius:50%;cursor:pointer}
+        .quality-visual .quality-val{min-width:45px;font-weight:600;font-size:14px;font-family:'JetBrains Mono',monospace;color:#0f172a}
+        .quality-bar{height:4px;background:#e2e8f0;border-radius:9999px;margin-top:8px;overflow:hidden}
+        .quality-fill{height:100%;background:linear-gradient(90deg,#2563eb,#7c3aed);border-radius:9999px;transition:transform .2s;transform-origin:left}
+        .options-list{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+        .option-item{display:flex;gap:10px;align-items:flex-start;cursor:pointer;padding:10px 12px;border-radius:10px;transition:background .15s}
+        .option-item:hover{background:#f8fafc}
+        .option-item input[type="checkbox"]{margin-top:3px;width:16px;height:16px;color:#2563eb;cursor:pointer}
+        .option-item .option-text .option-title{display:block;font-size:14px;font-weight:500;color:#0f172a}
+        .option-item .option-text .option-desc{font-size:12px;color:#64748b}
+
+        .preview-section{display:none;margin-top:20px}
+        .preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+        .preview-box{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px;text-align:center}
+        .preview-title{font-weight:600;margin-bottom:12px;font-size:13px;color:#0f172a}
+        .preview-image{max-width:100%;max-height:300px;object-fit:contain;margin-bottom:12px;border-radius:8px}
+        .preview-stats{font-size:12px;color:#64748b;line-height:1.6}
+
+        .progress-section{display:none;padding:20px;background:#f8fafc;border-radius:12px;margin-top:20px}
+        .progress-section.show{display:block}
+        .progress-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+        .progress-spinner{width:24px;height:24px;border:3px solid #e2e8f0;border-top-color:#2563eb;border-radius:50%;animation:ifc-spin .6s linear infinite}
+        @keyframes ifc-spin{to{transform:rotate(360deg)}}
+        .progress-phase{font-size:14px;font-weight:500;color:#0f172a;flex:1}
+        .progress-pct{font-size:14px;font-weight:600;color:#2563eb;font-family:'JetBrains Mono',monospace}
+        .progress-track{height:8px;background:#e2e8f0;border-radius:9999px;overflow:hidden}
+        .progress-fill{height:100%;background:linear-gradient(90deg,#2563eb,#7c3aed);border-radius:9999px;transition:width .4s cubic-bezier(.4,0,.2,1);width:0}
+
+        .action-bar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+        .btn-primary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:#2563eb;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .btn-primary:hover:not(:disabled){background:#1d4ed8;transform:translateY(-1px);box-shadow:0 8px 25px rgba(37,99,235,.35)}
+        .btn-primary:disabled{opacity:.5;cursor:not-allowed}
+        .btn-secondary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:#fff;color:#0f172a;border:1px solid #e2e8f0;border-radius:12px;font-size:15px;font-weight:500;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .btn-secondary:hover{border-color:#cbd5e1;background:#f8fafc;transform:translateY(-1px)}
+
+        .results-area{background:#f8fafc;border-radius:12px;padding:20px;margin-top:20px;display:none}
+        .results-area h3{font-size:15px;font-weight:600;margin:0 0 12px;color:#0f172a}
+        .result-success-icon{width:72px;height:72px;border-radius:50%;background:#f0fdf4;border:2px solid #bbf7d0;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;animation:ifc-pop .4s cubic-bezier(.4,0,.2,1)}
+        @keyframes ifc-pop{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
+        .result-download-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:#16a34a;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .result-download-btn:hover{background:#15803d;transform:translateY(-1px);box-shadow:0 8px 25px rgba(22,163,74,.35)}
+        .result-dims{font-family:'JetBrains Mono',monospace}
+        .result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);text-align:center;margin-top:16px}
+        .result-grid div{font-size:13px;color:#64748b}
+        .result-grid strong{display:block;font-size:15px;font-weight:700;color:#0f172a;margin-top:2px}
+
+        .tool-workspace{max-width:900px;margin:0 auto;padding:0 24px}
+
+        .related-tools{max-width:900px;margin:0 auto;padding:0 24px;margin-top:48px}
+        .related-tools .section-heading{text-align:center;margin-bottom:32px}
+        .related-tools .section-heading h2{font-size:28.8px;font-weight:700;color:#0f172a;margin:0 0 4px}
+        .section-intro{font-size:14px;color:#64748b;text-align:center;margin-bottom:24px}
+        .related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+        .related-item{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit;display:flex;flex-direction:column}
+        .related-item:hover{border-color:#2563eb;box-shadow:0 8px 24px rgba(37,99,235,.1);transform:translateY(-3px)}
+        .related-item .ri-icon{width:32px;height:32px;margin-bottom:12px}
+        .related-item .ri-icon svg{width:32px;height:32px;color:#2563eb;transition:transform .25s cubic-bezier(.4,0,.2,1)}
+        .related-item:hover .ri-icon svg{transform:scale(1.1)}
+        .related-item h3{font-size:15px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .related-item p{font-size:13px;color:#64748b;margin:0 0 16px;flex:1}
+
+        .how-it-works{max-width:900px;margin:0 auto;padding:0 24px;margin-top:48px}
+        .how-it-works .section-heading{text-align:center;margin-bottom:32px}
+        .how-it-works .section-heading h2{font-size:28.8px;font-weight:700;color:#0f172a;margin:0 0 4px}
+        .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .step-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:24px;text-align:center;transition:border-color .2s,box-shadow .2s}
+        .step-card:hover{border-color:rgba(37,99,235,.2);box-shadow:0 2px 8px rgba(37,99,235,.06)}
+        .step-number{width:40px;height:40px;border-radius:50%;background:#eff6ff;color:#2563eb;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;transition:background .2s}
+        .step-card:hover .step-number{background:#dbeafe}
+        .step-card h3{font-size:15px;font-weight:600;color:#0f172a;margin:0 0 4px}
+        .step-card p{font-size:13px;color:#64748b;margin:0}
+
+        .faq-section{max-width:900px;margin:0 auto;padding:0 24px;margin-top:48px}
+        .faq-section .section-heading{text-align:center;margin-bottom:32px}
+        .faq-section .section-heading h2{font-size:28.8px;font-weight:700;color:#0f172a;margin:0 0 4px}
+        .faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .faq-item{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:border-color .2s}
+        .faq-item:hover{border-color:#cbd5e1}
+        .faq-item h3{font-size:14px;font-weight:600;color:#0f172a;margin:0 0 8px}
+        .faq-item p{font-size:13px;color:#64748b;margin:0;line-height:1.6}
+
+        @media(max-width:1024px){.related-grid{grid-template-columns:repeat(2,1fr)}.faq-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){.hero h1{font-size:28px}.action-bar{grid-template-columns:1fr}.preview-grid{grid-template-columns:1fr}.related-grid,.steps-grid,.faq-grid{grid-template-columns:1fr}.result-grid{grid-template-columns:1fr}}
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Image Format Converter",
+        "url": "https://gotoolly.com/tools/image-format-converter",
+        "description": "Free online image format converter. Convert between JPG, PNG, WebP, and AVIF formats with quality control. 100% browser-based, no uploads.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Free to use",
+            "No account required",
+            "Client-side processing",
+            "Privacy-focused",
+            "JPG/PNG/WebP/AVIF support",
+            "Quality control",
+            "Batch conversion"
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gotoolly.com/tools"},
+            {"@type": "ListItem", "position": 3, "name": "Image Format Converter", "item": "https://gotoolly.com/tools/image-format-converter"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "What image formats are supported?", "acceptedAnswer": {"@type": "Answer", "text": "The converter supports JPG (JPEG), PNG, WebP, and AVIF formats. You can convert from any supported format to any supported output format."}},
+            {"@type": "Question", "name": "Is my image uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All conversion happens entirely in your browser using the Canvas API. Your images never leave your device."}},
+            {"@type": "Question", "name": "What does the quality slider do?", "acceptedAnswer": {"@type": "Answer", "text": "The quality slider controls the compression level for lossy formats (JPG, WebP, AVIF). Higher values produce larger files with better visual quality. PNG is lossless and ignores this setting."}},
+            {"@type": "Question", "name": "Can I convert multiple images at once?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, you can select and convert multiple images in a single batch. All images will be converted using the same format and quality settings."}},
+            {"@type": "Question", "name": "Which format should I use?", "acceptedAnswer": {"@type": "Answer", "text": "Use JPG for photos (smallest file size). Use PNG for graphics with transparency. Use WebP for the best compression-to-quality ratio. Use AVIF for next-gen compression with modern browser support."}}
+        ]
+    }
+    </script>
+
+    <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg">
+                    <span class="logo-text">GoToolly</span>
+                </a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content" style="padding-top:0">
+        <section class="hero">
+            <div class="container">
+                <h1>Image Format <span class="gradient-text">Converter</span></h1>
+                <p class="hero-subtitle">Convert images between JPG, PNG, WebP, and AVIF formats instantly. Quality control, batch support, 100% private.</p>
+                <div class="trust-badges">
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> 100% Private</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg> Encrypted</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> No Uploads</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="tool-workspace">
+                <div class="tool-card">
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+                            <h2>Image Format Converter</h2>
+                        </div>
+                        <span class="status-badge ready">Ready</span>
+                    </div>
+                    <div class="card-divider"></div>
+
+                    <div id="upload-zone">
+                        <input type="file" id="file-input" class="file-input" accept="image/*" multiple>
+                        <label for="file-input" class="upload-area" id="drop-zone">
+                            <div class="upload-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                            </div>
+                            <div class="upload-content">
+                                <h3>Drop images here or click to select</h3>
+                                <p class="upload-subtext">Supports JPG, PNG, WebP, GIF, BMP — Max 10 MB each</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="settings-card" id="settings-card" style="display:none">
+                        <div class="settings-card-header"><h3>Conversion Settings</h3></div>
+                        <div class="settings-card-body">
+                            <div class="setting-row" style="margin-bottom:16px">
+                                <div class="setting-info">
+                                    <label class="setting-label" for="output-format">Output Format</label>
+                                    <span class="setting-description">Choose the best format for your use case</span>
+                                </div>
+                                <select id="output-format" class="setting-select">
+                                    <option value="jpeg">JPEG — Best for photos</option>
+                                    <option value="png">PNG — Best with transparency</option>
+                                    <option value="webp">WebP — Modern, excellent compression</option>
+                                    <option value="avif">AVIF — Next-gen format</option>
+                                    <option value="tiff">TIFF — Lossless, print-ready</option>
+                                    <option value="gif">GIF — Simple static images</option>
+                                    <option value="ico">ICO — Favicon format</option>
+                                </select>
+                            </div>
+                            <div class="setting-row" style="margin-bottom:16px">
+                                <div class="setting-info">
+                                    <label class="setting-label">Quality: <span class="setting-value" id="quality-value">92%</span></label>
+                                    <span class="setting-description">Higher values = better quality, larger files</span>
+                                </div>
+                                <div class="quality-visual">
+                                    <input type="range" id="quality-slider" min="10" max="100" value="92" step="5">
+                                    <span class="quality-val" id="quality-display">92%</span>
+                                </div>
+                            </div>
+                            <div class="quality-bar"><div class="quality-fill" id="quality-fill" style="width:92%"></div></div>
+                            <div class="options-list">
+                                <label class="option-item">
+                                    <input type="checkbox" id="preserve-metadata">
+                                    <div class="option-text">
+                                        <span class="option-title">Preserve metadata</span>
+                                        <span class="option-desc">Keep EXIF data and color profiles</span>
+                                    </div>
+                                </label>
+                                <label class="option-item">
+                                    <input type="checkbox" id="optimize-png" checked>
+                                    <div class="option-text">
+                                        <span class="option-title">Optimize PNG files</span>
+                                        <span class="option-desc">Reduce file size without quality loss</span>
+                                    </div>
+                                </label>
+                            <label class="option-item">
+                                <input type="checkbox" id="progressive-jpeg">
+                                <div class="option-text">
+                                    <span class="option-title">Progressive JPEG</span>
+                                    <span class="option-desc">Load images progressively for web</span>
+                                </div>
+                            </label>
+                            <div class="option-item" style="align-items:center">
+                                <div class="option-text" style="flex:1">
+                                    <span class="option-title">Background Color</span>
+                                    <span class="option-desc">For images with transparency (used with JPEG output)</span>
+                                </div>
+                                <input type="color" id="bg-color" value="#ffffff" style="width:36px;height:36px;padding:2px;border:1px solid #e2e8f0;border-radius:8px;cursor:pointer;flex-shrink:0">
+                            </div>
+                            <div id="ico-options" style="display:none;margin-top:12px;padding-top:12px;border-top:1px solid #e2e8f0">
+                                <div style="font-size:13px;font-weight:600;color:#0f172a;margin-bottom:8px">Include Icon Sizes:</div>
+                                <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px">
+                                    <label class="option-item" style="padding:6px 8px;font-size:12px;cursor:pointer;gap:6px">
+                                        <input type="checkbox" class="ico-size" value="original" checked style="width:14px;height:14px;margin:0"> Original
+                                    </label>
+                                    <label class="option-item" style="padding:6px 8px;font-size:12px;cursor:pointer;gap:6px">
+                                        <input type="checkbox" class="ico-size" value="16" checked style="width:14px;height:14px;margin:0"> 16×16
+                                    </label>
+                                    <label class="option-item" style="padding:6px 8px;font-size:12px;cursor:pointer;gap:6px">
+                                        <input type="checkbox" class="ico-size" value="24" checked style="width:14px;height:14px;margin:0"> 24×24
+                                    </label>
+                                    <label class="option-item" style="padding:6px 8px;font-size:12px;cursor:pointer;gap:6px">
+                                        <input type="checkbox" class="ico-size" value="32" checked style="width:14px;height:14px;margin:0"> 32×32
+                                    </label>
+                                    <label class="option-item" style="padding:6px 8px;font-size:12px;cursor:pointer;gap:6px">
+                                        <input type="checkbox" class="ico-size" value="48" checked style="width:14px;height:14px;margin:0"> 48×48
+                                    </label>
+                                    <label class="option-item" style="padding:6px 8px;font-size:12px;cursor:pointer;gap:6px">
+                                        <input type="checkbox" class="ico-size" value="64" style="width:14px;height:14px;margin:0"> 64×64
+                                    </label>
+                                    <label class="option-item" style="padding:6px 8px;font-size:12px;cursor:pointer;gap:6px">
+                                        <input type="checkbox" class="ico-size" value="128" style="width:14px;height:14px;margin:0"> 128×128
+                                    </label>
+                                    <label class="option-item" style="padding:6px 8px;font-size:12px;cursor:pointer;gap:6px">
+                                        <input type="checkbox" class="ico-size" value="256" style="width:14px;height:14px;margin:0"> 256×256
+                                    </label>
+                                    <label class="option-item" style="padding:6px 8px;font-size:12px;cursor:pointer;gap:6px">
+                                        <input type="checkbox" class="ico-size" value="512" style="width:14px;height:14px;margin:0"> 512×512
+                                    </label>
+                                </div>
+                                <div style="font-size:11px;color:#64748b;margin-top:6px">Unchecked sizes will be skipped. At least one size required. Multiple sizes produce a ZIP package with ICO + individual PNGs.</div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div id="preview-section" class="preview-section">
+                        <div class="preview-grid">
+                            <div class="preview-box">
+                                <p class="preview-title">Original Image</p>
+                                <img id="preview-original" class="preview-image" alt="Original">
+                                <div class="preview-stats">
+                                    <p id="original-dimensions"></p>
+                                    <p id="original-size"></p>
+                                    <p id="original-format"></p>
+                                </div>
+                            </div>
+                            <div class="preview-box">
+                                <p class="preview-title">Converted Preview</p>
+                                <canvas id="preview-canvas" class="preview-image"></canvas>
+                                <div class="preview-stats">
+                                    <p id="converted-dimensions"></p>
+                                    <p id="converted-size"></p>
+                                    <p id="converted-format"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="progress-area" class="progress-section">
+                        <div class="progress-top">
+                            <div class="progress-spinner"></div>
+                            <span id="progress-text" class="progress-phase">Processing images...</span>
+                            <span id="progress-percent" class="progress-pct">0%</span>
+                        </div>
+                        <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+                    </div>
+
+                    <div id="results-area" class="results-area">
+                        <div style="text-align:center;padding-bottom:16px;border-bottom:1px solid #e2e8f0;margin-bottom:16px">
+                            <div class="result-success-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="48" height="48"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <p id="success-text" style="font-size:16px;font-weight:600;color:#0f172a;margin:0 0 4px">Images converted successfully!</p>
+                            <p id="success-info" class="result-dims" style="font-size:13px;color:#64748b;margin:0"></p>
+                        </div>
+                        <div id="results-content"></div>
+                    </div>
+
+                    <div class="action-bar" id="action-bar">
+                        <button id="convert-btn" class="btn-primary" disabled>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+                            Convert Images
+                        </button>
+                        <button id="reset-btn" class="btn-secondary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+                            Reset
+                        </button>
+                    </div>
+
+                    <div id="file-count" style="display:none"></div>
+                </div>
+
+                <section class="related-tools content-section">
+                    <div class="section-heading"><h2>Related Tools</h2><p class="section-intro">After converting, you might also need...</p></div>
+                    <div class="related-grid">
+                        <a href="/tools/image-compressor.html" class="related-item">
+                            <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+                            <h3>Image Compressor</h3>
+                            <p>Reduce image file sizes without noticeable quality loss.</p>
+                        </a>
+                        <a href="/tools/image-resizer.html" class="related-item">
+                            <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+                            <h3>Image Resizer</h3>
+                            <p>Resize images to exact dimensions or percentages.</p>
+                        </a>
+                        <a href="/tools/batch-image-converter.html" class="related-item">
+                            <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+                            <h3>Batch Converter</h3>
+                            <p>Convert multiple images at once with batch processing.</p>
+                        </a>
+                        <a href="/tools/image-editor.html" class="related-item">
+                            <div class="ri-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+                            <h3>Image Editor</h3>
+                            <p>Edit images with professional tools and effects.</p>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="how-it-works content-section">
+                    <div class="section-heading"><h2>How It Works</h2></div>
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <h3>Upload Your Images</h3>
+                            <p>Select or drag-and-drop your images. Everything stays in your browser.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <h3>Choose Format &amp; Settings</h3>
+                            <p>Pick JPG, PNG, WebP, or AVIF. Adjust quality and other options.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <h3>Download Results</h3>
+                            <p>Get your converted images instantly. Compare file sizes and download.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="faq-section content-section">
+                    <div class="section-heading"><h2>Frequently Asked Questions</h2></div>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <h3>What image formats are supported?</h3>
+                            <p>The converter supports JPG (JPEG), PNG, WebP, and AVIF formats. You can convert from any supported format to any supported output format.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Is my image uploaded to a server?</h3>
+                            <p>No. All conversion happens entirely in your browser using the Canvas API. Your images never leave your device.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>What does the quality slider do?</h3>
+                            <p>The quality slider controls the compression level for lossy formats (JPG, WebP, AVIF). Higher values produce larger files with better visual quality. PNG is lossless and ignores this setting.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Can I convert multiple images at once?</h3>
+                            <p>Yes, you can select and convert multiple images in a single batch. All images will be converted using the same format and quality settings.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Which format should I use?</h3>
+                            <p>Use JPG for photos (smallest file size). Use PNG for graphics with transparency. Use WebP for the best compression-to-quality ratio. Use AVIF for next-gen compression.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Does quality affect file size?</h3>
+                            <p>Yes. Higher quality produces larger files. For web use, 80-90% quality offers a good balance between file size and visual quality.</p>
+                        </div>
+                    </div>
+                    <div style="text-align:center;margin-top:var(--space-8)">
+                        <a href="/guides/image-format-converter" style="color:var(--color-primary);font-weight:600;font-size:var(--text-sm);text-decoration:none;transition:opacity .2s">Read Guide: Convert Image Formats Online &#10132;</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size:var(--text-sm);color:#9ca3af;margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p>
+                    <div class="footer-social">
+                        <a href="https://x.com/GoToolly" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="https://www.facebook.com/profile.php?id=61591898344203" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                        <a href="https://www.youtube.com/@GoToolly" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                        <a href="https://www.instagram.com/gotoolly/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
+                        <a href="https://www.tiktok.com/@gotoolly26" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+                        <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 01-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 01.042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 014.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 01.14-.197.35.35 0 01.238-.042l2.906.617a1.214 1.214 0 011.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 00-.231.094.33.33 0 000 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 00.029-.463.33.33 0 00-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 00-.232-.095z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Popular Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="/tools/image-compressor.html">Image Compressor</a></li>
+                        <li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li>
+                        <li><a href="/tools/word-counter.html">Word Counter</a></li>
+                        <li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li>
+                        <li><a href="/tools">View All Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="/assets/js/main.min.js"></script>
+    <script src="../assets/js/tools/image-format-converter.js"></script>
+    <script>document.getElementById('current-year').textContent=new Date().getFullYear();</script>
+</body>
+</html>

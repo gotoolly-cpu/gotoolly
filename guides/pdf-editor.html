@@ -1,0 +1,612 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Edit PDF Files: Text, Images, Shapes & More Guide 2026 | GoToolly</title>
+    <meta name="description" content="Step-by-step guide to the GoToolly PDF Editor. Add text, images, shapes, callouts, highlights, redactions, and stamps to your PDFs. Free, browser-based, no uploads.">
+    <meta name="keywords" content="PDF editor, edit PDF, add text to PDF, add images to PDF, PDF shapes, PDF annotations, PDF redaction, edit PDF online, free PDF editor">
+    <link rel="canonical" href="https://gotoolly.com/guides/pdf-editor">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gotoolly.com/guides/pdf-editor">
+    <meta property="og:title" content="How to Edit PDF Files: Text, Images, Shapes & More Guide 2026 | GoToolly">
+    <meta property="og:description" content="Step-by-step guide to edit PDF files. Add text, images, shapes, callouts, highlights, and stamps using a free browser-based tool.">
+    <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:site_name" content="GoToolly">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gotoolly.com/guides/pdf-editor">
+    <meta name="twitter:title" content="How to Edit PDF Files: Text, Images, Shapes & More Guide 2026 | GoToolly">
+    <meta name="twitter:description" content="Step-by-step guide to edit PDF files. Add text, images, shapes, callouts, highlights, and stamps using a free browser-based tool.">
+    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
+    <meta name="twitter:image:alt" content="GoToolly Logo">
+    <meta name="twitter:creator" content="@GoToolly">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+
+    <style>
+        .page-header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:var(--space-12) var(--space-6);border-radius:var(--radius-xl);text-align:center;margin-bottom:var(--space-10)}
+        .page-header h1{color:#fff;margin-bottom:var(--space-3);font-size:var(--text-3xl)}
+        .page-description{color:rgba(255,255,255,.9);font-size:var(--text-lg);max-width:42rem;margin:0 auto var(--space-6);line-height:1.6}
+        .cta-container{display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;margin-top:var(--space-6)}
+        .guide-content{max-width:1000px;margin:0 auto}
+        .guide-bottom{max-width:1000px;margin:0 auto;padding:0 var(--space-6)}
+        .guide-bottom section{margin-bottom:var(--space-8)}
+        .guide-bottom h2{font-size:var(--text-2xl);margin-bottom:var(--space-4)}
+        .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--space-4);margin:var(--space-4) 0}
+        .related-card{background:var(--color-surface);padding:var(--space-4);border-radius:var(--radius-md);border:1px solid var(--color-border);transition:border-color .2s}
+        .related-card:hover{border-color:var(--color-primary)}
+        .related-card h4{margin:0 0 var(--space-2);font-size:var(--text-base)}
+        .related-card p{margin:0;font-size:var(--text-sm);color:var(--color-text-secondary)}
+        .comparison-table{width:100%;border-collapse:collapse;margin:var(--space-6) 0}
+        .comparison-table th,.comparison-table td{border:1px solid var(--color-border);padding:var(--space-3);text-align:left;vertical-align:top}
+        .comparison-table thead{background-color:var(--color-surface-secondary)}
+        .step-box{background:var(--color-surface);border-left:4px solid var(--color-primary);padding:var(--space-4);margin-bottom:var(--space-4);border-radius:0 var(--radius-md) var(--radius-md) 0}
+        .pro-tip{background:rgba(102,126,234,.1);border-left:4px solid #667eea;padding:var(--space-4);border-radius:0 var(--radius-md) var(--radius-md) 0;margin:var(--space-4) 0}
+        .security-box{background:linear-gradient(135deg,rgba(102,126,234,.05) 0%,rgba(118,75,162,.05) 100%);border-radius:var(--radius-lg);padding:var(--space-6);margin:var(--space-8) 0;border:1px solid rgba(102,126,234,.2)}
+        .faq-item{border-bottom:1px solid var(--color-border);padding:var(--space-5) 0}
+        .faq-item:last-child{border-bottom:none}
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}
+        .skip-link:focus{top:0}
+        .tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--space-4);margin:var(--space-6) 0}
+        .tool-card{background:var(--color-surface);border:2px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5);transition:border-color .2s}
+        .tool-card:hover{border-color:var(--color-primary)}
+        .tool-card h3{margin:0 0 var(--space-2);color:var(--color-primary);font-size:var(--text-base)}
+        .tool-card p{margin:0;font-size:var(--text-sm);color:var(--color-text-secondary);line-height:1.5}
+        .tool-card .badge{display:inline-block;background:rgba(102,126,234,.1);color:#667eea;font-size:var(--text-xs);font-weight:600;padding:2px 8px;border-radius:var(--radius-sm);margin-top:var(--space-2);text-transform:uppercase;letter-spacing:.3px}
+        kbd{background:var(--color-surface-secondary);border:1px solid var(--color-border);border-radius:4px;padding:2px 6px;font-family:inherit;font-size:var(--text-xs);font-weight:600;white-space:nowrap}
+        .shortcut-table{width:100%;border-collapse:collapse;margin:var(--space-4) 0}
+        .shortcut-table td{padding:var(--space-2) var(--space-3);border-bottom:1px solid var(--color-border);font-size:var(--text-sm)}
+        .shortcut-table td:first-child{font-weight:600;white-space:nowrap}
+        @media(max-width:768px){.tool-grid{grid-template-columns:1fr 1fr}.comparison-table{font-size:var(--text-sm)}.comparison-table th,.comparison-table td{padding:var(--space-2)}.guide-bottom{padding:0 var(--space-4)}.related-grid{grid-template-columns:1fr 1fr}}
+        @media(max-width:480px){.tool-grid{grid-template-columns:1fr}.related-grid{grid-template-columns:1fr}}
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "How to Edit PDF Files: Text, Images, Shapes & More Guide 2026",
+        "description": "Step-by-step guide to the GoToolly PDF Editor. Add text, images, shapes, callouts, highlights, redactions, and stamps to your PDFs. Free, browser-based, no uploads.",
+        "url": "https://gotoolly.com/guides/pdf-editor",
+        "author": {
+            "@type": "Organization",
+            "name": "GoToolly",
+            "url": "https://gotoolly.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "GoToolly",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://gotoolly.com/assets/images/logo-512.png"
+            }
+        },
+        "image": "https://gotoolly.com/assets/images/logo-512.png",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://gotoolly.com/guides/pdf-editor"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gotoolly.com/guides"},
+            {"@type": "ListItem", "position": 3, "name": "PDF Editor Guide", "item": "https://gotoolly.com/guides/pdf-editor"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What tools are included in the PDF Editor?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The GoToolly PDF Editor includes 12 tools: Text, Image, Rectangle, Rounded Rectangle, Circle, Ellipse, Line, Arrow, Callout, Highlight, Redact, and Stamp. All processing happens in your browser."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the PDF Editor free to use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The PDF Editor is completely free with no limits, no sign-up required, and no watermarks added to your documents."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my PDF uploaded to any server?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. All processing happens locally in your browser using JavaScript. Your PDF never leaves your device, ensuring complete privacy for sensitive documents."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I undo changes in the PDF Editor?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The editor has full undo and redo support. Press Ctrl+Z to undo and Ctrl+Y to redo. You can also click the Undo and Redo buttons in the toolbar."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I edit multi-page PDFs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The editor supports multi-page PDFs. You can navigate between pages using the page arrows, add different elements to each page, and all pages are exported together."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the maximum file size?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The maximum file size is 25 MB per file. For larger files, consider compressing the PDF first using the PDF Compressor tool."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg" width="32" height="32">
+                    <span class="logo-text">GoToolly</span>
+                </a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link">Tools</a>
+                    <a href="/guides" class="nav-link active">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Edit PDF Files: Text, Images, Shapes & More Guide 2026</h1>
+                <p class="page-description">
+                    Learn how to use the GoToolly PDF Editor. Add text, images, shapes, callouts, highlights, redactions, and stamps to any PDF. All processing happens in your browser.
+                </p>
+                <div class="cta-container">
+                    <a href="../tools/pdf-editor" class="btn btn-primary btn-lg">Open PDF Editor</a>
+                    <a href="#step-by-step" class="btn btn-secondary btn-lg">Read the Guide</a>
+                </div>
+                <p style="margin-top:var(--space-4);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No uploads &bull; No sign-up &bull; 100% browser-based</p>
+            </div>
+
+            <article class="guide-content">
+                <section>
+                    <h2>What Tools Are Included?</h2>
+                    <p>The GoToolly PDF Editor gives you 12 tools in one interface. Select a tool from the toolbar, then click on the PDF canvas to place or draw your element. Every element can be moved, resized, rotated, and deleted after placement.</p>
+
+                    <div class="tool-grid">
+                        <div class="tool-card">
+                            <h3>Text</h3>
+                            <p>Place custom text anywhere on your PDF. Edit content, font size, color, and opacity. Multi-line text with word wrapping supported.</p>
+                            <span class="badge">Freeform</span>
+                        </div>
+                        <div class="tool-card">
+                            <h3>Image</h3>
+                            <p>Insert images (PNG, JPG, GIF, WebP) onto your PDF pages. Drag to position and resize freely.</p>
+                            <span class="badge">Upload</span>
+                        </div>
+                        <div class="tool-card">
+                            <h3>Rectangle</h3>
+                            <p>Draw filled or outlined rectangles. Customizable fill color, border color, opacity, and rotation.</p>
+                            <span class="badge">Shape</span>
+                        </div>
+                        <div class="tool-card">
+                            <h3>Rounded Rectangle</h3>
+                            <p>Rectangle with rounded corners. Same controls as Rectangle — fill, stroke, opacity, rotation.</p>
+                            <span class="badge">Shape</span>
+                        </div>
+                        <div class="tool-card">
+                            <h3>Circle</h3>
+                            <p>Draw perfect circles on your PDF. Drag to set radius and position.</p>
+                            <span class="badge">Shape</span>
+                        </div>
+                        <div class="tool-card">
+                            <h3>Ellipse</h3>
+                            <p>Draw ellipses with independent width and height. Great for annotations and callout backgrounds.</p>
+                            <span class="badge">Shape</span>
+                        </div>
+                        <div class="tool-card">
+                            <h3>Line</h3>
+                            <p>Draw straight lines with customizable color, width, and rotation. Drag to set length and angle.</p>
+                            <span class="badge">Connector</span>
+                        </div>
+                        <div class="tool-card">
+                            <h3>Arrow</h3>
+                            <p>Draw arrows to point at or connect elements. Full control over color, stroke width, and rotation.</p>
+                            <span class="badge">Connector</span>
+                        </div>
+                        <div class="tool-card">
+                            <h3>Callout</h3>
+                            <p>Speech-bubble callouts with editable text inside. Choose a background color and type your message.</p>
+                            <span class="badge">Text</span>
+                        </div>
+                        <div class="tool-card">
+                            <h3>Highlight</h3>
+                            <p>Semi-transparent colored overlays. Perfect for marking important sections of a document.</p>
+                            <span class="badge">Overlay</span>
+                        </div>
+                        <div class="tool-card">
+                            <h3>Redact</h3>
+                            <p>Solid black rectangles to permanently hide sensitive information. Fully opaque by default.</p>
+                            <span class="badge">Overlay</span>
+                        </div>
+                        <div class="tool-card">
+                            <h3>Stamp</h3>
+                            <p>Pre-made stamps: Approved, Denied, Draft, Confidential, Final, Not Approved, Experimental. Click to place.</p>
+                            <span class="badge">Quick</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Editor Features</h2>
+                    <p>Beyond the 12 tools, the editor includes several features to manage your edits:</p>
+
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Undo / Redo</strong></td>
+                                <td>Full undo history. Press Ctrl+Z to undo, Ctrl+Y to redo. Every action is tracked.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Element Properties</strong></td>
+                                <td>Select any element to edit its properties: position, size, color, opacity, rotation, text content, and font size.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Layer Ordering</strong></td>
+                                <td>Bring elements forward or send them backward. Control which elements appear on top.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Lock & Hide</strong></td>
+                                <td>Lock elements to prevent accidental moves. Hide elements temporarily while working on others.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Multi-page Support</strong></td>
+                                <td>Navigate between pages with arrows. Each page has its own set of elements. Zoom controls for detailed work.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Auto-fit Zoom</strong></td>
+                                <td>Fit the PDF to the available workspace width and height automatically.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Drag & Resize</strong></td>
+                                <td>All elements can be dragged to reposition. Most elements have resize handles for scaling.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rotation</strong></td>
+                                <td>Rotate any element by dragging the rotation handle. Perfect for angled text and watermarks.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <div class="security-box">
+                    <h2 style="margin-top:0">Your Privacy is Guaranteed</h2>
+                    <p><strong>Local Processing:</strong> The entire editing process happens in your browser using JavaScript. Your PDF never touches any server.</p>
+                    <p><strong>No Data Collection:</strong> We cannot access, view, or store your documents. Sensitive contracts, financial records, and personal files stay completely private.</p>
+                    <p><strong>No Watermarks:</strong> The generated PDF contains no hidden watermarks, tracking codes, or branding marks.</p>
+                    <p><strong>Temporary Memory Only:</strong> Files exist only in your browser's memory while the tab is open. Close the tab and everything is cleared.</p>
+                </div>
+
+                <section>
+                    <h2 id="step-by-step">Step-by-Step: Using the PDF Editor</h2>
+
+                    <div class="step-box">
+                        <h3>Step 1: Upload Your PDF</h3>
+                        <p><strong>What to do:</strong> Click the upload area or drag and drop your PDF file. The file loads directly into your browser's memory.</p>
+                        <p><strong>Why it matters:</strong> The upload is local (no network transfer), so even large PDFs load quickly. Files up to 25MB are supported.</p>
+                        <p><strong>Common mistake:</strong> Dragging a non-PDF file (like an image or Word document). Ensure your file has a .pdf extension.</p>
+                    </div>
+
+                    <div class="step-box">
+                        <h3>Step 2: Select a Tool</h3>
+                        <p><strong>What to do:</strong> Click a tool icon from the toolbar at the top. The active tool is highlighted in blue. Tools are grouped: Text, Image, Shapes (Rectangle, Rounded Rectangle, Circle, Ellipse), Connectors (Line, Arrow), Callout, Highlight, Redact, and Stamp.</p>
+                        <p><strong>Why it matters:</strong> The tool determines what kind of element you place on the canvas. You can switch tools at any time.</p>
+                    </div>
+
+                    <div class="step-box">
+                        <h3>Step 3: Place or Draw Your Element</h3>
+                        <p><strong>What to do:</strong> For most tools, click on the PDF canvas where you want the element. For shapes and connectors, click and drag to set the size. For Text and Callout, a text input appears — type your content, then click "Add" to place it.</p>
+                        <p><strong>Why it matters:</strong> Elements are placed at the clicked position and can be moved or resized after placement.</p>
+                    </div>
+
+                    <div class="step-box">
+                        <h3>Step 4: Edit Properties</h3>
+                        <p><strong>What to do:</strong> Click on any placed element to select it. The Properties panel on the right shows editable controls for position (X, Y), size (width, height), color, opacity, rotation, and text content.</p>
+                        <p><strong>Why it matters:</strong> Fine-tune your elements for precise placement. The Properties panel updates in real time as you drag elements on the canvas.</p>
+                    </div>
+
+                    <div class="step-box">
+                        <h3>Step 5: Manage Layers</h3>
+                        <p><strong>What to do:</strong> Use the Layers panel below the Properties panel to reorder, lock, or hide elements. Click the eye icon to hide an element, the lock icon to prevent accidental moves, or the up/down arrows to change layer order.</p>
+                        <p><strong>Why it matters:</strong> Layer order determines which elements appear on top. Lock and hide features prevent accidental edits to finished elements.</p>
+                    </div>
+
+                    <div class="step-box">
+                        <h3>Step 6: Navigate Pages</h3>
+                        <p><strong>What to do:</strong> Use the page navigation arrows at the bottom of the canvas to move between pages. Add different elements to each page. The page counter shows your current position.</p>
+                        <p><strong>Why it matters:</strong> Each page has its own independent set of elements. You can add a watermark to page 1 and a signature to page 3.</p>
+                    </div>
+
+                    <div class="step-box">
+                        <h3>Step 7: Export</h3>
+                        <p><strong>What to do:</strong> Click the "Apply & Download" button when you're finished. The editor exports all your elements into a new PDF and downloads it automatically. The session resets so you can upload another file.</p>
+                        <p><strong>Why it matters:</strong> The export preserves your PDF's original quality and dimensions. All elements are embedded at their correct positions on each page.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Tool-by-Tool Guide</h2>
+
+                    <h3>Text Tool</h3>
+                    <p>Click the canvas to open a text input. Type your content (supports multi-line), adjust font size and color, then click "Add" to place. The text element supports word wrapping — long lines break automatically to fit within the width you set. Drag the element to reposition, use corner handles to resize the bounding box, and use the rotation handle to angle the text.</p>
+
+                    <h3>Image Tool</h3>
+                    <p>Click the canvas to open a file picker. Select a PNG, JPG, GIF, or WebP image. The image is placed at the clicked position. Drag to reposition and use corner handles to scale. Images are cached locally so switching pages doesn't lose them.</p>
+
+                    <h3>Shape Tools (Rectangle, Rounded Rectangle, Circle, Ellipse)</h3>
+                    <p>Select a shape tool, then click and drag on the canvas to draw. The shape is created with your default fill and stroke colors. Use the Properties panel to change fill color, stroke color, opacity, and rotation after placement.</p>
+
+                    <h3>Line &amp; Arrow Tools</h3>
+                    <p>Click and drag to set the length and angle. Lines and arrows use the stroke color and width. Drag the endpoints to adjust after placement. Use the rotation handle for precise angles.</p>
+
+                    <h3>Callout Tool</h3>
+                    <p>Click the canvas to open a text input with a background color picker. Type your message and click "Add". The callout appears as a speech bubble with your text inside. The background color defaults to a light yellow; you can change it to any color.</p>
+
+                    <h3>Highlight Tool</h3>
+                    <p>Click to place a semi-transparent colored rectangle. Defaults to a yellow highlight (#fef08a). Use the Properties panel to change the color and opacity. Ideal for marking sections of text in the underlying PDF.</p>
+
+                    <h3>Redact Tool</h3>
+                    <p>Click to place a solid black rectangle. This is used to permanently hide sensitive information. The element is fully opaque by default. Position and resize it to cover the content you want to redact.</p>
+
+                    <h3>Stamp Tool</h3>
+                    <p>Click the Stamp icon to open the stamp picker. Choose from 7 pre-made stamps: Approved, Denied, Draft, Confidential, Final, Not Approved, or Experimental. Click a stamp to place it on the canvas. Each stamp has a distinct color and style.</p>
+                </section>
+
+                <section>
+                    <h2>Keyboard Shortcuts</h2>
+                    <table class="shortcut-table">
+                        <tr><td><kbd>Ctrl</kbd> + <kbd>Z</kbd></td><td>Undo last action</td></tr>
+                        <tr><td><kbd>Ctrl</kbd> + <kbd>Y</kbd></td><td>Redo last action</td></tr>
+                        <tr><td><kbd>Delete</kbd></td><td>Delete selected element</td></tr>
+                        <tr><td><kbd>Escape</kbd></td><td>Deselect element / Cancel drag</td></tr>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>Best Practices for Great Results</h2>
+
+                    <div class="pro-tip">
+                        <p><strong>Tip:</strong> <strong>Place elements page by page.</strong> Navigate to the correct page before adding elements. Each page has its own independent element set.</p>
+                    </div>
+
+                    <div class="pro-tip">
+                        <p><strong>Tip:</strong> <strong>Use the Properties panel for precision.</strong> Instead of dragging blindly, select an element and type exact X, Y, width, and height values for pixel-perfect placement.</p>
+                    </div>
+
+                    <div class="pro-tip">
+                        <p><strong>Tip:</strong> <strong>Lock finished elements.</strong> Once an element is positioned correctly, lock it in the Layers panel to prevent accidental moves while working on other elements.</p>
+                    </div>
+
+                    <div class="pro-tip">
+                        <p><strong>Tip:</strong> <strong>Use Undo liberally.</strong> Every action is tracked. If something goes wrong, press Ctrl+Z to step back.</p>
+                    </div>
+
+                    <div class="pro-tip">
+                        <p><strong>Tip:</strong> <strong>Redact carefully.</strong> Redaction covers content with a solid black box. Make sure it fully covers the sensitive area by resizing it appropriately.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Common Mistakes to Avoid</h2>
+
+                    <h3>Mistake 1: Adding Elements on the Wrong Page</h3>
+                    <p><strong>The Problem:</strong> You place text or shapes on page 1 when you meant page 3.</p>
+                    <p><strong>Fix:</strong> Always check the page counter at the bottom before placing elements. Use the page arrows to navigate to the correct page first.</p>
+
+                    <h3>Mistake 2: Forgetting to Export</h3>
+                    <p><strong>The Problem:</strong> You close the browser tab without exporting. All changes are lost.</p>
+                    <p><strong>Fix:</strong> Click "Apply &amp; Download" when you're satisfied. The download starts automatically.</p>
+
+                    <h3>Mistake 3: Text Overflow</h3>
+                    <p><strong>The Problem:</strong> Your text element extends beyond the page boundary or overlaps other content.</p>
+                    <p><strong>Fix:</strong> Use the resize handles to adjust the text bounding box. For multi-line text, the word wrapping adjusts automatically when you change the width.</p>
+
+                    <h3>Mistake 4: Elements on Top of Each Other</h3>
+                    <p><strong>The Problem:</strong> You can't select an element because another one is on top of it.</p>
+                    <p><strong>Fix:</strong> Use the Layers panel to select elements by name, or use the up/down arrows to change layer order. You can also hide top elements temporarily.</p>
+                </section>
+            </article>
+
+            <div class="guide-bottom">
+                <section>
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h3>What tools are included in the PDF Editor?</h3>
+                        <p>The GoToolly PDF Editor includes 12 tools: Text, Image, Rectangle, Rounded Rectangle, Circle, Ellipse, Line, Arrow, Callout, Highlight, Redact, and Stamp. All processing happens in your browser.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Is the PDF Editor free to use?</h3>
+                        <p>Yes. The PDF Editor is completely free with no limits, no sign-up required, and no watermarks added to your documents.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Is my PDF uploaded to any server?</h3>
+                        <p>No. All processing happens locally in your browser using JavaScript. Your PDF never leaves your device, ensuring complete privacy for sensitive documents.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can I undo changes in the PDF Editor?</h3>
+                        <p>Yes. The editor has full undo and redo support. Press Ctrl+Z to undo and Ctrl+Y to redo. You can also click the Undo and Redo buttons in the toolbar.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Can I edit multi-page PDFs?</h3>
+                        <p>Yes. The editor supports multi-page PDFs. You can navigate between pages using the page arrows, add different elements to each page, and all pages are exported together.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>What is the maximum file size?</h3>
+                        <p>The maximum file size is 25 MB per file. For larger files, consider compressing the PDF first using the PDF Compressor tool.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Related PDF Tools</h2>
+                    <p>Enhance your PDF workflow with these powerful, privacy-focused tools:</p>
+                    <div class="related-grid">
+                        <div class="related-card">
+                            <h4><a href="../tools/pdf-compressor">PDF Compressor</a></h4>
+                            <p>Reduce PDF file size while preserving quality.</p>
+                        </div>
+                        <div class="related-card">
+                            <h4><a href="../tools/pdf-merger">PDF Merger</a></h4>
+                            <p>Combine multiple PDF files into one document.</p>
+                        </div>
+                        <div class="related-card">
+                            <h4><a href="../tools/pdf-splitter-rotator">PDF Splitter</a></h4>
+                            <p>Split PDFs into separate files or rotate pages.</p>
+                        </div>
+                        <div class="related-card">
+                            <h4><a href="../tools/pdf-to-word">PDF to Word</a></h4>
+                            <p>Convert PDF documents to editable Word files.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="page-header" style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);margin-top:var(--space-12)">
+                <h2 style="font-size:var(--text-2xl);color:#fff">Edit Your PDFs Now</h2>
+                <p class="page-description">Add text, images, shapes, callouts, highlights, redactions, and stamps to your PDF files. Professional editing that works entirely in your browser.</p>
+                <div class="cta-container">
+                    <a href="../tools/pdf-editor" class="btn btn-primary btn-lg">Open PDF Editor</a>
+                </div>
+                <p style="margin-top:var(--space-4);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No sign-up &bull; No server uploads &bull; 100% browser-based processing</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p>
+                    <div class="footer-social">
+                        <a href="https://x.com/GoToolly" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="https://www.facebook.com/profile.php?id=61591898344203" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                        <a href="https://www.youtube.com/@GoToolly" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                        <a href="https://www.instagram.com/gotoolly/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
+                        <a href="https://www.tiktok.com/@gotoolly26" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+                        <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Popular Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="../tools/image-compressor">Image Compressor</a></li>
+                        <li><a href="../tools/pdf-compressor">PDF Compressor</a></li>
+                        <li><a href="../tools/word-counter">Word Counter</a></li>
+                        <li><a href="../tools/qr-code-generator">QR Code Generator</a></li>
+                        <li><a href="../tools/password-generator">Password Generator</a></li>
+                        <li><a href="/tools">View All Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="../about">About Us</a></li>
+                        <li><a href="../contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="../legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="../legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="../legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="../legal/privacy-policy">Privacy</a>
+                    <a href="../legal/terms-of-service">Terms</a>
+                    <a href="../legal/disclaimer">Disclaimer</a>
+                    <a href="../contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="../assets/js/main.min.js"></script>
+</body>
+</html>

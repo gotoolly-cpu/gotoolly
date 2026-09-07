@@ -1,163 +1,775 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Screenshot to PDF - Convert Images to PDF Online | GoToolly</title>
-    <meta name="description" content="Convert screenshots and images to PDF documents. Choose page size, orientation, margins. Drag to reorder. Free, private, browser-based.">
-    <meta name="keywords" content="screenshot to pdf, image to pdf, convert images to pdf, jpg to pdf, png to pdf, make pdf from images">
+    <meta name="description" content="Convert screenshots and images to PDF documents. Choose page size, orientation, margins, layout. Drag to reorder. Free, private, browser-based.">
+    <meta name="keywords" content="screenshot to pdf, image to pdf, convert images to pdf, jpg to pdf, png to pdf, make pdf from images, batch image to pdf">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://gotoolly.com/tools/screenshot-to-pdf">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gotoolly.com/tools/screenshot-to-pdf">
     <meta property="og:title" content="Screenshot to PDF - Convert Images to PDF Online | GoToolly">
-    <meta property="og:description" content="Convert screenshots and images to PDF documents. Choose page size, orientation, margins. Drag to reorder. Free, private, browser-based.">
+    <meta property="og:description" content="Convert screenshots and images to PDF documents. Choose page size, orientation, margins, layout. Drag to reorder. Free, private, browser-based.">
     <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
-    <meta property="og:image:alt" content="GoToolly Logo">
     <meta property="og:site_name" content="GoToolly">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://gotoolly.com/tools/screenshot-to-pdf">
     <meta name="twitter:title" content="Screenshot to PDF - Convert Images to PDF Online | GoToolly">
-    <meta name="twitter:description" content="Convert screenshots and images to PDF documents. Choose page size, orientation, margins. Drag to reorder. Free, private, browser-based.">
-    <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
-    <meta name="twitter:image:alt" content="GoToolly Logo">
-    <meta name="twitter:creator" content="@GoToolly">
+    <meta name="twitter:description" content="Convert screenshots and images to PDF documents. Choose page size, orientation, margins, layout. Drag to reorder. Free, private, browser-based.">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
-    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/font-awesome.all.min.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
-    <style>
-        .hero-section{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:var(--space-6) 0;margin-bottom:var(--space-6);border-radius:12px}
-        .hero-content{display:grid;grid-template-columns:2fr 1fr;gap:var(--space-4);align-items:center}
-        .hero-text h1{font-size:2rem;margin:0 0 var(--space-2)}
-        .hero-text p{margin:0;opacity:.95}
-        .hero-badges{display:flex;gap:var(--space-2);margin-top:var(--space-3);flex-wrap:wrap}
-        .hero-badge{background:rgba(255,255,255,.15);padding:4px 12px;border-radius:999px;font-size:var(--text-sm);font-weight:500}
-        .hero-stats{display:grid;gap:var(--space-3)}
-        .stat-card{background:rgba(255,255,255,.08);padding:var(--space-3);border-radius:8px;text-align:center}
-        .stat-number{font-weight:700;font-size:1.25rem}
-        .tool-workspace{background:var(--color-surface);border-radius:12px;padding:var(--space-5);box-shadow:0 8px 30px rgba(0,0,0,.06)}
-        .workspace-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:var(--space-3);border-bottom:1px solid var(--color-border);padding-bottom:var(--space-3)}
-        .workspace-header h2{margin:0;font-size:1.25rem}
-        .file-counter{background:var(--color-primary);color:#fff;padding:6px 14px;border-radius:999px;font-weight:600;font-size:.9rem}
-        .upload-area{border:2px dashed var(--color-border);border-radius:12px;padding:var(--space-6);text-align:center;cursor:pointer;transition:all .18s ease;background-color:var(--color-bg-alt);display:block}
-        .upload-area:hover{border-color:var(--color-primary);background-color:rgba(37,99,235,.04);transform:translateY(-2px)}
-        .upload-area svg{width:56px;height:56px;color:var(--color-primary);margin-bottom:var(--space-3)}
-        .two-col{display:grid;grid-template-columns:1fr 280px;gap:var(--space-4);margin-top:var(--space-3)}
-        .thumb-list{background:var(--color-bg-alt);border-radius:8px;padding:var(--space-3);min-height:100px}
-        .thumb-item{display:flex;align-items:center;gap:var(--space-2);padding:var(--space-2);background:#fff;border-radius:6px;margin-bottom:var(--space-2);cursor:grab;border:1px solid var(--color-border)}
-        .thumb-item:active{cursor:grabbing}
-        .thumb-item.dragging{opacity:.5}
-        .thumb-item .thumb-img{width:48px;height:48px;object-fit:cover;border-radius:4px;flex-shrink:0}
-        .thumb-item .thumb-info{flex:1;font-size:var(--text-sm);overflow:hidden}
-        .thumb-item .thumb-info .thumb-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-        .thumb-item .thumb-info .thumb-dims{font-size:var(--text-xs);color:var(--color-text-light)}
-        .thumb-item .thumb-actions{display:flex;gap:4px}
-        .thumb-item .thumb-actions button{background:none;border:none;cursor:pointer;color:var(--color-text-light);padding:4px;font-size:var(--text-sm)}
-        .thumb-item .thumb-actions button:hover{color:var(--color-primary)}
-        .settings-panel{background:#fff;border:1px solid var(--color-border);border-radius:8px;padding:var(--space-3)}
-        .settings-panel .form-group{margin-bottom:var(--space-2)}
-        .settings-panel .form-label{font-size:var(--text-sm);font-weight:600;margin-bottom:4px;display:block}
-        .settings-panel select,.settings-panel input[type=number]{width:100%;padding:6px 8px;border:1px solid var(--color-border);border-radius:6px;font-size:var(--text-sm);box-sizing:border-box}
-        .btn-row{display:flex;gap:var(--space-3);margin-top:var(--space-3)}
-        .btn-row button{flex:1}
-        .progress-section{display:none;margin-top:var(--space-4)}
-        .privacy-badge{display:flex;align-items:center;gap:var(--space-2);background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;padding:10px 16px;border-radius:8px;margin-top:var(--space-4);font-size:var(--text-sm);font-weight:500}
-        .privacy-badge i{font-size:1rem}
-        @media(max-width:900px){.hero-content{grid-template-columns:1fr;gap:var(--space-3)}.hero-text h1{font-size:1.6rem}.tool-workspace{padding:var(--space-4)}.two-col{grid-template-columns:1fr}.upload-area{padding:var(--space-4);min-height:120px}.upload-area svg{width:48px;height:48px}}
-        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s}
-        .skip-link:focus{top:0}
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"WebApplication","name":"Screenshot to PDF","url":"https://gotoolly.com/tools/screenshot-to-pdf","description":"Convert screenshots and images to PDF documents. Choose page size, orientation, margins. Drag to reorder. Free, private, browser-based.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Drag-and-drop reorder","A4 and Letter sizes","Portrait and landscape","Custom margins"]}
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Screenshot to PDF",
+        "url": "https://gotoolly.com/tools/screenshot-to-pdf",
+        "description": "Convert screenshots and images to PDF documents. Choose page size, orientation, margins, layout. Drag to reorder. Free, private, browser-based.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["Free to use","No account required","Client-side processing","Privacy-focused","Drag-and-drop reorder","Multi-image layouts","Page numbering","PDF metadata","A4 Letter Legal A3 A5 sizes","Contact sheet mode"]
+    }
     </script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Screenshot to PDF","item":"https://gotoolly.com/tools/screenshot-to-pdf"}]}
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gotoolly.com/tools"},
+            {"@type": "ListItem", "position": 3, "name": "Screenshot to PDF", "item": "https://gotoolly.com/tools/screenshot-to-pdf"}
+        ]
+    }
     </script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What page sizes are available?","acceptedAnswer":{"@type":"Answer","text":"A4 (210x297mm) and Letter (8.5x11in) page sizes are supported, in both portrait and landscape orientations."}},{"@type":"Question","name":"Can I reorder images before converting?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can drag and drop thumbnails to reorder, or use the up/down buttons. The order determines the PDF page order."}},{"@type":"Question","name":"What image formats can I use?","acceptedAnswer":{"@type":"Answer","text":"PNG, JPG, and WebP images are supported. Each image becomes one page in the PDF."}},{"@type":"Question","name":"How are images fitted to the page?","acceptedAnswer":{"@type":"Answer","text":"Images are scaled to fit within the page dimensions while respecting the margin settings. Aspect ratio is preserved. Portrait images work best in portrait mode."}},{"@type":"Question","name":"Is my image uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All PDF generation is done entirely in your browser using the pdf-lib library. Your images never leave your device."}}]}
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type":"Question","name":"What page sizes are available?","acceptedAnswer":{"@type":"Answer","text":"A4, Letter, Legal, A3, A5, Original Image Size, Auto Page Size, and Fit To Content page sizes are supported, in both portrait and landscape orientations."}},
+            {"@type":"Question","name":"Can I reorder images before converting?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can drag and drop thumbnails to reorder. The order determines the PDF page order."}},
+            {"@type":"Question","name":"What image formats can I use?","acceptedAnswer":{"@type":"Answer","text":"PNG, JPG, JPEG, WebP, and AVIF (browser-supported) images are supported."}},
+            {"@type":"Question","name":"Can I put multiple images on one page?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose from 1, 2, 4, 6, 9 images per page, or use Auto Fit to automatically arrange images."}},
+            {"@type":"Question","name":"Is my image uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All PDF generation is done entirely in your browser using the pdf-lib library. Your images never leave your device."}}
+        ]
+    }
     </script>
 
-    <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
+    <style>
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .25s cubic-bezier(.4,0,.2,1)}
+        .skip-link:focus{top:0}
+        .hero{background:#0f172a;padding:20px 0 12px;text-align:center}
+        .hero h1{font-size:28px;font-weight:800;color:#fff;line-height:1.2;margin:0 0 6px}
+        .hero h1 .gradient-text{background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-subtitle{font-size:14px;color:#94a3b8;line-height:1.5;margin:0 0 12px}
+        .trust-badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+        .trust-badge{display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:4px 10px;border-radius:9999px;font-size:12px;font-weight:500;color:#cbd5e1;transition:background .2s}
+        .trust-badge:hover{background:rgba(255,255,255,.1)}
+        .trust-badge svg{width:14px;height:14px;color:#60a5fa}
+        html,body{height:100%;margin:0}
+        body{display:flex;flex-direction:column}
+        .skip-link,.site-header,.hero,.site-footer{flex-shrink:0}
+        #main-content{flex:1;display:flex;flex-direction:column}
+        .tool-workspace{max-width:1120px;margin:0 auto;padding:0 24px;flex:1;display:flex;flex-direction:column}
+        .tool-card{background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.04);border:1px solid #e2e8f0;padding:0;margin-bottom:0;overflow:hidden;flex:1;display:flex;flex-direction:column;min-height:0}
+        .tool-card-header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid #e2e8f0}
+        .tool-card-header-left{display:flex;align-items:center;gap:10px}
+        .tool-card-header-left svg{width:18px;height:18px;color:var(--color-primary)}
+        .tool-card-header-left h2{font-size:16.8px;font-weight:600;margin:0;color:#0f172a}
+        .status-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:9999px;font-size:11px;font-weight:600;letter-spacing:.3px;background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+
+        .editor-body{display:flex;flex:1;min-height:0;overflow:hidden}
+        .editor-left{width:260px;min-width:220px;border-right:1px solid #e2e8f0;display:flex;flex-direction:column;overflow:hidden;flex-shrink:0}
+        .editor-center{flex:1;display:flex;flex-direction:column;min-width:0;position:relative}
+        .editor-right{width:280px;min-width:240px;border-left:1px solid #e2e8f0;display:flex;flex-direction:column;overflow:hidden;flex-shrink:0}
+        .editor-left-scroll,.editor-right-scroll{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px}
+        .editor-left-scroll::-webkit-scrollbar,.editor-right-scroll::-webkit-scrollbar{width:5px}
+        .editor-left-scroll::-webkit-scrollbar-thumb,.editor-right-scroll::-webkit-scrollbar-thumb{background:#d1d5db;border-radius:999px}
+        .editor-left-scroll::-webkit-scrollbar-track,.editor-right-scroll::-webkit-scrollbar-track{background:transparent}
+
+        .panel-section{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden}
+        .panel-section-header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;cursor:pointer;user-select:none;border-bottom:1px solid transparent;transition:border-color .15s}
+        .panel-section-header:hover{background:rgba(0,0,0,.02)}
+        .panel-section-header h3{font-size:12px;font-weight:600;margin:0;color:#64748b;text-transform:uppercase;letter-spacing:.5px}
+        .panel-section-header .chevron{width:16px;height:16px;color:#94a3b8;transition:transform .2s}
+        .panel-section.open .panel-section-header{border-bottom-color:#e2e8f0}
+        .panel-section.open .panel-section-header .chevron{transform:rotate(180deg)}
+        .panel-section-body{padding:12px 14px;display:none}
+        .panel-section.open .panel-section-body{display:block}
+
+        .form-row{margin-bottom:10px}
+        .form-row:last-child{margin-bottom:0}
+        .form-label{display:block;font-size:11px;font-weight:500;color:#64748b;margin-bottom:4px}
+        .form-select,.form-input{width:100%;padding:7px 10px;border:1px solid #e2e8f0;border-radius:6px;font-size:12px;font-family:inherit;color:#0f172a;background:#fff;transition:border-color .15s;box-sizing:border-box}
+        .form-select:focus,.form-input:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 2px rgba(37,99,235,.1)}
+        .form-input[type="color"]{height:32px;padding:2px;cursor:pointer}
+        .form-row-inline{display:flex;gap:8px}
+        .form-row-inline .form-row{flex:1}
+        .checkbox-row{display:flex;align-items:center;gap:8px;padding:4px 0}
+        .checkbox-row input[type="checkbox"]{width:14px;height:14px;accent-color:#2563eb}
+        .checkbox-row label{font-size:12px;color:#374151;cursor:pointer}
+
+        .layout-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+        .layout-option{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 4px;border:2px solid #e2e8f0;border-radius:8px;cursor:pointer;transition:all .15s;background:#fff}
+        .layout-option:hover{border-color:#93c5fd}
+        .layout-option.active{border-color:#2563eb;background:#eff6ff}
+        .layout-option .layout-icon{display:grid;gap:2px}
+        .layout-option .layout-icon span{background:#cbd5e1;border-radius:2px}
+        .layout-option .layout-label{font-size:10px;font-weight:500;color:#64748b}
+        .layout-option.active .layout-label{color:#2563eb}
+
+        .margin-btns{display:flex;gap:4px}
+        .margin-btn{flex:1;padding:6px 4px;border:1px solid #e2e8f0;border-radius:6px;background:#fff;font-size:11px;font-weight:500;color:#64748b;cursor:pointer;transition:all .15s;text-align:center}
+        .margin-btn:hover{border-color:#93c5fd}
+        .margin-btn.active{border-color:#2563eb;background:#eff6ff;color:#2563eb}
+
+        .upload-area{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 12px;border:2px dashed #d1d5db;border-radius:10px;background:#fff;cursor:pointer;transition:all .2s;text-decoration:none;color:inherit}
+        .upload-area:hover{border-color:#2563eb;background:rgba(37,99,235,.03)}
+        .upload-area.dragover{border-color:#2563eb;background:rgba(37,99,235,.06);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+        .upload-area svg{width:24px;height:24px;color:#94a3b8;margin-bottom:6px}
+        .upload-area p{font-size:11px;color:#64748b;margin:0 0 8px;text-align:center}
+        .upload-area .upload-btn-sm{padding:5px 12px;background:#fff;border:1px solid #e2e8f0;border-radius:6px;font-size:11px;font-weight:500;color:#374151;cursor:pointer;transition:all .15s}
+        .upload-area .upload-btn-sm:hover{border-color:#2563eb;color:#2563eb}
+
+        .image-list{display:flex;flex-direction:column;gap:4px}
+        .image-card{display:flex;align-items:center;gap:8px;padding:8px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;cursor:grab;transition:all .15s}
+        .image-card:active{cursor:grabbing}
+        .image-card.sortable-ghost{opacity:.4;border-color:#2563eb}
+        .image-card.sortable-chosen{box-shadow:0 4px 12px rgba(0,0,0,.1)}
+        .image-card:hover{border-color:#cbd5e1}
+        .image-card-thumb{width:40px;height:40px;border-radius:6px;object-fit:cover;flex-shrink:0;background:#f1f5f9}
+        .image-card-info{flex:1;min-width:0}
+        .image-card-name{font-size:11px;font-weight:500;color:#0f172a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .image-card-meta{font-size:10px;color:#94a3b8;margin-top:1px}
+        .image-card-actions{display:flex;gap:2px;flex-shrink:0}
+        .image-card-actions button{width:24px;height:24px;display:flex;align-items:center;justify-content:center;border:none;background:none;color:#94a3b8;border-radius:4px;cursor:pointer;transition:all .15s}
+        .image-card-actions button:hover{background:#f1f5f9;color:#2563eb}
+        .image-card-actions button.delete-btn:hover{background:#fef2f2;color:#dc2626}
+        .image-card-page{position:absolute;top:-4px;left:-4px;width:18px;height:18px;border-radius:50%;background:#2563eb;color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center}
+
+        .preview-area{flex:1;display:flex;flex-direction:column;background:#f1f5f9;overflow:hidden;min-height:0}
+        .preview-toolbar{display:flex;align-items:center;justify-content:space-between;padding:8px 16px;background:#fff;border-bottom:1px solid #e2e8f0;flex-shrink:0}
+        .preview-toolbar-group{display:flex;align-items:center;gap:6px}
+        .preview-toolbar button{width:30px;height:30px;display:flex;align-items:center;justify-content:center;border:1px solid #e2e8f0;background:#fff;border-radius:6px;cursor:pointer;color:#64748b;transition:all .15s}
+        .preview-toolbar button:hover{border-color:#2563eb;color:#2563eb}
+        .preview-toolbar .zoom-label{font-size:12px;font-weight:500;color:#374151;font-family:'JetBrains Mono',monospace;min-width:40px;text-align:center}
+        .preview-toolbar .page-info{font-size:11px;color:#94a3b8}
+        .preview-canvas-wrap{flex:1;display:flex;align-items:center;justify-content:center;overflow:auto;padding:20px}
+        #preview-canvas{box-shadow:0 2px 12px rgba(0,0,0,.1);border-radius:2px;max-width:100%;max-height:100%}
+
+        .empty-preview{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#94a3b8;text-align:center;padding:40px}
+        .empty-preview svg{width:48px;height:48px;color:#cbd5e1;margin-bottom:12px}
+        .empty-preview p{font-size:14px;font-weight:500;margin:0 0 4px}
+        .empty-preview small{font-size:12px}
+
+        .progress-overlay{display:none;position:absolute;bottom:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(4px);padding:16px;border-top:1px solid #e2e8f0;z-index:10}
+        .progress-overlay.show{display:block}
+        .progress-top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+        .progress-spinner{width:20px;height:20px;border:3px solid #e2e8f0;border-top-color:#2563eb;border-radius:50%;animation:spin .6s linear infinite}
+        @keyframes spin{to{transform:rotate(360deg)}}
+        .progress-phase{font-size:13px;font-weight:500;color:#0f172a;flex:1}
+        .progress-pct{font-size:13px;font-weight:600;color:#2563eb;font-family:'JetBrains Mono',monospace}
+        .progress-track{height:6px;background:#e2e8f0;border-radius:9999px;overflow:hidden}
+        .progress-fill{height:100%;background:linear-gradient(90deg,#2563eb,#7c3aed);border-radius:9999px;transition:width .3s;width:0}
+        .progress-detail{display:flex;justify-content:space-between;margin-top:6px}
+        .progress-detail span{font-size:11px;color:#64748b;font-family:'JetBrains Mono',monospace}
+        .progress-eta{color:#94a3b8}
+
+        .export-bar{display:flex;gap:8px;padding:12px 16px;border-top:1px solid #e2e8f0;background:#fff;flex-shrink:0}
+        .btn-generate{flex:1;padding:10px 20px;background:#2563eb;color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+        .btn-generate:hover:not(:disabled){background:#1d4ed8;transform:translateY(-1px);box-shadow:0 4px 12px rgba(37,99,235,.3)}
+        .btn-generate:disabled{opacity:.5;cursor:not-allowed}
+        .btn-reset{padding:10px 16px;background:#fff;color:#64748b;border:1px solid #e2e8f0;border-radius:10px;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+        .btn-reset:hover{border-color:#dc2626;color:#dc2626}
+        .btn-download{padding:10px 20px;background:#16a34a;color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+        .btn-download:hover{background:#15803d;transform:translateY(-1px);box-shadow:0 4px 12px rgba(22,163,74,.3)}
+
+        .result-overlay{display:none;position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(241,245,249,.97);z-index:15;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+        .result-overlay.show{display:flex}
+        .result-check{width:52px;height:52px;border-radius:50%;background:#dcfce7;display:flex;align-items:center;justify-content:center}
+        .result-check svg{width:28px;height:28px;color:#16a34a}
+        .result-title{font-size:16px;font-weight:600;color:#0f172a}
+        .result-info{font-size:13px;color:#64748b}
+        .result-actions{display:flex;gap:8px;margin-top:4px}
+
+        .privacy-badge{display:flex;align-items:flex-start;gap:8px;padding:10px 14px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;font-size:11px;color:#166534;line-height:1.5}
+        .privacy-badge svg{width:14px;height:14px;color:#16a34a;flex-shrink:0;margin-top:1px}
+
+        .notification{position:fixed;top:20px;right:20px;background:#16a34a;color:#fff;padding:12px 20px;border-radius:10px;font-size:14px;font-weight:500;z-index:9999;box-shadow:0 4px 16px rgba(0,0,0,.15);animation:slideIn .3s ease}
+        .notification.error{background:#dc2626}
+        @keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
+
+        .related-section{max-width:1120px;margin:0 auto;padding:0 24px}
+        .related-section .section-intro{font-size:14px;color:#64748b;text-align:center;margin-bottom:24px}
+        .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .related-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit;display:flex;flex-direction:column}
+        .related-card:hover{border-color:#2563eb;box-shadow:0 8px 24px rgba(37,99,235,.1);transform:translateY(-3px)}
+        .related-card .rc-icon{width:32px;height:32px;margin-bottom:12px}
+        .related-card .rc-icon svg{width:32px;height:32px;color:#2563eb;transition:transform .25s cubic-bezier(.4,0,.2,1)}
+        .related-card:hover .rc-icon svg{transform:scale(1.1)}
+        .related-card h4{font-size:15px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .related-card p{font-size:13px;color:#64748b;margin:0 0 16px;flex:1}
+        .related-card .rc-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#2563eb;margin-top:auto;transition:gap .2s}
+        .related-card:hover .rc-btn{gap:10px}
+        .how-section{max-width:1120px;margin:0 auto;padding:0 24px}
+        .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .step-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:24px;text-align:center;transition:border-color .2s,box-shadow .2s}
+        .step-card:hover{border-color:rgba(37,99,235,.2);box-shadow:0 2px 8px rgba(37,99,235,.06)}
+        .step-num{width:40px;height:40px;border-radius:50%;background:#eff6ff;color:#2563eb;font-size:16px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-bottom:12px;transition:background .2s}
+        .step-card:hover .step-num{background:#dbeafe}
+        .step-card h4{font-size:15px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .step-card p{font-size:13px;color:#64748b;margin:0}
+        .faq-section{max-width:1120px;margin:0 auto;padding:0 24px}
+        .faq-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+        .faq-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:border-color .2s}
+        .faq-card:hover{border-color:#cbd5e1}
+        .faq-card h4{font-size:14px;font-weight:600;margin:0 0 8px;color:#0f172a}
+        .faq-card p{font-size:13px;color:#64748b;margin:0;line-height:1.6}
+        .section-heading{text-align:center;margin-bottom:32px}
+        .section-heading h2{font-size:28.8px;font-weight:700;color:#0f172a;margin:0 0 4px}
+        .footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}
+        @media(max-width:1024px){.related-grid{grid-template-columns:repeat(2,1fr)}.faq-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){.related-grid,.steps-grid,.faq-grid{grid-template-columns:1fr}}
+        @media(max-width:480px){.related-grid{gap:12px}}
+        @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
+    </style>
 </head>
 <body>
-<a href="#main-content" class="skip-link">Skip to main content</a>
-<header class="site-header"><div class="container"><div class="header-content"><a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a><nav class="main-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="/about" class="nav-link">About</a><a href="/contact" class="nav-link">Contact</a></nav><button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></div><div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="/about" class="nav-link">About</a><a href="/contact" class="nav-link">Contact</a></nav></div></div></header>
-<main id="main-content" class="main-content"><div class="container">
-    <div class="hero-section"><div class="hero-content"><div class="hero-text"><h1>Screenshot to PDF</h1><p>Turn screenshots and images into a PDF document. Reorder pages, choose layout, and download. Powered by pdf-lib, entirely local.</p><div class="hero-badges"><span class="hero-badge">pdf-lib Powered</span><span class="hero-badge">Drag &amp; Drop</span><span class="hero-badge">Free Forever</span></div></div><div class="hero-stats"><div class="stat-card"><div class="stat-number">2</div><div class="stat-label">Page Sizes</div></div><div class="stat-card"><div class="stat-number">A4</div><div class="stat-label">Letter</div></div></div></div></div>
-    <div class="tool-workspace">
-        <div class="workspace-header"><div><h2>Upload & Convert</h2><p style="margin:0;color:var(--color-text-light)">Upload images, reorder, set page options, then generate PDF</p></div><div class="file-counter" id="page-count">0 pages</div></div>
-        <label for="file-input" class="upload-area" style="margin:0;display:block;width:100%;box-sizing:border-box;position:relative">
-            <input type="file" id="file-input" accept="image/png,image/jpeg,image/webp" multiple style="position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;z-index:2" aria-label="Select images for PDF">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-            <p style="margin:0;font-weight:600">Drag images here or <span style="color:var(--color-primary);text-decoration:underline;cursor:pointer">click to browse</span></p>
-            <p style="margin:var(--space-2) 0 0;font-size:var(--text-sm);color:var(--color-text-light)">PNG, JPG, WebP — Each image becomes one PDF page</p>
-        </label>
-        <div class="two-col" id="workspace-content" style="display:none">
-            <div>
-                <p style="font-weight:600;margin-bottom:var(--space-2);font-size:var(--text-sm)">Pages <span style="font-weight:400;color:var(--color-text-light)">(drag to reorder)</span></p>
-                <div class="thumb-list" id="thumb-list"></div>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg">
+                    <span class="logo-text">GoToolly</span>
+                </a>
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
             </div>
-            <div class="settings-panel">
-                <div class="form-group"><label class="form-label" for="page-size">Page Size</label><select id="page-size"><option value="a4">A4 (210x297mm)</option><option value="letter">Letter (8.5x11in)</option></select></div>
-                <div class="form-group"><label class="form-label" for="orientation">Orientation</label><select id="orientation"><option value="portrait">Portrait</option><option value="landscape">Landscape</option></select></div>
-                <div class="form-group"><label class="form-label" for="margin">Margin (mm)</label><input type="number" id="margin" min="0" max="50" value="10"></div>
-                <div class="btn-row" style="flex-direction:column">
-                    <button id="generate-btn" class="btn btn-primary btn-lg" style="width:100%"><i class="fas fa-file-pdf"></i> Generate PDF</button>
-                    <button id="reset-btn" class="btn btn-outline btn-lg" style="width:100%"><i class="fas fa-redo"></i> Reset</button>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero">
+            <div class="container">
+                <h1>Screenshot to <span class="gradient-text">PDF</span></h1>
+                <p class="hero-subtitle">Turn screenshots and images into a professional PDF. Multiple layouts, page numbering, compression. Powered by pdf-lib, 100% local.</p>
+                <div class="trust-badges">
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> 100% Private</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg> Processed locally</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Free &amp; unlimited</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="tool-workspace">
+                <div class="tool-card" role="region" aria-label="Screenshot to PDF workspace" id="tool-card">
+
+                    <div class="tool-card-header">
+                        <div class="tool-card-header-left">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            <h2>Screenshot to PDF</h2>
+                        </div>
+                        <span class="status-badge" id="page-count" aria-live="polite">0 pages</span>
+                    </div>
+
+                    <div class="editor-body" id="editor-body">
+
+                        <div class="editor-left" id="editor-left">
+                            <div class="editor-left-scroll">
+                                <div class="panel-section open">
+                                    <div class="panel-section-header" data-toggle="upload-panel">
+                                        <h3>Upload</h3>
+                                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                                    </div>
+                                    <div class="panel-section-body" id="upload-panel">
+                                        <label class="upload-area" id="drop-zone" role="button" tabindex="0">
+                                            <input type="file" id="file-input" accept="image/png,image/jpeg,image/webp,image/avif" multiple style="display:none" aria-label="Select images for PDF">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                                            <p>Drop images or click to browse</p>
+                                            <span class="upload-btn-sm">Select Images</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="panel-section open" id="image-list-section">
+                                    <div class="panel-section-header" data-toggle="image-list-panel">
+                                        <h3>Pages <span id="image-count-badge" style="font-weight:400;text-transform:none;letter-spacing:0;color:#94a3b8">(0)</span></h3>
+                                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                                    </div>
+                                    <div class="panel-section-body" id="image-list-panel" style="padding:8px">
+                                        <div class="image-list" id="image-list"></div>
+                                        <div id="image-list-empty" class="empty-preview" style="padding:20px;display:flex">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32" style="margin-bottom:8px;color:#cbd5e1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                                            <p style="font-size:12px">No images yet</p>
+                                            <small>Upload images to begin</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="editor-center" id="editor-center">
+                            <div class="preview-area" id="preview-area">
+                                <div class="preview-toolbar" id="preview-toolbar">
+                                    <div class="preview-toolbar-group">
+                                        <button id="zoom-fit" title="Fit to page">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
+                                        </button>
+                                        <button id="zoom-out" title="Zoom out">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                                        </button>
+                                        <span class="zoom-label" id="zoom-label">100%</span>
+                                        <button id="zoom-in" title="Zoom in">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                                        </button>
+                                    </div>
+                                    <div class="preview-toolbar-group">
+                                        <span class="page-info" id="preview-page-info"></span>
+                                    </div>
+                                </div>
+                                <div class="preview-canvas-wrap" id="preview-canvas-wrap">
+                                    <div class="empty-preview" id="preview-empty">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                                        <p>Pages will appear here</p>
+                                        <small>Upload images to preview</small>
+                                    </div>
+                                    <canvas id="preview-canvas" style="display:none"></canvas>
+                                </div>
+                                <div class="progress-overlay" id="progress-section">
+                                    <div class="progress-top">
+                                        <div class="progress-spinner"></div>
+                                        <span class="progress-phase" id="progress-text">Generating PDF...</span>
+                                        <span class="progress-pct" id="progress-percent">0%</span>
+                                    </div>
+                                    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+                                    <div class="progress-detail">
+                                        <span id="progress-images">0 / 0 images</span>
+                                        <span class="progress-eta" id="progress-eta"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="export-bar" id="export-bar">
+                                <button class="btn-generate" id="generate-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                                    Generate PDF
+                                </button>
+                                <button class="btn-reset" id="reset-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+                                    Reset
+                                </button>
+                            </div>
+                            <div class="result-overlay" id="results-area">
+                                <div class="result-check"><svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                                <p class="result-title">PDF Generated Successfully!</p>
+                                <p class="result-info" id="result-info"></p>
+                                <div class="result-actions">
+                                    <button class="btn-download" id="download-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                        Download PDF
+                                    </button>
+                                    <button class="btn-reset" id="new-btn" style="font-weight:600;color:#2563eb;border-color:#2563eb">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                                        New PDF
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="editor-right" id="editor-right">
+                            <div class="editor-right-scroll">
+                                <div class="panel-section open">
+                                    <div class="panel-section-header" data-toggle="layout-panel">
+                                        <h3>Layout</h3>
+                                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                                    </div>
+                                    <div class="panel-section-body" id="layout-panel">
+                                        <div class="form-row">
+                                            <label class="form-label">Images Per Page</label>
+                                            <div class="layout-grid" id="layout-grid">
+                                                <div class="layout-option active" data-layout="1">
+                                                    <div class="layout-icon" style="grid-template:1fr/1fr"><span></span></div>
+                                                    <span class="layout-label">1</span>
+                                                </div>
+                                                <div class="layout-option" data-layout="2">
+                                                    <div class="layout-icon" style="grid-template:1fr 1fr/1fr"><span></span><span></span></div>
+                                                    <span class="layout-label">2</span>
+                                                </div>
+                                                <div class="layout-option" data-layout="4">
+                                                    <div class="layout-icon" style="grid-template:1fr 1fr/1fr 1fr"><span></span><span></span><span></span><span></span></div>
+                                                    <span class="layout-label">4</span>
+                                                </div>
+                                                <div class="layout-option" data-layout="6">
+                                                    <div class="layout-icon" style="grid-template:1fr 1fr 1fr/1fr 1fr"><span></span><span></span><span></span><span></span><span></span></div>
+                                                    <span class="layout-label">6</span>
+                                                </div>
+                                                <div class="layout-option" data-layout="9">
+                                                    <div class="layout-icon" style="grid-template:1fr 1fr 1fr/1fr 1fr 1fr"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                                                    <span class="layout-label">9</span>
+                                                </div>
+                                                <div class="layout-option" data-layout="auto">
+                                                    <div class="layout-icon" style="grid-template:1fr 1fr/1fr 1fr"><span></span><span></span><span></span><span></span></div>
+                                                    <span class="layout-label">Auto</span>
+                                                </div>
+                                                <div class="layout-option" data-layout="contact">
+                                                    <div class="layout-icon" style="grid-template:1fr 1fr 1fr 1fr/1fr 1fr 1fr 1fr"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                                                    <span class="layout-label">Sheet</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row" id="contact-settings" style="display:none">
+                                            <label class="form-label">Contact Sheet Settings</label>
+                                            <div class="form-row">
+                                                <label class="form-label">Row Gap (px)</label>
+                                                <input type="number" class="form-input" id="contact-gap" value="8" min="0" max="50">
+                                            </div>
+                                            <div class="form-row">
+                                                <label class="form-label">Padding (px)</label>
+                                                <input type="number" class="form-input" id="contact-padding" value="16" min="0" max="100">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <label class="form-label">Image Gap (px)</label>
+                                            <input type="number" class="form-input" id="image-gap" value="8" min="0" max="50">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-section open">
+                                    <div class="panel-section-header" data-toggle="page-panel">
+                                        <h3>Page Setup</h3>
+                                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                                    </div>
+                                    <div class="panel-section-body" id="page-panel">
+                                        <div class="form-row">
+                                            <label class="form-label">Page Size</label>
+                                            <select class="form-select" id="page-size">
+                                                <option value="a4">A4 (210 x 297 mm)</option>
+                                                <option value="letter">Letter (8.5 x 11 in)</option>
+                                                <option value="legal">Legal (8.5 x 14 in)</option>
+                                                <option value="a3">A3 (297 x 420 mm)</option>
+                                                <option value="a5">A5 (148 x 210 mm)</option>
+                                                <option value="auto">Auto (image size)</option>
+                                                <option value="fit">Fit to Content</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-row">
+                                            <label class="form-label">Orientation</label>
+                                            <select class="form-select" id="orientation">
+                                                <option value="auto">Automatic</option>
+                                                <option value="portrait">Portrait</option>
+                                                <option value="landscape">Landscape</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-row">
+                                            <label class="form-label">Margins</label>
+                                            <div class="margin-btns" id="margin-btns">
+                                                <button class="margin-btn" data-margin="0">None</button>
+                                                <button class="margin-btn" data-margin="5">Small</button>
+                                                <button class="margin-btn active" data-margin="10">Medium</button>
+                                                <button class="margin-btn" data-margin="20">Large</button>
+                                                <button class="margin-btn" data-margin="custom">Custom</button>
+                                            </div>
+                                            <input type="number" class="form-input" id="margin-custom" value="10" min="0" max="100" style="display:none;margin-top:6px">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-section open">
+                                    <div class="panel-section-header" data-toggle="image-panel">
+                                        <h3>Image Settings</h3>
+                                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                                    </div>
+                                    <div class="panel-section-body" id="image-panel">
+                                        <div class="form-row">
+                                            <label class="form-label">Image Scaling</label>
+                                            <select class="form-select" id="image-scale">
+                                                <option value="fit" selected>Fit (Preserve Ratio)</option>
+                                                <option value="fill">Fill (Crop to Fit)</option>
+                                                <option value="original">Original Size</option>
+                                                <option value="stretch">Stretch</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-row">
+                                            <label class="form-label">Image Quality</label>
+                                            <select class="form-select" id="image-quality">
+                                                <option value="original">Original</option>
+                                                <option value="high" selected>High</option>
+                                                <option value="medium">Medium</option>
+                                                <option value="low">Low</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-section">
+                                    <div class="panel-section-header" data-toggle="bg-panel">
+                                        <h3>Background</h3>
+                                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                                    </div>
+                                    <div class="panel-section-body" id="bg-panel">
+                                        <div class="form-row">
+                                            <label class="form-label">Background Color</label>
+                                            <select class="form-select" id="bg-color">
+                                                <option value="#ffffff">White</option>
+                                                <option value="#000000">Black</option>
+                                                <option value="#f3f4f6">Light Gray</option>
+                                                <option value="#6b7280">Gray</option>
+                                                <option value="transparent">Transparent</option>
+                                                <option value="custom">Custom Color</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-row" id="bg-custom-row" style="display:none">
+                                            <label class="form-label">Custom Color</label>
+                                            <input type="color" class="form-input" id="bg-custom-color" value="#ffffff">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-section">
+                                    <div class="panel-section-header" data-toggle="numbering-panel">
+                                        <h3>Page Numbering</h3>
+                                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                                    </div>
+                                    <div class="panel-section-body" id="numbering-panel">
+                                        <div class="checkbox-row">
+                                            <input type="checkbox" id="page-numbering-enabled">
+                                            <label for="page-numbering-enabled">Add page numbers</label>
+                                        </div>
+                                        <div id="page-numbering-opts" style="display:none">
+                                            <div class="form-row">
+                                                <label class="form-label">Position</label>
+                                                <select class="form-select" id="page-number-pos">
+                                                    <option value="bottom-center" selected>Bottom Center</option>
+                                                    <option value="bottom-left">Bottom Left</option>
+                                                    <option value="bottom-right">Bottom Right</option>
+                                                    <option value="top-left">Top Left</option>
+                                                    <option value="top-right">Top Right</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-row-inline">
+                                                <div class="form-row">
+                                                    <label class="form-label">Font Size</label>
+                                                    <input type="number" class="form-input" id="page-number-size" value="10" min="6" max="24">
+                                                </div>
+                                                <div class="form-row">
+                                                    <label class="form-label">Color</label>
+                                                    <input type="color" class="form-input" id="page-number-color" value="#6b7280">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-section">
+                                    <div class="panel-section-header" data-toggle="header-footer-panel">
+                                        <h3>Header &amp; Footer</h3>
+                                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                                    </div>
+                                    <div class="panel-section-body" id="header-footer-panel">
+                                        <div class="checkbox-row">
+                                            <input type="checkbox" id="header-enabled">
+                                            <label for="header-enabled">Add header</label>
+                                        </div>
+                                        <div id="header-opts" style="display:none">
+                                            <div class="form-row">
+                                                <label class="form-label">Header Text</label>
+                                                <input type="text" class="form-input" id="header-text" placeholder="Enter header text...">
+                                            </div>
+                                            <div class="form-row-inline">
+                                                <div class="form-row">
+                                                    <label class="form-label">Font Size</label>
+                                                    <input type="number" class="form-input" id="header-size" value="10" min="6" max="24">
+                                                </div>
+                                                <div class="form-row">
+                                                    <label class="form-label">Color</label>
+                                                    <input type="color" class="form-input" id="header-color" value="#374151">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="checkbox-row" style="margin-top:8px">
+                                            <input type="checkbox" id="footer-enabled">
+                                            <label for="footer-enabled">Add footer</label>
+                                        </div>
+                                        <div id="footer-opts" style="display:none">
+                                            <div class="form-row">
+                                                <label class="form-label">Footer Text</label>
+                                                <input type="text" class="form-input" id="footer-text" placeholder="Enter footer text...">
+                                            </div>
+                                            <div class="form-row-inline">
+                                                <div class="form-row">
+                                                    <label class="form-label">Font Size</label>
+                                                    <input type="number" class="form-input" id="footer-size" value="10" min="6" max="24">
+                                                </div>
+                                                <div class="form-row">
+                                                    <label class="form-label">Color</label>
+                                                    <input type="color" class="form-input" id="footer-color" value="#374151">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-section">
+                                    <div class="panel-section-header" data-toggle="metadata-panel">
+                                        <h3>PDF Metadata</h3>
+                                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                                    </div>
+                                    <div class="panel-section-body" id="metadata-panel">
+                                        <div class="form-row">
+                                            <label class="form-label">Title</label>
+                                            <input type="text" class="form-input" id="meta-title" placeholder="Document title">
+                                        </div>
+                                        <div class="form-row">
+                                            <label class="form-label">Author</label>
+                                            <input type="text" class="form-input" id="meta-author" placeholder="Author name">
+                                        </div>
+                                        <div class="form-row">
+                                            <label class="form-label">Subject</label>
+                                            <input type="text" class="form-input" id="meta-subject" placeholder="Subject">
+                                        </div>
+                                        <div class="form-row">
+                                            <label class="form-label">Keywords</label>
+                                            <input type="text" class="form-input" id="meta-keywords" placeholder="keyword1, keyword2">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel-section">
+                                    <div class="panel-section-header" data-toggle="export-panel">
+                                        <h3>Export Quality</h3>
+                                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                                    </div>
+                                    <div class="panel-section-body" id="export-panel">
+                                        <div class="form-row">
+                                            <label class="form-label">PDF Quality</label>
+                                            <select class="form-select" id="export-quality">
+                                                <option value="standard">Standard</option>
+                                                <option value="high" selected>High</option>
+                                                <option value="maximum">Maximum</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="privacy-badge">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                    Your images never leave your device. All processing happens locally using pdf-lib.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
-        <div id="progress-section" class="progress-section">
-            <div class="progress-bar" style="height:6px;background:var(--color-border);border-radius:3px;overflow:hidden"><div id="progress-fill" style="width:0%;background:var(--color-primary);height:100%;transition:width .2s"></div></div>
-            <div style="display:flex;justify-content:space-between;margin-top:var(--space-2);font-size:var(--text-sm)"><span id="progress-text">Generating PDF...</span><span id="progress-percent">0%</span></div>
-        </div>
-        <div class="privacy-badge"><i class="fas fa-shield-alt"></i><span>Your images never leave your device. Processing happens locally inside your browser.</span></div>
-    </div>
-    <section class="content-section">
-        <div class="section-header"><h2>How It Works</h2></div>
-        <div class="tools-grid" style="grid-template-columns:repeat(3,1fr)">
-            <div class="card tool-card"><h3>1. Upload Images</h3><p>Drop PNG, JPG, or WebP files. Each image becomes one page in the PDF.</p></div>
-            <div class="card tool-card"><h3>2. Arrange &amp; Configure</h3><p>Drag to reorder pages. Set page size, orientation, and margins.</p></div>
-            <div class="card tool-card"><h3>3. Generate PDF</h3><p>Click Generate PDF. Images are embedded using pdf-lib. Download instantly.</p></div>
-        </div>
-    </section>
-    <section class="content-section"><div class="section-header"><h2>Frequently Asked Questions</h2></div>
-        <div class="faq-list">
-            <div class="faq-item"><h3>What page sizes are available?</h3><p>A4 (210x297mm) and Letter (8.5x11in) page sizes are supported, in both portrait and landscape orientations.</p></div>
-            <div class="faq-item"><h3>Can I reorder images before converting?</h3><p>Yes. You can drag and drop thumbnails to reorder, or use the up/down buttons. The order determines the PDF page order.</p></div>
-            <div class="faq-item"><h3>What image formats can I use?</h3><p>PNG, JPG, and WebP images are supported. Each image becomes one page in the PDF.</p></div>
-            <div class="faq-item"><h3>How are images fitted to the page?</h3><p>Images are scaled to fit within the page dimensions while respecting the margin settings. Aspect ratio is preserved.</p></div>
-            <div class="faq-item"><h3>Is my image uploaded to a server?</h3><p>No. All PDF generation is done entirely in your browser using the pdf-lib library. Your images never leave your device.</p></div>
-        </div>
-    </section>
-    <section class="content-section"><div class="section-header"><h2>Related Tools</h2></div><div class="tools-grid">
-        <div class="card tool-card"><h3>Batch Image Converter</h3><p>Convert multiple images between formats at once.</p><div class="card-footer"><a href="./batch-image-converter" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-        <div class="card tool-card"><h3>JPG to PDF</h3><p>Convert JPG images to PDF documents.</p><div class="card-footer"><a href="./jpg-to-pdf" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-        <div class="card tool-card"><h3>PNG to PDF</h3><p>Convert PNG images to PDF documents.</p><div class="card-footer"><a href="./png-to-pdf" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-    </div></section>
-</div></main>
-<footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p>
+
+        <section class="related-section content-section" style="margin-top:48px">
+            <div class="section-heading">
+                <h2>Related Tools</h2>
+                <p class="section-intro">After converting to PDF, you might also need...</p>
+            </div>
+            <div class="related-grid">
+                <a href="./batch-image-converter" class="related-card">
+                    <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+                    <h4>Batch Image Converter</h4>
+                    <p>Convert multiple images between formats at once.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./jpg-to-pdf" class="related-card">
+                    <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+                    <h4>JPG to PDF</h4>
+                    <p>Convert JPG images to PDF documents.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./png-to-pdf" class="related-card">
+                    <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+                    <h4>PNG to PDF</h4>
+                    <p>Convert PNG images to PDF documents.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+            </div>
+        </section>
+
+        <section class="how-section content-section" style="margin-top:48px">
+            <div class="section-heading"><h2>How It Works</h2></div>
+            <div class="steps-grid">
+                <div class="step-card"><div class="step-num">1</div><h4>Upload Images</h4><p>Drag and drop or click to upload your screenshots and images. Supports PNG, JPG, and WebP.</p></div>
+                <div class="step-card"><div class="step-num">2</div><h4>Configure Settings</h4><p>Choose page size, orientation, margins, layout, and more. Preview changes in real time.</p></div>
+                <div class="step-card"><div class="step-num">3</div><h4>Download PDF</h4><p>Click Generate PDF to create your document. All processing happens locally in your browser.</p></div>
+            </div>
+        </section>
+
+        <section class="faq-section content-section" style="margin-top:48px">
+            <div class="section-heading"><h2>Frequently Asked Questions</h2></div>
+            <div class="faq-grid">
+                <div class="faq-card"><h4>What page sizes are available?</h4><p>A4 (210x297mm) and Letter (8.5x11in) page sizes are supported, in both portrait and landscape orientations.</p></div>
+                <div class="faq-card"><h4>Can I reorder images before converting?</h4><p>Yes. You can drag and drop thumbnails to reorder, or use the up/down buttons. The order determines the PDF page order.</p></div>
+                <div class="faq-card"><h4>What image formats can I use?</h4><p>PNG, JPG, and WebP images are supported. Each image becomes one page in the PDF.</p></div>
+                <div class="faq-card"><h4>Is my image uploaded to a server?</h4><p>No. All PDF generation is done entirely in your browser using the pdf-lib library. Your images never leave your device.</p></div>
+            </div>
+            <div style="text-align:center;margin-top:var(--space-8)">
+                <a href="/guides/screenshot-to-pdf" style="color:var(--color-primary);font-weight:600;font-size:var(--text-sm);text-decoration:none;transition:opacity .2s">Read Guide: How to Convert Screenshots to PDF &#10132;</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p>
                     <div class="footer-social">
                         <a href="https://x.com/GoToolly" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                         <a href="https://www.facebook.com/profile.php?id=61591898344203" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                        <a href="https://linkedin.com/in/go-toolly-426b67422" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                        <a href="https://www.youtube.com/@GoToolly" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                         <a href="https://www.instagram.com/gotoolly/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
                         <a href="https://www.tiktok.com/@gotoolly26" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
                         <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></a>
-                    </div></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor.html">Image Compressor</a></li><li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li><li><a href="/tools/word-counter.html">Word Counter</a></li><li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li><li><a href="/tools/password-generator.html">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
-<script defer src="../assets/js/main.min.js"></script>
-<script>document.getElementById('current-year').textContent=new Date().getFullYear();if('serviceWorker'in navigator){navigator.serviceWorker.register('/sw.js').then(function(r){console.log('[ServiceWorker] Registered:',r.scope)}).catch(function(e){console.warn('[ServiceWorker] Registration failed:',e)})}</script>
-<script defer src="../assets/js/tools/screenshot-to-pdf.min.js"></script>
+                    </div></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor.html">Image Compressor</a></li><li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li><li><a href="/tools/word-counter.html">Word Counter</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+
+    <script src="../assets/js/libs/pdf-lib.min.js"></script>
+    <script src="../assets/js/libs/sortable.min.js"></script>
+    <script defer src="../assets/js/main.min.js"></script>
+    <script defer src="../assets/js/gt-components.js"></script>
+    <script defer src="../assets/js/tools/screenshot-to-pdf.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js').then(function(r) {
+            }).catch(function(e) {
+            });
+        }
+    </script>
 </body>
 </html>

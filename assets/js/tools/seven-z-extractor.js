@@ -12,17 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var processed = false;
     var currentBlob = null;
     var currentFilename = '';
-    function showNotification(message, isError) {
-        var existing = document.querySelector('.notification');
-        if (existing) existing.remove();
-        var el = document.createElement('div');
-        el.className = 'notification' + (isError ? ' error' : '');
-        el.textContent = message;
-        document.body.appendChild(el);
-        setTimeout(function () {
-            el.remove();
-        }, 3500);
-    }
     function formatSize(bytes) {
         if (bytes < 1024) return bytes + ' B';
         if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
@@ -88,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.body.removeChild(a);
                     URL.revokeObjectURL(url);
                 }, 100);
-                showNotification(currentFilename + ' downloaded!');
             });
         applyBtn.style.display = 'none';
         progressSection.style.display = 'none';
@@ -160,9 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
         script.onload = function () {
             callback(window.pako);
         };
-        script.onerror = function () {
-            showNotification('Failed to load decompression library', true);
-        };
+        script.onerror = function () {};
         document.head.appendChild(script);
     }
     var dropZone = document.querySelector('.upload-area');
@@ -216,7 +202,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         showLimitationSection(
                             'Not a valid 7Z file. The file signature could not be recognized.',
                         );
-                        showNotification('Not a valid 7Z file', true);
                         return;
                     }
                     progressFill.style.width = '50%';
@@ -230,10 +215,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (nextHeaderData.length === 0) {
                         showLimitationSection(
                             'The 7Z archive appears to be empty or uses an unsupported structure.',
-                        );
-                        showNotification(
-                            'No extractable data found in 7Z file',
-                            true,
                         );
                         return;
                     }
@@ -252,21 +233,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         progressPercent.textContent = '100%';
                         progressText.textContent = 'Done!';
                         showDownloadSection(fileName, blob);
-                        showNotification('Extracted file from 7Z archive!');
                     } catch (e) {
                         showLimitationSection(
                             'This 7Z file uses a compression method that requires desktop software. The built-in decompressor could not handle this format.',
                         );
-                        showNotification(
-                            'Extraction failed: unsupported compression method',
-                            true,
-                        );
                     }
                 } catch (err) {
-                    showNotification(
-                        'Error extracting 7Z: ' + err.message,
-                        true,
-                    );
                     applyBtn.disabled = false;
                     progressSection.style.display = 'none';
                 }

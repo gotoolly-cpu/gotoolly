@@ -10,17 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var progressText = document.getElementById('progress-text');
     var archiveFile = null;
     var processed = false;
-    function showNotification(message, isError) {
-        var existing = document.querySelector('.notification');
-        if (existing) existing.remove();
-        var el = document.createElement('div');
-        el.className = 'notification' + (isError ? ' error' : '');
-        el.textContent = message;
-        document.body.appendChild(el);
-        setTimeout(function () {
-            el.remove();
-        }, 3500);
-    }
     function formatSize(bytes) {
         if (bytes < 1024) return bytes + ' B';
         if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
@@ -100,9 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
         script.onload = function () {
             callback(window.JSZip);
         };
-        script.onerror = function () {
-            showNotification('Failed to load archive library', true);
-        };
+        script.onerror = function () {};
         document.head.appendChild(script);
     }
     var dropZone = document.querySelector('.upload-area');
@@ -173,25 +160,12 @@ document.addEventListener('DOMContentLoaded', function () {
                             progressPercent.textContent = '100%';
                             progressText.textContent = 'Done!';
                             showViewSection(filesList);
-                            showNotification(
-                                'Found ' +
-                                    filesList.length +
-                                    ' file(s) in archive',
-                            );
                         })
                         .catch(function (err) {
-                            showNotification(
-                                'Error reading archive: ' + err.message,
-                                true,
-                            );
                             progressSection.style.display = 'none';
                             applyBtn.disabled = false;
                         });
                 } catch (err) {
-                    showNotification(
-                        'Error reading archive: ' + err.message,
-                        true,
-                    );
                     progressSection.style.display = 'none';
                     applyBtn.disabled = false;
                 }

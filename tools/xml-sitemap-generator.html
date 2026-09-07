@@ -3,28 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XML Sitemap Generator - Create XML Sitemaps | GoToolly</title>
-    <meta name="description" content="Generate XML sitemaps from a list of URLs. Set priorities, change frequencies, and lastmod dates. Copy or download the complete XML sitemap.">
+    <title>XML Sitemap Generator | GoToolly</title>
+    <meta name="description" content="Generate a complete XML sitemap from a list of URLs. Set priorities, change frequencies and lastmod dates, validate every URL, then copy or download sitemap.xml.">
     <meta name="keywords" content="xml sitemap generator, sitemap creator, xml sitemap, seo sitemap, website sitemap, sitemap tool">
     <link rel="canonical" href="https://gotoolly.com/tools/xml-sitemap-generator">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gotoolly.com/tools/xml-sitemap-generator">
-    <meta property="og:title" content="XML Sitemap Generator - Create XML Sitemaps | GoToolly">
-    <meta property="og:description" content="Generate XML sitemaps from a list of URLs. Set priorities, change frequencies, and lastmod dates. Copy or download the complete XML sitemap.">
+    <meta property="og:title" content="XML Sitemap Generator | GoToolly">
+    <meta property="og:description" content="Generate a complete XML sitemap from a list of URLs. Set priorities, change frequencies and lastmod dates, validate every URL, then copy or download sitemap.xml.">
     <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
-    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:image:alt" content="GoToolly Logo - Privacy-first tools">
     <meta property="og:site_name" content="GoToolly">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://gotoolly.com/tools/xml-sitemap-generator">
-    <meta name="twitter:title" content="XML Sitemap Generator - Create XML Sitemaps | GoToolly">
-    <meta name="twitter:description" content="Generate XML sitemaps from a list of URLs. Set priorities, change frequencies, and lastmod dates. Copy or download the complete XML sitemap.">
+    <meta name="twitter:title" content="XML Sitemap Generator | GoToolly">
+    <meta name="twitter:description" content="Generate a complete XML sitemap from a list of URLs. Set priorities, change frequencies and lastmod dates, validate every URL, then copy or download sitemap.xml.">
     <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
     <meta name="twitter:image:alt" content="GoToolly Logo">
     <meta name="twitter:creator" content="@GoToolly">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
     <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
@@ -32,11 +35,455 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"XML Sitemap Generator","url":"https://gotoolly.com/tools/xml-sitemap-generator","description":"Generate XML sitemaps from a list of URLs with priorities, change frequencies, and lastmod dates.","applicationCategory":"SEOApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Download as file","Priority and changefreq support"]}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"XML Sitemap Generator"}]}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an XML sitemap?","acceptedAnswer":{"@type":"Answer","text":"An XML sitemap is a file that lists all the pages on your website, helping search engines like Google discover and crawl your content efficiently."}},{"@type":"Question","name":"How do I use the generated sitemap?","acceptedAnswer":{"@type":"Answer","text":"Download the XML file and upload it to your websites root directory. Then submit the URL to Google Search Console."}},{"@type":"Question","name":"Is my data stored anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens in your browser. Your data never leaves your device."}}]}</script>
-    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.url-textarea{width:100%;min-height:200px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text)}.url-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.form-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-4);margin-bottom:var(--space-4)}.form-group{display:flex;flex-direction:column;gap:var(--space-2)}.form-group label{font-weight:600;font-size:var(--text-sm)}.form-group select,.form-group input[type=date]{width:100%;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-size:var(--text-sm);background:var(--color-surface);color:var(--color-text)}.form-group select:focus,.form-group input:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.url-table{width:100%;border-collapse:collapse;font-size:var(--text-sm);margin-bottom:var(--space-4)}.url-table th,.url-table td{padding:var(--space-2) var(--space-3);text-align:left;border-bottom:1px solid var(--color-border)}.url-table th{font-weight:600;background:rgba(255,255,255,.05)}.url-table input,.url-table select{width:100%;padding:4px 8px;border:1px solid var(--color-border);border-radius:4px;font-size:var(--text-xs);background:var(--color-surface);color:var(--color-text)}.code-output{border:1px solid var(--color-border);border-radius:12px;overflow:auto;max-height:500px;background:#1e1e2e;padding:var(--space-3);font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);color:#cdd6f4;white-space:pre-wrap;word-break:break-word}.url-count{font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-2)}@media(max-width:768px){.form-row{grid-template-columns:1fr}}</style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"XML Sitemap Generator","url":"https://gotoolly.com/tools/xml-sitemap-generator","description":"Generate XML sitemaps from a list of URLs with priorities, change frequencies, and lastmod dates.","applicationCategory":"SEOApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Copy or download sitemap.xml","Priority and changefreq support"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"XML Sitemap Generator"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an XML sitemap?","acceptedAnswer":{"@type":"Answer","text":"An XML sitemap is a file that lists all the pages on your website, helping search engines like Google discover and crawl your content efficiently."}},{"@type":"Question","name":"How do I use the generated sitemap?","acceptedAnswer":{"@type":"Answer","text":"Download the XML file and upload it to your website's root directory. Then submit the URL to Google Search Console."}},{"@type":"Question","name":"Is my data stored anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens in your browser. Your data never leaves your device."}}]}</script>
 
+    <style>
+        /* ========== SKIP LINK ========== */
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .25s cubic-bezier(.4,0,.2,1);text-decoration:none}
+        .skip-link:focus{top:0}
+
+        /* ========== HERO ========== */
+        .hero{background:radial-gradient(1200px 600px at 70% -20%,rgba(139,92,246,.18),transparent),radial-gradient(900px 500px at 10% -10%,rgba(59,130,246,.22),transparent),#0f172a;padding:52px 0 40px;text-align:center}
+        .hero h1{font-size:42px;font-weight:800;color:#fff;line-height:1.15;margin:0 0 14px}
+        .hero h1 .gradient-text{background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-subtitle{font-size:16px;color:#94a3b8;line-height:1.6;margin:0 auto 26px;max-width:680px}
+        .trust-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .trust-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:7px 14px;border-radius:9999px;font-size:13px;font-weight:500;color:#cbd5e1;transition:background .2s}
+        .trust-badge:hover{background:rgba(255,255,255,.1)}
+        .trust-badge svg{width:14px;height:14px;color:#60a5fa}
+
+        /* ========== WORKSPACE ========== */
+        .tool-workspace{max-width:920px;margin:0 auto}
+        .tool-card{background:#fff;border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.06);border:1px solid #e2e8f0;padding:28px;margin-bottom:40px}
+        .card-header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+        .card-header-left{display:flex;align-items:center;gap:10px}
+        .card-header-left .ch-icon{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#eff6ff,#e0ecff);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .card-header-left .ch-icon svg{width:18px;height:18px;color:var(--color-primary)}
+        .card-header-left h2{font-size:17px;font-weight:700;margin:0;color:#0f172a}
+        .card-divider{height:1px;background:linear-gradient(90deg,#e2e8f0,transparent);margin:18px 0 0}
+
+        /* ========== STATUS BADGE ========== */
+        .gt-status{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;padding:5px 14px;border-radius:9999px;background:#f8fafc;border:1px solid #e2e8f0;color:#64748b;transition:all .2s}
+        .gt-status::before{content:'';width:7px;height:7px;border-radius:50%;background:#94a3b8;flex-shrink:0}
+        .gt-status.ready{background:#f0fdf4;color:#166534;border-color:#bbf7d0}
+        .gt-status.ready::before{background:#22c55e}
+        .gt-status.processing{background:#fffbeb;color:#92400e;border-color:#fde68a}
+        .gt-status.processing::before{background:#f59e0b;animation:gt-pulse 1s ease-in-out infinite}
+        .gt-status.done{background:#f0fdf4;color:#166534;border-color:#bbf7d0}
+        .gt-status.done::before{background:#22c55e}
+        .gt-status.error{background:#fef2f2;color:#991b1b;border-color:#fecaca}
+        .gt-status.error::before{background:#ef4444}
+
+        /* ========== INPUT ZONE (generic form) ========== */
+        .text-input-zone{margin-top:20px}
+        .text-input-label-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:12px}
+        .text-input-label{font-size:14px;font-weight:600;color:#0f172a;margin:0}
+        .gt-char-count{font-size:12px;color:#64748b;font-family:'JetBrains Mono',monospace;background:#f8fafc;border:1px solid #e2e8f0;border-radius:9999px;padding:3px 10px}
+        .input-textarea{width:100%;min-height:220px;padding:16px 18px;border:2px solid #e2e8f0;border-radius:14px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.6;resize:vertical;background:#f8fafc;color:#0f172a;tab-size:2;box-sizing:border-box;transition:border-color .2s,box-shadow .2s,background .2s}
+        .input-textarea::placeholder{color:#94a3b8}
+        .input-textarea:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 4px rgba(37,99,235,.12);background:#fff}
+        .text-input-hint{font-size:12px;color:#94a3b8;margin-top:8px;padding:0 2px}
+        .text-input-hint kbd{font-family:'JetBrains Mono',monospace;background:#f8fafc;border:1px solid #e2e8f0;border-bottom-width:2px;border-radius:5px;padding:1px 6px;font-size:11px;color:#475569}
+
+        .gt-form{display:grid;gap:16px;margin-top:20px}
+        .gt-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+        .gt-field{display:flex;flex-direction:column;gap:6px}
+        .gt-field.full{grid-column:1/-1}
+        .gt-label{font-size:13px;font-weight:600;color:#0f172a}
+        .gt-label-row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+        .gt-input,.gt-textarea,.gt-select{width:100%;padding:11px 14px;border:2px solid #e2e8f0;border-radius:11px;font-size:14px;font-family:inherit;background:#f8fafc;color:#0f172a;box-sizing:border-box;transition:border-color .2s,box-shadow .2s,background .2s}
+        .gt-input::placeholder,.gt-textarea::placeholder{color:#94a3b8}
+        .gt-input:focus,.gt-textarea:focus,.gt-select:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 4px rgba(37,99,235,.12);background:#fff}
+        .gt-textarea{min-height:110px;resize:vertical;line-height:1.6}
+        .gt-textarea.mono,.gt-input.mono{font-family:'JetBrains Mono',monospace;font-size:13px}
+        .gt-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px;cursor:pointer}
+        .gt-help{font-size:12px;color:#94a3b8;line-height:1.5}
+        .gt-err{display:none;font-size:12px;color:#dc2626;font-weight:600;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:7px 10px}
+        .gt-err.show{display:block}
+        .gt-check{display:flex;align-items:center;gap:9px;font-size:13px;color:#334155;cursor:pointer;padding:6px 0}
+        .gt-check input{width:16px;height:16px;accent-color:#2563eb;cursor:pointer}
+        .gt-seg{display:inline-flex;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:3px;gap:2px}
+        .gt-seg button{border:none;background:transparent;padding:7px 14px;border-radius:8px;font-size:13px;font-weight:600;color:#64748b;cursor:pointer;transition:all .15s}
+        .gt-seg button.active{background:#fff;color:#0f172a;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+        .gt-seg button:hover:not(.active){color:#334155}
+
+        /* ========== ACTION BAR ========== */
+        .action-bar{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin-top:20px}
+        .action-bar .btn{width:100%;padding:14px 20px;font-size:15px;border-radius:12px;transition:all .2s cubic-bezier(.4,0,.2,1);font-weight:600;cursor:pointer}
+        .action-bar .btn-primary{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border:none;box-shadow:0 2px 10px rgba(37,99,235,.25);display:inline-flex;align-items:center;justify-content:center;gap:8px}
+        .action-bar .btn-primary:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 8px 25px rgba(37,99,235,.35)}
+        .action-bar .btn-primary:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+        .action-bar .btn-primary .gt-spinner-inline{display:none}
+        .action-bar .btn-primary.loading .gt-spinner-inline{display:inline-block}
+        .action-bar .btn-primary.loading svg.gt-scan{display:none}
+        .action-bar .btn-outline{background:#fff;color:#0f172a;border:1px solid #e2e8f0}
+        .action-bar .btn-outline:hover{background:#f8fafc;border-color:#cbd5e1;transform:translateY(-1px)}
+
+        /* ========== PROGRESS ========== */
+        .gt-progress{height:4px;border-radius:99px;background:#eef2f7;overflow:hidden;margin:18px 0 0;position:relative}
+        .gt-progress::after{content:'';position:absolute;inset:0;width:40%;background:linear-gradient(90deg,transparent,#2563eb,transparent);animation:gt-indeterminate 1s ease-in-out infinite}
+        @keyframes gt-indeterminate{0%{transform:translateX(-100%)}100%{transform:translateX(350%)}}
+        @keyframes gt-pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+        /* ========== RESULTS ========== */
+        #results{margin-top:24px}
+        .gt-report{animation:gt-fade .4s cubic-bezier(.4,0,.2,1)}
+        @keyframes gt-fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+        .gt-loading{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 20px;text-align:center;border:1px dashed #dbe3ee;border-radius:16px;background:linear-gradient(180deg,#fbfdff,#f8fafc)}
+        .gt-loading .gt-spinner{width:38px;height:38px;border-radius:50%;border:3px solid #e2e8f0;border-top-color:#2563eb;animation:gt-spin .8s linear infinite;margin-bottom:16px}
+        .gt-loading p{font-size:14px;color:#64748b;margin:0}
+        @keyframes gt-spin{to{transform:rotate(360deg)}}
+
+        .gt-empty,.gt-error{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 24px;border:1px dashed #dbe3ee;border-radius:16px;background:linear-gradient(180deg,#fbfdff,#f8fafc)}
+        .gt-empty .gt-empty-icon,.gt-error .gt-empty-icon{width:64px;height:64px;border-radius:18px;background:#eff6ff;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+        .gt-empty .gt-empty-icon svg,.gt-error .gt-empty-icon svg{width:30px;height:30px;color:#2563eb}
+        .gt-empty h3{font-size:18px;font-weight:700;color:#0f172a;margin:0 0 8px}
+        .gt-empty p{margin:0;font-size:14px;color:#64748b;line-height:1.6;max-width:480px}
+        .gt-error .gt-empty-icon{background:#fef2f2}
+        .gt-error .gt-empty-icon svg{color:#ef4444}
+        .gt-error-title{font-weight:700;color:#991b1b;font-size:16px;margin-bottom:6px}
+        .gt-error-hint{font-size:14px;color:#64748b}
+
+        /* ========== SUMMARY / HERO SCORE ========== */
+        .gt-score-hero{display:flex;align-items:center;gap:28px;flex-wrap:wrap;padding:26px;border:1px solid #e2e8f0;border-radius:16px;background:linear-gradient(180deg,#f8fafc,#fff);margin-bottom:18px;position:relative;overflow:hidden}
+        .gt-score-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#2563eb,#8b5cf6);opacity:.35}
+        .gt-score-ring{position:relative;width:118px;height:118px;flex-shrink:0;filter:drop-shadow(0 6px 16px rgba(37,99,235,.15))}
+        .gt-score-ring svg{width:118px;height:118px;transform:rotate(-90deg)}
+        .gt-ring-bg{fill:none;stroke:#e8edf4;stroke-width:10}
+        .gt-ring-fill{fill:none;stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1)}
+        .gt-score-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column}
+        .gt-score-num{font-size:32px;font-weight:800;font-family:'JetBrains Mono',monospace;line-height:1;color:#0f172a}
+        .gt-score-total{font-size:12px;color:#94a3b8;margin-top:2px;font-weight:500}
+        .gt-score-info{flex:1;min-width:220px}
+        .gt-score-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#94a3b8}
+        .gt-score-grade{font-size:26px;font-weight:800;line-height:1.15;margin:2px 0 8px}
+        .gt-score-meta{display:flex;gap:8px;flex-wrap:wrap}
+        .gt-chip{display:inline-flex;align-items:center;gap:5px;padding:4px 11px;border-radius:9999px;font-size:11px;font-weight:700}
+        .gt-chip::before{content:'';width:6px;height:6px;border-radius:50%}
+        .gt-chip-pass{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+        .gt-chip-pass::before{background:#22c55e}
+        .gt-chip-warn{background:#fffbeb;color:#92400e;border:1px solid #fde68a}
+        .gt-chip-warn::before{background:#f59e0b}
+        .gt-chip-fail{background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+        .gt-chip-fail::before{background:#ef4444}
+        .gt-chip-info{background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe}
+        .gt-chip-info::before{background:#3b82f6}
+        .gt-score-hint{font-size:13px;color:#64748b;margin-top:10px;line-height:1.5}
+
+        /* ========== STAT CARDS ========== */
+        .gt-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:18px}
+        .gt-stat{padding:16px 10px;border-radius:14px;background:#fff;border:1px solid #e2e8f0;text-align:center;transition:all .2s}
+        .gt-stat:hover{border-color:#c3d4ef;transform:translateY(-2px);box-shadow:0 6px 16px rgba(15,23,42,.06)}
+        .gt-stat-icon{width:30px;height:30px;margin:0 auto 8px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:#eff6ff}
+        .gt-stat-icon svg{width:16px;height:16px;color:#2563eb}
+        .gt-stat-value{font-size:24px;font-weight:800;color:#0f172a;font-family:'JetBrains Mono',monospace;line-height:1}
+        .gt-stat-label{font-size:11px;color:#64748b;margin-top:5px;font-weight:500;text-transform:uppercase;letter-spacing:.4px}
+
+        /* ========== SECTIONS / COLLAPSE ========== */
+        .gt-section{border:1px solid #e2e8f0;border-radius:14px;margin-bottom:14px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(15,23,42,.03)}
+        .gt-section summary{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 22px;cursor:pointer;list-style:none;font-weight:700;font-size:15px;color:#0f172a;user-select:none;transition:background .18s}
+        .gt-section summary::-webkit-details-marker{display:none}
+        .gt-section summary:hover{background:#f8fafc}
+        .gt-section summary:focus-visible{outline:2px solid #2563eb;outline-offset:-2px;border-radius:14px}
+        .gt-section-title{display:flex;align-items:center;gap:10px}
+        .gt-section-title svg{width:17px;height:17px;color:#2563eb;flex-shrink:0}
+        .gt-chevron{width:18px;height:18px;color:#94a3b8;transition:transform .22s ease;flex-shrink:0}
+        .gt-section[open] .gt-chevron{transform:rotate(180deg)}
+        .gt-section-body{padding:0 22px 22px;overflow-x:auto}
+        .gt-block-label{font-size:12px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:18px 0 10px}
+        .gt-none{font-size:13px;color:#94a3b8;padding:14px;background:#f8fafc;border:1px dashed #dbe3ee;border-radius:10px}
+
+        /* ========== TABLES ========== */
+        .gt-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:8px;background:#fff;border:1px solid #e8edf4;border-radius:12px;overflow:hidden}
+        .gt-table th{text-align:left;padding:10px 14px;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:#64748b;background:#f8fafc;border-bottom:1px solid #e8edf4;white-space:nowrap;font-weight:700}
+        .gt-table td{padding:9px 14px;border-bottom:1px solid #f1f5f9;vertical-align:top}
+        .gt-table tr:last-child td{border-bottom:none}
+        .gt-table tbody tr{transition:background .12s}
+        .gt-table tbody tr:hover{background:#f8fafc}
+        .gt-mono{font-family:'JetBrains Mono',monospace;font-size:12px;word-break:break-all}
+        .gt-name{font-family:'JetBrains Mono',monospace;font-size:12px;color:#2563eb;white-space:nowrap;font-weight:600}
+        .gt-muted{color:#94a3b8}
+
+        /* ========== CHECK ITEMS / LEGEND ========== */
+        .gt-legend{display:flex;gap:16px;flex-wrap:wrap;padding:10px 14px;background:#f8fafc;border:1px solid #e8edf4;border-radius:10px;margin-bottom:14px;font-size:11px;color:#475569}
+        .gt-legend-item{display:inline-flex;align-items:center;gap:6px;font-weight:600}
+        .gt-legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+        .gt-legend-pass{background:#22c55e}
+        .gt-legend-warn{background:#f59e0b}
+        .gt-legend-fail{background:#ef4444}
+        .gt-legend-info{background:#3b82f6}
+        .gt-item{display:flex;gap:12px;align-items:flex-start;padding:13px 16px;border-radius:12px;margin-bottom:8px;border:1px solid #e8edf4;border-left-width:4px;background:#fff;transition:all .18s}
+        .gt-item:hover{box-shadow:0 4px 14px rgba(15,23,42,.05);transform:translateX(2px)}
+        .gt-item-icon{width:20px;height:20px;flex-shrink:0;margin-top:1px}
+        .gt-item.pass .gt-item-icon{color:#16a34a}
+        .gt-item.warn .gt-item-icon{color:#d97706}
+        .gt-item.fail .gt-item-icon{color:#dc2626}
+        .gt-item.info .gt-item-icon{color:#3b82f6}
+        .gt-item.pass{border-left-color:#16a34a;background:linear-gradient(90deg,rgba(22,163,74,.05),#fff 60%)}
+        .gt-item.warn{border-left-color:#d97706;background:linear-gradient(90deg,rgba(217,119,6,.05),#fff 60%)}
+        .gt-item.fail{border-left-color:#dc2626;background:linear-gradient(90deg,rgba(220,38,38,.05),#fff 60%)}
+        .gt-item.info{border-left-color:#3b82f6;background:linear-gradient(90deg,rgba(59,130,246,.05),#fff 60%)}
+        .gt-item-body{flex:1;min-width:0}
+        .gt-item-label{font-weight:600;font-size:14px;color:#0f172a}
+        .gt-item-detail{font-size:13px;color:#64748b;margin-top:2px;line-height:1.5}
+        .gt-item-fix{margin-top:8px;font-size:12px;color:#475569;background:#eff6ff;border-left:3px solid #2563eb;padding:6px 10px;border-radius:0 8px 8px 0}
+        .gt-fix-label{font-weight:700;color:#2563eb}
+
+        /* ========== OUTPUT / CODE ========== */
+        .gt-out-card{border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin-bottom:14px;background:#fff}
+        .gt-out-header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;background:#f8fafc;border-bottom:1px solid #e8edf4;font-size:13px;font-weight:700;color:#0f172a}
+        .gt-out-body{padding:16px;overflow-x:auto}
+        .gt-code{font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.65;color:#1e293b;white-space:pre-wrap;word-break:break-word;background:#0f172a;color:#e2e8f0;border-radius:10px;padding:16px;margin:0;overflow-x:auto;tab-size:2}
+        .gt-result-box{background:#f8fafc;border:1px solid #e8edf4;border-radius:10px;padding:14px 16px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;word-break:break-all;line-height:1.6}
+        .gt-inline-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;align-self:flex-end}
+        .gt-btn-sm,.gt-export-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid #e2e8f0;border-radius:10px;cursor:pointer;transition:all .18s;white-space:nowrap}
+        .gt-btn-sm svg,.gt-export-btn svg{width:13px;height:13px}
+        .gt-btn-sm:hover,.gt-export-btn:hover{border-color:#2563eb;color:#2563eb;background:#eff6ff;transform:translateY(-1px);box-shadow:0 4px 12px rgba(37,99,235,.12)}
+        .gt-btn-sm:focus-visible,.gt-export-btn:focus-visible{outline:2px solid #2563eb;outline-offset:2px}
+
+        /* ========== TOAST ========== */
+        .gt-toast{position:fixed;top:20px;right:20px;z-index:2000;padding:13px 20px;border-radius:12px;font-size:14px;font-weight:600;color:#fff;display:flex;align-items:center;gap:9px;box-shadow:0 10px 30px rgba(0,0,0,.18);opacity:0;transform:translateX(30px);transition:all .28s cubic-bezier(.4,0,.2,1);pointer-events:none;max-width:340px}
+        .gt-toast.show{opacity:1;transform:translateX(0)}
+        .gt-toast.info{background:linear-gradient(135deg,#2563eb,#1d4ed8)}
+        .gt-toast.success{background:linear-gradient(135deg,#16a34a,#15803d)}
+        .gt-toast.error{background:linear-gradient(135deg,#ef4444,#dc2626)}
+        .gt-toast svg{width:16px;height:16px;flex-shrink:0}
+
+        /* ========== STICKY ACTION BAR ========== */
+        .gt-sticky-actions{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(30px);z-index:1500;display:flex;align-items:center;gap:6px;background:rgba(15,23,42,.92);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:9999px;padding:6px;box-shadow:0 14px 40px rgba(0,0,0,.35);opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility .25s}
+        .gt-sticky-actions.show{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+        .gt-sticky-actions .gt-sticky-score{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:9999px;font-weight:800;font-family:'JetBrains Mono',monospace;font-size:12.5px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#fff}
+        .gt-sticky-actions .gt-export-btn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,.18);color:#e2e8f0;padding:8px 13px;border-radius:9999px;font-size:12.5px;font-weight:600;cursor:pointer;transition:all .18s;white-space:nowrap}
+        .gt-sticky-actions .gt-export-btn svg{width:13px;height:13px}
+        .gt-sticky-actions .gt-export-btn:hover{border-color:#60a5fa;color:#93c5fd;background:rgba(96,165,250,.12);box-shadow:none;transform:none}
+
+        /* ========== RELATED / HOW / FAQ ========== */
+        .related-section{margin:44px auto 8px;max-width:920px}
+        .section-heading h2{font-size:24px;font-weight:800;color:#0f172a;margin:0 0 6px}
+        .section-heading p{font-size:14px;color:#64748b;margin:0 0 18px}
+        .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+        .related-card{display:block;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px;text-decoration:none;transition:all .2s;color:inherit}
+        .related-card:hover{border-color:#c3d4ef;transform:translateY(-3px);box-shadow:0 10px 26px rgba(15,23,42,.08)}
+        .related-card .rc-icon{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#eff6ff,#e0ecff);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+        .related-card .rc-icon svg{width:19px;height:19px;color:var(--color-primary)}
+        .related-card h4{font-size:14px;font-weight:700;color:#0f172a;margin:0 0 6px}
+        .related-card p{font-size:12.5px;color:#64748b;margin:0 0 10px;line-height:1.5}
+        .related-card .rc-btn{font-size:12px;font-weight:700;color:#2563eb;display:inline-flex;align-items:center;gap:5px}
+        .related-card .rc-btn svg{width:13px;height:13px}
+        .how-section,.faq-section{margin:40px auto 8px;max-width:920px}
+        .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+        .step-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:20px}
+        .step-num{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#2563eb,#8b5cf6);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+        .step-card h4{font-size:14px;font-weight:700;color:#0f172a;margin:0 0 6px}
+        .step-card p{font-size:12.5px;color:#64748b;margin:0;line-height:1.55}
+        .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+        .faq-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px}
+        .faq-card h4{font-size:14px;font-weight:700;color:#0f172a;margin:0 0 6px}
+        .faq-card p{font-size:13px;color:#64748b;margin:0;line-height:1.6}
+        .privacy-note{display:flex;gap:12px;align-items:center;background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:14px 18px;margin:36px auto 8px;max-width:920px;font-size:13px;color:#92400e;line-height:1.5}
+        .privacy-note svg{width:18px;height:18px;flex-shrink:0;color:#d97706}
+        .guide-link{margin:20px auto 8px;max-width:920px;text-align:center;font-size:14px}
+        .guide-link a{color:#2563eb;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+        .guide-link a:hover{text-decoration:underline}
+
+        /* ========== RESPONSIVE ========== */
+        @media(max-width:768px){
+            .hero{padding:36px 0 26px}
+            .hero h1{font-size:30px}
+            .hero-subtitle{font-size:14px;margin-bottom:20px}
+            .trust-badge{padding:5px 11px;font-size:12px}
+            .tool-card{padding:18px;margin-bottom:32px}
+            .action-bar{grid-template-columns:1fr}
+            .related-grid,.steps-grid{grid-template-columns:1fr}
+            .faq-grid{grid-template-columns:1fr}
+            .gt-row{grid-template-columns:1fr}
+            .gt-stats-grid{grid-template-columns:repeat(2,1fr)}
+            .gt-sticky-actions{width:auto;max-width:94vw;flex-wrap:wrap;justify-content:center}
+        }
+        @media(max-width:480px){
+            .hero{padding:28px 0 20px}
+            .hero h1{font-size:26px}
+            .section-heading h2{font-size:24px}
+            .gt-stats-grid{grid-template-columns:repeat(2,1fr)}
+            .gt-score-hero{gap:18px;padding:20px}
+        }
+        @media(prefers-reduced-motion:reduce){
+            .gt-report,.gt-progress::after,.gt-status.processing::before,.gt-chevron,.gt-ring-fill,.gt-loading .gt-spinner,.gt-sticky-actions{animation:none!important;transition:none!important}
+        }
+        @media print{
+            .hero,.site-header,.site-footer,.related-section,.how-section,.faq-section,.privacy-note,.guide-link,.action-bar,.text-input-zone,.gt-sticky-actions,.gt-toast{display:none!important}
+            .tool-card{box-shadow:none;border:none;padding:0}
+            #results{margin-top:0}
+            .gt-section{break-inside:avoid}
+            body{background:#fff}
+        }
+        /* ========== XML SITEMAP GENERATOR ========== */
+/* ========== QUICK MODE ========== */
+.sg-quick{animation:sgFade .3s ease}
+.sg-label-big{font-size:14px}
+.sg-site-input{font-size:16px;padding:14px 16px;border-radius:12px;font-weight:500}
+.sg-site-input:focus{border-color:#2563eb;box-shadow:0 0 0 4px rgba(37,99,235,.12)}
+.sg-quick-help{line-height:1.6}
+.sg-quick-help strong{color:#334155;font-weight:600}
+
+/* ========== MODE TOGGLES ========== */
+.sg-mode-row{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
+.sg-mode-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;font-size:13.5px;font-weight:600;color:#334155;background:#fff;border:1px solid #e2e8f0;border-radius:11px;cursor:pointer;transition:all .18s;font-family:inherit;flex:1 1 auto;justify-content:center}
+.sg-mode-btn svg{width:15px;height:15px;color:#2563eb;flex-shrink:0}
+.sg-mode-btn:hover{color:#2563eb;border-color:#2563eb;background:#eff6ff;transform:translateY(-1px)}
+.sg-mode-btn.active{color:#2563eb;border-color:#2563eb;background:#eff6ff;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.sg-mode-btn:focus-visible{outline:2px solid #2563eb;outline-offset:2px}
+.sg-mode-adv{flex:1 1 100%;margin-top:0}
+.sg-mode-summary{display:flex;align-items:center;gap:9px}
+.sg-mode-summary svg{color:#2563eb;flex-shrink:0}
+
+/* ========== ADVANCED GROUPS ========== */
+.sg-adv-group{border-top:1px solid #eef2f7;padding-top:14px}
+.sg-adv-group:first-child{border-top:none;padding-top:0}
+.sg-adv-group-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#94a3b8;margin-bottom:10px}
+.sg-adv-group-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.sg-adv-actions{margin-top:4px}
+.sg-adv-body .sg-parse-btn{width:100%}
+
+/* ========== MANUAL URL MODE ========== */
+.sg-manual-zone{animation:sgFade .25s ease}
+
+.sg-parse-btn{padding:11px 18px;border:1px solid #e2e8f0;border-radius:11px;background:#fff;color:#0f172a;font-weight:600;font-size:14px;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;width:100%}
+.sg-parse-btn svg{width:16px;height:16px;color:#2563eb}
+.sg-parse-btn:hover{background:#f8fafc;border-color:#cbd5e1;transform:translateY(-1px)}
+.sg-table-wrap{margin-top:16px;overflow-x:auto;border:1px solid #e8edf4;border-radius:12px;background:#fff}
+.sg-table{width:100%;border-collapse:collapse;font-size:13px;min-width:760px}
+.sg-table th{text-align:left;padding:10px 14px;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:#64748b;background:#f8fafc;border-bottom:1px solid #e8edf4;white-space:nowrap;font-weight:700}
+.sg-table td{padding:8px 14px;border-bottom:1px solid #f1f5f9;vertical-align:top}
+.sg-table tr:last-child td{border-bottom:none}
+.sg-table input,.sg-table select{width:100%;padding:7px 10px;border:1px solid #e2e8f0;border-radius:8px;font-size:12.5px;font-family:'JetBrains Mono',monospace;background:#f8fafc;color:#0f172a;box-sizing:border-box}
+.sg-table input:focus,.sg-table select:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.12);background:#fff}
+.sg-table input[type="checkbox"]{width:16px;height:16px;accent-color:#2563eb;cursor:pointer;padding:0}
+.sg-table td .sg-count-badge{max-width:none;font-size:11px;padding:3px 9px}
+.sg-count-badge{font-size:12px;color:#64748b;font-family:'JetBrains Mono',monospace;background:#f8fafc;border:1px solid #e2e8f0;border-radius:9999px;padding:3px 10px;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.sg-count-badge.sg-ok{color:#166534;background:#f0fdf4;border-color:#bbf7d0}
+.sg-count-badge.sg-bad{color:#991b1b;background:#fef2f2;border-color:#fecaca}
+.sg-count-badge.sg-warn{color:#92400e;background:#fffbeb;border-color:#fde68a}
+.sg-count-badge.sg-pending{color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe}
+.sg-code{width:100%;min-height:260px;resize:vertical;border:none;outline:none;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.65;tab-size:2;margin:0}
+.sg-code:focus{outline:none}
+
+/* ========== SITE VERIFY ========== */
+.sg-verify-zone{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.sg-verify-badge{font-size:11px;font-weight:700;padding:4px 11px;border-radius:9999px;border:1px solid #e2e8f0;background:#f8fafc;color:#64748b;white-space:nowrap;transition:all .2s}
+.sg-verify-badge.sg-ok{background:#f0fdf4;color:#166534;border-color:#bbf7d0}
+.sg-verify-badge.sg-bad{background:#fef2f2;color:#991b1b;border-color:#fecaca}
+.sg-verify-badge.sg-warn{background:#fffbeb;color:#92400e;border-color:#fde68a}
+.sg-verify-badge.sg-pending{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe}
+.sg-verify-zone .gt-btn-sm{padding:6px 12px;font-size:12px}
+
+/* ========== IMPORT ========== */
+.sg-import-zone{margin-top:2px}
+.sg-import-row{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
+.sg-import-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 16px;font-size:13px;font-weight:600;color:#334155;background:#fff;border:1px solid #e2e8f0;border-radius:10px;cursor:pointer;transition:all .18s;font-family:inherit;text-decoration:none}
+.sg-import-btn svg{width:15px;height:15px;color:#2563eb;flex-shrink:0}
+.sg-import-btn:hover:not(:disabled){border-color:#2563eb;color:#2563eb;background:#eff6ff;transform:translateY(-1px)}
+.sg-import-btn:disabled{opacity:.55;cursor:not-allowed}
+.sg-import-btn:focus-visible{outline:2px solid #2563eb;outline-offset:2px}
+.sg-import-btn .sg-tag{font-size:10px;font-weight:700;text-transform:uppercase;background:#f1f5f9;color:#64748b;border-radius:9999px;padding:2px 7px}
+.sg-file{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ========== ADVANCED ========== */
+.sg-adv{border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc;transition:border-color .2s}
+.sg-adv:hover{border-color:#cbd5e1}
+.sg-adv summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 16px;cursor:pointer;list-style:none;font-weight:700;color:#0f172a;font-size:14px;user-select:none;transition:background .18s}
+.sg-adv summary::-webkit-details-marker{display:none}
+.sg-adv summary:hover{background:#f1f5f9}
+.sg-adv summary:focus-visible{outline:2px solid #2563eb;outline-offset:-2px;border-radius:12px}
+.sg-adv .gt-chevron{color:#94a3b8;flex-shrink:0;transition:transform .22s ease}
+.sg-adv[open] .gt-chevron{transform:rotate(180deg)}
+.sg-adv[open] summary{border-bottom:1px solid #e2e8f0}
+.sg-adv-body{padding:16px;display:grid;gap:14px}
+.sg-adv-checks{display:flex;gap:18px;flex-wrap:wrap}
+
+/* ========== CRAWL RULES / CHECK GRIDS ========== */
+.sg-check-grid{display:flex;gap:18px;flex-wrap:wrap}
+.sg-check-grid .gt-check{flex-wrap:wrap}
+.sg-check-grid .gt-muted{font-size:12px}
+.sg-lastmod-seg{flex-wrap:wrap;justify-content:flex-start}
+
+/* ========== TABLE STATUS / PAGER ========== */
+.sg-table-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;background:#f8fafc;border-bottom:1px solid #e8edf4;flex-wrap:wrap}
+.sg-table-info{font-size:12px;color:#64748b;font-family:'JetBrains Mono',monospace}
+.sg-status{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:3px 10px;border-radius:9999px;white-space:nowrap}
+.sg-status::before{content:'';width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.sg-status-ok{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+.sg-status-ok::before{background:#22c55e}
+.sg-status-warn{background:#fffbeb;color:#92400e;border:1px solid #fde68a}
+.sg-status-warn::before{background:#f59e0b}
+.sg-status-fail{background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+.sg-status-fail::before{background:#ef4444}
+.sg-row-del{border:none;background:transparent;color:#94a3b8;cursor:pointer;padding:6px;border-radius:8px;transition:all .15s}
+.sg-row-del:hover{color:#dc2626;background:#fef2f2}
+.sg-row-del:focus-visible{outline:2px solid #2563eb;outline-offset:1px}
+.sg-row-del svg{width:15px;height:15px;display:block}
+.sg-pager{display:flex;align-items:center;justify-content:flex-end;gap:10px;padding:10px 14px;border-top:1px solid #e8edf4;flex-wrap:wrap}
+.sg-pager-info{font-size:12px;color:#64748b;font-family:'JetBrains Mono',monospace}
+.sg-pager-curr{font-size:12px;font-weight:700;color:#0f172a;font-family:'JetBrains Mono',monospace}
+.sg-pager button:disabled{opacity:.45;cursor:not-allowed}
+.sg-pager .gt-btn-sm{padding:6px 12px;font-size:12px}
+
+/* ========== DOWNLOADS ========== */
+.sg-downloads{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+
+/* ========== XML PREVIEW ========== */
+.sg-card-file{font-family:'JetBrains Mono',monospace;color:#2563eb}
+.sg-preview{background:#0f172a;border-radius:10px;padding:10px 0;overflow:auto;max-height:520px;font-family:'JetBrains Mono',monospace}
+.sg-line{display:flex;padding:0 14px;min-height:20px}
+.sg-line:hover{background:rgba(148,163,184,.08)}
+.sg-ln{flex:0 0 46px;color:#475569;text-align:right;padding-right:14px;user-select:none;font-size:11.5px;line-height:1.65}
+.sg-code-line{color:#cbd5e1;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.65;white-space:pre;tab-size:2}
+.sg-tok-tag{color:#93c5fd}
+.sg-tok-attr{color:#fbbf24}
+.sg-tok-str{color:#86efac}
+.sg-tok-com{color:#64748b;font-style:italic}
+.sg-preview-note{margin-top:8px;font-size:12px;color:#94a3b8;text-align:center}
+
+/* ========== AI SUGGESTIONS ========== */
+.sg-ai-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.sg-ai-card{border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;background:#fff;transition:all .2s}
+.sg-ai-card:hover{border-color:#c3d4ef;transform:translateY(-2px);box-shadow:0 6px 16px rgba(15,23,42,.06)}
+.sg-ai-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.sg-ai-icon{width:24px;height:24px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sg-ai-icon svg{width:14px;height:14px}
+.sg-ai-icon.sg-ai-warn{background:#fffbeb;color:#d97706}
+.sg-ai-icon.sg-ai-info{background:#eff6ff;color:#2563eb}
+.sg-ai-icon.sg-ai-pass{background:#f0fdf4;color:#16a34a}
+.sg-ai-title{font-size:13.5px;font-weight:700;color:#0f172a}
+.sg-ai-text{font-size:12.5px;color:#64748b;line-height:1.55;margin:0 0 8px}
+.sg-ai-example{font-size:12px;color:#475569;background:#f8fafc;border:1px dashed #dbe3ee;border-radius:8px;padding:6px 9px;margin-bottom:8px;line-height:1.5}
+.sg-ai-gain{font-size:11px;font-weight:700;color:#2563eb;text-transform:uppercase;letter-spacing:.4px}
+
+/* ========== ANIMATION ========== */
+.sg-fade{animation:sgFade .35s cubic-bezier(.4,0,.2,1)}
+@keyframes sgFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:768px){
+    .sg-import-row{flex-direction:column}
+    .sg-import-btn{justify-content:center}
+    .sg-downloads{justify-content:center}
+    .sg-check-grid{gap:10px}
+    .sg-adv-group-grid{grid-template-columns:1fr}
+    .sg-mode-btn{flex:1 1 100%}
+}
+@media(prefers-contrast:more){
+    .sg-tok-tag{color:#bae6fd}
+    .sg-tok-attr{color:#fde68a}
+    .sg-tok-str{color:#bbf7d0}
+    .sg-code-line{color:#f1f5f9}
+    .sg-ai-card,.sg-import-btn,.sg-adv{border-color:#64748b}
+}
+
+    </style>
     <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
 </head>
 <body>
@@ -59,84 +506,272 @@
     </header>
 
     <main id="main-content" class="main-content">
-        <div class="container">
-            <div class="page-header">
-                <h1>XML Sitemap Generator</h1>
-                <p class="page-description">Generate a complete XML sitemap from a list of URLs. Set priorities, change frequencies, and lastmod dates for each page. Copy or download the file.</p>
-                <p style="margin-top:var(--space-3);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No sign-up &bull; No server uploads &bull; 100% browser-based</p>
-            </div>
-
-            <div style="margin-bottom:var(--space-4)">
-                <label for="urls-input" style="font-weight:600;margin-bottom:var(--space-2);display:block">Enter URLs (one per line)</label>
-                <textarea id="urls-input" class="url-textarea" placeholder="https://example.com/&#10;https://example.com/about&#10;https://example.com/contact&#10;https://example.com/blog/my-post"></textarea>
-                <span class="url-count" id="url-count">0 URLs detected</span>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="default-priority">Default Priority</label>
-                    <select id="default-priority">
-                        <option value="1.0">1.0 (Highest)</option>
-                        <option value="0.9">0.9</option>
-                        <option value="0.8">0.8</option>
-                        <option value="0.7">0.7</option>
-                        <option value="0.6" selected>0.6 (Default)</option>
-                        <option value="0.5">0.5</option>
-                        <option value="0.4">0.4</option>
-                        <option value="0.3">0.3</option>
-                        <option value="0.2">0.2</option>
-                        <option value="0.1">0.1 (Lowest)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="default-changefreq">Default Change Frequency</label>
-                    <select id="default-changefreq">
-                        <option value="daily" selected>daily</option>
-                        <option value="weekly">weekly</option>
-                        <option value="monthly">monthly</option>
-                        <option value="yearly">yearly</option>
-                        <option value="always">always</option>
-                        <option value="hourly">hourly</option>
-                        <option value="never">never</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="default-lastmod">Default Last Modified</label>
-                    <input type="date" id="default-lastmod">
+        <section class="hero">
+            <div class="container">
+                <h1>XML Sitemap <span class="gradient-text">Generator</span></h1>
+                <p class="hero-subtitle">Generate a search-engine-ready sitemap.xml in seconds. Paste your URLs, set priority, change frequency and lastmod, then copy or download the finished file &mdash; all in your browser.</p>
+                <div class="trust-badges">
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>100% Free</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>No Sign-up</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>100% Browser-Based</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Instant Results</span>
                 </div>
             </div>
+        </section>
 
-            <div id="url-table-container"></div>
+        <div class="container" style="margin-top:32px">
+            <div class="tool-workspace">
+                <div class="tool-card">
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="14" y2="17"/></svg></div>
+                            <h2>XML Sitemap Generator</h2>
+                        </div>
+                        <span id="gt-status" class="gt-status ready" role="status" aria-live="polite">Ready</span>
+                    </div>
+                    <div class="card-divider"></div>
+                    <div class="gt-form">
 
-            <div style="display:flex;gap:var(--space-2);margin-bottom:var(--space-4);flex-wrap:wrap">
-                <button id="parse-btn" class="btn btn-outline btn-lg">Parse URLs to Table</button>
-                <button id="generate-btn" class="btn btn-primary btn-lg">Generate XML Sitemap</button>
-                <button id="copy-btn" class="btn btn-outline btn-lg">Copy to Clipboard</button>
-                <button id="download-btn" class="btn btn-outline btn-lg">Download sitemap.xml</button>
+    <!-- ================= QUICK MODE (DEFAULT) ================= -->
+    <div class="gt-field full sg-quick">
+        <div class="gt-label-row">
+            <label for="sg-site" class="gt-label sg-label-big">Website URL</label>
+            <div class="sg-verify-zone">
+                <button id="sg-verify" class="gt-btn-sm" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Verify Website</button>
+                <span id="sg-verify-badge" class="sg-count-badge" role="status" aria-live="polite"></span>
             </div>
+        </div>
+        <input id="sg-site" class="gt-input mono sg-site-input" type="text" placeholder="https://example.com" autocomplete="off" autocapitalize="off" spellcheck="false">
+        <p class="gt-help sg-quick-help">This site URL is only used to <strong>resolve relative URLs</strong> like <code>/about</code>. Add your pages with the <strong>Manual URL list</strong> or import a CSV / sitemap.xml, then press <strong>Generate Sitemap</strong>.</p>
+    </div>
 
-            <div id="output" class="code-output">
-                <div style="color:var(--color-text-light);text-align:center;padding:var(--space-8)">Generated XML sitemap will appear here</div>
-            </div>
+    <!-- ================= MODE TOGGLES ================= -->
+    <div class="sg-mode-row">
+        <button type="button" id="sg-toggle-manual" class="sg-mode-btn" aria-expanded="false" aria-controls="sg-manual-zone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>Manual URL list</button>
+        <details id="sg-adv" class="sg-adv sg-mode-adv">
+            <summary><span class="sg-mode-summary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span class="gt-label">Advanced Options</span></span><svg class="gt-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+            <div class="sg-adv-body">
 
-            <section class="content-section" style="margin-top:var(--space-8)">
-                <div class="section-header"><h2>Related Tools</h2></div>
-                <div class="tools-grid">
-                    <div class="card tool-card"><h3>Robots.txt Generator</h3><p>Create robots.txt files to control search engine crawling.</p><div class="card-footer"><a href="./robots-txt-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-                    <div class="card tool-card"><h3>Robots.txt Validator</h3><p>Validate and analyze your robots.txt file for errors.</p><div class="card-footer"><a href="./robots-txt-validator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-                    <div class="card tool-card"><h3>Meta Tag Generator</h3><p>Generate SEO meta tags for your webpages.</p><div class="card-footer"><a href="./meta-tag-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-                    <div class="card tool-card"><h3>Word Counter</h3><p>Count words, characters, and sentences in your text.</p><div class="card-footer"><a href="./word-counter" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+                <!-- URLS & PER-URL EDITING -->
+                <div class="sg-adv-group">
+                    <div class="sg-adv-group-label">URLs &amp; Per-URL Editing</div>
+                    <div class="sg-adv-group-grid">
+                        <div class="gt-field">
+                            <label for="sg-priority" class="gt-label">Default Priority</label>
+                            <select id="sg-priority" class="gt-select">
+                                <option value="1.0">1.0 (Highest)</option>
+                                <option value="0.9">0.9</option>
+                                <option value="0.8">0.8</option>
+                                <option value="0.7">0.7</option>
+                                <option value="0.6" selected>0.6 (Default)</option>
+                                <option value="0.5">0.5</option>
+                                <option value="0.4">0.4</option>
+                                <option value="0.3">0.3</option>
+                                <option value="0.2">0.2</option>
+                                <option value="0.1">0.1 (Lowest)</option>
+                            </select>
+                        </div>
+                        <div class="gt-field">
+                            <label for="sg-changefreq" class="gt-label">Default Change Frequency</label>
+                            <select id="sg-changefreq" class="gt-select">
+                                <option value="daily" selected>daily</option>
+                                <option value="weekly">weekly</option>
+                                <option value="monthly">monthly</option>
+                                <option value="yearly">yearly</option>
+                                <option value="always">always</option>
+                                <option value="hourly">hourly</option>
+                                <option value="never">never</option>
+                            </select>
+                        </div>
+                        <div class="gt-field">
+                            <label for="sg-lastmod" class="gt-label">Default Last Modified <span class="gt-muted">(optional)</span></label>
+                            <input id="sg-lastmod" class="gt-input" type="date">
+                        </div>
+                        <div class="gt-field">
+                            <div class="gt-label-row"><label class="gt-label">Last Modified Mode</label></div>
+                            <div class="gt-seg sg-lastmod-seg" id="sg-lastmod-seg" role="radiogroup" aria-label="Last modified mode">
+                                <button type="button" class="active" data-mode="auto" aria-pressed="true">Auto Detect</button>
+                                <button type="button" data-mode="today">Today</button>
+                                <button type="button" data-mode="current">Current Date</button>
+                                <button type="button" data-mode="custom">Custom Date</button>
+                                <button type="button" data-mode="keep">Keep Existing</button>
+                            </div>
+                            <input type="hidden" id="sg-lastmod-mode" value="auto">
+                        </div>
+                    </div>
+                    <div class="sg-adv-actions">
+                        <button id="sg-parse" class="sg-parse-btn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="4" y1="6" x2="14" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/><polyline points="22 12 18 8 14 12 18 16"/></svg> Parse URLs to Table</button>
+                    </div>
+                    <p class="gt-help">Build an editable table to fine-tune each discovered URL&rsquo;s priority, frequency and lastmod before generating.</p>
                 </div>
-            </section>
+                <div id="sg-table-wrap"></div>
 
-            <section class="content-section" style="margin-top:var(--space-4)">
-                <div class="section-header"><h2>Privacy Notice</h2></div>
-                <p style="color:var(--color-text-light);font-size:var(--text-sm)">All processing happens entirely in your browser. Your data is never uploaded to any server. Once you close this page, all data is gone.</p>
-            </section>
+                <!-- IMPORT URLs -->
+                <div class="sg-adv-group">
+                    <div class="sg-adv-group-label">Import URLs</div>
+                    <div class="sg-import-row">
+                        <label class="sg-import-btn" for="sg-import-csv" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Import CSV</label>
+                        <input id="sg-import-csv" class="sg-file" type="file" accept=".csv,text/csv" tabindex="-1">
+                        <label class="sg-import-btn" for="sg-import-sitemap" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>Import Existing sitemap.xml</label>
+                        <input id="sg-import-sitemap" class="sg-file" type="file" accept=".xml,application/xml,text/xml" tabindex="-1">
+                        <button id="sg-import-paste" class="sg-import-btn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>Paste from Clipboard</button>
+                        <button id="sg-import-crawl" class="sg-import-btn" type="button" disabled title="Not available in the browser"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Auto Crawl <span class="sg-tag">not available</span></button>
+                    </div>
+                    <p class="gt-help">CSV columns: <code>url, priority, changefreq, lastmod, include, canonical, noindex, images, videos, news_title, news_date</code>. Importing an existing sitemap.xml reads every <code>&lt;loc&gt;</code> entry.</p>
+                </div>
 
-            <p style="margin-top: var(--space-4); text-align: center;">
-                <a href="../guides/xml-sitemap-generator" style="color: var(--color-primary);">Read Guide: How to Create and Submit an XML Sitemap <i class="fas fa-arrow-right"></i></a>
-            </p>
+                <!-- URL PARAMETERS -->
+                <div class="sg-adv-group">
+                    <div class="sg-adv-group-label">URL Parameters</div>
+                    <label class="gt-check"><input id="sg-params" type="checkbox" checked> Ignore tracking parameters <span class="gt-muted">(recommended)</span></label>
+                    <input id="sg-params-list" class="gt-input mono" type="text" value="utm_source,utm_medium,utm_campaign,utm_term,utm_content,gclid,fbclid" placeholder="utm_source,utm_medium,&hellip;" autocomplete="off" autocapitalize="off" spellcheck="false">
+                    <p class="gt-help">Comma-separated parameters removed from every URL before generation.</p>
+                </div>
+
+                <!-- CRAWL RULES -->
+                <div class="sg-adv-group">
+                    <div class="sg-adv-group-label">Crawl Rules</div>
+                    <div class="sg-check-grid">
+                        <label class="gt-check"><input id="sg-robots" type="checkbox" checked> Respect robots.txt</label>
+                        <label class="gt-check"><input id="sg-canonical" type="checkbox"> Prefer Canonical URLs</label>
+                        <label class="gt-check"><input id="sg-noindex" type="checkbox"> Exclude Noindex Pages</label>
+                    </div>
+                    <p class="gt-help">robots.txt rules are read client-side from <code>&lt;your-site&gt;/robots.txt</code> when reachable, otherwise every URL is allowed.</p>
+                </div>
+
+                <!-- REDIRECT HANDLING -->
+                <div class="sg-adv-group">
+                    <div class="sg-adv-group-label">Redirect Handling</div>
+                    <div class="sg-check-grid">
+                        <label class="gt-check"><input id="sg-redir-301" type="checkbox"> Follow 301 <span class="gt-muted">(http &rarr; https)</span></label>
+                        <label class="gt-check"><input id="sg-redir-308" type="checkbox"> Follow 308 <span class="gt-muted">(www &rarr; non-www)</span></label>
+                        <label class="gt-check"><input id="sg-redir-chain" type="checkbox"> Skip Redirect Chains</label>
+                    </div>
+                </div>
+
+                <!-- INCLUDE / EXCLUDE -->
+                <div class="sg-adv-group">
+                    <div class="sg-adv-group-label">Include / Exclude Paths</div>
+                    <div class="gt-row">
+                        <div class="gt-field"><label for="sg-include" class="gt-label">Include only paths</label><textarea id="sg-include" class="gt-textarea mono" rows="3" placeholder="/blog/&#10;/products/&#10;/news/" autocomplete="off" autocapitalize="off" spellcheck="false"></textarea><p class="gt-help">Only URLs whose path starts with one of these prefixes are kept.</p></div>
+                        <div class="gt-field"><label for="sg-exclude" class="gt-label">Exclude paths</label><textarea id="sg-exclude" class="gt-textarea mono" rows="3" placeholder="/admin/&#10;/private/&#10;/tmp/" autocomplete="off" autocapitalize="off" spellcheck="false"></textarea><p class="gt-help">URLs whose path starts with these prefixes are dropped.</p></div>
+                    </div>
+                </div>
+
+                <!-- EXTENDED SITEMAPS -->
+                <div class="sg-adv-group">
+                    <div class="sg-adv-group-label">Extended Sitemaps</div>
+                    <div class="sg-check-grid">
+                        <label class="gt-check"><input id="sg-img" type="checkbox"> Image Sitemap <span class="gt-muted">(image:image)</span></label>
+                        <label class="gt-check"><input id="sg-video" type="checkbox"> Video Sitemap <span class="gt-muted">(video:video)</span></label>
+                        <label class="gt-check"><input id="sg-news" type="checkbox"> Google News Sitemap <span class="gt-muted">(news:news)</span></label>
+                    </div>
+                    <p class="gt-help">Image/video entries are auto-detected from image/video file URLs, or supplied via the <code>images</code>/<code>videos</code> CSV columns. News entries are built from the URL title + lastmod.</p>
+                </div>
+
+                <!-- XML & OUTPUT -->
+                <div class="sg-adv-group">
+                    <div class="sg-adv-group-label">XML &amp; Output</div>
+                    <div class="gt-row">
+                        <div class="gt-field"><label for="sg-adv-maxurls" class="gt-label">Maximum URLs</label><input id="sg-adv-maxurls" class="gt-input mono" type="number" min="1" step="100" value="50000"></div>
+                        <div class="gt-field"><label for="sg-adv-depth" class="gt-label">Max Crawl Depth</label><input id="sg-adv-depth" class="gt-input mono" type="number" min="0" max="10" step="1" value="3"></div>
+                    </div>
+                    <div class="gt-row">
+                        <div class="gt-field"><label for="sg-adv-encoding" class="gt-label">Output Encoding</label><select id="sg-adv-encoding" class="gt-select"><option value="UTF-8" selected>UTF-8</option><option value="US-ASCII">US-ASCII</option></select></div>
+                        <div class="gt-field"><label for="sg-adv-perfile" class="gt-label">URLs per file <span class="gt-muted">(split)</span></label><input id="sg-adv-perfile" class="gt-input mono" type="number" min="1" step="500" value="50000"></div>
+                    </div>
+                    <div class="sg-adv-checks">
+                        <label class="gt-check"><input id="sg-adv-pretty" type="checkbox" checked> Pretty Print XML</label>
+                        <label class="gt-check"><input id="sg-adv-gzip" type="checkbox"> Generate sitemap.xml.gz</label>
+                        <label class="gt-check"><input id="sg-adv-split" type="checkbox"> Split Large Sitemap</label>
+                    </div>
+                </div>
+
+            </div>
+        </details>
+    </div>
+
+    <!-- ================= MANUAL URL MODE (hidden) ================= -->
+    <div id="sg-manual-zone" class="gt-field full sg-manual-zone" hidden>
+        <div class="gt-label-row">
+            <label for="sg-urls" class="gt-label">Pages / URLs <span class="gt-muted">(one per line)</span></label>
+            <span id="sg-urls-count" class="gt-char-count">0 URLs detected</span>
+        </div>
+        <textarea id="sg-urls" class="gt-textarea mono" rows="6" placeholder="https://example.com/&#10;https://example.com/about&#10;https://example.com/contact&#10;/blog/my-post" autocomplete="off" autocapitalize="off" spellcheck="false"></textarea>
+        <p class="gt-help">Paste a plain list of pages for a quick sitemap. Relative paths like <code>/about</code> resolve against the site URL. For per-URL priority, frequency and lastmod, open <strong>Advanced settings</strong> and use &ldquo;Parse URLs to Table&rdquo;.</p>
+    </div>
+
+</div>
+                    <div class="action-bar">
+    <button id="gt-run" class="btn btn-primary" type="button">
+        <span class="gt-spinner-inline"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="12" cy="12" r="10" opacity=".25"/><path d="M12 2a10 10 0 0 1 10 10"/></svg></span>
+        <svg class="gt-scan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Generate Sitemap
+    </button>
+    <button id="gt-sample" class="btn btn-outline" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Load Sample</button>
+    <button id="gt-clear" class="btn btn-outline" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>Clear</button>
+</div>
+
+                    <div id="gt-progress" class="gt-progress" hidden></div>
+                    <div id="results" aria-live="polite">
+                        <div class="gt-empty">
+    <div class="gt-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="14" y2="17"/></svg></div>
+    <h3>Your sitemap.xml appears here</h3>
+    <p>Add your URLs with the Manual URL list, or import a CSV / sitemap.xml, then press Generate Sitemap — the ready-to-submit XML and statistics will appear here.</p>
+</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="related-section">
+    <div class="section-heading">
+        <h2>Related Tools</h2>
+        <p>Complete your technical SEO workflow with these free utilities.</p>
+    </div>
+    <div class="related-grid">
+        <a href="./xml-sitemap-validator" class="related-card"><div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div><h4>XML Sitemap Validator</h4><p>Check your generated sitemap for well-formedness and required tags.</p><span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+        <a href="./robots-txt-generator" class="related-card"><div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg></div><h4>Robots.txt Generator</h4><p>Create robots.txt files to control search engine crawling.</p><span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+        <a href="./robots-txt-validator" class="related-card"><div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h4>Robots.txt Validator</h4><p>Validate and analyze your robots.txt file for errors.</p><span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+        <a href="./canonical-url-checker" class="related-card"><div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div><h4>Canonical URL Checker</h4><p>Audit duplicate content signals on your pages.</p><span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+        <a href="./url-slug-generator" class="related-card"><div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></div><h4>URL Slug Generator</h4><p>Create SEO-friendly slugs from any title.</p><span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+        <a href="./meta-tag-generator" class="related-card"><div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h4>Meta Tag Generator</h4><p>Create complete HTML meta tags for any page.</p><span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+    </div>
+</div>
+
+            <div class="how-section">
+    <div class="section-heading">
+        <h2>How It Works</h2>
+        <p>Build a standards-compliant sitemap from the URLs you provide.</p>
+    </div>
+    <div class="steps-grid">
+        <div class="step-card"><div class="step-num">1</div><h4>Add your URLs</h4><p>Use the Manual URL list to paste your pages, or import a CSV / existing sitemap.xml. The Website URL (optional) resolves any relative paths.</p></div>
+        <div class="step-card"><div class="step-num">2</div><h4>Generate &amp; validate</h4><p>Press Generate Sitemap. Every URL is deduplicated, canonicalised and validated into a standards-compliant sitemap.xml.</p></div>
+        <div class="step-card"><div class="step-num">3</div><h4>Copy or download</h4><p>Copy the XML or download sitemap.xml, then upload it to your site root and submit it in Search Console.</p></div>
+    </div>
+</div>
+            <div class="faq-section">
+    <div class="section-heading">
+        <h2>FAQ</h2>
+        <p>Common questions about the XML Sitemap Generator.</p>
+    </div>
+    <div class="faq-grid">
+        <div class="faq-card"><h4>What is an XML sitemap?</h4><p>An XML sitemap is a file that lists all the pages on your website, helping search engines like Google discover and crawl your content efficiently.</p></div>
+        <div class="faq-card"><h4>How do I use the generated sitemap?</h4><p>Download the XML file and upload it to your website's root directory. Then submit the URL to Google Search Console.</p></div>
+        <div class="faq-card"><h4>What is a good priority value?</h4><p>Priorities range from 0.0 to 1.0 and are relative hints, not absolute rank signals. Use 1.0 only for your most important pages.</p></div>
+        <div class="faq-card"><h4>Is my data stored anywhere?</h4><p>No. All processing happens in your browser. Your URLs never leave your device.</p></div>
+    </div>
+</div>
+
+
+            <div class="privacy-note">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                <span><strong>Privacy first:</strong> all processing happens in your browser. Your data is never uploaded &mdash; once you close this page, all data is gone.</span>
+            </div>
+
+            <div class="guide-link">
+                <a href="../guides/xml-sitemap-generator">Read Guide: How to Create and Submit an XML Sitemap <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+
+            </div>
         </div>
     </main>
 
@@ -144,97 +779,1546 @@
                     <div class="footer-social">
                         <a href="https://x.com/GoToolly" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                         <a href="https://www.facebook.com/profile.php?id=61591898344203" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                        <a href="https://linkedin.com/in/go-toolly-426b67422" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                        <a href="https://www.youtube.com/@GoToolly" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                         <a href="https://www.instagram.com/gotoolly/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
                         <a href="https://www.tiktok.com/@gotoolly26" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
                         <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></a>
-                    </div></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor.html">Image Compressor</a></li><li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li><li><a href="/tools/word-counter.html">Word Counter</a></li><li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li><li><a href="/tools/password-generator.html">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+                    </div></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor.html">Image Compressor</a></li><li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li><li><a href="/tools/word-counter.html">Word Counter</a></li><li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li><li><a href="/tools/password-generator.html">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
 
     <script defer src="../assets/js/main.min.js"></script>
     <script>
-    (function(){
-        var urlsInput=document.getElementById('urls-input'),urlCount=document.getElementById('url-count'),tableContainer=document.getElementById('url-table-container'),output=document.getElementById('output');
-        var tableData=[];
+    (function () {
+        'use strict';
 
-        function getUrls(){return urlsInput.value.split('\n').map(function(l){return l.trim()}).filter(function(l){return l.length>0 && /^https?:\/\//i.test(l)})}
+        var $ = function (sel, root) { return (root || document).querySelector(sel); };
+        var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
 
-        urlsInput.addEventListener('input',function(){
-            var count=getUrls().length;
-            urlCount.textContent=count+' URL'+(count!==1?'s':'')+' detected';
-        });
+        var ICONS = {
+            pass: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+            warn: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+            fail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>',
+            info: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
+            copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>',
+            list: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>',
+            download: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>',
+            braces: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>',
+            print: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>',
+            chevron: '<svg class="gt-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>',
+            search: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
+            clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+            trash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>',
+            check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>'
+        };
+        var EXPORT_ICONS = { 'copy-report': 'copy', 'copy-recs': 'list', txt: 'download', json: 'braces', print: 'print' };
 
-        document.getElementById('parse-btn').addEventListener('click',function(){
-            var urls=getUrls();
-            if(!urls.length){urlCount.textContent='No valid URLs found (must start with http:// or https://)';return;}
-            tableData=urls.map(function(u){
-                var today=new Date().toISOString().split('T')[0];
-                return{url:u,priority:document.getElementById('default-priority').value,changefreq:document.getElementById('default-changefreq').value,lastmod:document.getElementById('default-lastmod').value||today}
+        function esc(s) {
+            return String(s == null ? '' : s)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function truncate(s, n) {
+            s = String(s == null ? '' : s);
+            if (s.length <= n) return s;
+            return s.slice(0, n - 1).replace(/\s+\S*$/, '') + '\u2026';
+        }
+
+        function debounce(fn, wait) {
+            var t;
+            return function () {
+                var args = arguments, ctx = this;
+                clearTimeout(t);
+                t = setTimeout(function () { fn.apply(ctx, args); }, wait);
+            };
+        }
+
+        function decodeEntities(str) {
+            var t = document.createElement('textarea');
+            t.innerHTML = String(str);
+            return t.value;
+        }
+
+        function download(filename, content, mime) {
+            var blob = new Blob([content], { type: (mime || 'text/plain') + ';charset=utf-8' });
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 120);
+        }
+
+        function copyText(text, successMsg) {
+            var done = function () { showToast(successMsg || 'Copied to clipboard', 'success'); };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text, done); });
+            } else {
+                fallbackCopy(text, done);
+            }
+        }
+
+        function fallbackCopy(text, done) {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.top = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); done(); } catch (e) { showToast('Could not copy to clipboard', 'error'); }
+            ta.remove();
+        }
+
+        function printCurrent() {
+            var w = window.open('', '_blank', 'width=900,height=700');
+            if (!w) { showToast('Pop-ups are blocked. Use the browser print menu instead.', 'error'); return; }
+            w.document.write('<html><head><title>Print</title><style>body{font-family:Inter,Arial,sans-serif;color:#0f172a;padding:24px;max-width:900px;margin:0 auto}h1{font-size:22px}h2{font-size:16px;margin-top:22px}pre{white-space:pre-wrap;font-family:monospace;background:#f8fafc;padding:12px;border-radius:8px;border:1px solid #e2e8f0}@media print{body{padding:0}}</style></head><body>' +
+                printHeader() + '<h1>' + esc(printTitle()) + '</h1>' + printBody() + '</body></html>');
+            w.document.close();
+            w.focus();
+            setTimeout(function () { w.print(); }, 350);
+        }
+
+        /* tool must define: printTitle(), printHeader(), printBody(), showToast, DOM.results */
+        function showToast(msg, type) {
+            var el = document.getElementById('gt-toast');
+            if (!el) {
+                el = document.createElement('div');
+                el.id = 'gt-toast';
+                el.className = 'gt-toast';
+                el.setAttribute('role', 'status');
+                document.body.appendChild(el);
+            }
+            var icon = type === 'success' ? ICONS.check : type === 'error' ? ICONS.fail : ICONS.info;
+            el.innerHTML = icon + esc(msg);
+            el.className = 'gt-toast show ' + (type || 'info');
+            clearTimeout(showToast._t);
+            showToast._t = setTimeout(function () { el.className = 'gt-toast'; }, 2600);
+        }
+
+        function exportBtn(key, label) {
+            return '<button type="button" class="gt-export-btn" data-export="' + key + '">' + (ICONS[EXPORT_ICONS[key] || 'copy'] || '') + label + '</button>';
+        }
+
+        function renderSticky(r) {
+            var bar = document.getElementById('gt-sticky');
+            if (!bar) {
+                bar = document.createElement('div');
+                bar.id = 'gt-sticky';
+                bar.className = 'gt-sticky-actions';
+                bar.setAttribute('role', 'toolbar');
+                bar.setAttribute('aria-label', 'Result actions');
+                document.body.appendChild(bar);
+            }
+            bar.innerHTML = stickyScore(r) +
+                exportBtn('copy-report', 'Copy') +
+                exportBtn('txt', 'TXT') +
+                exportBtn('json', 'JSON') +
+                exportBtn('print', 'Print');
+            requestAnimationFrame(function () { bar.classList.add('show'); });
+        }
+
+        function hideSticky() {
+            var bar = document.getElementById('gt-sticky');
+            if (bar) bar.classList.remove('show');
+        }
+
+        /* tool must define: stickyScore(r), handleExport(key), buildReportText(r), buildReportJson(r) */
+        function delegateExport(root) {
+            if (!root) return;
+            root.addEventListener('click', function (e) {
+                var btn = e.target.closest('[data-export]');
+                if (!btn) return;
+                if (root === document.body && DOM.results.contains(btn)) return;
+                e.preventDefault();
+                handleExport(btn.getAttribute('data-export'));
             });
+        }
+
+        /* ================= XML SITEMAP GENERATOR ================= */
+var DOM = {
+    results: $('#results'),
+    status: $('#gt-status'),
+    progress: $('#gt-progress'),
+    runBtn: $('#gt-run'),
+    sampleBtn: $('#gt-sample'),
+    clearBtn: $('#gt-clear'),
+    siteInput: $('#sg-site'),
+    urlsInput: $('#sg-urls'),
+    urlsCount: $('#sg-urls-count'),
+    priorityInput: $('#sg-priority'),
+    changefreqInput: $('#sg-changefreq'),
+    lastmodInput: $('#sg-lastmod'),
+    parseBtn: $('#sg-parse'),
+    tableWrap: $('#sg-table-wrap'),
+    verifyBtn: $('#sg-verify'),
+    verifyBadge: $('#sg-verify-badge'),
+    lastmodMode: $('#sg-lastmod-mode'),
+    lastmodSeg: $('#sg-lastmod-seg'),
+    importCsv: $('#sg-import-csv'),
+    importSitemap: $('#sg-import-sitemap'),
+    importPaste: $('#sg-import-paste'),
+    importCrawl: $('#sg-import-crawl'),
+    paramsCheck: $('#sg-params'),
+    paramsList: $('#sg-params-list'),
+    robotsCheck: $('#sg-robots'),
+    canonicalCheck: $('#sg-canonical'),
+    noindexCheck: $('#sg-noindex'),
+    redir301: $('#sg-redir-301'),
+    redir308: $('#sg-redir-308'),
+    redirChain: $('#sg-redir-chain'),
+    includeTa: $('#sg-include'),
+    excludeTa: $('#sg-exclude'),
+    imgCheck: $('#sg-img'),
+    videoCheck: $('#sg-video'),
+    newsCheck: $('#sg-news'),
+    advMaxUrls: $('#sg-adv-maxurls'),
+    advDepth: $('#sg-adv-depth'),
+    advEncoding: $('#sg-adv-encoding'),
+    advPerFile: $('#sg-adv-perfile'),
+    advPretty: $('#sg-adv-pretty'),
+    advGzip: $('#sg-adv-gzip'),
+    advSplit: $('#sg-adv-split'),
+    toggleManual: $('#sg-toggle-manual'),
+    manualZone: $('#sg-manual-zone')
+};
+
+var state = { busy: false, lastResult: null };
+var tableData = [];
+var tablePage = 0;
+var tableQuery = '';
+var tableFilter = 'all';
+var tablePageSize = 50;
+var robotsRules = { allow: [], disallow: [] };
+var robotsLoaded = false;
+
+var CONFIG = {
+    maxUrls: 50000,
+    freqValues: ['always', 'hourly', 'daily', 'weekly', 'monthly', 'yearly', 'never'],
+    priorityValues: ['1.0', '0.9', '0.8', '0.7', '0.6', '0.5', '0.4', '0.3', '0.2', '0.1'],
+    defaultPriority: '0.6',
+    defaultChangefreq: 'daily',
+    detailCap: 10
+};
+
+var STATUS_LABEL = { pass: 'Good', warn: 'Warning', fail: 'Fix', info: 'Info' };
+var STATUS_RANK = { fail: 0, warn: 1, info: 2, pass: 3 };
+
+var SAMPLE = {
+    site: 'https://example.com',
+    urls: [
+        'https://example.com/',
+        'https://example.com/about',
+        'https://example.com/blog/how-to-brew-coffee',
+        'https://example.com/contact'
+    ].join('\n')
+};
+
+function getRawUrls() {
+    return DOM.urlsInput.value.split('\n').map(function (l) { return l.trim(); }).filter(function (l) { return l.length > 0; });
+}
+
+function getUrls() {
+    return getRawUrls().filter(function (l) { return /^https?:\/\//i.test(l); });
+}
+
+function resolveUrl(u) {
+    if (/^https?:\/\//i.test(u)) return { url: u };
+    var site = DOM.siteInput.value.trim();
+    if (!site) return null;
+    if (!/^https?:\/\//i.test(site)) return null;
+    if (!/^\//.test(u)) return null;
+    var base = site.replace(/\/+$/, '');
+    return { url: base + '/' + String(u).replace(/^\/+/, '') };
+}
+
+function todayIso() {
+    return new Date().toISOString().split('T')[0];
+}
+
+function defaultEntry(u) {
+    return {
+        url: u,
+        priority: DOM.priorityInput.value || CONFIG.defaultPriority,
+        changefreq: DOM.changefreqInput.value || CONFIG.defaultChangefreq,
+        lastmod: DOM.lastmodInput.value || todayIso()
+    };
+}
+
+/* ================= NEW FEATURES: VALIDATION & NORMALIZATION ================= */
+function validateUrl(u) {
+    var s = String(u || '').trim();
+    if (!/^https?:\/\//i.test(s)) return 'Not an absolute http(s) URL';
+    var rest = s.replace(/^https?:\/\//i, '').split(/[/?#]/)[0];
+    if (!rest || !/^[a-z0-9][a-z0-9.-]*\.[a-z]{2,}$/i.test(rest)) return 'Invalid host format';
+    return null;
+}
+
+function urlPath(u) {
+    var s = String(u || '').replace(/^https?:\/\/[^/]+/i, '');
+    return s.split('#')[0].split('?')[0] || '/';
+}
+
+function stripParams(url, list) {
+    var q = url.indexOf('?');
+    if (q === -1) return url;
+    var base = url.slice(0, q);
+    var qs = url.slice(q + 1);
+    var keep = qs.split('&').filter(function (pair) {
+        var name = pair.split('=')[0];
+        return list.indexOf(name) === -1;
+    });
+    return keep.length ? base + '?' + keep.join('&') : base;
+}
+
+function normalizeForCompare(u) {
+    return String(u || '').replace(/#.*$/, '').replace(/\/+$/, '').toLowerCase();
+}
+
+function keyFor(u) {
+    return normalizeForCompare(u);
+}
+
+function splitList(v) {
+    return String(v || '').split(/[\s,]+/).map(function (s) { return s.trim(); }).filter(function (s) { return s.length > 0; });
+}
+
+function getSettings() {
+    function val(el, fb) { return el && 'value' in el ? el.value : fb; }
+    function chk(el, fb) { return el ? el.checked : fb; }
+    var siteName = val(DOM.siteInput, '').replace(/^https?:\/\//i, '').split('/')[0] || 'Website';
+    return {
+        ignoreParams: chk(DOM.paramsCheck, false),
+        paramsList: splitList(val(DOM.paramsList, '')),
+        include: splitList(val(DOM.includeTa, '')),
+        exclude: splitList(val(DOM.excludeTa, '')),
+        respectRobots: chk(DOM.robotsCheck, false),
+        preferCanonical: chk(DOM.canonicalCheck, false),
+        excludeNoindex: chk(DOM.noindexCheck, false),
+        image: chk(DOM.imgCheck, false),
+        video: chk(DOM.videoCheck, false),
+        news: chk(DOM.newsCheck, false),
+        follow301: chk(DOM.redir301, false),
+        follow308: chk(DOM.redir308, false),
+        skipChains: chk(DOM.redirChain, false),
+        prettyPrint: chk(DOM.advPretty, true),
+        gzip: chk(DOM.advGzip, false),
+        split: chk(DOM.advSplit, false),
+        encoding: val(DOM.advEncoding, 'UTF-8') || 'UTF-8',
+        lastmodMode: val(DOM.lastmodMode, 'auto') || 'auto',
+        perFile: parseInt(val(DOM.advPerFile, ''), 10) || 50000,
+        maxUrls: parseInt(val(DOM.advMaxUrls, ''), 10) || CONFIG.maxUrls,
+        maxDepth: parseInt(val(DOM.advDepth, ''), 10) || 3,
+        newsName: siteName
+    };
+}
+
+function computeEntryLastmod(e, mode, v) {
+    var lm = String(e.lastmod || '').trim();
+    var keep = /^\d{4}-\d{2}-\d{2}/.test(lm);
+    if (mode === 'keep') return keep ? lm : '';
+    if (mode === 'custom') return (v.lastmod && /^\d{4}-\d{2}-\d{2}/.test(v.lastmod)) ? v.lastmod : todayIso();
+    if (mode === 'today' || mode === 'current') return todayIso();
+    if (keep) return lm;
+    return v.lastmod || todayIso();
+}
+
+function deriveImages(e) {
+    var out = [];
+    if (typeof e.images === 'string') out = out.concat(splitList(e.images));
+    if (Array.isArray(e.images)) out = out.concat(e.images.map(function (x) { return typeof x === 'string' ? x : (x && x.loc) || ''; }).filter(Boolean));
+    var re = /(https?:\/\/[^\s"'<>]+\.(?:png|jpe?g|gif|webp|avif|svg))/gi;
+    var m;
+    while ((m = re.exec(String(e.url || ''))) !== null) out.push(m[1]);
+    return out.filter(function (u, i, a) { return a.indexOf(u) === i; }).slice(0, 8);
+}
+
+function deriveVideos(e) {
+    var out = [];
+    var vids = typeof e.videos === 'string' ? splitList(e.videos) : (Array.isArray(e.videos) ? e.videos.slice() : []);
+    vids.forEach(function (v) {
+        var content = typeof v === 'string' ? v : (v && (v.content_loc || v.url || v.loc)) || '';
+        if (!content) return;
+        out.push({
+            content: content,
+            thumbnail: typeof v === 'string' ? (e.video_thumbnail || '') : (v && v.thumbnail_loc) || '',
+            title: (e.video_title || '') || (typeof v === 'string' ? '' : (v && v.title)) || 'Video',
+            duration: (e.video_duration || '600') || (typeof v === 'string' ? '600' : (v && v.duration)) || '600'
+        });
+    });
+    return out.slice(0, 4);
+}
+
+function applyRedirects(e, settings) {
+    var u = String(e.url || '');
+    if (settings.follow301 && /^http:\/\//i.test(u)) {
+        var https = u.replace(/^http:/i, 'https:');
+        if (isRobotsBlocked(urlPath(https))) return Object.assign({}, e, { skippedRedirect: true });
+        return Object.assign({}, e, { url: https, redirected: true });
+    }
+    if (settings.follow308 && /^https:\/\/www\./i.test(u)) {
+        var nowww = u.replace(/^https:\/\/www\./i, 'https://');
+        if (isRobotsBlocked(urlPath(nowww))) return Object.assign({}, e, { skippedRedirect: true });
+        return Object.assign({}, e, { url: nowww, redirected: true });
+    }
+    return e;
+}
+
+/* ================= NEW FEATURES: ROBOTS.TXT ================= */
+function parseRobotsSimple(text) {
+    var rules = { userAgent: null, allow: [], disallow: [], sitemap: [] };
+    var lines = String(text || '').split(/\r?\n/);
+    var current = null;
+    for (var i = 0; i < lines.length; i++) {
+        var line = lines[i].replace(/#.*$/, '').trim();
+        if (!line) continue;
+        var idx = line.indexOf(':');
+        if (idx === -1) continue;
+        var key = line.slice(0, idx).trim().toLowerCase();
+        var val = line.slice(idx + 1).trim();
+        if (key === 'user-agent') { current = val.toLowerCase(); rules.userAgent = current; }
+        else if (key === 'sitemap') { rules.sitemap.push(val); }
+        else if (key === 'allow') { if (!current || current === '*') rules.allow.push(val); }
+        else if (key === 'disallow') { if (!current || current === '*') rules.disallow.push(val); }
+    }
+    return rules;
+}
+
+function isRobotsBlocked(path) {
+    var p = String(path || '').split('#')[0];
+    var dis = robotsRules.disallow || [];
+    var all = robotsRules.allow || [];
+    for (var i = 0; i < dis.length; i++) {
+        var r = dis[i];
+        if (r === '' || r == null) continue;
+        var blocked = false;
+        if (r === '/') blocked = true;
+        else if (r.indexOf('*') === -1) blocked = p.indexOf(r) === 0;
+        else blocked = p.indexOf(r.replace(/\*/g, '')) !== -1;
+        if (!blocked) continue;
+        for (var j = 0; j < all.length; j++) {
+            if (all[j] && all[j] !== '' && p.indexOf(all[j]) === 0) return false;
+        }
+        return true;
+    }
+    return false;
+}
+
+function loadRobotsRules(optionalSite) {
+    var site = optionalSite || DOM.siteInput.value.trim();
+    if (!/^https?:\/\//i.test(site)) return Promise.resolve();
+    var url = site.replace(/\/+$/, '') + '/robots.txt';
+    try {
+        robotsLoaded = false;
+        return fetch(url, { mode: 'no-cors', redirect: 'follow' })
+            .then(function (res) {
+                if (res.type === 'opaque') { robotsRules = { allow: [], disallow: [], sitemap: [] }; robotsLoaded = true; return Promise.resolve(); }
+                return res.text();
+            })
+            .then(function (t) {
+                if (t == null) return;
+                robotsRules = parseRobotsSimple(t);
+                robotsLoaded = true;
+                if (robotsRules.disallow.length && getSettings().respectRobots) showToast('Loaded ' + robotsRules.disallow.length + ' robots.txt disallow rule(s)', 'success');
+            })
+            .catch(function () { robotsRules = { allow: [], disallow: [], sitemap: [] }; robotsLoaded = true; });
+    } catch (e) { robotsLoaded = true; return Promise.resolve(); }
+}
+
+/* ================= NEW FEATURES: SITE VERIFY ================= */
+function setVerifyBadge(state, text) {
+    if (!DOM.verifyBadge) return;
+    DOM.verifyBadge.className = 'sg-count-badge sg-' + state;
+    DOM.verifyBadge.textContent = text;
+}
+
+function verifySite() {
+    var site = DOM.siteInput.value.trim();
+    if (!/^https?:\/\//i.test(site)) {
+        setVerifyBadge('bad', 'Enter a full URL to verify');
+        showToast('Site URL must start with http:// or https://', 'error');
+        return;
+    }
+    setVerifyBadge('pending', 'Checking\u2026');
+    var done = false;
+    var timeout = setTimeout(function () {
+        if (done) return;
+        done = true;
+        setVerifyBadge('warn', 'Timed out');
+    }, 6000);
+    try {
+        fetch(site, { mode: 'no-cors', redirect: 'follow' })
+            .then(function () {
+                if (done) return;
+                done = true; clearTimeout(timeout);
+                setVerifyBadge('ok', 'Reachable');
+                showToast('Website is reachable', 'success');
+                loadRobotsRules();
+            })
+            .catch(function () {
+                if (done) return;
+                done = true; clearTimeout(timeout);
+                setVerifyBadge('warn', 'Cannot confirm (CORS)');
+            });
+    } catch (e) {
+        done = true; clearTimeout(timeout);
+        setVerifyBadge('warn', 'Cannot confirm');
+    }
+}
+
+/* ================= NEW FEATURES: IMPORTS ================= */
+function readFileText(file) {
+    return new Promise(function (resolve, reject) {
+        if (typeof file.text === 'function') {
+            file.text().then(resolve, reject);
+        } else {
+            var fr = new FileReader();
+            fr.onload = function () { resolve(fr.result); };
+            fr.onerror = function () { reject(fr.error); };
+            fr.readAsText(file);
+        }
+    });
+}
+
+function parseCsv(text) {
+    var rows = [], row = [], cell = '', inQ = false;
+    var s = String(text || '');
+    for (var i = 0; i < s.length; i++) {
+        var c = s[i];
+        if (inQ) {
+            if (c === '"') {
+                if (s[i + 1] === '"') { cell += '"'; i++; }
+                else inQ = false;
+            } else cell += c;
+        } else if (c === '"') inQ = true;
+        else if (c === ',') { row.push(cell); cell = ''; }
+        else if (c === '\n' || c === '\r') {
+            if (c === '\r' && s[i + 1] === '\n') i++;
+            row.push(cell); cell = '';
+            rows.push(row); row = [];
+        } else cell += c;
+    }
+    if (cell.length || row.length) { row.push(cell); rows.push(row); }
+    return rows.filter(function (r) { return r.some(function (x) { return String(x).trim() !== ''; }); });
+}
+
+function importCsvFile(file) {
+    readFileText(file).then(function (text) {
+        var rows = parseCsv(text);
+        if (rows.length < 2) { showToast('CSV needs a header row plus at least one URL row', 'error'); return; }
+        var headers = rows[0].map(function (h) { return String(h).trim().toLowerCase(); });
+        var uIdx = headers.indexOf('url');
+        if (uIdx === -1) { showToast('CSV must contain a "url" column', 'error'); return; }
+        var cols = {};
+        ['priority', 'changefreq', 'lastmod', 'include', 'canonical', 'noindex', 'images', 'videos', 'news_title', 'news_date'].forEach(function (name) {
+            var j = headers.indexOf(name);
+            if (j !== -1) cols[name] = j;
+        });
+        var settings = getSettings();
+        var entries = [];
+        for (var r = 1; r < rows.length; r++) {
+            var cells = rows[r];
+            var url = String(cells[uIdx] || '').trim();
+            if (!url) continue;
+            var e = defaultEntry(url);
+            Object.keys(cols).forEach(function (name) {
+                var val2 = String(cells[cols[name]] || '').trim();
+                if (val2 !== '') e[name] = val2;
+            });
+            if (e.include === '0' || e.include === 'false' || e.include === 'no') e.include = false;
+            entries.push(e);
+        }
+        if (!entries.length) { showToast('No URL rows imported', 'error'); return; }
+        if (entries.length > settings.maxUrls) {
+            entries = entries.slice(0, settings.maxUrls);
+            showToast('CSV trimmed to ' + settings.maxUrls + ' URLs (advanced limit)', 'warn');
+        }
+        tableData = entries;
+        tablePage = 0; tableQuery = '';
+        renderTable();
+        updateUrlsCount();
+        update('Imported ' + entries.length + ' URLs from CSV');
+    }).catch(function () { showToast('Could not read the CSV file', 'error'); });
+}
+
+function importSitemapFile(file) {
+    readFileText(file).then(function (text) {
+        var locs = [];
+        var re = /<loc[^>]*>([\s\S]*?)<\/loc>/gi;
+        var m;
+        while ((m = re.exec(text)) !== null) locs.push(m[1].trim());
+        if (!locs.length) { showToast('No <loc> entries found in sitemap.xml', 'error'); return; }
+        var settings = getSettings();
+        if (locs.length > settings.maxUrls) locs = locs.slice(0, settings.maxUrls);
+        tableData = locs.map(defaultEntry);
+        tablePage = 0; tableQuery = '';
+        renderTable();
+        updateUrlsCount();
+        update('Imported ' + locs.length + ' URLs from sitemap.xml');
+    }).catch(function () { showToast('Could not read the sitemap.xml file', 'error'); });
+}
+
+function importClipboardFallback() {
+    DOM.urlsInput.focus();
+    showToast('Clipboard API unavailable \u2014 press Ctrl+V into the URLs box', 'info');
+}
+
+function importClipboard() {
+    function use(list) {
+        var settings = getSettings();
+        if (!list.length) { showToast('Clipboard has no URLs', 'info'); return; }
+        tableData = list.slice(0, settings.maxUrls).map(defaultEntry);
+        tablePage = 0; tableQuery = '';
+        renderTable();
+        updateUrlsCount();
+        update('Imported ' + tableData.length + ' URLs from clipboard');
+    }
+    if (navigator.clipboard && navigator.clipboard.readText) {
+        navigator.clipboard.readText().then(function (t) { use(splitList(t)); }).catch(importClipboardFallback);
+    } else importClipboardFallback();
+}
+
+/* ================= NEW FEATURES: XML BUILDERS & VALIDATION ================= */
+function countOccurrences(str, sub) {
+    return String(str || '').split(sub).length - 1;
+}
+
+function splitSitemap(xml, perFile) {
+    var urls = [];
+    var re = /<url>[\s\S]*?<\/url>/g;
+    var m;
+    while ((m = re.exec(xml)) !== null) urls.push(m[0]);
+    if (!urls.length) return { parts: [], index: '' };
+    var header = xml.slice(0, xml.indexOf('<url>'));
+    var footer = '</urlset>';
+    var n = Math.ceil(urls.length / perFile);
+    var parts = [];
+    for (var i = 0; i < n; i++) {
+        var chunk = urls.slice(i * perFile, (i + 1) * perFile);
+        parts.push({ name: 'sitemap-' + (i + 1) + '.xml', xml: header + chunk.join('') + footer });
+    }
+    var idxLines = ['<?xml version="1.0" encoding="UTF-8"?>', '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'];
+    parts.forEach(function (p) {
+        idxLines.push('  <sitemap><loc>' + escXml(p.name) + '</loc><lastmod>' + todayIso() + '</lastmod></sitemap>');
+    });
+    idxLines.push('</sitemapindex>');
+    return { parts: parts, index: idxLines.join('\n') };
+}
+
+function buildValidation(xml, total, validUrlCount) {
+    var checks = [];
+    function add(status, label, detail, fix) {
+        checks.push({ status: status, label: label, detail: detail || '', fix: fix || '' });
+    }
+    if (!xml) { add('fail', 'No XML to validate', 'Generate a sitemap first.', 'Add URLs and press Generate Sitemap.'); return checks; }
+    if (xml.indexOf('<?xml') === 0) add('pass', 'XML declaration present', 'The file begins with a valid XML declaration.', '');
+    else add('fail', 'Missing XML declaration', 'The file must start with <?xml version="1.0" encoding="UTF-8"?>.', 'Re-generate the sitemap.');
+    if (/encoding="UTF-8"/.test(xml)) add('pass', 'UTF-8 declared', 'The declaration includes encoding="UTF-8".', '');
+    else add('warn', 'Encoding not declared', 'Declare UTF-8 encoding for non-ASCII URLs.', 'Choose UTF-8 in Advanced settings.');
+    if (/&(?!amp;|lt;|gt;|quot;|apos;|#\d+;)/.test(xml)) add('fail', 'Unescaped ampersands', 'Every & in a URL must be &amp;.', 'Re-generate; the generator escapes URLs.');
+    else add('pass', 'Ampersands escaped', 'All & characters are correctly escaped as &amp;.', '');
+    var n = countOccurrences(xml, '<url>');
+    if (n <= 50000) add('pass', 'Within 50,000 URL limit', n + ' URLs is under the 50,000 cap.', '');
+    else add('fail', 'Over 50,000 URLs', n + ' URLs exceed the 50,000 cap.', 'Enable "Split Large Sitemap".');
+    var estMb = xml.length / (1024 * 1024);
+    if (estMb <= 50) add('pass', 'Within 50 MB limit', 'Estimated size is ' + estMb.toFixed(2) + ' MB (uncompressed).', '');
+    else add('fail', 'Over 50 MB', 'Estimated ' + estMb.toFixed(1) + ' MB exceeds the 50 MB cap.', 'Split into multiple sitemaps.');
+    add(validUrlCount === total && total ? 'pass' : 'warn', 'Absolute URLs', validUrlCount + ' of ' + total + ' URLs are absolute http(s):// URLs.', '');
+    return checks;
+}
+
+function buildAiSuggestions(r) {
+    var tips = [];
+    function tip(icon, title, text, example, gain) {
+        tips.push({ icon: icon, title: title, text: text, example: example || '', gain: gain || 'SEO' });
+    }
+    if (!r.total) tip('info', 'Add URLs to begin', 'Paste at least one absolute URL, or a site URL plus relative paths.', 'https://example.com/about', 'Foundation');
+    if (r.total && r.validUrlCount !== r.total) tip('warn', 'Fix invalid URLs', r.validUrlCount + ' of ' + r.total + ' URLs passed validation.', 'Use full https://example.com/path format.', 'Crawlability');
+    if (r.total && r.dupCount) tip('warn', 'Remove duplicates', r.dupCount + ' duplicate URL(s) waste crawl budget.', 'Keep one canonical URL per page.', 'Crawl budget');
+    if (r.total && r.lastmodCount < r.total) tip('info', 'Add lastmod dates', 'lastmod tells crawlers what changed since the last visit.', '<lastmod>2026-08-06</lastmod>', 'Recrawl speed');
+    if (r.total && r.lastmodCount === r.total) tip('pass', 'lastmod complete', 'Every URL has a lastmod date.', '', 'Freshness');
+    if (r.total && r.total > CONFIG.maxUrls) tip('warn', 'Split your sitemap', 'Sitemaps over 50,000 URLs must be split.', 'Enable "Split Large Sitemap" in Advanced.', 'Submission');
+    if (r.total && r.total <= CONFIG.maxUrls) tip('pass', 'Within protocol limits', r.total + ' URLs are within the 50,000 URL / 50 MB caps.', '', 'Compliance');
+    if (tips.length < 3) tip('info', 'Submit to search engines', 'Upload sitemap.xml and submit it in Search Console.', 'search.google.com/search-console', 'Indexing');
+    return tips.slice(0, 6);
+}
+
+/* ================= NEW FEATURES: XML PREVIEW / DOWNLOADS / SECTIONS ================= */
+function escXmlOut(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function highlightXml(xml) {
+    var html = '';
+    var re = /(&amp;|&lt;|&gt;|&quot;|&apos;|<!--[\s\S]*?-->|<\/?[a-zA-Z][^>]*>|<\/?[a-zA-Z][\w:-]*)/g;
+    var last = 0, m;
+    while ((m = re.exec(xml)) !== null) {
+        html += escXmlOut(xml.slice(last, m.index));
+        var tok = m[1];
+        if (tok.indexOf('<!--') === 0) html += '<span class="sg-tok-com">' + escXmlOut(tok) + '</span>';
+        else if (tok.indexOf('&') === 0) html += '<span class="sg-tok-str">' + tok + '</span>';
+        else html += '<span class="sg-tok-tag">' + escXmlOut(tok) + '</span>';
+        last = m.index + tok.length;
+    }
+    html += escXmlOut(xml.slice(last));
+    return html;
+}
+
+function previewXml(xml, maxLines) {
+    maxLines = maxLines || 400;
+    var lines = String(xml || '').split('\n');
+    var shown = lines.slice(0, maxLines);
+    var html = shown.map(function (l, i) {
+        return '<div class="sg-line"><span class="sg-ln">' + (i + 1) + '</span><span class="sg-code-line">' + highlightXml(l) + '</span></div>';
+    }).join('');
+    var note = lines.length > maxLines ? '<div class="sg-preview-note">Showing first ' + maxLines + ' of ' + lines.length + ' lines</div>' : '';
+    return '<div class="sg-preview">' + html + note + '</div>';
+}
+
+function downloadsBar(r) {
+    var html = '<div class="sg-downloads">'
+        + '<button type="button" class="gt-btn-sm" data-export="copy-xml">' + ICONS.copy + 'Copy XML</button>'
+        + '<button type="button" class="gt-btn-sm" data-export="download-xml">' + ICONS.download + 'sitemap.xml</button>';
+    if (r.settings && r.settings.gzip) {
+        html += '<button type="button" class="gt-btn-sm" data-export="download-gzip">' + ICONS.download + 'sitemap.xml.gz</button>';
+    }
+    if (r.parts && r.parts.length) {
+        html += '<button type="button" class="gt-btn-sm" data-export="download-parts">' + ICONS.download + 'All parts (' + r.parts.length + ')</button>';
+    }
+    html += '<button type="button" class="gt-btn-sm" data-export="view-source">' + ICONS.search + 'View source</button>'
+        + '</div>';
+    return html;
+}
+
+function validationSection(r) {
+    var items = r.validation.map(function (c) {
+        return '<div class="gt-item ' + c.status + '">'
+            + '<span class="gt-item-icon">' + ICONS[c.status] + '</span>'
+            + '<div class="gt-item-body">'
+            + '<div class="gt-item-label">' + esc(c.label) + '</div>'
+            + (c.detail ? '<div class="gt-item-detail">' + esc(c.detail) + '</div>' : '')
+            + (c.fix ? '<div class="gt-item-fix"><span class="gt-fix-label">Fix: </span>' + esc(c.fix) + '</div>' : '')
+            + '</div></div>';
+    }).join('');
+    return '<details class="gt-section" open><summary><span class="gt-section-title">' + ICONS.check + ' XML Validation Report</span>' + ICONS.chevron + '</summary><div class="gt-section-body">' + items + '</div></details>';
+}
+
+function aiSection(r) {
+    var cards = r.ai.map(function (t) {
+        return '<div class="sg-ai-card"><div class="sg-ai-head"><span class="sg-ai-icon sg-ai-' + t.icon + '">' + (ICONS[t.icon] || ICONS.info) + '</span><span class="sg-ai-title">' + esc(t.title) + '</span></div>'
+            + '<p class="sg-ai-text">' + esc(t.text) + '</p>'
+            + (t.example ? '<div class="sg-ai-example">' + esc(t.example) + '</div>' : '')
+            + '<div class="sg-ai-gain">' + esc(t.gain) + '</div></div>';
+    }).join('');
+    return '<details class="gt-section"><summary><span class="gt-section-title">' + ICONS.pass + ' AI Suggestions</span>' + ICONS.chevron + '</summary><div class="gt-section-body"><div class="sg-ai-grid">' + cards + '</div></div></details>';
+}
+
+/* ================= NEW FEATURES: GZIP / VIEW SOURCE ================= */
+function downloadBlob(filename, blob) {
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 120);
+}
+
+function downloadGzipFallback() {
+    var r = state.lastResult;
+    if (!r) return;
+    download('sitemap.xml.gz', r.xml, 'application/gzip');
+    showToast('sitemap.xml.gz downloaded (gzip unavailable, raw XML saved)', 'success');
+}
+
+function downloadGzip() {
+    var r = state.lastResult;
+    if (!r) return;
+    try {
+        if (typeof CompressionStream !== 'undefined' && typeof Response !== 'undefined') {
+            var cs = new CompressionStream('gzip');
+            var stream = new Blob([r.xml]).stream().pipeThrough(cs);
+            new Response(stream).blob().then(function (blob) {
+                downloadBlob('sitemap.xml.gz', blob);
+                showToast('sitemap.xml.gz downloaded', 'success');
+            }).catch(downloadGzipFallback);
+        } else {
+            downloadGzipFallback();
+        }
+    } catch (e) { downloadGzipFallback(); }
+}
+
+function viewSource(r) {
+    try {
+        var w = window.open('', '_blank');
+        if (!w) throw new Error('blocked');
+        w.document.write('<!DOCTYPE html><html><head><title>sitemap.xml</title><meta charset="utf-8"></head><body style="font-family:monospace;white-space:pre-wrap;margin:16px">' + esc(r.xml) + '</body></html>');
+        w.document.close();
+    } catch (e) {
+        showToast('Pop-ups are blocked \u2014 use Download instead', 'warn');
+    }
+}
+
+function parseToTable() {
+    var raw = getRawUrls();
+    var resolved = [], skipped = 0;
+    raw.forEach(function (u) {
+        var r = resolveUrl(u);
+        if (r) resolved.push(r.url); else skipped++;
+    });
+    if (!resolved.length) {
+        DOM.urlsCount.textContent = 'No valid URLs found. Use absolute http(s):// URLs' + (DOM.siteInput.value.trim() ? '' : ' or add a site URL.');
+        DOM.urlsCount.className = 'sg-count-badge sg-bad';
+        return;
+    }
+    tableData = resolved.map(defaultEntry);
+    tablePage = 0;
+    tableQuery = '';
+    renderTable();
+    var msg = resolved.length + ' URL' + (resolved.length !== 1 ? 's' : '') + ' in table';
+    if (skipped) msg += '; ' + skipped + ' skipped (invalid)';
+    DOM.urlsCount.textContent = msg;
+    DOM.urlsCount.className = 'sg-count-badge sg-ok';
+    showToast('Parsed ' + resolved.length + ' URLs into the editable table', 'success');
+}
+
+function tableFiltered() {
+    var rows = [];
+    var seen = {};
+    var q = tableQuery.toLowerCase();
+    tableData.forEach(function (e, i) {
+        var key = keyFor(e.url);
+        var isDup = !!seen[key];
+        seen[key] = true;
+        if (q && String(e.url || '').toLowerCase().indexOf(q) === -1) return;
+        var ok = validateUrl(e.url) === null;
+        if (tableFilter === 'valid' && !ok) return;
+        if (tableFilter === 'fix' && ok) return;
+        if (tableFilter === 'dup' && !isDup) return;
+        rows.push({ i: i, e: e, dup: isDup, ok: ok });
+    });
+    return rows;
+}
+
+function renderTable() {
+    if (!tableData.length) {
+        DOM.tableWrap.innerHTML = '<div class="sg-table-toolbar"><span class="sg-table-info">No URLs in the table yet</span></div><div class="sg-empty-table">Paste URLs above, parse them to the table, or import a CSV / sitemap.xml.</div>';
+        return;
+    }
+    var rows = tableFiltered();
+    var totalPages = Math.max(1, Math.ceil(rows.length / tablePageSize));
+    if (tablePage >= totalPages) tablePage = totalPages - 1;
+    if (tablePage < 0) tablePage = 0;
+    var start = tablePage * tablePageSize;
+    var slice = rows.slice(start, start + tablePageSize);
+    var html = '<div class="sg-table-toolbar">'
+        + '<span class="sg-table-info">' + tableData.length + ' total &middot; ' + rows.length + ' shown</span>'
+        + '<input id="sg-table-search" class="gt-input mono" type="search" placeholder="Search URLs\u2026" value="' + esc(tableQuery) + '" aria-label="Search table">'
+        + '<div class="sg-table-filters">'
+        + '<button type="button" class="gt-btn-sm' + (tableFilter === 'all' ? ' active' : '') + '" data-filter="all">All</button>'
+        + '<button type="button" class="gt-btn-sm' + (tableFilter === 'valid' ? ' active' : '') + '" data-filter="valid">Valid</button>'
+        + '<button type="button" class="gt-btn-sm' + (tableFilter === 'fix' ? ' active' : '') + '" data-filter="fix">Fix</button>'
+        + '<button type="button" class="gt-btn-sm' + (tableFilter === 'dup' ? ' active' : '') + '" data-filter="dup">Dup</button>'
+        + '</div></div>';
+    html += '<table class="sg-table"><thead><tr>'
+        + '<th>URL</th><th>Priority</th><th>Change Freq</th><th>Last Modified</th><th>Status</th><th></th>'
+        + '</tr></thead><tbody>';
+    slice.forEach(function (row) {
+        var e = row.e;
+        var status = row.ok
+            ? '<span class="sg-status sg-status-ok">' + ICONS.check + ' Valid</span>'
+            : '<span class="sg-status sg-status-fail">' + ICONS.warn + ' Fix</span>';
+        if (row.dup) status += ' <span class="sg-status sg-status-warn">' + ICONS.info + ' Dup</span>';
+        html += '<tr>'
+            + '<td class="sg-cell-url">' + (e.canonical ? '<span class="sg-badge sg-badge-canon">Canonical</span> ' : '') + '<input type="text" value="' + esc(e.url) + '" data-idx="' + row.i + '" data-field="url"></td>'
+            + '<td><select data-idx="' + row.i + '" data-field="priority">' + CONFIG.priorityValues.map(function (pv) { return '<option value="' + pv + '"' + (String(e.priority) === pv ? ' selected' : '') + '>' + pv + '</option>'; }).join('') + '</select></td>'
+            + '<td><select data-idx="' + row.i + '" data-field="changefreq">' + CONFIG.freqValues.map(function (fv) { return '<option value="' + fv + '"' + (String(e.changefreq) === fv ? ' selected' : '') + '>' + fv + '</option>'; }).join('') + '</select></td>'
+            + '<td><input type="date" value="' + esc(e.lastmod || '') + '" data-idx="' + row.i + '" data-field="lastmod"></td>'
+            + '<td>' + status + '</td>'
+            + '<td><button type="button" class="sg-row-del" data-del="' + row.i + '" title="Remove row" aria-label="Remove row">' + ICONS.trash + '</button></td>'
+            + '</tr>';
+    });
+    html += '</tbody></table>';
+    html += '<div class="sg-pager">'
+        + '<span class="sg-pager-info">Showing ' + (rows.length ? start + 1 : 0) + '&ndash;' + Math.min(start + tablePageSize, rows.length) + ' of ' + rows.length + '</span>'
+        + '<button type="button" class="gt-btn-sm" id="sg-prev"' + (tablePage === 0 ? ' disabled' : '') + '>Prev</button>'
+        + '<span class="sg-pager-curr">Page ' + (tablePage + 1) + ' / ' + totalPages + '</span>'
+        + '<button type="button" class="gt-btn-sm" id="sg-next"' + (tablePage >= totalPages - 1 ? ' disabled' : '') + '>Next</button>'
+        + '</div>';
+    DOM.tableWrap.innerHTML = html;
+    DOM.tableWrap.querySelectorAll('input,select').forEach(function (el) {
+        el.addEventListener('change', function () {
+            var idx = parseInt(el.getAttribute('data-idx'), 10);
+            var field = el.getAttribute('data-field');
+            if (idx >= 0 && idx < tableData.length) tableData[idx][field] = el.value;
+            smartUpdate();
+        });
+    });
+    DOM.tableWrap.querySelectorAll('.sg-row-del').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var idx = parseInt(btn.getAttribute('data-del'), 10);
+            if (idx >= 0 && idx < tableData.length) tableData.splice(idx, 1);
             renderTable();
+            updateUrlsCount();
+            smartUpdate();
         });
+    });
+    DOM.tableWrap.querySelectorAll('[data-filter]').forEach(function (b) {
+        b.addEventListener('click', function () { tableFilter = b.getAttribute('data-filter'); tablePage = 0; renderTable(); });
+    });
+    var searchEl = DOM.tableWrap.querySelector('#sg-table-search');
+    if (searchEl) searchEl.addEventListener('input', function () { tableQuery = searchEl.value; tablePage = 0; renderTable(); });
+    var prev = DOM.tableWrap.querySelector('#sg-prev');
+    var next = DOM.tableWrap.querySelector('#sg-next');
+    if (prev) prev.addEventListener('click', function () { if (tablePage > 0) { tablePage--; renderTable(); } });
+    if (next) next.addEventListener('click', function () { if (tablePage < totalPages - 1) { tablePage++; renderTable(); } });
+}
 
-        function renderTable(){
-            if(!tableData.length){tableContainer.innerHTML='';return;}
-            var html='<table class="url-table"><thead><tr><th>URL</th><th>Priority</th><th>Change Freq</th><th>Last Modified</th></tr></thead><tbody>';
-            for(var i=0;i<tableData.length;i++){
-                html+='<tr>';
-                html+='<td><input type="text" value="'+tableData[i].url+'" data-idx="'+i+'" data-field="url" class="table-input"></td>';
-                html+='<td><select data-idx="'+i+'" data-field="priority" class="table-select">';
-                var pVals=['1.0','0.9','0.8','0.7','0.6','0.5','0.4','0.3','0.2','0.1'];
-                for(var p=0;p<pVals.length;p++)html+='<option value="'+pVals[p]+'"'+(tableData[i].priority===pVals[p]?' selected':'')+'>'+pVals[p]+'</option>';
-                html+='</select></td>';
-                html+='<td><select data-idx="'+i+'" data-field="changefreq" class="table-select">';
-                var cVals=['daily','weekly','monthly','yearly','always','hourly','never'];
-                for(var c=0;c<cVals.length;c++)html+='<option value="'+cVals[c]+'"'+(tableData[i].changefreq===cVals[c]?' selected':'')+'>'+cVals[c]+'</option>';
-                html+='</select></td>';
-                html+='<td><input type="date" value="'+tableData[i].lastmod+'" data-idx="'+i+'" data-field="lastmod" class="table-input"></td>';
-                html+='</tr>';
-            }
-            html+='</tbody></table>';
-            tableContainer.innerHTML=html;
+function escXml(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+}
 
-            tableContainer.querySelectorAll('.table-input,.table-select').forEach(function(el){
-                el.addEventListener('change',function(){
-                    var idx=parseInt(el.getAttribute('data-idx'));
-                    var field=el.getAttribute('data-field');
-                    tableData[idx][field]=el.value;
-                });
+function buildXml(entries, settings, pretty) {
+    settings = settings || getSettings();
+    pretty = pretty !== false;
+    var nl = pretty ? '\n' : '';
+    var ind = pretty ? '  ' : '';
+    var ns = ['xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'];
+    if (settings.image) ns.push('xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"');
+    if (settings.video) ns.push('xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"');
+    if (settings.news) ns.push('xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"');
+    var lines = ['<?xml version="1.0" encoding="' + (settings.encoding || 'UTF-8') + '"?>', '<urlset ' + ns.join(' ') + '>'];
+    for (var i = 0; i < entries.length; i++) {
+        var d = entries[i];
+        lines.push(ind + '<url>');
+        lines.push(ind + ind + '<loc>' + escXml(d.url) + '</loc>');
+        if (d.lastmod) lines.push(ind + ind + '<lastmod>' + d.lastmod + '</lastmod>');
+        lines.push(ind + ind + '<changefreq>' + d.changefreq + '</changefreq>');
+        lines.push(ind + ind + '<priority>' + d.priority + '</priority>');
+        if (settings.image) {
+            deriveImages(d).forEach(function (img) {
+                lines.push(ind + ind + '<image:image><image:loc>' + escXml(img) + '</image:loc></image:image>');
             });
         }
-
-        function escXml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;')}
-
-        function generateXml(){
-            if(!tableData.length){var urls=getUrls();if(!urls.length){output.innerHTML='<div style="color:var(--color-text-light);text-align:center;padding:var(--space-4)">No URLs to generate sitemap from. Add URLs above.</div>';return;}tableData=urls.map(function(u){var today=new Date().toISOString().split('T')[0];return{url:u,priority:document.getElementById('default-priority').value,changefreq:document.getElementById('default-changefreq').value,lastmod:document.getElementById('default-lastmod').value||today}});}
-            var lines=['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'];
-            for(var i=0;i<tableData.length;i++){
-                var d=tableData[i];
-                lines.push('  <url>');
-                lines.push('    <loc>'+escXml(d.url)+'</loc>');
-                if(d.lastmod)lines.push('    <lastmod>'+d.lastmod+'</lastmod>');
-                lines.push('    <changefreq>'+d.changefreq+'</changefreq>');
-                lines.push('    <priority>'+d.priority+'</priority>');
-                lines.push('  </url>');
-            }
-            lines.push('</urlset>');
-            output.textContent=lines.join('\n');
+        if (settings.video) {
+            deriveVideos(d).forEach(function (vid) {
+                lines.push(ind + ind + '<video:video><video:thumbnail_loc>' + escXml(vid.thumbnail) + '</video:thumbnail_loc><video:title>' + escXml(vid.title) + '</video:title><video:content_loc>' + escXml(vid.content) + '</video:content_loc><video:duration>' + vid.duration + '</video:duration></video:video>');
+            });
         }
+        if (settings.news) {
+            lines.push(ind + ind + '<news:news><news:publication><news:name>' + escXml(settings.newsName) + '</news:name><news:language>en</news:language></news:publication><news:publication_date>' + (d.news_date || d.lastmod || todayIso()) + '</news:publication_date><news:title>' + escXml(d.news_title || d.title || d.url) + '</news:title></news:news>');
+        }
+        lines.push(ind + '</url>');
+    }
+    lines.push('</urlset>');
+    return pretty ? lines.join('\n') : lines.join('');
+}
 
-        document.getElementById('generate-btn').addEventListener('click',generateXml);
+function addGroup(issues, status, list, label, fix, cap) {
+    if (!list.length) return;
+    var shown = list.slice(0, cap);
+    shown.forEach(function (it) {
+        issues.push({ status: status, label: label, detail: it, fix: fix });
+    });
+    if (list.length > cap) {
+        issues.push({ status: status, label: label, detail: '...and ' + (list.length - cap) + ' more ' + label.toLowerCase() + '.', fix: fix });
+    }
+}
 
-        document.getElementById('copy-btn').addEventListener('click',function(){
-            var text=output.textContent||'';
-            if(!text||text.indexOf('will appear')>-1)return;
-            navigator.clipboard.writeText(text).then(function(){var b=document.getElementById('copy-btn');b.textContent='Copied!';setTimeout(function(){b.textContent='Copy to Clipboard';},2000);});
+function compute() {
+    var settings = getSettings();
+    var v = {
+        site: DOM.siteInput.value.trim(),
+        priority: DOM.priorityInput.value || CONFIG.defaultPriority,
+        changefreq: DOM.changefreqInput.value || CONFIG.defaultChangefreq,
+        lastmod: DOM.lastmodInput.value || ''
+    };
+
+    var siteStatus = 'empty';
+    if (v.site) siteStatus = /^https?:\/\//i.test(v.site) ? 'valid' : 'invalid';
+
+    var entries = [];
+    if (tableData.length) {
+        entries = tableData.slice();
+    } else {
+        getRawUrls().forEach(function (u) {
+            var r = resolveUrl(u);
+            if (!r) return;
+            entries.push(defaultEntry(r.url));
         });
+    }
+    var inputCount = entries.length;
 
-        document.getElementById('download-btn').addEventListener('click',function(){
-            var text=output.textContent||'';
-            if(!text||text.indexOf('will appear')>-1)return;
-            var blob=new Blob([text],{type:'application/xml'});
-            var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='sitemap.xml';a.click();URL.revokeObjectURL(a.href);
+    if (settings.ignoreParams) {
+        entries.forEach(function (e) { e.url = stripParams(e.url, settings.paramsList); });
+    }
+
+    entries.forEach(function (e) { e.lastmod = computeEntryLastmod(e, settings.lastmodMode, v); });
+
+    if (settings.include.length) {
+        entries = entries.filter(function (e) {
+            return settings.include.some(function (p) { return urlPath(e.url).indexOf(p) === 0; });
         });
+    }
+    if (settings.exclude.length) {
+        entries = entries.filter(function (e) {
+            return !settings.exclude.some(function (p) { return urlPath(e.url).indexOf(p) === 0; });
+        });
+    }
+    if (settings.respectRobots && robotsRules.disallow.length) {
+        entries = entries.filter(function (e) { return !isRobotsBlocked(urlPath(e.url)); });
+    }
+    if (settings.excludeNoindex) {
+        entries = entries.filter(function (e) { return !e.noindex && !/noindex/i.test(String(e.canonical || '')); });
+    }
+    if (settings.follow301 || settings.follow308) {
+        entries = entries.map(function (e) { return applyRedirects(e, settings); }).filter(Boolean);
+    }
+
+    var afterFilterCount = entries.length;
+    var seen = {};
+    var canonicalMap = {};
+    var deduped = [];
+    var dupsRemoved = 0;
+    entries.forEach(function (e) {
+        var key = keyFor(e.url);
+        if (settings.preferCanonical && e.canonical && keyFor(e.canonical) !== key) {
+            var ckey = keyFor(e.canonical);
+            if (!canonicalMap[ckey]) {
+                var c = Object.assign({}, e, { url: e.canonical, canonical: true });
+                canonicalMap[ckey] = c;
+                seen[ckey] = true;
+                deduped.push(c);
+            } else {
+                dupsRemoved++;
+            }
+            return;
+        }
+        if (seen[key]) { dupsRemoved++; return; }
+        seen[key] = true;
+        deduped.push(e);
+    });
+    entries = deduped;
+
+    var badUrls = [], badFreqs = [], badPrios = [], badLastmods = [], dups = [];
+    var urlSeen = {};
+    var validUrlCount = 0, validFreqCount = 0, validPrioCount = 0, lastmodCount = 0;
+    entries.forEach(function (e, i) {
+        var u = String(e.url || '');
+        var verr = validateUrl(u);
+        if (verr) {
+            badUrls.push('Entry ' + (i + 1) + ': ' + verr + ' ("' + u + '")');
+        } else {
+            validUrlCount++;
+            if (urlSeen[u]) dups.push(u);
+            urlSeen[u] = true;
+        }
+        var f = String(e.changefreq || '').trim();
+        if (CONFIG.freqValues.indexOf(f) === -1) {
+            badFreqs.push('Entry ' + (i + 1) + ': "' + f + '" is not a valid change frequency.');
+        } else {
+            validFreqCount++;
+        }
+        var p = parseFloat(e.priority);
+        if (isNaN(p) || p < 0 || p > 1) {
+            badPrios.push('Entry ' + (i + 1) + ': priority "' + e.priority + '" must be between 0.0 and 1.0.');
+        } else {
+            validPrioCount++;
+        }
+        var lm = String(e.lastmod || '').trim();
+        if (lm) {
+            if (/^\d{4}-\d{2}-\d{2}(.*)?$/.test(lm)) lastmodCount++;
+            else badLastmods.push('Entry ' + (i + 1) + ': "' + lm + '" should use the W3C date format YYYY-MM-DD.');
+        }
+    });
+
+    var total = entries.length;
+    var urlsExcluded = Math.max(0, inputCount - afterFilterCount);
+    var imagesIncluded = 0, videosIncluded = 0;
+    if (settings.image) entries.forEach(function (d) { imagesIncluded += deriveImages(d).length; });
+    if (settings.video) entries.forEach(function (d) { videosIncluded += deriveVideos(d).length; });
+    var pretty = settings.prettyPrint;
+    var xml = total ? buildXml(entries, settings, pretty) : '';
+    var parts = [], index = '';
+    if (settings.split && total > settings.perFile) {
+        var sp = splitSitemap(xml, settings.perFile);
+        parts = sp.parts;
+        index = sp.index;
+    }
+    var sizeKb = (xml.length / 1024).toFixed(2);
+    var gzipSizeKb = ((xml.length * 0.22) / 1024).toFixed(2);
+    var genMs = 0;
+
+    var issues = [];
+    if (!total) {
+        issues.push({ status: 'fail', label: 'No URLs to generate', detail: 'Add at least one absolute URL, or a site URL plus relative paths.', fix: 'Paste your pages above and press Generate Sitemap.' });
+    } else {
+        if (!badUrls.length) {
+            issues.push({ status: 'pass', label: 'All URLs are absolute', detail: validUrlCount + ' of ' + total + ' entries use a full http(s):// URL.' });
+        } else {
+            addGroup(issues, 'fail', badUrls, 'Invalid URL', 'Use a full URL such as https://example.com/page.', CONFIG.detailCap);
+        }
+        if (dups.length) {
+            addGroup(issues, 'warn', dups, 'Duplicate URL', 'Duplicate URLs waste crawl budget.', CONFIG.detailCap);
+        } else if (total > 1) {
+            issues.push({ status: 'pass', label: 'No duplicate URLs', detail: 'Every entry appears exactly once.' });
+        }
+        if (badFreqs.length) {
+            addGroup(issues, 'fail', badFreqs, 'Invalid changefreq', 'Use always, hourly, daily, weekly, monthly, yearly or never.', CONFIG.detailCap);
+        } else {
+            issues.push({ status: 'pass', label: 'Change frequencies are valid', detail: 'All entries use an approved changefreq value.' });
+        }
+        if (badPrios.length) {
+            addGroup(issues, 'fail', badPrios, 'Invalid priority', 'Set a priority between 0.0 and 1.0.', CONFIG.detailCap);
+        } else {
+            issues.push({ status: 'pass', label: 'Priorities are valid', detail: 'All entries use a priority between 0.0 and 1.0.' });
+        }
+        if (badLastmods.length) {
+            addGroup(issues, 'warn', badLastmods, 'Invalid lastmod format', 'Use the W3C date format YYYY-MM-DD.', CONFIG.detailCap);
+        }
+        if (lastmodCount === total) {
+            issues.push({ status: 'pass', label: 'All entries have lastmod', detail: 'A lastmod date is present on every URL.' });
+        } else if (lastmodCount > 0) {
+            issues.push({ status: 'info', label: 'Some entries missing lastmod', detail: lastmodCount + ' of ' + total + ' entries have a lastmod date.', fix: 'Add a lastmod date to pages that change frequently.' });
+        } else {
+            issues.push({ status: 'info', label: 'No lastmod dates set', detail: 'None of your entries include a lastmod date.', fix: 'Set a default last modified date or per-URL dates.' });
+        }
+        if (total > settings.maxUrls) {
+            issues.push({ status: 'fail', label: 'Sitemap exceeds ' + settings.maxUrls + ' URLs', detail: total + ' URLs exceed the configured limit of ' + settings.maxUrls + '.', fix: 'Split the sitemap into multiple files and link them via a sitemap index.' });
+        }
+        if (settings.split && total > settings.perFile) {
+            issues.push({ status: 'info', label: 'Sitemap split into ' + parts.length + ' files', detail: 'Each file holds up to ' + settings.perFile + ' URLs. A sitemap index is available in the downloads.', fix: '' });
+        }
+        if (settings.respectRobots && robotsRules.disallow.length) {
+            issues.push({ status: 'info', label: 'robots.txt rules applied', detail: robotsRules.disallow.length + ' disallow rule(s) read from your robots.txt.', fix: '' });
+        }
+    }
+
+    if (siteStatus === 'invalid') {
+        issues.push({ status: 'fail', label: 'Site URL is invalid', detail: '"' + v.site + '" must start with http:// or https://.', fix: 'Enter a valid site URL such as https://example.com.' });
+    } else if (siteStatus === 'valid') {
+        issues.push({ status: 'pass', label: 'Site URL is valid', detail: v.site + ' will be used to resolve relative paths.' });
+    } else {
+        issues.push({ status: 'info', label: 'No site URL set', detail: 'All URLs must be absolute http(s):// URLs.', fix: 'Add a site URL to enable relative paths.' });
+    }
+
+    issues.sort(function (a, b) { return STATUS_RANK[a.status] - STATUS_RANK[b.status]; });
+
+    var score = 0;
+    if (total) {
+        score += Math.round(35 * validUrlCount / total);
+        score += dups.length ? 0 : 5;
+        score += Math.round(15 * validPrioCount / total);
+        score += Math.round(20 * validFreqCount / total);
+        score += lastmodCount === total ? 15 : (lastmodCount > 0 ? 8 : 0);
+        score += siteStatus === 'invalid' ? 0 : 10;
+        score = Math.min(100, Math.round(score));
+    }
+
+    var grade = score >= 90 ? 'Excellent' : score >= 75 ? 'Good' : score >= 60 ? 'Fair' : 'Poor';
+    var color = score >= 90 ? '#16a34a' : score >= 75 ? '#2563eb' : score >= 60 ? '#d97706' : '#dc2626';
+    var circ = 2 * Math.PI * 54;
+    var offset = Math.round(circ * (1 - score / 100) * 100) / 100;
+
+    var urlStatus = total === 0 ? 'fail' : (validUrlCount === total ? 'pass' : 'warn');
+    var prioStatus = total === 0 ? 'fail' : (validPrioCount === total ? 'pass' : (validPrioCount > 0 ? 'warn' : 'fail'));
+    var freqStatus = total === 0 ? 'fail' : (validFreqCount === total ? 'pass' : (validFreqCount > 0 ? 'warn' : 'fail'));
+    var lastmodStatus = total === 0 ? 'info' : (lastmodCount === total ? 'pass' : (lastmodCount > 0 ? 'warn' : 'info'));
+
+    var hint;
+    if (!total) hint = 'Add URLs above to generate a sitemap.';
+    else if (score >= 90) hint = 'Your sitemap is complete and ready to submit. Upload it and add it in Search Console.';
+    else if (score >= 75) hint = 'Solid sitemap! Fix the warnings below to make it fully crawl-friendly.';
+    else if (score >= 60) hint = 'Getting there. Resolve the flagged entries to raise your completeness score.';
+    else hint = 'Your sitemap needs work. Follow the recommendations to fix invalid entries.';
+
+    var validation = buildValidation(xml, total, validUrlCount);
+    var ai = buildAiSuggestions({ total: total, validUrlCount: validUrlCount, dupCount: dups.length, lastmodCount: lastmodCount });
+    var validationPassed = total > 0 && validation.every(function (c) { return c.status !== 'fail'; });
+
+    return {
+        v: v,
+        entries: entries,
+        xml: xml,
+        total: total,
+        urlsFound: inputCount,
+        urlsIncluded: total,
+        urlsExcluded: urlsExcluded,
+        dupsRemoved: dupsRemoved,
+        imagesIncluded: imagesIncluded,
+        videosIncluded: videosIncluded,
+        validationPassed: validationPassed,
+        validUrlCount: validUrlCount,
+        validPrioCount: validPrioCount,
+        validFreqCount: validFreqCount,
+        lastmodCount: lastmodCount,
+        dupCount: dups.length,
+        sizeKb: sizeKb,
+        gzipSizeKb: gzipSizeKb,
+        genMs: genMs,
+        siteStatus: siteStatus,
+        urlStatus: urlStatus,
+        prioStatus: prioStatus,
+        freqStatus: freqStatus,
+        lastmodStatus: lastmodStatus,
+        score: score,
+        grade: grade,
+        color: color,
+        circ: circ,
+        offset: offset,
+        issues: issues,
+        hint: hint,
+        settings: settings,
+        stats: { total: total, validUrlCount: validUrlCount, lastmodCount: lastmodCount, sizeKb: sizeKb, gzipSizeKb: gzipSizeKb, dupCount: dups.length, genMs: genMs, urlsFound: inputCount, urlsIncluded: total, urlsExcluded: urlsExcluded, dupsRemoved: dupsRemoved, imagesIncluded: imagesIncluded, videosIncluded: videosIncluded, validationPassed: validationPassed },
+        previewXml: xml,
+        parts: parts,
+        index: index,
+        validation: validation,
+        ai: ai
+    };
+}
+
+function stat(iconKey, value, label) {
+    var icon = ICONS[iconKey] || (iconKey && String(iconKey).indexOf('<svg') === 0 ? iconKey : '');
+    return '<div class="gt-stat"><div class="gt-stat-icon">' + icon + '</div><div class="gt-stat-value">' + value + '</div><div class="gt-stat-label">' + label + '</div></div>';
+}
+
+function scoreHero(r) {
+    var ring = '<svg viewBox="0 0 120 120" aria-hidden="true"><circle class="gt-ring-bg" cx="60" cy="60" r="54"/><circle class="gt-ring-fill" cx="60" cy="60" r="54" stroke="' + r.color + '" stroke-dasharray="' + r.circ + '" stroke-dashoffset="' + r.offset + '"/></svg>';
+    var chips =
+        '<span class="gt-chip gt-chip-' + r.urlStatus + '">URLs ' + STATUS_LABEL[r.urlStatus] + '</span>' +
+        '<span class="gt-chip gt-chip-' + r.prioStatus + '">Priority ' + STATUS_LABEL[r.prioStatus] + '</span>' +
+        '<span class="gt-chip gt-chip-' + r.freqStatus + '">Frequency ' + STATUS_LABEL[r.freqStatus] + '</span>' +
+        '<span class="gt-chip gt-chip-' + r.lastmodStatus + '">Lastmod ' + STATUS_LABEL[r.lastmodStatus] + '</span>';
+    return '<div class="gt-score-hero">' +
+        '<div class="gt-score-ring">' + ring + '<div class="gt-score-inner"><span class="gt-score-num" style="color:' + r.color + '">' + r.score + '</span><span class="gt-score-total">/ 100</span></div></div>' +
+        '<div class="gt-score-info">' +
+        '<div class="gt-score-label">Sitemap Completeness Score</div>' +
+        '<div class="gt-score-grade" style="color:' + r.color + '">' + r.grade + '</div>' +
+        '<div class="gt-score-meta">' + chips + '</div>' +
+        '<div class="gt-score-hint">' + r.hint + '</div>' +
+        '</div>' +
+        '<div class="gt-inline-actions" style="align-self:flex-end">' +
+        '<button type="button" class="gt-btn-sm" data-export="copy-report">' + ICONS.copy + 'Copy</button>' +
+        '<button type="button" class="gt-btn-sm" data-export="txt">' + ICONS.download + 'TXT</button>' +
+        '<button type="button" class="gt-btn-sm" data-export="json">' + ICONS.braces + 'JSON</button>' +
+        '<button type="button" class="gt-btn-sm" data-export="print">' + ICONS.print + 'Print</button>' +
+        '</div>' +
+        '</div>';
+}
+
+function statsGrid(r) {
+    var imgIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>';
+    var vidIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>';
+    return '<div class="gt-stats-grid">' +
+        stat('list', r.urlsFound, 'URLs Found') +
+        stat('check', r.urlsIncluded, 'URLs Included') +
+        stat('fail', r.urlsExcluded, 'URLs Excluded') +
+        stat('trash', r.dupsRemoved, 'Duplicates Removed') +
+        stat(imgIcon, r.imagesIncluded, 'Images Included') +
+        stat(vidIcon, r.videosIncluded, 'Videos Included') +
+        stat('clock', r.genMs + ' <span class="gt-muted">ms</span>', 'Generation Time') +
+        stat('pass', r.validationPassed ? 'Passed' : 'Review', 'XML Validation') +
+        '</div>';
+}
+
+function xmlCard(r) {
+    var xmlIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="16 13 18 15 16 17"/><polyline points="10 13 8 15 10 17"/></svg>';
+    var header = xmlIcon + ' <span class="sg-card-file">sitemap.xml</span> &mdash; ' + r.total + ' URL' + (r.total === 1 ? '' : 's') + ' &middot; ' + r.sizeKb + ' KB';
+    if (r.settings && r.settings.gzip) header += ' &middot; ~' + r.gzipSizeKb + ' KB .gz';
+    return '<div class="gt-out-card">' +
+        '<div class="gt-out-header"><span>' + header + '</span></div>' +
+        '<div class="gt-out-body">' + previewXml(r.xml, 400) + '</div>' +
+        '<details class="gt-section"><summary><span class="gt-section-title">' + xmlIcon + ' Raw XML Source</span>' + ICONS.chevron + '</summary><div class="gt-section-body"><textarea id="sg-xml-output" class="gt-code sg-code" readonly spellcheck="false" aria-label="Generated XML sitemap">' + esc(r.xml) + '</textarea></div></details>' +
+        '<div class="gt-out-footer">' + downloadsBar(r) + '</div>' +
+        '</div>';
+}
+
+function issuesSection(r) {
+    var items = r.issues.map(function (it) {
+        return '<div class="gt-item ' + it.status + '">' +
+            '<span class="gt-item-icon">' + ICONS[it.status] + '</span>' +
+            '<div class="gt-item-body">' +
+            '<div class="gt-item-label">' + esc(it.label) + '</div>' +
+            (it.detail ? '<div class="gt-item-detail">' + esc(it.detail) + '</div>' : '') +
+            (it.fix ? '<div class="gt-item-fix"><span class="gt-fix-label">Fix: </span>' + esc(it.fix) + '</div>' : '') +
+            '</div></div>';
+    }).join('');
+    return '<details class="gt-section" open><summary><span class="gt-section-title">' + ICONS.list + ' Recommendations &amp; Status</span>' + ICONS.chevron + '</summary><div class="gt-section-body">' + items + '</div></details>';
+}
+
+function renderResult(r) {
+    DOM.results.innerHTML = '<div class="gt-report sg-fade">' + scoreHero(r) + statsGrid(r) + xmlCard(r) + validationSection(r) + issuesSection(r) + aiSection(r) + '</div>';
+}
+
+function renderEmpty() {
+    DOM.results.innerHTML = '<div class="gt-empty"><div class="gt-empty-icon">' + ICONS.search + '</div><h3>Your sitemap.xml appears here</h3><p>Add your URLs with the Manual URL list, or import a CSV / sitemap.xml, then press <strong>Generate Sitemap</strong>.</p></div>';
+}
+
+function renderError(msg) {
+    hideSticky();
+    DOM.results.innerHTML = '<div class="gt-error"><div class="gt-empty-icon">' + ICONS.warn + '</div><div class="gt-error-title">' + esc(msg) + '</div><div class="gt-error-hint">Add some URLs above, then press Generate Sitemap.</div></div>';
+}
+
+function setStatus(cls, text) {
+    DOM.status.className = 'gt-status ' + cls;
+    DOM.status.textContent = text;
+}
+
+function updateUrlsCount() {
+    var abs = getUrls().length;
+    var raw = getRawUrls().length;
+    var site = DOM.siteInput.value.trim();
+    var msg;
+    if (raw === 0) {
+        msg = '0 URLs detected';
+    } else if (abs === raw) {
+        msg = abs + ' URL' + (abs !== 1 ? 's' : '') + ' detected';
+    } else if (site && /^https?:\/\//i.test(site)) {
+        msg = raw + ' URL' + (raw !== 1 ? 's' : '') + ' detected (' + abs + ' absolute)';
+    } else {
+        msg = abs + ' valid URL' + (abs !== 1 ? 's' : '') + ' detected; ' + (raw - abs) + ' need a site URL';
+    }
+    DOM.urlsCount.textContent = msg;
+    DOM.urlsCount.className = 'sg-count-badge ' + (abs > 0 ? 'sg-ok' : 'sg-bad');
+}
+
+function update(notifyMsg) {
+    var t0 = performance.now();
+    var r = compute();
+    r.genMs = Math.max(1, Math.round(performance.now() - t0));
+    r.stats.genMs = r.genMs;
+    state.lastResult = r;
+    renderResult(r);
+    renderSticky(r);
+    setStatus('done', 'Generated');
+    if (notifyMsg) showToast(notifyMsg, 'success');
+}
+
+function generateSitemap() {
+    if (state.busy) return;
+    var hasUrls = getRawUrls().length > 0 || tableData.length > 0;
+    if (!hasUrls) {
+        setStatus('error', 'Add URLs first');
+        if (DOM.toggleManual && DOM.manualZone && DOM.manualZone.hidden) {
+            DOM.manualZone.hidden = false;
+            DOM.toggleManual.setAttribute('aria-expanded', 'true');
+            DOM.toggleManual.classList.add('active');
+        }
+        showToast('Add your URLs with the Manual URL list, or import a CSV / sitemap.xml.', 'info');
+        if (DOM.urlsInput) DOM.urlsInput.focus();
+        return;
+    }
+    state.busy = true;
+    update('Sitemap generated');
+    state.busy = false;
+}
+
+/* ================= EXPORTS ================= */
+function buildReportText(r) {
+    var L = [];
+    L.push('GoToolly XML Sitemap Generator Report');
+    L.push('Generated: ' + new Date().toLocaleString());
+    L.push('----------------------------------');
+    L.push('Site URL: ' + (r.v.site || '(not set)'));
+    L.push('URLs: ' + r.total + ' (' + r.validUrlCount + ' valid)');
+    L.push('With lastmod: ' + r.lastmodCount + ' / ' + r.total);
+    L.push('Duplicate URLs: ' + r.dupCount);
+    L.push('Estimated size: ' + r.sizeKb + ' KB');
+    L.push('Score: ' + r.score + '/100 (' + r.grade + ')');
+    L.push('');
+    L.push('Generated XML:');
+    L.push(r.xml);
+    L.push('');
+    L.push('Recommendations:');
+    r.issues.forEach(function (it) {
+        L.push('  [' + it.status.toUpperCase() + '] ' + it.label);
+        if (it.detail) L.push('       ' + it.detail);
+        if (it.fix) L.push('       Fix: ' + it.fix);
+    });
+    return L.join('\n');
+}
+
+function buildReportJson(r) {
+    return JSON.stringify({
+        tool: 'XML Sitemap Generator',
+        generatedAt: new Date().toISOString(),
+        summary: {
+            siteUrl: r.v.site,
+            urlCount: r.total,
+            validUrlCount: r.validUrlCount,
+            lastmodCount: r.lastmodCount,
+            duplicateUrls: r.dupCount,
+            estimatedSizeKb: r.sizeKb,
+            score: r.score,
+            grade: r.grade
+        },
+        sitemapXml: r.xml,
+        recommendations: r.issues
+    }, null, 2);
+}
+
+function printTitle() { return 'XML Sitemap Generator Report'; }
+function printHeader() { return ''; }
+function printBody() {
+    return state.lastResult ? '<pre>' + esc(buildReportText(state.lastResult)) + '</pre>' : '<p>Nothing to print yet.</p>';
+}
+
+function stickyScore(r) {
+    return '<span class="gt-sticky-score" style="color:' + r.color + '">' + r.score + '/100</span>';
+}
+
+function handleExport(key) {
+    var r = state.lastResult;
+    if (!r) { showToast('Generate a sitemap first.', 'error'); return; }
+    switch (key) {
+        case 'copy-xml': copyText(r.xml, 'XML copied to clipboard'); break;
+        case 'download-xml': download('sitemap.xml', r.xml, 'application/xml'); showToast('sitemap.xml downloaded', 'success'); break;
+        case 'download-gzip': downloadGzip(); break;
+        case 'download-parts':
+            if (!r.parts.length) { showToast('Sitemap was not split. Enable "Split Large Sitemap".', 'info'); break; }
+            r.parts.forEach(function (p) { download(p.name, p.xml, 'application/xml'); });
+            download('sitemap-index.xml', r.index, 'application/xml');
+            showToast('Downloaded sitemap index + ' + r.parts.length + ' parts', 'success');
+            break;
+        case 'copy-report': copyText(buildReportText(r), 'Report copied to clipboard'); break;
+        case 'txt': download('xml-sitemap-generator-report.txt', buildReportText(r), 'text/plain'); showToast('TXT export complete', 'success'); break;
+        case 'json': download('xml-sitemap-generator-report.json', buildReportJson(r), 'application/json'); showToast('JSON export complete', 'success'); break;
+        case 'print': printCurrent(); break;
+        case 'view-source': viewSource(r); break;
+    }
+}
+
+/* ================= EVENTS ================= */
+function loadSample() {
+    DOM.siteInput.value = SAMPLE.site;
+    DOM.urlsInput.value = SAMPLE.urls;
+    if (DOM.toggleManual && DOM.manualZone && DOM.manualZone.hidden) {
+        DOM.manualZone.hidden = false;
+        DOM.toggleManual.setAttribute('aria-expanded', 'true');
+        DOM.toggleManual.classList.add('active');
+    }
+    tableData = [];
+    renderTable();
+    updateUrlsCount();
+    update('Sample loaded');
+}
+
+function clearAll() {
+    DOM.siteInput.value = '';
+    DOM.urlsInput.value = '';
+    DOM.priorityInput.value = CONFIG.defaultPriority;
+    DOM.changefreqInput.value = CONFIG.defaultChangefreq;
+    DOM.lastmodInput.value = '';
+    tableData = [];
+    if (DOM.toggleManual && DOM.manualZone) {
+        DOM.manualZone.hidden = true;
+        DOM.toggleManual.setAttribute('aria-expanded', 'false');
+        DOM.toggleManual.classList.remove('active');
+    }
+    renderTable();
+    updateUrlsCount();
+    renderEmpty();
+    hideSticky();
+    setStatus('ready', 'Ready');
+    state.lastResult = null;
+    if (DOM.siteInput) DOM.siteInput.focus();
+    showToast('Cleared', 'info');
+}
+
+var live = debounce(function () { update(); }, 180);
+
+function bindInput(el) {
+    el.addEventListener('input', function () { updateUrlsCount(); live(); });
+    el.addEventListener('change', function () { updateUrlsCount(); live(); });
+}
+bindInput(DOM.siteInput);
+bindInput(DOM.urlsInput);
+bindInput(DOM.priorityInput);
+bindInput(DOM.changefreqInput);
+bindInput(DOM.lastmodInput);
+
+DOM.parseBtn.addEventListener('click', parseToTable);
+DOM.runBtn.addEventListener('click', generateSitemap);
+DOM.sampleBtn.addEventListener('click', loadSample);
+DOM.clearBtn.addEventListener('click', clearAll);
+
+/* ================= NEW EVENT WIRING ================= */
+function smartUpdate() {
+    if (state.lastResult || getRawUrls().length || tableData.length) update();
+}
+
+DOM.verifyBtn.addEventListener('click', verifySite);
+
+DOM.toggleManual.addEventListener('click', function () {
+    if (!DOM.manualZone) return;
+    var open = DOM.manualZone.hidden;
+    DOM.manualZone.hidden = !open;
+    DOM.toggleManual.setAttribute('aria-expanded', String(open));
+    DOM.toggleManual.classList.toggle('active', open);
+    if (open && DOM.urlsInput) DOM.urlsInput.focus();
+    updateUrlsCount();
+    if (state.lastResult && (getRawUrls().length || tableData.length)) update();
+});
+
+DOM.lastmodSeg.querySelectorAll('button').forEach(function (b) {
+    b.addEventListener('click', function () {
+        $$('button', DOM.lastmodSeg).forEach(function (x) { x.classList.remove('active'); x.setAttribute('aria-pressed', 'false'); });
+        b.classList.add('active');
+        b.setAttribute('aria-pressed', 'true');
+        DOM.lastmodMode.value = b.getAttribute('data-mode');
+        smartUpdate();
+    });
+});
+
+['paramsCheck', 'paramsList', 'robotsCheck', 'canonicalCheck', 'noindexCheck', 'redir301', 'redir308', 'redirChain', 'imgCheck', 'videoCheck', 'newsCheck', 'advMaxUrls', 'advDepth', 'advEncoding', 'advPerFile', 'advPretty', 'advGzip', 'advSplit'].forEach(function (key) {
+    var el = DOM[key];
+    if (el) el.addEventListener('change', function () { smartUpdate(); });
+});
+
+DOM.importCsv.addEventListener('change', function () {
+    if (DOM.importCsv.files && DOM.importCsv.files[0]) importCsvFile(DOM.importCsv.files[0]);
+    DOM.importCsv.value = '';
+});
+DOM.importSitemap.addEventListener('change', function () {
+    if (DOM.importSitemap.files && DOM.importSitemap.files[0]) importSitemapFile(DOM.importSitemap.files[0]);
+    DOM.importSitemap.value = '';
+});
+DOM.importPaste.addEventListener('click', importClipboard);
+DOM.importCrawl.addEventListener('click', function () { showToast('Automatic crawling is not available in the browser \u2014 paste or import your URLs instead.', 'info'); });
+
+DOM.siteInput.addEventListener('change', function () {
+    if (/^https?:\/\//i.test(DOM.siteInput.value.trim()) && DOM.robotsCheck.checked) loadRobotsRules();
+});
+
+document.addEventListener('keydown', function (e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+        e.preventDefault();
+        generateSitemap();
+    }
+});
+
+DOM.results.addEventListener('keydown', function (e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { e.preventDefault(); generateSitemap(); }
+});
+
+delegateExport(DOM.results);
+delegateExport(document.body);
+
+if (window.matchMedia) {
+    var sgMql = window.matchMedia('print');
+    var sgOpen = function () {
+        $$('details', DOM.results).forEach(function (d) { d.setAttribute('open', ''); });
+    };
+    if (sgMql.addEventListener) sgMql.addEventListener('change', sgOpen);
+    else if (sgMql.addListener) sgMql.addListener(sgOpen);
+}
+
     })();
+    </script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

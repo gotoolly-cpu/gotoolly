@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
     convertBtn.addEventListener('click', async function() {
         if (!files.length) return;
         results = [];
-        resultsArea.style.display = 'none';
+        resultsArea.classList.remove('show');
         resultsGrid.innerHTML = '';
         progressSection.style.display = 'block';
         convertBtn.disabled = true;
@@ -130,6 +130,10 @@ document.addEventListener('DOMContentLoaded', function() {
         progressText.textContent = 'Done!';
         convertBtn.disabled = false;
         renderResults();
+        showNotification(results.length + ' image' + (results.length !== 1 ? 's' : '') + ' converted successfully!', false);
+        setTimeout(function() {
+            progressSection.style.display = 'none';
+        }, 800);
     });
 
     function convertFile(file, mimeType, ext, quality) {
@@ -163,13 +167,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function renderResults() {
         resultsGrid.innerHTML = '';
+        var placeholder = document.getElementById('preview-placeholder');
+        if (placeholder) placeholder.style.display = 'none';
         results.forEach(function(r) {
             var div = document.createElement('div');
             div.className = 'result-item';
             div.innerHTML = '<img src="' + r.url + '" alt="' + r.name + '">'
                 + '<div class="result-name">' + r.name + '</div>'
                 + '<div style="font-size:var(--text-xs);color:var(--color-text-light);margin-bottom:var(--space-2)">' + (r.size / 1024).toFixed(1) + ' KB</div>'
-                + '<button class="btn btn-primary btn-sm download-single" style="width:100%"><i class="fas fa-download"></i> Download</button>';
+                + '<button class="btn btn-success btn-sm download-single" style="width:100%"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg> Download</button>';
             div.querySelector('.download-single').addEventListener('click', function() {
                 var a = document.createElement('a');
                 a.href = r.url;
@@ -180,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             resultsGrid.appendChild(div);
         });
-        resultsArea.style.display = 'block';
+        resultsArea.classList.add('show');
     }
 
     downloadAllBtn.addEventListener('click', async function() {
@@ -211,9 +217,11 @@ document.addEventListener('DOMContentLoaded', function() {
         fileList.style.display = 'none';
         fileCount.textContent = '0 files';
         progressSection.style.display = 'none';
-        resultsArea.style.display = 'none';
+        resultsArea.classList.remove('show');
         resultsGrid.innerHTML = '';
         perFileProgress.innerHTML = '';
         convertBtn.disabled = true;
+        var placeholder = document.getElementById('preview-placeholder');
+        if (placeholder) placeholder.style.display = 'flex';
     });
 });

@@ -1,91 +1,36 @@
-/* ============================================
-   GO TOOLLY - HTML MINIFIER
-   ============================================ */
-
-document.addEventListener('DOMContentLoaded', function() {
-    var input = document.getElementById('html-input');
-    var minifyBtn = document.getElementById('minify-btn');
-    var resetBtn = document.getElementById('reset-btn');
-    var copyBtn = document.getElementById('copy-btn');
-    var resultArea = document.getElementById('result-area');
-    var resultText = document.getElementById('result-text');
-    var statsArea = document.getElementById('stats');
-    var statOriginal = document.getElementById('stat-original');
-    var statMinified = document.getElementById('stat-minified');
-    var statSavings = document.getElementById('stat-savings');
-
-    minifyBtn.addEventListener('click', minifyHtml);
-    resetBtn.addEventListener('click', resetTool);
-    copyBtn.addEventListener('click', copyResult);
-
-    function minifyHtml() {
-        var html = input.value;
-        if (!html.trim()) {
-            showNotification('Please enter HTML code', true);
-            return;
-        }
-
-        var originalSize = html.length;
-        var placeholders = [];
-        var saved = html.replace(/<(pre|code|textarea)[^>]*>[\s\S]*?<\/\1>/gi, function(match) {
-            placeholders.push(match);
-            return '{{{' + (placeholders.length - 1) + '}}}';
-        });
-        saved = saved.replace(/<!--[\s\S]*?-->/g, '');
-        saved = saved.replace(/>\s+</g, '><');
-        saved = saved.replace(/\s{2,}/g, ' ');
-        saved = saved.replace(/\{\{\{(\d+)\}\}\}/g, function(m, i) { return placeholders[i]; });
-        saved = saved.trim();
-
-        var minifiedSize = saved.length;
-        var savings = originalSize > 0 ? Math.round((1 - minifiedSize / originalSize) * 100) : 0;
-
-        resultText.textContent = saved;
-        resultArea.style.display = 'block';
-
-        statOriginal.textContent = originalSize + ' bytes';
-        statMinified.textContent = minifiedSize + ' bytes';
-        statSavings.textContent = savings + '%';
-        statsArea.style.display = 'grid';
-    }
-
-    function copyResult() {
-        var text = resultText.textContent;
-        try {
-            navigator.clipboard.writeText(text).then(function() {
-                copyBtn.textContent = 'Copied!';
-                setTimeout(function() { copyBtn.textContent = 'Copy Result'; }, 2000);
-            }).catch(function() { fallbackCopy(text); });
-        } catch (e) { fallbackCopy(text); }
-    }
-
-    function fallbackCopy(text) {
-        var ta = document.createElement('textarea');
-        ta.value = text;
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        try { document.execCommand('copy'); copyBtn.textContent = 'Copied!'; }
-        catch (e) { copyBtn.textContent = 'Failed'; }
-        document.body.removeChild(ta);
-        setTimeout(function() { copyBtn.textContent = 'Copy Result'; }, 2000);
-    }
-
-    function resetTool() {
-        input.value = '';
-        resultArea.style.display = 'none';
-        statsArea.style.display = 'none';
-        resultText.textContent = '';
-    }
-
-    function showNotification(msg, isError) {
-        var existing = document.querySelector('.notification');
-        if (existing) existing.remove();
-        var el = document.createElement('div');
-        el.className = 'notification' + (isError ? ' error' : '');
-        el.textContent = msg;
-        document.body.appendChild(el);
-        setTimeout(function() { el.remove(); }, 3500);
-    }
-});
+(function(){'use strict';var state={results:null,history:[]};var elements={};
+function init(){elements={input:document.getElementById('html-input'),processBtn:document.getElementById('minify-btn'),resetBtn:document.getElementById('reset-btn'),resultArea:document.getElementById('result-area'),emptyState:document.getElementById('empty-state'),statusBadge:document.getElementById('status-badge'),resultText:document.getElementById('result-text'),statOriginal:document.getElementById('stat-original'),statMinified:document.getElementById('stat-minified'),statSavings:document.getElementById('stat-savings'),statSavingsBytes:document.getElementById('stat-savings-bytes'),exportSection:document.getElementById('export-section'),exportCopy:document.getElementById('export-copy'),exportTxt:document.getElementById('export-txt'),exportJson:document.getElementById('export-json'),exportPrint:document.getElementById('export-print'),comparisonSection:document.getElementById('comparison-section'),comparisonSelect:document.getElementById('comparison-select'),comparisonTable:document.getElementById('comparison-table'),historySection:document.getElementById('history-section'),historyList:document.getElementById('history-list'),savingsGauge:document.getElementById('savings-gauge'),gaugeValue:document.getElementById('gauge-value'),gaugeLabel:document.getElementById('gauge-label')};
+elements.processBtn.addEventListener('click',process);elements.resetBtn.addEventListener('click',reset);elements.input.addEventListener('input',onInput);
+if(elements.exportCopy)elements.exportCopy.addEventListener('click',exportCopy);if(elements.exportTxt)elements.exportTxt.addEventListener('click',exportTxt);if(elements.exportJson)elements.exportJson.addEventListener('click',exportJson);if(elements.exportPrint)elements.exportPrint.addEventListener('click',exportPrint);if(elements.comparisonSelect)elements.comparisonSelect.addEventListener('change',onComparisonChange);showEmptyState();}
+function onInput(){updateStatus(elements.input.value.trim().length>0?'ready':'',elements.input.value.trim().length>0?'Ready':'');}
+function updateStatus(type,text){if(elements.statusBadge){elements.statusBadge.className='status-badge'+(type?' '+type:'');elements.statusBadge.textContent=text;}}
+function showEmptyState(){if(elements.emptyState)elements.emptyState.style.display='flex';if(elements.resultArea)elements.resultArea.style.display='none';}
+function showResults(){if(elements.emptyState)elements.emptyState.style.display='none';if(elements.resultArea){elements.resultArea.style.display='block';elements.resultArea.classList.add('show');}}
+function process(){var input=elements.input.value.trim();if(!input){showToast('Please enter HTML code to minify','error');return;}
+updateStatus('processing','Minifying...');setTimeout(function(){try{var originalSize=input.length;var result;try{if(typeof HTMLMinifier!=='undefined'){result=HTMLMinifier.minify(input,{removeComments:true,collapseWhitespace:true,removeEmptyAttributes:true,removeRedundantAttributes:true,removeScriptTypeAttributes:true,removeStyleLinkTypeAttributes:true,minifyCSS:true,minifyJS:true,keepClosingSlash:true});}else{result=basicMinify(input);}}catch(e){result=basicMinify(input);}
+var minifiedSize=result.length;var savings=originalSize>0?Math.round((1-minifiedSize/originalSize)*100):0;var savingsBytes=originalSize-minifiedSize;
+elements.resultText.textContent=result;elements.statOriginal.textContent=formatBytes(originalSize);elements.statMinified.textContent=formatBytes(minifiedSize);elements.statSavings.textContent=savings+'%';elements.statSavingsBytes.textContent=formatBytes(savingsBytes);
+state.results={originalSize:originalSize,minifiedSize:minifiedSize,savings:savings,savingsBytes:savingsBytes,result:result,input:input.substring(0,80)+(input.length>80?'...':''),timestamp:Date.now()};
+if(state.history.length>=5)state.history.shift();state.history.push(state.results);
+renderGauge(savings);showResults();updateStatus('done','Done');if(elements.exportSection)elements.exportSection.style.display='flex';renderComparison();renderHistory();}catch(e){showToast('Error: '+e.message,'error');updateStatus('error','Error');}},100);}
+function basicMinify(html){var placeholders=[];var saved=html.replace(/<(pre|code|textarea|script|style)[^>]*>[\s\S]*?<\/\1>/gi,function(m){placeholders.push(m);return'{{{'+(placeholders.length-1)+'}}}';});saved=saved.replace(/<!--[\s\S]*?-->/g,'');saved=saved.replace(/>\s+</g,'><');saved=saved.replace(/\s{2,}/g,' ');saved=saved.replace(/\{\{\{(\d+)\}\}\}/g,function(m,i){return placeholders[i];});return saved.trim();}
+function renderGauge(savings){var svg=elements.savingsGauge;if(!svg)return;var fill=svg.querySelector('.gauge-fill');if(!fill)return;var circumference=2*Math.PI*36;var offset=circumference-(savings/100)*circumference;fill.setAttribute('stroke-dasharray',circumference);fill.setAttribute('stroke-dashoffset',Math.max(0,offset));var color=savings>=40?'#16a34a':savings>=20?'#eab308':'#ef4444';fill.setAttribute('stroke',color);if(elements.gaugeValue){elements.gaugeValue.textContent=savings+'%';}if(elements.gaugeLabel){var label=savings>=40?'Excellent':savings>=20?'Good':'Minimum';elements.gaugeLabel.textContent=label;elements.gaugeLabel.style.color=color;}}
+function renderComparison(){if(!elements.comparisonSelect||!elements.comparisonTable)return;var available=state.history.filter(function(item){return!state.results||item.timestamp!==state.results.timestamp;});if(available.length===0){if(elements.comparisonSection)elements.comparisonSection.style.display='none';return;}
+if(elements.comparisonSection)elements.comparisonSection.style.display='block';var html='<option value="">Select previous...</option>';available.forEach(function(item,i){html+='<option value="'+state.history.indexOf(item)+'">'+escapeHtml(item.input)+' ('+formatDate(item.timestamp)+')</option>';});elements.comparisonSelect.innerHTML=html;}
+function onComparisonChange(){var idx=parseInt(elements.comparisonSelect.value);if(isNaN(idx)||!state.history[idx]||!state.results){elements.comparisonTable.innerHTML='';return;}
+var prev=state.history[idx];var curr=state.results;var metrics=[{label:'Original Size',curr:formatBytes(curr.originalSize),prev:formatBytes(prev.originalSize)},{label:'Minified Size',curr:formatBytes(curr.minifiedSize),prev:formatBytes(prev.minifiedSize)},{label:'Savings',curr:curr.savings+'%',prev:prev.savings+'%'}];var html='<table class="comparison-table"><thead><tr><th>Metric</th><th>Current</th><th>Previous</th><th>Change</th></tr></thead><tbody>';metrics.forEach(function(m){var diff=m.label==='Savings'?curr.savings-prev.savings:curr.savingsBytes-prev.savingsBytes;var arrow=diff>0?'<span class="comp-up">+'+diff+'</span>':diff<0?'<span class="comp-down">'+diff+'</span>':'<span class="comp-same">0</span>';html+='<tr><td>'+m.label+'</td><td>'+m.curr+'</td><td>'+m.prev+'</td><td>'+arrow+'</td></tr>';});html+='</tbody></table>';elements.comparisonTable.innerHTML=html;}
+function renderHistory(){if(!elements.historyList)return;if(state.history.length<=1){if(elements.historySection)elements.historySection.style.display='none';return;}
+if(elements.historySection)elements.historySection.style.display='block';var html='';for(var i=state.history.length-1;i>=0;i--){var item=state.history[i];var active=state.results&&item.timestamp===state.results.timestamp?' style="border-color:var(--color-primary);background:rgba(37,99,235,0.05)"':'';html+='<div class="history-item"'+active+'><div class="history-meta"><span class="history-time">'+formatDate(item.timestamp)+'</span><span class="history-size">'+formatBytes(item.originalSize)+' \u2192 '+formatBytes(item.minifiedSize)+'</span></div><div class="history-savings" style="color:'+(item.savings>=40?'#16a34a':item.savings>=20?'#eab308':'#ef4444')+'">-'+item.savings+'%</div></div>';}
+elements.historyList.innerHTML=html;}
+function exportCopy(){if(!state.results)return;if(navigator.clipboard){navigator.clipboard.writeText(state.results.result).then(function(){showToast('Copied to clipboard!','success');});}else{fallbackCopy(state.results.result);}}
+function exportTxt(){if(!state.results)return;var r=state.results;var text='HTML Minification Report\n========================\n\nOriginal Size: '+formatBytes(r.originalSize)+'\nMinified Size: '+formatBytes(r.minifiedSize)+'\nSavings: '+r.savings+'% ('+formatBytes(r.savingsBytes)+')\n\n--- Minified Output ---\n\n'+r.result;downloadFile('html-minified.txt',text,'text/plain');showToast('Downloaded TXT report','success');}
+function exportJson(){if(!state.results)return;var json=JSON.stringify({originalSize:state.results.originalSize,minifiedSize:state.results.minifiedSize,savings:state.results.savings,output:state.results.result,timestamp:new Date().toISOString()},null,2);downloadFile('html-minified.json',json,'application/json');showToast('Downloaded JSON report','success');}
+function exportPrint(){window.print();}
+function downloadFile(filename,content,mimeType){var blob=new Blob([content],{type:mimeType});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);}
+function fallbackCopy(text){var ta=document.createElement('textarea');ta.style.cssText='position:fixed;opacity:0';ta.value=text;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');showToast('Copied!','success');}catch(e){showToast('Failed to copy','error');}document.body.removeChild(ta);}
+function escapeHtml(text){var d=document.createElement('div');d.appendChild(document.createTextNode(text));return d.innerHTML;}
+function reset(){elements.input.value='';state.results=null;state.history=[];if(elements.comparisonTable)elements.comparisonTable.innerHTML='';updateStatus('','');showEmptyState();if(elements.exportSection)elements.exportSection.style.display='none';if(elements.historySection)elements.historySection.style.display='none';}
+function formatBytes(bytes){if(bytes<1024)return bytes+' B';if(bytes<1048576)return(bytes/1024).toFixed(1)+' KB';return(bytes/1048576).toFixed(1)+' MB';}
+function formatDate(ts){var d=new Date(ts);return d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});}
+function showToast(msg,type){var existing=document.querySelector('.toast');if(existing)existing.remove();var el=document.createElement('div');el.className='toast '+(type||'info');el.textContent=msg;document.body.appendChild(el);setTimeout(function(){el.classList.add('show');},10);setTimeout(function(){el.classList.remove('show');setTimeout(function(){el.remove();},300);},3000);}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}else{init();}})();

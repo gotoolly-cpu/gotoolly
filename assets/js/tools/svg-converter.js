@@ -206,6 +206,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     progressPercent.textContent = '100%';
                     progressText.textContent = 'Done!';
 
+                    setTimeout(function() {
+                        progressSection.style.display = 'none';
+                    }, 600);
+
                     resultContainer.innerHTML = '';
                     var resultImg = document.createElement('img');
                     if (window._svgResultUrl) URL.revokeObjectURL(window._svgResultUrl);
@@ -221,6 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     resultSize.textContent = formatSize(data.blob.size);
                     resultsArea.style.display = 'block';
                     convertBtn.disabled = false;
+                    showNotification('Conversion complete! Click Download to save.', false);
                 }, 100);
             }).catch(function(err) {
                 showNotification('Error: ' + err.message, true);

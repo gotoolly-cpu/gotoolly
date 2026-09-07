@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,9 +6,7 @@
     <title>Keyword Generator - Find SEO Keywords | GoToolly</title>
     <meta name="description" content="Generate SEO keywords from your topic. Find long-tail keywords, search volume, and competition data for content strategy.">
     <meta name="keywords" content="keyword generator, SEO keywords, long-tail keywords, keyword research, keyword tool, keyword finder">
-    <!-- Canonical -->
     <link rel="canonical" href="https://gotoolly.com/tools/keyword-generator">
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gotoolly.com/tools/keyword-generator">
     <meta property="og:title" content="Keyword Generator - Find SEO Keywords | GoToolly">
@@ -18,7 +16,6 @@
     <meta property="og:image:height" content="512">
     <meta property="og:image:alt" content="GoToolly Logo">
     <meta property="og:site_name" content="GoToolly">
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://gotoolly.com/tools/keyword-generator">
     <meta name="twitter:title" content="Keyword Generator - Find SEO Keywords | GoToolly">
@@ -26,326 +23,386 @@
     <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
     <meta name="twitter:image:alt" content="GoToolly Logo">
     <meta name="twitter:creator" content="@GoToolly">
-    
-    <!-- Favicon & Manifest -->
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
-    
-    <!-- Critical CSS: preload and non-blocking load -->
-    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    
-    <!-- Fonts -->
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/font-awesome.all.min.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Keyword Generator",
-        "url": "https://gotoolly.com/tools/keyword-generator",
-        "description": "Generate SEO keywords from your topic. Find long-tail keywords, search volume, and competition data for content strategy.",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any (Web Browser)",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "featureList": [
-            "Free to use",
-            "No account required",
-            "Client-side processing",
-            "Privacy-focused"
-        ]
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
-            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gotoolly.com/tools"},
-            {"@type": "ListItem", "position": 3, "name": "Keyword Generator", "item": "https://gotoolly.com/tools/keyword-generator"}
-        ]
-    }
-    </script>
-
-    <style>        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--color-primary);
-            color: white;
-            padding: 8px 16px;
-            z-index: 100;
-            transition: top 0.3s;
+    <style>
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .25s cubic-bezier(.4,0,.2,1)}
+        .skip-link:focus{top:0}
+        .hero{background:#0f172a;padding:40px 0 28px;text-align:center}
+        .hero h1{font-size:40px;font-weight:800;color:#fff;line-height:1.2;margin:0 0 12px}
+        .hero h1 .gradient-text{background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-subtitle{font-size:16px;color:#94a3b8;line-height:1.5;margin:0 0 24px}
+        .trust-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .trust-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:6px 14px;border-radius:9999px;font-size:13px;font-weight:500;color:#cbd5e1;transition:background .2s}
+        .trust-badge:hover{background:rgba(255,255,255,.1)}
+        .trust-badge svg{width:14px;height:14px;color:#60a5fa}
+        .tool-workspace{max-width:900px;margin:0 auto;padding:0 24px}
+        .tool-card{background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.04);border:1px solid #e2e8f0;padding:24px;margin-bottom:48px;overflow:visible}
+        .card-header{display:flex;justify-content:space-between;align-items:center}
+        .card-header-left{display:flex;align-items:center;gap:10px}
+        .card-header-left svg{width:18px;height:18px;color:var(--color-primary)}
+        .card-header-left h2{font-size:16.8px;font-weight:600;margin:0;color:#0f172a}
+        .card-divider{height:1px;background:#e2e8f0;margin:16px 0 0}
+        .keyword-badge{background:#8b5cf6;color:#fff;padding:4px 12px;border-radius:9999px;font-weight:600;font-size:12px}
+        .tool-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;margin-top:20px}
+        .tool-left{display:flex;flex-direction:column;gap:16px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:24px}
+        .tool-right{display:flex;flex-direction:column;gap:16px}
+        .form-group{display:flex;flex-direction:column;gap:6px}
+        .form-group label{font-size:13px;font-weight:600;color:#374151}
+        .form-input{width:100%;padding:12px 16px;border:1px solid #e2e8f0;border-radius:10px;font-size:14px;color:#0f172a;background:#f8fafc;transition:border-color .2s;box-sizing:border-box}
+        .form-input:focus{outline:none;border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.1);background:#fff}
+        .form-input::placeholder{color:#94a3b8}
+        .checkbox-group{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+        .checkbox-label{display:flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid #e2e8f0;border-radius:8px;font-size:13px;color:#374151;cursor:pointer;transition:all .15s}
+        .checkbox-label:hover{border-color:#8b5cf6;background:#f5f3ff}
+        .checkbox-label input[type="checkbox"]{width:16px;height:16px;accent-color:#8b5cf6}
+        .action-bar{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+        .action-bar .btn-primary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:#8b5cf6;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .action-bar .btn-primary:hover:not(:disabled){background:#7c3aed;transform:translateY(-1px);box-shadow:0 8px 25px rgba(139,92,246,.35)}
+        .action-bar .btn-primary:disabled{opacity:.5;cursor:not-allowed}
+        .action-bar .btn-secondary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:#fff;color:#0f172a;border:1px solid #e2e8f0;border-radius:12px;font-size:15px;font-weight:500;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .action-bar .btn-secondary:hover{border-color:#cbd5e1;background:#f8fafc;transform:translateY(-1px)}
+        .privacy-badge{display:flex;align-items:center;gap:8px;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;padding:10px 16px;border-radius:10px;font-size:13px;font-weight:500}
+        .privacy-badge svg{width:16px;height:16px;flex-shrink:0}
+        .result-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;min-height:300px;color:#94a3b8;text-align:center}
+        .result-placeholder svg{width:48px;height:48px;color:#cbd5e1;margin-bottom:12px}
+        .result-placeholder p{font-size:14px;font-weight:500;margin:0}
+        .result-placeholder small{font-size:12px;margin:4px 0 0}
+        .result-card{display:none}
+        .result-card.show{display:block}
+        .result-card-header{padding:16px 20px;border-bottom:1px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center}
+        .result-card-header h3{font-size:15px;font-weight:600;margin:0;color:#0f172a}
+        .result-card-body{padding:20px;max-height:500px;overflow:auto}
+        .kw-toolbar{display:flex;gap:10px;padding:12px 20px;border-bottom:1px solid #e2e8f0;flex-wrap:wrap}
+        .kw-search-wrap{position:relative;flex:1;min-width:180px}
+        .kw-search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#94a3b8;pointer-events:none}
+        .kw-search-input{width:100%;padding:8px 12px 8px 34px;border:1px solid #e2e8f0;border-radius:8px;font-size:13px;color:#0f172a;background:#f8fafc;outline:none;box-sizing:border-box;transition:border-color .2s}
+        .kw-search-input:focus{border-color:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,.1);background:#fff}
+        .kw-sort-wrap{display:flex;align-items:center;gap:6px}
+        .kw-sort-label{font-size:12px;font-weight:600;color:#64748b;white-space:nowrap}
+        .kw-sort-select{padding:8px 12px;border:1px solid #e2e8f0;border-radius:8px;font-size:13px;color:#0f172a;background:#f8fafc;cursor:pointer;outline:none}
+        .kw-sort-select:focus{border-color:#8b5cf6}
+        .kw-stats-bar{display:flex;gap:8px;padding:12px 20px;border-bottom:1px solid #e2e8f0}
+        .kw-stat{flex:1;display:flex;flex-direction:column;align-items:center;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:10px 6px;min-width:0}
+        .kw-stat-value{font-size:16px;font-weight:700;color:#0f172a;line-height:1.2}
+        .kw-stat-label{font-size:10px;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:.4px;margin-top:2px}
+        .keywords-list{display:flex;flex-direction:column;gap:4px;padding:4px 0}
+        .kw-category-header{display:flex;align-items:center;gap:8px;padding:12px 0 4px;border-top:1px solid #e2e8f0;margin-top:8px}
+        .kw-category-header:first-child{border-top:none;margin-top:0}
+        .kw-cat-badge{font-size:11px;font-weight:700;color:#fff;padding:3px 10px;border-radius:9999px;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap}
+        .kw-cat-count{font-size:11px;color:#94a3b8;font-weight:500}
+        .kw-cat-copy{margin-left:auto;padding:3px 10px;border:1px solid #e2e8f0;border-radius:6px;background:#fff;font-size:11px;font-weight:600;color:#6b7280;cursor:pointer;transition:all .15s}
+        .kw-cat-copy:hover{border-color:#8b5cf6;color:#8b5cf6}
+        .kw-chip{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:8px 12px;transition:all .15s}
+        .kw-chip:hover{border-color:#8b5cf6;background:#f5f3ff}
+        .kw-chip.favorited{border-color:#f43f5e;background:#fff1f2}
+        .kw-stars{font-size:11px;color:#f59e0b;white-space:nowrap;flex-shrink:0;letter-spacing:-1px}
+        .kw-text{font-size:13px;color:#0f172a;word-break:break-word;flex:1;min-width:0}
+        .kw-fav-btn{background:none;border:none;cursor:pointer;font-size:16px;color:#d1d5db;padding:0 2px;transition:color .15s;flex-shrink:0;line-height:1}
+        .kw-fav-btn:hover{color:#f43f5e}
+        .kw-chip.favorited .kw-fav-btn{color:#f43f5e}
+        .kw-copy-btn{padding:4px 10px;border:1px solid #e2e8f0;border-radius:6px;background:#fff;font-size:11px;font-weight:600;color:#6b7280;cursor:pointer;transition:all .15s;white-space:nowrap;flex-shrink:0}
+        .kw-copy-btn:hover{border-color:#8b5cf6;color:#8b5cf6}
+        .kw-export-bar{display:flex;gap:6px;padding:12px 20px;border-top:1px solid #e2e8f0;flex-wrap:wrap}
+        .kw-export-btn{padding:6px 14px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;font-size:12px;font-weight:600;color:#374151;cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;gap:4px}
+        .kw-export-btn:hover{border-color:#8b5cf6;color:#8b5cf6;background:#f5f3ff}
+        .result-actions{display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:8px;margin-top:12px}
+        .result-actions button{padding:10px 12px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;border:1px solid #e2e8f0;background:#fff;color:#374151;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+        .result-actions .copy-all-btn{background:#8b5cf6;border-color:#8b5cf6;color:#fff}
+        .result-actions .copy-all-btn:hover{background:#7c3aed;transform:translateY(-1px)}
+        .result-actions .clear-btn:hover{background:#f8fafc;border-color:#cbd5e1}
+        .related-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .related-section .section-intro{font-size:14px;color:#64748b;text-align:center;margin-bottom:24px}
+        .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .related-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit;display:flex;flex-direction:column}
+        .related-card:hover{border-color:#8b5cf6;box-shadow:0 8px 24px rgba(139,92,246,.1);transform:translateY(-3px)}
+        .related-card .rc-icon{width:32px;height:32px;margin-bottom:12px}
+        .related-card .rc-icon svg{width:32px;height:32px;color:#8b5cf6;transition:transform .25s cubic-bezier(.4,0,.2,1)}
+        .related-card:hover .rc-icon svg{transform:scale(1.1)}
+        .related-card h4{font-size:15px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .related-card p{font-size:13px;color:#64748b;margin:0 0 16px;flex:1}
+        .related-card .rc-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#8b5cf6;margin-top:auto;transition:gap .2s}
+        .related-card:hover .rc-btn{gap:10px}
+        .notification{position:fixed;top:20px;right:20px;background:#16a34a;color:#fff;padding:12px 20px;border-radius:10px;font-size:14px;font-weight:500;z-index:9999;box-shadow:0 4px 16px rgba(0,0,0,.15);animation:slideIn .3s ease}
+        .notification.error{background:#dc2626}
+        @keyframes slideIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
+        @media(max-width:768px){
+            .hero{padding:32px 0 20px}.hero h1{font-size:28px}.hero-subtitle{font-size:14px;margin-bottom:20px}
+            .trust-badges{gap:8px}.trust-badge{padding:4px 10px;font-size:12px}
+            .tool-card{padding:16px;margin-bottom:32px}
+            .tool-layout{grid-template-columns:1fr}
+            .checkbox-group{grid-template-columns:1fr}
+            .related-grid{grid-template-columns:1fr}
+            .kw-toolbar{flex-direction:column}
+            .kw-search-wrap{min-width:100%}
+            .kw-stats-bar{gap:10px;justify-content:center}
+            .result-actions{grid-template-columns:1fr 1fr}
+            .kw-chip{flex-wrap:wrap}
         }
-        .skip-link:focus {
-            top: 0;
-        }
-        .tool-interface .btn{width:100%}.tool-actions{display:flex;gap:var(--space-3);width:100%}.tool-actions .btn{flex:1}.checkbox-group{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-2)}@media(max-width:768px){.checkbox-group{grid-template-columns:1fr}}.result-area{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid #86efac;border-radius:12px;padding:var(--space-4);margin-top:var(--space-4)}.result-area h3{margin:0 0 var(--space-3);font-size:1rem;display:flex;align-items:center;gap:8px}.keywords-list{display:flex;flex-direction:column;gap:var(--space-2);margin-bottom:var(--space-3)}.keyword-item{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:8px 12px;font-size:var(--text-sm)}.keyword-item span{font-family:'JetBrains Mono',monospace;color:var(--color-text)}.keyword-item .btn{padding:4px 10px;font-size:12px;white-space:nowrap}.tool-sidebar{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);margin-top:var(--space-6)}.tool-sidebar .card{margin:0}@media(max-width:768px){.tool-sidebar{grid-template-columns:1fr}.tool-actions{flex-direction:column}}
+        @media(max-width:480px){.hero{padding:24px 0 16px}.hero h1{font-size:24px}.related-grid{gap:12px}.result-actions{grid-template-columns:1fr}}
+        @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
+        .how-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .step-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:24px;text-align:center;transition:border-color .2s,box-shadow .2s}
+        .step-card:hover{border-color:rgba(37,99,235,.2);box-shadow:0 2px 8px rgba(37,99,235,.06)}
+        .step-num{width:40px;height:40px;border-radius:50%;background:#eff6ff;color:#2563eb;font-size:16px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-bottom:12px;transition:background .2s}
+        .step-card:hover .step-num{background:#dbeafe}
+        .step-card h4{font-size:15px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .step-card p{font-size:13px;color:#64748b;margin:0}
+        .faq-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .faq-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+        .faq-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:border-color .2s}
+        .faq-card:hover{border-color:#cbd5e1}
+        .faq-card h4{font-size:14px;font-weight:600;margin:0 0 8px;color:#0f172a}
+        .faq-card p{font-size:13px;color:#64748b;margin:0;line-height:1.6}
+        .section-heading{text-align:center;margin-bottom:32px}
+        .section-heading h2{font-size:28.8px;font-weight:700;color:#0f172a;margin:0 0 4px}
+        .footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}
+        @media(max-width:1024px){.faq-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){.steps-grid{grid-template-columns:1fr}.faq-grid{grid-template-columns:1fr}}
+        @media(max-width:480px){}
     </style>
 
-    <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"Keyword Generator","url":"https://gotoolly.com/tools/keyword-generator","description":"Generate SEO keywords from your topic. Find long-tail keywords, search volume, and competition data for content strategy.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Long-tail keywords","Question keywords","Modifier keywords"]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Keyword Generator","item":"https://gotoolly.com/tools/keyword-generator"}]}
+    </script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-<!-- Header -->
+
     <header class="site-header">
         <div class="container">
             <div class="header-content">
-                <!-- Logo -->
-                <a href="/" class="logo">
-                    <img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg">
-                    <span class="logo-text">GoToolly</span>
-                </a>
-                
-                <!-- Desktop Navigation -->
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
                 <nav class="main-nav">
                     <a href="/" class="nav-link">Home</a>
                     <a href="/tools" class="nav-link active">Tools</a>
                     <a href="/guides" class="nav-link">Guides</a>
-                    <a href="../../about" class="nav-link">About</a>
-                    <a href="../../contact" class="nav-link">Contact</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
                 </nav>
-                
-                <!-- Mobile Menu Button -->
                 <button class="mobile-menu-button" aria-label="Toggle navigation menu">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
             </div>
-            
-            <!-- Mobile Menu -->
-            <div class="mobile-menu">
-                <nav class="mobile-nav">
-                    <a href="/" class="nav-link">Home</a>
-                    <a href="/tools" class="nav-link active">Tools</a>
-                    <a href="/guides" class="nav-link">Guides</a>
-                    <a href="../../about" class="nav-link">About</a>
-                    <a href="../../contact" class="nav-link">Contact</a>
-                </nav>
-            </div>
+            <div class="mobile-menu"><nav class="mobile-nav">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/tools" class="nav-link active">Tools</a>
+                <a href="/guides" class="nav-link">Guides</a>
+                <a href="/about" class="nav-link">About</a>
+                <a href="/contact" class="nav-link">Contact</a>
+            </nav></div>
         </div>
     </header>
 
-    <main id="main-content" class="main-content">
-        <div class="container">
-            <div class="page-header">
-                <h1>Keyword Generator</h1>
-                <p class="page-description">
-                    Generate keyword ideas instantly. Find long-tail keywords, related terms, and variations for better SEO strategy and content planning.
-                </p>
+    <main id="main-content">
+        <section class="hero">
+            <div class="container">
+                <h1>Keyword <span class="gradient-text">Generator</span></h1>
+                <p class="hero-subtitle">Generate keyword ideas instantly. Find long-tail keywords, related terms, and variations for better SEO strategy and content planning.</p>
+                <div class="trust-badges">
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> 100% Private</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg> No sign-up needed</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Instant results</span>
+                </div>
             </div>
+        </section>
 
-            <div class="tool-layout">
-                <div class="tool-interface">
-                    <div class="tool-header">
+        <div class="container">
+            <div class="tool-workspace">
+            <div class="tool-card" role="region" aria-label="Keyword Generator workspace">
+                <div class="card-header">
+                    <div class="card-header-left">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                         <h2>Generate Keywords</h2>
-                        <p>Enter a topic to find keyword variations</p>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="topic-input">Topic or Keyword</label>
-                        <input type="text" id="topic-input" class="form-input" placeholder="e.g., 'best running shoes'" >
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Keyword Types</label>
-                        <div class="checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="exact" checked>
-                                Exact match
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="long-tail" checked>
-                                Long-tail variations
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="questions" checked>
-                                Question format
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="modifiers" checked>
-                                Common modifiers
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <div class="tool-actions">
-                        <button id="generate-btn" class="btn btn-primary btn-lg"><i class="fas fa-search" aria-hidden="true"></i> Generate Keywords</button>
-                    </div>
-                    
-                    <div id="results-area" class="result-area" style="display:none;">
-                        <h3><i class="fas fa-check-circle" style="color:#10b981"></i> Generated Keywords</h3>
-                        <div id="keywords-list" class="keywords-list"></div>
-                        <div class="tool-actions">
-                            <button id="copy-all-btn" class="btn btn-primary btn-sm"><i class="fas fa-copy" aria-hidden="true"></i> Copy All</button>
-                            <button id="reset-btn" class="btn btn-secondary btn-sm"><i class="fas fa-redo" aria-hidden="true"></i> Clear</button>
-                        </div>
-                    </div>
+                    <span class="keyword-badge">SEO Tool</span>
                 </div>
-                
-                <div class="tool-sidebar">
-                    <div class="card">
-                        <h3>How It Works</h3>
-                        <ol>
-                            <li>Enter your main topic</li>
-                            <li>Select keyword types</li>
-                            <li>Get instant variations</li>
-                            <li>Copy for your research</li>
-                        </ol>
+                <div class="card-divider"></div>
+
+                <div class="tool-layout">
+                    <div class="tool-left">
+                        <div class="form-group">
+                            <label for="topic-input">Topic or Keyword</label>
+                            <input type="text" id="topic-input" class="form-input" placeholder="e.g. 'best running shoes'" autocomplete="off">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Keyword Types</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label"><input type="checkbox" name="exact" checked> Exact match</label>
+                                <label class="checkbox-label"><input type="checkbox" name="long-tail" checked> Long-tail variations</label>
+                                <label class="checkbox-label"><input type="checkbox" name="questions" checked> Question format</label>
+                                <label class="checkbox-label"><input type="checkbox" name="modifiers" checked> Common modifiers</label>
+                            </div>
+                        </div>
+
+                        <div class="action-bar">
+                            <button id="generate-btn" class="btn-primary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                                Generate Keywords
+                            </button>
+                            <button id="reset-btn" class="btn-secondary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+                                Clear All
+                            </button>
+                        </div>
+
+                        <div class="privacy-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            All keyword generation happens locally. Your data stays on your device.
+                        </div>
                     </div>
-                    
-                    <div class="card">
-                        <h3>Keyword Types</h3>
-                        <ul>
-                            <li><strong>Exact:</strong> Exact keyword match</li>
-                            <li><strong>Long-tail:</strong> 3+ word phrases</li>
-                            <li><strong>Questions:</strong> "How to...", "Best..."</li>
-                            <li><strong>Modifiers:</strong> "Cheap", "Best", "Near me"</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>SEO Tips</h3>
-                        <ul>
-                            <li>Target long-tail keywords</li>
-                            <li>Use in titles and descriptions</li>
-                            <li>Research competitor keywords</li>
-                            <li>Use keyword research tools</li>
-                        </ul>
+
+                    <div class="tool-right">
+                        <div class="result-placeholder" id="result-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                            <p>Keywords will appear here</p>
+                            <small>Enter a topic and click Generate</small>
+                        </div>
+
+                        <div class="result-card" id="result-card">
+                            <div class="result-card-header">
+                                <h3>Generated Keywords</h3>
+                                <span class="keyword-badge" id="keyword-count-badge">0 keywords</span>
+                            </div>
+                            <div class="result-card-body">
+                                <div class="kw-toolbar">
+                                    <div class="kw-search-wrap">
+                                        <svg class="kw-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                                        <input type="text" class="kw-search-input" id="kw-search-input" placeholder="Search keywords..." autocomplete="off">
+                                    </div>
+                                    <div class="kw-sort-wrap">
+                                        <span class="kw-sort-label">Sort:</span>
+                                        <select class="kw-sort-select" id="kw-sort-select">
+                                            <option value="default">Default</option>
+                                            <option value="length">Length</option>
+                                            <option value="alpha">A–Z</option>
+                                            <option value="score">Relevance</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="kw-stats-bar" id="kw-stats-bar">
+                                    <div class="kw-stat">
+                                        <span class="kw-stat-value" id="kw-stat-total">0</span>
+                                        <span class="kw-stat-label">Total</span>
+                                    </div>
+                                    <div class="kw-stat">
+                                        <span class="kw-stat-value" id="kw-stat-favorites">0</span>
+                                        <span class="kw-stat-label">Favorites</span>
+                                    </div>
+                                    <div class="kw-stat">
+                                        <span class="kw-stat-value" id="kw-stat-avg-length">0</span>
+                                        <span class="kw-stat-label">Avg Length</span>
+                                    </div>
+                                    <div class="kw-stat">
+                                        <span class="kw-stat-value" id="kw-stat-words">0</span>
+                                        <span class="kw-stat-label">Avg Words</span>
+                                    </div>
+                                    <div class="kw-stat">
+                                        <span class="kw-stat-value" id="kw-stat-top-score">0</span>
+                                        <span class="kw-stat-label">Top Score</span>
+                                    </div>
+                                </div>
+                                <div class="keywords-list" id="keywords-list"></div>
+                                <div class="result-actions">
+                                    <button class="copy-all-btn" id="copy-all-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                                        Copy All
+                                    </button>
+                                    <button class="kw-export-btn" id="kw-export-txt">TXT</button>
+                                    <button class="kw-export-btn" id="kw-export-csv">CSV</button>
+                                    <button class="kw-export-btn" id="kw-export-json">JSON</button>
+                                    <button class="kw-export-btn" id="kw-export-md">Markdown</button>
+                                    <button class="clear-btn" id="clear-results-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+                                        Clear
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Related Tools -->
-            <section class="content-section">
-                <div class="section-header">
-                    <h2>Related Tools</h2>
-                </div>
-                <div class="tools-grid">
-                    <div class="card tool-card">
-                        <h3>Word Counter</h3>
-                        <p>Count words, characters, sentences, and paragraphs in your text.</p>
-                        <div class="card-footer">
-                            <a href="./word-counter" class="btn btn-primary btn-sm">Use Tool</a>
-                        </div>
-                    </div>
-                    <div class="card tool-card">
-                        <h3>Text Cleaner</h3>
-                        <p>Clean up extra spaces, empty lines, and formatting issues.</p>
-                        <div class="card-footer">
-                            <a href="./text-cleaner" class="btn btn-primary btn-sm">Use Tool</a>
-                        </div>
-                    </div>
-                    <div class="card tool-card">
-                        <h3>URL Slug Generator</h3>
-                        <p>Create clean, SEO-friendly URL slugs from any text.</p>
-                        <div class="card-footer">
-                            <a href="./url-slug-generator" class="btn btn-primary btn-sm">Use Tool</a>
-                        </div>
-                    </div>
-                    <div class="card tool-card">
-                        <h3>Text Summarizer</h3>
-                        <p>Condense articles and long documents into key points.</p>
-                        <div class="card-footer">
-                            <a href="./text-summarizer" class="btn btn-primary btn-sm">Use Tool</a>
-                        </div>
-                    </div>
-                </div>
-                <p style="margin-top: var(--space-4); text-align: center;">
-                    <a href="../guides/keyword-generator" style="color: var(--color-primary);">Read Guide: Keyword Generator ?</a>
-                </p>
-            </section>
+            </div>
         </div>
+
+        <section class="related-section content-section" style="margin-top:48px">
+            <div class="section-heading">
+                <h2>Related Tools</h2>
+                <p class="section-intro">After generating keywords, you might also need...</p>
+            </div>
+            <div class="related-grid">
+                <a href="./word-counter" class="related-card">
+                    <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+                    <h4>Word Counter</h4>
+                    <p>Count words, characters, sentences, and paragraphs in your text.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./text-cleaner" class="related-card">
+                    <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg></div>
+                    <h4>Text Cleaner</h4>
+                    <p>Clean up extra spaces, empty lines, and formatting issues.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./case-converter" class="related-card">
+                    <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg></div>
+                    <h4>Case Converter</h4>
+                    <p>Convert text to UPPERCASE, lowercase, Title Case, camelCase, and more.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+            </div>
+        </section>
+
+        <section class="how-section content-section" style="margin-top:48px">
+            <div class="section-heading"><h2>How It Works</h2></div>
+            <div class="steps-grid">
+                <div class="step-card"><div class="step-num">1</div><h4>Enter Topic</h4><p>Type your main topic or seed keyword into the input field.</p></div>
+                <div class="step-card"><div class="step-num">2</div><h4>Generate Ideas</h4><p>Click Generate to get relevant keyword suggestions instantly.</p></div>
+                <div class="step-card"><div class="step-num">3</div><h4>Copy Keywords</h4><p>Copy the generated keywords for your SEO and content strategy.</p></div>
+            </div>
+        </section>
+
+        <section class="faq-section content-section" style="margin-top:48px">
+            <div class="section-heading"><h2>Frequently Asked Questions</h2></div>
+            <div class="faq-grid">
+                <div class="faq-card"><h4>How many keywords can I generate?</h4><p>You can generate up to 50 keyword ideas per search. There is no daily limit.</p></div>
+                <div class="faq-card"><h4>Is the keyword data stored?</h4><p>No. All processing happens locally in your browser. Your keywords never leave your device.</p></div>
+                <div class="faq-card"><h4>Can I export the keywords?</h4><p>Yes. You can copy individual keywords or copy the full list as comma-separated text.</p></div>
+                <div class="faq-card"><h4>Are the keywords searchable?</h4><p>The tool generates keyword ideas based on your input, but does not provide search volume data.</p></div>
+            </div>
+            <div style="text-align:center;margin-top:var(--space-8)">
+                <a href="/guides/keyword-generator" style="color:var(--color-primary);font-weight:600;font-size:var(--text-sm);text-decoration:none;transition:opacity .2s">Read Guide: How to Use Keyword Generator &#10132;</a>
+            </div>
+        </section>
     </main>
-    
-    <!-- Footer -->
-    <footer class="site-footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>GoToolly</h3>
-                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">
-                        Free, privacy-focused online tools that work entirely in your browser.
-                    </p>
+
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p>
                     <div class="footer-social">
                         <a href="https://x.com/GoToolly" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                         <a href="https://www.facebook.com/profile.php?id=61591898344203" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                        <a href="https://linkedin.com/in/go-toolly-426b67422" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                        <a href="https://www.youtube.com/@GoToolly" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                         <a href="https://www.instagram.com/gotoolly/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
                         <a href="https://www.tiktok.com/@gotoolly26" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
                         <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Popular Tools</h3>
-                    <ul class="footer-links">
-                        <li><a href="/tools/image-compressor.html">Image Compressor</a></li>
-                        <li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li>
-                        <li><a href="/tools/word-counter.html">Word Counter</a></li>
-                        <li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li>
-                        <li><a href="/tools/password-generator.html">Password Generator</a></li>
-                        <li><a href="/tools">View All Tools</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Resources</h3>
-                    <ul class="footer-links">
-                        <li><a href="/guides">Guides</a></li>
-                        <li><a href="/tools">All Tools</a></li>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Legal</h3>
-                    <ul class="footer-links">
-                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
-                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
-                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="copyright">
-                    &copy; <span id="current-year">2026</span> GoToolly. All rights reserved.
-                </div>
-                <div class="legal-links">
-                    <a href="/legal/privacy-policy">Privacy</a>
-                    <a href="/legal/terms-of-service">Terms</a>
-                    <a href="/legal/disclaimer">Disclaimer</a>
-                    <a href="/contact">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
-    <script defer src="/assets/js/main.min.js"></script>
-    <script src="/assets/js/tools/keyword-generator.min.js"></script>
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+                    </div></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor.html">Image Compressor</a></li><li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li><li><a href="/tools/word-counter.html">Word Counter</a></li><li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li><li><a href="/tools/password-generator.html">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+    <script defer src="../assets/js/main.min.js"></script>
+    <script>document.getElementById('current-year').textContent=new Date().getFullYear()</script>
+    <script defer src="../assets/js/tools/keyword-generator.min.js"></script>
 </body>
 </html>
-
-
-
-
-

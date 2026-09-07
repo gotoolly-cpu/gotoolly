@@ -10,17 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var progressText = document.getElementById('progress-text');
     var archiveFile = null;
     var processed = false;
-    function showNotification(message, isError) {
-        var existing = document.querySelector('.notification');
-        if (existing) existing.remove();
-        var el = document.createElement('div');
-        el.className = 'notification' + (isError ? ' error' : '');
-        el.textContent = message;
-        document.body.appendChild(el);
-        setTimeout(function () {
-            el.remove();
-        }, 3500);
-    }
     function formatSize(bytes) {
         if (bytes < 1024) return bytes + ' B';
         if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
@@ -185,7 +174,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 progressText.textContent = 'Parsing headers...';
                 var files = parseRarHeaders(data);
                 if (files === null) {
-                    showNotification('Not a valid RAR file', true);
                     applyBtn.disabled = false;
                     progressSection.style.display = 'none';
                     return;
@@ -198,20 +186,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 progressText.textContent = 'Done!';
                 if (files.length > 0) {
                     showRarSection(files);
-                    showNotification(
-                        'Found ' +
-                            files.length +
-                            ' file(s) in RAR archive. Full extraction requires desktop software.',
-                    );
                 } else {
                     showRarSection([]);
-                    showNotification(
-                        'No file entries found in RAR archive.',
-                        true,
-                    );
                 }
             } catch (err) {
-                showNotification('Error reading RAR: ' + err.message, true);
                 applyBtn.disabled = false;
                 progressSection.style.display = 'none';
             }

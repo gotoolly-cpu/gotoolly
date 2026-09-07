@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,9 +6,7 @@
     <title>Text Cleaner - Remove Extra Spaces & Clean Text | GoToolly</title>
     <meta name="description" content="Clean and normalize text instantly. Remove extra spaces, empty lines, and unwanted characters. Perfect for cleaning pasted text.">
     <meta name="keywords" content="text cleaner, remove spaces, clean text, normalize text, text formatting tool">
-    <!-- Canonical -->
     <link rel="canonical" href="https://gotoolly.com/tools/text-cleaner">
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gotoolly.com/tools/text-cleaner">
     <meta property="og:title" content="Text Cleaner - Remove Extra Spaces & Clean Text | GoToolly">
@@ -18,99 +16,291 @@
     <meta property="og:image:height" content="512">
     <meta property="og:image:alt" content="GoToolly Logo">
     <meta property="og:site_name" content="GoToolly">
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://gotoolly.com/tools/text-cleaner">
     <meta name="twitter:title" content="Text Cleaner - Remove Extra Spaces & Clean Text | GoToolly">
-    <meta name="twitter:description" content="Clean and normalize text instantly. Remove extra spaces, empty lines, and unwanted characters. Perfect for cleaning pasted text.">
+    <meta name="twitter:description" content="Clean and normalize text instantly. Remove extra spaces, empty lines, and unwanted characters.">
     <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
     <meta name="twitter:image:alt" content="GoToolly Logo">
     <meta name="twitter:creator" content="@GoToolly">
-    
-    <!-- Favicon & Manifest -->
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
-    
-    <!-- Critical CSS: preload and non-blocking load -->
-    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    
-    <!-- Fonts -->
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/font-awesome.all.min.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Text Cleaner",
-        "url": "https://gotoolly.com/tools/text-cleaner",
-        "description": "Clean and normalize text instantly. Remove extra spaces, empty lines, and unwanted characters. Perfect for cleaning pasted text.",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any (Web Browser)",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "featureList": [
-            "Free to use",
-            "No account required",
-            "Client-side processing",
-            "Privacy-focused"
-        ]
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
-            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gotoolly.com/tools"},
-            {"@type": "ListItem", "position": 3, "name": "Text Cleaner", "item": "https://gotoolly.com/tools/text-cleaner"}
-        ]
-    }
-    </script>
+    <style>
+        /* ========== SKIP LINK ========== */
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .25s cubic-bezier(.4,0,.2,1)}
+        .skip-link:focus{top:0}
 
-    <style>        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--color-primary);
-            color: white;
-            padding: 8px 16px;
-            z-index: 100;
-            transition: top 0.3s;
+        /* ========== HERO ========== */
+        .hero{background:#0f172a;padding:40px 0 28px;text-align:center}
+        .hero h1{font-size:40px;font-weight:800;color:#fff;line-height:1.2;margin:0 0 12px}
+        .hero h1 .gradient-text{background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-subtitle{font-size:16px;color:#94a3b8;line-height:1.5;margin:0 0 24px}
+        .trust-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .trust-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:6px 14px;border-radius:9999px;font-size:13px;font-weight:500;color:#cbd5e1;transition:background .2s}
+        .trust-badge:hover{background:rgba(255,255,255,.1)}
+        .trust-badge svg{width:14px;height:14px;color:#60a5fa}
+
+        /* ========== TOOL WORKSPACE ========== */
+        .tool-workspace{max-width:900px;margin:0 auto}
+
+        /* ========== TOOL CARD ========== */
+        .tool-card{background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.04);border:1px solid #e2e8f0;padding:24px;margin-bottom:48px;overflow:visible}
+        .card-header{display:flex;justify-content:space-between;align-items:center}
+        .card-header-left{display:flex;align-items:center;gap:10px}
+        .card-header-left svg{width:18px;height:18px;color:var(--color-primary)}
+        .card-header-left h2{font-size:16.8px;font-weight:600;margin:0;color:#0f172a}
+        .status-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:9999px;font-size:11px;font-weight:600;letter-spacing:.3px;text-transform:uppercase}
+        .status-badge::before{content:'';width:6px;height:6px;border-radius:50%;flex-shrink:0}
+        .status-badge.ready{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+        .status-badge.ready::before{background:#22c55e}
+        .status-badge.done{background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe}
+        .status-badge.done::before{background:#2563eb}
+        .status-badge.clean{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+        .status-badge.clean::before{background:#22c55e}
+        .card-divider{height:1px;background:#e2e8f0;margin:16px 0 0}
+
+        /* ========== WORKSPACE BODY ========== */
+        .workspace-body{display:flex;flex-direction:column;gap:0}
+
+        /* ========== TEXTAREA INPUT ========== */
+        .input-section{margin-top:20px}
+        .textarea-wrap textarea{width:100%;min-height:200px;padding:16px 18px;border:1px solid #e2e8f0;border-radius:12px;font-size:14px;font-family:'JetBrains Mono',monospace;color:#0f172a;background:#f8fafc;resize:vertical;box-sizing:border-box;transition:border-color .2s,box-shadow .2s,background .2s;line-height:1.6}
+        .textarea-wrap textarea:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.1);background:#fff}
+        .textarea-wrap textarea::placeholder{color:#94a3b8;font-family:'Inter',sans-serif}
+
+        /* ========== SETTINGS CARD (OPTIONS) ========== */
+        .settings-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin-top:16px}
+        .settings-card-header{padding:16px 20px;border-bottom:1px solid #e2e8f0}
+        .settings-card-header h3{font-size:15px;font-weight:600;margin:0;color:#0f172a}
+        .settings-card-body{padding:20px}
+        .options-group{display:flex;flex-direction:column;gap:8px}
+        .option-row{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;border:1px solid #e2e8f0;border-radius:10px;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1);background:#fff}
+        .option-row:hover{border-color:rgba(37,99,235,.3);background:rgba(37,99,235,.02);box-shadow:0 2px 8px rgba(37,99,235,.06);transform:translateY(-1px)}
+        .option-row:has(input:checked){border-color:rgba(37,99,235,.3);background:rgba(37,99,235,.03)}
+        .option-row input[type="checkbox"]{width:18px;height:18px;accent-color:#2563eb;margin-top:1px;flex-shrink:0;cursor:pointer;transition:transform .15s}
+        .option-row input[type="checkbox"]:active{transform:scale(.9)}
+        .option-row .option-label{font-size:14px;font-weight:500;color:#0f172a;cursor:pointer}
+        .option-row .option-desc{font-size:12px;color:#64748b;margin-top:2px;line-height:1.5}
+
+        /* ========== ACTION BAR ========== */
+        .action-bar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+        .action-bar .btn-primary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:#2563eb;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .action-bar .btn-primary:hover:not(:disabled){background:#1d4ed8;transform:translateY(-1px);box-shadow:0 8px 25px rgba(37,99,235,.35)}
+        .action-bar .btn-primary:disabled{opacity:.5;cursor:not-allowed}
+        .action-bar .btn-secondary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:#fff;color:#0f172a;border:1px solid #e2e8f0;border-radius:12px;font-size:15px;font-weight:500;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .action-bar .btn-secondary:hover{border-color:#cbd5e1;background:#f8fafc;transform:translateY(-1px)}
+
+        /* ========== PRIVACY BADGE ========== */
+        .privacy-badge{display:flex;align-items:center;gap:8px;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;padding:10px 16px;border-radius:10px;margin-top:16px;font-size:13px;font-weight:500}
+        .privacy-badge svg{width:16px;height:16px;flex-shrink:0}
+
+        /* ========== RESULT PLACEHOLDER ========== */
+        .result-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:200px;padding:40px 20px;color:#94a3b8;text-align:center;margin-top:16px;background:#f8fafc;border:1px dashed #e2e8f0;border-radius:12px}
+        .result-placeholder svg{width:48px;height:48px;color:#cbd5e1;margin-bottom:12px}
+        .result-placeholder p{font-size:14px;font-weight:500;margin:0}
+        .result-placeholder small{font-size:12px;margin:4px 0 0;color:#94a3b8}
+
+        /* ========== RESULTS PANEL ========== */
+        .results-panel{display:none;text-align:center;padding:0;margin-top:20px}
+        .results-panel.show{display:block}
+
+        /* ========== SUCCESS BANNER ========== */
+        .success-banner{display:flex;flex-direction:column;align-items:center;text-align:center;padding:32px 20px;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border:1px solid #bbf7d0;border-radius:16px;margin-bottom:20px}
+        .success-banner.clean{background:linear-gradient(135deg,#eff6ff,#f0f9ff);border-color:#bfdbfe}
+        .success-banner .banner-icon{width:64px;height:64px;border-radius:50%;background:#dcfce7;border:2px solid #bbf7d0;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+        .success-banner.clean .banner-icon{background:#dbeafe;border-color:#bfdbfe}
+        .success-banner .banner-icon svg{width:32px;height:32px;stroke-width:2.5}
+        .success-banner .banner-icon svg{color:#16a34a}
+        .success-banner.clean .banner-icon svg{color:#2563eb}
+        .success-banner h3{font-size:20px;font-weight:700;margin:0 0 6px;color:#0f172a}
+        .success-banner p{font-size:14px;color:#64748b;margin:0 0 4px;line-height:1.6}
+
+        /* ========== SUMMARY CARD ========== */
+        .summary-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin-bottom:20px;text-align:left}
+        .summary-header{padding:16px 20px;border-bottom:1px solid #e2e8f0}
+        .summary-header h3{font-size:15px;font-weight:600;margin:0;color:#0f172a}
+        .summary-body{padding:4px 20px}
+        .summary-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+        .summary-row:not(:last-child){border-bottom:1px solid #f1f5f9}
+        .summary-label{display:flex;align-items:center;gap:8px;font-size:13px;color:#64748b;font-weight:500}
+        .summary-label svg{width:16px;height:16px;color:#94a3b8;flex-shrink:0}
+        .summary-value{font-size:14px;font-weight:600;color:#0f172a;font-family:'JetBrains Mono',monospace}
+        .summary-value.positive{color:#16a34a}
+        .summary-value.neutral{color:#64748b}
+
+        /* ========== STATS CARD ========== */
+        .stats-card{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+        .stat-box{padding:16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;transition:border-color .2s;text-align:left}
+        .stat-box:hover{border-color:#cbd5e1}
+        .stat-box .stat-label{font-size:12px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.5px}
+        .stat-box .stat-value{font-size:20px;font-weight:700;font-family:'JetBrains Mono',monospace;color:#0f172a;margin-top:4px}
+        .stat-box.reduction .stat-value{color:#16a34a}
+        .stat-box.hidden{display:none}
+
+        /* ========== STATS SIMPLE ========== */
+        .stats-simple{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+        .stats-simple .stat-box .stat-value.status-clean{color:#16a34a}
+
+        /* ========== OPERATIONS CARD ========== */
+        .operations-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin-bottom:20px;text-align:left}
+        .operations-header{padding:16px 20px;border-bottom:1px solid #e2e8f0}
+        .operations-header h3{font-size:15px;font-weight:600;margin:0;color:#0f172a}
+        .operations-body{padding:4px 20px}
+        .operation-item{display:flex;align-items:flex-start;gap:10px;padding:12px 0;font-size:14px;color:#0f172a}
+        .operation-item:not(:last-child){border-bottom:1px solid #f1f5f9}
+        .operation-item .op-icon{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+        .operation-item .op-icon svg{width:12px;height:12px;stroke-width:3}
+        .operation-item.changed .op-icon{background:#dcfce7}
+        .operation-item.changed .op-icon svg{color:#16a34a}
+        .operation-item.no-change .op-icon{background:#eff6ff}
+        .operation-item.no-change .op-icon svg{color:#64748b}
+        .operation-item.not-selected .op-icon{background:#f1f5f9}
+        .operation-item.not-selected .op-icon svg{color:#94a3b8}
+        .operation-content{display:flex;flex-direction:column;gap:2px;flex:1}
+        .operation-name{font-weight:500}
+        .operation-item.changed .operation-name{color:#0f172a}
+        .operation-item.no-change .operation-name{color:#0f172a}
+        .operation-item.not-selected .operation-name{color:#94a3b8}
+        .operation-subtext{font-size:12px;color:#94a3b8}
+
+        /* ========== TEXT COMPARISON CARDS ========== */
+        .text-comparison-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin-bottom:16px;text-align:left}
+        .comparison-header{padding:14px 20px;border-bottom:1px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center}
+        .comparison-header .header-left{display:flex;align-items:center;gap:12px}
+        .comparison-header h3{font-size:14px;font-weight:600;margin:0;color:#0f172a}
+        .comparison-header .header-stats{display:flex;gap:12px}
+        .comparison-header .header-stat{font-size:12px;color:#94a3b8;font-family:'JetBrains Mono',monospace}
+        .copy-small-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;background:none;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;font-weight:500;color:#64748b;cursor:pointer;transition:all .15s}
+        .copy-small-btn:hover{border-color:#2563eb;color:#2563eb}
+        .copy-small-btn.copied{border-color:#16a34a;color:#16a34a}
+        .text-comparison-card .result-box{border:none;border-radius:0;border-top:none}
+
+        /* ========== RESULT BOX ========== */
+        .result-box{background:#f8fafc;border:1px solid #e2e8f0;border-radius:0 0 14px 14px;padding:16px 20px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.7;white-space:pre-wrap;word-break:break-word;min-height:80px;color:#0f172a;max-height:400px;overflow:auto}
+
+        /* ========== RESULTS ACTIONS ========== */
+        .results-actions{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+        .results-actions .btn-primary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 24px;background:#2563eb;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:600;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1);height:56px}
+        .results-actions .btn-primary:hover{background:#1d4ed8;transform:translateY(-2px);box-shadow:0 8px 25px rgba(37,99,235,.35)}
+        .results-actions-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+        .results-actions .btn-secondary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:#fff;color:#0f172a;border:1px solid #e2e8f0;border-radius:12px;font-size:15px;font-weight:500;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1);height:52px}
+        .results-actions .btn-secondary:hover{border-color:#cbd5e1;background:#f8fafc;transform:translateY(-1px)}
+
+        /* ========== TOAST ========== */
+        .toast{position:fixed;top:16px;right:16px;padding:12px 20px;border-radius:10px;font-size:13px;font-weight:500;z-index:1000;transform:translateX(400px);opacity:0;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 4px 12px rgba(0,0,0,.1);display:flex;align-items:center;gap:8px}
+        .toast.show{transform:translateX(0);opacity:1}
+        .toast.success{background:#16a34a;color:#fff}
+        .toast.error{background:#ef4444;color:#fff}
+        .toast svg{width:16px;height:16px;flex-shrink:0}
+
+        /* ========== RELATED TOOLS ========== */
+        .related-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .related-section .section-intro{font-size:14px;color:#64748b;text-align:center;margin-bottom:24px}
+        .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .related-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit;display:flex;flex-direction:column}
+        .related-card:hover{border-color:#2563eb;box-shadow:0 8px 24px rgba(37,99,235,.1);transform:translateY(-3px)}
+        .related-card .rc-icon{width:32px;height:32px;margin-bottom:12px}
+        .related-card .rc-icon svg{width:32px;height:32px;color:#2563eb;transition:transform .25s cubic-bezier(.4,0,.2,1)}
+        .related-card:hover .rc-icon svg{transform:scale(1.1)}
+        .related-card h4{font-size:15px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .related-card p{font-size:13px;color:#64748b;margin:0 0 16px;flex:1}
+        .related-card .rc-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#2563eb;margin-top:auto;transition:gap .2s}
+        .related-card:hover .rc-btn{gap:10px}
+
+        /* ========== HOW IT WORKS ========== */
+        .how-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .step-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:24px;text-align:center;transition:border-color .2s,box-shadow .2s}
+        .step-card:hover{border-color:rgba(37,99,235,.2);box-shadow:0 2px 8px rgba(37,99,235,.06)}
+        .step-num{width:40px;height:40px;border-radius:50%;background:#eff6ff;color:#2563eb;font-size:16px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-bottom:12px;transition:background .2s}
+        .step-card:hover .step-num{background:#dbeafe}
+        .step-card h4{font-size:15px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .step-card p{font-size:13px;color:#64748b;margin:0}
+
+        /* ========== FAQ ========== */
+        .faq-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .faq-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+        .faq-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:border-color .2s}
+        .faq-card:hover{border-color:#cbd5e1}
+        .faq-card h4{font-size:14px;font-weight:600;margin:0 0 8px;color:#0f172a}
+        .faq-card p{font-size:13px;color:#64748b;margin:0;line-height:1.6}
+
+        /* ========== SECTION HEADINGS ========== */
+        .section-heading{text-align:center;margin-bottom:32px}
+        .section-heading h2{font-size:28.8px;font-weight:700;color:#0f172a;margin:0 0 4px}
+        .section-heading .section-intro{font-size:14px;color:#64748b;margin:0}
+
+        /* ========== RESPONSIVE ========== */
+        @media(max-width:1024px){
+            .related-grid{grid-template-columns:repeat(2,1fr)}
+            .faq-grid{grid-template-columns:repeat(2,1fr)}
         }
-        .skip-link:focus {
-            top: 0;
+        @media(max-width:768px){
+            .hero{padding:32px 0 20px}
+            .hero h1{font-size:28px}
+            .hero-subtitle{font-size:14px;margin-bottom:20px}
+            .trust-badges{gap:8px}
+            .trust-badge{padding:4px 10px;font-size:12px}
+            .tool-card{padding:16px;margin-bottom:32px}
+            .stats-card{grid-template-columns:1fr 1fr}
+            .stats-simple{grid-template-columns:repeat(2,1fr)}
+            .action-bar{grid-template-columns:1fr}
+            .results-actions-row{grid-template-columns:1fr}
+            .related-grid{grid-template-columns:1fr}
+            .steps-grid{grid-template-columns:1fr}
+            .faq-grid{grid-template-columns:1fr}
+            .settings-card-body{padding:16px}
+            .option-row{padding:10px 12px}
+            .step-card{padding:20px}
+            .comparison-header{flex-direction:column;align-items:flex-start;gap:10px}
+            .comparison-header .header-stats{flex-wrap:wrap;gap:8px}
         }
-        .text-area-wrapper,.tool-actions{width:100%}.text-area{width:100%;box-sizing:border-box}.tool-actions{display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center}.tool-actions .btn{flex:1}.result-area{background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:2px solid #86efac;border-radius:12px;padding:var(--space-4);margin-top:var(--space-4)}.result-area h3{margin:0 0 var(--space-3);font-size:1rem;display:flex;align-items:center;gap:8px}.result-box{background:#fff;border:1px solid #d1d5db;border-radius:8px;padding:var(--space-3);font-family:'JetBrains Mono',monospace;font-size:14px;line-height:1.6;white-space:pre-wrap;word-break:break-word;min-height:60px}.tool-sidebar{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-4);margin-top:var(--space-6)}.tool-sidebar .card{margin:0}@media(max-width:768px){.tool-sidebar{grid-template-columns:1fr}.tool-actions{flex-direction:column}}
+        @media(max-width:480px){
+            .hero{padding:24px 0 16px}
+            .hero h1{font-size:24px}
+            .related-grid{gap:12px}
+            .stats-card{grid-template-columns:1fr}
+            .stats-simple{grid-template-columns:1fr}
+            .stats-card{gap:8px}
+            .stat-box .stat-value{font-size:18px}
+            .success-banner{padding:24px 16px}
+            .success-banner .banner-icon{width:56px;height:56px}
+        }
+
+        /* ========== REDUCED MOTION ========== */
+        @media(prefers-reduced-motion:reduce){
+            *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+        }
     </style>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"Text Cleaner","url":"https://gotoolly.com/tools/text-cleaner","description":"Clean and normalize text instantly. Remove extra spaces, empty lines, and unwanted characters. Perfect for cleaning pasted text.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Remove extra spaces","Remove empty lines","Trim lines","Remove special characters","Character statistics"]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Text Cleaner","item":"https://gotoolly.com/tools/text-cleaner"}]}
+    </script>
 
     <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-<!-- Header -->
+
     <header class="site-header">
         <div class="container">
             <div class="header-content">
-                <!-- Logo -->
-                <a href="/" class="logo">
-                    <img src="/assets/images/logo.svg" alt="GoToolly" class="logo-svg">
-                    <span class="logo-text">GoToolly</span>
-                </a>
-                
-                <!-- Desktop Navigation -->
+                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
                 <nav class="main-nav">
                     <a href="/" class="nav-link">Home</a>
                     <a href="/tools" class="nav-link active">Tools</a>
@@ -118,238 +308,345 @@
                     <a href="/about" class="nav-link">About</a>
                     <a href="/contact" class="nav-link">Contact</a>
                 </nav>
-                
-                <!-- Mobile Menu Button -->
                 <button class="mobile-menu-button" aria-label="Toggle navigation menu">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
             </div>
-            
-            <!-- Mobile Menu -->
-            <div class="mobile-menu">
-                <nav class="mobile-nav">
-                    <a href="/" class="nav-link">Home</a>
-                    <a href="/tools" class="nav-link active">Tools</a>
-                    <a href="/guides" class="nav-link">Guides</a>
-                    <a href="/about" class="nav-link">About</a>
-                    <a href="/contact" class="nav-link">Contact</a>
-                </nav>
-            </div>
+            <div class="mobile-menu"><nav class="mobile-nav">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/tools" class="nav-link active">Tools</a>
+                <a href="/guides" class="nav-link">Guides</a>
+                <a href="/about" class="nav-link">About</a>
+                <a href="/contact" class="nav-link">Contact</a>
+            </nav></div>
         </div>
     </header>
 
-    <main id="main-content" class="main-content">
+    <main id="main-content">
+        <section class="hero">
+            <div class="container">
+                <h1>Text <span class="gradient-text">Cleaner</span></h1>
+                <p class="hero-subtitle">Clean and normalize pasted text instantly. Remove extra spaces, empty lines, and unwanted characters with one click.</p>
+                <div class="trust-badges">
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> 100% Private</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg> Processed locally</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Free &amp; unlimited</span>
+                </div>
+            </div>
+        </section>
+
         <div class="container">
-            <div class="page-header">
-                <h1>Text Cleaner</h1>
-                <p class="page-description">
-                    Clean and normalize pasted text instantly. Remove extra spaces, empty lines, and unwanted characters. Perfect for cleaning data copied from websites, PDFs, or documents.
-                </p>
-            </div>
+            <div class="tool-workspace">
+                <div class="tool-card" role="region" aria-label="Text Cleaner workspace">
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            <h2>Text Cleaner</h2>
+                        </div>
+                        <span class="status-badge ready" id="status-badge" aria-live="polite">Ready</span>
+                    </div>
+                    <div class="card-divider"></div>
 
-            <div class="tool-layout">
-                <div class="tool-interface">
-                    <div class="tool-header">
-                        <h2>Clean Your Text</h2>
-                        <p>Paste messy text and let us normalize it</p>
-                    </div>
-                    
-                    <label for="text-input">
-                        <i class="fas fa-file-alt" style="color: var(--color-primary); margin-right: 6px;"></i>
-                        Enter Your Text
-                    </label>
-                    <div class="text-area-wrapper">
-                        <textarea id="text-input" class="text-area" placeholder="Paste your text here..." rows="10"></textarea>
-                    </div>
-                    
-                    <div class="clean-options">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="remove-extra-spaces" checked>
-                            Remove extra spaces
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="remove-empty-lines" checked>
-                            Remove empty lines
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="trim-lines">
-                            Trim line starts/ends
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="remove-special-chars">
-                            Remove special characters
-                        </label>
-                    </div>
-                    
-                    <button id="clean-btn" class="btn btn-primary btn-lg">Clean Text</button>
-                    
-                    <div id="result-area" class="result-area" style="display:none;">
-                        <h3>
-                            <i class="fas fa-check-circle" style="color: #10b981;"></i>
-                            Cleaned Text
-                        </h3>
-                        <div id="result-text" class="result-box"></div>
-                        <div class="tool-actions">
-                            <button id="copy-btn" class="btn btn-primary btn-sm">Copy Result</button>
-                            <button id="reset-btn" class="btn btn-secondary">Reset</button>
+                    <div class="workspace-body">
+
+                        <div class="input-section">
+                            <div class="textarea-wrap">
+                                <textarea id="text-input" placeholder="Paste your messy text here..." rows="10" aria-label="Text to clean"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div id="stats" class="stats-grid" style="display:none;">
-                        <div class="stat-box">
-                            <div class="stat-value" id="before-chars">0</div>
-                            <div class="stat-label">Characters (before)</div>
+
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Cleaning Options</h3>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="options-group" role="group" aria-label="Cleaning options">
+                                    <label class="option-row">
+                                        <input type="checkbox" id="remove-extra-spaces" checked>
+                                        <div>
+                                            <div class="option-label">Remove Extra Spaces</div>
+                                            <div class="option-desc">Converts multiple consecutive spaces into a single space.</div>
+                                        </div>
+                                    </label>
+                                    <label class="option-row">
+                                        <input type="checkbox" id="remove-empty-lines" checked>
+                                        <div>
+                                            <div class="option-label">Remove Empty Lines</div>
+                                            <div class="option-desc">Deletes blank lines while preserving content.</div>
+                                        </div>
+                                    </label>
+                                    <label class="option-row">
+                                        <input type="checkbox" id="trim-lines">
+                                        <div>
+                                            <div class="option-label">Trim Line Starts/Ends</div>
+                                            <div class="option-desc">Removes unnecessary leading and trailing whitespace from each line.</div>
+                                        </div>
+                                    </label>
+                                    <label class="option-row">
+                                        <input type="checkbox" id="remove-special-chars">
+                                        <div>
+                                            <div class="option-label">Remove Special Characters</div>
+                                            <div class="option-desc">Removes selected non-standard characters from the text.</div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
-                        <div class="stat-box">
-                            <div class="stat-value" id="after-chars">0</div>
-                            <div class="stat-label">Characters (after)</div>
+
+                        <div class="action-bar">
+                            <button id="clean-btn" class="btn-primary" aria-label="Clean text">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                                Clean Text
+                            </button>
+                            <button id="reset-btn" class="btn-secondary" aria-label="Clear all text and options">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+                                Clear All
+                            </button>
                         </div>
-                        <div class="stat-box">
-                            <div class="stat-value" id="removed-chars">0</div>
-                            <div class="stat-label">Characters removed</div>
+
+                        <div class="privacy-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            Your text never leaves your device. All cleaning happens locally in your browser.
                         </div>
-                    </div>
-                </div>
-                
-                <div class="tool-sidebar">
-                    <div class="card">
-                        <h3>How It Works</h3>
-                        <ol>
-                            <li>Paste your messy text</li>
-                            <li>Select cleaning options</li>
-                            <li>Click Clean Text</li>
-                            <li>Copy the result</li>
-                        </ol>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>Cleaning Options</h3>
-                        <ul>
-                            <li><strong>Extra Spaces:</strong> Removes multiple spaces</li>
-                            <li><strong>Empty Lines:</strong> Removes blank lines</li>
-                            <li><strong>Trim Lines:</strong> Removes leading/trailing whitespace</li>
-                            <li><strong>Special Chars:</strong> Removes non-alphanumeric characters</li>
-                        </ul>
+
+                        <div class="result-placeholder" id="result-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                            <p>Cleaned text will appear here</p>
+                            <small>Paste text and click Clean Text</small>
+                        </div>
+
+                        <div class="results-panel" id="results-panel" aria-live="polite">
+
+                            <div class="success-banner" id="success-banner">
+                                <div class="banner-icon" id="banner-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <h3 id="result-heading">Cleaning Complete</h3>
+                                <p id="result-line-1">1 cleaning operation modified your text.</p>
+                                <p id="result-line-2">3 characters were removed.</p>
+                                <p id="result-line-3">Your cleaned text is ready to copy or download.</p>
+                            </div>
+
+                            <div class="summary-card">
+                                <div class="summary-header">
+                                    <h3>Cleaning Summary</h3>
+                                </div>
+                                <div class="summary-body">
+                                    <div class="summary-row">
+                                        <span class="summary-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Operations Selected</span>
+                                        <span class="summary-value" id="summary-selected">0</span>
+                                    </div>
+                                    <div class="summary-row">
+                                        <span class="summary-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Operations Applied</span>
+                                        <span class="summary-value" id="summary-applied">0</span>
+                                    </div>
+                                    <div class="summary-row">
+                                        <span class="summary-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Changes Detected</span>
+                                        <span class="summary-value" id="summary-changes">No</span>
+                                    </div>
+                                    <div class="summary-row">
+                                        <span class="summary-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Current Status</span>
+                                        <span class="summary-value" id="summary-status">Already Clean</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="stats-card" id="stats-changes">
+                                <div class="stat-box">
+                                    <div class="stat-label">Characters Before</div>
+                                    <div class="stat-value" id="stat-chars-before">0</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-label">Characters After</div>
+                                    <div class="stat-value" id="stat-chars-after">0</div>
+                                </div>
+                                <div class="stat-box reduction">
+                                    <div class="stat-label">Characters Removed</div>
+                                    <div class="stat-value" id="stat-chars-removed">0</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-label">Words Before</div>
+                                    <div class="stat-value" id="stat-words-before">0</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-label">Words After</div>
+                                    <div class="stat-value" id="stat-words-after">0</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-label">Lines Before</div>
+                                    <div class="stat-value" id="stat-lines-before">0</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-label">Lines After</div>
+                                    <div class="stat-value" id="stat-lines-after">0</div>
+                                </div>
+                                <div class="stat-box reduction">
+                                    <div class="stat-label">Whitespace Removed</div>
+                                    <div class="stat-value" id="stat-ws-removed">0</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-label">Processing Time</div>
+                                    <div class="stat-value" id="stat-time">&lt;1 ms</div>
+                                </div>
+                            </div>
+
+                            <div class="stats-simple" id="stats-clean" style="display:none">
+                                <div class="stat-box">
+                                    <div class="stat-label">Characters</div>
+                                    <div class="stat-value" id="stat-clean-chars">0</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-label">Words</div>
+                                    <div class="stat-value" id="stat-clean-words">0</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-label">Lines</div>
+                                    <div class="stat-value" id="stat-clean-lines">0</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-label">Status</div>
+                                    <div class="stat-value status-clean">Already Clean</div>
+                                </div>
+                            </div>
+
+                            <div class="operations-card" id="operations-card">
+                                <div class="operations-header">
+                                    <h3>Operations Summary</h3>
+                                </div>
+                                <div class="operations-body" id="operations-list"></div>
+                            </div>
+
+                            <div class="text-comparison-card" id="text-single" style="display:none">
+                                <div class="comparison-header">
+                                    <div class="header-left">
+                                        <h3>Text Preview</h3>
+                                        <div class="header-stats" id="single-header-stats"></div>
+                                    </div>
+                                    <button class="copy-small-btn" id="copy-single-btn" type="button" aria-label="Copy text">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                                        Copy
+                                    </button>
+                                </div>
+                                <div class="result-box" id="single-text"></div>
+                            </div>
+
+                            <div id="text-dual">
+                                <div class="text-comparison-card">
+                                    <div class="comparison-header">
+                                        <div class="header-left">
+                                            <h3>Original Text</h3>
+                                            <div class="header-stats" id="original-header-stats"></div>
+                                        </div>
+                                        <button class="copy-small-btn" id="copy-original-btn" type="button" aria-label="Copy original text">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                                            Copy
+                                        </button>
+                                    </div>
+                                    <div class="result-box" id="original-text"></div>
+                                </div>
+                                <div class="text-comparison-card">
+                                    <div class="comparison-header">
+                                        <div class="header-left">
+                                            <h3>Cleaned Text</h3>
+                                            <div class="header-stats" id="cleaned-header-stats"></div>
+                                        </div>
+                                        <button class="copy-small-btn" id="copy-btn" type="button" aria-label="Copy cleaned text">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                                            Copy
+                                        </button>
+                                    </div>
+                                    <div class="result-box" id="result-text"></div>
+                                </div>
+                            </div>
+
+                            <div class="results-actions">
+                                <button class="btn-primary" id="copy-main-btn" type="button">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                                    Copy Cleaned Text
+                                </button>
+                                <div class="results-actions-row">
+                                    <button class="btn-secondary" id="download-txt-btn" type="button">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                        Download as TXT
+                                    </button>
+                                    <button class="btn-secondary" id="swap-result-btn" type="button">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+                                        Swap to Input
+                                    </button>
+                                </div>
+                                <button class="btn-secondary" id="clear-results-btn" type="button">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+                                    Clean Another
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
-
-            <!-- Related Tools -->
-            <section class="content-section">
-                <div class="section-header">
-                    <h2>Related Tools</h2>
-                </div>
-                <div class="tools-grid">
-                    <div class="card tool-card">
-                        <h3>Word Counter</h3>
-                        <p>Count words, characters, sentences, and paragraphs in your text.</p>
-                        <div class="card-footer">
-                            <a href="./word-counter" class="btn btn-primary btn-sm">Use Tool</a>
-                        </div>
-                    </div>
-                    <div class="card tool-card">
-                        <h3>Case Converter</h3>
-                        <p>Convert text between uppercase, lowercase, title case, and more.</p>
-                        <div class="card-footer">
-                            <a href="./case-converter" class="btn btn-primary btn-sm">Use Tool</a>
-                        </div>
-                    </div>
-                    <div class="card tool-card">
-                        <h3>Keyword Generator</h3>
-                        <p>Generate keyword ideas for your content and SEO strategy.</p>
-                        <div class="card-footer">
-                            <a href="./keyword-generator" class="btn btn-primary btn-sm">Use Tool</a>
-                        </div>
-                    </div>
-                    <div class="card tool-card">
-                        <h3>Duplicate Line Remover</h3>
-                        <p>Remove duplicate lines from text lists and CSV data.</p>
-                        <div class="card-footer">
-                            <a href="./duplicate-line-remover" class="btn btn-primary btn-sm">Use Tool</a>
-                        </div>
-                    </div>
-                </div>
-                <p style="margin-top: var(--space-4); text-align: center;">
-                    <a href="../guides/text-cleaner" style="color: var(--color-primary);">Read Guide: Text Cleaner ?</a>
-                </p>
-            </section>
         </div>
+
+        <section class="related-section content-section" style="margin-top:48px">
+            <div class="section-heading">
+                <h2>Related Tools</h2>
+                <p class="section-intro">After cleaning your text, you might also need...</p>
+            </div>
+            <div class="related-grid">
+                <a href="./word-counter" class="related-card">
+                    <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+                    <h4>Word Counter</h4>
+                    <p>Count words, characters, sentences, and paragraphs in your text.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./case-converter" class="related-card">
+                    <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg></div>
+                    <h4>Case Converter</h4>
+                    <p>Convert text between uppercase, lowercase, title case, and more.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./keyword-generator" class="related-card">
+                    <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                    <h4>Keyword Generator</h4>
+                    <p>Generate keyword ideas for your content and SEO strategy.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+            </div>
+        </section>
+
+        <section class="how-section content-section" style="margin-top:48px">
+            <div class="section-heading"><h2>How It Works</h2></div>
+            <div class="steps-grid">
+                <div class="step-card"><div class="step-num">1</div><h4>Paste Text</h4><p>Paste or type your text into the input area.</p></div>
+                <div class="step-card"><div class="step-num">2</div><h4>Choose Options</h4><p>Select cleaning options: extra spaces, empty lines, special characters, etc.</p></div>
+                <div class="step-card"><div class="step-num">3</div><h4>Clean &amp; Copy</h4><p>Click Clean to process your text, then copy the result.</p></div>
+            </div>
+        </section>
+
+        <section class="faq-section content-section" style="margin-top:48px">
+            <div class="section-heading"><h2>Frequently Asked Questions</h2></div>
+            <div class="faq-grid">
+                <div class="faq-card"><h4>Is my text stored on a server?</h4><p>No. All cleaning happens locally in your browser. Your text never leaves your device.</p></div>
+                <div class="faq-card"><h4>What cleaning options are available?</h4><p>You can remove extra spaces, empty lines, special characters, and trim line whitespace.</p></div>
+                <div class="faq-card"><h4>Can I undo the cleaning?</h4><p>You can modify the original text in the input area and clean again with different options.</p></div>
+                <div class="faq-card"><h4>Is there a text size limit?</h4><p>There is no enforced limit. You can clean very large texts without issues.</p></div>
+            </div>
+            <div style="text-align:center;margin-top:var(--space-8)">
+                <a href="/guides/text-cleaner" style="color:var(--color-primary);font-weight:600;font-size:var(--text-sm);text-decoration:none;transition:opacity .2s">Read Guide: How to Use Text Cleaner &#10132;</a>
+            </div>
+        </section>
     </main>
-    
-    <!-- Footer -->
-    <footer class="site-footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>GoToolly</h3>
-                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">
-                        Free, privacy-focused online tools that work entirely in your browser.
-                    </p>
+
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p>
                     <div class="footer-social">
                         <a href="https://x.com/GoToolly" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                         <a href="https://www.facebook.com/profile.php?id=61591898344203" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                        <a href="https://linkedin.com/in/go-toolly-426b67422" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                        <a href="https://www.youtube.com/@GoToolly" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                         <a href="https://www.instagram.com/gotoolly/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
                         <a href="https://www.tiktok.com/@gotoolly26" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
                         <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Popular Tools</h3>
-                    <ul class="footer-links">
-                        <li><a href="/tools/image-compressor.html">Image Compressor</a></li>
-                        <li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li>
-                        <li><a href="/tools/word-counter.html">Word Counter</a></li>
-                        <li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li>
-                        <li><a href="/tools/password-generator.html">Password Generator</a></li>
-                        <li><a href="/tools">View All Tools</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Resources</h3>
-                    <ul class="footer-links">
-                        <li><a href="/guides">Guides</a></li>
-                        <li><a href="/tools">All Tools</a></li>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Legal</h3>
-                    <ul class="footer-links">
-                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
-                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
-                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="copyright">
-                    &copy; <span id="current-year">2026</span> GoToolly. All rights reserved.
-                </div>
-                <div class="legal-links">
-                    <a href="/legal/privacy-policy">Privacy</a>
-                    <a href="/legal/terms-of-service">Terms</a>
-                    <a href="/legal/disclaimer">Disclaimer</a>
-                    <a href="/contact">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
-    <script defer src="/assets/js/main.min.js"></script>
-    <script src="/assets/js/tools/text-cleaner.min.js"></script>
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+                    </div></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor.html">Image Compressor</a></li><li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li><li><a href="/tools/word-counter.html">Word Counter</a></li><li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li><li><a href="/tools/password-generator.html">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+    <script defer src="../assets/js/main.min.js"></script>
+    <script defer src="../assets/js/tools/text-cleaner.js"></script>
+    <script>document.getElementById('current-year').textContent=new Date().getFullYear()</script>
 </body>
 </html>
-
-
-
