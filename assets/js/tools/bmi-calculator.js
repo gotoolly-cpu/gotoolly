@@ -1,23 +1,28 @@
+/* ============================================
+   GO TOOLLY v2.0 - BMI CALCULATOR
+   ============================================ */
+(function(){
+'use strict';
 document.addEventListener('DOMContentLoaded', function() {
-    const metricBtn = document.getElementById('bmi-metric-btn');
-    const imperialBtn = document.getElementById('bmi-imperial-btn');
-    const metricSection = document.getElementById('bmi-metric');
-    const imperialSection = document.getElementById('bmi-imperial');
-    const heightCm = document.getElementById('bmi-height-cm');
-    const weightKg = document.getElementById('bmi-weight-kg');
-    const heightFt = document.getElementById('bmi-height-ft');
-    const heightIn = document.getElementById('bmi-height-in');
-    const weightLbs = document.getElementById('bmi-weight-lbs');
-    const calcBtn = document.getElementById('bmi-calculate-btn');
-    const resultDiv = document.getElementById('bmi-result');
-    const bmiValue = document.getElementById('bmi-value');
-    const bmiCategory = document.getElementById('bmi-category');
-    const barIndicator = document.getElementById('bmi-bar-indicator');
-    const rangeValue = document.getElementById('bmi-range-value');
-    const copyBtn = document.getElementById('bmi-copy-btn');
-    const clearBtn = document.getElementById('bmi-clear-btn');
+    var metricBtn = document.getElementById('bmi-metric-btn');
+    var imperialBtn = document.getElementById('bmi-imperial-btn');
+    var metricSection = document.getElementById('bmi-metric');
+    var imperialSection = document.getElementById('bmi-imperial');
+    var heightCm = document.getElementById('bmi-height-cm');
+    var weightKg = document.getElementById('bmi-weight-kg');
+    var heightFt = document.getElementById('bmi-height-ft');
+    var heightIn = document.getElementById('bmi-height-in');
+    var weightLbs = document.getElementById('bmi-weight-lbs');
+    var calcBtn = document.getElementById('bmi-calculate-btn');
+    var resultDiv = document.getElementById('bmi-result');
+    var bmiValue = document.getElementById('bmi-value');
+    var bmiCategory = document.getElementById('bmi-category');
+    var barIndicator = document.getElementById('bmi-bar-indicator');
+    var rangeValue = document.getElementById('bmi-range-value');
+    var copyBtn = document.getElementById('bmi-copy-btn');
+    var clearBtn = document.getElementById('bmi-clear-btn');
 
-    let isMetric = true;
+    var isMetric = true;
 
     function setActiveToggle(metric) {
         isMetric = metric;
@@ -31,20 +36,20 @@ document.addEventListener('DOMContentLoaded', function() {
     imperialBtn.addEventListener('click', function() { setActiveToggle(false); });
 
     function calculateBMI() {
-        let bmi, heightM, weightK;
+        var bmi, heightM, weightK;
         if (isMetric) {
-            const hCm = parseFloat(heightCm.value);
-            const wKg = parseFloat(weightKg.value);
+            var hCm = parseFloat(heightCm.value);
+            var wKg = parseFloat(weightKg.value);
             if (isNaN(hCm) || isNaN(wKg) || hCm <= 0 || wKg <= 0) { hideResult(); return; }
             heightM = hCm / 100;
             weightK = wKg;
             bmi = weightK / (heightM * heightM);
         } else {
-            const hFt = parseFloat(heightFt.value) || 0;
-            const hIn = parseFloat(heightIn.value) || 0;
-            const wLbs = parseFloat(weightLbs.value);
+            var hFt = parseFloat(heightFt.value) || 0;
+            var hIn = parseFloat(heightIn.value) || 0;
+            var wLbs = parseFloat(weightLbs.value);
             if ((hFt <= 0 && hIn <= 0) || isNaN(wLbs) || wLbs <= 0) { hideResult(); return; }
-            const totalIn = (hFt * 12) + hIn;
+            var totalIn = (hFt * 12) + hIn;
             if (totalIn <= 0) { hideResult(); return; }
             bmi = (wLbs / (totalIn * totalIn)) * 703;
             heightM = totalIn * 0.0254;
@@ -62,15 +67,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function showResult(bmi, heightM) {
-        const cat = getCategory(bmi);
+        var cat = getCategory(bmi);
         resultDiv.style.display = 'block';
         resultDiv.className = 'bmi-result ' + cat.class;
         bmiValue.textContent = bmi.toFixed(1);
         bmiCategory.textContent = cat.label;
         barIndicator.style.left = Math.min(cat.pct, 100) + '%';
 
-        const healthyMin = 18.5 * heightM * heightM;
-        const healthyMax = 24.9 * heightM * heightM;
+        var healthyMin = 18.5 * heightM * heightM;
+        var healthyMax = 24.9 * heightM * heightM;
         if (isMetric) {
             rangeValue.textContent = healthyMin.toFixed(1) + ' kg - ' + healthyMax.toFixed(1) + ' kg';
         } else {
@@ -92,12 +97,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
     copyBtn.addEventListener('click', function() {
         if (resultDiv.style.display === 'none') return;
-        const text = 'BMI: ' + bmiValue.textContent + ' (' + bmiCategory.textContent + ')';
-        navigator.clipboard.writeText(text).then(function() {
+        var text = 'BMI: ' + bmiValue.textContent + ' (' + bmiCategory.textContent + ')';
+        var done = function() {
             copyBtn.textContent = 'Copied!';
             setTimeout(function() { copyBtn.textContent = 'Copy Result'; }, 1500);
-        });
+        };
+        copyText(text, done);
     });
+
+    function copyText(text, done) {
+        var fallback = function () {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.top = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch (e) {}
+            ta.remove();
+            done();
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done, fallback);
+        } else {
+            fallback();
+        }
+    }
 
     clearBtn.addEventListener('click', function() {
         heightCm.value = '';
@@ -108,3 +133,4 @@ document.addEventListener('DOMContentLoaded', function() {
         hideResult();
     });
 });
+})();

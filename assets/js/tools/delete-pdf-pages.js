@@ -9,9 +9,24 @@ document.addEventListener('DOMContentLoaded', function() {
     var settingsPanel = document.getElementById('settings-panel');
     var pagesGrid = document.getElementById('pages-grid');
     var rangeInput = document.getElementById('range-input');
-    var applyRangeBtn = document.getElementById('apply-range-btn');
     var clearAllBtn = document.getElementById('clear-all-btn');
     var deleteCount = document.getElementById('delete-count');
+
+    rangeInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            var val = rangeInput.value.trim();
+            if (!val) { showNotification('Please enter a page range', true); return; }
+            var pages = parsePageRange(val, totalPages);
+            pages.forEach(function(p) {
+                if (markedPages.size >= totalPages - 1) return;
+                markedPages.add(p);
+            });
+            updateUI();
+            rangeInput.value = '';
+            showNotification(pages.size + ' page(s) marked', false);
+        }
+    });
     var applyBtn = document.getElementById('apply-btn');
     var resetBtn = document.getElementById('reset-btn');
     var progressContainer = document.getElementById('progress-container');
@@ -28,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var totalPages = 0;
     var markedPages = new Set();
     var outputBytes = null;
+    var pdfJsDoc = null;
 
     function showNotification(msg, isError) {
         var existing = document.querySelector('.notification');
@@ -56,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         for (var i = 1; i <= totalPages; i++) {
             var card = document.createElement('div');
             card.className = 'page-card' + (markedPages.has(i) ? ' marked' : '');
-            card.innerHTML = '<div class="page-thumb"><div style="text-align:center"><div style="font-size:24px;margin-bottom:4px">&#128196;</div><span>Page ' + i + '</span></div><div class="page-number">' + i + '</div></div>' +
+            card.innerHTML = '<div class="page-thumb" id="thumb-' + i + '"><div style="text-align:center"><div style="font-size:24px;margin-bottom:4px">&#128196;</div><span>Page ' + i + '</span></div><div class="page-number">' + i + '</div></div>' +
                 '<div class="page-body"><span class="page-label">Page ' + i + '</span>' +
                 '<button class="delete-btn' + (markedPages.has(i) ? ' marked' : '') + '" data-page="' + i + '" title="' + (markedPages.has(i) ? 'Restore page' : 'Mark for deletion') + '"><i class="fas fa-trash"></i></button></div>';
             pagesGrid.appendChild(card);
@@ -77,7 +93,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateUI();
             });
         });
+        for (var j = 1; j <= totalPages; j++) {
+            renderThumbnail(j);
+        }
         updateUI();
+    }
+
+    async function renderThumbnail(pageNum) {
+        if (!pdfJsDoc) return;
+        try {
+            var page = await pdfJsDoc.getPage(pageNum);
+            var viewport = page.getViewport({ scale: 0.4 });
+            var canvas = document.createElement('canvas');
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+            var ctx = canvas.getContext('2d');
+            await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+            var container = document.getElementById('thumb-' + pageNum);
+            if (container) {
+                container.innerHTML = '';
+                container.appendChild(canvas);
+                var num = document.createElement('div');
+                num.className = 'page-number';
+                num.textContent = pageNum;
+                container.appendChild(num);
+            }
+        } catch (e) {}
     }
 
     function updateUI() {
@@ -114,18 +155,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return result;
     }
 
-    applyRangeBtn.addEventListener('click', function() {
-        var val = rangeInput.value.trim();
-        if (!val) { showNotification('Please enter a page range', true); return; }
-        var pages = parsePageRange(val, totalPages);
-        pages.forEach(function(p) {
-            if (markedPages.size >= totalPages - 1) return;
-            markedPages.add(p);
-        });
-        updateUI();
-        showNotification(pages.size + ' page(s) marked', false);
-    });
-
     clearAllBtn.addEventListener('click', function() {
         markedPages.clear();
         updateUI();
@@ -136,6 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
         totalPages = 0;
         markedPages.clear();
         outputBytes = null;
+        pdfJsDoc = null;
         fileInput.value = '';
         rangeInput.value = '';
         fileInfo.classList.remove('show');
@@ -174,6 +204,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 filePagesEl.textContent = totalPages + ' page' + (totalPages !== 1 ? 's' : '');
                 markedPages.clear();
                 renderPages();
+                if (typeof pdfjsLib !== 'undefined') {
+                    pdfJsDoc = null;
+                    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+                    try {
+                        pdfJsDoc = await pdfjsLib.getDocument({ data: arr.slice(0) }).promise;
+                        renderPages();
+                    } catch (e) { pdfJsDoc = null; }
+                }
                 showNotification('PDF loaded with ' + totalPages + ' pages', false);
             } catch (err) {
                 showNotification('Failed to load PDF: ' + err.message, true);
@@ -182,7 +220,6 @@ document.addEventListener('DOMContentLoaded', function() {
         reader.readAsArrayBuffer(file);
     }
 
-    dropZone.addEventListener('click', function() { fileInput.click(); });
     dropZone.addEventListener('dragover', function(e) { e.preventDefault(); dropZone.classList.add('dragover'); });
     dropZone.addEventListener('dragleave', function() { dropZone.classList.remove('dragover'); });
     dropZone.addEventListener('drop', function(e) {

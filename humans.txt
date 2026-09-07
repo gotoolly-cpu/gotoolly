@@ -16,7 +16,7 @@ Privacy advocates: For inspiring our privacy-first approach
 
 /* SITE */
 
-Last update: 2024
+Last update: 2026
 Language: English
 Standards: HTML5, CSS3, JavaScript ES6+
 Components: Vanilla JS, No frameworks

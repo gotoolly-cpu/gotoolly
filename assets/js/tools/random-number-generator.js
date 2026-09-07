@@ -1,56 +1,58 @@
 /* ============================================
-   GO TOOLLY - RANDOM NUMBER GENERATOR
+   GO TOOLLY v2.0 - RANDOM NUMBER GENERATOR
    ============================================ */
+(function(){
+'use strict';
 document.addEventListener('DOMContentLoaded', function() {
-    const minInput = document.getElementById('rng-min');
-    const maxInput = document.getElementById('rng-max');
-    const countInput = document.getElementById('rng-count');
-    const decimalsSelect = document.getElementById('rng-decimals');
-    const uniqueCheck = document.getElementById('rng-unique');
-    const generateBtn = document.getElementById('generate-numbers');
-    const numberList = document.getElementById('rng-number-list');
-    const countDisplay = document.getElementById('rng-count-display');
-    const summary = document.getElementById('rng-summary');
-    const copyBtn = document.getElementById('copy-numbers');
-    const downloadBtn = document.getElementById('download-numbers');
+    var minInput = document.getElementById('rng-min');
+    var maxInput = document.getElementById('rng-max');
+    var countInput = document.getElementById('rng-count');
+    var decimalsSelect = document.getElementById('rng-decimals');
+    var uniqueCheck = document.getElementById('rng-unique');
+    var generateBtn = document.getElementById('generate-numbers');
+    var numberList = document.getElementById('rng-number-list');
+    var countDisplay = document.getElementById('rng-count-display');
+    var summary = document.getElementById('rng-summary');
+    var copyBtn = document.getElementById('copy-numbers');
+    var downloadBtn = document.getElementById('download-numbers');
 
     generateBtn.addEventListener('click', generateNumbers);
 
     function generateNumbers() {
-        const min = parseFloat(minInput.value) || 0;
-        const max = parseFloat(maxInput.value) || 100;
-        const count = Math.min(Math.max(parseInt(countInput.value) || 10, 1), 1000);
-        const decimals = parseInt(decimalsSelect.value);
-        const unique = uniqueCheck.checked;
+        var min = parseFloat(minInput.value) || 0;
+        var max = parseFloat(maxInput.value) || 100;
+        var count = Math.min(Math.max(parseInt(countInput.value) || 10, 1), 1000);
+        var decimals = parseInt(decimalsSelect.value);
+        var unique = uniqueCheck.checked;
 
         if (min >= max) {
             summary.textContent = 'Error: Maximum must be greater than minimum';
             return;
         }
 
-        const range = max - min;
-        const numbers = [];
-        const used = new Set();
+        var range = max - min;
+        var numbers = [];
+        var used = {};
 
         if (unique) {
-            const possible = countUniquePossible(range, decimals);
+            var possible = countUniquePossible(range, decimals);
             if (count > possible) {
                 summary.textContent = 'Error: Cannot generate ' + count + ' unique values with this range and precision (max ' + possible + ')';
                 return;
             }
         }
 
-        let attempts = 0;
-        const maxAttempts = count * 100;
+        var attempts = 0;
+        var maxAttempts = count * 100;
 
         while (numbers.length < count && attempts < maxAttempts) {
             attempts++;
-            let num = generateOne(min, range, decimals);
+            var num = generateOne(min, range, decimals);
 
             if (unique) {
-                const key = num.toFixed(decimals);
-                if (used.has(key)) continue;
-                used.add(key);
+                var key = num.toFixed(decimals);
+                if (used[key]) continue;
+                used[key] = true;
             }
 
             numbers.push(num);
@@ -66,10 +68,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function generateOne(min, range, decimals) {
-        const buf = new Uint32Array(1);
+        var buf = new Uint32Array(1);
         crypto.getRandomValues(buf);
-        const r = buf[0] / 4294967296;
-        let num = min + r * range;
+        var r = buf[0] / 4294967296;
+        var num = min + r * range;
         if (decimals === 0) {
             num = Math.floor(num);
         } else {
@@ -87,31 +89,51 @@ document.addEventListener('DOMContentLoaded', function() {
         numberList.innerHTML = '';
         countDisplay.textContent = numbers.length + ' number' + (numbers.length !== 1 ? 's' : '');
         numbers.forEach(function(n, i) {
-            const li = document.createElement('li');
+            var li = document.createElement('li');
             li.innerHTML = '<span class="idx">' + (i + 1) + '.</span><span class="num">' + n + '</span>';
             numberList.appendChild(li);
         });
     }
 
+    function copyText(text, done) {
+        var fallback = function () {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.top = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch (e) {}
+            ta.remove();
+            done();
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done, fallback);
+        } else {
+            fallback();
+        }
+    }
+
     copyBtn.addEventListener('click', function() {
-        const items = numberList.querySelectorAll('.num');
+        var items = numberList.querySelectorAll('.num');
         if (!items.length) return;
-        const text = Array.from(items).map(function(el) { return el.textContent; }).join('\n');
-        navigator.clipboard.writeText(text).then(function() {
+        var text = Array.prototype.map.call(items, function(el) { return el.textContent; }).join('\n');
+        copyText(text, function() {
             copyBtn.textContent = 'Copied!';
             setTimeout(function() { copyBtn.textContent = 'Copy All'; }, 1500);
         });
     });
 
     downloadBtn.addEventListener('click', function() {
-        const items = numberList.querySelectorAll('.num');
+        var items = numberList.querySelectorAll('.num');
         if (!items.length) return;
-        const text = Array.from(items).map(function(el) { return el.textContent; }).join('\n');
-        const blob = new Blob([text], { type: 'text/plain' });
-        const link = document.createElement('a');
+        var text = Array.prototype.map.call(items, function(el) { return el.textContent; }).join('\n');
+        var blob = new Blob([text], { type: 'text/plain' });
+        var link = document.createElement('a');
         link.download = 'random-numbers.txt';
         link.href = URL.createObjectURL(blob);
         link.click();
         URL.revokeObjectURL(link.href);
     });
 });
+})();

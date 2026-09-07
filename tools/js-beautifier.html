@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Beautifier - Format JS | GoToolly</title>
-    <meta name="description" content="Beautify and format your JavaScript code online. Add proper indentation, line breaks, and clean structure. Free, private, browser-based JS beautifier.">
-    <meta name="keywords" content="javascript beautifier, format javascript, prettify js, js formatter, js indenter">
+    <title>JavaScript Beautifier - Format &amp; Pretty Print JS | GoToolly</title>
+    <meta name="description" content="Beautify and minify your JavaScript code online. Add proper indentation, line breaks, and clean structure, or compress code for production. Free, private, browser-based JS formatter with syntax error detection.">
+    <meta name="keywords" content="javascript beautifier, format javascript, prettify js, js formatter, js indenter, pretty print javascript">
     <link rel="canonical" href="https://gotoolly.com/tools/js-beautifier">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gotoolly.com/tools/js-beautifier">
-    <meta property="og:title" content="JavaScript Beautifier - Format JS | GoToolly">
+    <meta property="og:title" content="JavaScript Beautifier - Format &amp; Pretty Print JS | GoToolly">
     <meta property="og:description" content="Beautify and format your JavaScript code online. Add proper indentation, line breaks, and clean structure.">
     <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
     <meta property="og:image:width" content="512">
@@ -18,35 +18,301 @@
     <meta property="og:site_name" content="GoToolly">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://gotoolly.com/tools/js-beautifier">
-    <meta name="twitter:title" content="JavaScript Beautifier - Format JS | GoToolly">
+    <meta name="twitter:title" content="JavaScript Beautifier - Format &amp; Pretty Print JS | GoToolly">
     <meta name="twitter:description" content="Beautify and format your JavaScript code online. Add proper indentation, line breaks, and clean structure.">
     <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
     <meta name="twitter:image:alt" content="GoToolly Logo">
     <meta name="twitter:creator" content="@GoToolly">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
-    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/font-awesome.all.min.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"JavaScript Beautifier","url":"https://gotoolly.com/tools/js-beautifier","description":"Beautify and format your JavaScript code online. Add proper indentation, line breaks, and clean structure.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Configurable indent size","Preserve newlines option"]}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"JavaScript Beautifier"}]}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the JavaScript beautifier do?","acceptedAnswer":{"@type":"Answer","text":"It formats minified or messy JavaScript code by adding proper indentation, line breaks, and structure, making code readable and maintainable."}},{"@type":"Question","name":"Can I preserve original newlines?","acceptedAnswer":{"@type":"Answer","text":"Yes. The beautifier offers an option to preserve existing line breaks while still adding proper indentation."}},{"@type":"Question","name":"Is my JavaScript uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens entirely in your browser. Your code never leaves your device."}},{"@type":"Question","name":"Does it handle ES6+ syntax?","acceptedAnswer":{"@type":"Answer","text":"Yes. The beautifier handles modern JavaScript syntax including arrow functions, template literals, destructuring, and more."}}]}</script>
-    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.minifier-textarea{width:100%;min-height:250px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text)}.minifier-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.result-box{background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px;padding:var(--space-4);font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);white-space:pre-wrap;word-break:break-word;max-height:400px;overflow-y:auto;margin-bottom:var(--space-3)}.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);margin-top:var(--space-4)}.stat-box{background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px;padding:var(--space-4);text-align:center}.stat-value{font-size:var(--text-2xl);font-weight:700;color:var(--color-primary)}.stat-label{font-size:var(--text-xs);color:var(--color-text-light);margin-top:var(--space-1);text-transform:uppercase;letter-spacing:.05em}.tool-actions{display:flex;gap:var(--space-3);margin-top:var(--space-4);flex-wrap:wrap}.options-row{display:flex;gap:var(--space-3);margin-top:var(--space-3);flex-wrap:wrap;align-items:center}.option-group{display:flex;align-items:center;gap:var(--space-2)}.option-group label{font-size:var(--text-sm);color:var(--color-text-light);margin:0}.option-group select,.option-group input[type="checkbox"]{padding:6px 10px;border:1px solid var(--color-border);border-radius:6px;font-size:var(--text-sm);background:var(--color-surface);color:var(--color-text)}@media(max-width:768px){.stats-grid{grid-template-columns:1fr}}</style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+
+    <style>
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .25s cubic-bezier(.4,0,.2,1)}
+        .skip-link:focus{top:0}
+        .hero{background:#0f172a;padding:40px 0 28px;text-align:center}
+        .hero h1{font-size:40px;font-weight:800;color:#fff;line-height:1.2;margin:0 0 12px}
+        .hero h1 .gradient-text{background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-subtitle{font-size:16px;color:#94a3b8;line-height:1.5;margin:0 0 24px}
+        .trust-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .trust-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:6px 14px;border-radius:9999px;font-size:13px;font-weight:500;color:#cbd5e1;transition:background .2s}
+        .trust-badge:hover{background:rgba(255,255,255,.1)}
+        .trust-badge svg{width:14px;height:14px;color:#60a5fa}
+        .tool-workspace{max-width:900px;margin:0 auto}
+        .tool-card{background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.04);border:1px solid #e2e8f0;padding:24px;margin-bottom:48px;overflow:visible}
+        .card-header{display:flex;justify-content:space-between;align-items:center}
+        .card-header-left{display:flex;align-items:center;gap:10px}
+        .card-header-left svg{width:18px;height:18px;color:var(--color-primary)}
+        .card-header-left h2{font-size:16.8px;font-weight:600;margin:0;color:#0f172a}
+        .status-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:9999px;font-size:11px;font-weight:600;letter-spacing:.3px;display:none;text-transform:uppercase}
+        .status-badge::before{content:'';width:6px;height:6px;border-radius:50%;flex-shrink:0}
+        .status-badge.ready{display:inline-flex;background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+        .status-badge.ready::before{background:#22c55e}
+        .status-badge.processing{display:inline-flex;background:#fffbeb;color:#92400e;border:1px solid #fde68a}
+        .status-badge.processing::before{background:#f59e0b;animation:pulse-dot 1s ease-in-out infinite}
+        .status-badge.done{display:inline-flex;background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+        .status-badge.done::before{background:#22c55e}
+        .status-badge.error{display:inline-flex;background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+        .status-badge.error::before{background:#ef4444}
+        @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}
+        .card-divider{height:1px;background:#e2e8f0;margin:16px 0 0}
+        .workspace-body{display:flex;flex-direction:column;gap:0}
+        .text-input-zone{margin-top:20px}
+        .text-input-label{font-size:14px;font-weight:600;color:#0f172a;margin-bottom:8px;display:block}
+        .text-input-wrapper{position:relative}
+        .text-input-wrapper textarea{width:100%;min-height:220px;padding:16px 20px;border:2px solid #e2e8f0;border-radius:14px;font-size:14px;font-family:'JetBrains Mono',monospace;color:#0f172a;background:#f8fafc;line-height:1.6;resize:vertical;transition:border-color .2s,box-shadow .2s;box-sizing:border-box}
+        .text-input-wrapper textarea::placeholder{color:#94a3b8}
+        .text-input-wrapper textarea:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.12);background:#fff}
+        .text-input-hint{font-size:12px;color:#94a3b8;margin-top:6px;padding:0 4px}
+        .action-bar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+        .action-bar .btn-primary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:#2563eb;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .action-bar .btn-primary:hover:not(:disabled){background:#1d4ed8;transform:translateY(-1px);box-shadow:0 8px 25px rgba(37,99,235,.35)}
+        .action-bar .btn-primary:disabled{opacity:.5;cursor:not-allowed}
+        .action-bar .btn-secondary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:#fff;color:#0f172a;border:1px solid #e2e8f0;border-radius:12px;font-size:15px;font-weight:500;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .action-bar .btn-secondary:hover{border-color:#cbd5e1;background:#f8fafc;transform:translateY(-1px)}
+        .empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 20px;text-align:center}
+        .empty-state svg{width:56px;height:56px;color:#cbd5e1;margin-bottom:16px}
+        .empty-state h3{font-size:18px;font-weight:600;color:#0f172a;margin:0 0 6px}
+        .empty-state p{font-size:14px;color:#64748b;margin:0;line-height:1.6}
+        .results-panel{display:none;padding:0}
+        .results-panel.show{display:block;animation:fadeSlideIn .4s ease}
+        @keyframes fadeSlideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+        .code-output{background:#0f172a;border-radius:12px;padding:20px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#e2e8f0;line-height:1.5;white-space:pre-wrap;word-break:break-word;overflow-x:auto;max-height:500px;overflow-y:auto;margin-top:20px;border:1px solid #1e293b;position:relative}
+        .code-output .code-line-num{display:inline-block;width:32px;color:#475569;text-align:right;margin-right:16px;user-select:none;flex-shrink:0;font-size:11px}
+        .code-output .code-line{display:flex;min-height:20px}
+        .code-output .code-line:hover{background:rgba(255,255,255,.03)}
+        .code-output-topbar{display:flex;justify-content:space-between;align-items:center;padding:8px 0 12px;border-bottom:1px solid #1e293b;margin-bottom:12px}
+        .code-output-topbar span{font-size:11px;color:#64748b;font-weight:500;text-transform:uppercase;letter-spacing:.5px}
+        .options-row{display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;align-items:end}
+        .option-group{display:flex;flex-direction:column;gap:4px}
+        .option-group label{font-size:12px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.4px}
+        .option-group select{padding:8px 12px;border:2px solid #e2e8f0;border-radius:10px;font-size:13px;font-family:'Inter',sans-serif;color:#0f172a;background:#f8fafc;cursor:pointer;transition:border-color .2s;min-width:140px}
+        .option-group select:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+        .stats-section{padding:0;margin-top:20px}
+        .stats-title{font-size:13px;font-weight:600;color:#64748b;margin:0 0 10px;text-transform:uppercase;letter-spacing:.5px}
+        .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+        .stat-box{padding:14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-align:center;transition:border-color .2s}
+        .stat-box:hover{border-color:#cbd5e1}
+        .stat-box .stat-label{font-size:11px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px}
+        .stat-box .stat-value{font-size:18px;font-weight:700;font-family:'JetBrains Mono',monospace;color:#0f172a}
+        .export-section{display:none;justify-content:center;gap:10px;padding:20px 0 0;flex-wrap:wrap}
+        .export-section.show{display:flex}
+        .export-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;font-size:13px;font-weight:500;color:#0f172a;cursor:pointer;transition:all .2s}
+        .export-btn:hover{border-color:#2563eb;color:#2563eb;background:#eff6ff}
+        .export-btn svg{width:14px;height:14px}
+        .limitations-box{display:none;padding:16px 20px;background:#fffbeb;border:1px solid #fde68a;border-radius:12px;margin-top:20px}
+        .limitations-box.show{display:block}
+        .limitations-box .lim-header{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+        .limitations-box .lim-header svg{width:16px;height:16px;color:#d97706}
+        .limitations-box .lim-header h4{font-size:13px;font-weight:600;color:#92400e;margin:0}
+        .limitations-box ul{margin:0;padding-left:18px}
+        .limitations-box li{font-size:13px;color:#a16207;line-height:1.6;margin-bottom:2px}
+        .related-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .related-section .section-intro{font-size:14px;color:#64748b;text-align:center;margin-bottom:24px}
+        .related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+        .related-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit;display:flex;flex-direction:column}
+        .related-card:hover{border-color:#2563eb;box-shadow:0 8px 24px rgba(37,99,235,.1);transform:translateY(-3px)}
+        .related-card .rc-icon{width:32px;height:32px;margin-bottom:12px}
+        .related-card .rc-icon svg{width:32px;height:32px;color:#2563eb;transition:transform .25s cubic-bezier(.4,0,.2,1)}
+        .related-card:hover .rc-icon svg{transform:scale(1.1)}
+        .related-card h4{font-size:15px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .related-card p{font-size:13px;color:#64748b;margin:0 0 16px;flex:1}
+        .related-card .rc-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#2563eb;margin-top:auto;transition:gap .2s}
+        .related-card:hover .rc-btn{gap:10px}
+        .how-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .step-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:24px;text-align:center;transition:border-color .2s,box-shadow .2s}
+        .step-card:hover{border-color:rgba(37,99,235,.2);box-shadow:0 2px 8px rgba(37,99,235,.06)}
+        .step-num{width:40px;height:40px;border-radius:50%;background:#eff6ff;color:#2563eb;font-size:16px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-bottom:12px;transition:background .2s}
+        .step-card:hover .step-num{background:#dbeafe}
+        .step-card h4{font-size:15px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .step-card p{font-size:13px;color:#64748b;margin:0}
+        .faq-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .faq-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:border-color .2s}
+        .faq-card:hover{border-color:#cbd5e1}
+        .faq-card h4{font-size:14px;font-weight:600;margin:0 0 8px;color:#0f172a}
+        .faq-card p{font-size:13px;color:#64748b;margin:0;line-height:1.6}
+        .toast{position:fixed;top:16px;right:16px;padding:12px 20px;border-radius:8px;font-size:14px;font-weight:500;z-index:1000;transform:translateX(400px);opacity:0;transition:all .25s cubic-bezier(.4,0,.2,1)}
+        .toast.show{transform:translateX(0);opacity:1}
+        .toast.info{background:#2563eb;color:#fff}
+        .toast.success{background:#10b981;color:#fff}
+        .toast.error{background:#ef4444;color:#fff}
+        .section-heading{text-align:center;margin-bottom:32px}
+        .section-heading h2{font-size:28.8px;font-weight:700;color:#0f172a;margin:0 0 4px}
+        @media(max-width:1024px){
+            .related-grid{grid-template-columns:repeat(2,1fr)}
+            .faq-grid{grid-template-columns:repeat(2,1fr)}
+            .stats-grid{grid-template-columns:repeat(2,1fr)}
+        }
+        @media(max-width:768px){
+            .hero{padding:32px 0 20px}
+            .hero h1{font-size:28px}
+            .hero-subtitle{font-size:14px;margin-bottom:20px}
+            .trust-badges{gap:8px}
+            .trust-badge{padding:4px 10px;font-size:12px}
+            .tool-card{padding:16px;margin-bottom:32px}
+            .action-bar{grid-template-columns:1fr}
+            .related-grid{grid-template-columns:1fr}
+            .steps-grid{grid-template-columns:1fr}
+            .faq-grid{grid-template-columns:1fr}
+            .stats-grid{grid-template-columns:1fr}
+            .text-input-wrapper textarea{min-height:180px;padding:14px 16px}
+            .options-row{flex-direction:column}
+        }
+        @media(max-width:480px){
+            .hero{padding:24px 0 16px}
+            .hero h1{font-size:24px}
+            .related-grid{gap:12px}
+        }
+        @media print{
+            .hero,.site-header,.site-footer,.related-section,.how-section,.faq-section,.action-bar,.export-section,.limitations-box,.status-badge,.empty-state,.toast{display:none !important}
+            .tool-card{box-shadow:none;border:none;padding:0}
+            .results-panel{display:block !important}
+            body{background:#fff}
+        }
+        @media(prefers-reduced-motion:reduce){
+            *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+        }
+    </style>
+
+    <style>
+        /* ===== JS Beautifier v2 workspace ===== */
+        .editor-duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+        .editor-col{display:flex;flex-direction:column;min-width:0}
+        .editor-col .col-title{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:14px;font-weight:600;color:#0f172a;margin-bottom:8px}
+        .editor-col .col-meta{font-size:11px;font-weight:500;color:#64748b;font-family:'JetBrains Mono',monospace;white-space:nowrap}
+        .editor{position:relative;height:clamp(300px,52vh,480px);border:2px solid #e2e8f0;border-radius:12px;background:#f8fafc;overflow:hidden;transition:border-color .2s,box-shadow .2s}
+        .editor:focus-within{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+        .editor-gutter{position:absolute;left:0;top:0;bottom:0;width:48px;overflow:hidden;background:#f1f5f9;border-right:1px solid #e2e8f0;z-index:2}
+        .editor-gutter pre{margin:0;padding:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:20.8px}
+        .editor-gutter .g-num{font-family:'JetBrains Mono',monospace;font-size:11px;line-height:20.8px;color:#94a3b8;text-align:right;padding:0 8px 0 0;user-select:none}
+        .editor-body{position:absolute;left:48px;right:0;top:0;bottom:0}
+        .editor-hl,.editor-ta{position:absolute;inset:0;margin:0;border:0;box-sizing:border-box;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.6;letter-spacing:0;tab-size:4;-moz-tab-size:4;white-space:pre;word-break:normal;word-wrap:normal;padding:14px 16px}
+        .editor-hl{overflow:hidden;pointer-events:none;color:#334155;z-index:0;background:transparent}
+        .editor-ta{overflow:auto;background:transparent;color:transparent;-webkit-text-fill-color:transparent;caret-color:#2563eb;outline:none;resize:none;display:block;z-index:1}
+        .editor-ta::placeholder{color:#94a3b8;-webkit-text-fill-color:#94a3b8;opacity:1}
+        .editor-ta::selection{background:rgba(37,99,235,.18);-webkit-text-fill-color:transparent}
+        .editor-ta[readonly]{cursor:default}
+        .editor-hl .tok-kw{color:#7c3aed;font-weight:500}
+        .editor-hl .tok-str{color:#16a34a}
+        .editor-hl .tok-num{color:#d97706}
+        .editor-hl .tok-com{color:#94a3b8;font-style:italic}
+        .editor-hl .tok-regex{color:#dc2626}
+        .editor-hl .tok-templ{color:#0f9488}
+        .editor-hl .tok-prop{color:#0f766e}
+        .editor-hl .tok-punct{color:#475569}
+        .settings-box{margin-top:16px;border:1px solid #e2e8f0;border-radius:12px;background:#fff;overflow:hidden}
+        .settings-box>summary{list-style:none;display:flex;align-items:center;gap:8px;padding:14px 18px;font-size:14px;font-weight:600;color:#0f172a;cursor:pointer;user-select:none;background:#f8fafc}
+        .settings-box>summary::-webkit-details-marker{display:none}
+        .settings-box>summary:hover{background:#f1f5f9}
+        .settings-box>summary .sg-caret{margin-left:auto;transition:transform .2s;color:#64748b}
+        .settings-box[open]>summary .sg-caret{transform:rotate(180deg)}
+        .settings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;padding:16px 18px}
+        .setting-group{display:flex;flex-direction:column;gap:6px}
+        .setting-group label{font-size:11px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.4px}
+        .setting-group select,.setting-group input[type=number]{padding:8px 12px;border:2px solid #e2e8f0;border-radius:10px;font-size:13px;font-family:'Inter',sans-serif;color:#0f172a;background:#f8fafc;cursor:pointer;transition:border-color .2s;min-width:0;width:100%}
+        .setting-group input[type=number]{cursor:text}
+        .setting-group select:focus,.setting-group input[type=number]:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.12);background:#fff}
+        .action-bar-new{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:20px}
+        .btn-act{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font-size:14px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .btn-act svg{width:16px;height:16px;flex-shrink:0}
+        .btn-act-primary{background:#2563eb;color:#fff;border:none}
+        .btn-act-primary:hover:not(:disabled){background:#1d4ed8;transform:translateY(-1px);box-shadow:0 8px 25px rgba(37,99,235,.35)}
+        .btn-act-ghost{background:#fff;color:#0f172a;border:1px solid #e2e8f0}
+        .btn-act-ghost:hover:not(:disabled){border-color:#cbd5e1;background:#f8fafc;transform:translateY(-1px)}
+        .btn-act-ghost.danger:hover:not(:disabled){border-color:#fca5a5;color:#b91c1c;background:#fef2f2}
+        .btn-act:disabled{opacity:.5;cursor:not-allowed}
+        .kbd-hint{font-size:11px;color:#94a3b8;margin-top:10px;text-align:center}
+        .kbd-hint kbd{background:#f1f5f9;border:1px solid #e2e8f0;border-bottom-width:2px;border-radius:5px;padding:1px 6px;font-family:'JetBrains Mono',monospace;font-size:10px;color:#475569}
+        .error-panel{display:none;margin-top:16px;padding:14px 18px;background:#fef2f2;border:1px solid #fecaca;border-radius:12px}
+        .error-panel.show{display:block;animation:fadeSlideIn .3s ease}
+        .error-panel h4{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#991b1b;margin:0 0 6px}
+        .error-panel h4 svg{width:15px;height:15px;flex-shrink:0}
+        .error-panel p{font-size:13px;color:#7f1d1d;margin:0 0 4px;line-height:1.5}
+        .error-panel code{font-family:'JetBrains Mono',monospace;font-size:12px;color:#991b1b;background:rgba(239,68,68,.08);padding:2px 6px;border-radius:6px}
+        .warn-list{display:none;margin-top:16px;padding:12px 18px;background:#fffbeb;border:1px solid #fde68a;border-radius:12px}
+        .warn-list.show{display:block}
+        .warn-list h4{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#92400e;margin:0 0 6px}
+        .warn-list ul{margin:0;padding-left:18px}
+        .warn-list li{font-size:13px;color:#a16207;line-height:1.6}
+        .byte-saved{color:#059669;font-weight:600}
+        @media(max-width:900px){
+            .editor-duo{grid-template-columns:1fr}
+        }
+        @media(max-width:768px){
+            .editor{height:clamp(240px,44vh,380px)}
+        }
+        @media print{
+            .settings-box,.action-bar-new,.error-panel,.warn-list,.kbd-hint{display:none !important}
+            .editor{height:auto;border-color:#cbd5e1}
+            .editor-gutter{display:none}
+            .editor-body{position:static}
+            .editor-ta{display:none}
+            .editor-hl{position:static;height:auto;overflow:visible;white-space:pre-wrap;word-break:break-word;padding:0}
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "JavaScript Beautifier",
+        "url": "https://gotoolly.com/tools/js-beautifier",
+        "description": "Beautify and format your JavaScript code online. Add proper indentation, line breaks, and clean structure.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["Free to use", "No account required", "Client-side processing", "Privacy-focused", "Configurable indent size", "Semicolon options", "Quote and brace style options", "One-click minification", "Syntax error reporting", "Modern JS support"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gotoolly.com/tools"},
+            {"@type": "ListItem", "position": 3, "name": "JavaScript Beautifier"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "What does the JavaScript beautifier do?", "acceptedAnswer": {"@type": "Answer", "text": "It formats minified or messy JavaScript code by adding proper indentation, line breaks, and structure, making code readable and maintainable. It can also minify code back down for production."}},
+            {"@type": "Question", "name": "What options are available?", "acceptedAnswer": {"@type": "Answer", "text": "You can choose indent size (2, 4, 8 spaces, or tabs), semicolon handling (add, keep, or remove), quote style, brace placement, and how many empty lines to keep."}},
+            {"@type": "Question", "name": "Is my JavaScript uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens entirely in your browser. Your code never leaves your device."}},
+            {"@type": "Question", "name": "Does it catch syntax errors?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. If your code has unbalanced brackets or other parse problems, the tool highlights the first error with its line and column instead of silently mangling the output."}},
+            {"@type": "Question", "name": "Can I minify JavaScript with this tool?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. One click minifies your beautified code by removing comments and unnecessary whitespace, showing the percentage of bytes saved."}}
+        ]
+    }
+    </script>
 
     <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header class="site-header">
         <div class="container">
             <div class="header-content">
-                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <a href="/" class="logo">
+                    <img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg">
+                    <span class="logo-text">GoToolly</span>
+                </a>
                 <nav class="main-nav">
                     <a href="/" class="nav-link">Home</a>
                     <a href="/tools" class="nav-link active">Tools</a>
@@ -54,259 +320,2104 @@
                     <a href="../about" class="nav-link">About</a>
                     <a href="../contact" class="nav-link">Contact</a>
                 </nav>
-                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
             </div>
-            <div class="mobile-menu"><nav class="mobile-nav">
-                <a href="/" class="nav-link">Home</a>
-                <a href="/tools" class="nav-link active">Tools</a>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="../about" class="nav-link">About</a>
-                <a href="../contact" class="nav-link">Contact</a>
-            </nav></div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
         </div>
     </header>
-    <main id="main-content" class="main-content">
-        <div class="container">
-            <div class="page-header">
-                <h1>JavaScript Beautifier</h1>
-                <p class="page-description">Format and beautify your JavaScript code with proper indentation. Turn minified JS into clean, readable code.</p>
-            </div>
-            <div class="tool-layout">
-                <div class="tool-interface">
-                    <div class="tool-header">
-                        <h2>Beautify JavaScript</h2>
-                        <p>Paste your JavaScript code below</p>
-                    </div>
-                    <label for="js-input"><i class="fas fa-code" style="color:var(--color-primary);margin-right:6px"></i> JavaScript Input</label>
-                    <textarea id="js-input" class="minifier-textarea" placeholder="Paste your minified or messy JavaScript here..." rows="10"></textarea>
-                    <div class="options-row">
-                        <div class="option-group">
-                            <label for="indent-size">Indent Size:</label>
-                            <select id="indent-size">
-                                <option value="2">2 spaces</option>
-                                <option value="4" selected>4 spaces</option>
-                                <option value="8">8 spaces</option>
-                            </select>
-                        </div>
-                        <div class="option-group">
-                            <input type="checkbox" id="preserve-newlines" checked>
-                            <label for="preserve-newlines">Preserve newlines</label>
-                        </div>
-                    </div>
-                    <div class="tool-actions">
-                        <button id="beautify-btn" class="btn btn-primary btn-lg"><i class="fas fa-magic" aria-hidden="true"></i> Beautify</button>
-                        <button id="reset-btn" class="btn btn-secondary"><i class="fas fa-redo" aria-hidden="true"></i> Reset</button>
-                    </div>
-                    <div id="result-area" class="result-area" style="display:none">
-                        <h3><i class="fas fa-check-circle" style="color:#10b981"></i> Beautified JavaScript</h3>
-                        <div id="result-text" class="result-box"></div>
-                        <div class="tool-actions">
-                            <button id="copy-btn" class="btn btn-primary btn-sm"><i class="fas fa-copy"></i> Copy Result</button>
-                            <button id="download-btn" class="btn btn-secondary btn-sm"><i class="fas fa-download"></i> Download</button>
-                        </div>
-                    </div>
-                    <div id="stats" class="stats-grid" style="display:none">
-                        <div class="stat-box"><div class="stat-value" id="stat-original">0</div><div class="stat-label">Original Size</div></div>
-                        <div class="stat-box"><div class="stat-value" id="stat-beautified">0</div><div class="stat-label">Beautified Size</div></div>
-                        <div class="stat-box"><div class="stat-value" id="stat-lines">0</div><div class="stat-label">Lines</div></div>
-                    </div>
-                </div>
-                <div class="tool-sidebar">
-                    <div class="card"><h3>How It Works</h3><ol><li>Paste your JavaScript code</li><li>Choose indent size &amp; options</li><li>Click Beautify</li><li>Copy or download the result</li></ol></div>
-                    <div class="card"><h3>Features</h3><ul><li>Configurable indent size</li><li>Preserve newlines option</li><li>Handles functions &amp; loops</li><li>Supports ES6+ syntax</li></ul></div>
-                    <div class="card"><p style="font-size:var(--text-xs);color:var(--color-text-light);margin:0">Your text is processed entirely inside your browser.</p></div>
-                </div>
-            </div>
-            <section class="content-section">
-                <div class="section-header"><h2>Related Tools</h2></div>
-                <div class="tools-grid">
-                    <div class="card tool-card"><h3>JS Minifier</h3><p>Minify your JavaScript code by removing comments and whitespace.</p><div class="card-footer"><a href="./js-minifier" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-                    <div class="card tool-card"><h3>HTML Beautifier</h3><p>Format and indent your HTML code.</p><div class="card-footer"><a href="./html-beautifier" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-                    <div class="card tool-card"><h3>CSS Beautifier</h3><p>Format and pretty-print your CSS code.</p><div class="card-footer"><a href="./css-beautifier" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-                </div>
-            </section>
-            <section class="content-section" style="margin-top:var(--space-8)">
-                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
-                <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-3)">
-                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What does the JavaScript beautifier do?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">It formats minified or messy JavaScript code by adding proper indentation, line breaks, and structure, making code readable and maintainable.</p></div>
-                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Can I preserve original newlines?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Yes. The beautifier offers an option to preserve existing line breaks while still adding proper indentation.</p></div>
-                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Is my JavaScript uploaded to a server?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">No. All processing happens entirely in your browser. Your code never leaves your device.</p></div>
-                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Does it handle ES6+ syntax?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Yes. The beautifier handles modern JavaScript syntax including arrow functions, template literals, destructuring, and more.</p></div>
-                </div>
-            </section>
 
-            <p style="margin-top: var(--space-4); text-align: center;">
-                <a href="../guides/js-beautifier" style="color: var(--color-primary);">Read Guide: JavaScript Beautifier Guide <i class="fas fa-arrow-right"></i></a>
-            </p>
+    <main id="main-content">
+
+        <section class="hero">
+            <div class="container">
+                <h1>Format &amp; Pretty Print <span class="gradient-text">JavaScript</span></h1>
+                <p class="hero-subtitle">Turn minified or messy JavaScript into clean, readable code — or minify it back down with one click. Supports modern JS with syntax error reporting. All processing happens in your browser.</p>
+                <div class="trust-badges">
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        100% Private
+                    </span>
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                        Processed locally
+                    </span>
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Free &amp; unlimited
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="tool-workspace">
+
+                <div class="tool-card" role="region" aria-label="JavaScript Beautifier workspace">
+
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+                            <h2>JavaScript Beautifier</h2>
+                        </div>
+                        <span class="status-badge" id="status-badge" aria-live="polite"></span>
+                    </div>
+                    <div class="card-divider"></div>
+
+                    <div class="workspace-body" id="workspace-body">
+
+<details class="settings-box" id="settings-box" open>
+    <summary>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+        Formatting Options
+        <svg class="sg-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="settings-grid">
+        <div class="setting-group">
+            <label for="indent-size">Indent</label>
+            <select id="indent-size">
+                <option value="2">2 spaces</option>
+                <option value="4" selected>4 spaces</option>
+                <option value="8">8 spaces</option>
+                <option value="tab">Tab</option>
+            </select>
         </div>
+        <div class="setting-group">
+            <label for="semicolons">Semicolons</label>
+            <select id="semicolons">
+                <option value="keep">Keep existing</option>
+                <option value="add">Add missing</option>
+                <option value="remove">Remove all</option>
+            </select>
+        </div>
+        <div class="setting-group">
+            <label for="quotes">Quotes</label>
+            <select id="quotes">
+                <option value="keep" selected>Keep existing</option>
+                <option value="single">Single quotes</option>
+                <option value="double">Double quotes</option>
+            </select>
+        </div>
+        <div class="setting-group">
+            <label for="brace-style">Brace Style</label>
+            <select id="brace-style">
+                <option value="collapse" selected>Collapse</option>
+                <option value="expand">Expand</option>
+            </select>
+        </div>
+        <div class="setting-group">
+            <label for="max-empty">Max Empty Lines</label>
+            <select id="max-empty">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="setting-group">
+            <label for="inline-width">Max Line Width</label>
+            <input type="number" id="inline-width" value="80" min="40" max="200" step="5">
+        </div>
+        <div class="setting-group">
+            <label for="wrap-chains">Wrap Method Chains</label>
+            <select id="wrap-chains">
+                <option value="off" selected>Off</option>
+                <option value="on">On</option>
+            </select>
+        </div>
+        <div class="setting-group">
+            <label for="wrap-promises">Wrap Promise Chains</label>
+            <select id="wrap-promises">
+                <option value="off" selected>Off</option>
+                <option value="on">On</option>
+            </select>
+        </div>
+        <div class="setting-group">
+            <label for="wrap-arrays">Wrap Arrays</label>
+            <select id="wrap-arrays">
+                <option value="off" selected>Off</option>
+                <option value="on">On</option>
+            </select>
+        </div>
+        <div class="setting-group">
+            <label for="wrap-objects">Wrap Objects</label>
+            <select id="wrap-objects">
+                <option value="off">Off</option>
+                <option value="on" selected>On</option>
+            </select>
+        </div>
+        <div class="setting-group">
+            <label for="wrap-args">Wrap Function Arguments</label>
+            <select id="wrap-args">
+                <option value="off" selected>Off</option>
+                <option value="on">On</option>
+            </select>
+        </div>
+        <div class="setting-group">
+            <label for="keep-obj">Keep Single-Line Objects</label>
+            <select id="keep-obj">
+                <option value="off">Off</option>
+                <option value="on" selected>On</option>
+            </select>
+        </div>
+        <div class="setting-group">
+            <label for="keep-arr">Keep Single-Line Arrays</label>
+            <select id="keep-arr">
+                <option value="off">Off</option>
+                <option value="on" selected>On</option>
+            </select>
+        </div>
+        <div class="setting-group">
+            <label for="class-blank">Blank Lines Between Members</label>
+            <select id="class-blank">
+                <option value="off" selected>Off</option>
+                <option value="on">On</option>
+            </select>
+        </div>
+        <div class="setting-group">
+            <label for="collapse-empty">Collapse Empty Blocks</label>
+            <select id="collapse-empty">
+                <option value="off">Off</option>
+                <option value="on" selected>On</option>
+            </select>
+        </div>
+        <div class="setting-group">
+            <label for="compact-mode">Compact Mode</label>
+            <select id="compact-mode">
+                <option value="off" selected>Off</option>
+                <option value="on">On</option>
+            </select>
+        </div>
+        <div class="setting-group">
+            <label for="expanded-mode">Expanded Mode</label>
+            <select id="expanded-mode">
+                <option value="off" selected>Off</option>
+                <option value="on">On</option>
+            </select>
+        </div>
+    </div>
+</details>
+
+<div class="editor-duo">
+    <div class="editor-col">
+        <div class="col-title">
+            <span>Input</span>
+            <span class="col-meta" id="input-meta">0 chars · 0 lines · 0 B</span>
+        </div>
+        <div class="editor" id="input-editor">
+            <div class="editor-gutter" aria-hidden="true"><pre id="input-gutter"></pre></div>
+            <div class="editor-body">
+                <pre class="editor-hl" id="input-hl" aria-hidden="true"></pre>
+                <textarea class="editor-ta" id="input-ta" spellcheck="false" placeholder="Paste or type your JavaScript code here..." aria-label="JavaScript input"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="editor-col">
+        <div class="col-title">
+            <span>Output</span>
+            <span class="col-meta" id="output-meta">Waiting for input</span>
+        </div>
+        <div class="editor" id="output-editor">
+            <div class="editor-gutter" aria-hidden="true"><pre id="output-gutter"></pre></div>
+            <div class="editor-body">
+                <pre class="editor-hl" id="output-hl" aria-hidden="true"></pre>
+                <textarea class="editor-ta" id="output-ta" spellcheck="false" readonly placeholder="Formatted output appears here..." aria-label="JavaScript output"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="error-panel" id="error-panel" role="alert" aria-live="assertive">
+    <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Parse Error</h4>
+    <p id="error-message"></p>
+</div>
+
+<div class="warn-list" id="warn-list">
+    <h4>Warnings</h4>
+    <ul id="warn-items"></ul>
+</div>
+
+<div class="stats-section" id="stats-section" style="display:none">
+    <div class="stats-title">File Statistics</div>
+    <div class="stats-grid" id="stats-grid">
+        <div class="stat-box"><div class="stat-label">Lines</div><div class="stat-value" id="stat-lines">0</div></div>
+        <div class="stat-box"><div class="stat-label">Functions</div><div class="stat-value" id="stat-functions">0</div></div>
+        <div class="stat-box"><div class="stat-label">Classes</div><div class="stat-value" id="stat-classes">0</div></div>
+        <div class="stat-box"><div class="stat-label">Variables</div><div class="stat-value" id="stat-variables">0</div></div>
+        <div class="stat-box"><div class="stat-label">Imports</div><div class="stat-value" id="stat-imports">0</div></div>
+        <div class="stat-box"><div class="stat-label">Exports</div><div class="stat-value" id="stat-exports">0</div></div>
+        <div class="stat-box"><div class="stat-label">Arrow Functions</div><div class="stat-value" id="stat-arrows">0</div></div>
+        <div class="stat-box"><div class="stat-label">Async Functions</div><div class="stat-value" id="stat-async">0</div></div>
+        <div class="stat-box"><div class="stat-label">Formatting Time</div><div class="stat-value" id="stat-time">0ms</div></div>
+    </div>
+</div>
+
+<div class="action-bar-new" id="action-bar">
+    <button class="btn-act btn-act-primary" id="analyze-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+        Beautify
+    </button>
+    <button class="btn-act btn-act-ghost" id="minify-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg>
+        Minify
+    </button>
+    <button class="btn-act btn-act-ghost" id="swap-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+        Swap
+    </button>
+    <button class="btn-act btn-act-ghost" id="copy-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        Copy
+    </button>
+    <button class="btn-act btn-act-ghost" id="download-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download
+    </button>
+    <button class="btn-act btn-act-ghost" id="clear-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        Clear
+    </button>
+    <button class="btn-act btn-act-ghost danger" id="reset-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+        Reset
+    </button>
+</div>
+<p class="kbd-hint">Press <kbd>Ctrl</kbd>+<kbd>Enter</kbd> to beautify &middot; <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> to minify</p>
+
+                    </div>
+
+                    <div class="limitations-box" id="limitations-box" aria-label="Tool limitations">
+                        <div class="lim-header">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            <h4>What this tool does not do</h4>
+                        </div>
+                        <ul>
+                            <li>Does not silently mangle code with syntax errors — it reports the first parse error with its line and column.</li>
+                            <li>Does not transpile TypeScript, JSX, decorators, or experimental language proposals.</li>
+                            <li>Very large files (over ~5 MB) may take a few seconds to process.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <section class="related-section content-section" style="margin-top:48px">
+            <div class="section-heading">
+                <h2>Related Tools</h2>
+                <p class="section-intro">After beautifying your JavaScript, you might also need...</p>
+            </div>
+            <div class="related-grid">
+                <a href="./js-minifier.html" class="related-card">
+                    <div class="rc-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 12h14"/></svg>
+                    </div>
+                    <h4>JS Minifier</h4>
+                    <p>Minify your JavaScript code by removing comments and whitespace.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./html-beautifier.html" class="related-card">
+                    <div class="rc-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+                    </div>
+                    <h4>HTML Beautifier</h4>
+                    <p>Format and indent your HTML code with proper structure.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./css-beautifier.html" class="related-card">
+                    <div class="rc-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 010 20 14.5 14.5 0 010-20z"/></svg>
+                    </div>
+                    <h4>CSS Beautifier</h4>
+                    <p>Format and pretty-print your CSS code.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./json-formatter.html" class="related-card">
+                    <div class="rc-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 12h14"/></svg>
+                    </div>
+                    <h4>JSON Formatter</h4>
+                    <p>Format and validate your JSON data.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+            </div>
+        </section>
+
+        <section class="how-section content-section" style="margin-top:48px">
+            <div class="section-heading">
+                <h2>How It Works</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <h4>Paste your code</h4>
+                    <p>Enter or paste any JavaScript code into the input area.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <h4>Choose options</h4>
+                    <p>Pick indent, semicolons, quotes, and brace style from the settings panel.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <h4>Format or minify</h4>
+                    <p>Beautify your code with one click, or minify it for production. Statistics and byte savings are shown instantly.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section content-section" style="margin-top:48px">
+            <div class="section-heading">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h4>What does the JavaScript beautifier do?</h4>
+                    <p>It formats minified or messy JavaScript code by adding proper indentation, line breaks, and structure, making code readable and maintainable. It can also minify code back down for production.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>What options are available?</h4>
+                    <p>You can choose indent size (2, 4, 8 spaces, or tabs), semicolon handling (add, keep, or remove), quote style, brace placement, and how many empty lines to keep.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>Is my JavaScript uploaded to a server?</h4>
+                    <p>No. All processing happens entirely in your browser. Your code never leaves your device.</p>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:var(--space-8)">
+                <a href="/guides/js-beautifier" style="color:var(--color-primary);font-weight:600;font-size:var(--text-sm);text-decoration:none;transition:opacity .2s">Read Guide: Using the JavaScript Beautifier &#10132;</a>
+            </div>
+        </section>
+
     </main>
-    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p>
                     <div class="footer-social">
                         <a href="https://x.com/GoToolly" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                         <a href="https://www.facebook.com/profile.php?id=61591898344203" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                        <a href="https://linkedin.com/in/go-toolly-426b67422" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                        <a href="https://www.youtube.com/@GoToolly" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                         <a href="https://www.instagram.com/gotoolly/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
                         <a href="https://www.tiktok.com/@gotoolly26" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
                         <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></a>
-                    </div></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor.html">Image Compressor</a></li><li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li><li><a href="/tools/word-counter.html">Word Counter</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Popular Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="/tools/image-compressor.html">Image Compressor</a></li>
+                        <li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li>
+                        <li><a href="/tools/word-counter.html">Word Counter</a></li>
+                        <li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li>
+                        <li><a href="/tools/password-generator.html">Password Generator</a></li>
+                        <li><a href="/tools">View All Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script defer src="../assets/js/main.min.js"></script>
     <script>
-    (function(){
-        var input=document.getElementById('js-input');
-        var resultArea=document.getElementById('result-area');
-        var resultText=document.getElementById('result-text');
-        var stats=document.getElementById('stats');
-        function beautify(js,indentStr,preserveNewlines){
-            js=js.replace(/\/\*[\s\S]*?\*\//g,function(m){return preserveNewlines?'\n':' '}).replace(/\/\/[^\n]*/g,function(m){return preserveNewlines?'\n':' '});
-            var tokens=[];var i=0;
-            while(i<js.length){
-                if(js[i]==='"'){var s=i;i++;while(i<js.length&&js[i]!=='"'){if(js[i]==='\\')i++;i++}if(i<js.length)i++;tokens.push(js.slice(s,i));continue;}
-                if(js[i]==="'"){var s=i;i++;while(i<js.length&&js[i]!=="'"){if(js[i]==='\\')i++;i++}if(i<js.length)i++;tokens.push(js.slice(s,i));continue;}
-                if(js[i]==='`'){var s=i;i++;while(i<js.length&&js[i]!=='`'){if(js[i]==='\\')i++;i++}if(i<js.length)i++;tokens.push(js.slice(s,i));continue;}
-                if(js[i]>='0'&&js[i]<='9'){var s=i;if(js[i]==='0'&&i+1<js.length&&(js[i+1]==='x'||js[i+1]==='X')){i+=2;while(i<js.length&&((js[i]>='0'&&js[i]<='9')||(js[i]>='a'&&js[i]<='f')||(js[i]>='A'&&js[i]<='F')))i++;}else{while(i<js.length&&((js[i]>='0'&&js[i]<='9')||js[i]==='.'))i++;}tokens.push(js.slice(s,i));continue;}
-                if((js[i]>='a'&&js[i]<='z')||(js[i]>='A'&&js[i]<='Z')||js[i]==='$'||js[i]==='_'){var s=i;while(i<js.length&&((js[i]>='a'&&js[i]<='z')||(js[i]>='A'&&js[i]<='Z')||(js[i]>='0'&&js[i]<='9')||js[i]==='$'||js[i]==='_'))i++;tokens.push(js.slice(s,i));continue;}
-                if(js[i]==='+'&&js[i+1]==='+'){tokens.push('++');i+=2;continue;}
-                if(js[i]==='-'&&js[i+1]==='-'){tokens.push('--');i+=2;continue;}
-                if(js[i]==='='&&js[i+1]==='='&&js[i+2]==='='){tokens.push('===');i+=3;continue;}
-                if(js[i]==='!'&&js[i+1]==='='&&js[i+2]==='='){tokens.push('!==');i+=3;continue;}
-                if(js[i]==='='&&js[i+1]==='>'){tokens.push('=>');i+=2;continue;}
-                if(js[i]==='='&&js[i+1]==='='){tokens.push('==');i+=2;continue;}
-                if(js[i]==='!'&&js[i+1]==='='){tokens.push('!=');i+=2;continue;}
-                if(js[i]==='+'&&js[i+1]==='='){tokens.push('+=');i+=2;continue;}
-                if(js[i]==='-'&&js[i+1]==='='){tokens.push('-=');i+=2;continue;}
-                if(js[i]==='*'&&js[i+1]==='='){tokens.push('*=');i+=2;continue;}
-                if(js[i]==='/'&&js[i+1]==='='){tokens.push('/=');i+=2;continue;}
-                if(js[i]==='&'&&js[i+1]==='&'){tokens.push('&&');i+=2;continue;}
-                if(js[i]==='|'&&js[i+1]==='|'){tokens.push('||');i+=2;continue;}
-                if(js[i]==='<'&&js[i+1]==='='){tokens.push('<=');i+=2;continue;}
-                if(js[i]==='>'&&js[i+1]==='='){tokens.push('>=');i+=2;continue;}
-                if(js[i]==='*'&&js[i+1]==='*'){tokens.push('**');i+=2;continue;}
-                if(js[i]==='.'&&js[i+1]==='.'&&js[i+2]==='.'){tokens.push('...');i+=3;continue;}
-                if(js[i]===' '||js[i]==='\t'){tokens.push(' ');i++;continue;}
-                if(js[i]==='\n'||js[i]==='\r'){tokens.push('\n');i++;continue;}
-                tokens.push(js[i]);i++;
+/* ===== GoToolly JS Beautifier engine (self-contained formatter/minifier) ===== */
+/* GoToolly JS Beautifier - self-contained formatter/minifier engine */
+(function (root, factory) {
+    if (typeof module !== 'undefined' && module.exports) { module.exports = factory(); }
+    else { root.JSBeautifyEngine = factory(); }
+}(typeof self !== 'undefined' ? self : this, function () {
+    'use strict';
+
+    function FormatError(message, line, col) {
+        this.name = 'FormatError';
+        this.message = message;
+        this.line = line;
+        this.col = col;
+    }
+
+    function dict(obj) {
+        obj = obj || {};
+        Object.setPrototypeOf(obj, null);
+        return obj;
+    }
+
+    var KEYWORDS_ALLOW_REGEX = dict({
+        return: 1, typeof: 1, instanceof: 1, in: 1, of: 1, new: 1, void: 1, delete: 1,
+        throw: 1, await: 1, yield: 1, case: 1, do: 1, else: 1, default: 1
+    });
+
+    var KW_SPACE_BEFORE_PAREN = dict({
+        if: 1, for: 1, while: 1, switch: 1, catch: 1, with: 1, return: 1, typeof: 1,
+        new: 1, delete: 1, void: 1, throw: 1, await: 1, yield: 1, case: 1, do: 1,
+        else: 1, in: 1, of: 1, instanceof: 1, function: 1, async: 1,
+        var: 1, let: 1, const: 1
+    });
+
+    var NON_VALUE_KEYWORDS = dict({
+        var: 1, let: 1, const: 1, function: 1, class: 1, if: 1, for: 1, while: 1,
+        do: 1, switch: 1, case: 1, default: 1, try: 1, catch: 1, finally: 1,
+        return: 1, throw: 1, break: 1, continue: 1, new: 1, delete: 1, void: 1,
+        typeof: 1, instanceof: 1, in: 1, of: 1, yield: 1, await: 1, async: 1,
+        import: 1, export: 1, debugger: 1, else: 1, with: 1, extends: 1, static: 1,
+        get: 1, set: 1, from: 1, as: 1
+    });
+
+    var BLOCK_PREV_WORDS = dict({ else: 1, try: 1, finally: 1, do: 1, static: 1 });
+
+    var STATEMENT_FLUSH = dict({
+        var: 1, let: 1, const: 1, function: 1, class: 1, if: 1, for: 1, while: 1,
+        do: 1, switch: 1, try: 1, break: 1, continue: 1, case: 1, default: 1,
+        import: 1, export: 1, debugger: 1
+    });
+
+    var MULTI_PUNCT = [
+        '...', '>>>=', '**=', '===', '!==', '&&=', '||=', '??=', '>>>', '**',
+        '<<', '>>', '<=', '>=', '==', '!=', '=>', '&&', '||', '??', '?.',
+        '++', '--', '+=', '-=', '*=', '/=', '%=', '&=', '|=', '^='
+    ];
+
+    function tokenize(src) {
+        var tokens = [];
+        var warnings = [];
+        var n = src.length, i = 0, line = 1, col = 0;
+
+        function updatePos(str) {
+            var idx = str.lastIndexOf('\n');
+            if (idx === -1) { col += str.length; }
+            else {
+                for (var j = 0; j < str.length; j++) if (str.charCodeAt(j) === 10) line++;
+                col = str.length - idx - 1;
             }
-            function isWord(t){return typeof t==='string'&&/^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(t)}
-            function isNum(t){return typeof t==='string'&&/^[0-9]/.test(t)}
-            function needsSpace(prev,cur){
-                if(!prev||!cur)return false;
-                if((isWord(prev)||isNum(prev))&&(isWord(cur)||isNum(cur)))return true;
-                return false;
+        }
+
+        function push(type, value, l, c, extra) {
+            var t = { type: type, value: value, line: l, col: c };
+            if (extra) for (var k in extra) t[k] = extra[k];
+            tokens.push(t);
+        }
+
+        function fail(msg, l, c) { throw new FormatError(msg, l, c); }
+
+        function scanString(quote) {
+            var l = line, c = col, s = i;
+            i++;
+            while (i < n) {
+                var ch = src[i];
+                if (ch === '\\') { i += 2; continue; }
+                if (ch === quote) { i++; return src.slice(s, i); }
+                if (ch === '\n' || ch === '\r') break;
+                i++;
             }
-            function stripTrailingWs(s){
-                while(s.length>0&&(s[s.length-1]===' '||s[s.length-1]==='\t'||s[s.length-1]==='\n'))s=s.slice(0,-1);
-                return s;
-            }
-            var result='';var level=0;var ti=0;
-            var lastEmitted='';
-            var parenDepth=0;
-            var bracketDepth=0;
-            var inForParen=false;
-            while(ti<tokens.length){
-                var tok=tokens[ti];
-                var next=ti<tokens.length-1?tokens[ti+1]:null;
-                var nextNext=ti<tokens.length-2?tokens[ti+2]:null;
-                if(tok===' '||tok==='\n'){ti++;continue;}
-                if(tok==='{'){
-                    result=stripTrailingWs(result)+' {\n';level++;lastEmitted='{';ti++;
-                    while(ti<tokens.length&&(tokens[ti]===' '||tokens[ti]==='\n'))ti++;
-                    if(ti<tokens.length&&tokens[ti]!=='}')result+=indentStr.repeat(level);
-                    continue;
-                }
-                if(tok==='}'){
-                    level=Math.max(0,level-1);
-                    result=stripTrailingWs(result);
-                    result+='\n'+indentStr.repeat(level)+'}';lastEmitted='}';ti++;
-                    while(ti<tokens.length&&(tokens[ti]===' '||tokens[ti]==='\n'))ti++;
-                    if(ti<tokens.length&&tokens[ti]===';'){result+=';';lastEmitted=';';ti++;while(ti<tokens.length&&(tokens[ti]===' '||tokens[ti]==='\n'))ti++;}
-                    if(ti<tokens.length&&tokens[ti]!=='}'&&tokens[ti]!==')'&&tokens[ti]!==']'&&tokens[ti]!==','){
-                        result+='\n'+indentStr.repeat(level);
+            fail('Unterminated string literal', l, c);
+        }
+
+        function scanTemplate() {
+            var l = line, c = col, s = i;
+            i++;
+            while (i < n) {
+                var ch = src[i];
+                if (ch === '\\') { i += 2; continue; }
+                if (ch === '`') { i++; return src.slice(s, i); }
+                if (ch === '$' && src[i + 1] === '{') {
+                    i += 2;
+                    var depth = 1;
+                    while (i < n && depth > 0) {
+                        var c2 = src[i];
+                        if (c2 === '\\') { i += 2; continue; }
+                        if (c2 === '{') depth++;
+                        else if (c2 === '}') depth--;
+                        i++;
                     }
                     continue;
                 }
-                if(tok===';'){
-                    if(inForParen){result+='; ';lastEmitted=';';ti++;continue;}
-                    result+=';\n'+indentStr.repeat(level);lastEmitted=';';ti++;continue;
-                }
-                if(tok===','){
-                    if(parenDepth>0||bracketDepth>0){result+=', ';lastEmitted=',';ti++;continue;}
-                    result+=',\n'+indentStr.repeat(level);lastEmitted=',';ti++;continue;
-                }
-                if(tok==='('){
-                    parenDepth++;
-                    var lookBack='';for(var lb=ti-1;lb>=0;lb--){if(tokens[lb]!==' '&&tokens[lb]!=='\n'){lookBack=tokens[lb];break;}}
-                    if(lookBack==='for')inForParen=true;
-                    result+='(';lastEmitted='(';ti++;continue;
-                }
-                if(tok===')'){
-                    parenDepth=Math.max(0,parenDepth-1);
-                    if(parenDepth===0)inForParen=false;
-                    result+=')';lastEmitted=')';ti++;continue;
-                }
-                if(tok==='['){bracketDepth++;result+='[';lastEmitted='[';ti++;continue;}
-                if(tok===']'){bracketDepth=Math.max(0,bracketDepth-1);result+=']';lastEmitted=']';ti++;continue;}
-                if(tok===':'){result+=': ';lastEmitted=':';ti++;continue;}
-                if(tok==='.'){result+='.';lastEmitted='.';ti++;continue;}
-                if(tok==='...'){result+='...';lastEmitted='...';ti++;continue;}
-                if(tok==='='){result+=' = ';lastEmitted='=';ti++;continue;}
-                if(tok==='=>'){result+=' => ';lastEmitted='>';ti++;continue;}
-                if(tok==='==='){result+=' === ';lastEmitted='=';ti++;continue;}
-                if(tok==='=='){result+=' == ';lastEmitted='=';ti++;continue;}
-                if(tok==='!=='){result+=' !== ';lastEmitted='=';ti++;continue;}
-                if(tok==='!='){result+=' != ';lastEmitted='=';ti++;continue;}
-                if(tok==='+='){result+=' += ';lastEmitted='=';ti++;continue;}
-                if(tok==='-='){result+=' -= ';lastEmitted='=';ti++;continue;}
-                if(tok==='*='){result+=' *= ';lastEmitted='=';ti++;continue;}
-                if(tok==='/='){result+=' /= ';lastEmitted='=';ti++;continue;}
-                if(tok==='&&'){result+=' && ';lastEmitted='&';ti++;continue;}
-                if(tok==='||'){result+=' || ';lastEmitted='|';ti++;continue;}
-                if(tok==='<='||tok==='>='){result+=' '+tok+' ';lastEmitted=tok;ti++;continue;}
-                if(tok==='++'||tok==='--'){
-                    if(isWord(lastEmitted)){result+=tok;}else{result+=' '+tok;}
-                    lastEmitted=tok;ti++;continue;
-                }
-                if(tok==='**'){result+=' ** ';lastEmitted=tok;ti++;continue;}
-                if(tok==='+'||tok==='-'||tok==='*'||tok==='/'||tok==='%'||tok==='<'||tok==='>'||tok==='!'){
-                    result+=' '+tok+' ';lastEmitted=tok;ti++;continue;
-                }
-                if(result.length>0&&needsSpace(lastEmitted,tok)){result+=' ';}
-                result+=tok;lastEmitted=tok;ti++;
+                i++;
             }
-            result=result.replace(/\n{3,}/g,'\n\n').trim();
-            var lines=result.split('\n');var out=[];
-            for(var k=0;k<lines.length;k++){
-                var line=lines[k].replace(/[ \t]+$/g,'');
-                if(line.length>0)out.push(line);
-                else if(out.length>0&&out[out.length-1].length>0)out.push('');
-            }
-            return out.join('\n')+'\n';
+            fail('Unterminated template literal', l, c);
         }
-        document.getElementById('beautify-btn').addEventListener('click',function(){
-            var code=input.value.trim();if(!code){return}
-            var size=parseInt(document.getElementById('indent-size').value);
-            var preserveNewlines=document.getElementById('preserve-newlines').checked;
-            var indentStr=' '.repeat(size);
-            var beautified=beautify(code,indentStr,preserveNewlines);
-            resultText.textContent=beautified;resultArea.style.display='';stats.style.display='';
-            document.getElementById('stat-original').textContent=code.length+' chars';
-            document.getElementById('stat-beautified').textContent=beautified.length+' chars';
-            document.getElementById('stat-lines').textContent=beautified.split('\n').length;
+
+        function scanBlockComment() {
+            var l = line, c = col, s = i;
+            i += 2;
+            while (i + 1 < n) {
+                if (src[i] === '*' && src[i + 1] === '/') { i += 2; return src.slice(s, i); }
+                i++;
+            }
+            fail('Unterminated block comment', l, c);
+        }
+
+        function scanRegex() {
+            var l = line, c = col, s = i, inClass = false;
+            i++;
+            while (i < n) {
+                var ch = src[i];
+                if (ch === '\\') { i += 2; continue; }
+                if (ch === '[') { inClass = true; i++; continue; }
+                if (ch === ']') { inClass = false; i++; continue; }
+                if (ch === '/' && !inClass) { i++; break; }
+                if (ch === '\n') break;
+                i++;
+            }
+            while (i < n && /[a-z]/i.test(src[i])) i++;
+            if (i < n && src[i] !== '/' && src[i] !== ';' && src[i] !== ')' && src[i] !== ']' && src[i] !== ',' && src[i] !== '.' && !/[a-z]/i.test(src[i - 1])) {
+                /* fallthrough: not a real regex close */
+            }
+            return src.slice(s, i);
+        }
+
+        function scanNumber() {
+            var s = i;
+            if (src[i] === '0' && /[xXbBoO]/.test(src[i + 1] || '')) {
+                i += 2;
+                while (i < n && /[0-9a-fA-F_]/.test(src[i])) i++;
+            } else {
+                while (i < n && /[0-9_]/.test(src[i])) i++;
+                if (src[i] === '.' && /[0-9]/.test(src[i + 1] || '')) {
+                    i++;
+                    while (i < n && /[0-9_]/.test(src[i])) i++;
+                }
+                if (src[i] === 'e' || src[i] === 'E') {
+                    var j = i + 1;
+                    if (src[j] === '+' || src[j] === '-') j++;
+                    if (/[0-9]/.test(src[j] || '')) {
+                        i = j;
+                        while (i < n && /[0-9_]/.test(src[i])) i++;
+                    }
+                }
+            }
+            if (src[i] === 'n') i++;
+            return src.slice(s, i);
+        }
+
+        var lastTok = null;
+
+        function regexAllowed() {
+            if (!lastTok) return true;
+            if (lastTok.type === 'word') return !!KEYWORDS_ALLOW_REGEX[lastTok.value];
+            if (lastTok.type === 'punct') {
+                if (/^[({[,;:=!&|?+\-*%^~<>]/.test(lastTok.value)) return true;
+                if (lastTok.value === '}') return true;
+                if (lastTok.value === '=>' || lastTok.value === '&&' || lastTok.value === '||' || lastTok.value === '??' || lastTok.value === '...' || lastTok.value === '??=' || lastTok.value === '&&=' || lastTok.value === '||=') return true;
+                return false;
+            }
+            return false;
+        }
+
+        while (i < n) {
+            var ch = src[i];
+            var l = line, c = col;
+
+            if (ch === ' ' || ch === '\t' || ch === '\n' || ch === '\r' || ch === '\u00a0' || ch === '\u2028' || ch === '\u2029' || ch === '\ufeff') {
+                var s = i;
+                while (i < n && /[\s\u00a0\u2028\u2029\ufeff]/.test(src[i])) i++;
+                var wsv = src.slice(s, i);
+                updatePos(wsv);
+                push('ws', wsv, l, c);
+                continue;
+            }
+
+            if (ch === '"' || ch === "'") {
+                var str = scanString(ch);
+                updatePos(str);
+                push('string', str, l, c);
+                lastTok = tokens[tokens.length - 1];
+                continue;
+            }
+
+            if (ch === '`') {
+                var tpl = scanTemplate();
+                updatePos(tpl);
+                push('template', tpl, l, c);
+                lastTok = tokens[tokens.length - 1];
+                continue;
+            }
+
+            if (ch === '/' && src[i + 1] === '/') {
+                var s = i;
+                while (i < n && src[i] !== '\n') i++;
+                var cv = src.slice(s, i);
+                updatePos(cv);
+                push('comment', cv, l, c);
+                lastTok = tokens[tokens.length - 1];
+                continue;
+            }
+
+            if (ch === '/' && src[i + 1] === '*') {
+                var bv = scanBlockComment();
+                updatePos(bv);
+                push('comment', bv, l, c);
+                lastTok = tokens[tokens.length - 1];
+                continue;
+            }
+
+            if (ch === '/' && regexAllowed()) {
+                var rv = scanRegex();
+                if (rv.length > 1 && rv.indexOf('\n') === -1) {
+                    updatePos(rv);
+                    push('regex', rv, l, c);
+                    lastTok = tokens[tokens.length - 1];
+                    continue;
+                }
+            }
+
+            if (ch === '/' || ch === '#') {
+                if (i === 0 && ch === '#') {
+                    var s = i;
+                    while (i < n && src[i] !== '\n') i++;
+                    var hv = src.slice(s, i);
+                    updatePos(hv);
+                    push('comment', hv, l, c);
+                    lastTok = tokens[tokens.length - 1];
+                    continue;
+                }
+            }
+
+            if (/[0-9]/.test(ch) || (ch === '.' && /[0-9]/.test(src[i + 1] || ''))) {
+                var num = scanNumber();
+                updatePos(num);
+                push('number', num, l, c);
+                lastTok = tokens[tokens.length - 1];
+                continue;
+            }
+
+            if (/[A-Za-z_$]/.test(ch) || ch.charCodeAt(0) >= 0x80) {
+                var s = i;
+                while (i < n && /[A-Za-z0-9_$\u0080-\uFFFF]/.test(src[i])) i++;
+                var wv = src.slice(s, i);
+                updatePos(wv);
+                push('word', wv, l, c);
+                lastTok = tokens[tokens.length - 1];
+                continue;
+            }
+
+            var matched = false;
+            for (var m = 0; m < MULTI_PUNCT.length; m++) {
+                var op = MULTI_PUNCT[m];
+                if (src.substr(i, op.length) === op) {
+                    updatePos(op);
+                    push('punct', op, l, c);
+                    lastTok = tokens[tokens.length - 1];
+                    i += op.length;
+                    matched = true;
+                    break;
+                }
+            }
+            if (matched) continue;
+
+            if (ch === '(' || ch === ')' || ch === '{' || ch === '}' || ch === '[' || ch === ']' ||
+                ch === ';' || ch === ',' || ch === '.' || ch === ':' || ch === '?' || ch === '=' ||
+                ch === '+' || ch === '-' || ch === '*' || ch === '/' || ch === '%' || ch === '&' ||
+                ch === '|' || ch === '^' || ch === '~' || ch === '!' || ch === '<' || ch === '>' ||
+                ch === '@' || ch === '#') {
+                updatePos(ch);
+                push('punct', ch, l, c);
+                lastTok = tokens[tokens.length - 1];
+                i++;
+                continue;
+            }
+
+            var o = i;
+            while (i < n && !/[\s"'\`/0-9A-Za-z_$()\[\]{};,.?:=+\-*%&|^~!<>@#]/.test(src[i]) && src.charCodeAt(i) >= 0x80) i++;
+            if (i === o) i++;
+            var ov = src.slice(o, i);
+            updatePos(ov);
+            push('other', ov, l, c);
+            lastTok = tokens[tokens.length - 1];
+        }
+
+        var stack = [];
+        for (var t = 0; t < tokens.length; t++) {
+            var tk = tokens[t];
+            if (tk.type !== 'punct') continue;
+            if (tk.value === '{' || tk.value === '(' || tk.value === '[') stack.push({ v: tk.value, line: tk.line, col: tk.col });
+            else if (tk.value === '}' || tk.value === ')' || tk.value === ']') {
+                var want = tk.value === '}' ? '{' : (tk.value === ')' ? '(' : '[');
+                if (stack.length && stack[stack.length - 1].v === want) stack.pop();
+                else warnings.push({ kind: 'structure', message: 'Unbalanced ' + tk.value + ' on line ' + tk.line, line: tk.line, col: tk.col });
+            }
+        }
+        while (stack.length) {
+            var left = stack.pop();
+            warnings.push({ kind: 'structure', message: 'Unclosed ' + left.v + ' (missing closing bracket)', line: left.line, col: left.col });
+        }
+
+        return { tokens: tokens, warnings: warnings };
+    }
+
+    function isValueType(type) {
+        return type === 'word' || type === 'number' || type === 'string' || type === 'template' || type === 'regex' || type === 'other';
+    }
+
+    function isValueLike(t) {
+        if (!t) return false;
+        if (t.type === 'word') return !NON_VALUE_KEYWORDS[t.value];
+        return isValueType(t.type);
+    }
+
+    function convertQuotes(src, target) {
+        var q = src.charAt(0);
+        if (q !== "'" && q !== '"') return src;
+        if (q === target) return src;
+        var inner = src.slice(1, -1);
+        var out = '', i = 0;
+        while (i < inner.length) {
+            var c = inner[i];
+            if (c === '\\') {
+                var nn = inner[i + 1];
+                if (nn === q) { out += nn; i += 2; continue; }
+                if (nn === target) { out += '\\' + target; i += 2; continue; }
+                out += '\\' + nn; i += 2; continue;
+            }
+            if (c === target) { out += '\\' + target; i++; continue; }
+            out += c; i++;
+        }
+        return target + out + target;
+    }
+
+    function beautifyJS(src, options) {
+        options = options || {};
+        var indentUnit = options.indentChar === '\t' ? '\t' : ' '.repeat(+options.indent || 4);
+        var mode = options.semicolons || 'keep';
+        var braceStyle = options.braceStyle || 'collapse';
+        var quotes = options.quotes || 'keep';
+        var maxEmpty = options.maxEmptyLines != null ? +options.maxEmptyLines : 2;
+        var width = options.inlineWidth || 80;
+        var maxLineWidth = options.maxLineWidth != null ? +options.maxLineWidth : width;
+        var wrapChains = !!options.wrapMethodChains;
+        var wrapArrays = !!options.wrapArrays;
+        var wrapObjects = options.wrapObjects != null ? !!options.wrapObjects : true;
+        var wrapArgs = !!options.wrapFunctionArgs;
+        var wrapPromises = !!options.wrapPromiseChains;
+        var keepSingleObj = options.keepSingleLineObjects != null ? !!options.keepSingleLineObjects : true;
+        var keepSingleArr = options.keepSingleLineArrays != null ? !!options.keepSingleLineArrays : true;
+        var classBlank = !!options.blankLinesBetweenClassMembers;
+        var collapseEmpty = options.collapseEmptyBlocks != null ? !!options.collapseEmptyBlocks : true;
+        var targetQuote = quotes === 'single' ? "'" : '"';
+
+        if (options.compactMode) {
+            wrapChains = false; wrapArrays = false; wrapObjects = false; wrapArgs = false; wrapPromises = false;
+            keepSingleObj = true; keepSingleArr = true; classBlank = false;
+            maxEmpty = Math.min(maxEmpty, 1);
+        }
+        if (options.expandedMode) {
+            wrapObjects = true; wrapArrays = true; keepSingleObj = false; keepSingleArr = false;
+        }
+
+        var res = tokenize(src);
+        var tokens = res.tokens;
+        var warnings = res.warnings;
+
+        for (var wi = 0; wi < warnings.length; wi++) {
+            if (warnings[wi].kind === 'structure') {
+                throw new FormatError(warnings[wi].message, warnings[wi].line, warnings[wi].col);
+            }
+        }
+
+        var lines = [];
+        var cur = '';
+        var level = 0;
+        var prevSig = null;
+        var parenDepth = 0;
+        var braces = [];
+        var containers = [];
+        var pendingSwitch = false;
+        var pendingClass = false;
+        var pendingCaseColon = false;
+        var elseIfFlag = false;
+        var noFlushNext = false;
+        var gapNewline = false;
+        var pendingProp = false;
+        var ternaryDepth = 0;
+        var ctrlParens = 0;
+        var chainLevel = -1;
+        var chainBaseLevel = -1;
+
+        function lineEmpty() { return cur === ''; }
+        function endsWithSpace() { return /[ \t]$/.test(cur); }
+        function addText(s) { cur += s; }
+        function ensureIndent() { if (cur === '') cur = indentUnit.repeat(level); }
+        function nl() { lines.push(cur); cur = ''; }
+
+        function nextSig(idx) {
+            var j = idx + 1;
+            while (j < tokens.length && (tokens[j].type === 'ws' || tokens[j].type === 'comment')) j++;
+            return j < tokens.length ? tokens[j] : null;
+        }
+
+        function gapHasNewline(idx) {
+            var j = idx + 1;
+            while (j < tokens.length && tokens[j].type === 'ws') {
+                if (tokens[j].value.indexOf('\n') !== -1) return true;
+                j++;
+            }
+            return false;
+        }
+
+        function nextNonWs(idx) {
+            var j = idx + 1;
+            while (j < tokens.length && tokens[j].type === 'ws') j++;
+            return j < tokens.length ? tokens[j] : null;
+        }
+
+        function lastNonSpaceChar() {
+            var s = cur.replace(/[ \t]+$/, '');
+            return s.length ? s.charAt(s.length - 1) : '';
+        }
+
+        function flushStatement() {
+            if (cur.trim() === '') return;
+            if (mode === 'add') {
+                var t = cur.trim();
+                var last = t.charAt(t.length - 1);
+                if (last !== ';' && last !== '{' && last !== '}' && last !== ',' && last !== ':') {
+                    addText(';');
+                }
+            }
+            chainLevel = -1;
+            if (chainBaseLevel >= 0) {
+                level = chainBaseLevel;
+                chainBaseLevel = -1;
+            }
+            nl();
+        }
+
+        function endChain() {
+            chainLevel = -1;
+            if (chainBaseLevel >= 0) {
+                level = chainBaseLevel;
+                chainBaseLevel = -1;
+            }
+        }
+
+        function blankAfterMember(idx) {
+            if (!classBlank) return;
+            var top = braces[braces.length - 1];
+            if (!top || top.type !== 'class') return;
+            var nt = nextSig(idx);
+            if (nt && nt.type === 'punct' && nt.value === '}') return;
+            lines.push('');
+        }
+
+        function sepBefore(t) {
+            var p = prevSig;
+            if (!p) return false;
+            var tv = t.type === 'punct' ? t.value : null;
+
+            if (tv === ';' || tv === ',' || tv === ')' || tv === ']') return false;
+
+            if (tv === '(' || tv === '[') {
+                if (p.prop) return false;
+                if (p.type === 'word') { return !!KW_SPACE_BEFORE_PAREN[p.value]; }
+                if (p.type === 'punct') {
+                    if (p.value === ')' || p.value === ']' || p.value === '(' || p.value === '[' || p.value === '.' || p.value === '?.' || p.value === '...') return false;
+                    return true;
+                }
+                return false;
+            }
+
+            if (tv === '.' || tv === '?.') return false;
+
+            if (p.type === 'punct') {
+                if (p.unary) return false;
+                switch (p.value) {
+                    case '(': case '[': case '.': case '?.': case '...': case '#': case '@': case '!': case '~': case '++': case '--':
+                        return false;
+                    case ')': case ']':
+                        return !(tv && /^[)\],.:;?]/.test(tv));
+                    case '}':
+                        if (tv && /^[)\].,;:?]/.test(tv)) return false;
+                        if (tv === '}') return true;
+                        return true;
+                    case ',': case ';': case ':': case '?':
+                        return true;
+                    case '{':
+                        if (tv === '}') return false;
+                        return true;
+                    default:
+                        return true;
+                }
+            }
+            return true;
+        }
+
+        function isUnary(t) {
+            if (t.type !== 'punct') return false;
+            if (t.value !== '+' && t.value !== '-' && t.value !== '~' && t.value !== '!') return false;
+            if (!prevSig) return true;
+            if (prevSig.type === 'punct') {
+                if (/^[)\]}]$/.test(prevSig.value)) return false;
+                if (prevSig.value === '++' || prevSig.value === '--') return false;
+                return true;
+            }
+            if (prevSig.type === 'word') {
+                return !!KEYWORDS_ALLOW_REGEX[prevSig.value] || prevSig.value === 'return';
+            }
+            return false;
+        }
+
+        function isBlockStart() {
+            if (pendingClass) return true;
+            if (!prevSig) return true;
+            if (prevSig.type === 'punct') {
+                if (prevSig.value === ')' || prevSig.value === '}' || prevSig.value === ';' || prevSig.value === '{' || prevSig.value === '=>') return true;
+                return false;
+            }
+            if (prevSig.type === 'word') return !!BLOCK_PREV_WORDS[prevSig.value];
+            return false;
+        }
+
+        function needsNoSpaceBrace() {
+            if (!prevSig) return false;
+            if (prevSig.type === 'punct') {
+                if (prevSig.value === '(' || prevSig.value === '[' || prevSig.value === '{' || prevSig.value === '.' || prevSig.value === '?.' || prevSig.value === '...' || prevSig.value === '!' || prevSig.value === '~') return true;
+                if (prevSig.unary && (prevSig.value === '+' || prevSig.value === '-' || prevSig.value === '++' || prevSig.value === '--')) return true;
+                return false;
+            }
+            return false;
+        }
+
+        function measureGroup(idx, close) {
+            var depth = 0, j = idx, lenSoFar = 0, prevParenClose = false, hasFunc = false, hasNl = false, hasComma = false;
+            while (j < tokens.length) {
+                var t = tokens[j];
+                if (t.type === 'ws' || t.type === 'comment') {
+                    if (t.type === 'comment' && (t.value.indexOf('\n') !== -1 || t.value.indexOf('//') === 0)) hasNl = true;
+                    j++; continue;
+                }
+                if (t.type === 'punct') {
+                    if (t.value === '{' && prevParenClose) hasFunc = true;
+                    if (t.value === '(' || t.value === '[' || t.value === '{') depth++;
+                    else if (t.value === ')' || t.value === ']' || t.value === '}') {
+                        depth--;
+                        if (t.value === close && depth === 0) break;
+                    }
+                    if (t.value === ',' && depth === 1) hasComma = true;
+                    prevParenClose = (t.value === ')');
+                    lenSoFar += t.value.length + 1;
+                } else {
+                    if (t.type === 'word' && t.value === 'function') hasFunc = true;
+                    if (t.type === 'template' && t.value.indexOf('\n') !== -1) hasNl = true;
+                    prevParenClose = false;
+                    lenSoFar += t.value.length + 1;
+                }
+                j++;
+            }
+            return { len: lenSoFar, hasNl: hasNl, hasFunc: hasFunc, hasComma: hasComma };
+        }
+
+        function shouldExpandObject(idx) {
+            var m = measureGroup(idx, '}');
+            return m.hasNl || m.hasFunc || m.len > maxLineWidth;
+        }
+
+        function chainLength(idx) {
+            var j = idx, len = 0, depth = 0;
+            while (j < tokens.length) {
+                var t = tokens[j];
+                if (t.type === 'ws' || t.type === 'comment') { j++; continue; }
+                if (t.type === 'punct') {
+                    var pv = t.value;
+                    if (depth === 0 && (pv === ';' || pv === ',' || pv === ')' || pv === ']' || pv === '}' || pv === '=>' || pv === '?' || pv === ':' || pv === '=' || pv === '==' || pv === '===' || pv === '!=' || pv === '!==' || pv === '<' || pv === '>' || pv === '<=' || pv === '>=' || pv === '&&' || pv === '||' || pv === '??' || pv === '+' || pv === '-' || pv === '*' || pv === '/' || pv === '%' || pv === '**')) break;
+                    if (pv === '(' || pv === '[' || pv === '{') depth++;
+                    else if (pv === ')' || pv === ']' || pv === '}') depth--;
+                    len += pv.length + 1;
+                } else {
+                    if (t.type === 'word' && STATEMENT_FLUSH[t.value] && depth === 0) break;
+                    len += t.value.length + 1;
+                }
+                j++;
+            }
+            return len;
+        }
+
+        function afterBraceLookahead(idx, isInline) {
+            var nt = nextSig(idx);
+            if (!nt) { nl(); return; }
+            if (nt.type === 'punct' && nt.value === ';') return;
+            if (nt.type === 'word' && (nt.value === 'else' || nt.value === 'catch' || nt.value === 'finally' || nt.value === 'while')) {
+                noFlushNext = true;
+                return;
+            }
+            if (isInline && nt.type === 'word' && (nt.value === 'from' || nt.value === 'as')) return;
+            if (nt.type === 'punct') {
+                var v = nt.value;
+                if (isInline && v === '}') return;
+                if (/^[)\].,.;:?]/.test(v)) return;
+                if (v === '(' || v === '[' || v === '.' || v === '?.' || v === '=>' || v === '++' || v === '--') return;
+                if (/^=/.test(v) || v === '+' || v === '-' || v === '*' || v === '/' || v === '%' || v === '&&' || v === '||' || v === '??') return;
+            }
+            nl();
+        }
+
+        function emitValueText(v) {
+            var idx = v.indexOf('\n');
+            if (idx === -1) { addText(v); return; }
+            var parts = v.split('\n');
+            if (parts[0]) addText(parts[0]);
+            for (var k = 1; k < parts.length; k++) { nl(); ensureIndent(); addText(parts[k]); }
+        }
+
+        function isObjectColon() {
+            var top = braces[braces.length - 1];
+            return top && top.type === 'object';
+        }
+
+        function startsNewStatement(tok) {
+            if (parenDepth > 0) return false;
+            if (cur.trim() === '') return false;
+            if (tok.type === 'word') {
+                if (STATEMENT_FLUSH[tok.value]) {
+                    if (tok.value === 'function' && prevSig && prevSig.type === 'word' && prevSig.value === 'async') return false;
+                    if (prevSig && prevSig.type === 'word' && (prevSig.value === 'export' || prevSig.value === 'default')) return false;
+                    return true;
+                }
+                if (isValueLike(prevSig) && isValueLike(tok)) return true;
+                return false;
+            }
+            return false;
+        }
+
+        for (var idx = 0; idx < tokens.length; idx++) {
+            var t = tokens[idx];
+
+            if (t.type === 'ws') {
+                if (t.value.indexOf('\n') !== -1) gapNewline = true;
+                continue;
+            }
+
+            var thisGapNewline = gapNewline;
+            gapNewline = false;
+
+            if (t.type === 'comment') {
+                var isLine = t.value.indexOf('//') === 0 || t.value.charAt(0) === '#';
+                if (isLine) {
+                    if (cur.trim() !== '') { if (!endsWithSpace()) addText('  '); else addText('  '); }
+                    else ensureIndent();
+                    addText(t.value.trim());
+                    nl();
+                    gapNewline = true;
+                    prevSig = { type: 'word', value: '__comment' };
+                    continue;
+                }
+                /* block comment */
+                if (t.value.indexOf('\n') === -1) {
+                    if (cur.trim() !== '') { if (!endsWithSpace()) addText(' '); }
+                    else ensureIndent();
+                    addText(t.value.trim());
+                    prevSig = { type: 'word', value: '__comment' };
+                    continue;
+                }
+                var parts = t.value.split('\n');
+                for (var pk = 0; pk < parts.length; pk++) {
+                    var part = parts[pk].trim();
+                    if (pk === 0) {
+                        if (cur.trim() !== '') { if (!endsWithSpace()) addText(' '); }
+                        else ensureIndent();
+                        if (part) addText(part);
+                    } else {
+                        if (cur.trim() !== '') nl();
+                        ensureIndent();
+                        if (part) addText(part);
+                    }
+                    if (pk < parts.length - 1) nl();
+                }
+                gapNewline = true;
+                prevSig = { type: 'word', value: '__comment' };
+                continue;
+            }
+
+            if (t.type === 'string') {
+                var outStr = quotes === 'keep' ? t.value : convertQuotes(t.value, targetQuote);
+                if (cur.trim() !== '' && !startsNewStatement(t) && sepBefore(t)) {
+                    if (!endsWithSpace()) addText(' ');
+                } else if (cur.trim() !== '' && startsNewStatement(t)) {
+                    flushStatement();
+                    ensureIndent();
+                } else if (cur.trim() === '') {
+                    ensureIndent();
+                }
+                addText(outStr);
+                prevSig = t;
+                continue;
+            }
+
+            if (t.type === 'number' || t.type === 'regex' || t.type === 'other') {
+                if (cur.trim() === '') {
+                    ensureIndent();
+                } else if (startsNewStatement(t)) {
+                    flushStatement();
+                    ensureIndent();
+                } else if (sepBefore(t)) {
+                    if (!endsWithSpace()) addText(' ');
+                }
+                emitValueText(t.value);
+                prevSig = t;
+                continue;
+            }
+
+            if (t.type === 'template') {
+                if (cur.trim() === '') {
+                    ensureIndent();
+                } else if (startsNewStatement(t)) {
+                    flushStatement();
+                    ensureIndent();
+                } else if (sepBefore(t)) {
+                    if (!endsWithSpace()) addText(' ');
+                }
+                emitValueText(t.value);
+                prevSig = t;
+                continue;
+            }
+
+            if (t.type === 'word') {
+                var w = t.value;
+
+                if (thisGapNewline && prevSig && prevSig.type === 'word' &&
+                    (prevSig.value === 'return' || prevSig.value === 'break' || prevSig.value === 'continue')) {
+                    flushStatement();
+                    prevSig = null;
+                }
+
+                if (w === 'switch') pendingSwitch = true;
+                if (w === 'class') pendingClass = true;
+
+                if ((w === 'case' || w === 'default') && braces.length && braces[braces.length - 1].type === 'switch') {
+                    var swTop = braces[braces.length - 1];
+                    if (swTop.caseActive) { level = Math.max(0, level - 1); swTop.caseActive = false; }
+                    pendingCaseColon = true;
+                }
+
+                if (parenDepth === 0 && cur.trim() !== '' && startsNewStatement(t)) {
+                    if (!noFlushNext && !elseIfFlag) flushStatement();
+                    else noFlushNext = false;
+                } else if (noFlushNext) {
+                    noFlushNext = false;
+                }
+
+                if (w === 'if' && elseIfFlag) elseIfFlag = false;
+
+                if (cur.trim() === '') {
+                    ensureIndent();
+                } else if (sepBefore(t)) {
+                    if (!endsWithSpace()) addText(' ');
+                }
+
+                addText(w);
+                if (pendingProp) t.prop = true;
+                pendingProp = false;
+                prevSig = t;
+
+                if (w === 'else') {
+                    var nxt = nextSig(idx);
+                    if (nxt && nxt.type === 'word' && nxt.value === 'if') elseIfFlag = true;
+                }
+                continue;
+            }
+
+            if (t.type === 'punct') {
+                var v = t.value;
+
+                if (v === '{') {
+                    var isBlock = isBlockStart();
+                    if (isBlock) {
+                        if (parenDepth === 0) endChain();
+                        var nxtBrace = nextNonWs(idx);
+                        if (collapseEmpty && nxtBrace && nxtBrace.type === 'punct' && nxtBrace.value === '}') {
+                            if (cur.trim() !== '' && !needsNoSpaceBrace() && !endsWithSpace()) addText(' ');
+                            else ensureIndent();
+                            addText('{');
+                            braces.push({ type: 'block', inline: true, empty: true });
+                            containers.push({ kind: '{', inline: true });
+                            pendingSwitch = false;
+                            pendingClass = false;
+                            prevSig = { type: 'punct', value: '{' };
+                            continue;
+                        }
+                        if (braceStyle === 'expand') {
+                            if (cur.trim() !== '') nl();
+                            ensureIndent();
+                        } else {
+                            if (cur.trim() !== '' && !needsNoSpaceBrace() && !endsWithSpace()) addText(' ');
+                            else ensureIndent();
+                        }
+                        addText('{');
+                        var btype = pendingSwitch ? 'switch' : (pendingClass ? 'class' : 'block');
+                        braces.push({ type: btype, inline: false, caseActive: false, restore: level });
+                        containers.push({ kind: '{', inline: false });
+                        level++;
+                        nl();
+                        pendingSwitch = false;
+                        pendingClass = false;
+                        prevSig = { type: 'punct', value: '{' };
+                        continue;
+                    }
+                    /* object literal / pattern */
+                    var mObj = measureGroup(idx, '}');
+                    var expand = !keepSingleObj ? true : wrapObjects && (mObj.hasNl || mObj.hasFunc || mObj.len > maxLineWidth);
+                    if (expand) {
+                        if (cur.trim() !== '' && !needsNoSpaceBrace() && !endsWithSpace()) addText(' ');
+                        else ensureIndent();
+                        addText('{');
+                        braces.push({ type: 'object', inline: false, td0: ternaryDepth, restore: level });
+                        containers.push({ kind: '{', inline: false });
+                        level++;
+                        nl();
+                        prevSig = { type: 'punct', value: '{' };
+                    } else {
+                        if (cur.trim() !== '' && !needsNoSpaceBrace() && !endsWithSpace()) addText(' ');
+                        else ensureIndent();
+                        addText('{');
+                        braces.push({ type: 'object', inline: true, td0: ternaryDepth });
+                        containers.push({ kind: '{', inline: true });
+                        prevSig = { type: 'punct', value: '{' };
+                    }
+                    continue;
+                }
+
+                if (v === '}') {
+                    var B = braces.length ? braces.pop() : null;
+                    if (containers.length) containers.pop();
+                    if (B && !B.inline) {
+                        level = B.restore != null ? B.restore : Math.max(0, level - 1);
+                        if (cur.trim() !== '') nl();
+                        ensureIndent();
+                        addText('}');
+                        prevSig = t;
+                        afterBraceLookahead(idx, false);
+                        blankAfterMember(idx);
+                    } else {
+                        if (cur.trim() !== '' && !endsWithSpace()) addText(' ');
+                        addText('}');
+                        prevSig = t;
+                        afterBraceLookahead(idx, true);
+                        blankAfterMember(idx);
+                    }
+                    continue;
+                }
+
+                if (v === ';') {
+                    if (parenDepth === 0) endChain();
+                    if (ctrlParens > 0) {
+                        addText(';');
+                        prevSig = { type: 'punct', value: ';' };
+                    } else {
+                        if (mode === 'remove') {
+                            if (cur.trim() !== '') { nl(); blankAfterMember(idx); }
+                        } else {
+                            var afterSemi = nextNonWs(idx);
+                            if (afterSemi && afterSemi.type === 'comment' && afterSemi.value.indexOf('//') === 0 && !gapHasNewline(idx)) {
+                                addText(';');
+                                prevSig = { type: 'punct', value: ';' };
+                            } else {
+                                addText(';');
+                                nl();
+                                blankAfterMember(idx);
+                            }
+                        }
+                        prevSig = { type: 'punct', value: ';' };
+                    }
+                    continue;
+                }
+
+                if (v === ',') {
+                    if (parenDepth === 0) endChain();
+                    var topC = containers[containers.length - 1];
+                    if (topC && !topC.inline) {
+                        addText(',');
+                        nl();
+                        ensureIndent();
+                        prevSig = { type: 'punct', value: ',' };
+                    } else {
+                        addText(',');
+                        prevSig = { type: 'punct', value: ',' };
+                    }
+                    continue;
+                }
+
+                if (v === ':') {
+                    if (pendingCaseColon) {
+                        addText(':');
+                        pendingCaseColon = false;
+                        level++;
+                        nl();
+                        var tb = braces[braces.length - 1];
+                        if (tb && tb.type === 'switch') tb.caseActive = true;
+                        prevSig = { type: 'punct', value: ':' };
+                        continue;
+                    }
+                    var tbTop = braces[braces.length - 1];
+                    var isTernary = tbTop && tbTop.type === 'object' ? ternaryDepth > (tbTop.td0 || 0) : ternaryDepth > 0;
+                    if (isTernary) {
+                        if (parenDepth === 0) endChain();
+                        ternaryDepth = Math.max(0, ternaryDepth - 1);
+                        if (!endsWithSpace()) addText(' :');
+                        else addText(':');
+                        prevSig = { type: 'punct', value: ':' };
+                        continue;
+                    }
+                    if (isObjectColon()) {
+                        addText(':');
+                        prevSig = { type: 'punct', value: ':' };
+                        continue;
+                    }
+                    if (parenDepth === 0 && prevSig && prevSig.type === 'word' && /^[A-Za-z_$][A-Za-z0-9_$]*$/.test(prevSig.value) && cur.trim() === prevSig.value) {
+                        addText(': ');
+                        prevSig = { type: 'punct', value: ':' };
+                        continue;
+                    }
+                    if (!endsWithSpace()) addText(' :');
+                    else addText(':');
+                    prevSig = { type: 'punct', value: ':' };
+                    continue;
+                }
+
+                if (v === '(') {
+                    var isCtrl = prevSig && prevSig.type === 'word' && (prevSig.value === 'for' || prevSig.value === 'while' || prevSig.value === 'if' || prevSig.value === 'catch' || prevSig.value === 'switch' || prevSig.value === 'with');
+                    if (isCtrl) ctrlParens++;
+                    var parenExpand = false;
+                    if (!isCtrl && parenDepth === 0 && wrapArgs && prevSig) {
+                        var mP = measureGroup(idx, ')');
+                        var callSite = prevSig.type === 'word' ? isValueLike(prevSig) : (prevSig.type === 'punct' && (prevSig.value === ')' || prevSig.value === ']'));
+                        parenExpand = (mP.hasComma || callSite) && (mP.hasNl || mP.hasFunc || mP.len > maxLineWidth);
+                    }
+                    if (cur.trim() === '') { ensureIndent(); }
+                    else if (sepBefore(t)) { if (!endsWithSpace()) addText(' '); }
+                    addText('(');
+                    parenDepth++;
+                    if (parenExpand) {
+                        containers.push({ kind: '(', inline: false });
+                        level++;
+                        nl();
+                        ensureIndent();
+                    } else {
+                        containers.push({ kind: '(', inline: true });
+                    }
+                    prevSig = { type: 'punct', value: '(' };
+                    continue;
+                }
+
+                if (v === ')') {
+                    var parenTop = containers.length && containers[containers.length - 1].kind === '(' ? containers.pop() : null;
+                    if (parenTop && !parenTop.inline) {
+                        level = Math.max(0, level - 1);
+                        if (cur.trim() !== '') nl();
+                        ensureIndent();
+                        addText(')');
+                    } else {
+                        addText(')');
+                    }
+                    parenDepth = Math.max(0, parenDepth - 1);
+                    ctrlParens = Math.max(0, ctrlParens - 1);
+                    prevSig = t;
+                    continue;
+                }
+
+                if (v === '[') {
+                    var arrExpand = false;
+                    if (wrapArrays && parenDepth === 0 && prevSig && !(prevSig.type === 'word' && (prevSig.value === 'var' || prevSig.value === 'let' || prevSig.value === 'const'))) {
+                        var isSubscript = (prevSig.type === 'word' && isValueLike(prevSig)) || (prevSig.type === 'punct' && (prevSig.value === ')' || prevSig.value === ']'));
+                        if (!isSubscript) {
+                            if (!keepSingleArr) arrExpand = true;
+                            else {
+                                var mA = measureGroup(idx, ']');
+                                arrExpand = mA.hasNl || mA.hasFunc || mA.len > maxLineWidth;
+                            }
+                        }
+                    }
+                    if (cur.trim() === '') { ensureIndent(); }
+                    else if (sepBefore(t)) { if (!endsWithSpace()) addText(' '); }
+                    addText('[');
+                    if (arrExpand) {
+                        containers.push({ kind: '[', inline: false });
+                        level++;
+                        nl();
+                        ensureIndent();
+                    } else {
+                        containers.push({ kind: '[', inline: true });
+                    }
+                    prevSig = { type: 'punct', value: '[' };
+                    continue;
+                }
+
+                if (v === ']') {
+                    var arrTop = containers.length && containers[containers.length - 1].kind === '[' ? containers.pop() : null;
+                    if (arrTop && !arrTop.inline) {
+                        level = Math.max(0, level - 1);
+                        if (cur.trim() !== '') nl();
+                        ensureIndent();
+                        addText(']');
+                    } else {
+                        addText(']');
+                    }
+                    prevSig = t;
+                    continue;
+                }
+
+                if (v === '.' || v === '?.' || v === '...' || v === '#' || v === '@') {
+                    var wantBreak = false;
+                    if ((v === '.' || v === '?.') && parenDepth === 0 && (wrapChains || wrapPromises)) {
+                        if (chainLevel >= 0) {
+                            wantBreak = true;
+                        } else {
+                            var nxtDot = nextSig(idx);
+                            var isPromiseLink = nxtDot && nxtDot.type === 'word' && (nxtDot.value === 'then' || nxtDot.value === 'catch' || nxtDot.value === 'finally');
+                            if (wrapPromises && isPromiseLink) wantBreak = true;
+                            else if (gapHasNewline(idx)) wantBreak = true;
+                            else if (cur.length + chainLength(idx) > maxLineWidth) wantBreak = true;
+                        }
+                    }
+                    if (wantBreak) {
+                        if (chainLevel < 0) { chainLevel = level + 1; chainBaseLevel = level; level = chainLevel; }
+                        nl();
+                        cur = indentUnit.repeat(chainLevel);
+                        addText(v);
+                    } else {
+                        if (cur.trim() === '') { ensureIndent(); }
+                        else if (sepBefore(t)) { if (!endsWithSpace()) addText(' '); }
+                        addText(v);
+                    }
+                    if (v === '.' || v === '?.') pendingProp = true;
+                    prevSig = { type: 'punct', value: v, unary: true };
+                    continue;
+                }
+
+                if (v === '?' ) {
+                    if (parenDepth === 0) endChain();
+                    if (cur.trim() === '') { ensureIndent(); }
+                    else if (sepBefore(t)) { if (!endsWithSpace()) addText(' '); }
+                    addText('?');
+                    ternaryDepth++;
+                    prevSig = { type: 'punct', value: '?' };
+                    continue;
+                }
+
+                if (v === '??' || v === '??=') {
+                    if (parenDepth === 0) endChain();
+                    if (cur.trim() === '') { ensureIndent(); }
+                    else if (sepBefore(t)) { if (!endsWithSpace()) addText(' '); }
+                    addText(v);
+                    prevSig = { type: 'punct', value: v };
+                    continue;
+                }
+
+                if (v === '=>') {
+                    if (parenDepth === 0) endChain();
+                    if (cur.trim() === '') { ensureIndent(); }
+                    else if (sepBefore(t)) { if (!endsWithSpace()) addText(' '); }
+                    addText('=>');
+                    prevSig = { type: 'punct', value: '=>' };
+                    continue;
+                }
+
+                if (v === '++' || v === '--') {
+                    var postfix = prevSig && (isValueType(prevSig.type) || (prevSig.type === 'punct' && /^[)\]}]$/.test(prevSig.value)));
+                    if (postfix) {
+                        addText(v);
+                        prevSig = { type: 'punct', value: v };
+                    } else {
+                        if (cur.trim() === '') { ensureIndent(); }
+                        else if (sepBefore(t)) { if (!endsWithSpace()) addText(' '); }
+                        addText(v);
+                        prevSig = { type: 'punct', value: v, unary: true };
+                    }
+                    continue;
+                }
+
+                if (v === '+' || v === '-' || v === '~' || v === '!') {
+                    var un = isUnary(t);
+                    if (cur.trim() === '') { ensureIndent(); }
+                    else if (sepBefore(t)) { if (!endsWithSpace()) addText(' '); }
+                    addText(v);
+                    prevSig = { type: 'punct', value: v, unary: un };
+                    continue;
+                }
+
+                if (v === '*') {
+                    if (cur.trim() === '' || (prevSig && prevSig.type === 'word' && (prevSig.value === 'function' || prevSig.value === 'yield' || prevSig.value === 'async'))) {
+                        if (cur.trim() === '') { ensureIndent(); }
+                        else if (sepBefore(t)) { if (!endsWithSpace()) addText(' '); }
+                        addText('*');
+                        prevSig = { type: 'punct', value: '*', unary: true };
+                    } else {
+                        if (cur.trim() === '') { ensureIndent(); }
+                        else if (sepBefore(t)) { if (!endsWithSpace()) addText(' '); }
+                        addText('*');
+                        prevSig = { type: 'punct', value: '*' };
+                    }
+                    continue;
+                }
+
+                /* default: binary operators */
+                if (cur.trim() === '') { ensureIndent(); }
+                else if (sepBefore(t)) { if (!endsWithSpace()) addText(' '); }
+                addText(v);
+                prevSig = { type: 'punct', value: v };
+                continue;
+            }
+
+            if (cur.trim() === '') { ensureIndent(); }
+            else if (sepBefore(t)) { if (!endsWithSpace()) addText(' '); }
+            addText(t.value);
+            prevSig = t;
+        }
+
+        /* final flush */
+        if (cur.trim() !== '') {
+            if (mode === 'add') {
+                var ft = cur.trim();
+                var fl = ft.charAt(ft.length - 1);
+                if (fl !== ';' && fl !== '{' && fl !== '}' && fl !== ',' && fl !== ':') addText(';');
+            }
+            nl();
+        }
+
+        /* post-process lines */
+        var out = [];
+        var emptyRun = 0;
+        for (var li = 0; li < lines.length; li++) {
+            var ln = lines[li].replace(/[ \t]+$/g, '');
+            if (ln === '') {
+                emptyRun++;
+                if (emptyRun > maxEmpty && out.length) continue;
+                out.push('');
+            } else {
+                emptyRun = 0;
+                out.push(ln);
+            }
+        }
+        while (out.length && out[out.length - 1] === '') out.pop();
+
+        var result = out.join('\n');
+        if (result && options.endWithNewline !== false) result += '\n';
+
+        return { code: result, warnings: warnings, tokens: tokens };
+    }
+
+    function countStats(src, tokens) {
+        var lines = 1, functions = 0, classes = 0, variables = 0, imports = 0, exports = 0, arrows = 0, asyncs = 0, comments = 0, strings = 0;
+        for (var i = 0; i < src.length; i++) if (src.charCodeAt(i) === 10) lines++;
+        tokens = tokens || tokenize(src).tokens;
+        for (var j = 0; j < tokens.length; j++) {
+            var t = tokens[j];
+            if (t.type === 'word') {
+                switch (t.value) {
+                    case 'function': functions++; break;
+                    case 'class': classes++; break;
+                    case 'let': case 'const': case 'var': variables++; break;
+                    case 'import': imports++; break;
+                    case 'export': exports++; break;
+                    case 'async': asyncs++; break;
+                }
+            } else if (t.type === 'punct' && t.value === '=>') {
+                arrows++;
+            } else if (t.type === 'comment') {
+                comments++;
+            } else if (t.type === 'string') {
+                strings++;
+            }
+        }
+        return { lines: lines, functions: functions, classes: classes, variables: variables, imports: imports, exports: exports, arrows: arrows, asyncs: asyncs, comments: comments, strings: strings };
+    }
+
+    function bytesOf(str) {
+        var bytes = 0;
+        for (var i = 0; i < str.length; i++) {
+            var c = str.charCodeAt(i);
+            if (c < 0x80) bytes += 1;
+            else if (c < 0x800) bytes += 2;
+            else if (c >= 0xd800 && c < 0xdc00) { bytes += 4; i++; }
+            else bytes += 3;
+        }
+        return bytes;
+    }
+
+    function minifyRaw(src) {
+        var res = tokenize(src);
+        var tokens = res.tokens;
+        var out = '';
+        var prev = null;
+
+        function sp() { if (out && !/[\s]/.test(out.charAt(out.length - 1))) out += ' '; }
+
+        for (var i = 0; i < tokens.length; i++) {
+            var t = tokens[i];
+            if (t.type === 'ws') {
+                if (prev && /[\n]/.test(t.value)) {
+                    if (prev.type === 'word' && (prev.value === 'return' || prev.value === 'break' || prev.value === 'continue')) { out += ';'; }
+                }
+                continue;
+            }
+            if (t.type === 'comment') continue;
+
+            if (t.type === 'punct') {
+                var v = t.value;
+                if (/^[({,;:?\]}.!~]/.test(v) || v === '[' || v === '.' || v === '?.' || v === '...' || v === '#' || v === '@') {
+                    if (v === '[' && prev && /^[)\]}]$/.test(prev.value === undefined ? '' : prev.type === 'punct' ? prev.value : '')) {
+                        /* subscript after value close - tight */
+                    }
+                    out += v;
+                } else {
+                    if (prev && prev.type === 'punct' && /[+\-*%/&|^<>=!]/.test(prev.value.charAt(0))) sp();
+                    out += v;
+                }
+                prev = t;
+                continue;
+            }
+
+            if (prev) {
+                var pv = prev.type === 'punct' ? prev.value : null;
+                var needs = false;
+                if (pv) {
+                    if (pv === ')' || pv === ']' || pv === '}') {
+                        if (t.type === 'word') needs = true;
+                    }
+                } else {
+                    needs = true;
+                }
+                if (needs) sp();
+            }
+            out += t.value;
+            prev = t;
+        }
+        return out;
+    }
+
+    function minifyJS(src, options) {
+        var beautified = beautifyJS(src, options || { semicolons: 'add' });
+        var min = minifyRaw(beautified.code);
+        return {
+            code: min,
+            warnings: beautified.warnings,
+            originalSize: bytesOf(src.trim()),
+            minifiedSize: bytesOf(min)
+        };
+    }
+
+    return {
+        tokenize: tokenize,
+        beautifyJS: beautifyJS,
+        minifyJS: minifyJS,
+        countStats: countStats,
+        bytesOf: bytesOf,
+        FormatError: FormatError
+    };
+}));
+
+/* ===== GoToolly JS Beautifier UI ===== */
+(function () {
+    'use strict';
+
+    var Eng = window.JSBeautifyEngine;
+    if (!Eng) return;
+
+    var STORE_KEY = 'gtoolly-jsbeautify-settings-v2';
+    var KEYS = ['indent-size', 'semicolons', 'quotes', 'brace-style', 'max-empty', 'inline-width', 'wrap-chains', 'wrap-promises', 'wrap-arrays', 'wrap-objects', 'wrap-args', 'keep-obj', 'keep-arr', 'class-blank', 'collapse-empty', 'compact-mode', 'expanded-mode'];
+    var KW = {};
+    ['break','case','catch','class','const','continue','debugger','default','delete','do','else','export','extends','finally','for','function','if','import','in','instanceof','let','new','of','return','static','super','switch','this','throw','try','typeof','var','void','while','with','yield','async','await','get','set'].forEach(function (k) { KW[k] = 1; });
+
+    var els = {};
+
+    function $(id) { return document.getElementById(id); }
+
+    function cacheElements() {
+        els.statusBadge = $('status-badge');
+        els.settingsBox = $('settings-box');
+        els.inputTa = $('input-ta');
+        els.inputHl = $('input-hl');
+        els.inputGutter = $('input-gutter');
+        els.inputMeta = $('input-meta');
+        els.outputTa = $('output-ta');
+        els.outputHl = $('output-hl');
+        els.outputGutter = $('output-gutter');
+        els.outputMeta = $('output-meta');
+        els.errorPanel = $('error-panel');
+        els.errorMessage = $('error-message');
+        els.warnList = $('warn-list');
+        els.warnItems = $('warn-items');
+        els.statsSection = $('stats-section');
+        els.statLines = $('stat-lines');
+        els.statFunctions = $('stat-functions');
+        els.statClasses = $('stat-classes');
+        els.statVariables = $('stat-variables');
+        els.statImports = $('stat-imports');
+        els.statExports = $('stat-exports');
+        els.statArrows = $('stat-arrows');
+        els.statAsync = $('stat-async');
+        els.statTime = $('stat-time');
+        els.analyzeBtn = $('analyze-btn');
+        els.minifyBtn = $('minify-btn');
+        els.swapBtn = $('swap-btn');
+        els.copyBtn = $('copy-btn');
+        els.downloadBtn = $('download-btn');
+        els.clearBtn = $('clear-btn');
+        els.resetBtn = $('reset-btn');
+        els.inputEditor = $('input-editor');
+        els.outputEditor = $('output-editor');
+    }
+
+    function setStatus(stateClass, label) {
+        var badge = els.statusBadge;
+        badge.className = 'status-badge';
+        if (stateClass) {
+            badge.classList.add(stateClass);
+            badge.textContent = label || stateClass.charAt(0).toUpperCase() + stateClass.slice(1);
+        } else {
+            badge.textContent = '';
+        }
+    }
+
+    function esc(s) {
+        return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function highlightHtml(code) {
+        if (code.length > 400000) return esc(code);
+        var toks = Eng.tokenize(code).tokens;
+        var out = '';
+        var prev = null;
+        for (var i = 0; i < toks.length; i++) {
+            var t = toks[i];
+            if (t.type === 'ws') { out += esc(t.value); prev = t; continue; }
+            var cls = '';
+            if (t.type === 'comment') cls = 'tok-com';
+            else if (t.type === 'string') cls = 'tok-str';
+            else if (t.type === 'template') cls = 'tok-templ';
+            else if (t.type === 'number') cls = 'tok-num';
+            else if (t.type === 'regex') cls = 'tok-regex';
+            else if (t.type === 'word') {
+                if (prev && prev.type === 'punct' && (prev.value === '.' || prev.value === '?.')) cls = 'tok-prop';
+                else if (KW[t.value]) cls = 'tok-kw';
+            }
+            else if (t.type === 'punct') cls = 'tok-punct';
+            if (cls) out += '<span class="' + cls + '">' + esc(t.value) + '</span>';
+            else out += esc(t.value);
+            prev = t;
+        }
+        return out;
+    }
+
+    function renderEditor(kind, code) {
+        var ta = kind === 'input' ? els.inputTa : els.outputTa;
+        var hl = kind === 'input' ? els.inputHl : els.outputHl;
+        var gut = kind === 'input' ? els.inputGutter : els.outputGutter;
+        var count = code.split('\n').length;
+        var arr = [];
+        for (var i = 1; i <= count; i++) arr.push('<span class="g-num">' + i + '</span>');
+        gut.innerHTML = arr.join('\n');
+        hl.innerHTML = highlightHtml(code);
+        hl.scrollTop = 0; hl.scrollLeft = 0;
+    }
+
+    function syncScroll(ta, hl, gut) {
+        ta.addEventListener('scroll', function () {
+            hl.scrollTop = ta.scrollTop;
+            hl.scrollLeft = ta.scrollLeft;
+            if (gut) gut.scrollTop = ta.scrollTop;
         });
-        document.getElementById('reset-btn').addEventListener('click',function(){
-            input.value='';resultArea.style.display='none';stats.style.display='none';
+    }
+
+    function fmtBytes(n) {
+        if (n < 1024) return n + ' B';
+        if (n < 1048576) return (n / 1024).toFixed(1) + ' KB';
+        return (n / 1048576).toFixed(2) + ' MB';
+    }
+
+    function formatMeta(text) {
+        var chars = text.length;
+        var lines = text ? text.split('\n').length : 0;
+        return chars.toLocaleString() + ' chars · ' + lines.toLocaleString() + ' lines · ' + fmtBytes(Eng.bytesOf(text));
+    }
+
+    function toast(msg, type) {
+        if (typeof window.toast === 'function') { window.toast(msg, type); return; }
+        var t = document.createElement('div');
+        t.className = 'toast ' + (type || 'info');
+        t.textContent = msg;
+        document.body.appendChild(t);
+        requestAnimationFrame(function () { t.classList.add('show'); });
+        setTimeout(function () {
+            t.classList.remove('show');
+            setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 300);
+        }, 2600);
+    }
+
+    function readSettings() {
+        var tab = $('indent-size').value === 'tab';
+        function bool(v) { return v === 'on'; }
+        return {
+            indentChar: tab ? '\t' : ' ',
+            indent: tab ? 1 : parseInt($('indent-size').value, 10) || 4,
+            semicolons: $('semicolons').value,
+            quotes: $('quotes').value,
+            braceStyle: $('brace-style').value,
+            maxEmptyLines: parseInt($('max-empty').value, 10) || 2,
+            inlineWidth: parseInt($('inline-width').value, 10) || 80,
+            maxLineWidth: parseInt($('inline-width').value, 10) || 80,
+            wrapMethodChains: bool($('wrap-chains').value),
+            wrapArrays: bool($('wrap-arrays').value),
+            wrapObjects: bool($('wrap-objects').value),
+            wrapFunctionArgs: bool($('wrap-args').value),
+            wrapPromiseChains: bool($('wrap-promises').value),
+            keepSingleLineObjects: bool($('keep-obj').value),
+            keepSingleLineArrays: bool($('keep-arr').value),
+            blankLinesBetweenClassMembers: bool($('class-blank').value),
+            collapseEmptyBlocks: bool($('collapse-empty').value),
+            compactMode: bool($('compact-mode').value),
+            expandedMode: bool($('expanded-mode').value)
+        };
+    }
+
+    function saveSettings() {
+        try {
+            var data = {};
+            KEYS.forEach(function (k) { data[k] = $(k).value; });
+            localStorage.setItem(STORE_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+
+    function loadSettings() {
+        try {
+            var raw = localStorage.getItem(STORE_KEY);
+            if (!raw) return;
+            var data = JSON.parse(raw);
+            KEYS.forEach(function (k) { if (data[k] !== undefined && $(k)) $(k).value = data[k]; });
+        } catch (e) {}
+    }
+
+    function showError(msg, line, col) {
+        els.errorPanel.classList.add('show');
+        els.errorPanel.classList.remove('hidden');
+        var html = esc(msg);
+        if (typeof line === 'number' && line > 0) {
+            html += ' <code>at line ' + line + (typeof col === 'number' && col > 0 ? ', column ' + col : '') + '</code>';
+        }
+        els.errorMessage.innerHTML = html;
+    }
+
+    function clearErrors() {
+        els.errorPanel.classList.remove('show');
+        els.warnList.classList.remove('show');
+        els.warnItems.innerHTML = '';
+    }
+
+    function showWarnings(list) {
+        if (!list || !list.length) return;
+        var lis = '';
+        for (var i = 0; i < list.length; i++) {
+            var w = list[i];
+            lis += '<li>' + esc(w.message) + (typeof w.line === 'number' ? ' <em>(line ' + w.line + ')</em>' : '') + '</li>';
+        }
+        els.warnItems.innerHTML = lis;
+        els.warnList.classList.add('show');
+    }
+
+    function renderStats(st, dt) {
+        els.statLines.textContent = st.lines.toLocaleString();
+        els.statFunctions.textContent = st.functions.toLocaleString();
+        els.statClasses.textContent = st.classes.toLocaleString();
+        els.statVariables.textContent = st.variables.toLocaleString();
+        els.statImports.textContent = st.imports.toLocaleString();
+        els.statExports.textContent = st.exports.toLocaleString();
+        els.statArrows.textContent = st.arrows.toLocaleString();
+        els.statAsync.textContent = st.asyncs.toLocaleString();
+        els.statTime.textContent = dt + 'ms';
+        els.statsSection.style.display = 'block';
+    }
+
+    function run(mode) {
+        var src = els.inputTa.value;
+        if (!src.trim()) { toast('Enter some JavaScript first', 'error'); return; }
+        var opts = readSettings();
+        clearErrors();
+        setStatus('processing', mode === 'beautify' ? 'Formatting' : 'Minifying');
+        var isBeautify = mode === 'beautify';
+
+        var doWork = function () {
+            try {
+                var t0 = performance.now();
+                var res = isBeautify ? Eng.beautifyJS(src, opts) : Eng.minifyJS(src, opts);
+                var dt = Math.round(performance.now() - t0);
+                showWarnings(res.warnings);
+                var out = res.code;
+                els.outputTa.value = out;
+                renderEditor('output', out);
+                var st = Eng.countStats(out);
+                renderStats(st, dt);
+                var outBytes = Eng.bytesOf(out);
+                var meta = formatMeta(out);
+                if (!isBeautify) {
+                    var inBytes = Eng.bytesOf(src.trim());
+                    var pct = inBytes > 0 ? Math.round((1 - outBytes / inBytes) * 100) : 0;
+                    if (pct > 0) meta += ' · <span class="byte-saved">↓ ' + pct + '%</span>';
+                }
+                els.outputMeta.innerHTML = meta;
+                setStatus('done', isBeautify ? 'Formatted' : 'Minified');
+                if (isBeautify && (out === src || out === src + '\n')) toast('Code is already formatted', 'info');
+                else toast(isBeautify ? 'Code formatted' : 'Code minified', 'success');
+            } catch (e) {
+                setStatus('error', 'Error');
+                if (e && e.name === 'FormatError') showError(e.message, e.line, e.col);
+                else showError(e && e.message ? e.message : String(e));
+            }
+        };
+
+        if (src.length > 250000) setTimeout(doWork, 60);
+        else doWork();
+    }
+
+    function swap() {
+        var out = els.outputTa.value;
+        if (!out) { toast('Nothing to swap — beautify first', 'error'); return; }
+        els.inputTa.value = out;
+        renderEditor('input', out);
+        els.inputMeta.textContent = formatMeta(out);
+        els.outputTa.value = '';
+        renderEditor('output', '');
+        els.outputMeta.textContent = 'Waiting for input';
+        els.statsSection.style.display = 'none';
+        clearErrors();
+    }
+
+    function copyOutput() {
+        var out = els.outputTa.value;
+        if (!out) { toast('Nothing to copy', 'error'); return; }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(out).then(function () {
+                toast('Copied to clipboard', 'success');
+            }, function () { legacyCopy(out); });
+        } else legacyCopy(out);
+    }
+
+    function legacyCopy(text) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); toast('Copied to clipboard', 'success'); }
+        catch (e) { toast('Could not copy', 'error'); }
+        document.body.removeChild(ta);
+    }
+
+    function download() {
+        var out = els.outputTa.value;
+        if (!out) { toast('Nothing to download', 'error'); return; }
+        var blob = new Blob([out], { type: 'text/plain;charset=utf-8' });
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'formatted.js';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 400);
+    }
+
+    function clearAll(keepOutput) {
+        els.inputTa.value = '';
+        renderEditor('input', '');
+        els.inputMeta.textContent = '0 chars · 0 lines · 0 B';
+        if (!keepOutput) {
+            els.outputTa.value = '';
+            renderEditor('output', '');
+            els.outputMeta.textContent = 'Waiting for input';
+            els.statsSection.style.display = 'none';
+        }
+        clearErrors();
+    }
+
+    function resetAll() {
+        clearAll(false);
+        var defaults = { 'indent-size': '4', 'semicolons': 'keep', 'quotes': 'keep', 'brace-style': 'collapse', 'max-empty': '2', 'inline-width': '80', 'wrap-chains': 'off', 'wrap-promises': 'off', 'wrap-arrays': 'off', 'wrap-objects': 'on', 'wrap-args': 'off', 'keep-obj': 'on', 'keep-arr': 'on', 'class-blank': 'off', 'collapse-empty': 'on', 'compact-mode': 'off', 'expanded-mode': 'off' };
+        KEYS.forEach(function (k) { $(k).value = defaults[k]; });
+        saveSettings();
+        setStatus('ready', 'Ready');
+        toast('Workspace reset', 'info');
+    }
+
+    function onInput() {
+        els.inputMeta.textContent = formatMeta(els.inputTa.value);
+        clearTimeout(els._hTimer);
+        els._hTimer = setTimeout(function () { renderEditor('input', els.inputTa.value); }, 160);
+    }
+
+    function init() {
+        cacheElements();
+        loadSettings();
+        syncScroll(els.inputTa, els.inputHl, els.inputGutter);
+        syncScroll(els.outputTa, els.outputHl, els.outputGutter);
+
+        els.inputTa.addEventListener('input', onInput);
+        KEYS.forEach(function (k) {
+            var el = $(k);
+            el.addEventListener('change', function () { saveSettings(); });
         });
-        document.getElementById('copy-btn').addEventListener('click',function(){
-            navigator.clipboard.writeText(resultText.textContent).then(function(){
-                var btn=document.getElementById('copy-btn');btn.textContent='Copied!';
-                setTimeout(function(){btn.innerHTML='<i class="fas fa-copy"></i> Copy Result'},2000);
-            });
+
+        els.analyzeBtn.addEventListener('click', function () { run('beautify'); });
+        els.minifyBtn.addEventListener('click', function () { run('minify'); });
+        els.swapBtn.addEventListener('click', swap);
+        els.copyBtn.addEventListener('click', copyOutput);
+        els.downloadBtn.addEventListener('click', download);
+        els.clearBtn.addEventListener('click', function () { clearAll(false); toast('Input cleared', 'info'); });
+        els.resetBtn.addEventListener('click', resetAll);
+
+        document.addEventListener('keydown', function (e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { e.preventDefault(); run('beautify'); }
+            else if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'M' || e.key === 'm')) { e.preventDefault(); run('minify'); }
         });
-        document.getElementById('download-btn').addEventListener('click',function(){
-            var blob=new Blob([resultText.textContent],{type:'application/javascript'});
-            var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='beautified.js';a.click();
-            setTimeout(function(){URL.revokeObjectURL(a.href)},100);
-        });
-    })();
+
+        renderEditor('input', '');
+        renderEditor('output', '');
+        setStatus('ready', 'Ready');
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+
     </script>
 </body>
 </html>

@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     var thumb = document.createElement('div');
                     thumb.className = 'image-thumb';
-                    thumb.innerHTML = '<img src="' + url + '" alt="Page ' + pages[i] + '"><div class="thumb-info"><span class="thumb-name">Page ' + pages[i] + '</span><a href="' + url + '" download="' + name + '" class="btn btn-sm btn-secondary">Download</a></div>';
+                    thumb.innerHTML = '<img src="' + url + '" alt="Page ' + pages[i] + '"><div class="thumb-info"><span class="thumb-name">Page ' + pages[i] + '</span></div>';
                     imagePreviewGrid.appendChild(thumb);
 
                     await new Promise(function (r) { setTimeout(r, 0); });

@@ -1,242 +1,190 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF to Text Converter | GoToolly</title>
-    <meta name="description" content="Free online PDF to Text converter. Convert PDF files to plain text format. Works entirely in your browser - no uploads required.">
-    <meta name="keywords" content="PDF to Text, convert PDF, PDF converter, document conversion, extract text from PDF">
-    <!-- Canonical -->
+    <title>PDF to Text Converter - Free | GoToolly</title>
+    <meta name="description" content="Convert PDF files to plain text format. Free, private, browser-based tool with page range selection.">
+    <meta name="keywords" content="PDF to Text, convert PDF, extract text from PDF, PDF converter, free PDF tool">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://gotoolly.com/tools/pdf-to-text">
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gotoolly.com/tools/pdf-to-text">
-    <meta property="og:title" content="PDF to Text Converter | GoToolly">
-    <meta property="og:description" content="Free online PDF to Text converter. Convert PDF files to plain text format. Works entirely in your browser - no uploads required.">
+    <meta property="og:title" content="PDF to Text Converter - Free | GoToolly">
+    <meta property="og:description" content="Convert PDF files to plain text format. Free, private, browser-based tool.">
     <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
     <meta property="og:image:alt" content="GoToolly Logo">
     <meta property="og:site_name" content="GoToolly">
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://gotoolly.com/tools/pdf-to-text">
-    <meta name="twitter:title" content="PDF to Text Converter | GoToolly">
-    <meta name="twitter:description" content="Free online PDF to Text converter. Convert PDF files to plain text format. Works entirely in your browser - no uploads required.">
+    <meta name="twitter:title" content="PDF to Text Converter - Free | GoToolly">
+    <meta name="twitter:description" content="Convert PDF files to plain text format.">
     <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
     <meta name="twitter:image:alt" content="GoToolly Logo">
     <meta name="twitter:creator" content="@GoToolly">
-    
-    <!-- Favicon & Manifest -->
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
-    
-    <!-- Critical CSS: preload and non-blocking load -->
-    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    
-    <!-- Fonts -->
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+    <link rel="stylesheet" href="../assets/css/design-system.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/font-awesome.all.min.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+
     <style>
-        .file-drop-zone {
-            border: 2px dashed var(--color-border);
-            border-radius: 12px;
-            padding: var(--space-8);
-            text-align: center;
-            cursor: pointer;
-            transition: all var(--transition-fast);
-            background-color: var(--color-bg-alt);
-        }
-        
-        .file-drop-zone:hover,
-        .file-drop-zone.dragover {
-            border-color: var(--color-primary);
-            background-color: rgba(37, 99, 235, 0.05);
-        }
-        
-        .file-drop-zone svg {
-            width: 48px;
-            height: 48px;
-            margin: 0 auto var(--space-3);
-            color: var(--color-primary);
-            opacity: 0.7;
-        }
-        
-        .form-section {
-            margin-bottom: var(--space-8);
-        }
-        
-        .settings-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-4);
-        }
-        
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-2);
-        }
-        
-        .form-label {
-            font-weight: 500;
-            font-size: var(--text-sm);
-            color: var(--color-text);
-        }
-        
-        .form-input,
-        .form-select {
-            padding: var(--space-2) var(--space-3);
-            border: 1px solid var(--color-border);
-            border-radius: 6px;
-            font-size: var(--text-sm);
-            background-color: var(--color-bg-alt);
-            transition: border-color var(--transition-fast);
-        }
-        
-        .form-input:focus,
-        .form-select:focus {
-            outline: none;
-            border-color: var(--color-primary);
-            background-color: white;
-        }
-        
-        .preview-box {
-            background-color: var(--color-bg-alt);
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
-            padding: var(--space-4);
-            text-align: center;
-        }
-        
-        .preview-title {
-            font-weight: 500;
-            margin-bottom: var(--space-3);
-            font-size: var(--text-sm);
-            color: var(--color-text-light);
-        }
-        
-        .preview-stats {
-            font-size: var(--text-xs);
-            color: var(--color-text-light);
-            line-height: 1.6;
-        }
-        
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-4);
-            margin-top: var(--space-6);
-        }
-        
-        .result-item {
-            background-color: var(--color-bg-alt);
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
-            padding: var(--space-4);
-            text-align: center;
-        }
-        
-        .result-info {
-            font-size: var(--text-xs);
-            color: var(--color-text-light);
-            margin-bottom: var(--space-3);
-        }
-        
-        .result-download {
-            display: inline-block;
-            padding: var(--space-2) var(--space-3);
-            background-color: var(--color-primary);
-            color: white;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: var(--text-sm);
-            transition: background-color var(--transition-fast);
-        }
-        
-        .result-download:hover {
-            background-color: #1d4ed8;
-        }
-        
-        .notification {
-            position: fixed;
-            top: var(--space-4);
-            right: var(--space-4);
-            padding: var(--space-3) var(--space-4);
-            background-color: var(--color-primary);
-            color: white;
-            border-radius: 6px;
-            font-size: var(--text-sm);
-            z-index: 1000;
-            animation: slideIn 0.3s ease;
-        }
-        
-        .notification.error {
-            background-color: #ef4444;
-        }
-        
-        @keyframes slideIn {
-            from {
-                transform: translateX(400px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        
-        .progress-container {
-            margin-top: var(--space-4);
-            display: none;
-        }
-        
-        .progress-bar {
-            width: 100%;
-            height: 8px;
-            background-color: var(--color-border);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background-color: var(--color-primary);
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-        
-        .hidden {
-            display: none;
-        }
-        
-        @media (max-width: 640px) {
-            .results-grid,
-            .settings-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-            .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--color-primary);
-            color: white;
-            padding: 8px 16px;
-            z-index: 100;
-            transition: top 0.3s;
-        }
-        .skip-link:focus {
-            top: 0;
-        }
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .25s cubic-bezier(.4,0,.2,1)}
+        .skip-link:focus{top:0}
+        .hero{background:#0f172a;padding:40px 0 28px;text-align:center}
+        .hero h1{font-size:40px;font-weight:800;color:#fff;line-height:1.2;margin:0 0 12px}
+        .hero h1 .gradient-text{background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-subtitle{font-size:16px;color:#94a3b8;line-height:1.5;margin:0 0 24px}
+        .trust-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .trust-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:6px 14px;border-radius:9999px;font-size:13px;font-weight:500;color:#cbd5e1;transition:background .2s}
+        .trust-badge:hover{background:rgba(255,255,255,.1)}
+        .trust-badge svg{width:14px;height:14px;color:#60a5fa}
+        .tool-workspace{max-width:900px;margin:0 auto}
+        .tool-card{background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.04);border:1px solid #e2e8f0;padding:24px;margin-bottom:48px;overflow:visible}
+        .card-header{display:flex;justify-content:space-between;align-items:center}
+        .card-header-left{display:flex;align-items:center;gap:10px}
+        .card-header-left svg{width:18px;height:18px;color:var(--color-primary)}
+        .card-header-left h2{font-size:16.8px;font-weight:600;margin:0;color:#0f172a}
+        .card-divider{height:1px;background:#e2e8f0;margin:16px 0 0}
+        .workspace-body{display:flex;flex-direction:column;gap:0}
+        .upload-zone{display:block;margin-top:20px}
+        .upload-area{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 24px;border:2px dashed #e2e8f0;border-radius:16px;background:#f8fafc;cursor:pointer;transition:border-color .2s,background .2s;text-decoration:none;color:inherit}
+        .upload-area:hover{border-color:#2563eb;background:rgba(37,99,235,.04)}
+        .upload-area:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.15)}
+        .upload-area.dragover{border-color:#2563eb;background:rgba(37,99,235,.08);box-shadow:0 0 0 4px rgba(37,99,235,.15)}
+        .upload-icon-wrap{width:60px;height:60px;border-radius:14px;background:linear-gradient(135deg,#2563eb,#7c3aed);display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:transform .25s cubic-bezier(.4,0,.2,1)}
+        .upload-area:hover .upload-icon-wrap{transform:scale(1.05)}
+        .upload-icon-wrap svg{width:28px;height:28px;color:#fff;stroke-width:2}
+        .upload-area h3{font-size:16px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .upload-area .upload-subtext{font-size:12px;color:#64748b;margin:0 0 16px}
+        .upload-area .upload-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;font-size:14px;font-weight:500;color:#0f172a;cursor:pointer;transition:all .2s}
+        .upload-area .upload-btn:hover{border-color:#2563eb;color:#2563eb}
+        .file-info{display:none;align-items:center;gap:12px;padding:16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;margin-top:20px}
+        .file-info.show{display:flex}
+        .file-icon-wrap{width:44px;height:44px;border-radius:10px;background:#fee2e2;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .file-icon-wrap svg{width:22px;height:22px;color:#dc2626}
+        .file-details{flex:1;min-width:0}
+        .file-details .file-name{font-size:14px;font-weight:600;color:#0f172a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .file-meta{display:flex;gap:8px;align-items:center;margin-top:3px}
+        .file-meta span{font-size:12px;color:#64748b;font-family:'JetBrains Mono',monospace}
+        .file-info-status{padding:4px 10px;border-radius:9999px;font-size:11px;font-weight:600;flex-shrink:0}
+        .file-info-status.ok{background:#dcfce7;color:#166534}
+        .settings-panel{display:none;flex-direction:column;gap:16px;margin-top:20px}
+        .settings-panel.show{display:flex}
+        .settings-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden}
+        .settings-card-header{padding:16px 20px;border-bottom:1px solid #e2e8f0}
+        .settings-card-header h3{font-size:15px;font-weight:600;margin:0;color:#0f172a}
+        .settings-card-body{padding:20px}
+        .setting-group{margin-bottom:16px}
+        .setting-group:last-child{margin-bottom:0}
+        .setting-label{font-weight:600;color:#0f172a;margin-bottom:6px;display:block;font-size:14px}
+        .form-select,.form-input{padding:10px 14px;border:1px solid #e2e8f0;border-radius:8px;font-size:14px;background:#f8fafc;width:100%;box-sizing:border-box;transition:border-color .2s}
+        .form-select:focus,.form-input:focus{outline:none;border-color:#2563eb;background:#fff}
+        .action-bar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+        .action-bar .btn{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border:none;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .action-bar .btn-primary{background:#2563eb;color:#fff}
+        .action-bar .btn-primary:hover:not(:disabled){background:#1d4ed8;transform:translateY(-1px);box-shadow:0 8px 25px rgba(37,99,235,.35)}
+        .action-bar .btn-primary:disabled{opacity:.5;cursor:not-allowed}
+        .action-bar .btn-secondary{background:#fff;color:#0f172a;border:1px solid #e2e8f0}
+        .action-bar .btn-secondary:hover{border-color:#cbd5e1;background:#f8fafc;transform:translateY(-1px)}
+        .progress-section{display:none;padding:20px;background:#f8fafc;border-radius:12px;margin-top:20px}
+        .progress-section.show{display:block}
+        .progress-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+        .progress-spinner{width:24px;height:24px;border:3px solid #e2e8f0;border-top-color:#2563eb;border-radius:50%;animation:spin .6s linear infinite}
+        @keyframes spin{to{transform:rotate(360deg)}}
+        .progress-phase{font-size:14px;font-weight:500;color:#0f172a;flex:1}
+        .progress-track{height:8px;background:#e2e8f0;border-radius:9999px;overflow:hidden}
+        .progress-fill{height:100%;background:linear-gradient(90deg,#2563eb,#7c3aed);border-radius:9999px;transition:width .4s cubic-bezier(.4,0,.2,1);width:0}
+
+        /* Analysis Panel */
+        .analysis-panel{display:none;margin-top:20px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden}
+        .analysis-panel.show{display:block}
+        .analysis-panel-header{display:flex;align-items:center;gap:8px;padding:14px 18px;font-size:14px;font-weight:600;color:#0f172a;border-bottom:1px solid #e2e8f0;background:#fff}
+        .analysis-panel-header svg{width:16px;height:16px;color:#64748b}
+        .analysis-entries{padding:14px 18px}
+        .analysis-entry{display:flex;align-items:flex-start;gap:8px;padding:5px 0;font-size:13px;line-height:1.5;min-height:24px}
+        .analysis-entry-icon{flex-shrink:0;width:18px;height:18px;margin-top:1px;display:flex;align-items:center;justify-content:center}
+        .analysis-entry-icon svg{width:14px;height:14px}
+        .analysis-entry.success .analysis-entry-icon svg{color:#16a34a}
+        .analysis-entry.success .analysis-entry-text{color:#166534}
+        .analysis-entry.warning .analysis-entry-icon svg{color:#d97706}
+        .analysis-entry.warning .analysis-entry-text{color:#92400e}
+        .analysis-entry.info .analysis-entry-icon svg{color:#2563eb}
+        .analysis-entry.info .analysis-entry-text{color:#1e40af}
+        .analysis-entry.error .analysis-entry-icon svg{color:#dc2626}
+        .analysis-entry.error .analysis-entry-text{color:#991b1b}
+        .analysis-entry.pending .analysis-entry-icon svg{color:#94a3b8}
+        .analysis-entry.pending .analysis-entry-text{color:#64748b}
+        .analysis-entry.pending .analysis-entry-icon{animation:analysis-pulse 1.2s ease-in-out infinite}
+        @keyframes analysis-pulse{0%,100%{opacity:1}50%{opacity:.4}}
+        .analysis-entry-text{flex:1;min-width:0}
+        .analysis-details{margin:2px 0 0 26px;padding:0;list-style:none}
+        .analysis-details li{position:relative;padding:2px 0 2px 14px;font-size:12px;color:#64748b;line-height:1.5}
+        .analysis-details li::before{content:'•';position:absolute;left:2px;color:#94a3b8}
+        .results-panel{display:none;text-align:center;padding:32px 20px}
+        .results-panel.show{display:block}
+        .result-icon-wrap{width:80px;height:80px;margin:0 auto 20px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+        .result-icon-wrap.success{background:#dcfce7}
+        .result-icon-wrap svg{width:40px;height:40px;color:#16a34a;stroke-width:2.5}
+        .results-panel h3{font-size:20.8px;font-weight:700;margin:0 0 4px;color:#0f172a}
+        .results-panel .result-sub{font-size:14px;color:#64748b;margin:0 0 24px}
+        .stats-card{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:24px}
+        .stat-box{padding:16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px}
+        .stat-box .stat-label{font-size:12px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.5px}
+        .stat-box .stat-value{font-size:20px;font-weight:700;font-family:'JetBrains Mono',monospace;color:#0f172a;margin-top:4px}
+        .results-actions{display:flex;flex-direction:column;gap:12px}
+        .results-actions .btn-primary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 24px;background:#2563eb;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:600;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1);height:56px}
+        .results-actions .btn-primary:hover{background:#1d4ed8;transform:translateY(-2px);box-shadow:0 8px 25px rgba(37,99,235,.35)}
+        .results-actions .btn-secondary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:#fff;color:#0f172a;border:1px solid #e2e8f0;border-radius:12px;font-size:15px;font-weight:500;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1);height:56px}
+        .results-actions .btn-secondary:hover{border-color:#cbd5e1;background:#f8fafc;transform:translateY(-1px)}
+        .limitations-box{padding:16px 20px;background:#fffbeb;border:1px solid #fde68a;border-radius:12px;margin-top:16px}
+        .limitations-box .lim-header{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+        .limitations-box .lim-header svg{width:16px;height:16px;color:#d97706}
+        .limitations-box .lim-header h4{font-size:13px;font-weight:600;color:#92400e;margin:0}
+        .limitations-box ul{margin:0;padding-left:18px}
+        .limitations-box li{font-size:13px;color:#a16207;line-height:1.6;margin-bottom:2px}
+        .related-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+        .related-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit;display:flex;flex-direction:column}
+        .related-card:hover{border-color:#2563eb;box-shadow:0 8px 24px rgba(37,99,235,.1);transform:translateY(-3px)}
+        .related-card .rc-icon{width:32px;height:32px;margin-bottom:12px}
+        .related-card .rc-icon svg{width:32px;height:32px;color:#2563eb;transition:transform .25s cubic-bezier(.4,0,.2,1)}
+        .related-card:hover .rc-icon svg{transform:scale(1.1)}
+        .related-card h4{font-size:15px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .related-card p{font-size:13px;color:#64748b;margin:0 0 16px;flex:1}
+        .related-card .rc-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#2563eb;margin-top:auto;transition:gap .2s}
+        .related-card:hover .rc-btn{gap:10px}
+        .how-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+        .step-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:24px;text-align:center;transition:border-color .2s,box-shadow .2s}
+        .step-card:hover{border-color:rgba(37,99,235,.2);box-shadow:0 2px 8px rgba(37,99,235,.06)}
+        .step-num{width:40px;height:40px;border-radius:50%;background:#eff6ff;color:#2563eb;font-size:16px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-bottom:12px;transition:background .2s}
+        .step-card:hover .step-num{background:#dbeafe}
+        .step-card h4{font-size:15px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .step-card p{font-size:13px;color:#64748b;margin:0}
+        .faq-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .faq-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:border-color .2s}
+        .faq-card:hover{border-color:#cbd5e1}
+        .faq-card h4{font-size:14px;font-weight:600;margin:0 0 8px;color:#0f172a}
+        .faq-card p{font-size:13px;color:#64748b;margin:0;line-height:1.6}
+        .section-heading{text-align:center;margin-bottom:32px;padding:0 24px}
+        .section-heading h2{font-size:28.8px;font-weight:700;color:#0f172a;margin:0 0 4px}
+        @media(max-width:1024px){.related-grid{grid-template-columns:repeat(2,1fr)}.faq-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){.hero{padding:32px 0 20px}.hero h1{font-size:28px}.hero-subtitle{font-size:14px;margin-bottom:20px}.trust-badges{gap:8px}.trust-badge{padding:4px 10px;font-size:12px}.tool-card{padding:16px;margin-bottom:32px}.stats-card{grid-template-columns:1fr}.action-bar{grid-template-columns:1fr}.results-actions{grid-template-columns:1fr}.related-grid{grid-template-columns:1fr}.steps-grid{grid-template-columns:repeat(2,1fr)}.faq-grid{grid-template-columns:1fr}.file-info{flex-wrap:wrap}.file-info-status{order:4}.upload-area{padding:32px 16px}.upload-icon-wrap{width:60px;height:60px;border-radius:14px}.upload-icon-wrap svg{width:28px;height:28px}.settings-card-body{padding:16px}.step-card{padding:20px}.result-icon-wrap{width:64px;height:64px}.result-icon-wrap svg{width:32px;height:32px}}
+        @media(max-width:480px){.hero{padding:24px 0 16px}.hero h1{font-size:24px}.related-grid{gap:12px}.stats-card{gap:8px}.stat-box .stat-value{font-size:18px}.steps-grid{grid-template-columns:1fr}}
+        @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
     </style>
 
     <script type="application/ld+json">
@@ -245,23 +193,13 @@
         "@type": "WebApplication",
         "name": "PDF to Text Converter",
         "url": "https://gotoolly.com/tools/pdf-to-text",
-        "description": "Free online PDF to Text converter. Convert PDF files to plain text format. Works entirely in your browser - no uploads required.",
+        "description": "Convert PDF files to plain text format. Free, private, browser-based tool.",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Any (Web Browser)",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "featureList": [
-            "Free to use",
-            "No account required",
-            "Client-side processing",
-            "Privacy-focused"
-        ]
+        "offers": {"@type": "Offer","price": "0","priceCurrency": "USD"},
+        "featureList": ["Free","Private","Client-side","Page range","Text extraction"]
     }
     </script>
-    
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -274,12 +212,11 @@
     }
     </script>
 
-
     <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-<!-- Header -->
+
     <header class="site-header">
         <div class="container">
             <div class="header-content">
@@ -287,206 +224,292 @@
                     <img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg">
                     <span class="logo-text">GoToolly</span>
                 </a>
-                
                 <nav class="main-nav">
                     <a href="/" class="nav-link">Home</a>
                     <a href="/tools" class="nav-link active">Tools</a>
                     <a href="/guides" class="nav-link">Guides</a>
-                    <a href="../../about" class="nav-link">About</a>
-                    <a href="../../contact" class="nav-link">Contact</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
                 </nav>
-                
                 <button class="mobile-menu-button" aria-label="Toggle navigation menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
             </div>
-            
             <div class="mobile-menu">
                 <nav class="mobile-nav">
                     <a href="/" class="nav-link">Home</a>
                     <a href="/tools" class="nav-link active">Tools</a>
                     <a href="/guides" class="nav-link">Guides</a>
-                    <a href="../../about" class="nav-link">About</a>
-                    <a href="../../contact" class="nav-link">Contact</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main id="main-content" class="main-content">
+    <main id="main-content">
+        <section class="hero">
+            <div class="container">
+                <h1>Convert <span class="gradient-text">PDF to Text</span></h1>
+                <p class="hero-subtitle">Extract plain text from PDF files instantly. Choose specific pages or convert the entire document.</p>
+                <div class="trust-badges">
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        100% Private
+                    </span>
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                        Processed locally
+                    </span>
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Free &amp; unlimited
+                    </span>
+                </div>
+            </div>
+        </section>
+
         <div class="container">
-            <!-- Page Header -->
-            <div class="page-header">
-                <h1>PDF to Text Converter</h1>
-                <p class="page-description">
-                    Convert PDF files to plain text format. All processing happens in your browser with no file uploads.
-                </p>
-                <a href="/guides/convert-pdf-to-text.html" class="btn btn-secondary"><i class="fas fa-book"></i> View Guide</a>
-            </div>
-
-            <!-- Tool Interface -->
-            <div class="tool-interface">
-                <!-- Step 1: Upload -->
-                <div class="form-section">
-                    <h3 style="margin-bottom: var(--space-4);">Step 1: Select PDF File</h3>
-                    <label for="pdf-input" class="file-drop-zone" id="drop-zone" style="margin: 0; display: block; width: 100%; box-sizing: border-box;">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="17 8 12 3 7 8"></polyline>
-                            <line x1="12" y1="3" x2="12" y2="15"></line>
-                        </svg>
-                        <p style="margin: 0; font-weight: 500;">Drag PDF here or click to browse</p>
-                        <p style="margin: var(--space-2) 0 0; font-size: var(--text-sm); color: var(--color-text-light);">
-                            PDF files only � Up to 25 MB
-                        </p>
-                    </label>
-                    <input type="file" id="pdf-input" accept=".pdf" style="display: none;">
-                    <div id="file-info" style="margin-top: var(--space-4); display: none;">
-                        <p style="font-weight: 500; margin-bottom: var(--space-2);">Selected PDF:</p>
-                        <div style="font-size: var(--text-sm); color: var(--color-text-light);">
-                            <p id="file-name"></p>
-                            <p id="file-pages"></p>
+            <div class="tool-workspace">
+                <div class="tool-card" role="region" aria-label="PDF to Text workspace">
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            <h2>Convert PDF to Text</h2>
                         </div>
                     </div>
-                </div>
+                    <div class="card-divider"></div>
 
-                <!-- Step 2: Settings -->
-                <div class="form-section" style="display: none;" id="settings-section">
-                    <h3 style="margin-bottom: var(--space-4);">Step 2: Conversion Settings</h3>
-                    
-                    <div class="settings-grid">
-                        <div class="form-group">
-                            <label for="pages-option" class="form-label">Convert</label>
-                            <select id="pages-option" class="form-select">
-                                <option value="all">All Pages</option>
-                                <option value="range">Specific Pages</option>
-                            </select>
+                    <div class="workspace-body">
+                        <div class="upload-zone">
+                            <label for="pdf-input" class="upload-area" id="drop-zone" role="button" tabindex="0">
+                                <div class="upload-icon-wrap">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                                </div>
+                                <h3>Drop your PDF here</h3>
+                                <p class="upload-subtext">PDF files only &bull; Up to 50 MB</p>
+                                <span class="upload-btn">Select PDF file</span>
+                            </label>
+                            <input type="file" id="pdf-input" accept=".pdf,application/pdf" aria-label="Select PDF file" style="display:none">
                         </div>
-                        <div class="form-group" id="page-range-group" style="display: none;">
-                            <label for="page-range" class="form-label">Page Range (e.g., 1-5, 7)</label>
-                            <input type="text" id="page-range" class="form-input" placeholder="1-5, 7, 10">
-                        </div>
-                    </div>
 
-                    <div style="margin-top: var(--space-6); display: flex; gap: var(--space-4); flex-wrap: wrap;">
-                        <button id="convert-btn" class="btn btn-primary" style="flex: 1; min-width: 120px;">Convert to Text</button>
-                        <button id="reset-btn" class="btn btn-secondary" style="flex: 1; min-width: 120px;">Reset</button>
-                    </div>
-
-                    <!-- Progress -->
-                    <div class="progress-container" id="progress-container">
-                        <p style="font-size: var(--text-sm); margin-bottom: var(--space-2);">Converting...</p>
-                        <div class="progress-bar">
-                            <div class="progress-fill" id="progress-fill"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Results -->
-                <div id="results-section" style="display: none; margin-top: var(--space-8);">
-                    <h3 style="margin-bottom: var(--space-4);">Download Text File</h3>
-                    <div class="results-grid">
-                        <div class="result-item">
-                            <p style="font-size: var(--text-2xl); margin: 0 0 var(--space-2) 0;"><i class="fas fa-file-alt"></i></p>
-                            <div class="result-info">
-                                <p id="result-filename" style="margin: 0;"></p>
-                                <p id="result-pages" style="margin: var(--space-1) 0 0 0;"></p>
+                        <div class="file-info" id="file-info" role="status" aria-live="polite">
+                            <div class="file-icon-wrap">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
                             </div>
-                            <a id="download-btn" class="result-download" download="document.txt"><i class="fas fa-download"></i> Download TXT</a>
+                            <div class="file-details">
+                                <div class="file-name" id="file-name"></div>
+                                <div class="file-meta">
+                                    <span id="file-pages"></span>
+                                </div>
+                            </div>
+                            <span class="file-info-status ok" id="file-status" style="display:none">Ready</span>
+                        </div>
+
+                        <!-- Document Analysis Panel -->
+                        <div class="analysis-panel" id="analysis-panel" style="display:none">
+                            <div class="analysis-panel-header">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                                Document Analysis
+                            </div>
+                            <div class="analysis-entries" id="analysis-entries"></div>
+                        </div>
+
+                        <div class="settings-panel" id="settings-section">
+                            <div class="settings-card">
+                                <div class="settings-card-header">
+                                    <h3>Conversion Settings</h3>
+                                </div>
+                                <div class="settings-card-body">
+                                    <div class="setting-group">
+                                        <label for="pages-option" class="setting-label">Convert</label>
+                                        <select id="pages-option" class="form-select">
+                                            <option value="all">All Pages</option>
+                                            <option value="range">Specific Pages</option>
+                                        </select>
+                                    </div>
+                                    <div class="setting-group" id="page-range-group" style="display:none">
+                                        <label for="page-range" class="setting-label">Page Range</label>
+                                        <input type="text" id="page-range" class="form-input" placeholder="e.g., 1-5, 8, 11-13">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="action-bar">
+                            <button id="convert-btn" class="btn btn-primary" type="button">
+                                <i class="fas fa-file-alt" aria-hidden="true"></i> Convert to Text
+                            </button>
+                            <button id="reset-btn" class="btn btn-secondary" type="button">Reset</button>
+                        </div>
+
+                        <div class="progress-section" id="progress-container">
+                            <div class="progress-top">
+                                <div class="progress-spinner"></div>
+                                <span class="progress-phase">Converting...</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" id="progress-fill"></div>
+                            </div>
+                        </div>
+
+                        <div class="results-panel" id="results-section">
+                            <div class="result-icon-wrap success">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <h3>Conversion Complete!</h3>
+                            <p class="result-sub">Your text file is ready to download.</p>
+                            <div class="stats-card">
+                                <div class="stat-box">
+                                    <div class="stat-label">File</div>
+                                    <div class="stat-value" id="result-filename" style="font-size:14px">-</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-label">Pages</div>
+                                    <div class="stat-value" id="result-pages">-</div>
+                                </div>
+                            </div>
+                            <div class="results-actions">
+                                <a id="download-btn" class="btn-primary" download="document.txt">
+                                    <i class="fas fa-download" aria-hidden="true"></i> Download TXT
+                                </a>
+                                <button id="another-btn" class="btn btn-secondary" type="button">
+                                    <i class="fas fa-redo" aria-hidden="true"></i> Convert Another PDF
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="limitations-box">
+                            <div class="lim-header">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                                <h4>Current Limitations</h4>
+                            </div>
+                            <ul>
+                                <li>Scanned/image-based PDFs may not extract text correctly</li>
+                                <li>Complex layouts may not preserve formatting</li>
+                                <li>Tables and columns may not convert cleanly</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Guide Section -->
-            <section style="margin-top: var(--space-12);">
-                <div class="section-header">
-                    <h2>How to Convert PDF to Text</h2>
+        <div style="margin-top:48px;margin-bottom:48px">
+            <div class="section-heading">
+                <h2>Related PDF Tools</h2>
+            </div>
+            <div class="related-section">
+                <div class="related-grid">
+                    <a href="./pdf-ocr" class="related-card">
+                        <div class="rc-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        </div>
+                        <h4>PDF OCR</h4>
+                        <p>Extract text from scanned PDFs using OCR.</p>
+                        <span class="rc-btn">Use Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                    </a>
+                    <a href="./pdf-compressor" class="related-card">
+                        <div class="rc-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                        </div>
+                        <h4>PDF Compressor</h4>
+                        <p>Reduce PDF file size while preserving quality.</p>
+                        <span class="rc-btn">Use Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                    </a>
+                    <a href="./pdf-merger" class="related-card">
+                        <div class="rc-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        </div>
+                        <h4>PDF Merger</h4>
+                        <p>Combine multiple PDF files into one.</p>
+                        <span class="rc-btn">Use Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                    </a>
+                    <a href="./pdf-to-word" class="related-card">
+                        <div class="rc-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        </div>
+                        <h4>PDF to Word</h4>
+                        <p>Convert PDF to editable Word documents.</p>
+                        <span class="rc-btn">Use Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                    </a>
                 </div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6); margin-top: var(--space-6);">
-                    <div style="background-color: var(--color-bg-alt); padding: var(--space-6); border-radius: 8px;">
-                        <h3 style="margin-bottom: var(--space-2);"><i class="fas fa-upload"></i> 1. Upload Your PDF</h3>
-                        <p style="font-size: var(--text-sm); color: var(--color-text-light); margin: 0;">Drag and drop a PDF file or click to browse. Your file stays on your device.</p>
-                    </div>
-                    <div style="background-color: var(--color-bg-alt); padding: var(--space-6); border-radius: 8px;">
-                        <h3 style="margin-bottom: var(--space-2);"><i class="fas fa-file"></i> 2. Choose Pages</h3>
-                        <p style="font-size: var(--text-sm); color: var(--color-text-light); margin: 0;">Select whether to convert all pages or a specific range.</p>
-                    </div>
-                    <div style="background-color: var(--color-bg-alt); padding: var(--space-6); border-radius: 8px;">
-                        <h3 style="margin-bottom: var(--space-2);"><i class="fas fa-cog"></i> 3. Convert</h3>
-                        <p style="font-size: var(--text-sm); color: var(--color-text-light); margin: 0;">Click "Convert to Text" and wait for processing to complete.</p>
-                    </div>
-                    <div style="background-color: var(--color-bg-alt); padding: var(--space-6); border-radius: 8px;">
-                        <h3 style="margin-bottom: var(--space-2);"><i class="fas fa-download"></i> 4. Download</h3>
-                        <p style="font-size: var(--text-sm); color: var(--color-text-light); margin: 0;">Download your text file (TXT) and open in any text editor.</p>
-                    </div>
-                </div>
-            </section>
+            </div>
+        </div>
 
-            <!-- Related Tools -->
-            <section class="content-section">
-                <div class="section-header">
-                    <h2>Related Tools</h2>
-                </div>
-                <div class="tools-grid">
-                    <div class="card tool-card">
-                        <h3>PDF Compressor</h3>
-                        <p>Reduce PDF file size while maintaining quality.</p>
-                        <div class="card-footer">
-                            <a href="./pdf-compressor" class="btn btn-primary btn-sm">Use Tool</a>
-                        </div>
+        <div style="margin-top:48px">
+            <div class="section-heading">
+                <h2>How to Convert PDF to Text</h2>
+            </div>
+            <div class="how-section">
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-num">1</div>
+                        <h4>Upload PDF</h4>
+                        <p>Drag and drop your PDF file or click to browse</p>
                     </div>
-                    <div class="card tool-card">
-                        <h3>PDF Merger</h3>
-                        <p>Combine multiple PDF files into a single document.</p>
-                        <div class="card-footer">
-                            <a href="./pdf-merger" class="btn btn-primary btn-sm">Use Tool</a>
-                        </div>
+                    <div class="step-card">
+                        <div class="step-num">2</div>
+                        <h4>Choose Pages</h4>
+                        <p>Select all pages or a specific range</p>
                     </div>
-                    <div class="card tool-card">
-                        <h3>PDF Splitter &amp; Rotator</h3>
-                        <p>Split PDFs into separate files or rotate pages.</p>
-                        <div class="card-footer">
-                            <a href="./pdf-splitter-rotator" class="btn btn-primary btn-sm">Use Tool</a>
-                        </div>
+                    <div class="step-card">
+                        <div class="step-num">3</div>
+                        <h4>Convert</h4>
+                        <p>Click convert and wait for processing</p>
                     </div>
-                    <div class="card tool-card">
-                        <h3>PDF to Word</h3>
-                        <p>Convert PDF documents to editable Word files.</p>
-                        <div class="card-footer">
-                            <a href="./pdf-to-word" class="btn btn-primary btn-sm">Use Tool</a>
-                        </div>
+                    <div class="step-card">
+                        <div class="step-num">4</div>
+                        <h4>Download</h4>
+                        <p>Save your text file to your device</p>
                     </div>
                 </div>
-                <p style="margin-top: var(--space-4); text-align: center;">
-                    <a href="../guides/convert-pdf-to-text" style="color: var(--color-primary);">Read Guide: Convert PDF to Text ?</a>
-                </p>
-            </section>
+            </div>
+        </div>
+
+        <div style="margin-top:48px">
+            <div class="section-heading">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-section">
+                <div class="faq-grid">
+                    <div class="faq-card">
+                        <h4>Is this tool free?</h4>
+                        <p>Yes. The PDF to Text converter is completely free with no usage limits.</p>
+                    </div>
+                    <div class="faq-card">
+                        <h4>Is it safe?</h4>
+                        <p>Yes. All processing happens in your browser. Your PDF never leaves your device.</p>
+                    </div>
+                    <div class="faq-card">
+                        <h4>Does it work with scanned PDFs?</h4>
+                        <p>For scanned PDFs, use our PDF OCR tool which can recognize text from images.</p>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:var(--space-8)">
+                    <a href="/guides/convert-pdf-to-text" style="color:var(--color-primary);font-weight:600;font-size:var(--text-sm);text-decoration:none;transition:opacity .2s">Read Guide: Convert PDF to Text ➜</a>
+                </div>
+            </div>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>GoToolly</h3>
-                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">
-                        Free, privacy-focused online tools that work entirely in your browser.
-                    </p>
+                    <p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p>
                     <div class="footer-social">
                         <a href="https://x.com/GoToolly" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                         <a href="https://www.facebook.com/profile.php?id=61591898344203" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                        <a href="https://linkedin.com/in/go-toolly-426b67422" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                        <a href="https://www.youtube.com/@GoToolly" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                         <a href="https://www.instagram.com/gotoolly/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
                         <a href="https://www.tiktok.com/@gotoolly26" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
                         <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></a>
                     </div>
                 </div>
-                
                 <div class="footer-section">
                     <h3>Popular Tools</h3>
                     <ul class="footer-links">
@@ -498,7 +521,6 @@
                         <li><a href="/tools">View All Tools</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h3>Resources</h3>
                     <ul class="footer-links">
@@ -508,7 +530,6 @@
                         <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h3>Legal</h3>
                     <ul class="footer-links">
@@ -518,11 +539,8 @@
                     </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <div class="copyright">
-                    � <span id="current-year">2026</span> GoToolly. All rights reserved.
-                </div>
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
                 <div class="legal-links">
                     <a href="/legal/privacy-policy">Privacy</a>
                     <a href="/legal/terms-of-service">Terms</a>
@@ -533,22 +551,9 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-    <script>
-        // Set up PDF.js worker
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-    </script>
-    <script src="/assets/js/tools/pdf-to-text.min.js"></script>
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+    <script src="../assets/js/tools/pdf-to-text.min.js"></script>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
-
-
-
-
-

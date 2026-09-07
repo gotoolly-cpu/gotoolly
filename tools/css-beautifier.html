@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Beautifier - Format &amp; Pretty Print CSS | GoToolly</title>
-    <meta name="description" content="Beautify and format your CSS code online. Add proper indentation, line breaks, and clean structure. Free, private, browser-based CSS beautifier.">
-    <meta name="keywords" content="css beautifier, format css, prettify css, css formatter, css indenter">
+    <title>CSS Beautifier - Format, Sort &amp; Minify CSS | GoToolly</title>
+    <meta name="description" content="Beautify, sort, and minify your CSS code online. Add proper indentation, group and sort properties, normalize colors, and clean up minified stylesheets. Free, private, browser-based CSS formatter with modern CSS support.">
+    <meta name="keywords" content="css beautifier, format css, prettify css, css formatter, css indenter, css pretty print, sort css properties, minify css">
     <link rel="canonical" href="https://gotoolly.com/tools/css-beautifier">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gotoolly.com/tools/css-beautifier">
-    <meta property="og:title" content="CSS Beautifier - Format &amp; Pretty Print CSS | GoToolly">
-    <meta property="og:description" content="Beautify and format your CSS code online. Add proper indentation, line breaks, and clean structure.">
+    <meta property="og:title" content="CSS Beautifier - Format, Sort &amp; Minify CSS | GoToolly">
+    <meta property="og:description" content="Beautify and format your CSS code online. Add proper indentation, group and sort properties, and minify for production.">
     <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
@@ -18,35 +18,297 @@
     <meta property="og:site_name" content="GoToolly">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://gotoolly.com/tools/css-beautifier">
-    <meta name="twitter:title" content="CSS Beautifier - Format &amp; Pretty Print CSS | GoToolly">
-    <meta name="twitter:description" content="Beautify and format your CSS code online. Add proper indentation, line breaks, and clean structure.">
+    <meta name="twitter:title" content="CSS Beautifier - Format, Sort &amp; Minify CSS | GoToolly">
+    <meta name="twitter:description" content="Beautify and format your CSS code online. Add proper indentation, group and sort properties, and minify for production.">
     <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
     <meta name="twitter:image:alt" content="GoToolly Logo">
     <meta name="twitter:creator" content="@GoToolly">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
-    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/font-awesome.all.min.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"CSS Beautifier","url":"https://gotoolly.com/tools/css-beautifier","description":"Beautify and format your CSS code online. Add proper indentation, line breaks, and clean structure.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Configurable indent size","Sort properties option"]}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"CSS Beautifier"}]}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does the CSS beautifier do?","acceptedAnswer":{"@type":"Answer","text":"It formats minified CSS code by adding proper indentation, line breaks, and structure, making stylesheets readable and maintainable."}},{"@type":"Question","name":"Can I sort CSS properties?","acceptedAnswer":{"@type":"Answer","text":"Yes. The beautifier offers an option to sort CSS properties alphabetically within each rule block."}},{"@type":"Question","name":"Is my CSS uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens entirely in your browser. Your code never leaves your device."}},{"@type":"Question","name":"Does it handle media queries?","acceptedAnswer":{"@type":"Answer","text":"Yes. The beautifier properly indents nested media query blocks and other at-rules."}}]}</script>
-    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.minifier-textarea{width:100%;min-height:250px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text)}.minifier-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.result-box{background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px;padding:var(--space-4);font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);white-space:pre-wrap;word-break:break-word;max-height:400px;overflow-y:auto;margin-bottom:var(--space-3)}.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);margin-top:var(--space-4)}.stat-box{background:var(--color-surface);border:1px solid var(--color-border);border-radius:12px;padding:var(--space-4);text-align:center}.stat-value{font-size:var(--text-2xl);font-weight:700;color:var(--color-primary)}.stat-label{font-size:var(--text-xs);color:var(--color-text-light);margin-top:var(--space-1);text-transform:uppercase;letter-spacing:.05em}.tool-actions{display:flex;gap:var(--space-3);margin-top:var(--space-4);flex-wrap:wrap}.options-row{display:flex;gap:var(--space-3);margin-top:var(--space-3);flex-wrap:wrap;align-items:center}.option-group{display:flex;align-items:center;gap:var(--space-2)}.option-group label{font-size:var(--text-sm);color:var(--color-text-light);margin:0}.option-group select,.option-group input[type="checkbox"]{padding:6px 10px;border:1px solid var(--color-border);border-radius:6px;font-size:var(--text-sm);background:var(--color-surface);color:var(--color-text)}@media(max-width:768px){.stats-grid{grid-template-columns:1fr}}</style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+
+    <style>
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .25s cubic-bezier(.4,0,.2,1)}
+        .skip-link:focus{top:0}
+        .hero{background:#0f172a;padding:40px 0 28px;text-align:center}
+        .hero h1{font-size:40px;font-weight:800;color:#fff;line-height:1.2;margin:0 0 12px}
+        .hero h1 .gradient-text{background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-subtitle{font-size:16px;color:#94a3b8;line-height:1.5;margin:0 0 24px}
+        .trust-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .trust-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:6px 14px;border-radius:9999px;font-size:13px;font-weight:500;color:#cbd5e1;transition:background .2s}
+        .trust-badge:hover{background:rgba(255,255,255,.1)}
+        .trust-badge svg{width:14px;height:14px;color:#60a5fa}
+        .tool-workspace{max-width:900px;margin:0 auto}
+        .tool-card{background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.04);border:1px solid #e2e8f0;padding:24px;margin-bottom:48px;overflow:visible}
+        .card-header{display:flex;justify-content:space-between;align-items:center}
+        .card-header-left{display:flex;align-items:center;gap:10px}
+        .card-header-left svg{width:18px;height:18px;color:var(--color-primary)}
+        .card-header-left h2{font-size:16.8px;font-weight:600;margin:0;color:#0f172a}
+        .status-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:9999px;font-size:11px;font-weight:600;letter-spacing:.3px;display:none;text-transform:uppercase}
+        .status-badge::before{content:'';width:6px;height:6px;border-radius:50%;flex-shrink:0}
+        .status-badge.ready{display:inline-flex;background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+        .status-badge.ready::before{background:#22c55e}
+        .status-badge.processing{display:inline-flex;background:#fffbeb;color:#92400e;border:1px solid #fde68a}
+        .status-badge.processing::before{background:#f59e0b;animation:pulse-dot 1s ease-in-out infinite}
+        .status-badge.done{display:inline-flex;background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+        .status-badge.done::before{background:#22c55e}
+        .status-badge.error{display:inline-flex;background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+        .status-badge.error::before{background:#ef4444}
+        @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}
+        .card-divider{height:1px;background:#e2e8f0;margin:16px 0 0}
+        .workspace-body{display:flex;flex-direction:column;gap:0}
+        .text-input-zone{margin-top:20px}
+        .text-input-label{font-size:14px;font-weight:600;color:#0f172a;margin-bottom:8px;display:block}
+        .text-input-wrapper{position:relative}
+        .text-input-wrapper textarea{width:100%;min-height:220px;padding:16px 20px;border:2px solid #e2e8f0;border-radius:14px;font-size:14px;font-family:'JetBrains Mono',monospace;color:#0f172a;background:#f8fafc;line-height:1.6;resize:vertical;transition:border-color .2s,box-shadow .2s;box-sizing:border-box}
+        .text-input-wrapper textarea::placeholder{color:#94a3b8}
+        .text-input-wrapper textarea:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.12);background:#fff}
+        .text-input-hint{font-size:12px;color:#94a3b8;margin-top:6px;padding:0 4px}
+        .action-bar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+        .action-bar .btn-primary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:#2563eb;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .action-bar .btn-primary:hover:not(:disabled){background:#1d4ed8;transform:translateY(-1px);box-shadow:0 8px 25px rgba(37,99,235,.35)}
+        .action-bar .btn-primary:disabled{opacity:.5;cursor:not-allowed}
+        .action-bar .btn-secondary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:#fff;color:#0f172a;border:1px solid #e2e8f0;border-radius:12px;font-size:15px;font-weight:500;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .action-bar .btn-secondary:hover{border-color:#cbd5e1;background:#f8fafc;transform:translateY(-1px)}
+        .empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 20px;text-align:center}
+        .empty-state svg{width:56px;height:56px;color:#cbd5e1;margin-bottom:16px}
+        .empty-state h3{font-size:18px;font-weight:600;color:#0f172a;margin:0 0 6px}
+        .empty-state p{font-size:14px;color:#64748b;margin:0;line-height:1.6}
+        .results-panel{display:none;padding:0}
+        .results-panel.show{display:block;animation:fadeSlideIn .4s ease}
+        @keyframes fadeSlideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+        .code-output{background:#0f172a;border-radius:12px;padding:20px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#e2e8f0;line-height:1.5;white-space:pre-wrap;word-break:break-word;overflow-x:auto;max-height:500px;overflow-y:auto;margin-top:20px;border:1px solid #1e293b;position:relative}
+        .code-output .code-line-num{display:inline-block;width:32px;color:#475569;text-align:right;margin-right:16px;user-select:none;flex-shrink:0;font-size:11px}
+        .code-output .code-line{display:flex;min-height:20px}
+        .code-output .code-line:hover{background:rgba(255,255,255,.03)}
+        .code-output-topbar{display:flex;justify-content:space-between;align-items:center;padding:8px 0 12px;border-bottom:1px solid #1e293b;margin-bottom:12px}
+        .code-output-topbar span{font-size:11px;color:#64748b;font-weight:500;text-transform:uppercase;letter-spacing:.5px}
+        .options-row{display:flex;gap:16px;margin-top:16px;flex-wrap:wrap;align-items:end}
+        .option-group{display:flex;flex-direction:column;gap:4px}
+        .option-group label{font-size:12px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.4px}
+        .option-group select{padding:8px 12px;border:2px solid #e2e8f0;border-radius:10px;font-size:13px;font-family:'Inter',sans-serif;color:#0f172a;background:#f8fafc;cursor:pointer;transition:border-color .2s;min-width:140px}
+        .option-group select:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+        .stats-section{padding:0;margin-top:20px}
+        .stats-title{font-size:13px;font-weight:600;color:#64748b;margin:0 0 10px;text-transform:uppercase;letter-spacing:.5px}
+        .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+        .stat-box{padding:14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;text-align:center;transition:border-color .2s}
+        .stat-box:hover{border-color:#cbd5e1}
+        .stat-box .stat-label{font-size:11px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px}
+        .stat-box .stat-value{font-size:18px;font-weight:700;font-family:'JetBrains Mono',monospace;color:#0f172a}
+        .export-section{display:none;justify-content:center;gap:10px;padding:20px 0 0;flex-wrap:wrap}
+        .export-section.show{display:flex}
+        .export-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;font-size:13px;font-weight:500;color:#0f172a;cursor:pointer;transition:all .2s}
+        .export-btn:hover{border-color:#2563eb;color:#2563eb;background:#eff6ff}
+        .export-btn svg{width:14px;height:14px}
+        .limitations-box{display:none;padding:16px 20px;background:#fffbeb;border:1px solid #fde68a;border-radius:12px;margin-top:20px}
+        .limitations-box.show{display:block}
+        .limitations-box .lim-header{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+        .limitations-box .lim-header svg{width:16px;height:16px;color:#d97706}
+        .limitations-box .lim-header h4{font-size:13px;font-weight:600;color:#92400e;margin:0}
+        .limitations-box ul{margin:0;padding-left:18px}
+        .limitations-box li{font-size:13px;color:#a16207;line-height:1.6;margin-bottom:2px}
+        .related-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .related-section .section-intro{font-size:14px;color:#64748b;text-align:center;margin-bottom:24px}
+        .related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+        .related-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit;display:flex;flex-direction:column}
+        .related-card:hover{border-color:#2563eb;box-shadow:0 8px 24px rgba(37,99,235,.1);transform:translateY(-3px)}
+        .related-card .rc-icon{width:32px;height:32px;margin-bottom:12px}
+        .related-card .rc-icon svg{width:32px;height:32px;color:#2563eb;transition:transform .25s cubic-bezier(.4,0,.2,1)}
+        .related-card:hover .rc-icon svg{transform:scale(1.1)}
+        .related-card h4{font-size:15px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .related-card p{font-size:13px;color:#64748b;margin:0 0 16px;flex:1}
+        .related-card .rc-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#2563eb;margin-top:auto;transition:gap .2s}
+        .related-card:hover .rc-btn{gap:10px}
+        .how-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .step-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:24px;text-align:center;transition:border-color .2s,box-shadow .2s}
+        .step-card:hover{border-color:rgba(37,99,235,.2);box-shadow:0 2px 8px rgba(37,99,235,.06)}
+        .step-num{width:40px;height:40px;border-radius:50%;background:#eff6ff;color:#2563eb;font-size:16px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-bottom:12px;transition:background .2s}
+        .step-card:hover .step-num{background:#dbeafe}
+        .step-card h4{font-size:15px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .step-card p{font-size:13px;color:#64748b;margin:0}
+        .faq-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .faq-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:border-color .2s}
+        .faq-card:hover{border-color:#cbd5e1}
+        .faq-card h4{font-size:14px;font-weight:600;margin:0 0 8px;color:#0f172a}
+        .faq-card p{font-size:13px;color:#64748b;margin:0;line-height:1.6}
+        .toast{position:fixed;top:16px;right:16px;padding:12px 20px;border-radius:8px;font-size:14px;font-weight:500;z-index:1000;transform:translateX(400px);opacity:0;transition:all .25s cubic-bezier(.4,0,.2,1)}
+        .toast.show{transform:translateX(0);opacity:1}
+        .toast.info{background:#2563eb;color:#fff}
+        .toast.success{background:#10b981;color:#fff}
+        .toast.error{background:#ef4444;color:#fff}
+        .section-heading{text-align:center;margin-bottom:32px}
+        .section-heading h2{font-size:28.8px;font-weight:700;color:#0f172a;margin:0 0 4px}
+        @media(max-width:1024px){
+            .related-grid{grid-template-columns:repeat(2,1fr)}
+            .faq-grid{grid-template-columns:repeat(2,1fr)}
+            .stats-grid{grid-template-columns:repeat(2,1fr)}
+        }
+        @media(max-width:768px){
+            .hero{padding:32px 0 20px}
+            .hero h1{font-size:28px}
+            .hero-subtitle{font-size:14px;margin-bottom:20px}
+            .trust-badges{gap:8px}
+            .trust-badge{padding:4px 10px;font-size:12px}
+            .tool-card{padding:16px;margin-bottom:32px}
+            .action-bar{grid-template-columns:1fr}
+            .related-grid{grid-template-columns:1fr}
+            .steps-grid{grid-template-columns:1fr}
+            .faq-grid{grid-template-columns:1fr}
+            .stats-grid{grid-template-columns:1fr}
+            .text-input-wrapper textarea{min-height:180px;padding:14px 16px}
+            .options-row{flex-direction:column}
+        }
+        @media(max-width:480px){
+            .hero{padding:24px 0 16px}
+            .hero h1{font-size:24px}
+            .related-grid{gap:12px}
+        }
+        @media print{
+            .hero,.site-header,.site-footer,.related-section,.how-section,.faq-section,.action-bar,.export-section,.limitations-box,.status-badge,.empty-state,.toast{display:none !important}
+            .tool-card{box-shadow:none;border:none;padding:0}
+            .results-panel{display:block !important}
+            body{background:#fff}
+        }
+        @media(prefers-reduced-motion:reduce){
+            *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+        }
+    </style>
+
+    <style>
+        /* ===== CSS Beautifier v2 workspace ===== */
+        .editor-duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+        .editor-col{display:flex;flex-direction:column;min-width:0}
+        .editor-col .col-title{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:14px;font-weight:600;color:#0f172a;margin-bottom:8px}
+        .editor-col .col-meta{font-size:11px;font-weight:500;color:#64748b;font-family:'JetBrains Mono',monospace;white-space:nowrap}
+        .editor{position:relative;height:clamp(300px,52vh,480px);border:2px solid #e2e8f0;border-radius:12px;background:#f8fafc;overflow:hidden;transition:border-color .2s,box-shadow .2s}
+        .editor:focus-within{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+        .editor-gutter{position:absolute;left:0;top:0;bottom:0;width:48px;overflow:hidden;background:#f1f5f9;border-right:1px solid #e2e8f0;z-index:2}
+        .editor-gutter pre{margin:0;padding:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:20.8px}
+        .editor-gutter .g-num{font-family:'JetBrains Mono',monospace;font-size:11px;line-height:20.8px;color:#94a3b8;text-align:right;padding:0 8px 0 0;user-select:none}
+        .editor-body{position:absolute;left:48px;right:0;top:0;bottom:0}
+        .editor-hl,.editor-ta{position:absolute;inset:0;margin:0;border:0;box-sizing:border-box;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.6;letter-spacing:0;tab-size:4;-moz-tab-size:4;white-space:pre;word-break:normal;word-wrap:normal;padding:14px 16px}
+        .editor-hl{overflow:hidden;pointer-events:none;color:#334155;z-index:0;background:transparent}
+        .editor-ta{overflow:auto;background:transparent;color:transparent;-webkit-text-fill-color:transparent;caret-color:#2563eb;outline:none;resize:none;display:block;z-index:1}
+        .editor-ta::placeholder{color:#94a3b8;-webkit-text-fill-color:#94a3b8;opacity:1}
+        .editor-ta::selection{background:rgba(37,99,235,.18);-webkit-text-fill-color:transparent}
+        .editor-ta[readonly]{cursor:default}
+        .editor-hl .cs-sel{color:#7c3aed}
+        .editor-hl .cs-prop{color:#2563eb}
+        .editor-hl .cs-value{color:#059669}
+        .editor-hl .cs-at{color:#9333ea;font-weight:500}
+        .editor-hl .cs-comment{color:#94a3b8;font-style:italic}
+        .editor-hl .cs-string{color:#16a34a}
+        .settings-box{margin-top:16px;border:1px solid #e2e8f0;border-radius:12px;background:#fff;overflow:hidden}
+        .settings-box>summary{list-style:none;display:flex;align-items:center;gap:8px;padding:14px 18px;font-size:14px;font-weight:600;color:#0f172a;cursor:pointer;user-select:none;background:#f8fafc}
+        .settings-box>summary::-webkit-details-marker{display:none}
+        .settings-box>summary:hover{background:#f1f5f9}
+        .settings-box>summary .sg-caret{margin-left:auto;transition:transform .2s;color:#64748b}
+        .settings-box[open]>summary .sg-caret{transform:rotate(180deg)}
+        .settings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;padding:16px 18px}
+        .setting-group{display:flex;flex-direction:column;gap:6px}
+        .setting-group label{font-size:11px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.4px}
+        .setting-group select,.setting-group input[type=number]{padding:8px 12px;border:2px solid #e2e8f0;border-radius:10px;font-size:13px;font-family:'Inter',sans-serif;color:#0f172a;background:#f8fafc;cursor:pointer;transition:border-color .2s;min-width:0;width:100%}
+        .setting-group input[type=number]{cursor:text}
+        .setting-group select:focus,.setting-group input[type=number]:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.12);background:#fff}
+        .setting-check{display:flex;align-items:center;gap:6px;min-height:36px;padding:2px 0}
+        .setting-check input{width:16px;height:16px;accent-color:#2563eb;cursor:pointer;flex-shrink:0}
+        .setting-check label{font-size:12px;font-weight:500;color:#0f172a;text-transform:none;letter-spacing:0;cursor:pointer;line-height:1.4}
+        .action-bar-new{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:20px}
+        .btn-act{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font-size:14px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .btn-act svg{width:16px;height:16px;flex-shrink:0}
+        .btn-act-primary{background:#2563eb;color:#fff;border:none}
+        .btn-act-primary:hover:not(:disabled){background:#1d4ed8;transform:translateY(-1px);box-shadow:0 8px 25px rgba(37,99,235,.35)}
+        .btn-act-ghost{background:#fff;color:#0f172a;border:1px solid #e2e8f0}
+        .btn-act-ghost:hover:not(:disabled){border-color:#cbd5e1;background:#f8fafc;transform:translateY(-1px)}
+        .btn-act-ghost.danger:hover:not(:disabled){border-color:#fca5a5;color:#b91c1c;background:#fef2f2}
+        .btn-act:disabled{opacity:.5;cursor:not-allowed}
+        .kbd-hint{font-size:11px;color:#94a3b8;margin-top:10px;text-align:center}
+        .kbd-hint kbd{background:#f1f5f9;border:1px solid #e2e8f0;border-bottom-width:2px;border-radius:5px;padding:1px 6px;font-family:'JetBrains Mono',monospace;font-size:10px;color:#475569}
+        .warn-list{display:none;margin-top:16px;padding:12px 18px;background:#fffbeb;border:1px solid #fde68a;border-radius:12px}
+        .warn-list.show{display:block}
+        .warn-list h4{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#92400e;margin:0 0 6px}
+        .warn-list ul{margin:0;padding-left:18px}
+        .warn-list li{font-size:13px;color:#a16207;line-height:1.6}
+        .byte-saved{color:#059669;font-weight:600}
+        .byte-grown{color:#d97706;font-weight:600}
+        @media(max-width:900px){
+            .editor-duo{grid-template-columns:1fr}
+        }
+        @media(max-width:768px){
+            .editor{height:clamp(240px,44vh,380px)}
+        }
+        @media print{
+            .settings-box,.action-bar-new,.warn-list,.kbd-hint{display:none !important}
+            .editor{height:auto;border-color:#cbd5e1}
+            .editor-gutter{display:none}
+            .editor-body{position:static}
+            .editor-ta{display:none}
+            .editor-hl{position:static;height:auto;overflow:visible;white-space:pre-wrap;word-break:break-word;padding:0}
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "CSS Beautifier",
+        "url": "https://gotoolly.com/tools/css-beautifier",
+        "description": "Beautify and format your CSS code online. Add proper indentation, sort and group properties, normalize colors, and minify for production.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["Free to use", "No account required", "Client-side processing", "Privacy-focused", "Configurable indent size", "Brace style options", "Property sorting and grouping", "Color normalization", "One-click minification", "Modern CSS support", "Syntax validation"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gotoolly.com/tools"},
+            {"@type": "ListItem", "position": 3, "name": "CSS Beautifier"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "What does the CSS beautifier do?", "acceptedAnswer": {"@type": "Answer", "text": "It formats minified or messy CSS by adding proper indentation, line breaks, and structure, making stylesheets readable and maintainable. It can also minify CSS back down for production."}},
+            {"@type": "Question", "name": "Can I sort or group CSS properties?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Sort properties alphabetically, group them by category (positioning, box model, typography, visual, animation), move custom properties to the top, or keep vendor prefixes and shorthands together."}},
+            {"@type": "Question", "name": "Does it support modern CSS?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Nesting, @layer, @container, @scope, @property, color-mix, oklch, calc, custom properties, anchor positioning, and other modern features are preserved and formatted correctly."}},
+            {"@type": "Question", "name": "Is my CSS uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens entirely in your browser. Your code never leaves your device."}},
+            {"@type": "Question", "name": "Can I minify CSS with this tool?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. One click minifies your beautified stylesheet by removing comments and unnecessary whitespace, showing the percentage of bytes saved."}}
+        ]
+    }
+    </script>
 
     <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header class="site-header">
         <div class="container">
             <div class="header-content">
-                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <a href="/" class="logo">
+                    <img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg">
+                    <span class="logo-text">GoToolly</span>
+                </a>
                 <nav class="main-nav">
                     <a href="/" class="nav-link">Home</a>
                     <a href="/tools" class="nav-link active">Tools</a>
@@ -54,165 +316,2871 @@
                     <a href="../about" class="nav-link">About</a>
                     <a href="../contact" class="nav-link">Contact</a>
                 </nav>
-                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
             </div>
-            <div class="mobile-menu"><nav class="mobile-nav">
-                <a href="/" class="nav-link">Home</a>
-                <a href="/tools" class="nav-link active">Tools</a>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="../about" class="nav-link">About</a>
-                <a href="../contact" class="nav-link">Contact</a>
-            </nav></div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
         </div>
     </header>
-    <main id="main-content" class="main-content">
-        <div class="container">
-            <div class="page-header">
-                <h1>CSS Beautifier</h1>
-                <p class="page-description">Format and beautify your CSS code with proper indentation. Turn minified CSS into clean, readable stylesheets.</p>
-            </div>
-            <div class="tool-layout">
-                <div class="tool-interface">
-                    <div class="tool-header">
-                        <h2>Beautify CSS</h2>
-                        <p>Paste your CSS code below</p>
-                    </div>
-                    <label for="css-input"><i class="fas fa-palette" style="color:var(--color-primary);margin-right:6px"></i> CSS Input</label>
-                    <textarea id="css-input" class="minifier-textarea" placeholder="Paste your minified or messy CSS here..." rows="10"></textarea>
-                    <div class="options-row">
-                        <div class="option-group">
-                            <label for="indent-size">Indent Size:</label>
-                            <select id="indent-size">
-                                <option value="2">2 spaces</option>
-                                <option value="4" selected>4 spaces</option>
-                                <option value="8">8 spaces</option>
-                            </select>
-                        </div>
-                        <div class="option-group">
-                            <input type="checkbox" id="sort-props">
-                            <label for="sort-props">Sort properties</label>
-                        </div>
-                    </div>
-                    <div class="tool-actions">
-                        <button id="beautify-btn" class="btn btn-primary btn-lg"><i class="fas fa-magic" aria-hidden="true"></i> Beautify</button>
-                        <button id="reset-btn" class="btn btn-secondary"><i class="fas fa-redo" aria-hidden="true"></i> Reset</button>
-                    </div>
-                    <div id="result-area" class="result-area" style="display:none">
-                        <h3><i class="fas fa-check-circle" style="color:#10b981"></i> Beautified CSS</h3>
-                        <div id="result-text" class="result-box"></div>
-                        <div class="tool-actions">
-                            <button id="copy-btn" class="btn btn-primary btn-sm"><i class="fas fa-copy"></i> Copy Result</button>
-                            <button id="download-btn" class="btn btn-secondary btn-sm"><i class="fas fa-download"></i> Download</button>
-                        </div>
-                    </div>
-                    <div id="stats" class="stats-grid" style="display:none">
-                        <div class="stat-box"><div class="stat-value" id="stat-original">0</div><div class="stat-label">Original Size</div></div>
-                        <div class="stat-box"><div class="stat-value" id="stat-beautified">0</div><div class="stat-label">Beautified Size</div></div>
-                        <div class="stat-box"><div class="stat-value" id="stat-rules">0</div><div class="stat-label">Rules Found</div></div>
-                    </div>
-                </div>
-                <div class="tool-sidebar">
-                    <div class="card"><h3>How It Works</h3><ol><li>Paste your CSS code</li><li>Choose indent size &amp; sort option</li><li>Click Beautify</li><li>Copy or download the result</li></ol></div>
-                    <div class="card"><h3>Features</h3><ul><li>Configurable indent size</li><li>Optional property sorting</li><li>Handles media queries</li><li>Cleans up formatting</li></ul></div>
-                    <div class="card"><p style="font-size:var(--text-xs);color:var(--color-text-light);margin:0">Your text is processed entirely inside your browser.</p></div>
-                </div>
-            </div>
-            <section class="content-section">
-                <div class="section-header"><h2>Related Tools</h2></div>
-                <div class="tools-grid">
-                    <div class="card tool-card"><h3>CSS Minifier</h3><p>Minify your CSS by removing comments and whitespace.</p><div class="card-footer"><a href="./css-minifier" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-                    <div class="card tool-card"><h3>HTML Beautifier</h3><p>Format and indent your HTML code.</p><div class="card-footer"><a href="./html-beautifier" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-                    <div class="card tool-card"><h3>JavaScript Beautifier</h3><p>Format and pretty-print JavaScript code.</p><div class="card-footer"><a href="./js-beautifier" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-                </div>
-            </section>
-            <section class="content-section" style="margin-top:var(--space-8)">
-                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
-                <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-3)">
-                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What does the CSS beautifier do?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">It formats minified CSS code by adding proper indentation, line breaks, and structure, making stylesheets readable and maintainable.</p></div>
-                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Can I sort CSS properties?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Yes. The beautifier offers an option to sort CSS properties alphabetically within each rule block.</p></div>
-                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Is my CSS uploaded to a server?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">No. All processing happens entirely in your browser. Your code never leaves your device.</p></div>
-                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Does it handle media queries?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Yes. The beautifier properly indents nested media query blocks and other at-rules.</p></div>
-                </div>
-            </section>
 
-            <p style="margin-top: var(--space-4); text-align: center;">
-                <a href="../guides/css-beautifier" style="color: var(--color-primary);">Read Guide: CSS Beautifier Guide <i class="fas fa-arrow-right"></i></a>
-            </p>
+    <main id="main-content">
+
+        <section class="hero">
+            <div class="container">
+                <h1>Format, Sort &amp; Minify <span class="gradient-text">CSS</span></h1>
+                <p class="hero-subtitle">Turn minified or messy stylesheets into clean, readable CSS with proper indentation, property sorting, color normalization, and modern feature support — or minify back down with one click. All processing happens in your browser.</p>
+                <div class="trust-badges">
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        100% Private
+                    </span>
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                        Processed locally
+                    </span>
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Free &amp; unlimited
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="tool-workspace">
+
+                <div class="tool-card" role="region" aria-label="CSS Beautifier workspace">
+
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 010 20 14.5 14.5 0 010-20z"/></svg>
+                            <h2>CSS Beautifier</h2>
+                        </div>
+                        <span class="status-badge" id="status-badge" aria-live="polite"></span>
+                    </div>
+                    <div class="card-divider"></div>
+
+                    <div class="workspace-body" id="workspace-body">
+
+<details class="settings-box" id="settings-box" open>
+    <summary>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+        Formatting Options
+        <svg class="sg-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="settings-grid">
+        <div class="setting-group">
+            <label for="indent-size">Indent</label>
+            <select id="indent-size">
+                <option value="2">2 spaces</option>
+                <option value="4" selected>4 spaces</option>
+                <option value="8">8 spaces</option>
+                <option value="tab">Tab</option>
+            </select>
         </div>
+        <div class="setting-group">
+            <label for="output-style">Output Style</label>
+            <select id="output-style">
+                <option value="expanded" selected>Expanded</option>
+                <option value="compact">Compact</option>
+                <option value="preserve">Preserve</option>
+            </select>
+        </div>
+        <div class="setting-group">
+            <label for="brace-style">Brace Style</label>
+            <select id="brace-style">
+                <option value="same" selected>Same line</option>
+                <option value="newline">New line</option>
+            </select>
+        </div>
+        <div class="setting-group">
+            <label for="empty-lines">Empty Lines</label>
+            <select id="empty-lines">
+                <option value="remove-extra" selected>Collapse extras</option>
+                <option value="preserve">Preserve</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <div class="setting-group">
+            <label for="line-endings">Line Endings</label>
+            <select id="line-endings">
+                <option value="auto" selected>Auto</option>
+                <option value="lf">LF (Unix)</option>
+                <option value="crlf">CRLF (Windows)</option>
+            </select>
+        </div>
+        <div class="setting-group">
+            <label for="max-line-length">Max Line Length</label>
+            <input type="number" id="max-line-length" value="100" min="0" max="200" step="10">
+        </div>
+        <div class="setting-check">
+            <input type="checkbox" id="final-newline" checked>
+            <label for="final-newline">Final newline</label>
+        </div>
+    </div>
+</details>
+
+<details class="settings-box" id="settings-box-2">
+    <summary>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        Properties &amp; Values
+        <svg class="sg-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="6 9 12 15 18 9"/></svg>
+    </summary>
+    <div class="settings-grid">
+        <div class="setting-check">
+            <input type="checkbox" id="sort-props">
+            <label for="sort-props">Sort properties</label>
+        </div>
+        <div class="setting-check">
+            <input type="checkbox" id="group-props">
+            <label for="group-props">Group properties</label>
+        </div>
+        <div class="setting-check">
+            <input type="checkbox" id="custom-props-top">
+            <label for="custom-props-top">Custom props to top</label>
+        </div>
+        <div class="setting-check">
+            <input type="checkbox" id="vendor-together">
+            <label for="vendor-together">Keep vendor prefixes together</label>
+        </div>
+        <div class="setting-check">
+            <input type="checkbox" id="shorthands-together">
+            <label for="shorthands-together">Keep shorthands together</label>
+        </div>
+        <div class="setting-group">
+            <label for="normalize-colors">Normalize Colors</label>
+            <select id="normalize-colors">
+                <option value="preserve" selected>Preserve</option>
+                <option value="hex">Hex (#rrggbb)</option>
+                <option value="rgb">RGB</option>
+                <option value="hsl">HSL</option>
+            </select>
+        </div>
+        <div class="setting-check">
+            <input type="checkbox" id="lowercase-hex">
+            <label for="lowercase-hex">Lowercase hex</label>
+        </div>
+        <div class="setting-check">
+            <input type="checkbox" id="remove-zero-units">
+            <label for="remove-zero-units">Remove zero units</label>
+        </div>
+        <div class="setting-check">
+            <input type="checkbox" id="remove-leading-zero">
+            <label for="remove-leading-zero">Remove leading zeros</label>
+        </div>
+        <div class="setting-check">
+            <input type="checkbox" id="preserve-comments" checked>
+            <label for="preserve-comments">Preserve comments</label>
+        </div>
+    </div>
+</details>
+
+<div class="editor-duo">
+    <div class="editor-col">
+        <div class="col-title">
+            <span>Input</span>
+            <span class="col-meta" id="input-meta">0 chars · 0 lines · 0 B</span>
+        </div>
+        <div class="editor" id="input-editor">
+            <div class="editor-gutter" aria-hidden="true"><pre id="input-gutter"></pre></div>
+            <div class="editor-body">
+                <pre class="editor-hl" id="input-hl" aria-hidden="true"></pre>
+                <textarea class="editor-ta" id="input-ta" spellcheck="false" placeholder="Paste or type your CSS code here..." aria-label="CSS input"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="editor-col">
+        <div class="col-title">
+            <span>Output</span>
+            <span class="col-meta" id="output-meta">Waiting for input</span>
+        </div>
+        <div class="editor" id="output-editor">
+            <div class="editor-gutter" aria-hidden="true"><pre id="output-gutter"></pre></div>
+            <div class="editor-body">
+                <pre class="editor-hl" id="output-hl" aria-hidden="true"></pre>
+                <textarea class="editor-ta" id="output-ta" spellcheck="false" readonly placeholder="Formatted output appears here..." aria-label="CSS output"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="warn-list" id="warn-list">
+    <h4>Warnings</h4>
+    <ul id="warn-items"></ul>
+</div>
+
+<div class="stats-section" id="stats-section" style="display:none">
+    <div class="stats-title">File Statistics</div>
+    <div class="stats-grid" id="stats-grid">
+        <div class="stat-box"><div class="stat-label">Rules</div><div class="stat-value" id="stat-rules">0</div></div>
+        <div class="stat-box"><div class="stat-label">Selectors</div><div class="stat-value" id="stat-selectors">0</div></div>
+        <div class="stat-box"><div class="stat-label">Declarations</div><div class="stat-value" id="stat-declarations">0</div></div>
+        <div class="stat-box"><div class="stat-label">Properties</div><div class="stat-value" id="stat-properties">0</div></div>
+        <div class="stat-box"><div class="stat-label">Custom Props</div><div class="stat-value" id="stat-custom">0</div></div>
+        <div class="stat-box"><div class="stat-label">Media Queries</div><div class="stat-value" id="stat-media">0</div></div>
+        <div class="stat-box"><div class="stat-label">Container Queries</div><div class="stat-value" id="stat-container">0</div></div>
+        <div class="stat-box"><div class="stat-label">@supports</div><div class="stat-value" id="stat-supports">0</div></div>
+        <div class="stat-box"><div class="stat-label">Layers</div><div class="stat-value" id="stat-layers">0</div></div>
+        <div class="stat-box"><div class="stat-label">Keyframes</div><div class="stat-value" id="stat-keyframes">0</div></div>
+        <div class="stat-box"><div class="stat-label">Animation Props</div><div class="stat-value" id="stat-animations">0</div></div>
+        <div class="stat-box"><div class="stat-label">Color Functions</div><div class="stat-value" id="stat-colors">0</div></div>
+        <div class="stat-box"><div class="stat-label">Math Functions</div><div class="stat-value" id="stat-math">0</div></div>
+        <div class="stat-box"><div class="stat-label">Comments</div><div class="stat-value" id="stat-comments">0</div></div>
+        <div class="stat-box"><div class="stat-label">Max Depth</div><div class="stat-value" id="stat-depth">0</div></div>
+        <div class="stat-box"><div class="stat-label">Formatting Time</div><div class="stat-value" id="stat-time">0ms</div></div>
+        <div class="stat-box"><div class="stat-label">Original Size</div><div class="stat-value" id="stat-original">0 B</div></div>
+        <div class="stat-box"><div class="stat-label">Beautified Size</div><div class="stat-value" id="stat-beautified">0 B</div></div>
+        <div class="stat-box"><div class="stat-label">Size Change</div><div class="stat-value" id="stat-delta">0 B</div></div>
+        <div class="stat-box"><div class="stat-label">Size %</div><div class="stat-value" id="stat-pct">0%</div></div>
+    </div>
+</div>
+
+<div class="action-bar-new" id="action-bar">
+    <button class="btn-act btn-act-primary" id="analyze-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+        Beautify
+    </button>
+    <button class="btn-act btn-act-ghost" id="minify-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg>
+        Minify
+    </button>
+    <button class="btn-act btn-act-ghost" id="swap-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
+        Swap
+    </button>
+    <button class="btn-act btn-act-ghost" id="copy-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        Copy
+    </button>
+    <button class="btn-act btn-act-ghost" id="download-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download
+    </button>
+    <button class="btn-act btn-act-ghost" id="clear-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        Clear
+    </button>
+    <button class="btn-act btn-act-ghost danger" id="reset-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+        Reset
+    </button>
+</div>
+<p class="kbd-hint">Press <kbd>Ctrl</kbd>+<kbd>Enter</kbd> to beautify &middot; <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> to minify</p>
+
+                    </div>
+
+                    <div class="limitations-box" id="limitations-box" aria-label="Tool limitations">
+                        <div class="lim-header">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            <h4>What this tool does not do</h4>
+                        </div>
+                        <ul>
+                            <li>Reports unbalanced braces, unclosed strings, or unclosed comments as warnings, but does not silently remove or auto-fix them.</li>
+                            <li>Does not add vendor prefixes or rewrite stylesheet semantics.</li>
+                            <li>Very large stylesheets (over ~5 MB) may take a few seconds to process.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <section class="related-section content-section" style="margin-top:48px">
+            <div class="section-heading">
+                <h2>Related Tools</h2>
+                <p class="section-intro">After formatting your CSS, you might also need...</p>
+            </div>
+            <div class="related-grid">
+                <a href="./css-minifier.html" class="related-card">
+                    <div class="rc-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+                    </div>
+                    <h4>CSS Minifier</h4>
+                    <p>Minify CSS by removing comments, whitespace, and redundant code.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./html-beautifier.html" class="related-card">
+                    <div class="rc-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    </div>
+                    <h4>HTML Beautifier</h4>
+                    <p>Format and indent your HTML code for better readability.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./js-beautifier.html" class="related-card">
+                    <div class="rc-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="17" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="17" y1="18" x2="3" y2="18"/></svg>
+                    </div>
+                    <h4>JavaScript Beautifier</h4>
+                    <p>Format and pretty-print your JavaScript code.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./json-formatter.html" class="related-card">
+                    <div class="rc-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="8" rx="1"/><rect x="14" y="14" width="8" height="8" rx="1"/></svg>
+                    </div>
+                    <h4>JSON Beautifier</h4>
+                    <p>Format and validate your JSON data.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+            </div>
+        </section>
+
+        <section class="how-section content-section" style="margin-top:48px">
+            <div class="section-heading">
+                <h2>How It Works</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <h4>Paste your CSS</h4>
+                    <p>Enter or paste minified or messy CSS into the input area.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <h4>Choose options</h4>
+                    <p>Pick indent, braces, empty lines, property sorting and grouping, and color normalization from the settings panel.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <h4>Format or minify</h4>
+                    <p>Beautify your stylesheet with one click, or minify it for production. Statistics and byte savings are shown instantly.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section content-section" style="margin-top:48px">
+            <div class="section-heading">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h4>What does the CSS beautifier do?</h4>
+                    <p>It formats minified or messy CSS by adding proper indentation, line breaks, and structure, making stylesheets readable and maintainable. It can also minify CSS back down for production.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>Can I sort or group CSS properties?</h4>
+                    <p>Yes. Sort properties alphabetically, group them by category (positioning, box model, typography, visual, animation), move custom properties to the top, or keep vendor prefixes and shorthands together.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>Does it support modern CSS?</h4>
+                    <p>Yes. Nesting, @layer, @container, @scope, @property, color-mix, oklch, calc, custom properties, anchor positioning, and other modern features are preserved and formatted correctly.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>Can I normalize color values?</h4>
+                    <p>Yes. Convert colors to hex, RGB, or HSL, lowercase hex values, remove zero units, or remove leading zeros — all without breaking modern color functions.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>Is my CSS uploaded to a server?</h4>
+                    <p>No. All processing happens entirely in your browser. Your code never leaves your device.</p>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:var(--space-8)">
+                <a href="/guides/css-beautifier" style="color:var(--color-primary);font-weight:600;font-size:var(--text-sm);text-decoration:none;transition:opacity .2s">Read Guide: CSS Beautifier Guide &#10132;</a>
+            </div>
+        </section>
+
     </main>
-    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p>
                     <div class="footer-social">
                         <a href="https://x.com/GoToolly" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                         <a href="https://www.facebook.com/profile.php?id=61591898344203" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                        <a href="https://linkedin.com/in/go-toolly-426b67422" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                        <a href="https://www.youtube.com/@GoToolly" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                         <a href="https://www.instagram.com/gotoolly/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
                         <a href="https://www.tiktok.com/@gotoolly26" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
                         <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></a>
-                    </div></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor.html">Image Compressor</a></li><li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li><li><a href="/tools/word-counter.html">Word Counter</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Popular Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="/tools/image-compressor.html">Image Compressor</a></li>
+                        <li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li>
+                        <li><a href="/tools/word-counter.html">Word Counter</a></li>
+                        <li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li>
+                        <li><a href="/tools/password-generator.html">Password Generator</a></li>
+                        <li><a href="/tools">View All Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script defer src="../assets/js/main.min.js"></script>
     <script>
-    (function(){
-        const input=document.getElementById('css-input');
-        const resultArea=document.getElementById('result-area');
-        const resultText=document.getElementById('result-text');
-        const stats=document.getElementById('stats');
-        function beautify(css,indentStr,sortProps){
-            css=css.replace(/\/\*[\s\S]*?\*\//g,'').replace(/\s+/g,' ').trim();
-            let result='';let level=0;let i=0;
-            while(i<css.length){
-                if(css[i]==='{'){
-                    result+=' {\n';level++;i++;
-                }else if(css[i]==='}'){
-                    level=Math.max(0,level-1);result+=indentStr.repeat(level)+'}\n\n';i++;
-                }else if(css[i]===';'){
-                    result+=';\n'+indentStr.repeat(level);i++;
-                }else if(css[i]===':'&&level>0){
-                    let propEnd=i;let prop=css.substring(0,i).trim();
-                    let lastNewline=result.lastIndexOf('\n');
-                    let currentLine=result.substring(lastNewline+1);
-                    result=result.substring(0,lastNewline+1)+indentStr.repeat(level)+currentLine.trimStart();
-                    let colonPos=result.length;
-                    result+=': ';i++;
-                    let valueEnd=css.indexOf(';',i);if(valueEnd===-1)valueEnd=css.length;
-                    let value=css.substring(i,valueEnd).trim();
-                    result+=value;css=css.substring(valueEnd);i=0;
-                }else{i++}
-            }
-            result=result.replace(/\n{3,}/g,'\n\n').trim()+'\n';
-            if(sortProps){
-                result=result.replace(/([^{}]+)\{([^{}]*)\}/g,function(match,selector,body){
-                    let props=body.split('\n').map(function(p){return p.trim()}).filter(function(p){return p.length>0});
-                    props.sort();return selector.trim()+' {\n'+indentStr.repeat(1)+props.join('\n'+indentStr.repeat(1))+'\n}';
-                });
-            }
-            return result;
+/* ===== GoToolly CSS Beautifier engine (self-contained formatter/minifier) ===== */
+/* GoToolly CSS Beautifier engine - self-contained formatter/minifier */
+(function (root, factory) {
+    if (typeof module !== 'undefined' && module.exports) { module.exports = factory(); }
+    else { root.CSSBeautifyEngine = factory(); }
+}(typeof self !== 'undefined' ? self : this, function () {
+    'use strict';
+
+    function dict(o) { o = o || {}; Object.setPrototypeOf(o, null); return o; }
+
+    var MATH_FNS = dict({ calc:1, min:1, max:1, clamp:1, round:1, mod:1, rem:1, pow:1, sqrt:1, hypot:1, log:1, exp:1, abs:1, sign:1, sin:1, cos:1, tan:1, asin:1, acos:1, atan:1, atan2:1 });
+    var COLOR_FNS = dict({ rgb:1, rgba:1, hsl:1, hsla:1, hwb:1 });
+    var NTH_FNS = dict({ ':nth-child':1, ':nth-last-child':1, ':nth-of-type':1, ':nth-last-of-type':1 });
+    var SELECTOR_LIST_FNS = dict({ ':is':1, ':where':1, ':not':1, ':has':1, ':matches':1, ':host':1, ':host-context':1 });
+
+    var ZERO_UNIT_RE = /(^|[\s(,/\[])(-?)0(?:px|em|rem|ex|ch|cap|ic|lh|rlh|vw|vh|vi|vb|vmin|vmax|svw|svh|lvw|lvh|dvw|dvh|cm|mm|q|in|pt|pc|deg|grad|rad|turn|s|ms|hz|khz|dpi|dpcm|dppx|fr|%)(?![\w-])/g;
+    var LEAD_ZERO_RE = /(^|[\s(,/\[])(-?)0\.(\d+)(?![\w-])/g;
+
+    var SHORTHANDS = dict({
+        margin:1, padding:1, border:1, 'border-block':1, 'border-inline':1, 'border-radius':1,
+        inset:1, 'scroll-margin':1, 'scroll-padding':1, font:1, background:1, flex:1, grid:1,
+        gap:1, transition:1, animation:1, transform:1, outline:1, 'list-style':1, columns:1,
+        'column-rule':1, 'place-content':1, 'place-items':1, 'place-self':1, mask:1,
+        'text-decoration':1, 'text-emphasis':1, 'text-shadow':1, 'box-shadow':1, overflow:1
+    });
+
+    var GROUP_PREFIXES = [
+        [], /* 0: custom */
+        ['position','top','right','bottom','left','z-index','inset','float','clear'],
+        ['display','flex','grid','gap','row-gap','column-gap','order','align-','justify-','place-','visibility','contain','content-visibility','isolation'],
+        ['margin','padding','border','box-sizing','overflow','outline'],
+        ['width','height','inline-size','block-size','min-width','max-width','min-height','max-height','min-inline-size','max-inline-size','min-block-size','max-block-size','aspect-ratio','object-fit','object-position','resize'],
+        ['font','color','line-height','letter-spacing','text-','word-','white-space','hyphens','overflow-wrap','list-','content','quotes','direction','unicode-bidi','writing-mode','counter-','caret-color','tab-size','vertical-align'],
+        ['background','mask','clip-path','opacity'],
+        ['box-shadow','text-shadow','filter','backdrop-filter','mix-blend-mode','transform','perspective','will-change','cursor','pointer-events','user-select','user-drag','appearance','accent-color','color-scheme'],
+        ['transition','animation','scroll-behavior','scroll-snap','view-transition','view-timeline','animation-timeline']
+    ];
+
+    function isWs(c) { return c === ' ' || c === '\t' || c === '\n' || c === '\r' || c === '\f'; }
+
+    function isCustomProp(name) { return name.length > 1 && name[0] === '-' && name[1] === '-'; }
+
+    function stripVendor(name) {
+        return name.replace(/^-(webkit|moz|ms|o)-/, '');
+    }
+    function vendorRank(name) {
+        if (name.indexOf('-webkit-') === 0) return 0;
+        if (name.indexOf('-moz-') === 0) return 1;
+        if (name.indexOf('-ms-') === 0) return 2;
+        if (name.indexOf('-o-') === 0) return 3;
+        return 4;
+    }
+
+    function shorthandFamily(prop) {
+        var parts = prop.split('-');
+        var best = prop;
+        for (var i = parts.length; i >= 1; i--) {
+            var p = parts.slice(0, i).join('-');
+            if (SHORTHANDS[p]) { best = p; break; }
         }
-        document.getElementById('beautify-btn').addEventListener('click',function(){
-            let code=input.value.trim();if(!code){return}
-            let size=parseInt(document.getElementById('indent-size').value);
-            let sortProps=document.getElementById('sort-props').checked;
-            let indentStr=' '.repeat(size);
-            let beautified=beautify(code,indentStr,sortProps);
-            resultText.textContent=beautified;resultArea.style.display='';stats.style.display='';
-            document.getElementById('stat-original').textContent=code.length+' chars';
-            document.getElementById('stat-beautified').textContent=beautified.length+' chars';
-            let ruleCount=(beautified.match(/\{/g)||[]).length;
-            document.getElementById('stat-rules').textContent=ruleCount;
+        return best;
+    }
+
+    var AXIS_RANK = dict({ top: 1, right: 2, bottom: 3, left: 4, block: 5, inline: 6, 'block-start': 7, 'block-end': 8, 'inline-start': 9, 'inline-end': 10 });
+
+    function subRank(family, prop) {
+        if (prop === family) return 0;
+        var rest = prop.slice(family.length);
+        if (rest.charAt(0) === '-') rest = rest.slice(1);
+        var r = AXIS_RANK[rest];
+        return r === undefined ? 1000 : r;
+    }
+
+    function groupIndex(base) {
+        for (var g = 1; g < GROUP_PREFIXES.length; g++) {
+            var prefs = GROUP_PREFIXES[g];
+            for (var p = 0; p < prefs.length; p++) {
+                var pref = prefs[p];
+                if (base === pref || base.indexOf(pref) === 0) return g;
+            }
+        }
+        return GROUP_PREFIXES.length;
+    }
+
+    /* ---------- generic helpers ---------- */
+
+    function findTopLevelColon(s) {
+        var depth = 0, bdepth = 0;
+        for (var i = 0; i < s.length; i++) {
+            var c = s[i];
+            if (c === '"' || c === "'") {
+                i++;
+                while (i < s.length) {
+                    if (s[i] === '\\') { i++; }
+                    else if (s[i] === c) { break; }
+                    i++;
+                }
+                continue;
+            }
+            if (c === '/' && s[i + 1] === '*') {
+                i += 2;
+                while (i < s.length) {
+                    if (s[i] === '*' && s[i + 1] === '/') { i += 2; break; }
+                    i++;
+                }
+                continue;
+            }
+            if (c === '(') depth++;
+            else if (c === ')') depth--;
+            else if (c === '[') bdepth++;
+            else if (c === ']') bdepth--;
+            if (c === ':' && depth === 0 && bdepth === 0) return i;
+        }
+        return -1;
+    }
+
+    function splitTopLevel(text, del) {
+        var out = [];
+        var depth = 0, bdepth = 0;
+        var cur = '';
+        var i = 0, len = text.length;
+        while (i < len) {
+            var c = text[i];
+            if (c === '"' || c === "'") {
+                var qs = i; i++;
+                while (i < len) {
+                    if (text[i] === '\\') { i += 2; continue; }
+                    if (text[i] === c) { i++; break; }
+                    i++;
+                }
+                cur += text.slice(qs, i);
+                continue;
+            }
+            if (c === '/' && text[i + 1] === '*') {
+                var cs = i; i += 2;
+                while (i < len) {
+                    if (text[i] === '*' && text[i + 1] === '/') { i += 2; break; }
+                    i++;
+                }
+                cur += text.slice(cs, i);
+                continue;
+            }
+            if (c === '(') depth++;
+            else if (c === ')') depth--;
+            else if (c === '[') bdepth++;
+            else if (c === ']') bdepth--;
+            if (c === del && depth === 0 && bdepth === 0) {
+                out.push(cur);
+                cur = '';
+                i++;
+                continue;
+            }
+            cur += c;
+            i++;
+        }
+        out.push(cur);
+        return out;
+    }
+
+    function splitTopLevelSpace(s) {
+        var out = [];
+        var cur = '';
+        var depth = 0, bdepth = 0;
+        var i = 0, len = s.length;
+        while (i < len) {
+            var c = s[i];
+            if (c === '"' || c === "'") {
+                cur += c; i++;
+                while (i < len) {
+                    cur += s[i];
+                    if (s[i] === '\\') { i++; if (i < len) { cur += s[i]; } }
+                    else if (s[i] === c) { i++; break; }
+                    i++;
+                }
+                continue;
+            }
+            if (c === '(') { depth++; cur += c; i++; continue; }
+            if (c === ')') { depth--; cur += c; i++; continue; }
+            if (c === '[') { bdepth++; cur += c; i++; continue; }
+            if (c === ']') { bdepth--; cur += c; i++; continue; }
+            if (c === ' ' && depth === 0 && bdepth === 0) {
+                if (cur) { out.push(cur); cur = ''; }
+                i++;
+                continue;
+            }
+            cur += c;
+            i++;
+        }
+        if (cur) out.push(cur);
+        return out;
+    }
+
+    function readBalancedParen(text, openIndex) {
+        var i = openIndex + 1;
+        var depth = 1;
+        var len = text.length;
+        while (i < len && depth > 0) {
+            var c = text[i];
+            if (c === '"' || c === "'") {
+                i++;
+                while (i < len) {
+                    if (text[i] === '\\') { i += 2; continue; }
+                    if (text[i] === c) { i++; break; }
+                    i++;
+                }
+                continue;
+            }
+            if (c === '/' && text[i + 1] === '*') {
+                i += 2;
+                while (i < len) {
+                    if (text[i] === '*' && text[i + 1] === '/') { i += 2; break; }
+                    i++;
+                }
+                continue;
+            }
+            if (c === '(') depth++;
+            else if (c === ')') {
+                depth--;
+                if (depth === 0) break;
+            }
+            i++;
+        }
+        return { text: text.slice(openIndex + 1, i), index: i + 1 };
+    }
+
+    /* ---------- value tokenizer + renderer ---------- */
+
+    function tokenizeValue(text) {
+        var tokens = [];
+        var i = 0, len = text.length;
+        while (i < len) {
+            var c = text[i];
+            if (isWs(c)) {
+                var s = i;
+                while (i < len && isWs(text[i])) i++;
+                tokens.push({ type: 'ws', text: text.slice(s, i) });
+                continue;
+            }
+            if (c === '"' || c === "'") {
+                var qs = i; i++;
+                while (i < len) {
+                    if (text[i] === '\\') { i += 2; continue; }
+                    if (text[i] === c) { i++; break; }
+                    i++;
+                }
+                tokens.push({ type: 'string', text: text.slice(qs, i) });
+                continue;
+            }
+            if (c === '/' && text[i + 1] === '*') {
+                var cst = i; i += 2;
+                while (i < len) {
+                    if (text[i] === '*' && text[i + 1] === '/') { i += 2; break; }
+                    i++;
+                }
+                tokens.push({ type: 'comment', text: text.slice(cst, i) });
+                continue;
+            }
+            if (c === '<') {
+                var as = i; i++;
+                while (i < len && text[i] !== '>') {
+                    if (text[i] === '\\') i++;
+                    i++;
+                }
+                if (i < len) i++;
+                tokens.push({ type: 'angle', text: text.slice(as, i) });
+                continue;
+            }
+            if (c === '#' && /[0-9a-fA-F]{3,8}\b/.test(text.slice(i + 1))) {
+                var hs = i; i++;
+                while (i < len && /[0-9a-fA-F]/.test(text[i])) i++;
+                tokens.push({ type: 'word', text: text.slice(hs, i) });
+                continue;
+            }
+            if (/[a-zA-Z_]/.test(c) || (c === '-' && (text[i + 1] === '-' || /[a-zA-Z_]/.test(text[i + 1])))) {
+                var wst = i;
+                i++;
+                while (i < len && /[-_\w]/.test(text[i])) i++;
+                var j = i;
+                while (j < len && isWs(text[j])) j++;
+                if (text[j] === '(') {
+                    var pr = readBalancedParen(text, j);
+                    if (text.slice(wst, i).toLowerCase() === 'url') {
+                        tokens.push({ type: 'func', name: 'url', raw: pr.text, parts: null });
+                    } else {
+                        tokens.push({ type: 'func', name: text.slice(wst, i), parts: tokenizeValue(pr.text) });
+                    }
+                    i = pr.index;
+                    continue;
+                }
+                tokens.push({ type: 'word', text: text.slice(wst, i) });
+                continue;
+            }
+            if (/[0-9]/.test(c) || ((c === '.' || c === '-' || c === '+') && /[0-9]/.test(text[i + 1]))) {
+                var ns = i;
+                if (c === '-' || c === '+') i++;
+                while (i < len && /[0-9.]/.test(text[i])) i++;
+                if (text[i] === 'e' || text[i] === 'E') {
+                    var save = i;
+                    i++;
+                    if (text[i] === '+' || text[i] === '-') i++;
+                    if (/[0-9]/.test(text[i])) {
+                        while (i < len && /[0-9]/.test(text[i])) i++;
+                    } else {
+                        i = save;
+                    }
+                }
+                while (i < len && /[a-zA-Z%]/.test(text[i])) i++;
+                tokens.push({ type: 'word', text: text.slice(ns, i) });
+                continue;
+            }
+            tokens.push({ type: 'punct', text: c });
+            i++;
+        }
+        return tokens;
+    }
+
+    function transformWord(w, opts) {
+        if (/^#[0-9a-fA-F]{3,8}$/.test(w)) {
+            if (opts.normalizeColors !== 'preserve') {
+                return convertHex(w, opts.normalizeColors, opts);
+            }
+            if (opts.lowercaseHex) return '#' + w.slice(1).toLowerCase();
+            return w;
+        }
+        var out = w;
+        if (opts.removeZeroUnits) out = out.replace(ZERO_UNIT_RE, '$1$20');
+        if (opts.removeLeadingZero) out = out.replace(/(^|[\s(,/\[])(-?)0\.(\d+)([a-z%]*)/gi, '$1$2.$3$4');
+        else out = out.replace(/(^|[\s(,/\[])(-?)\.(\d)/g, '$1$20.$3');
+        return out;
+    }
+
+    function renderValue(tokens, opts, inMath) {
+        var out = '';
+        var prev = 'none';
+        for (var ti = 0; ti < tokens.length; ti++) {
+            var t = tokens[ti];
+            if (t.type === 'ws') continue;
+            if (t.type === 'string' || t.type === 'comment' || t.type === 'angle') {
+                if (prev === 'word') out += ' ';
+                out += t.text;
+                prev = 'word';
+                continue;
+            }
+            if (t.type === 'word') {
+                var w = t.text;
+                if (inMath && (w[0] === '+' || w[0] === '-') && /[.]?\d/.test(w[1]) && prev === 'word') {
+                    out += ' ' + w[0] + ' ';
+                    out += transformWord(w.slice(1), opts);
+                    prev = 'word';
+                    continue;
+                }
+                if (prev === 'word') out += ' ';
+                out += transformWord(w, opts);
+                prev = 'word';
+                continue;
+            }
+            if (t.type === 'func') {
+                var inner;
+                if (t.name === 'url') {
+                    inner = t.raw;
+                } else {
+                    inner = renderValue(t.parts, opts, inMath || MATH_FNS[t.name]);
+                }
+                if (COLOR_FNS[t.name] && opts.normalizeColors !== 'preserve') {
+                    if (prev === 'word') out += ' ';
+                    out += convertColorFunction(t.name, inner, opts);
+                    prev = 'word';
+                    continue;
+                }
+                if (prev === 'word') out += ' ';
+                out += t.name + '(' + inner + ')';
+                prev = 'word';
+                continue;
+            }
+            var p = t.text;
+            if (p === '(') { out += '('; prev = 'open'; continue; }
+            if (p === ')') { out += ')'; prev = 'word'; continue; }
+            if (p === '[') { out += '['; prev = 'open'; continue; }
+            if (p === ']') { out += ']'; prev = 'word'; continue; }
+            if (p === ',') {
+                out += ',';
+                if (opts.spaceAfterComma) out += ' ';
+                prev = opts.spaceAfterComma ? 'none' : 'open';
+                continue;
+            }
+            if (p === '/') {
+                if (prev === 'word') out += ' ';
+                out += '/ ';
+                prev = 'none';
+                continue;
+            }
+            if (p === '+' || p === '-' || p === '*') {
+                if (inMath || opts.spaceInsideCalc) {
+                    if (prev === 'word') out += ' ';
+                    out += p + ' ';
+                    prev = 'none';
+                } else {
+                    if (prev === 'word') out += ' ';
+                    out += p + ' ';
+                    prev = 'none';
+                }
+                continue;
+            }
+            if (p === '!') {
+                out += ' !';
+                prev = 'open';
+                continue;
+            }
+            if (p === ':') {
+                out += ':';
+                prev = 'open';
+                continue;
+            }
+            if (p === ';') { continue; }
+            if (prev === 'word') out += ' ';
+            out += p;
+            prev = 'word';
+        }
+        return out.trim();
+    }
+
+    /* ---------- color normalization ---------- */
+
+    function parseNumToken(s) {
+        s = s.trim();
+        var m = /^(-?\d*\.?\d+)([a-z%]*)$/i.exec(s);
+        if (!m) return null;
+        return { v: parseFloat(m[1]), unit: (m[2] || '').toLowerCase() };
+    }
+    function hueToDeg(t) {
+        if (!t) return null;
+        if (t.unit === 'deg' || t.unit === '') return t.v;
+        if (t.unit === 'grad') return t.v * 0.9;
+        if (t.unit === 'rad') return t.v * 180 / Math.PI;
+        if (t.unit === 'turn') return t.v * 360;
+        return null;
+    }
+    function chanTo255(t) {
+        if (!t) return null;
+        if (t.unit === '%') return t.v * 2.55;
+        if (t.unit === '') return t.v;
+        return null;
+    }
+    function chanToPercent(t) {
+        if (!t) return null;
+        if (t.unit === '%') return t.v;
+        if (t.unit === '') return t.v;
+        return null;
+    }
+    function alphaToFraction(s) {
+        var t = parseNumToken(s);
+        if (!t) return null;
+        if (t.unit === '%') return t.v / 100;
+        return t.v;
+    }
+
+    function hslToRgb(h, s, l) {
+        h = ((h % 360) + 360) % 360;
+        s = Math.min(100, Math.max(0, s)) / 100;
+        l = Math.min(100, Math.max(0, l)) / 100;
+        var c = (1 - Math.abs(2 * l - 1)) * s;
+        var hp = h / 60;
+        var x = c * (1 - Math.abs(hp % 2 - 1));
+        var m = l - c / 2;
+        var r, g, b;
+        if (hp < 1) { r = c; g = x; b = 0; }
+        else if (hp < 2) { r = x; g = c; b = 0; }
+        else if (hp < 3) { r = 0; g = c; b = x; }
+        else if (hp < 4) { r = 0; g = x; b = c; }
+        else if (hp < 5) { r = x; g = 0; b = c; }
+        else { r = c; g = 0; b = x; }
+        return [(r + m) * 255, (g + m) * 255, (b + m) * 255];
+    }
+
+    function rgbToHsl(r, g, b) {
+        r /= 255; g /= 255; b /= 255;
+        var max = Math.max(r, g, b), min = Math.min(r, g, b);
+        var h, s, l = (max + min) / 2;
+        var d = max - min;
+        if (d === 0) { h = 0; s = 0; }
+        else {
+            s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+            switch (max) {
+                case r: h = ((g - b) / d + (g < b ? 6 : 0)); break;
+                case g: h = ((b - r) / d + 2); break;
+                default: h = ((r - g) / d + 4);
+            }
+            h *= 60;
+        }
+        return { h: h, s: s * 100, l: l * 100 };
+    }
+
+    function hwbToRgb(h, w, b) {
+        var rgb = hslToRgb(h, 100, 50);
+        w = Math.min(100, Math.max(0, w)) / 100;
+        b = Math.min(100, Math.max(0, b)) / 100;
+        var f = 1 - w - b;
+        return [rgb[0] * f + w * 255, rgb[1] * f + w * 255, rgb[2] * f + w * 255];
+    }
+
+    function rgbToHex(r, g, b, a) {
+        function hx(v) {
+            v = Math.max(0, Math.min(255, Math.round(v)));
+            return (v < 16 ? '0' : '') + v.toString(16);
+        }
+        var out = '#' + hx(r) + hx(g) + hx(b);
+        if (a !== undefined) out += hx(a * 255);
+        return out;
+    }
+
+    function formatAlpha(a) {
+        var x = Math.round(a * 10000) / 10000;
+        return String(x);
+    }
+
+    function parseColorChannels(name, inner) {
+        var isHsl = /^hsl/.test(name);
+        var isHwb = /^hwb/.test(name);
+        var main = inner;
+        var alpha;
+        var slash = -1;
+        {
+            var depth = 0, bd = 0;
+            for (var i = 0; i < inner.length; i++) {
+                var c = inner[i];
+                if (c === '"' || c === "'") { i++; while (i < inner.length) { if (inner[i] === '\\') i++; else if (inner[i] === c) break; i++; } continue; }
+                if (c === '(') depth++;
+                else if (c === ')') depth--;
+                if (c === '/' && depth === 0 && bd === 0) { slash = i; break; }
+            }
+        }
+        if (slash !== -1) {
+            main = inner.slice(0, slash);
+            alpha = alphaToFraction(inner.slice(slash + 1));
+        } else {
+            var parts = splitTopLevel(inner, ',');
+            if (parts.length === 4) {
+                main = parts.slice(0, 3).join(',');
+                alpha = alphaToFraction(parts[3]);
+            }
+        }
+        var channels = [];
+        var chParts = splitTopLevel(main, ',');
+        if (chParts.length === 3) {
+            for (var k = 0; k < 3; k++) {
+                var t = parseNumToken(chParts[k]);
+                var v = isHsl ? (k === 0 ? hueToDeg(t) : chanToPercent(t)) : (isHwb ? (k === 0 ? hueToDeg(t) : chanToPercent(t)) : chanTo255(t));
+                if (v === null || v === undefined) return null;
+                channels.push(v);
+            }
+        } else {
+            var spaceParts = main.trim().split(/\s+/);
+            if (spaceParts.length === 3) {
+                for (var k2 = 0; k2 < 3; k2++) {
+                    var t2 = parseNumToken(spaceParts[k2]);
+                    var v2 = isHsl ? (k2 === 0 ? hueToDeg(t2) : chanToPercent(t2)) : (isHwb ? (k2 === 0 ? hueToDeg(t2) : chanToPercent(t2)) : chanTo255(t2));
+                    if (v2 === null || v2 === undefined) return null;
+                    channels.push(v2);
+                }
+            } else {
+                return null;
+            }
+        }
+        if (isHwb) {
+            var rw = hwbToRgb(channels[0], channels[1], channels[2]);
+            return { r: rw[0], g: rw[1], b: rw[2], a: alpha };
+        }
+        if (isHsl) {
+            var rh = hslToRgb(channels[0], channels[1], channels[2]);
+            return { r: rh[0], g: rh[1], b: rh[2], a: alpha };
+        }
+        return { r: channels[0], g: channels[1], b: channels[2], a: alpha };
+    }
+
+    function convertColorFunction(name, inner, opts) {
+        var target = opts.normalizeColors;
+        var parts = parseColorChannels(name, inner);
+        if (!parts) return name + '(' + inner + ')';
+        if (target === 'hex') {
+            var hx = rgbToHex(parts.r, parts.g, parts.b, parts.a);
+            return opts.lowercaseHex ? hx.toLowerCase() : hx;
+        }
+        if (target === 'rgb') {
+            var rs = Math.round(parts.r), gs = Math.round(parts.g), bs = Math.round(parts.b);
+            return parts.a === undefined ? 'rgb(' + rs + ' ' + gs + ' ' + bs + ')' : 'rgb(' + rs + ' ' + gs + ' ' + bs + ' / ' + formatAlpha(parts.a) + ')';
+        }
+        if (target === 'hsl') {
+            var hsl = rgbToHsl(parts.r, parts.g, parts.b);
+            var h = Math.round(hsl.h), s = Math.round(hsl.s), l = Math.round(hsl.l);
+            return parts.a === undefined ? 'hsl(' + h + ' ' + s + '% ' + l + '%)' : 'hsl(' + h + ' ' + s + '% ' + l + '% / ' + formatAlpha(parts.a) + ')';
+        }
+        return name + '(' + inner + ')';
+    }
+
+    function convertHex(hex, target, opts) {
+        var h = hex.slice(1);
+        var r, g, b, a;
+        if (h.length === 3 || h.length === 4) {
+            r = parseInt(h[0] + h[0], 16);
+            g = parseInt(h[1] + h[1], 16);
+            b = parseInt(h[2] + h[2], 16);
+            a = h.length === 4 ? parseInt(h[3] + h[3], 16) / 255 : undefined;
+        } else {
+            r = parseInt(h.slice(0, 2), 16);
+            g = parseInt(h.slice(2, 4), 16);
+            b = parseInt(h.slice(4, 6), 16);
+            a = h.length === 8 ? parseInt(h.slice(6, 8), 16) / 255 : undefined;
+        }
+        if (target === 'hex') return opts.lowercaseHex ? hex.toLowerCase() : hex;
+        if (target === 'rgb') {
+            return a === undefined ? 'rgb(' + r + ' ' + g + ' ' + b + ')' : 'rgb(' + r + ' ' + g + ' ' + b + ' / ' + formatAlpha(a) + ')';
+        }
+        var hsl = rgbToHsl(r, g, b);
+        var hh = Math.round(hsl.h), ss = Math.round(hsl.s), ll = Math.round(hsl.l);
+        return a === undefined ? 'hsl(' + hh + ' ' + ss + '% ' + ll + '%)' : 'hsl(' + hh + ' ' + ss + '% ' + ll + '% / ' + formatAlpha(a) + ')';
+    }
+
+    /* ---------- selector formatting ---------- */
+
+    function formatAttribute(text) {
+        var out = '';
+        var i = 0, len = text.length;
+        var spaceBeforeWord = false;
+        var glue = false;
+        while (i < len) {
+            var c = text[i];
+            if (isWs(c)) { if (out.length > 0) spaceBeforeWord = !glue; i++; continue; }
+            if (c === '"' || c === "'") {
+                var qs = i; i++;
+                while (i < len) {
+                    if (text[i] === '\\') { i += 2; continue; }
+                    if (text[i] === c) { i++; break; }
+                    i++;
+                }
+                if (spaceBeforeWord) out += ' ';
+                out += text.slice(qs, i);
+                spaceBeforeWord = false;
+                glue = false;
+                continue;
+            }
+            if (c === '/' && text[i + 1] === '*') {
+                var cst = i; i += 2;
+                while (i < len) {
+                    if (text[i] === '*' && text[i + 1] === '/') { i += 2; break; }
+                    i++;
+                }
+                if (spaceBeforeWord) out += ' ';
+                out += text.slice(cst, i);
+                spaceBeforeWord = false;
+                glue = false;
+                continue;
+            }
+            if ('~|^$*'.indexOf(c) !== -1 && text[i + 1] === '=') {
+                out = out.replace(/ +$/, '');
+                out += c + '=';
+                spaceBeforeWord = false;
+                glue = true;
+                i += 2;
+                continue;
+            }
+            if (c === '=') {
+                out = out.replace(/ +$/, '');
+                out += '=';
+                spaceBeforeWord = false;
+                glue = true;
+                i++;
+                continue;
+            }
+            if (/[-\w]/.test(c)) {
+                var ws4 = i;
+                while (i < len && /[-\w]/.test(text[i])) i++;
+                if (spaceBeforeWord) out += ' ';
+                out += text.slice(ws4, i);
+                spaceBeforeWord = false;
+                glue = false;
+                continue;
+            }
+            if (spaceBeforeWord) out += ' ';
+            out += c;
+            spaceBeforeWord = false;
+            glue = false;
+            i++;
+        }
+        return out.trim();
+    }
+
+    function findWordOf(s) {
+        var depth = 0, bd = 0;
+        for (var i = 0; i < s.length; i++) {
+            var c = s[i];
+            if (c === '"' || c === "'") { i++; while (i < s.length) { if (s[i] === '\\') i++; else if (s[i] === c) break; i++; } continue; }
+            if (c === '(') depth++;
+            else if (c === ')') depth--;
+            else if (c === '[') bd++;
+            else if (c === ']') bd--;
+            if (depth === 0 && bd === 0 && isWs(c) && i + 3 < s.length && s[i + 1] === 'o' && s[i + 2] === 'f' && isWs(s[i + 3])) {
+                return i + 1;
+            }
+        }
+        return -1;
+    }
+
+    function formatNth(inner, opts) {
+        var ofIdx = findWordOf(inner);
+        var expr = ofIdx === -1 ? inner : inner.slice(0, ofIdx);
+        var rest = ofIdx === -1 ? '' : inner.slice(ofIdx + 2);
+        var e = formatNthExpr(expr);
+        if (rest.trim() === '') return e;
+        return e + ' of ' + formatSelectorList(rest, opts);
+    }
+
+    function formatNthExpr(expr) {
+        expr = expr.trim();
+        if (/^(odd|even)$/i.test(expr)) return expr.toLowerCase();
+        var out = '';
+        var i = 0, len = expr.length;
+        var prevIsValue = false;
+        while (i < len) {
+            var c = expr[i];
+            if (isWs(c)) { i++; continue; }
+            if (c === '+' || c === '-') {
+                if (out.length > 0 && prevIsValue) {
+                    out += ' ' + c + ' ';
+                } else {
+                    out += c;
+                }
+                prevIsValue = false;
+                i++;
+                continue;
+            }
+            var ws5 = i;
+            while (i < len && /[0-9n]/.test(expr[i])) i++;
+            if (ws5 === i) { i++; continue; }
+            out += expr.slice(ws5, i);
+            prevIsValue = true;
+        }
+        return out;
+    }
+
+    function formatGeneric(text, opts) {
+        var out = '';
+        var i = 0, len = text.length;
+        while (i < len) {
+            var c = text[i];
+            if (isWs(c)) {
+                if (out.length > 0 && !/ $/.test(out)) out += ' ';
+                i++;
+                continue;
+            }
+            if (c === '"' || c === "'") {
+                var qs = i; i++;
+                while (i < len) {
+                    if (text[i] === '\\') { i += 2; continue; }
+                    if (text[i] === c) { i++; break; }
+                    i++;
+                }
+                out += text.slice(qs, i);
+                continue;
+            }
+            if (c === '/' && text[i + 1] === '*') {
+                var cst = i; i += 2;
+                while (i < len) {
+                    if (text[i] === '*' && text[i + 1] === '/') { i += 2; break; }
+                    i++;
+                }
+                if (!/ $/.test(out)) out += ' ';
+                out += text.slice(cst, i);
+                continue;
+            }
+            if (c === ',') {
+                out = out.replace(/ +$/, '') + ',' + (opts.spaceAfterComma ? ' ' : '');
+                i++;
+                continue;
+            }
+            out += c;
+            i++;
+        }
+        return out.trim();
+    }
+
+    function formatParenContent(pname, inner, opts) {
+        if (NTH_FNS[pname]) return formatNth(inner, opts);
+        if (SELECTOR_LIST_FNS[pname]) return formatSelectorList(inner, opts);
+        return formatGeneric(inner, opts);
+    }
+
+    function formatSelectorSeq(text, opts) {
+        var out = '';
+        var i = 0, len = text.length;
+        var wsSeen = false;
+        var prevWord = false;
+        while (i < len) {
+            var c = text[i];
+            if (isWs(c)) {
+                if (prevWord) wsSeen = true;
+                i++;
+                continue;
+            }
+            if (c === '"' || c === "'") {
+                var qs = i; i++;
+                while (i < len) {
+                    if (text[i] === '\\') { i += 2; continue; }
+                    if (text[i] === c) { i++; break; }
+                    i++;
+                }
+                if (wsSeen && out.length > 0) out += ' ';
+                out += text.slice(qs, i);
+                wsSeen = false; prevWord = true;
+                continue;
+            }
+            if (c === '/' && text[i + 1] === '*') {
+                var cst = i; i += 2;
+                while (i < len) {
+                    if (text[i] === '*' && text[i + 1] === '/') { i += 2; break; }
+                    i++;
+                }
+                if (wsSeen && out.length > 0) out += ' ';
+                out += text.slice(cst, i);
+                wsSeen = false; prevWord = true;
+                continue;
+            }
+            if (c === '&') {
+                if (wsSeen && out.length > 0) out += ' ';
+                out += '&';
+                wsSeen = false; prevWord = true;
+                i++;
+                continue;
+            }
+            if (c === '>' || c === '+' || c === '~') {
+                out = out.replace(/ +$/, '');
+                if (out.length > 0 && !/[\s>+~|]$/.test(out)) out += ' ';
+                out += c + ' ';
+                wsSeen = false; prevWord = false;
+                i++;
+                continue;
+            }
+            if (c === '|' && text[i + 1] === '|') {
+                out = out.replace(/ +$/, '');
+                if (out.length > 0 && !/[\s>+~|]$/.test(out)) out += ' ';
+                out += '|| ';
+                wsSeen = false; prevWord = false;
+                i += 2;
+                continue;
+            }
+            if (c === '[') {
+                var br = readBalancedBracket(text, i);
+                if (wsSeen && out.length > 0) out += ' ';
+                out += '[' + formatAttribute(br.inner) + ']';
+                i = br.index;
+                wsSeen = false; prevWord = true;
+                continue;
+            }
+            if (c === ':') {
+                var save = i;
+                i++;
+                var isPE = text[i] === ':';
+                if (isPE) i++;
+                var ns = i;
+                while (i < len && /[-\w]/.test(text[i])) i++;
+                var pname = text.slice(ns, i);
+                if (wsSeen && out.length > 0 && !/[&>+~|]$/.test(out)) out += ' ';
+                if (wsSeen && out.length > 0 && /[&>+~|]$/.test(out)) { /* space kept from combinator */ }
+                out += (isPE ? '::' : ':') + pname;
+                wsSeen = false; prevWord = false;
+                if (text[i] === '(') {
+                    var pr = readBalancedParen(text, i);
+                    var formatted = formatParenContent(':' + pname, pr.text, opts);
+                    out += '(' + formatted + ')';
+                    i = pr.index;
+                    wsSeen = false; prevWord = true;
+                }
+                continue;
+            }
+            if (c === '.' || c === '#') {
+                if (wsSeen && out.length > 0) out += ' ';
+                out += c;
+                wsSeen = false; prevWord = false;
+                i++;
+                continue;
+            }
+            if (c === '*') {
+                if (wsSeen && out.length > 0) out += ' ';
+                out += '*';
+                wsSeen = false; prevWord = true;
+                i++;
+                continue;
+            }
+            if (/[-\w.%>]/.test(c)) {
+                var ws6 = i;
+                while (i < len && /[-\w.%]/.test(text[i])) i++;
+                if (wsSeen && out.length > 0) out += ' ';
+                out += text.slice(ws6, i);
+                wsSeen = false; prevWord = true;
+                continue;
+            }
+            if (c === '(') {
+                if (wsSeen && out.length > 0) out += ' ';
+                var pr2 = readBalancedParen(text, i);
+                out += '(' + formatGeneric(pr2.text, opts) + ')';
+                i = pr2.index;
+                wsSeen = false; prevWord = true;
+                continue;
+            }
+            out += c;
+            wsSeen = false; prevWord = true;
+            i++;
+        }
+        return out.trim();
+    }
+
+    function readBalancedBracket(text, openIndex) {
+        var i = openIndex + 1;
+        var depth = 1;
+        var len = text.length;
+        while (i < len && depth > 0) {
+            var c = text[i];
+            if (c === '"' || c === "'") {
+                i++;
+                while (i < len) {
+                    if (text[i] === '\\') { i += 2; continue; }
+                    if (text[i] === c) { i++; break; }
+                    i++;
+                }
+                continue;
+            }
+            if (c === '/' && text[i + 1] === '*') {
+                i += 2;
+                while (i < len) {
+                    if (text[i] === '*' && text[i + 1] === '/') { i += 2; break; }
+                    i++;
+                }
+                continue;
+            }
+            if (c === '[') depth++;
+            else if (c === ']') {
+                depth--;
+                if (depth === 0) break;
+            }
+            i++;
+        }
+        return { inner: text.slice(openIndex + 1, i), index: i + 1 };
+    }
+
+    function formatSelectorList(text, opts) {
+        var parts = splitTopLevel(text, ',');
+        var joiner = (opts.smartFixes.selectorCommas || opts.spaceAfterSelectorCommas) ? ', ' : ',';
+        for (var i = 0; i < parts.length; i++) {
+            parts[i] = formatSelectorSeq(parts[i], opts);
+        }
+        return parts.join(joiner);
+    }
+
+    /* ---------- at-rule prelude formatting ---------- */
+
+    function formatCondition(text, opts) {
+        var out = '';
+        var i = 0, len = text.length;
+        var depth = 0;
+        var wsSeen = false;
+        while (i < len) {
+            var c = text[i];
+            if (isWs(c)) { if (out.length > 0) wsSeen = true; i++; continue; }
+            if (c === '"' || c === "'") {
+                var qs = i; i++;
+                while (i < len) {
+                    if (text[i] === '\\') { i += 2; continue; }
+                    if (text[i] === c) { i++; break; }
+                    i++;
+                }
+                if (wsSeen) out += ' ';
+                out += text.slice(qs, i);
+                wsSeen = false;
+                continue;
+            }
+            if (c === '/') {
+                if (text[i + 1] === '*') {
+                    var cst = i; i += 2;
+                    while (i < len) {
+                        if (text[i] === '*' && text[i + 1] === '/') { i += 2; break; }
+                        i++;
+                    }
+                    if (wsSeen) out += ' ';
+                    out += text.slice(cst, i);
+                    wsSeen = false;
+                    continue;
+                }
+                if (wsSeen) out += ' ';
+                out += '/';
+                wsSeen = false;
+                i++;
+                continue;
+            }
+            if (c === '(') {
+                if (wsSeen) out += ' ';
+                out += '(';
+                depth++;
+                wsSeen = false;
+                i++;
+                continue;
+            }
+            if (c === ')') {
+                out += ')';
+                depth--;
+                wsSeen = true;
+                i++;
+                continue;
+            }
+            if (c === '[') {
+                if (wsSeen) out += ' ';
+                out += '[';
+                depth++;
+                wsSeen = false;
+                i++;
+                continue;
+            }
+            if (c === ']') {
+                out += ']';
+                depth--;
+                wsSeen = true;
+                i++;
+                continue;
+            }
+            if (c === ':' && depth > 0) {
+                out = out.replace(/ +$/, '');
+                out += opts.spaceInsideMediaQueries ? ': ' : ':';
+                wsSeen = false;
+                i++;
+                continue;
+            }
+            if (c === ',') {
+                out = out.replace(/ +$/, '');
+                out += opts.spaceAfterComma ? ', ' : ',';
+                wsSeen = false;
+                i++;
+                continue;
+            }
+            if ((c === '>' || c === '<' || c === '=') && depth > 0) {
+                out = out.replace(/ +$/, '');
+                if (out.length > 0 && !/[(<>=]$/.test(out)) out += ' ';
+                var op = c;
+                if (text[i + 1] === '=') { op += '='; i++; }
+                out += op + ' ';
+                wsSeen = false;
+                i++;
+                continue;
+            }
+            if (/[-\w.%]/.test(c) || c === '.') {
+                var ws7 = i;
+                if (c === '.') i++;
+                while (i < len && /[-\w.%]/.test(text[i])) i++;
+                if (ws7 === i) { i++; continue; }
+                if (wsSeen) out += ' ';
+                out += text.slice(ws7, i);
+                wsSeen = false;
+                continue;
+            }
+            if (wsSeen) out += ' ';
+            out += c;
+            wsSeen = false;
+            i++;
+        }
+        return out.trim();
+    }
+
+    function formatAtPrelude(prelude, opts) {
+        var m = /^(@[-\w]+)\s*([\s\S]*)$/.exec(prelude.trim());
+        var name = m[1];
+        var rest = m[2].trim();
+        if (name === '@media' || name === '@supports' || name === '@container' || name === '@scope' || name === '@layer' || name === '@custom-media' || name === '@document' || name === '@import') {
+            return name + (rest ? ' ' + formatCondition(rest, opts) : '');
+        }
+        return name + (rest ? ' ' + formatGeneric(rest, opts) : '');
+    }
+
+    /* ---------- comments ---------- */
+
+    function keepComment(text, opts) {
+        if (/^\/\*!/.test(text)) return opts.preserveBanners;
+        return opts.preserveComments;
+    }
+
+    function formatComment(text, opts) {
+        if (!keepComment(text, opts)) return null;
+        if (text.indexOf('*/') === -1) return null;
+        if (opts.removeEmptyComments && /^\/\*[\s]*\*\/$/.test(text)) return null;
+        if (opts.normalizeCommentSpacing && !/^\/\*!/.test(text) && !/[\r\n]/.test(text)) {
+            var inner = text.slice(2, -2);
+            return '/* ' + inner.trim() + ' */';
+        }
+        return text;
+    }
+
+    function indentMultiline(text, ind) {
+        if (text.indexOf('\n') === -1) return text;
+        return text.split('\n').join('\n' + ind);
+    }
+
+    /* ---------- parser ---------- */
+
+    function Parser(input) {
+        this.input = input;
+        this.pos = 0;
+        this.len = input.length;
+        this.maxDepth = 0;
+    }
+
+    Parser.prototype.skipWsComments = function (children) {
+        var input = this.input, len = this.len, pos = this.pos;
+        var nl = 0, sawNL = false;
+        while (pos < len && isWs(input[pos])) {
+            if (input[pos] === '\n') { sawNL = true; nl++; }
+            pos++;
+        }
+        var blanks = (sawNL && children.length > 0) ? Math.max(0, nl - 1) : 0;
+        while (pos < len && input[pos] === '/' && input[pos + 1] === '*') {
+            var start = pos;
+            pos += 2;
+            while (pos < len) {
+                if (input[pos] === '*' && input[pos + 1] === '/') { pos += 2; break; }
+                pos++;
+            }
+            children.push({ type: 'comment', text: input.slice(start, pos), blank: blanks });
+            var nl2 = 0, sawNL2 = false;
+            while (pos < len && isWs(input[pos])) {
+                if (input[pos] === '\n') { sawNL2 = true; nl2++; }
+                pos++;
+            }
+            blanks = (sawNL2 && children.length > 0) ? Math.max(0, nl2 - 1) : 0;
+        }
+        this.pos = pos;
+        return blanks;
+    };
+
+    Parser.prototype.readStatement = function () {
+        var input = this.input, len = this.len;
+        var start = this.pos;
+        var pos = start;
+        var paren = 0, bracket = 0, brace = 0;
+        var colonSeen = false;
+        while (pos < len) {
+            var c = input[pos];
+            if (c === '"' || c === "'") {
+                pos++;
+                while (pos < len) {
+                    if (input[pos] === '\\') { pos += 2; continue; }
+                    if (input[pos] === c) { pos++; break; }
+                    pos++;
+                }
+                continue;
+            }
+            if (c === '/' && input[pos + 1] === '*') {
+                pos += 2;
+                while (pos < len) {
+                    if (input[pos] === '*' && input[pos + 1] === '/') { pos += 2; break; }
+                    pos++;
+                }
+                continue;
+            }
+            if (c === '(') { paren++; pos++; continue; }
+            if (c === ')') { if (paren > 0) paren--; pos++; continue; }
+            if (c === '[') { bracket++; pos++; continue; }
+            if (c === ']') { if (bracket > 0) bracket--; pos++; continue; }
+            if (c === ':' && paren === 0 && bracket === 0 && brace === 0) { colonSeen = true; pos++; continue; }
+            if (c === '{') {
+                if (paren === 0 && bracket === 0 && brace === 0) {
+                    var pre = input.slice(start, pos).trim();
+                    if (colonSeen && pre.indexOf('--') === 0) { brace++; pos++; continue; }
+                    var text = input.slice(start, pos);
+                    this.pos = pos + 1;
+                    return { text: text, term: '{' };
+                }
+                brace++;
+                pos++;
+                continue;
+            }
+            if (c === '}') {
+                if (brace > 0) { brace--; pos++; continue; }
+                var text2 = input.slice(start, pos);
+                this.pos = pos;
+                return { text: text2, term: '}' };
+            }
+            if (c === ';' && paren === 0 && bracket === 0 && brace === 0) {
+                var text3 = input.slice(start, pos);
+                this.pos = pos + 1;
+                return { text: text3, term: ';' };
+            }
+            pos++;
+        }
+        var text4 = input.slice(start, pos);
+        this.pos = pos;
+        return { text: text4, term: 'eof' };
+    };
+
+    Parser.prototype.parseBlock = function (toplevel, depth) {
+        var children = [];
+        while (true) {
+            var blank = this.skipWsComments(children);
+            if (this.pos >= this.len) break;
+            var c = this.input[this.pos];
+            if (c === '}') {
+                if (toplevel) { this.pos++; continue; }
+                this.pos++;
+                break;
+            }
+            if (c === ';') { this.pos++; continue; }
+            var stmt = this.readStatement();
+            var node;
+            if (stmt.term === '{') {
+                node = this.buildBlock(stmt, depth);
+            } else {
+                node = this.buildLeaf(stmt);
+            }
+            if (node) {
+                node.blank = blank;
+                children.push(node);
+            }
+            if (stmt.term === '}') {
+                if (!toplevel) {
+                    this.pos++;
+                    break;
+                }
+                this.pos++;
+                continue;
+            }
+            if (stmt.term === 'eof') break;
+        }
+        return children;
+    };
+
+    Parser.prototype.buildBlock = function (stmt, depth) {
+        var prelude = stmt.text.trim();
+        var childDepth = depth + 1;
+        if (childDepth > this.maxDepth) this.maxDepth = childDepth;
+        if (/^@/.test(prelude)) {
+            var m = /^(@[-\w]+)/.exec(prelude);
+            return { type: 'at', prelude: prelude, name: m[1], children: this.parseBlock(false, childDepth) };
+        }
+        return { type: 'rule', prelude: prelude, children: this.parseBlock(false, childDepth) };
+    };
+
+    Parser.prototype.buildLeaf = function (stmt) {
+        var prelude = stmt.text.trim();
+        if (!prelude) return null;
+        if (/^@/.test(prelude)) {
+            var m = /^(@[-\w]+)/.exec(prelude);
+            return { type: 'at', prelude: prelude, name: m[1], children: null };
+        }
+        var colon = findTopLevelColon(prelude);
+        if (colon > 0) {
+            return { type: 'decl', prop: prelude.slice(0, colon).trim(), value: prelude.slice(colon + 1).trim() };
+        }
+        return { type: 'raw', text: prelude };
+    };
+
+    function parseStylesheet(css) {
+        var p = new Parser(css);
+        var nodes = p.parseBlock(true, 0);
+        return { nodes: nodes, maxDepth: p.maxDepth };
+    }
+
+    /* ---------- statistics ---------- */
+
+    function createStats() {
+        return {
+            formattingTime: 0,
+            originalSize: 0,
+            beautifiedSize: 0,
+            sizeDifference: 0,
+            sizePercent: 0,
+            rules: 0,
+            selectors: 0,
+            declarations: 0,
+            properties: 0,
+            customProperties: 0,
+            mediaQueries: 0,
+            containerQueries: 0,
+            supportsRules: 0,
+            cascadeLayers: 0,
+            scopes: 0,
+            keyframes: 0,
+            animations: 0,
+            colorFunctions: 0,
+            mathFunctions: 0,
+            nestingBlocks: 0,
+            comments: 0,
+            maxNestingDepth: 0
+        };
+    }
+
+    function countValueFnsTokens(tokens, stats) {
+        for (var i = 0; i < tokens.length; i++) {
+            var t = tokens[i];
+            if (t.type === 'func') {
+                if (COLOR_FNS[t.name]) stats.colorFunctions++;
+                if (MATH_FNS[t.name]) stats.mathFunctions++;
+                if (t.parts) countValueFnsTokens(t.parts, stats);
+            }
+        }
+    }
+
+    function countStats(nodes, stats) {
+        var props = {};
+        function walk(node, depth, parentIsRule) {
+            if (depth > stats.maxNestingDepth) stats.maxNestingDepth = depth;
+            if (node.type === 'rule') {
+                stats.rules++;
+                stats.selectors += splitTopLevel(node.prelude, ',').length;
+                if (parentIsRule) stats.nestingBlocks++;
+                if (node.children) {
+                    for (var i = 0; i < node.children.length; i++) walk(node.children[i], depth + 1, true);
+                }
+            } else if (node.type === 'at') {
+                var name = node.name || '';
+                if (name === '@media') stats.mediaQueries++;
+                else if (name === '@container') stats.containerQueries++;
+                else if (name === '@supports') stats.supportsRules++;
+                else if (name === '@layer') stats.cascadeLayers++;
+                else if (name === '@scope') stats.scopes++;
+                else if (name === '@keyframes') stats.keyframes++;
+                if (node.children) {
+                    for (var j = 0; j < node.children.length; j++) walk(node.children[j], depth + 1, false);
+                }
+            } else if (node.type === 'decl') {
+                stats.declarations++;
+                var p = node.prop;
+                if (!props[p]) { props[p] = 1; stats.properties++; }
+                if (isCustomProp(p)) stats.customProperties++;
+                if (/^animation(-|$)/.test(p)) stats.animations++;
+                countValueFnsTokens(tokenizeValue(node.value), stats);
+            } else if (node.type === 'comment') {
+                stats.comments++;
+            }
+        }
+        for (var k = 0; k < nodes.length; k++) walk(nodes[k], 0, false);
+    }
+
+    /* ---------- property organization ---------- */
+
+    function makeComparator(opts) {
+        return function (a, b) {
+            var na = a.u.node.prop, nb = b.u.node.prop;
+            var baseA = stripVendor(na).toLowerCase();
+            var baseB = stripVendor(nb).toLowerCase();
+            var rankA = vendorRank(na), rankB = vendorRank(nb);
+            if (opts.groupProps) {
+                var ga = groupIndex(baseA), gb = groupIndex(baseB);
+                if (ga !== gb) return ga - gb;
+                if (opts.sortProps) {
+                    if (baseA !== baseB) return baseA < baseB ? -1 : 1;
+                    return rankA - rankB || a.idx - b.idx;
+                }
+                return a.idx - b.idx;
+            }
+            if (opts.keepShorthands) {
+                var fa = shorthandFamily(baseA), fb = shorthandFamily(baseB);
+                if (fa !== fb) return fa < fb ? -1 : 1;
+                var ra = subRank(fa, baseA), rb = subRank(fb, baseB);
+                if (ra !== rb) return ra - rb;
+                if (opts.sortProps) {
+                    if (baseA !== baseB) return baseA < baseB ? -1 : 1;
+                    return rankA - rankB || a.idx - b.idx;
+                }
+                return a.idx - b.idx;
+            }
+            if (opts.sortProps) {
+                if (baseA !== baseB) return baseA < baseB ? -1 : 1;
+                if (opts.keepVendorTogether) return rankA - rankB || a.idx - b.idx;
+                var al = na.toLowerCase(), bl = nb.toLowerCase();
+                return al < bl ? -1 : (al > bl ? 1 : a.idx - b.idx);
+            }
+            return a.idx - b.idx;
+        };
+    }
+
+    function sortDeclRun(run, opts) {
+        var indexed = run.map(function (u, i) { return { u: u, idx: i }; });
+        var comparator = makeComparator(opts);
+        if (opts.customPropsTop && !opts.groupProps) {
+            var customs = indexed.filter(function (x) { return isCustomProp(x.u.node.prop); });
+            var others = indexed.filter(function (x) { return !isCustomProp(x.u.node.prop); });
+            var so = others.slice().sort(comparator);
+            var sc = customs.slice().sort(comparator);
+            return sc.concat(so).map(function (x) { return x.u; });
+        }
+        return indexed.slice().sort(comparator).map(function (x) { return x.u; });
+    }
+
+    function organizeChildren(children, opts) {
+        if (!opts.sortProps && !opts.groupProps && !opts.customPropsTop && !opts.keepShorthands) return children;
+        var out = [];
+        var run = [];
+        var pendingLead = [];
+        var flushRun = function () {
+            if (run.length === 0) return;
+            var sorted = sortDeclRun(run, opts);
+            for (var i = 0; i < sorted.length; i++) {
+                var u = sorted[i];
+                for (var l = 0; l < u.lead.length; l++) out.push(u.lead[l]);
+                out.push(u.node);
+            }
+            run = [];
+        };
+        for (var i = 0; i < children.length; i++) {
+            var child = children[i];
+            if (child.type === 'comment') { pendingLead.push(child); continue; }
+            if (child.type === 'decl') { run.push({ node: child, lead: pendingLead }); pendingLead = []; continue; }
+            flushRun();
+            if (pendingLead.length) { out.push(pendingLead[pendingLead.length - 1]); pendingLead = []; }
+            out.push(child);
+        }
+        flushRun();
+        for (var j = 0; j < pendingLead.length; j++) out.push(pendingLead[j]);
+        return out;
+    }
+
+    /* ---------- formatting (expanded/compact) ---------- */
+
+    function indentStrFor(opts) {
+        if (opts.indent === 'tab') return '\t';
+        var n = parseInt(opts.indent, 10);
+        if (isNaN(n) || n < 1) n = 4;
+        return new Array(n + 1).join(' ');
+    }
+    function ind(depth, opts) { return indentStrFor(opts).repeat(depth); }
+
+    function isBlockish(node) {
+        if (!node) return false;
+        if (node.type === 'rule') return true;
+        return node.type === 'at' && !!node.children && node.children.length > 0;
+    }
+
+    function blanksFor(node, prev, isTop, opts) {
+        var b = node.blank || 0;
+        if (opts.emptyLines === 'preserve') b = isTop ? b : Math.min(b, 1);
+        else if (opts.emptyLines === 'remove-extra') b = Math.min(b, 1);
+        else {
+            var n = parseInt(opts.emptyLines, 10);
+            b = isNaN(n) ? 0 : n;
+        }
+        if (opts.emptyLines !== 'preserve' && b < 1 &&
+            node.type !== 'comment' && prev && prev.type !== 'comment' &&
+            (isBlockish(prev) || isBlockish(node))) {
+            b = 1;
+        }
+        return b;
+    }
+
+    function pushBlank(ctx, node, prev, isTop) {
+        var b = blanksFor(node, prev, isTop, ctx.opts);
+        for (var k = 0; k < b; k++) ctx.lines.push('');
+    }
+
+    function wrapDecl(prop, value, depth, opts) {
+        var sep = opts.spaceAfterColon ? ': ' : ':';
+        var prefix = ind(depth, opts) + prop + sep;
+        var cont = ind(depth + 1, opts);
+        var maxLen = opts.maxLineLength;
+        if (maxLen <= 0) return null;
+        var segs = splitTopLevel(value, ',');
+        if (segs.length > 1) {
+            var ok = true;
+            for (var i = 0; i < segs.length; i++) {
+                var w = (i === 0 ? prefix.length : cont.length) + segs[i].length + (i < segs.length - 1 ? 1 : 0);
+                if (w > maxLen) ok = false;
+            }
+            if (ok) {
+                var lines = [];
+                lines.push(prefix + segs[0] + (segs.length > 1 ? ',' : ''));
+                for (var k = 1; k < segs.length; k++) {
+                    lines.push(cont + segs[k] + (k === segs.length - 1 ? ';' : ','));
+                }
+                return lines.join('\n');
+            }
+        }
+        var words = splitTopLevelSpace(value);
+        var cur = '';
+        var outLines = [];
+        for (var m = 0; m < words.length; m++) {
+            var candidate = cur ? cur + ' ' + words[m] : words[m];
+            var candLen = (outLines.length === 0 ? prefix.length : cont.length) + candidate.length;
+            if (cur && candLen > maxLen) { outLines.push(cur); cur = words[m]; }
+            else cur = candidate;
+        }
+        if (cur) outLines.push(cur);
+        if (outLines.length > 1) {
+            var res = '';
+            for (var n = 0; n < outLines.length; n++) {
+                res += (n === 0 ? prefix : cont) + outLines[n];
+                if (n < outLines.length - 1) res += '\n';
+            }
+            return res + ';';
+        }
+        return null;
+    }
+
+    function emitDecl(node, depth, ctx) {
+        var opts = ctx.opts;
+        var value = formatDeclValue(node, opts);
+        var sep = opts.spaceAfterColon ? ': ' : ':';
+        var line = ind(depth, opts) + node.prop + sep + value + ';';
+        if (opts.maxLineLength > 0 && line.length > opts.maxLineLength) {
+            var wrapped = wrapDecl(node.prop, value, depth, opts);
+            if (wrapped !== null) { ctx.lines.push(wrapped); return; }
+        }
+        ctx.lines.push(line);
+    }
+
+    function emitChildren(children, depth, ctx) {
+        var prev = null;
+        for (var i = 0; i < children.length; i++) {
+            var c = children[i];
+            if (prev) pushBlank(ctx, c, prev, false);
+            if (emitNode(c, depth, ctx) !== false) prev = c;
+        }
+    }
+
+    function emitNode(node, depth, ctx) {
+        var opts = ctx.opts;
+        switch (node.type) {
+            case 'comment': {
+                var ctext = formatComment(node.text, opts);
+                if (ctext === null) return false;
+                ctx.lines.push(ind(depth, opts) + indentMultiline(ctext, ind(depth, opts)));
+                return true;
+            }
+            case 'at':
+                emitAt(node, depth, ctx);
+                return true;
+            case 'rule':
+                return emitRule(node, depth, ctx);
+            case 'decl':
+                emitDecl(node, depth, ctx);
+                return true;
+            case 'raw':
+                ctx.lines.push(ind(depth, opts) + node.text);
+                return true;
+        }
+        return true;
+    }
+
+    function emitRule(node, depth, ctx) {
+        var opts = ctx.opts;
+        var prelude = formatSelectorList(node.prelude, opts);
+        var children = organizeChildren(node.children, opts);
+        if (opts.smartFixes.emptyRules && children.length === 0) return false;
+        if (opts.outputStyle === 'compact') {
+            var comp = emitCompact(node, depth, ctx);
+            if (comp === '') return false;
+            ctx.lines.push(comp);
+            return true;
+        }
+        if (children.length === 0) {
+            ctx.lines.push(ind(depth, opts) + prelude + (opts.spaceBeforeBrace ? ' ' : '') + '{}');
+            return true;
+        }
+        if (opts.braceStyle === 'newline') {
+            ctx.lines.push(ind(depth, opts) + prelude);
+            ctx.lines.push(ind(depth, opts) + '{');
+        } else {
+            ctx.lines.push(ind(depth, opts) + prelude + (opts.spaceBeforeBrace ? ' ' : '') + '{');
+        }
+        emitChildren(children, depth + 1, ctx);
+        ctx.lines.push(ind(depth, opts) + '}');
+        return true;
+    }
+
+    function emitAt(node, depth, ctx) {
+        var opts = ctx.opts;
+        var prelude = formatAtPrelude(node.prelude, opts);
+        if (!node.children) {
+            ctx.lines.push(ind(depth, opts) + prelude + ';');
+            return;
+        }
+        if (opts.outputStyle === 'compact') {
+            var comp = emitCompact(node, depth, ctx);
+            if (comp !== '') ctx.lines.push(comp);
+            return;
+        }
+        if (node.children.length === 0) {
+            ctx.lines.push(ind(depth, opts) + prelude + (opts.spaceBeforeBrace ? ' ' : '') + '{}');
+            return;
+        }
+        if (opts.braceStyle === 'newline') {
+            ctx.lines.push(ind(depth, opts) + prelude);
+            ctx.lines.push(ind(depth, opts) + '{');
+        } else {
+            ctx.lines.push(ind(depth, opts) + prelude + (opts.spaceBeforeBrace ? ' ' : '') + '{');
+        }
+        emitChildren(node.children, depth + 1, ctx);
+        ctx.lines.push(ind(depth, opts) + '}');
+    }
+
+    function emitCompact(node, depth, ctx) {
+        var opts = ctx.opts;
+        var prelude = node.type === 'rule' ? formatSelectorList(node.prelude, opts) : formatAtPrelude(node.prelude, opts);
+        var children = organizeChildren(node.children, opts);
+        var parts = [];
+        for (var i = 0; i < children.length; i++) {
+            var c = children[i];
+            if (c.type === 'comment') {
+                var ct = formatComment(c.text, opts);
+                if (ct !== null) parts.push(ct);
+                continue;
+            }
+            if (c.type === 'decl') {
+                parts.push(c.prop + (opts.spaceAfterColon ? ': ' : ':') + formatDeclValue(c, opts) + ';');
+            } else if (c.type === 'at' || c.type === 'rule') {
+                var sub = emitCompact(c, depth + 1, ctx);
+                if (sub !== '') parts.push(sub.trim());
+            } else {
+                parts.push(c.text);
+            }
+        }
+        if (parts.length === 0) {
+            if (opts.smartFixes.emptyRules && node.type === 'rule') return '';
+            return ind(depth, opts) + prelude + (opts.spaceBeforeBrace ? ' ' : '') + '{}';
+        }
+        var open = opts.spaceBeforeBrace ? ' { ' : '{';
+        return ind(depth, opts) + prelude + open + parts.join(' ') + ' }';
+    }
+
+    function minOpts(opts) {
+        var o = {};
+        for (var k in opts) {
+            if (opts.hasOwnProperty(k)) o[k] = opts[k];
+        }
+        o.smartFixes = Object.assign({}, opts.smartFixes || {}, { selectorCommas: false });
+        o.spaceAfterColon = false;
+        o.spaceAfterComma = false;
+        o.spaceBeforeBrace = false;
+        o.spaceAfterSelectorCommas = false;
+        o.spaceInsideMediaQueries = false;
+        o.spaceAroundOperators = true;
+        o.spaceInsideCalc = true;
+        o.removeZeroUnits = true;
+        o.maxLineLength = 0;
+        return o;
+    }
+
+    function minNode(node, opts) {
+        if (node.type === 'comment') {
+            if (/^\/\*!/.test(node.text) && opts.preserveBanners) return node.text;
+            return '';
+        }
+        if (node.type === 'at') {
+            var prelude = formatAtPrelude(node.prelude, minOpts(opts));
+            if (!node.children) return prelude + ';';
+            var inner = '';
+            if (node.children) {
+                for (var i = 0; i < node.children.length; i++) inner += minNode(node.children[i], opts);
+            }
+            var lastA = node.children[node.children.length - 1];
+            if (lastA && lastA.type === 'decl') inner = inner.replace(/;$/, '');
+            return prelude + '{' + inner + '}';
+        }
+        if (node.type === 'rule') {
+            var prelude = formatSelectorList(node.prelude, minOpts(opts));
+            var children = organizeChildren(node.children, opts);
+            var inner = '';
+            for (var j = 0; j < children.length; j++) inner += minNode(children[j], opts);
+            if (inner === '' && opts.smartFixes.emptyRules) return '';
+            var lastR = children[children.length - 1];
+            if (lastR && lastR.type === 'decl') inner = inner.replace(/;$/, '');
+            return prelude + '{' + inner + '}';
+        }
+        if (node.type === 'decl') {
+            return node.prop + ':' + formatDeclValue(node, minOpts(opts)) + ';';
+        }
+        return node.text || '';
+    }
+
+    function minify(nodes, opts) {
+        var out = '';
+        for (var i = 0; i < nodes.length; i++) out += minNode(nodes[i], opts);
+        return out;
+    }
+
+    /* ---------- top-level reordering ---------- */
+
+    function isCharset(n) { return n.type === 'at' && /^@charset\b/.test(n.prelude); }
+    function isImport(n) { return n.type === 'at' && /^@import\b/.test(n.prelude); }
+    function isMedia(n) { return n.type === 'at' && /^@media\b/.test(n.prelude); }
+
+    function reorderTopLevel(nodes, opts) {
+        if (opts.preserveRuleOrder) return nodes;
+        var charset = [], imports = [], media = [], rest = [];
+        for (var i = 0; i < nodes.length; i++) {
+            var n = nodes[i];
+            if (opts.charsetFirst && isCharset(n)) { charset.push(n); continue; }
+            if (opts.sortImports && isImport(n)) { imports.push(n); continue; }
+            if (opts.moveMediaToBottom && isMedia(n)) { media.push(n); continue; }
+            rest.push(n);
+        }
+        imports.sort(function (a, b) {
+            return a.prelude < b.prelude ? -1 : a.prelude > b.prelude ? 1 : 0;
         });
-        document.getElementById('reset-btn').addEventListener('click',function(){
-            input.value='';resultArea.style.display='none';stats.style.display='none';
+        return charset.concat(imports, rest, media);
+    }
+
+    /* ---------- main entry ---------- */
+
+    var DEFAULT_OPTIONS = {
+        indent: 4,
+        braceStyle: 'same',
+        emptyLines: 'remove-extra',
+        lineEndings: 'auto',
+        maxLineLength: 100,
+        finalNewline: true,
+        removeTrailingWs: true,
+        sortProps: false,
+        groupProps: false,
+        customPropsTop: false,
+        keepVendorTogether: false,
+        keepShorthands: false,
+        spaceAfterColon: true,
+        spaceAfterComma: true,
+        spaceAroundOperators: true,
+        spaceInsideCalc: true,
+        spaceAfterSelectorCommas: true,
+        spaceBeforeBrace: true,
+        spaceInsideMediaQueries: true,
+        spaceAroundNesting: false,
+        preserveComments: true,
+        normalizeCommentSpacing: false,
+        preserveBanners: true,
+        removeEmptyComments: false,
+        normalizeColors: 'preserve',
+        lowercaseHex: false,
+        removeZeroUnits: false,
+        removeLeadingZero: false,
+        charsetFirst: true,
+        sortImports: false,
+        preserveLayerOrder: true,
+        preserveRuleOrder: true,
+        moveMediaToBottom: false,
+        outputStyle: 'expanded',
+        smartFixes: {
+            dupSemicolons: true,
+            emptyRules: true,
+            dupBlankLines: true,
+            selectorCommas: true,
+            attrSpaces: true,
+            combinatorSpaces: true,
+            calcSpacing: true,
+            mediaSpacing: true,
+            nestingIndent: true,
+            futureCSS: true
+        }
+    };
+
+    function mergeOptions(options) {
+        var o = {};
+        for (var k in DEFAULT_OPTIONS) {
+            if (DEFAULT_OPTIONS.hasOwnProperty(k)) o[k] = DEFAULT_OPTIONS[k];
+        }
+        if (!options) return o;
+        for (var k2 in options) {
+            if (options.hasOwnProperty(k2)) {
+                if (k2 === 'smartFixes' && options.smartFixes) {
+                    var sf = {};
+                    for (var sk in o.smartFixes) {
+                        if (o.smartFixes.hasOwnProperty(sk)) sf[sk] = o.smartFixes[sk];
+                    }
+                    for (var sk2 in options.smartFixes) {
+                        if (options.smartFixes.hasOwnProperty(sk2)) sf[sk2] = options.smartFixes[sk2];
+                    }
+                    o.smartFixes = sf;
+                } else {
+                    o[k2] = options[k2];
+                }
+            }
+        }
+        return o;
+    }
+
+    function formatValue(value, opts) {
+        if (!value) return '';
+        return renderValue(tokenizeValue(value), opts, false);
+    }
+
+    function isBlockValue(v) {
+        v = (v || '').trim();
+        return v.charAt(0) === '{' && v.charAt(v.length - 1) === '}';
+    }
+
+    function formatDeclValue(node, opts) {
+        if (isCustomProp(node.prop) && isBlockValue(node.value)) return node.value.trim();
+        return formatValue(node.value, opts);
+    }
+
+    function stripTrailingWs(s) {
+        return s.replace(/[ \t]+(?=\r?\n|$)/g, '');
+    }
+
+    function normalizeLineEndings(s, mode) {
+        if (mode === 'lf') return s.replace(/\r\n?/g, '\n');
+        if (mode === 'crlf') return s.replace(/\r\n/g, '\n').replace(/\n/g, '\r\n');
+        if (mode === 'auto') {
+            var crlf = (s.match(/\r\n/g) || []).length;
+            var lf = (s.match(/(?<!\r)\n/g) || []).length;
+            return crlf > lf ? s.replace(/\r\n/g, '\n').replace(/\n/g, '\r\n') : s.replace(/\r\n?/g, '\n');
+        }
+        return s;
+    }
+
+    function byteLength(s) {
+        if (typeof Blob !== 'undefined') {
+            try { return new Blob([s]).size; } catch (e) { /* ignore */ }
+        }
+        var len = 0;
+        for (var i = 0; i < s.length; i++) {
+            var c = s.charCodeAt(i);
+            if (c < 0x80) len++;
+            else if (c < 0x800) len += 2;
+            else if (c < 0xd800 || c >= 0xe000) len += 3;
+            else { i++; len += 4; }
+        }
+        return len;
+    }
+
+    function validate(css) {
+        var errors = [];
+        var i = 0, len = css.length;
+        var line = 1, col = 1;
+        var braceStack = [], parenStack = [], bracketStack = [];
+        function addError(type, message, l, c) { errors.push({ type: type, message: message, line: l, column: c }); }
+        while (i < len) {
+            var ch = css[i];
+            if (ch === '\n') { line++; col = 1; i++; continue; }
+            if (ch === '\r' || ch === '\f') { i++; continue; }
+            if (ch === '"' || ch === "'") {
+                var qsL = line, qsC = col, q = ch;
+                i++; col++;
+                var closed = false;
+                while (i < len) {
+                    var sc = css[i];
+                    if (sc === '\\') { i++; col++; if (i < len) { i++; col++; } continue; }
+                    if (sc === q) { i++; col++; closed = true; break; }
+                    if (sc === '\n') {
+                        addError('Unclosed string', 'Unclosed string. The opening quote at line ' + qsL + ', column ' + qsC + ' is never closed. Strings cannot contain an unescaped line break.', qsL, qsC);
+                        break;
+                    }
+                    i++; col++;
+                }
+                if (!closed && i >= len) {
+                    addError('Unclosed string', 'Unclosed string. The opening quote at line ' + qsL + ', column ' + qsC + ' is never closed.', qsL, qsC);
+                }
+                continue;
+            }
+            if (ch === '/' && i + 1 < len && css[i + 1] === '*') {
+                var cL = line, cC = col;
+                i += 2; col += 2;
+                var cClosed = false;
+                while (i < len) {
+                    if (css[i] === '*' && i + 1 < len && css[i + 1] === '/') { i += 2; col += 2; cClosed = true; break; }
+                    if (css[i] === '\n') { line++; col = 1; } else { col++; }
+                    i++;
+                }
+                if (!cClosed) {
+                    addError('Unclosed comment', 'Unclosed comment. The comment starting at line ' + cL + ', column ' + cC + ' is missing its closing "*/".', cL, cC);
+                }
+                continue;
+            }
+            if (ch === '{') { braceStack.push({ line: line, col: col }); i++; col++; continue; }
+            if (ch === '}') {
+                if (braceStack.length === 0) {
+                    addError('Unmatched closing brace', 'Unmatched closing brace "}". There is no opening "{" for this brace.', line, col);
+                } else {
+                    braceStack.pop();
+                }
+                i++; col++; continue;
+            }
+            if (ch === '(') { parenStack.push({ line: line, col: col }); i++; col++; continue; }
+            if (ch === ')') {
+                if (parenStack.length === 0) {
+                    addError('Unmatched closing parenthesis', 'Unmatched closing parenthesis ")". There is no opening "(" for this parenthesis.', line, col);
+                } else {
+                    parenStack.pop();
+                }
+                i++; col++; continue;
+            }
+            if (ch === '[') { bracketStack.push({ line: line, col: col }); i++; col++; continue; }
+            if (ch === ']') {
+                if (bracketStack.length === 0) {
+                    addError('Unmatched closing bracket', 'Unmatched closing bracket "]". There is no opening "[" for this bracket.', line, col);
+                } else {
+                    bracketStack.pop();
+                }
+                i++; col++; continue;
+            }
+            i++; col++;
+        }
+        if (braceStack.length > 0) {
+            var ob = braceStack[braceStack.length - 1];
+            addError('Unclosed block', 'Unclosed block detected at line ' + ob.line + ', column ' + ob.col + '. The opening "{" is never closed with a matching "}".', ob.line, ob.col);
+        }
+        if (parenStack.length > 0) {
+            var op = parenStack[parenStack.length - 1];
+            addError('Unclosed parenthesis', 'Unclosed parenthesis detected at line ' + op.line + ', column ' + op.col + '. The opening "(" is never closed with a matching ")".', op.line, op.col);
+        }
+        if (bracketStack.length > 0) {
+            var obr = bracketStack[bracketStack.length - 1];
+            addError('Unclosed bracket', 'Unclosed bracket detected at line ' + obr.line + ', column ' + obr.col + '. The opening "[" is never closed with a matching "]".', obr.line, obr.col);
+        }
+        return errors;
+    }
+
+    function preserve(css, opts) {
+        var out = css;
+        if (opts.removeTrailingWs) out = stripTrailingWs(out);
+        return out;
+    }
+
+    function formatCSS(css, options) {
+        var opts = mergeOptions(options);
+        var t0 = Date.now();
+        var stats = createStats();
+        var warnings = validate(css);
+        var result;
+        if (opts.outputStyle === 'preserve') {
+            result = preserve(css, opts);
+        } else {
+            var parsed = parseStylesheet(css);
+            stats.maxNestingDepth = parsed.maxDepth;
+            countStats(parsed.nodes, stats);
+            var nodes = reorderTopLevel(parsed.nodes, opts);
+            if (opts.outputStyle === 'compressed') {
+                result = minify(nodes, opts);
+            } else {
+                var ctx = { lines: [], opts: opts };
+                var prev = null;
+                for (var i = 0; i < nodes.length; i++) {
+                    if (prev) pushBlank(ctx, nodes[i], prev, true);
+                    if (emitNode(nodes[i], 0, ctx) !== false) prev = nodes[i];
+                }
+                result = ctx.lines.join('\n');
+            }
+        }
+        if (opts.removeTrailingWs) result = stripTrailingWs(result);
+        if (opts.outputStyle !== 'compressed') {
+            if (opts.finalNewline && !/[\r\n]$/.test(result)) result += '\n';
+            else if (!opts.finalNewline) result = result.replace(/\r?\n$/, '');
+        }
+        result = normalizeLineEndings(result, opts.lineEndings);
+        if (opts.outputStyle === 'compressed') result = result.replace(/[\r\n]+$/, '');
+        stats.originalSize = byteLength(css);
+        stats.beautifiedSize = byteLength(result);
+        stats.sizeDifference = stats.beautifiedSize - stats.originalSize;
+        stats.sizePercent = stats.originalSize > 0 ? Math.round((stats.sizeDifference / stats.originalSize) * 10000) / 100 : 0;
+        stats.formattingTime = Date.now() - t0;
+        return { code: result, stats: stats, warnings: warnings };
+    }
+
+    function beautify(css, options) {
+        var o = mergeOptions(options);
+        o.outputStyle = o.outputStyle === 'preserve' ? o.outputStyle : 'expanded';
+        return formatCSS(css, o).code;
+    }
+
+    function minifyCSS(css, options) {
+        var o = mergeOptions(options);
+        o.outputStyle = 'compressed';
+        return formatCSS(css, o).code;
+    }
+
+    function colorize(css) {
+        var out = [];
+        var i = 0, len = css.length;
+        var depth = 0;
+        function esc(s) {
+            return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+        function span(cls, t) { out.push('<span class="cs-' + cls + '">' + esc(t) + '</span>'); }
+        while (i < len) {
+            var c = css[i];
+            if (isWs(c)) {
+                var ws = i;
+                while (i < len && isWs(css[i])) i++;
+                out.push(esc(css.slice(ws, i)));
+                continue;
+            }
+            if (c === '/' && css[i + 1] === '*') {
+                var cs = i; i += 2;
+                while (i < len) {
+                    if (css[i] === '*' && css[i + 1] === '/') { i += 2; break; }
+                    i++;
+                }
+                span('comment', css.slice(cs, i));
+                continue;
+            }
+            if (c === '"' || c === "'") {
+                var qs = i; i++;
+                while (i < len) {
+                    if (css[i] === '\\') { i += 2; continue; }
+                    if (css[i] === c) { i++; break; }
+                    i++;
+                }
+                span('string', css.slice(qs, i));
+                continue;
+            }
+            var start = i;
+            var paren = 0, bkt = 0;
+            while (i < len) {
+                var cc = css[i];
+                if (cc === '"' || cc === "'") {
+                    i++;
+                    while (i < len) {
+                        if (css[i] === '\\') { i += 2; continue; }
+                        if (css[i] === cc) { i++; break; }
+                        i++;
+                    }
+                    continue;
+                }
+                if (cc === '/' && css[i + 1] === '*') {
+                    i += 2;
+                    while (i < len) {
+                        if (css[i] === '*' && css[i + 1] === '/') { i += 2; break; }
+                        i++;
+                    }
+                    continue;
+                }
+                if (cc === '(') paren++;
+                if (cc === ')') paren--;
+                if (cc === '[') bkt++;
+                if (cc === ']') bkt--;
+                if (paren === 0 && bkt === 0 && (cc === ';' || cc === '{' || cc === '}')) break;
+                i++;
+            }
+            var chunk = css.slice(start, i);
+            var term = css[i] || '';
+            if (depth === 0) {
+                var ch0 = chunk.trim();
+                if (/^@/.test(ch0)) {
+                    var m = /^(@[-\w]+)/.exec(ch0);
+                    if (m) {
+                        span('at', m[1]);
+                        if (m[1].length < ch0.length) out.push(esc(ch0.slice(m[1].length)));
+                    }
+                } else {
+                    span('sel', ch0);
+                }
+            } else {
+                var ch = chunk.trim();
+                if (ch === '') {
+                    /* empty */
+                } else if (term === '{') {
+                    if (/^@/.test(ch)) span('at', ch); else span('sel', ch);
+                } else {
+                    var col = findTopLevelColon(ch);
+                    if (col > 0) {
+                        span('prop', ch.slice(0, col).trim());
+                        out.push(esc(': '));
+                        span('value', ch.slice(col + 1).trim());
+                    } else {
+                        span('sel', ch);
+                    }
+                }
+            }
+            if (term === ';') { out.push(esc(';')); i++; }
+            else if (term === '{') { out.push(esc('{')); i++; depth++; }
+            else if (term === '}') { out.push(esc('}')); i++; if (depth > 0) depth--; }
+        }
+        return out.join('');
+    }
+
+    return {
+        DEFAULT_OPTIONS: DEFAULT_OPTIONS,
+        formatCSS: formatCSS,
+        beautify: beautify,
+        minify: minifyCSS,
+        validate: validate,
+        colorize: colorize,
+        byteLength: byteLength
+    };
+}));
+
+/* ===== GoToolly CSS Beautifier UI ===== */
+(function () {
+    'use strict';
+
+    var Eng = window.CSSBeautifyEngine;
+    if (!Eng) return;
+
+    var STORE_KEY = 'gtoolly-cssbeautify-settings-v2';
+    var KEYS = ['indent-size', 'output-style', 'brace-style', 'empty-lines', 'line-endings', 'max-line-length', 'final-newline', 'sort-props', 'group-props', 'custom-props-top', 'vendor-together', 'shorthands-together', 'normalize-colors', 'lowercase-hex', 'remove-zero-units', 'remove-leading-zero', 'preserve-comments'];
+
+    var els = {};
+
+    function $(id) { return document.getElementById(id); }
+
+    function cacheElements() {
+        els.statusBadge = $('status-badge');
+        els.settingsBox = $('settings-box');
+        els.inputTa = $('input-ta');
+        els.inputHl = $('input-hl');
+        els.inputGutter = $('input-gutter');
+        els.inputMeta = $('input-meta');
+        els.outputTa = $('output-ta');
+        els.outputHl = $('output-hl');
+        els.outputGutter = $('output-gutter');
+        els.outputMeta = $('output-meta');
+        els.warnList = $('warn-list');
+        els.warnItems = $('warn-items');
+        els.statsSection = $('stats-section');
+        ['rules', 'selectors', 'declarations', 'properties', 'custom', 'media', 'container', 'supports', 'layers', 'keyframes', 'animations', 'colors', 'math', 'comments', 'depth', 'time', 'original', 'beautified', 'delta', 'pct'].forEach(function (s) {
+            els['stat' + s] = $('stat-' + s);
         });
-        document.getElementById('copy-btn').addEventListener('click',function(){
-            navigator.clipboard.writeText(resultText.textContent).then(function(){
-                let btn=document.getElementById('copy-btn');btn.textContent='Copied!';
-                setTimeout(function(){btn.innerHTML='<i class="fas fa-copy"></i> Copy Result'},2000);
-            });
+        els.analyzeBtn = $('analyze-btn');
+        els.minifyBtn = $('minify-btn');
+        els.swapBtn = $('swap-btn');
+        els.copyBtn = $('copy-btn');
+        els.downloadBtn = $('download-btn');
+        els.clearBtn = $('clear-btn');
+        els.resetBtn = $('reset-btn');
+        els.inputEditor = $('input-editor');
+        els.outputEditor = $('output-editor');
+    }
+
+    function setStatus(stateClass, label) {
+        var badge = els.statusBadge;
+        badge.className = 'status-badge';
+        if (stateClass) {
+            badge.classList.add(stateClass);
+            badge.textContent = label || stateClass.charAt(0).toUpperCase() + stateClass.slice(1);
+        } else {
+            badge.textContent = '';
+        }
+    }
+
+    function esc(s) {
+        return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function highlightHtml(code) {
+        if (code.length > 400000) return esc(code);
+        return Eng.colorize(code);
+    }
+
+    function renderEditor(kind, code) {
+        var ta = kind === 'input' ? els.inputTa : els.outputTa;
+        var hl = kind === 'input' ? els.inputHl : els.outputHl;
+        var gut = kind === 'input' ? els.inputGutter : els.outputGutter;
+        var count = code.split('\n').length;
+        var arr = [];
+        for (var i = 1; i <= count; i++) arr.push('<span class="g-num">' + i + '</span>');
+        gut.innerHTML = arr.join('\n');
+        hl.innerHTML = highlightHtml(code);
+        hl.scrollTop = 0; hl.scrollLeft = 0;
+    }
+
+    function syncScroll(ta, hl, gut) {
+        ta.addEventListener('scroll', function () {
+            hl.scrollTop = ta.scrollTop;
+            hl.scrollLeft = ta.scrollLeft;
+            if (gut) gut.scrollTop = ta.scrollTop;
         });
-        document.getElementById('download-btn').addEventListener('click',function(){
-            let blob=new Blob([resultText.textContent],{type:'text/css'});
-            let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='beautified.css';a.click();
+    }
+
+    function fmtBytes(n) {
+        if (n < 1024) return n + ' B';
+        if (n < 1048576) return (n / 1024).toFixed(1) + ' KB';
+        return (n / 1048576).toFixed(2) + ' MB';
+    }
+
+    function formatMeta(text) {
+        var chars = text.length;
+        var lines = text ? text.split('\n').length : 0;
+        return chars.toLocaleString() + ' chars · ' + lines.toLocaleString() + ' lines · ' + fmtBytes(Eng.byteLength(text));
+    }
+
+    function toast(msg, type) {
+        if (typeof window.toast === 'function') { window.toast(msg, type); return; }
+        var t = document.createElement('div');
+        t.className = 'toast ' + (type || 'info');
+        t.textContent = msg;
+        document.body.appendChild(t);
+        requestAnimationFrame(function () { t.classList.add('show'); });
+        setTimeout(function () {
+            t.classList.remove('show');
+            setTimeout(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 300);
+        }, 2600);
+    }
+
+    function readSettings() {
+        function cb(id) { return $(id).checked; }
+        return {
+            indent: $('indent-size').value === 'tab' ? 'tab' : parseInt($('indent-size').value, 10) || 4,
+            outputStyle: $('output-style').value,
+            braceStyle: $('brace-style').value,
+            emptyLines: $('empty-lines').value,
+            lineEndings: $('line-endings').value,
+            maxLineLength: parseInt($('max-line-length').value, 10) || 100,
+            finalNewline: cb('final-newline'),
+            sortProps: cb('sort-props'),
+            groupProps: cb('group-props'),
+            customPropsTop: cb('custom-props-top'),
+            keepVendorTogether: cb('vendor-together'),
+            keepShorthands: cb('shorthands-together'),
+            normalizeColors: $('normalize-colors').value,
+            lowercaseHex: cb('lowercase-hex'),
+            removeZeroUnits: cb('remove-zero-units'),
+            removeLeadingZero: cb('remove-leading-zero'),
+            preserveComments: cb('preserve-comments')
+        };
+    }
+
+    function saveSettings() {
+        try {
+            var data = {};
+            KEYS.forEach(function (k) { data[k] = $(k).value; });
+            localStorage.setItem(STORE_KEY, JSON.stringify(data));
+        } catch (e) {}
+    }
+
+    function loadSettings() {
+        try {
+            var raw = localStorage.getItem(STORE_KEY);
+            if (!raw) return;
+            var data = JSON.parse(raw);
+            KEYS.forEach(function (k) { if (data[k] !== undefined && $(k)) $(k).value = data[k]; });
+        } catch (e) {}
+    }
+
+    function clearWarnings() {
+        els.warnList.classList.remove('show');
+        els.warnItems.innerHTML = '';
+    }
+
+    function showWarnings(list) {
+        if (!list || !list.length) return;
+        var lis = '';
+        for (var i = 0; i < list.length; i++) {
+            var w = list[i];
+            lis += '<li>' + esc(w.message) + (typeof w.line === 'number' ? ' <em>(line ' + w.line + ')</em>' : '') + '</li>';
+        }
+        els.warnItems.innerHTML = lis;
+        els.warnList.classList.add('show');
+    }
+
+    function renderStats(st, dt) {
+        els.statrules.textContent = st.rules.toLocaleString();
+        els.statselectors.textContent = st.selectors.toLocaleString();
+        els.statdeclarations.textContent = st.declarations.toLocaleString();
+        els.statproperties.textContent = st.properties.toLocaleString();
+        els.statcustom.textContent = st.customProperties.toLocaleString();
+        els.statmedia.textContent = st.mediaQueries.toLocaleString();
+        els.statcontainer.textContent = st.containerQueries.toLocaleString();
+        els.statsupports.textContent = st.supportsRules.toLocaleString();
+        els.statlayers.textContent = st.cascadeLayers.toLocaleString();
+        els.statkeyframes.textContent = st.keyframes.toLocaleString();
+        els.statanimations.textContent = st.animations.toLocaleString();
+        els.statcolors.textContent = st.colorFunctions.toLocaleString();
+        els.statmath.textContent = st.mathFunctions.toLocaleString();
+        els.statcomments.textContent = st.comments.toLocaleString();
+        els.statdepth.textContent = st.maxNestingDepth.toLocaleString();
+        els.statoriginal.textContent = fmtBytes(st.originalSize);
+        els.statbeautified.textContent = fmtBytes(st.beautifiedSize);
+        var delta = st.sizeDifference;
+        els.statdelta.textContent = (delta >= 0 ? '+' : '') + fmtBytes(delta);
+        els.statdelta.className = 'stat-value' + (delta > 0 ? ' byte-grown' : delta < 0 ? ' byte-saved' : '');
+        els.statpct.textContent = (st.sizePercent >= 0 ? '+' : '') + st.sizePercent + '%';
+        els.stattime.textContent = dt + 'ms';
+        els.statsSection.style.display = 'block';
+    }
+
+    function run(mode) {
+        var src = els.inputTa.value;
+        if (!src.trim()) { toast('Enter some CSS first', 'error'); return; }
+        var opts = readSettings();
+        clearWarnings();
+        setStatus('processing', mode === 'beautify' ? 'Formatting' : 'Minifying');
+
+        var doWork = function () {
+            try {
+                var t0 = performance.now();
+                var o = {};
+                for (var k in opts) { if (opts.hasOwnProperty(k)) o[k] = opts[k]; }
+                o.outputStyle = mode === 'minify' ? 'compressed' : opts.outputStyle;
+                var res = Eng.formatCSS(src, o);
+                var dt = Math.round(performance.now() - t0);
+                showWarnings(res.warnings);
+                var out = res.code;
+                els.outputTa.value = out;
+                renderEditor('output', out);
+                renderStats(res.stats, dt);
+                var meta = formatMeta(out);
+                if (mode === 'minify') {
+                    var inBytes = res.stats.originalSize;
+                    var outBytes = res.stats.beautifiedSize;
+                    var pct = inBytes > 0 ? Math.round((1 - outBytes / inBytes) * 100) : 0;
+                    if (pct > 0) meta += ' · <span class="byte-saved">↓ ' + pct + '%</span>';
+                }
+                els.outputMeta.innerHTML = meta;
+                setStatus('done', mode === 'beautify' ? 'Formatted' : 'Minified');
+                toast(mode === 'beautify' ? 'CSS formatted' : 'CSS minified', 'success');
+            } catch (e) {
+                setStatus('error', 'Error');
+                toast(e && e.message ? e.message : String(e), 'error');
+            }
+        };
+
+        if (src.length > 250000) setTimeout(doWork, 60);
+        else doWork();
+    }
+
+    function swap() {
+        var out = els.outputTa.value;
+        if (!out) { toast('Nothing to swap — beautify first', 'error'); return; }
+        els.inputTa.value = out;
+        renderEditor('input', out);
+        els.inputMeta.textContent = formatMeta(out);
+        els.outputTa.value = '';
+        renderEditor('output', '');
+        els.outputMeta.textContent = 'Waiting for input';
+        els.statsSection.style.display = 'none';
+        clearWarnings();
+    }
+
+    function copyOutput() {
+        var out = els.outputTa.value;
+        if (!out) { toast('Nothing to copy', 'error'); return; }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(out).then(function () {
+                toast('Copied to clipboard', 'success');
+            }, function () { legacyCopy(out); });
+        } else legacyCopy(out);
+    }
+
+    function legacyCopy(text) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); toast('Copied to clipboard', 'success'); }
+        catch (e) { toast('Could not copy', 'error'); }
+        document.body.removeChild(ta);
+    }
+
+    function download() {
+        var out = els.outputTa.value;
+        if (!out) { toast('Nothing to download', 'error'); return; }
+        var blob = new Blob([out], { type: 'text/css;charset=utf-8' });
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'formatted.css';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 400);
+    }
+
+    function clearAll(keepOutput) {
+        els.inputTa.value = '';
+        renderEditor('input', '');
+        els.inputMeta.textContent = '0 chars · 0 lines · 0 B';
+        if (!keepOutput) {
+            els.outputTa.value = '';
+            renderEditor('output', '');
+            els.outputMeta.textContent = 'Waiting for input';
+            els.statsSection.style.display = 'none';
+        }
+        clearWarnings();
+    }
+
+    function resetAll() {
+        clearAll(false);
+        var defaults = {
+            'indent-size': '4', 'output-style': 'expanded', 'brace-style': 'same', 'empty-lines': 'remove-extra',
+            'line-endings': 'auto', 'max-line-length': '100', 'final-newline': 'on',
+            'sort-props': '', 'group-props': '', 'custom-props-top': '', 'vendor-together': '', 'shorthands-together': '',
+            'normalize-colors': 'preserve', 'lowercase-hex': '', 'remove-zero-units': '', 'remove-leading-zero': '', 'preserve-comments': 'on'
+        };
+        KEYS.forEach(function (k) {
+            var v = defaults[k];
+            var el = $(k);
+            if (el && el.type === 'checkbox') el.checked = v === 'on';
+            else if (el) el.value = v;
         });
-    })();
+        saveSettings();
+        setStatus('ready', 'Ready');
+        toast('Workspace reset', 'info');
+    }
+
+    function onInput() {
+        els.inputMeta.textContent = formatMeta(els.inputTa.value);
+        clearTimeout(els._hTimer);
+        els._hTimer = setTimeout(function () { renderEditor('input', els.inputTa.value); }, 160);
+    }
+
+    function init() {
+        cacheElements();
+        loadSettings();
+        syncScroll(els.inputTa, els.inputHl, els.inputGutter);
+        syncScroll(els.outputTa, els.outputHl, els.outputGutter);
+
+        els.inputTa.addEventListener('input', onInput);
+        KEYS.forEach(function (k) {
+            var el = $(k);
+            if (el) el.addEventListener('change', function () { saveSettings(); });
+        });
+
+        els.analyzeBtn.addEventListener('click', function () { run('beautify'); });
+        els.minifyBtn.addEventListener('click', function () { run('minify'); });
+        els.swapBtn.addEventListener('click', swap);
+        els.copyBtn.addEventListener('click', copyOutput);
+        els.downloadBtn.addEventListener('click', download);
+        els.clearBtn.addEventListener('click', function () { clearAll(false); toast('Input cleared', 'info'); });
+        els.resetBtn.addEventListener('click', resetAll);
+
+        document.addEventListener('keydown', function (e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { e.preventDefault(); run('beautify'); }
+            else if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'M' || e.key === 'm')) { e.preventDefault(); run('minify'); }
+        });
+
+        renderEditor('input', '');
+        renderEditor('output', '');
+        setStatus('ready', 'Ready');
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
     </script>
 </body>
 </html>

@@ -1,6 +1,8 @@
 /* ============================================
-   GO TOOLLY - UUID GENERATOR
+   GO TOOLLY v2.0 - UUID GENERATOR
    ============================================ */
+(function(){
+'use strict';
 document.addEventListener('DOMContentLoaded', function() {
     var output = document.getElementById('uuid-output');
     var batchOutput = document.getElementById('batch-output');
@@ -42,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             batchOutput.querySelectorAll('.copy-single').forEach(function(btn) {
                 btn.addEventListener('click', function() {
-                    navigator.clipboard.writeText(btn.dataset.uuid).then(function() {
+                    copyText(btn.dataset.uuid, function() {
                         btn.textContent = 'Copied!';
                         setTimeout(function() { btn.textContent = 'Copy'; }, 1200);
                     });
@@ -66,9 +68,28 @@ document.addEventListener('DOMContentLoaded', function() {
         return div.innerHTML;
     }
 
+    function copyText(text, done) {
+        var fallback = function () {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.top = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch (e) {}
+            ta.remove();
+            done();
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done, fallback);
+        } else {
+            fallback();
+        }
+    }
+
     function copyUUID() {
         if (!lastUUID) return;
-        navigator.clipboard.writeText(lastUUID).then(function() {
+        copyText(lastUUID, function() {
             copyBtn.textContent = 'Copied!';
             setTimeout(function() { copyBtn.textContent = 'Copy'; }, 1500);
         });
@@ -76,3 +97,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     generate();
 });
+})();

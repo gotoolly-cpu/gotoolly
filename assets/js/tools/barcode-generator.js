@@ -1,27 +1,29 @@
 /* ============================================
-   GO TOOLLY - BARCODE GENERATOR
+   GO TOOLLY v2.0 - BARCODE GENERATOR
    ============================================ */
+(function(){
+'use strict';
 document.addEventListener('DOMContentLoaded', function() {
-    const typeSelect = document.getElementById('barcode-type');
-    const textInput = document.getElementById('barcode-text');
-    const sizeInput = document.getElementById('barcode-size');
-    const sizeValue = document.getElementById('size-value');
-    const marginInput = document.getElementById('barcode-margin');
-    const marginValue = document.getElementById('margin-value');
-    const generateBtn = document.getElementById('generate-btn');
-    const downloadPng = document.getElementById('download-png');
-    const downloadSvg = document.getElementById('download-svg');
-    const canvas = document.getElementById('barcode-canvas');
-    const placeholder = document.getElementById('barcode-placeholder');
-    const status = document.getElementById('barcode-status');
+    var typeSelect = document.getElementById('barcode-type');
+    var textInput = document.getElementById('barcode-text');
+    var sizeInput = document.getElementById('barcode-size');
+    var sizeValue = document.getElementById('size-value');
+    var marginInput = document.getElementById('barcode-margin');
+    var marginValue = document.getElementById('margin-value');
+    var generateBtn = document.getElementById('generate-btn');
+    var downloadPng = document.getElementById('download-png');
+    var downloadSvg = document.getElementById('download-svg');
+    var canvas = document.getElementById('barcode-canvas');
+    var placeholder = document.getElementById('barcode-placeholder');
+    var status = document.getElementById('barcode-status');
 
-    let currentBarcodeData = null;
+    var currentBarcodeData = null;
 
     sizeInput.addEventListener('input', function() { sizeValue.textContent = this.value + 'px'; });
     marginInput.addEventListener('input', function() { marginValue.textContent = this.value + 'px'; });
 
     typeSelect.addEventListener('change', function() {
-        const hints = {
+        var hints = {
             code128: 'Enter alphanumeric text',
             code39: 'Uppercase letters, digits, and -.$/+%',
             ean13: 'Enter 12 digits (checksum auto-calculated)',
@@ -30,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
             upce: 'Enter 6 digits (checksum auto-calculated)'
         };
         textInput.placeholder = hints[this.value] || 'Enter text';
-        if (['ean13','ean8','upca','upce'].includes(this.value)) {
+        if (['ean13','ean8','upca','upce'].indexOf(this.value) !== -1) {
             textInput.value = textInput.value.replace(/\D/g,'').slice(0,12);
         }
     });
@@ -38,12 +40,12 @@ document.addEventListener('DOMContentLoaded', function() {
     generateBtn.addEventListener('click', generateBarcode);
 
     function generateBarcode() {
-        const type = typeSelect.value;
-        let text = textInput.value.trim();
+        var type = typeSelect.value;
+        var text = textInput.value.trim();
         if (!text) { status.textContent = 'Please enter data'; return; }
         try {
-            let bars = [];
-            let encodedText = text;
+            var bars = [];
+            var encodedText = text;
             switch (type) {
                 case 'code128': bars = encodeCode128(text); encodedText = text; break;
                 case 'code39': bars = encodeCode39(text); encodedText = text.toUpperCase(); break;
@@ -53,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'upce': bars = encodeUPCE(text); encodedText = formatUPCE(text); break;
             }
             if (!bars || bars.length === 0) throw new Error('Encoding failed');
-            currentBarcodeData = { type, text, bars, encodedText };
+            currentBarcodeData = { type: type, text: text, bars: bars, encodedText: encodedText };
             drawBarcode(currentBarcodeData);
             placeholder.style.display = 'none';
             canvas.style.display = 'block';
@@ -66,24 +68,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function drawBarcode(data) {
-        const size = parseInt(sizeInput.value);
-        const margin = parseInt(marginInput.value);
-        const barHeight = size * 0.55;
-        const ctx = canvas.getContext('2d');
+        var size = parseInt(sizeInput.value);
+        var margin = parseInt(marginInput.value);
+        var barHeight = size * 0.55;
+        var ctx = canvas.getContext('2d');
         canvas.width = size;
         canvas.height = barHeight + margin * 2 + 40;
         ctx.fillStyle = '#ffffff';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        const totalModules = data.bars.reduce(function(s, b) { return s + b; }, 0);
-        const availableWidth = size - margin * 2;
-        const moduleWidth = availableWidth / totalModules;
+        var totalModules = data.bars.reduce(function(s, b) { return s + b; }, 0);
+        var availableWidth = size - margin * 2;
+        var moduleWidth = availableWidth / totalModules;
 
-        let x = margin;
+        var x = margin;
         ctx.fillStyle = '#000000';
-        for (let i = 0; i < data.bars.length; i++) {
+        for (var i = 0; i < data.bars.length; i++) {
             if (i % 2 === 0) {
-                const w = data.bars[i] * moduleWidth;
+                var w = data.bars[i] * moduleWidth;
                 ctx.fillRect(x, margin, w, barHeight);
             }
             x += data.bars[i] * moduleWidth;
@@ -98,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
     downloadPng.addEventListener('click', function() {
         if (!currentBarcodeData) return;
         drawBarcode(currentBarcodeData);
-        const link = document.createElement('a');
+        var link = document.createElement('a');
         link.download = 'barcode-' + currentBarcodeData.type + '.png';
         link.href = canvas.toDataURL('image/png');
         link.click();
@@ -106,31 +108,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
     downloadSvg.addEventListener('click', function() {
         if (!currentBarcodeData) return;
-        const size = parseInt(sizeInput.value);
-        const margin = parseInt(marginInput.value);
-        const barHeight = size * 0.55;
-        const totalModules = currentBarcodeData.bars.reduce(function(s, b) { return s + b; }, 0);
-        const availableWidth = size - margin * 2;
-        const moduleWidth = availableWidth / totalModules;
-        const svgH = barHeight + margin * 2 + 40;
+        var size = parseInt(sizeInput.value);
+        var margin = parseInt(marginInput.value);
+        var barHeight = size * 0.55;
+        var totalModules = currentBarcodeData.bars.reduce(function(s, b) { return s + b; }, 0);
+        var availableWidth = size - margin * 2;
+        var moduleWidth = availableWidth / totalModules;
+        var svgH = barHeight + margin * 2 + 40;
 
-        let rects = '';
-        let x = margin;
-        for (let i = 0; i < currentBarcodeData.bars.length; i++) {
+        var rects = '';
+        var x = margin;
+        for (var i = 0; i < currentBarcodeData.bars.length; i++) {
             if (i % 2 === 0) {
-                const w = currentBarcodeData.bars[i] * moduleWidth;
+                var w = currentBarcodeData.bars[i] * moduleWidth;
                 rects += '<rect x="' + x.toFixed(2) + '" y="' + margin + '" width="' + w.toFixed(2) + '" height="' + barHeight + '" fill="#000"/>';
             }
             x += currentBarcodeData.bars[i] * moduleWidth;
         }
 
-        const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + svgH + '" viewBox="0 0 ' + size + ' ' + svgH + '">' +
+        var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + svgH + '" viewBox="0 0 ' + size + ' ' + svgH + '">' +
             '<rect width="' + size + '" height="' + svgH + '" fill="#fff"/>' +
             rects +
             '<text x="' + (size / 2) + '" y="' + (margin + barHeight + 24) + '" font-family="monospace" font-size="' + (barHeight * 0.08) + '" text-anchor="middle" fill="#000">' + escapeXml(currentBarcodeData.encodedText) + '</text></svg>';
 
-        const blob = new Blob([svg], { type: 'image/svg+xml' });
-        const link = document.createElement('a');
+        var blob = new Blob([svg], { type: 'image/svg+xml' });
+        var link = document.createElement('a');
         link.download = 'barcode-' + currentBarcodeData.type + '.svg';
         link.href = URL.createObjectURL(blob);
         link.click();
@@ -142,15 +144,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function calculateCheckDigit(code) {
-        let sum = 0;
-        for (let i = 0; i < code.length; i++) {
+        var sum = 0;
+        for (var i = 0; i < code.length; i++) {
             sum += parseInt(code[i]) * (i % 2 === 0 ? 1 : 3);
         }
         return (10 - (sum % 10)) % 10;
     }
 
     function encodeCode39(s) {
-        const code39Map = {
+        var code39Map = {
             '0':'101001101101','1':'110100101011','2':'101100101011','3':'110110010101',
             '4':'101001101011','5':'110100110101','6':'101100110101','7':'101001011011',
             '8':'110100101101','9':'101100101101','A':'110101001011','B':'101101001011',
@@ -163,23 +165,24 @@ document.addEventListener('DOMContentLoaded', function() {
             '-':'100101011011','.':'110010101101',' ':'100110101101','$':'100100100101',
             '/':'100100101001','+':'100101001001','%':'101001001001','*':'100101101101'
         };
-        const upper = s.toUpperCase();
-        let result = [1,0,1,0,0,1,0,1,1,0,1]; // start *
-        for (let c of upper) {
-            const pattern = code39Map[c];
-            if (!pattern) throw new Error('Character "' + c + '" not supported in Code 39');
-            for (let bit of pattern) result.push(parseInt(bit));
+        var upper = s.toUpperCase();
+        var result = [1,0,1,0,0,1,0,1,1,0,1]; // start *
+        for (var c = 0; c < upper.length; c++) {
+            var ch = upper.charAt(c);
+            var pattern = code39Map[ch];
+            if (!pattern) throw new Error('Character "' + ch + '" not supported in Code 39');
+            for (var b = 0; b < pattern.length; b++) result.push(parseInt(pattern.charAt(b)));
             result.push(0); // intercharacter gap
         }
         // end *
-        const endPattern = code39Map['*'];
-        for (let bit of endPattern) result.push(parseInt(bit));
+        var endPattern = code39Map['*'];
+        for (var b = 0; b < endPattern.length; b++) result.push(parseInt(endPattern.charAt(b)));
         result.push(1,0,0,1,0,1,1,0,1);
         return result;
     }
 
     function encodeCode128(s) {
-        const code128B = {
+        var code128B = {
             ' ':0,'!':1,'"':2,'#':3,'$':4,'%':5,'&':6,'\'':7,'(':8,')':9,'*':10,'+':11,
             ',':12,'-':13,'.':14,'/':15,'0':16,'1':17,'2':18,'3':19,'4':20,'5':21,'6':22,
             '7':23,'8':24,'9':25,':':26,';':27,'<':28,'=':29,'>':30,'?':31,'@':32,'A':33,
@@ -190,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'n':78,'o':79,'p':80,'q':81,'r':82,'s':83,'t':84,'u':85,'v':86,'w':87,'x':88,
             'y':89,'z':90,'{':91,'|':92,'}':93,'~':94
         };
-        const encTable = [
+        var encTable = [
             [2,1,2,2,2,2],[2,2,2,1,2,2],[2,2,2,2,2,1],[1,2,1,2,2,3],[1,2,1,3,2,2],
             [1,3,1,2,2,2],[1,2,2,2,1,3],[1,2,2,3,1,2],[1,3,2,2,1,2],[2,2,1,2,1,3],
             [2,2,1,3,1,2],[2,3,1,2,1,2],[1,1,2,2,3,2],[1,2,2,1,3,2],[1,2,2,2,3,1],
@@ -214,57 +217,58 @@ document.addEventListener('DOMContentLoaded', function() {
             [1,1,4,1,3,1],[3,1,1,1,4,1],[4,1,1,1,3,1],[2,1,1,4,1,2],[2,1,1,2,1,4],
             [2,1,1,2,3,2],[2,3,3,1,1,1,2]
         ];
-        let chars = [];
-        for (let c of s) {
-            if (code128B[c] === undefined) throw new Error('Character "' + c + '" not supported in Code 128');
-            chars.push(code128B[c]);
+        var chars = [];
+        for (var c = 0; c < s.length; c++) {
+            var charCode = code128B[s.charAt(c)];
+            if (charCode === undefined) throw new Error('Character "' + s.charAt(c) + '" not supported in Code 128');
+            chars.push(charCode);
         }
-        let check = 104; // Start Code B
-        let values = [104];
-        for (let i = 0; i < chars.length; i++) {
+        var check = 104; // Start Code B
+        var values = [104];
+        for (var i = 0; i < chars.length; i++) {
             values.push(chars[i]);
             check += chars[i] * (i + 1);
         }
         values.push(check % 103);
         values.push(106); // Stop
-        let result = [];
-        for (let v of values) {
-            const enc = encTable[v];
+        var result = [];
+        for (var v = 0; v < values.length; v++) {
+            var enc = encTable[values[v]];
             if (!enc) continue;
-            for (let w of enc) result.push(w);
-            if (v !== values[values.length - 1]) result.push(1);
+            for (var w = 0; w < enc.length; w++) result.push(enc[w]);
+            if (values[v] !== values[values.length - 1]) result.push(1);
         }
         return result;
     }
 
     function encodeEAN13(s) {
-        const parity = [
+        var parity = [
             [1,1,1,1,1,1],[1,1,0,1,0,0],[1,1,0,0,1,0],[1,1,0,0,0,1],[1,0,1,1,0,0],
             [1,0,0,1,1,0],[1,0,0,0,1,1],[1,0,1,0,0,1],[1,0,1,0,1,0],[1,0,0,1,0,1]
         ];
-        const Lcodes = [
+        var Lcodes = [
             [3,2,1,1],[2,2,2,1],[2,1,2,2],[1,4,1,1],[1,1,3,2],[1,2,3,1],[1,1,1,4],[1,3,1,2],[1,2,1,3],[3,1,1,2]
         ];
-        const Rcodes = [
+        var Rcodes = [
             [1,1,2,3],[1,2,2,2],[2,2,1,2],[1,1,4,1],[2,3,1,1],[1,2,1,3],[4,1,1,1],[2,1,3,1],[3,1,2,1],[2,1,1,3]
         ];
-        let digits = s.replace(/\D/g,'').split('').map(Number);
+        var digits = s.replace(/\D/g,'').split('').map(Number);
         if (digits.length < 12) throw new Error('EAN-13 requires at least 12 digits');
         digits = digits.slice(0,12);
-        const check = calculateCheckDigit(digits.join(''));
+        var check = calculateCheckDigit(digits.join(''));
         digits.push(check);
-        let result = [1,1,1]; // start guard
-        const p = parity[digits[0]];
-        for (let i = 1; i <= 6; i++) {
-            const d = digits[i];
-            let enc = p[i - 1] ? Rcodes[d] : Lcodes[d];
-            for (let w of enc) result.push(w);
+        var result = [1,1,1]; // start guard
+        var p = parity[digits[0]];
+        for (var i = 1; i <= 6; i++) {
+            var d = digits[i];
+            var enc = p[i - 1] ? Rcodes[d] : Lcodes[d];
+            for (var w = 0; w < enc.length; w++) result.push(enc[w]);
             if (i < 6) result.push(0,1);
         }
         result.push(1,1,1,1,1); // middle guard
-        for (let i = 7; i <= 12; i++) {
-            const enc = Rcodes[digits[i]];
-            for (let w of enc) result.push(w);
+        for (var i = 7; i <= 12; i++) {
+            var enc = Rcodes[digits[i]];
+            for (var w = 0; w < enc.length; w++) result.push(enc[w]);
             if (i < 12) result.push(0,1);
         }
         result.push(1,1,1); // end guard
@@ -272,34 +276,34 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function formatEAN13(s) {
-        let d = s.replace(/\D/g,'').slice(0,12);
-        if (d.length < 12) d = d.padEnd(12,'0');
+        var d = s.replace(/\D/g,'').slice(0,12);
+        if (d.length < 12) d = d + '000000000000'.slice(0, 12 - d.length);
         d += calculateCheckDigit(d);
         return d;
     }
 
     function encodeEAN8(s) {
-        const Lcodes = [
+        var Lcodes = [
             [3,2,1,1],[2,2,2,1],[2,1,2,2],[1,4,1,1],[1,1,3,2],[1,2,3,1],[1,1,1,4],[1,3,1,2],[1,2,1,3],[3,1,1,2]
         ];
-        const Rcodes = [
+        var Rcodes = [
             [1,1,2,3],[1,2,2,2],[2,2,1,2],[1,1,4,1],[2,3,1,1],[1,2,1,3],[4,1,1,1],[2,1,3,1],[3,1,2,1],[2,1,1,3]
         ];
-        let digits = s.replace(/\D/g,'').split('').map(Number);
+        var digits = s.replace(/\D/g,'').split('').map(Number);
         if (digits.length < 7) throw new Error('EAN-8 requires at least 7 digits');
         digits = digits.slice(0,7);
-        const check = calculateCheckDigit(digits.join(''));
+        var check = calculateCheckDigit(digits.join(''));
         digits.push(check);
-        let result = [1,1,1];
-        for (let i = 0; i < 4; i++) {
-            const enc = Lcodes[digits[i]];
-            for (let w of enc) result.push(w);
+        var result = [1,1,1];
+        for (var i = 0; i < 4; i++) {
+            var enc = Lcodes[digits[i]];
+            for (var w = 0; w < enc.length; w++) result.push(enc[w]);
             if (i < 3) result.push(0,1);
         }
         result.push(1,1,1,1,1);
-        for (let i = 4; i < 8; i++) {
-            const enc = Rcodes[digits[i]];
-            for (let w of enc) result.push(w);
+        for (var i = 4; i < 8; i++) {
+            var enc = Rcodes[digits[i]];
+            for (var w = 0; w < enc.length; w++) result.push(enc[w]);
             if (i < 7) result.push(0,1);
         }
         result.push(1,1,1);
@@ -307,34 +311,34 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function formatEAN8(s) {
-        let d = s.replace(/\D/g,'').slice(0,7);
-        if (d.length < 7) d = d.padEnd(7,'0');
+        var d = s.replace(/\D/g,'').slice(0,7);
+        if (d.length < 7) d = d + '0000000'.slice(0, 7 - d.length);
         d += calculateCheckDigit(d);
         return d;
     }
 
     function encodeUPCA(s) {
-        const Lcodes = [
+        var Lcodes = [
             [3,2,1,1],[2,2,2,1],[2,1,2,2],[1,4,1,1],[1,1,3,2],[1,2,3,1],[1,1,1,4],[1,3,1,2],[1,2,1,3],[3,1,1,2]
         ];
-        const Rcodes = [
+        var Rcodes = [
             [1,1,2,3],[1,2,2,2],[2,2,1,2],[1,1,4,1],[2,3,1,1],[1,2,1,3],[4,1,1,1],[2,1,3,1],[3,1,2,1],[2,1,1,3]
         ];
-        let digits = s.replace(/\D/g,'').split('').map(Number);
+        var digits = s.replace(/\D/g,'').split('').map(Number);
         if (digits.length < 11) throw new Error('UPC-A requires at least 11 digits');
         digits = digits.slice(0,11);
-        const check = calculateCheckDigit(digits.join(''));
+        var check = calculateCheckDigit(digits.join(''));
         digits.push(check);
-        let result = [1,1,1];
-        for (let i = 0; i < 6; i++) {
-            const enc = Lcodes[digits[i]];
-            for (let w of enc) result.push(w);
+        var result = [1,1,1];
+        for (var i = 0; i < 6; i++) {
+            var enc = Lcodes[digits[i]];
+            for (var w = 0; w < enc.length; w++) result.push(enc[w]);
             if (i < 5) result.push(0,1);
         }
         result.push(1,1,1,1,1);
-        for (let i = 6; i < 12; i++) {
-            const enc = Rcodes[digits[i]];
-            for (let w of enc) result.push(w);
+        for (var i = 6; i < 12; i++) {
+            var enc = Rcodes[digits[i]];
+            for (var w = 0; w < enc.length; w++) result.push(enc[w]);
             if (i < 11) result.push(0,1);
         }
         result.push(1,1,1);
@@ -342,23 +346,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function formatUPCA(s) {
-        let d = s.replace(/\D/g,'').slice(0,11);
-        if (d.length < 11) d = d.padEnd(11,'0');
+        var d = s.replace(/\D/g,'').slice(0,11);
+        if (d.length < 11) d = d + '00000000000'.slice(0, 11 - d.length);
         d += calculateCheckDigit(d);
         return d;
     }
 
     function encodeUPCE(s) {
-        const UPC_E_PATTERNS = [
+        var patterns = [
             [3,2,1,1],[2,2,2,1],[2,1,2,2],[1,4,1,1],[1,1,3,2],[1,2,3,1],[1,1,1,4],[1,3,1,2],[1,2,1,3],[3,1,1,2]
         ];
-        let digits = s.replace(/\D/g,'').split('').map(Number);
+        var digits = s.replace(/\D/g,'').split('').map(Number);
         if (digits.length < 6) throw new Error('UPC-E requires at least 6 digits');
         digits = digits.slice(0,6);
-        let result = [1,1,1];
-        for (let i = 0; i < 6; i++) {
-            const enc = UPC_E_PATTERNS[digits[i]];
-            for (let w of enc) result.push(w);
+        var result = [1,1,1];
+        for (var i = 0; i < 6; i++) {
+            var enc = patterns[digits[i]];
+            for (var w = 0; w < enc.length; w++) result.push(enc[w]);
             if (i < 5) result.push(0,1);
         }
         result.push(1,1,1,1,1,1);
@@ -366,6 +370,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function formatUPCE(s) {
-        return s.replace(/\D/g,'').slice(0,6).padEnd(6,'0');
+        var d = s.replace(/\D/g,'').slice(0,6);
+        while (d.length < 6) d += '0';
+        return d;
     }
 });
+})();

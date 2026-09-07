@@ -1,0 +1,15 @@
+# Local dev / audit artifacts (must never be published)
+favicon-package (1).zip
+temp_wm_read.txt
+PDF_Compressor_*.md
+PHASE1_AUDIT_REPORT.md
+*.local
+test-parser-debug.js
+test-parser-debug-stderr.log
+trace-real-image.js
+trace-browser.html
+
+# OS / editor noise
+Thumbs.db
+.DS_Store
+*.sublime-*

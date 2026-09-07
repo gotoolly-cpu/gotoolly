@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var dropZone = document.getElementById('drop-zone');
     var fileInput = document.getElementById('pdf-input');
-    var fileInfo = document.getElementById('file-info');
+    var documentInfo = document.getElementById('document-info');
     var fileName = document.getElementById('file-name');
     var fileSizeEl = document.getElementById('file-size');
     var fileStatus = document.getElementById('file-status');
@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var resultsPanel = document.getElementById('results-panel');
     var downloadBtn = document.getElementById('download-btn');
     var newFileBtn = document.getElementById('new-file-btn');
+    var analysisStatus = document.getElementById('analysis-status');
 
     var currentFile = null;
     var pdfDocRef = null;
@@ -138,6 +139,14 @@ document.addEventListener('DOMContentLoaded', function() {
         return d.innerHTML;
     }
 
+    function sanitizeFilename(name) {
+        return name
+            .replace(/[<>:"/\\|?*\x00-\x1f]/g, '_')
+            .replace(/\s+/g, '_')
+            .replace(/_+/g, '_')
+            .replace(/^_|_$/g, '');
+    }
+
     function collectValues() {
         var values = {};
         fieldsContent.querySelectorAll('.field-input').forEach(function(inp) {
@@ -158,10 +167,12 @@ document.addEventListener('DOMContentLoaded', function() {
         formFields = [];
         filledBytes = null;
         fileInput.value = '';
-        fileInfo.classList.remove('show');
+        documentInfo.classList.remove('show');
         formFieldsSection.classList.remove('show');
         resultsPanel.classList.remove('show');
         progressContainer.classList.remove('show');
+        hideAnalysisStatus();
+        fileStatus.innerHTML = '';
         fillBtn.disabled = true;
         fieldsContent.innerHTML = '';
         updateProgress('Processing form...', 0);
@@ -175,6 +186,25 @@ document.addEventListener('DOMContentLoaded', function() {
     function hideStatus() {
         progressContainer.classList.remove('show');
         updateProgress('Processing form...', 0);
+    }
+
+    function showAnalysisStatus(type, title, message, extra, hint) {
+        var icons = { success: '\u2713', warning: '\u26A0', error: '\u2716' };
+        var html = '<div class="analysis-status-header"><span class="analysis-status-icon">' + icons[type] + '</span><p class="analysis-status-title">' + title + '</p></div>';
+        if (message) html += '<p class="analysis-status-message">' + message + '</p>';
+        if (extra) html += '<p class="analysis-status-extra">' + extra + '</p>';
+        if (hint) html += '<div class="analysis-status-hint">' + hint + '</div>';
+        analysisStatus.className = 'analysis-status ' + type + ' show';
+        analysisStatus.innerHTML = html;
+    }
+
+    function setFileStatus(type, text) {
+        fileStatus.innerHTML = '<span class="status-chip ' + type + '"><span class="status-dot"></span>' + text + '</span>';
+    }
+
+    function hideAnalysisStatus() {
+        analysisStatus.className = 'analysis-status';
+        analysisStatus.innerHTML = '';
     }
 
     function loadPdf(file) {
@@ -193,11 +223,11 @@ document.addEventListener('DOMContentLoaded', function() {
         currentFile = file;
         fileName.textContent = file.name;
         fileSizeEl.textContent = formatFileSize(file.size);
-        fileStatus.textContent = 'Loaded';
-        fileInfo.classList.add('show');
+        fileStatus.innerHTML = '<span class="status-chip warning"><span class="status-dot"></span>Analyzing\u2026</span>';
+        documentInfo.classList.add('show');
         formFieldsSection.classList.remove('show');
         resultsPanel.classList.remove('show');
-        hideStatus();
+        hideAnalysisStatus();
         showStatus('Parsing PDF...', 20);
         var reader = new FileReader();
         reader.onload = async function(e) {
@@ -221,14 +251,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 renderFields(formFields);
                 if (formFields.length > 0) {
                     hideStatus();
-                    showNotification('Detected ' + formFields.length + ' form field(s)', false);
+                    setFileStatus('success', 'Fillable form detected');
+                    var fieldWord = formFields.length === 1 ? 'field' : 'fields';
+                    showAnalysisStatus('success', 'Fillable form detected', 'This PDF contains interactive form fields and is ready to be filled.', formFields.length + ' fillable ' + fieldWord + ' detected.');
                 } else {
                     showStatus('No fillable fields found', 100);
+                    setFileStatus('warning', 'No fillable form fields');
+                    showAnalysisStatus('warning', 'No fillable form fields found', 'This PDF appears to be a scanned or non-interactive document and cannot be filled using this tool.', 'Fill PDF Forms works only with PDFs that already contain interactive form fields (AcroForm/XFA).', '<span style="display:block;margin-bottom:8px;color:#92400e;font-weight:600;font-size:12px">Recommended alternative:</span><a href="/tools/pdf-add-text.html" class="action-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Add Text to PDF</a>');
                     setTimeout(hideStatus, 1500);
                     fieldsContent.innerHTML = '<div class="empty-fields"><div class="empty-icon">&#128196;</div><p><strong>This PDF doesn\'t have fillable form fields.</strong></p><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-top:var(--space-2);line-height:1.6">This tool works with <strong>interactive PDF forms</strong> (AcroForm) that have clickable text fields, checkboxes, or dropdowns.<br><br>Your PDF appears to be a regular (non-fillable) document. To fill it, you\'ll need a PDF editor or a fillable version of the form.</p></div>';
                 }
             } catch (err) {
                 hideStatus();
+                setFileStatus('error', 'Unable to analyze');
+                showAnalysisStatus('error', 'Unable to analyze PDF', 'The document could not be analyzed. Please upload a valid PDF file.');
                 showNotification('Failed to load PDF: ' + err.message, true);
             }
         };
@@ -283,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
                 progressContainer.classList.remove('show');
                 resultsPanel.classList.add('show');
-                downloadBtn.download = 'filled-' + currentFile.name;
+                downloadBtn.download = 'filled-' + sanitizeFilename(currentFile.name);
                 showNotification('Form filled successfully!', false);
             }, 500);
         } catch (err) {

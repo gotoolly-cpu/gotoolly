@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Query String Parser - Parse URL Parameters | GoToolly</title>
     <meta name="description" content="Parse URL query strings into key-value pairs. Handle arrays, nested objects, and build query strings from parameters. Free, private, browser-based tool.">
-    <meta name="keywords" content="query string parser, url parameters, parse query string, url params, query string decoder, query string builder, get parameters">
+    <meta name="keywords" content="query string parser, url parameters, parse query string, url params, query string decoder, get parameters, url decoder">
     <link rel="canonical" href="https://gotoolly.com/tools/query-string-parser">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gotoolly.com/tools/query-string-parser">
@@ -24,29 +24,307 @@
     <meta name="twitter:image:alt" content="GoToolly Logo">
     <meta name="twitter:creator" content="@GoToolly">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
-    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/font-awesome.all.min.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Query String Parser","url":"https://gotoolly.com/tools/query-string-parser","description":"Parse URL query strings into key-value pairs. Handle arrays, nested objects, and build query strings from parameters.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Parse query strings","Handle arrays and nested objects","Build query strings","Export as JSON"]}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Query String Parser"}]}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a query string?","acceptedAnswer":{"@type":"Answer","text":"A query string is the part of a URL that follows the question mark (?) and contains key-value pairs separated by ampersands (&). For example, in example.com?name=John&age=30, the query string is name=John&age=30."}},{"@type":"Question","name":"How do I parse URL parameters?","acceptedAnswer":{"@type":"Answer","text":"Paste your query string (with or without the leading ?) into the input field and click Parse. The tool will extract all key-value pairs and display them in a table, handling arrays and nested objects."}},{"@type":"Question","name":"Can this tool handle array parameters?","acceptedAnswer":{"@type":"Answer","text":"Yes. Parameters like colors=red&colors=blue are detected as arrays. Indexed parameters like colors[0]=red&colors[1]=blue are also supported and grouped together."}},{"@type":"Question","name":"Is my data uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All processing happens entirely in your browser. Your query string data never leaves your device."}}]}</script>
-    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.qs-textarea{width:100%;min-height:120px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text)}.qs-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.qs-table{width:100%;border-collapse:collapse;font-size:var(--text-sm)}.qs-table th{text-align:left;padding:10px 12px;background:var(--color-bg);border-bottom:2px solid var(--color-border);font-weight:600;color:var(--color-text-light);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.05em}.qs-table td{padding:10px 12px;border-bottom:1px solid var(--color-border);font-family:'JetBrains Mono',monospace;font-size:var(--text-xs)}.qs-table tr:hover{background:var(--color-bg)}.qs-table .val-num{color:#f59e0b}.qs-table .val-bool{color:#10b981}.qs-table .val-str{color:#3b82f6}.qs-table .val-null{color:var(--color-text-light);font-style:italic}.qs-table .val-array{color:#ec4899}.tab-bar{display:flex;gap:0;border-bottom:2px solid var(--color-border);margin-bottom:var(--space-3)}.tab-btn{padding:10px 20px;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;cursor:pointer;font-size:var(--text-sm);font-weight:500;color:var(--color-text-light);transition:all .2s}.tab-btn:hover{color:var(--color-text)}.tab-btn.active{color:var(--color-primary);border-bottom-color:var(--color-primary)}.tab-content{display:none}.tab-content.active{display:block}.builder-row{display:flex;gap:var(--space-2);margin-bottom:var(--space-2);align-items:center}.builder-row input{flex:1;padding:8px 12px;border:1px solid var(--color-border);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:var(--text-xs);background:var(--color-surface);color:var(--color-text)}.builder-row input:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.builder-remove{background:none;border:1px solid var(--color-border);border-radius:6px;padding:8px 10px;cursor:pointer;color:#ef4444;transition:all .2s}.builder-remove:hover{border-color:#ef4444;background:rgba(239,68,68,.1)}.json-output{padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);font-family:'JetBrains Mono',monospace;font-size:var(--text-xs);white-space:pre-wrap;word-break:break-all;max-height:300px;overflow-y:auto}.toast{position:fixed;bottom:20px;right:20px;background:#10b981;color:#fff;padding:10px 20px;border-radius:8px;font-size:var(--text-sm);z-index:999;opacity:0;transition:opacity .3s}.toast.show{opacity:1}</style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+
+    <style>
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .25s cubic-bezier(.4,0,.2,1)}
+        .skip-link:focus{top:0}
+
+        .hero{background:#0f172a;padding:40px 0 28px;text-align:center}
+        .hero h1{font-size:40px;font-weight:800;color:#fff;line-height:1.2;margin:0 0 12px}
+        .hero h1 .gradient-text{background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-subtitle{font-size:16px;color:#94a3b8;line-height:1.5;margin:0 0 24px}
+        .trust-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .trust-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:6px 14px;border-radius:9999px;font-size:13px;font-weight:500;color:#cbd5e1;transition:background .2s}
+        .trust-badge:hover{background:rgba(255,255,255,.1)}
+        .trust-badge svg{width:14px;height:14px;color:#60a5fa}
+
+        .tool-workspace{max-width:900px;margin:0 auto}
+
+        .tool-card{background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.04);border:1px solid #e2e8f0;padding:24px;margin-bottom:48px;overflow:visible}
+        .card-header{display:flex;justify-content:space-between;align-items:center}
+        .card-header-left{display:flex;align-items:center;gap:10px}
+        .card-header-left svg{width:18px;height:18px;color:var(--color-primary)}
+        .card-header-left h2{font-size:16.8px;font-weight:600;margin:0;color:#0f172a}
+        .status-badge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:9999px;font-size:11px;font-weight:600;letter-spacing:.3px;display:none;text-transform:uppercase}
+        .status-badge::before{content:'';width:6px;height:6px;border-radius:50%;flex-shrink:0}
+        .status-badge.ready{display:inline-flex;background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+        .status-badge.ready::before{background:#22c55e}
+        .status-badge.processing{display:inline-flex;background:#fffbeb;color:#92400e;border:1px solid #fde68a}
+        .status-badge.processing::before{background:#f59e0b;animation:pulse-dot 1s ease-in-out infinite}
+        .status-badge.done{display:inline-flex;background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+        .status-badge.done::before{background:#22c55e}
+        .status-badge.error{display:inline-flex;background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+        .status-badge.error::before{background:#ef4444}
+        @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}
+        .card-divider{height:1px;background:#e2e8f0;margin:16px 0 0}
+
+        .workspace-body{display:flex;flex-direction:column;gap:0}
+
+        .text-input-zone{margin-top:20px}
+        .text-input-label{font-size:14px;font-weight:600;color:#0f172a;margin-bottom:8px;display:block}
+        .text-input-wrapper{position:relative}
+        .text-input-wrapper textarea{width:100%;min-height:140px;padding:16px 20px;border:2px solid #e2e8f0;border-radius:14px;font-size:14px;font-family:'JetBrains Mono',monospace;color:#0f172a;background:#f8fafc;line-height:1.6;resize:vertical;transition:border-color .2s,box-shadow .2s;box-sizing:border-box;tab-size:2}
+        .text-input-wrapper textarea::placeholder{color:#94a3b8}
+        .text-input-wrapper textarea:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.12);background:#fff}
+        .text-input-counter{display:flex;justify-content:space-between;align-items:center;margin-top:8px;padding:0 4px}
+        .text-input-counter span{font-size:12px;color:#64748b;font-family:'JetBrains Mono',monospace}
+        .text-input-hint{font-size:12px;color:#94a3b8;margin-top:6px;padding:0 4px}
+
+        .action-bar{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+        .action-bar .btn-primary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:#2563eb;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .action-bar .btn-primary:hover:not(:disabled){background:#1d4ed8;transform:translateY(-1px);box-shadow:0 8px 25px rgba(37,99,235,.35)}
+        .action-bar .btn-primary:disabled{opacity:.5;cursor:not-allowed}
+        .action-bar .btn-secondary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:#fff;color:#0f172a;border:1px solid #e2e8f0;border-radius:12px;font-size:15px;font-weight:500;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .action-bar .btn-secondary:hover{border-color:#cbd5e1;background:#f8fafc;transform:translateY(-1px)}
+
+        .empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 20px;text-align:center}
+        .empty-state svg{width:56px;height:56px;color:#cbd5e1;margin-bottom:16px}
+        .empty-state h3{font-size:18px;font-weight:600;color:#0f172a;margin:0 0 6px}
+        .empty-state p{font-size:14px;color:#64748b;margin:0;line-height:1.6}
+
+        .results-panel{display:none;padding:0}
+        .results-panel.show{display:block;animation:fadeSlideIn .4s ease}
+        @keyframes fadeSlideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+        .qs-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:20px}
+        .qs-table thead th{text-align:left;padding:10px 14px;background:#f8fafc;border-bottom:2px solid #e2e8f0;font-weight:600;color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap}
+        .qs-table tbody td{padding:10px 14px;border-bottom:1px solid #e2e8f0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#334155;vertical-align:middle}
+        .qs-table tbody tr{transition:background .15s}
+        .qs-table tbody tr:hover{background:#f8fafc}
+
+        .qs-table .cell-key{color:#0f172a;font-weight:500;word-break:break-all}
+        .qs-table .cell-raw{color:#94a3b8;font-size:11px}
+        .qs-table .cell-value{color:#475569;word-break:break-all}
+
+        .type-badge{display:inline-flex;align-items:center;padding:2px 10px;border-radius:9999px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;white-space:nowrap}
+        .type-badge.string{background:#eff6ff;color:#2563eb;border:1px solid #bfdbfe}
+        .type-badge.number{background:#fffbeb;color:#d97706;border:1px solid #fde68a}
+        .type-badge.boolean{background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0}
+        .type-badge.null{background:#f1f5f9;color:#64748b;border:1px solid #e2e8f0}
+        .type-badge.undefined{background:#f1f5f9;color:#94a3b8;border:1px solid #e2e8f0}
+        .type-badge.array{background:#fdf2f8;color:#db2777;border:1px solid #fbcfe8}
+        .type-badge.object{background:#f5f3ff;color:#7c3aed;border:1px solid #ddd6fe}
+
+        .row-copy-btn{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid #e2e8f0;border-radius:6px;background:#fff;cursor:pointer;color:#94a3b8;transition:all .2s;padding:0}
+        .row-copy-btn:hover{background:#eff6ff;border-color:#2563eb;color:#2563eb}
+        .row-copy-btn svg{width:13px;height:13px}
+
+        .params-subsection{margin-top:20px}
+        .params-subtitle{font-size:13px;font-weight:600;color:#64748b;margin:0 0 8px;text-transform:uppercase;letter-spacing:.5px}
+
+        .stats-mini-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:12px}
+        .stats-mini-grid .stat-box{padding:12px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;transition:border-color .2s;text-align:center}
+        .stats-mini-grid .stat-box:hover{border-color:#cbd5e1}
+        .stats-mini-grid .stat-box .stat-label{font-size:11px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.4px}
+        .stats-mini-grid .stat-box .stat-value{font-size:18px;font-weight:700;font-family:'JetBrains Mono',monospace;color:#0f172a;margin-top:4px}
+
+        .export-section{display:none;justify-content:center;gap:10px;padding:0;margin-top:24px;flex-wrap:wrap}
+        .export-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;font-size:13px;font-weight:500;color:#0f172a;cursor:pointer;transition:all .2s}
+        .export-btn:hover{border-color:#2563eb;color:#2563eb;background:#eff6ff}
+        .export-btn svg{width:14px;height:14px}
+
+        .limitations-box{display:none;padding:16px 20px;background:#fffbeb;border:1px solid #fde68a;border-radius:12px;margin-top:16px}
+        .limitations-box.show{display:block}
+        .limitations-box .lim-header{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+        .limitations-box .lim-header svg{width:16px;height:16px;color:#d97706}
+        .limitations-box .lim-header h4{font-size:13px;font-weight:600;color:#92400e;margin:0}
+        .limitations-box ul{margin:0;padding-left:18px}
+        .limitations-box li{font-size:13px;color:#a16207;line-height:1.6;margin-bottom:2px}
+
+        .related-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .related-section .section-intro{font-size:14px;color:#64748b;text-align:center;margin-bottom:24px}
+        .related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+        .related-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit;display:flex;flex-direction:column}
+        .related-card:hover{border-color:#2563eb;box-shadow:0 8px 24px rgba(37,99,235,.1);transform:translateY(-3px)}
+        .related-card .rc-icon{width:32px;height:32px;margin-bottom:12px}
+        .related-card .rc-icon svg{width:32px;height:32px;color:#2563eb;transition:transform .25s cubic-bezier(.4,0,.2,1)}
+        .related-card:hover .rc-icon svg{transform:scale(1.1)}
+        .related-card h4{font-size:15px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .related-card p{font-size:13px;color:#64748b;margin:0 0 16px;flex:1}
+        .related-card .rc-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#2563eb;margin-top:auto;transition:gap .2s}
+        .related-card:hover .rc-btn{gap:10px}
+
+        .how-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .step-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:24px;text-align:center;transition:border-color .2s,box-shadow .2s}
+        .step-card:hover{border-color:rgba(37,99,235,.2);box-shadow:0 2px 8px rgba(37,99,235,.06)}
+        .step-num{width:40px;height:40px;border-radius:50%;background:#eff6ff;color:#2563eb;font-size:16px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-bottom:12px;transition:background .2s}
+        .step-card:hover .step-num{background:#dbeafe}
+        .step-card h4{font-size:15px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .step-card p{font-size:13px;color:#64748b;margin:0}
+
+        .faq-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .faq-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:border-color .2s}
+        .faq-card:hover{border-color:#cbd5e1}
+        .faq-card h4{font-size:14px;font-weight:600;margin:0 0 8px;color:#0f172a}
+        .faq-card p{font-size:13px;color:#64748b;margin:0;line-height:1.6}
+
+        .toast{position:fixed;top:16px;right:16px;padding:12px 20px;border-radius:8px;font-size:14px;font-weight:500;z-index:1000;transform:translateX(400px);opacity:0;transition:all .25s cubic-bezier(.4,0,.2,1)}
+        .toast.show{transform:translateX(0);opacity:1}
+        .toast.info{background:#2563eb;color:#fff}
+        .toast.success{background:#10b981;color:#fff}
+        .toast.error{background:#ef4444;color:#fff}
+
+        .section-heading{text-align:center;margin-bottom:32px}
+        .section-heading h2{font-size:28.8px;font-weight:700;color:#0f172a;margin:0 0 4px}
+
+        @media(max-width:1024px){
+            .related-grid{grid-template-columns:repeat(2,1fr)}
+            .faq-grid{grid-template-columns:repeat(2,1fr)}
+            .stats-mini-grid{grid-template-columns:repeat(3,1fr)}
+        }
+        @media(max-width:768px){
+            .hero{padding:32px 0 20px}
+            .hero h1{font-size:28px}
+            .hero-subtitle{font-size:14px;margin-bottom:20px}
+            .trust-badges{gap:8px}
+            .trust-badge{padding:4px 10px;font-size:12px}
+            .tool-card{padding:16px;margin-bottom:32px}
+            .action-bar{grid-template-columns:1fr}
+            .related-grid{grid-template-columns:1fr}
+            .steps-grid{grid-template-columns:1fr}
+            .faq-grid{grid-template-columns:1fr}
+            .stats-mini-grid{grid-template-columns:repeat(2,1fr)}
+            .text-input-wrapper textarea{min-height:110px;padding:14px 16px}
+            .qs-table{font-size:12px}
+            .qs-table thead th,.qs-table tbody td{padding:8px 10px}
+            .qs-table .cell-raw{display:none}
+        }
+        @media(max-width:480px){
+            .hero{padding:24px 0 16px}
+            .hero h1{font-size:24px}
+            .related-grid{gap:12px}
+            .stats-mini-grid{grid-template-columns:1fr}
+            .stats-mini-grid .stat-value{font-size:16px}
+        }
+
+        .settings-panel{margin-top:14px}
+        .settings-toggle{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;font-size:13px;font-weight:500;color:#0f172a;cursor:pointer;padding:6px 12px;transition:all .2s}
+        .settings-toggle:hover{border-color:#2563eb;color:#2563eb;background:#eff6ff}
+        .settings-toggle svg{width:14px;height:14px}
+        .settings-body{margin-top:12px;padding:14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px}
+        .settings-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:6px}
+        .setting-item{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#334155;cursor:pointer;padding:5px 8px;border-radius:6px;transition:background .15s}
+        .setting-item:hover{background:#fff}
+        .setting-item input{width:15px;height:15px;accent-color:#2563eb;flex-shrink:0;cursor:pointer}
+        .settings-note{font-size:11px;color:#94a3b8;margin:10px 2px 0}
+
+        .view-toggle{display:inline-flex;flex-wrap:wrap;gap:6px;margin-top:20px}
+        .view-btn{background:#fff;border:1px solid #e2e8f0;border-radius:8px;font-size:11px;font-weight:600;color:#64748b;cursor:pointer;padding:6px 14px;transition:all .2s;text-transform:uppercase;letter-spacing:.4px}
+        .view-btn:hover{border-color:#2563eb;color:#2563eb}
+        .view-btn.active{background:#2563eb;border-color:#2563eb;color:#fff}
+
+        .tree-view{font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.8;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;margin-top:12px;overflow-x:auto}
+        .tree-line{white-space:nowrap}
+        .tree-key{color:#0f172a;font-weight:600;margin-right:8px}
+        .tree-arr{color:#db2777;font-weight:600;margin-right:8px}
+        .tree-arr::before{content:'['}
+        .tree-arr::after{content:']'}
+        .tree-branch{color:#94a3b8;margin-right:8px}
+        .tree-val{margin-left:6px}
+
+        .serialized-view{background:#0f172a;color:#e2e8f0;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.6;border-radius:10px;padding:16px;margin-top:12px;overflow:auto;max-height:480px;white-space:pre;word-break:normal}
+
+        .summary-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:8px;margin-top:12px}
+        .summary-grid .stat-box{padding:12px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;transition:border-color .2s;text-align:center}
+        .summary-grid .stat-box:hover{border-color:#cbd5e1}
+        .summary-grid .stat-box .stat-label{font-size:11px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.4px}
+        .summary-grid .stat-box .stat-value{font-size:18px;font-weight:700;font-family:'JetBrains Mono',monospace;color:#0f172a;margin-top:4px}
+
+        .qs-table .cell-meta{color:#94a3b8;font-size:11px;margin-top:3px;word-break:break-all;font-weight:400;text-transform:none;letter-spacing:normal}
+
+        .type-badge.float{background:#ecfeff;color:#0e7490;border:1px solid #a5f3fc}
+        .type-badge.bigint{background:#f5f3ff;color:#6d28d9;border:1px solid #ddd6fe}
+        .type-badge.json{background:#fdf4ff;color:#a21caf;border:1px solid #fae8ff}
+        .type-badge.date{background:#f0fdfa;color:#0f766e;border:1px solid #99f6e4}
+        .type-badge.base64{background:#f8fafc;color:#475569;border:1px solid #e2e8f0}
+        .type-badge.data-uri{background:#fef2f2;color:#b91c1c;border:1px solid #fecaca}
+        .type-badge.url{background:#eef2ff;color:#4338ca;border:1px solid #c7d2fe}
+        .type-badge.ipv4{background:#f0f9ff;color:#0369a1;border:1px solid #bae6fd}
+        .type-badge.ipv6{background:#f0f9ff;color:#0284c7;border:1px solid #bae6fd}
+        .type-badge.mac{background:#fff7ed;color:#c2410c;border:1px solid #fed7aa}
+        .type-badge.email{background:#ecfdf5;color:#047857;border:1px solid #a7f3d0}
+        .type-badge.phone{background:#fce7f3;color:#be185d;border:1px solid #fbcfe8}
+        .type-badge.regex{background:#f5f5f4;color:#57534e;border:1px solid #e7e5e4}
+
+        @media(max-width:768px){
+            .settings-grid{grid-template-columns:1fr}
+            .summary-grid{grid-template-columns:repeat(2,1fr)}
+        }
+
+        @media print{
+            .hero,.site-header,.site-footer,.related-section,.how-section,.faq-section,.action-bar,.export-section,.limitations-box,.status-badge,.empty-state,.toast,.settings-panel,.view-toggle,.serialized-view{display:none !important}
+            .tool-card{box-shadow:none;border:none;padding:0}
+            .results-panel{display:block !important}
+            body{background:#fff}
+        }
+        @media(prefers-reduced-motion:reduce){
+            *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Query String Parser",
+        "url": "https://gotoolly.com/tools/query-string-parser",
+        "description": "Parse URL query strings into key-value pairs. Handle arrays, nested objects, and build query strings from parameters.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["Free to use", "No account required", "Client-side processing", "Privacy-focused", "Parse query strings", "Handle arrays and nested objects", "Export as JSON", "Type detection"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gotoolly.com/tools"},
+            {"@type": "ListItem", "position": 3, "name": "Query String Parser"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "What is a query string?", "acceptedAnswer": {"@type": "Answer", "text": "A query string is the part of a URL that follows the question mark (?) and contains key-value pairs separated by ampersands (&). For example, in example.com?name=John&age=30, the query string is name=John&age=30."}},
+            {"@type": "Question", "name": "How do I parse URL parameters?", "acceptedAnswer": {"@type": "Answer", "text": "Paste your query string (with or without the leading ?) into the input field. The tool will instantly extract all key-value pairs and display them in a table with detected types."}},
+            {"@type": "Question", "name": "Can this tool handle encoded characters?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Percent-encoded values like %20 (space) and %2B (plus) are automatically decoded. The tool shows both raw and decoded values side by side."}},
+            {"@type": "Question", "name": "Is my data uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. All processing happens entirely in your browser. Your query string data never leaves your device."}}
+        ]
+    }
+    </script>
 
     <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header class="site-header">
         <div class="container">
             <div class="header-content">
-                <a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a>
+                <a href="/" class="logo">
+                    <img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg">
+                    <span class="logo-text">GoToolly</span>
+                </a>
                 <nav class="main-nav">
                     <a href="/" class="nav-link">Home</a>
                     <a href="/tools" class="nav-link active">Tools</a>
@@ -54,195 +332,1695 @@
                     <a href="../about" class="nav-link">About</a>
                     <a href="../contact" class="nav-link">Contact</a>
                 </nav>
-                <button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+                <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
             </div>
-            <div class="mobile-menu"><nav class="mobile-nav">
-                <a href="/" class="nav-link">Home</a>
-                <a href="/tools" class="nav-link active">Tools</a>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="../about" class="nav-link">About</a>
-                <a href="../contact" class="nav-link">Contact</a>
-            </nav></div>
+            <div class="mobile-menu">
+                <nav class="mobile-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/tools" class="nav-link active">Tools</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="../about" class="nav-link">About</a>
+                    <a href="../contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
         </div>
     </header>
-    <main id="main-content" class="main-content">
-        <div class="container">
-            <div class="page-header">
-                <h1>Query String Parser</h1>
-                <p class="page-description">Parse URL query strings into key-value pairs. Handle arrays, nested objects, and build query strings from scratch. Export as JSON.</p>
-            </div>
-            <div class="tool-layout">
-                <div class="tool-interface">
-                    <div class="tool-header">
-                        <h2>Parse Query String</h2>
-                        <p>Paste a query string or build one from key-value pairs</p>
-                    </div>
-                    <div class="tab-bar">
-                        <button class="tab-btn active" data-tab="parse"><i class="fas fa-search"></i> Parse</button>
-                        <button class="tab-btn" data-tab="build"><i class="fas fa-hammer"></i> Build</button>
-                        <button class="tab-btn" data-tab="json"><i class="fas fa-code"></i> JSON</button>
-                    </div>
-                    <div id="tab-parse" class="tab-content active">
-                        <div style="margin-bottom:var(--space-3)">
-                            <label for="qs-input"><i class="fas fa-link" style="color:var(--color-primary);margin-right:6px"></i> Query String</label>
-                            <textarea id="qs-input" class="qs-textarea" placeholder="name=John&age=30&colors=red&colors=blue&address[city]=NYC">name=John&age=30&colors=red&colors=blue&active=true&address[city]=NYC&address[zip]=10001</textarea>
-                        </div>
-                        <div class="tool-actions">
-                            <button id="parse-btn" class="btn btn-primary btn-lg"><i class="fas fa-search" aria-hidden="true"></i> Parse</button>
-                            <button id="copy-json-btn" class="btn btn-secondary"><i class="fas fa-copy" aria-hidden="true"></i> Copy JSON</button>
-                            <button id="clear-btn" class="btn btn-secondary"><i class="fas fa-redo" aria-hidden="true"></i> Clear</button>
-                        </div>
-                        <div id="parse-output" style="margin-top:var(--space-4);overflow-x:auto"></div>
-                    </div>
-                    <div id="tab-build" class="tab-content">
-                        <p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-3)">Add key-value pairs to build a query string</p>
-                        <div id="builder-rows"></div>
-                        <div style="display:flex;gap:var(--space-2);margin-top:var(--space-3);flex-wrap:wrap">
-                            <button id="add-row-btn" class="btn btn-secondary"><i class="fas fa-plus" aria-hidden="true"></i> Add Row</button>
-                            <button id="build-btn" class="btn btn-primary btn-lg"><i class="fas fa-hammer" aria-hidden="true"></i> Build Query String</button>
-                        </div>
-                        <div id="build-output" style="margin-top:var(--space-3);padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);word-break:break-all;min-height:40px"></div>
-                    </div>
-                    <div id="tab-json" class="tab-content">
-                        <div id="json-output" class="json-output">Paste and parse a query string first to see JSON output here.</div>
-                        <button id="copy-json-btn2" class="btn btn-secondary" style="margin-top:var(--space-2)"><i class="fas fa-copy" aria-hidden="true"></i> Copy JSON</button>
-                    </div>
-                </div>
-                <div class="tool-sidebar">
-                    <div class="card"><h3>How It Works</h3><ol><li>Paste a query string in the Parse tab</li><li>Click Parse to extract key-value pairs</li><li>View results as a table or JSON</li><li>Use the Build tab to create query strings</li></ol></div>
-                    <div class="card"><h3>Supported Formats</h3><ul><li><strong>Simple</strong> - key=value</li><li><strong>Multiple</strong> - key1=a&key2=b</li><li><strong>Arrays</strong> - colors=red&colors=blue</li><li><strong>Indexed</strong> - colors[0]=red</li><li><strong>Nested</strong> - user[name]=John</li><li><strong>Encoded</strong> - key=hello%20world</li><li><strong>Empty</strong> - key=&key2</li></ul></div>
-                </div>
-            </div>
-            <section class="content-section">
-                <div class="section-header"><h2>Related Tools</h2></div>
-                <div class="tools-grid">
-                    <div class="card tool-card"><h3>URL Encoder / Decoder</h3><p>Encode and decode URLs instantly. Convert special characters to URL-safe format.</p><div class="card-footer"><a href="./url-encoder" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-                    <div class="card tool-card"><h3>URL Parser</h3><p>Break down any URL into its individual components with color-coded output.</p><div class="card-footer"><a href="./url-parser" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-                    <div class="card tool-card"><h3>JSON Formatter</h3><p>Format, validate, and beautify JSON data with syntax highlighting.</p><div class="card-footer"><a href="./json-formatter" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-                </div>
-            </section>
-            <section class="content-section" style="margin-top:var(--space-8)">
-                <div class="section-header"><h2>Frequently Asked Questions</h2></div>
-                <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-3)">
-                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">What is a query string?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">A query string is the part of a URL that follows the question mark (?) and contains key-value pairs separated by ampersands (&). For example, in example.com?name=John&age=30, the query string is name=John&age=30.</p></div>
-                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">How do I parse URL parameters?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Paste your query string (with or without the leading ?) into the input field and click Parse. The tool will extract all key-value pairs and display them in a table, handling arrays and nested objects.</p></div>
-                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Can this tool handle array parameters?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">Yes. Parameters like colors=red&colors=blue are detected as arrays. Indexed parameters like colors[0]=red&colors[1]=blue are also supported and grouped together.</p></div>
-                    <div class="card" style="padding:var(--space-4)"><h3 style="font-size:var(--text-base);margin:0 0 var(--space-2)">Is my data uploaded to a server?</h3><p style="margin:0;color:var(--color-text-light);font-size:var(--text-sm)">No. All processing happens entirely in your browser. Your query string data never leaves your device.</p></div>
-                </div>
-            </section>
 
-            <p style="margin-top: var(--space-4); text-align: center;">
-                <a href="../guides/query-string-parser" style="color: var(--color-primary);">Read Guide: Query String Parser Guide <i class="fas fa-arrow-right"></i></a>
-            </p>
+    <main id="main-content">
+
+        <section class="hero">
+            <div class="container">
+                <h1>Parse &amp; Analyze <span class="gradient-text">Query Strings</span></h1>
+                <p class="hero-subtitle">Extract, decode, and inspect URL parameters instantly. Detects types, handles arrays, nested objects, and encoded values. All processing happens in your browser.</p>
+                <div class="trust-badges">
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        100% Private
+                    </span>
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                        Processed locally
+                    </span>
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Free &amp; unlimited
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="tool-workspace">
+
+                <div class="tool-card" role="region" aria-label="Query String Parser workspace">
+
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg>
+                            <h2>Query String Parser</h2>
+                        </div>
+                        <span class="status-badge" id="status-badge" aria-live="polite"></span>
+                    </div>
+                    <div class="card-divider"></div>
+
+                    <div class="workspace-body" id="workspace-body">
+
+                        <div class="text-input-zone">
+                            <label for="qs-input" class="text-input-label">Enter Query String</label>
+                            <div class="text-input-wrapper">
+                                <textarea id="qs-input" placeholder="Paste a query string here (with or without ?) e.g. name=John&age=30&active=true&colors=red&colors=blue&address%5Bcity%5D=NYC" rows="5"></textarea>
+                            </div>
+                            <p class="text-input-hint">Paste any query string to parse and analyze its parameters. The leading <code>?</code> is optional.</p>
+
+                            <div class="settings-panel">
+                                <button type="button" class="settings-toggle" id="settings-toggle" aria-expanded="false">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                                    Parsing Settings
+                                </button>
+                                <div class="settings-body" id="settings-body" hidden>
+                                    <div class="settings-grid" id="settings-grid"></div>
+                                    <p class="settings-note">Preferences are saved in your browser and applied instantly. Defaults match the classic behavior.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="empty-state" id="empty-state">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg>
+                            <h3>No parameters parsed yet</h3>
+                            <p>Enter a query string above and click <strong>Parse</strong> to see decoded parameters, their types, and statistics.</p>
+                        </div>
+
+                        <div class="results-panel" id="result-area" aria-live="polite">
+
+                            <div class="params-subsection">
+                                <div class="params-subtitle">Parsed Parameters</div>
+                                <div class="view-toggle" id="view-toggle" role="tablist" aria-label="Output view">
+                                    <button type="button" class="view-btn active" data-view="table" aria-pressed="true">Table</button>
+                                    <button type="button" class="view-btn" data-view="tree" aria-pressed="false">Tree</button>
+                                    <button type="button" class="view-btn" data-view="json" aria-pressed="false">JSON</button>
+                                    <button type="button" class="view-btn" data-view="yaml" aria-pressed="false">YAML</button>
+                                    <button type="button" class="view-btn" data-view="csv" aria-pressed="false">CSV</button>
+                                    <button type="button" class="view-btn" data-view="toml" aria-pressed="false">TOML</button>
+                                </div>
+                                <div style="overflow-x:auto" id="table-container"></div>
+                                <div id="tree-container" style="display:none"></div>
+                                <pre id="serialized-view" class="serialized-view" style="display:none"></pre>
+                            </div>
+
+                            <div class="params-subsection" style="margin-top:24px">
+                                <div class="params-subtitle">Statistics</div>
+                                <div class="stats-mini-grid" id="stats-grid">
+                                    <div class="stat-box"><div class="stat-label">Parameters</div><div class="stat-value" id="stat-count">0</div></div>
+                                    <div class="stat-box"><div class="stat-label">Duplicates</div><div class="stat-value" id="stat-dupes">0</div></div>
+                                    <div class="stat-box"><div class="stat-label">Empty Values</div><div class="stat-value" id="stat-empty">0</div></div>
+                                    <div class="stat-box"><div class="stat-label">Encoded</div><div class="stat-value" id="stat-encoded">0</div></div>
+                                    <div class="stat-box"><div class="stat-label">Decoded</div><div class="stat-value" id="stat-decoded">0</div></div>
+                                    <div class="stat-box"><div class="stat-label">Parsing Time</div><div class="stat-value" id="stat-time">0ms</div></div>
+                                </div>
+                            </div>
+
+                            <div class="params-subsection" id="summary-subsection" style="margin-top:24px;display:none">
+                                <div class="params-subtitle">Type Summary</div>
+                                <div class="summary-grid" id="summary-grid"></div>
+                            </div>
+
+                            <div class="export-section" id="export-section">
+                                <button class="export-btn" id="export-copy">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                                    Copy
+                                </button>
+                                <button class="export-btn" id="export-json">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                    Download JSON
+                                </button>
+                                <button class="export-btn" id="export-csv">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                    Download CSV
+                                </button>
+                                <button class="export-btn" id="export-txt">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                                    Download TXT
+                                </button>
+                                <button class="export-btn" id="export-yaml">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13l2 3 2-3M12 13v4M8 17h4"/></svg>
+                                    Download YAML
+                                </button>
+                                <button class="export-btn" id="export-toml">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+                                    Download TOML
+                                </button>
+                                <button class="export-btn" id="export-print">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                                    Print
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="action-bar" id="action-bar">
+                        <button class="btn-primary" id="parse-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                            Parse
+                        </button>
+                        <button class="btn-secondary" id="clear-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+                            Clear
+                        </button>
+                    </div>
+
+                    <div class="limitations-box" id="limitations-box" aria-label="Tool limitations">
+                        <div class="lim-header">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            <h4>What this tool does not do</h4>
+                        </div>
+                        <ul>
+                            <li>Does not validate or execute query strings server-side.</li>
+                            <li>Does not handle URL fragments (#fragment) — strip them first.</li>
+                            <li>Does not send or store your query string data anywhere.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
         </div>
+
+        <section class="related-section content-section" style="margin-top:48px">
+            <div class="section-heading">
+                <h2>Related Tools</h2>
+                <p class="section-intro">After parsing your query strings, you might also need...</p>
+            </div>
+            <div class="related-grid">
+                <a href="./url-encoder.html" class="related-card">
+                    <div class="rc-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+                    </div>
+                    <h4>URL Encoder / Decoder</h4>
+                    <p>Encode and decode URLs instantly. Convert special characters to URL-safe format.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./url-parser.html" class="related-card">
+                    <div class="rc-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                    </div>
+                    <h4>URL Parser</h4>
+                    <p>Break down any URL into its individual components with color-coded output.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./base64-encoder.html" class="related-card">
+                    <div class="rc-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="10" y1="10" x2="10" y2="14"/><line x1="14" y1="10" x2="14" y2="14"/><line x1="18" y1="10" x2="18" y2="14"/></svg>
+                    </div>
+                    <h4>Base64 Encoder</h4>
+                    <p>Encode and decode Base64 strings with a clean, professional interface.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./text-cleaner.html" class="related-card">
+                    <div class="rc-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    </div>
+                    <h4>Text Cleaner</h4>
+                    <p>Remove extra spaces, line breaks, and formatting issues from text.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+            </div>
+        </section>
+
+        <section class="how-section content-section" style="margin-top:48px">
+            <div class="section-heading">
+                <h2>How It Works</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <h4>Paste a query string</h4>
+                    <p>Enter or paste any URL query string (with or without the leading ?).</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <h4>Click Parse</h4>
+                    <p>Instantly decode all parameters with type detection and statistics.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <h4>Export results</h4>
+                    <p>Copy, download as JSON/CSV/TXT, or print your parsed parameters.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section content-section" style="margin-top:48px">
+            <div class="section-heading">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h4>What is a query string?</h4>
+                    <p>A query string is the part of a URL that follows the question mark (?) and contains key-value pairs separated by ampersands (&). For example, in <code>example.com?name=John&age=30</code>, the query string is <code>name=John&age=30</code>.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>How are types detected?</h4>
+                    <p>The tool automatically detects types: <code>true</code>/<code>false</code> become boolean, numeric strings become numbers, <code>null</code> becomes null, and arrays are detected from duplicate keys.</p>
+                </div>
+                <div class="faq-card">
+                    <h4>Is my data uploaded to a server?</h4>
+                    <p>No. All processing happens entirely in your browser. Your query string data never leaves your device.</p>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:var(--space-8)">
+                <a href="/guides/query-string-parser" style="color:var(--color-primary);font-weight:600;font-size:var(--text-sm);text-decoration:none;transition:opacity .2s">Read Guide: Query String Parsing Guide &#10132;</a>
+            </div>
+        </section>
+
     </main>
-    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>GoToolly</h3>
+                    <p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p>
                     <div class="footer-social">
                         <a href="https://x.com/GoToolly" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                         <a href="https://www.facebook.com/profile.php?id=61591898344203" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                        <a href="https://linkedin.com/in/go-toolly-426b67422" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                        <a href="https://www.youtube.com/@GoToolly" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                         <a href="https://www.instagram.com/gotoolly/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
                         <a href="https://www.tiktok.com/@gotoolly26" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
                         <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></a>
-                    </div></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor.html">Image Compressor</a></li><li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li><li><a href="/tools/word-counter.html">Word Counter</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Popular Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="/tools/image-compressor.html">Image Compressor</a></li>
+                        <li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li>
+                        <li><a href="/tools/word-counter.html">Word Counter</a></li>
+                        <li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li>
+                        <li><a href="/tools/password-generator.html">Password Generator</a></li>
+                        <li><a href="/tools">View All Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/tools">All Tools</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="/legal/privacy-policy">Privacy</a>
+                    <a href="/legal/terms-of-service">Terms</a>
+                    <a href="/legal/disclaimer">Disclaimer</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script defer src="../assets/js/main.min.js"></script>
-    <script>
-    (function(){
-        const qsInput=document.getElementById('qs-input');
-        const parseBtn=document.getElementById('parse-btn');
-        const clearBtn=document.getElementById('clear-btn');
-        const copyJsonBtn=document.getElementById('copy-json-btn');
-        const copyJsonBtn2=document.getElementById('copy-json-btn2');
-        const parseOutput=document.getElementById('parse-output');
-        const jsonOutput=document.getElementById('json-output');
-        const buildOutput=document.getElementById('build-output');
-        const addRowBtn=document.getElementById('add-row-btn');
-        const buildBtn=document.getElementById('build-btn');
-        const builderRows=document.getElementById('builder-rows');
-        let currentParsed=null;
-        function showToast(msg){let t=document.querySelector('.toast');if(!t){t=document.createElement('div');t.className='toast';document.body.appendChild(t)}t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000)}
-        function copyText(text){navigator.clipboard.writeText(text).then(()=>showToast('Copied!')).catch(()=>showToast('Copy failed'))}
-        function escapeHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
-        document.querySelectorAll('.tab-btn').forEach(btn=>{btn.addEventListener('click',function(){document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));this.classList.add('active');document.getElementById('tab-'+this.dataset.tab).classList.add('active')})});
-        function parseNested(qs){
-            let str=qs.replace(/^\?/,'').trim();if(!str)return{};
-            const result={};const pairs=str.split('&');
-            pairs.forEach(pair=>{
-                const [rawKey,...rest]=pair.split('=');const rawVal=rest.join('=');const key=decodeURIComponent(rawKey);const val=rawVal===''?'':decodeURIComponent(rawVal);
-                const dotMatch=key.match(/^([^\[]+)\[(.+)\]$/);
-                if(dotMatch){
-                    const base=dotMatch[1];const inner=dotMatch[2];
-                    if(!result[base])result[base]={};
-                    result[base][inner]=coerceValue(val);
-                }else{
-                    if(result.hasOwnProperty(key)){
-                        if(!Array.isArray(result[key]))result[key]=[result[key]];
-                        result[key].push(coerceValue(val));
-                    }else{result[key]=coerceValue(val)}
+    <script id="qs-engine-script">
+/*! Query String Parser engine - pure, dependency-free, deterministic.
+ * Works in browsers (defines window.QSParser) and Node (module.exports).
+ * Improvements: BigInt-safe numbers, phone/date/base64/data-uri/url/ip/mac/email/regex
+ * detection, JSON values, arrays via [] and repeated keys, nested objects via
+ * bracket notation, summary stats, and YAML/TOML serializers.
+ */
+(function (root, factory) {
+    if (typeof module === 'object' && module.exports) {
+        module.exports = factory();
+    } else {
+        root.QSParser = factory();
+    }
+})(typeof self !== 'undefined' ? self : this, function () {
+    'use strict';
+
+    var SETTINGS_DEFAULTS = {
+        parseNumbers: true,
+        parseFloats: true,
+        parseBigInt: false,
+        parseBoolean: true,
+        parseNull: true,
+        parseUndefined: true,
+        parseJSON: false,
+        parseISODates: true,
+        parseArrays: true,
+        parseNestedObjects: true,
+        groupDuplicateKeys: true,
+        keepPhoneAsString: true,
+        keepLargeNumbersAsString: true,
+        decodeURL: true,
+        preserveRawValues: false
+    };
+
+    var SETTINGS_LIST = [
+        { key: 'parseNumbers', label: 'Parse Numbers', def: true, hint: 'Convert integer strings to Number' },
+        { key: 'parseFloats', label: 'Parse Floats', def: true, hint: 'Convert decimals/exponents to Number' },
+        { key: 'parseBigInt', label: 'Parse BigInt', def: false, hint: 'Tag integers beyond 2^53-1 as BigInt (shown with n)' },
+        { key: 'parseBoolean', label: 'Parse Boolean', def: true, hint: 'true/false become booleans' },
+        { key: 'parseNull', label: 'Parse Null', def: true, hint: 'null becomes null' },
+        { key: 'parseUndefined', label: 'Parse Undefined', def: true, hint: 'undefined becomes undefined' },
+        { key: 'parseJSON', label: 'Parse JSON', def: false, hint: 'Parse {…} and […] values into objects (never throws)' },
+        { key: 'parseISODates', label: 'Parse ISO Dates', def: true, hint: 'Detect ISO 8601 strings and expose date metadata' },
+        { key: 'parseArrays', label: 'Parse Arrays', def: true, hint: 'colors[]=… and repeated keys become arrays' },
+        { key: 'parseNestedObjects', label: 'Parse Nested Objects', def: true, hint: 'user[address][city] becomes a nested object' },
+        { key: 'groupDuplicateKeys', label: 'Group Duplicate Keys', def: true, hint: 'Merge repeated keys into one row' },
+        { key: 'keepPhoneAsString', label: 'Keep Phone Numbers As String', def: true, hint: '+213555123456 stays a string' },
+        { key: 'keepLargeNumbersAsString', label: 'Keep Large Numbers As String', def: true, hint: 'Never lose precision on huge integers' },
+        { key: 'decodeURL', label: 'Decode URL', def: true, hint: 'Decode percent-encoding and + as space' },
+        { key: 'preserveRawValues', label: 'Preserve Raw Values', def: false, hint: 'Report the raw undecoded value; decoded shown as metadata' }
+    ];
+
+    function safeDecode(str) {
+        if (typeof str !== 'string') return str;
+        try {
+            return decodeURIComponent(str.replace(/\+/g, ' '));
+        } catch (e) {
+            return str;
+        }
+    }
+
+    function hasPercentEncoding(str) {
+        return /%[0-9A-Fa-f]{2}/.test(str);
+    }
+
+    function isAboveMaxSafe(digits) {
+        var d = digits.replace(/^0+/, '') || '0';
+        var M = '9007199254740991';
+        if (d.length !== M.length) return d.length > M.length;
+        return d > M;
+    }
+
+    function isPhone(s) {
+        var t = s.trim();
+        if (t.length < 6 || t.length > 22) return false;
+        if (!/^[+]?[\d\s().\-\/]+$/.test(t)) return false;
+        if (/^-?\d+\.\d+$/.test(t)) return false;
+        if (/^\d{4}[-/]\d{2}[-/]\d{2}/.test(t)) return false;
+        if (/^\d{1,2}:\d{2}/.test(t)) return false;
+        var digits = t.replace(/\D/g, '');
+        if (digits.length < 7 || digits.length > 15) return false;
+        var hasSep = /[+\s().\-\/]/.test(t);
+        return hasSep;
+    }
+
+    function isIsoDate(s) {
+        var t = s.trim();
+        if (!/^\d{4}-\d{2}-\d{2}(?:[T ]\d{2}:\d{2}(?::\d{2}(?:\.\d{1,9})?)?(?:Z|[+-]\d{2}:?\d{2})?)?$/i.test(t)) return false;
+        var d = new Date(t);
+        if (isNaN(d.getTime())) return false;
+        return true;
+    }
+
+    function dateMeta(s) {
+        var t = s.trim();
+        var d = new Date(t);
+        var valid = !isNaN(d.getTime());
+        var m = /^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?(Z|[+-]\d{2}:?\d{2})?)?/i.exec(t);
+        var meta = { iso: t, valid: valid, hasTime: !!(m && m[4] !== undefined), hasTimezone: !!(m && m[8]) };
+        if (m) {
+            meta.year = +m[1];
+            meta.month = +m[2];
+            meta.day = +m[3];
+            if (m[4] !== undefined) meta.hour = +m[4];
+            if (m[5] !== undefined) meta.minute = +m[5];
+            if (m[6] !== undefined) meta.second = +m[6];
+            if (m[8]) meta.timezone = m[8].toUpperCase();
+        }
+        if (valid) meta.utc = d.toISOString();
+        return meta;
+    }
+
+    function dataUriMeta(s) {
+        var full = s.trim();
+        if (!/^data:/i.test(full)) return null;
+        var comma = full.indexOf(',');
+        if (comma === -1) return null;
+        var head = full.slice(5, comma);
+        var payload = full.slice(comma + 1);
+        var parts = head.split(';');
+        var mime = (parts[0] || '').toLowerCase() || 'text/plain';
+        var encoding = 'url';
+        var params = [];
+        for (var i = 1; i < parts.length; i++) {
+            var prm = parts[i].trim().toLowerCase();
+            if (prm === 'base64') encoding = 'base64';
+            else params.push(parts[i].trim());
+        }
+        var preview = '';
+        var previewLength = 0;
+        if (encoding === 'base64') {
+            try {
+                var bin = atob(payload.replace(/\s+/g, ''));
+                previewLength = bin.length;
+                var txt = decodeUtf8(bin);
+                preview = txt || '(binary)';
+            } catch (e) {
+                preview = '';
+                previewLength = 0;
+            }
+        } else {
+            preview = safeDecode(payload);
+            previewLength = preview.length;
+        }
+        return {
+            mimeType: mime,
+            encoding: encoding,
+            params: params,
+            payloadSize: payload.length,
+            previewLength: previewLength,
+            preview: preview
+        };
+    }
+
+    function isUrl(s) {
+        var t = s.trim();
+        var m = /^([a-z][a-z0-9+.-]*):\/\//i.exec(t);
+        if (m) return { scheme: m[1].toLowerCase(), hasAuthority: true };
+        return null;
+    }
+
+    function isIPv4(s) {
+        var t = s.trim();
+        var parts = t.split('.');
+        if (parts.length !== 4) return false;
+        for (var i = 0; i < 4; i++) {
+            if (!/^\d{1,3}$/.test(parts[i])) return false;
+            if (+parts[i] > 255) return false;
+        }
+        return true;
+    }
+
+    var IPV6_RE = /^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$/;
+
+    function isIPv6(s) {
+        var t = s.trim();
+        if (t.charAt(0) === '[') {
+            if (t.charAt(t.length - 1) !== ']') return false;
+            t = t.slice(1, t.length - 1);
+        }
+        return IPV6_RE.test(t);
+    }
+
+    function isMac(s) {
+        return /^([0-9a-fA-F]{2}[:-]){5}[0-9a-fA-F]{2}$/.test(s.trim());
+    }
+
+    function isEmail(s) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.trim());
+    }
+
+    function isRegex(s) {
+        var t = s.trim();
+        if (t.length < 3) return false;
+        if (t.charAt(0) !== '/') return false;
+        var lastSlash = t.lastIndexOf('/');
+        if (lastSlash < 1) return false;
+        var flags = t.slice(lastSlash + 1);
+        if (!/^[a-z]*$/.test(flags)) return false;
+        return t.slice(1, lastSlash).length >= 1;
+    }
+
+    function fromCodePoint(cp) {
+        if (String.fromCodePoint) return String.fromCodePoint(cp);
+        if (cp <= 0xFFFF) return String.fromCharCode(cp);
+        cp -= 0x10000;
+        return String.fromCharCode((cp >> 10) + 0xD800, (cp & 0x3FF) + 0xDC00);
+    }
+
+    function decodeUtf8(bin) {
+        var bytes = [];
+        for (var i = 0; i < bin.length; i++) bytes.push(bin.charCodeAt(i) & 0xff);
+        var out = '';
+        var j = 0;
+        while (j < bytes.length) {
+            var b = bytes[j];
+            if (b < 0x80) {
+                out += String.fromCharCode(b);
+                j++;
+            } else if (b >= 0xC2 && b <= 0xDF) {
+                if (j + 1 >= bytes.length || (bytes[j + 1] & 0xC0) !== 0x80) return null;
+                out += String.fromCharCode(((b & 0x1F) << 6) | (bytes[j + 1] & 0x3F));
+                j += 2;
+            } else if (b >= 0xE0 && b <= 0xEF) {
+                if (j + 2 >= bytes.length || (bytes[j + 1] & 0xC0) !== 0x80 || (bytes[j + 2] & 0xC0) !== 0x80) return null;
+                out += String.fromCharCode(((b & 0x0F) << 12) | ((bytes[j + 1] & 0x3F) << 6) | (bytes[j + 2] & 0x3F));
+                j += 3;
+            } else if (b >= 0xF0 && b <= 0xF4) {
+                if (j + 3 >= bytes.length || (bytes[j + 1] & 0xC0) !== 0x80 || (bytes[j + 2] & 0xC0) !== 0x80 || (bytes[j + 3] & 0xC0) !== 0x80) return null;
+                var cp = ((b & 0x07) << 18) | ((bytes[j + 1] & 0x3F) << 12) | ((bytes[j + 2] & 0x3F) << 6) | (bytes[j + 3] & 0x3F);
+                if (cp > 0x10FFFF) return null;
+                out += fromCodePoint(cp);
+                j += 4;
+            } else {
+                return null;
+            }
+        }
+        return out;
+    }
+
+    function isBase64(s) {
+        var t = s.trim();
+        if (t.length < 8 || t.length % 4 !== 0) return false;
+        if (t.length > 2048) return false;
+        if (!/^[A-Za-z0-9+/]+={0,2}$/.test(t)) return false;
+        var hasPad = /=$/.test(t);
+        if (!hasPad) {
+            if (t.length < 12) return false;
+            if (!/[A-Z]/.test(t) || !/[a-z]/.test(t) || !/[0-9]/.test(t)) return false;
+        }
+        var bin;
+        try { bin = atob(t); } catch (e) { return false; }
+        if (bin.length < 3) return false;
+        if (hasPad) return true;
+        var txt = decodeUtf8(bin);
+        if (txt === null) return false;
+        var printable = 0;
+        for (var i = 0; i < txt.length; i++) {
+            var c = txt.charCodeAt(i);
+            if (c >= 32 && c !== 127) printable++;
+        }
+        return printable / txt.length >= 0.7;
+    }
+
+    function base64Meta(s) {
+        var t = s.trim();
+        var bin = '';
+        try { bin = atob(t); } catch (e) { }
+        var txt = decodeUtf8(bin);
+        return {
+            encoding: 'base64',
+            length: t.length,
+            decodedLength: bin.length,
+            preview: txt !== null ? txt.slice(0, 80) : '',
+            hasPreview: txt !== null && txt.length > 0
+        };
+    }
+
+    function toNumber(s) {
+        var t = s.trim();
+        if (t === '') return null;
+        if (!/^[+-]?(\d+(\.\d+)?|\.\d+)([eE][+-]?\d+)?$/.test(t)) return null;
+        var isInt = !/[.eE]/.test(t);
+        if (isInt) {
+            var sign = '';
+            var digits = t;
+            if (t.charAt(0) === '+' || t.charAt(0) === '-') {
+                sign = t.charAt(0);
+                digits = t.slice(1);
+            }
+            var d = digits.replace(/^0+/, '') || '0';
+            if (isAboveMaxSafe(d)) {
+                return { big: true, sign: sign, digits: d };
+            }
+            var n = Number(t);
+            if (isNaN(n) || !isFinite(n)) return null;
+            return { big: false, value: n, isFloat: false };
+        }
+        var n2 = Number(t);
+        if (isNaN(n2) || !isFinite(n2)) return null;
+        return { big: false, value: n2, isFloat: true };
+    }
+
+    function coerceAndType(p, s, settings) {
+        var t = s.trim();
+        if (t === '') {
+            p.value = s;
+            p.type = 'string';
+            return;
+        }
+        if (settings.parseJSON && (t.charAt(0) === '{' || t.charAt(0) === '[')) {
+            try {
+                var j = JSON.parse(s);
+                if (j !== null && typeof j === 'object') {
+                    p.value = j;
+                    p.type = 'json';
+                    p.meta = { valid: true, size: s.length };
+                    return;
+                }
+            } catch (e) { }
+        }
+        if (settings.parseISODates && isIsoDate(s)) {
+            p.value = s;
+            p.type = 'date';
+            p.meta = dateMeta(s);
+            return;
+        }
+        if (settings.parseBoolean) {
+            if (t === 'true') { p.value = true; p.type = 'boolean'; return; }
+            if (t === 'false') { p.value = false; p.type = 'boolean'; return; }
+        }
+        if (settings.parseNull && t === 'null') { p.value = null; p.type = 'null'; return; }
+        if (settings.parseUndefined && t === 'undefined') { p.value = undefined; p.type = 'undefined'; return; }
+        if (isIPv4(s)) { p.value = s; p.type = 'ipv4'; return; }
+        if (isIPv6(s)) { p.value = s; p.type = 'ipv6'; return; }
+        if (settings.keepPhoneAsString && isPhone(s)) { p.value = s; p.type = 'phone'; return; }
+        if (settings.parseNumbers) {
+            var num = toNumber(s);
+            if (num) {
+                if (num.big) {
+                    if (settings.parseBigInt || settings.keepLargeNumbersAsString) {
+                        p.value = s;
+                        p.type = 'bigint';
+                        p.meta = { bigint: true, sign: num.sign, digits: num.digits };
+                        return;
+                    }
+                    p.value = Number(t);
+                    p.type = 'number';
+                    return;
+                }
+                p.value = num.value;
+                p.type = num.isFloat ? 'float' : 'number';
+                return;
+            }
+        }
+        if (dataUriMeta(s)) { p.value = s; p.type = 'data-uri'; p.meta = dataUriMeta(s); return; }
+        var url = isUrl(s);
+        if (url) { p.value = s; p.type = 'url'; p.meta = url; return; }
+        if (isMac(s)) { p.value = s; p.type = 'mac'; return; }
+        if (isEmail(s)) { p.value = s; p.type = 'email'; return; }
+        if (isRegex(s)) { p.value = s; p.type = 'regex'; return; }
+        if (isBase64(s)) { p.value = s; p.type = 'base64'; p.meta = base64Meta(s); return; }
+        p.value = s;
+        p.type = 'string';
+    }
+
+    function buildGroups(params, settings) {
+        var groups = [];
+        var map = {};
+        params.forEach(function (p) {
+            var gkey = p.key;
+            if (!map[gkey]) {
+                map[gkey] = { key: gkey, entries: [], isArray: false, type: 'string', value: null, meta: null };
+                groups.push(map[gkey]);
+            }
+            map[gkey].entries.push(p);
+        });
+        groups.forEach(function (g) {
+            g.isDuplicate = g.entries.length > 1;
+            g.isBracketArray = settings.parseArrays && /\[\]$/.test(g.key);
+            g.isArray = g.isBracketArray || (settings.groupDuplicateKeys && g.entries.length > 1);
+            if (g.isArray) {
+                g.value = g.entries.map(function (e) { return e.value; });
+                g.type = 'array';
+            } else {
+                g.value = g.entries[0].value;
+                g.type = g.entries[0].type;
+                g.meta = g.entries[0].meta;
+            }
+        });
+        return groups;
+    }
+
+    function parseBracketPath(key) {
+        var m = /^([^\[\]]+)(\[[^\]]*\])+$/.exec(key);
+        if (!m) return null;
+        var base = m[1];
+        var segs = [];
+        var parts = key.slice(base.length).match(/\[[^\]]*\]/g);
+        for (var i = 0; i < parts.length; i++) {
+            var inner = parts[i].slice(1, -1);
+            if (inner === '') segs.push({ array: true });
+            else if (/^\d+$/.test(inner)) segs.push({ array: true, index: parseInt(inner, 10) });
+            else segs.push({ key: inner });
+        }
+        return { base: base, segs: segs };
+    }
+
+    function setPath(obj, path, value) {
+        var segs = path.segs;
+        var base = path.base;
+        if (segs.length === 0) { obj[base] = value; return; }
+        var ex = obj[base];
+        if (ex === undefined || ex === null || typeof ex !== 'object') {
+            obj[base] = segs[0].array ? [] : {};
+        }
+        var cur = obj[base];
+        for (var i = 0; i < segs.length; i++) {
+            var seg = segs[i];
+            if (i === segs.length - 1) {
+                if (seg.array) {
+                    if (Array.isArray(value)) {
+                        for (var k = 0; k < value.length; k++) cur.push(value[k]);
+                    } else {
+                        cur.push(value);
+                    }
+                } else {
+                    cur[seg.key] = value;
+                }
+            } else {
+                var nxt = segs[i + 1];
+                var needArr = nxt.array;
+                var ex2 = cur[seg.key];
+                if (ex2 === undefined || ex2 === null || typeof ex2 !== 'object') {
+                    cur[seg.key] = needArr ? [] : {};
+                }
+                cur = cur[seg.key];
+            }
+        }
+    }
+
+    function buildNestedObject(groups, settings) {
+        var obj = {};
+        groups.forEach(function (g) {
+            var path = parseBracketPath(g.key);
+            if (path) setPath(obj, path, g.value);
+            else obj[g.key] = g.value;
+        });
+        return obj;
+    }
+
+    function buildFlatObject(groups, settings) {
+        var obj = {};
+        groups.forEach(function (g) {
+            obj[g.key] = g.value;
+        });
+        return obj;
+    }
+
+    function buildSummary(params, groups, dupKeys) {
+        var s = {
+            count: params.length,
+            uniqueKeys: groups.length,
+            duplicateKeys: dupKeys,
+            arrays: 0, objects: 0, json: 0,
+            numbers: 0, floats: 0, bigints: 0, booleans: 0, nulls: 0, undefinedCount: 0,
+            dates: 0, urls: 0, emails: 0, phones: 0, base64: 0, dataUri: 0, ips: 0, macs: 0, regexes: 0
+        };
+        groups.forEach(function (g) {
+            if (g.isArray) s.arrays++;
+            if (g.type === 'object' || g.type === 'json') s.objects++;
+        });
+        params.forEach(function (p) {
+            switch (p.type) {
+                case 'number': s.numbers++; break;
+                case 'float': s.floats++; break;
+                case 'bigint': s.bigints++; break;
+                case 'boolean': s.booleans++; break;
+                case 'null': s.nulls++; break;
+                case 'undefined': s.undefinedCount++; break;
+                case 'json': s.json++; break;
+                case 'date': s.dates++; break;
+                case 'url': s.urls++; break;
+                case 'email': s.emails++; break;
+                case 'phone': s.phones++; break;
+                case 'base64': s.base64++; break;
+                case 'data-uri': s.dataUri++; break;
+                case 'ipv4': case 'ipv6': s.ips++; break;
+                case 'mac': s.macs++; break;
+                case 'regex': s.regexes++; break;
+            }
+        });
+        return s;
+    }
+
+    function parse(raw, settings) {
+        settings = settings || {};
+        for (var k in SETTINGS_DEFAULTS) {
+            if (settings[k] === undefined) settings[k] = SETTINGS_DEFAULTS[k];
+        }
+        var t0 = performance.now();
+        var str = String(raw == null ? '' : raw).replace(/^(\?|#)/, '').trim();
+        var t1;
+        if (!str) {
+            t1 = performance.now();
+            var timeStr = (t1 - t0) < 1 ? ((t1 - t0) * 1000).toFixed(0) + '\u00B5s' : (t1 - t0).toFixed(2) + 'ms';
+            return {
+                params: [], groups: [], object: {},
+                stats: { count: 0, uniqueKeys: 0, duplicates: 0, emptyValues: 0, encodedValues: 0, decodedValues: 0, parsingTime: timeStr },
+                summary: { count: 0, uniqueKeys: 0, duplicateKeys: 0, arrays: 0, objects: 0, json: 0, numbers: 0, floats: 0, bigints: 0, booleans: 0, nulls: 0, undefinedCount: 0, dates: 0, urls: 0, emails: 0, phones: 0, base64: 0, dataUri: 0, ips: 0, macs: 0, regexes: 0, parsingTime: timeStr },
+                ok: false
+            };
+        }
+
+        var decode = settings.decodeURL !== false;
+        var pairs = str.split('&');
+        var params = [];
+        var keyCount = {};
+
+        pairs.forEach(function (pair) {
+            if (pair === '') return;
+            var eqIdx = pair.indexOf('=');
+            var rawKey, rawVal, hasEq;
+            if (eqIdx === -1) {
+                rawKey = pair; rawVal = ''; hasEq = false;
+            } else if (eqIdx === pair.length - 1) {
+                rawKey = pair.substring(0, eqIdx); rawVal = ''; hasEq = true;
+            } else {
+                rawKey = pair.substring(0, eqIdx); rawVal = pair.substring(eqIdx + 1); hasEq = true;
+            }
+            var keyDecoded = decode ? safeDecode(rawKey) : rawKey;
+            var valDecoded = decode ? safeDecode(rawVal) : rawVal;
+            keyCount[keyDecoded] = (keyCount[keyDecoded] || 0) + 1;
+            var p = {
+                keyRaw: rawKey,
+                key: keyDecoded,
+                valueRaw: rawVal,
+                valueDecoded: valDecoded,
+                value: null,
+                type: 'string',
+                meta: null,
+                isEmpty: rawVal === '' && hasEq,
+                isEncoded: hasPercentEncoding(rawVal),
+                hasEquals: hasEq
+            };
+            if (settings.preserveRawValues) {
+                p.value = rawVal;
+                p.type = 'string';
+                p.meta = { decoded: valDecoded, raw: true };
+            } else {
+                coerceAndType(p, valDecoded, settings);
+            }
+            params.push(p);
+        });
+
+        t1 = performance.now();
+        var groups = buildGroups(params, settings);
+        var object = settings.parseNestedObjects ? buildNestedObject(groups, settings) : buildFlatObject(groups, settings);
+        var dupKeys = 0;
+        for (var kk in keyCount) {
+            if (keyCount[kk] > 1) dupKeys++;
+        }
+        var emptyCount = 0, encodedCount = 0, decodedChanged = 0;
+        params.forEach(function (p) {
+            if (p.isEmpty) emptyCount++;
+            if (p.isEncoded) encodedCount++;
+            if (p.valueRaw !== p.valueDecoded) decodedChanged++;
+        });
+        var summary = buildSummary(params, groups, dupKeys);
+        var parseTimeMs = t1 - t0;
+        var timeStr2 = parseTimeMs < 1 ? (parseTimeMs * 1000).toFixed(0) + '\u00B5s' : parseTimeMs.toFixed(2) + 'ms';
+        summary.parsingTime = timeStr2;
+        var stats = {
+            count: params.length,
+            uniqueKeys: groups.length,
+            duplicates: dupKeys,
+            emptyValues: emptyCount,
+            encodedValues: encodedCount,
+            decodedValues: decodedChanged,
+            parsingTime: timeStr2
+        };
+        return { params: params, groups: groups, object: object, stats: stats, summary: summary, ok: true };
+    }
+
+    function jsonSafe(v) {
+        if (v === undefined) return 'undefined';
+        if (v === null) return null;
+        if (typeof v === 'bigint') return v.toString();
+        if (Array.isArray(v)) return v.map(jsonSafe);
+        if (typeof v === 'object') {
+            var o = {};
+            for (var k in v) {
+                if (Object.prototype.hasOwnProperty.call(v, k)) o[k] = jsonSafe(v[k]);
+            }
+            return o;
+        }
+        return v;
+    }
+
+    function buildExportObject(data) {
+        return jsonSafe(data && data.object ? data.object : {});
+    }
+
+    function indentY(n) {
+        var s = '';
+        for (var i = 0; i < n; i++) s += '  ';
+        return s;
+    }
+
+    function yamlScalar(v) {
+        if (v === null) return 'null';
+        if (v === undefined) return 'undefined';
+        if (typeof v === 'boolean' || typeof v === 'number') return String(v);
+        if (typeof v === 'bigint') return v.toString() + 'n';
+        var s = String(v);
+        if (s === '') return "''";
+        if (/[:#\[\]{},&*!|>'"%@`]|^\s|\s$|^[-?]|^\d/.test(s) || /^(true|false|null|undefined|yes|no|on|off)$/i.test(s)) {
+            return "'" + s.replace(/'/g, "''") + "'";
+        }
+        return s;
+    }
+
+    function toYaml(v, depth) {
+        depth = depth || 0;
+        var pad = indentY(depth);
+        if (v === null || v === undefined) return pad + yamlScalar(v);
+        if (Array.isArray(v)) {
+            if (v.length === 0) return pad + '[]';
+            var lines = [];
+            v.forEach(function (item) {
+                if (item !== null && typeof item === 'object') {
+                    var sub = toYaml(item, depth + 1);
+                    var subLines = sub.split('\n');
+                    lines.push(pad + '- ' + subLines[0]);
+                    for (var i = 1; i < subLines.length; i++) lines.push(subLines[i]);
+                } else {
+                    lines.push(pad + '- ' + yamlScalar(item));
                 }
             });
-            return result;
+            return lines.join('\n');
         }
-        function coerceValue(v){if(v==='')return '';if(v==='true')return true;if(v==='false')return false;if(v==='null')return null;if(!isNaN(v)&&v!=='')return Number(v);return v}
-        function typeOf(v){if(v===null)return 'null';if(Array.isArray(v))return 'array';return typeof v}
-        function typeClass(v){const t=typeOf(v);if(t==='number')return 'val-num';if(t==='boolean')return 'val-bool';if(t==='null')return 'val-null';if(t==='array')return 'val-array';return 'val-str'}
-        function flattenForTable(obj,prefix){
-            const rows=[];
-            Object.keys(obj).forEach(k=>{
-                const fullKey=prefix?prefix+'['+k+']':k;
-                const v=obj[k];
-                if(v!==null&&typeof v==='object'&&!Array.isArray(v)){rows.push(...flattenForTable(v,fullKey))}
-                else{rows.push({key:fullKey,value:v,type:typeOf(v)})}
+        if (typeof v === 'object') {
+            var keys = Object.keys(v);
+            if (keys.length === 0) return pad + '{}';
+            var out = [];
+            keys.forEach(function (k) {
+                var val = v[k];
+                var yk = yamlScalar(k);
+                if (val !== null && typeof val === 'object') {
+                    var sub2 = toYaml(val, depth + 1);
+                    var subLines2 = sub2.split('\n');
+                    out.push(pad + yk + ':');
+                    for (var j = 0; j < subLines2.length; j++) out.push(subLines2[j]);
+                } else {
+                    out.push(pad + yk + ': ' + yamlScalar(val));
+                }
             });
-            return rows;
+            return out.join('\n');
         }
-        function renderTable(parsed){
-            const rows=flattenForTable(parsed);
-            if(!rows.length){parseOutput.innerHTML='<p style="color:var(--color-text-light);font-size:var(--text-sm)">No parameters found.</p>';return}
-            let html='<table class="qs-table"><thead><tr><th>#</th><th>Key</th><th>Value</th><th>Type</th><th></th></tr></thead><tbody>';
-            rows.forEach((r,i)=>{
-                const displayVal=r.value===null?'null':Array.isArray(r.value)?r.value.join(', '):String(r.value);
-                html+='<tr><td>'+(i+1)+'</td><td>'+escapeHtml(r.key)+'</td><td class="'+typeClass(r.value)+'">'+escapeHtml(displayVal)+'</td><td>'+r.type+'</td><td><button class="url-component-copy" style="background:none;border:1px solid var(--color-border);border-radius:4px;padding:4px 8px;cursor:pointer;color:var(--color-text-light);font-size:var(--text-xs)" onclick="(\''+escapeHtml(displayVal).replace(/'/g,"\\'")+'\')" title="Copy value"><i class="fas fa-copy"></i></button></td></tr>';
+        return pad + yamlScalar(v);
+    }
+
+    function tomlEscape(s) {
+        return '"' + String(s)
+            .replace(/\\/g, '\\\\')
+            .replace(/"/g, '\\"')
+            .replace(/\n/g, '\\n')
+            .replace(/\t/g, '\\t')
+            .replace(/\r/g, '\\r') + '"';
+    }
+
+    function tomlScalar(v) {
+        if (v === null || v === undefined) return '""';
+        if (typeof v === 'boolean') return v ? 'true' : 'false';
+        if (typeof v === 'number') return String(v);
+        if (typeof v === 'bigint') return v.toString();
+        if (Array.isArray(v)) return tomlInline(v);
+        if (typeof v === 'object') return tomlInline(v);
+        return tomlEscape(v);
+    }
+
+    function tomlInline(v) {
+        if (Array.isArray(v)) {
+            if (v.length === 0) return '[]';
+            return '[' + v.map(tomlInline).join(', ') + ']';
+        }
+        if (v !== null && typeof v === 'object') {
+            var parts = [];
+            for (var k in v) {
+                if (Object.prototype.hasOwnProperty.call(v, k)) parts.push(k + ' = ' + tomlInline(v[k]));
+            }
+            return '{ ' + parts.join(', ') + ' }';
+        }
+        return tomlScalar(v);
+    }
+
+    function toToml(value) {
+        var lines = [];
+        function walk(obj, prefix) {
+            var keys = Object.keys(obj);
+            var tables = [];
+            keys.forEach(function (k) {
+                var v = obj[k];
+                var key = prefix ? prefix + '.' + k : k;
+                if (v !== null && typeof v === 'object' && !Array.isArray(v)) {
+                    tables.push({ key: key, val: v });
+                } else {
+                    lines.push(key + ' = ' + tomlScalar(v));
+                }
             });
-            html+='</tbody></table>';
-            parseOutput.innerHTML=html;
-        }
-        function doParse(){
-            const raw=qsInput.value.trim();
-            if(!raw){parseOutput.innerHTML='';jsonOutput.textContent='No query string provided.';currentParsed=null;return}
-            currentParsed=parseNested(raw);
-            renderTable(currentParsed);
-            jsonOutput.textContent=JSON.stringify(currentParsed,null,2);
-        }
-        parseBtn.addEventListener('click',doParse);
-        clearBtn.addEventListener('click',function(){qsInput.value='';parseOutput.innerHTML='';jsonOutput.textContent='Paste and parse a query string first to see JSON output here.';currentParsed=null});
-        copyJsonBtn.addEventListener('click',function(){if(currentParsed)copyText(JSON.stringify(currentParsed,null,2))});
-        copyJsonBtn2.addEventListener('click',function(){if(currentParsed)copyText(JSON.stringify(currentParsed,null,2))});
-        parseOutput.addEventListener('click',function(e){const btn=e.target.closest('button[onclick]');if(btn){const val=btn.getAttribute('onclick').match(/\('(.+)'\)/);if(val)copyText(val[1].replace(/\\'/g,"'"))}});
-        let builderCount=0;
-        function addBuilderRow(key,val){
-            const id=builderCount++;
-            const row=document.createElement('div');row.className='builder-row';row.id='brow-'+id;
-            row.innerHTML='<input type="text" placeholder="Key" value="'+escapeHtml(key||'')+'" class="bkey"><input type="text" placeholder="Value" value="'+escapeHtml(val||'')+'" class="bval"><button class="builder-remove" title="Remove"><i class="fas fa-times"></i></button>';
-            row.querySelector('.builder-remove').addEventListener('click',function(){row.remove()});
-            builderRows.appendChild(row);
-        }
-        addRowBtn.addEventListener('click',function(){addBuilderRow('','')});
-        function buildQueryString(){
-            const rows=builderRows.querySelectorAll('.builder-row');
-            const parts=[];
-            rows.forEach(r=>{
-                const k=r.querySelector('.bkey').value.trim();
-                const v=r.querySelector('.bval').value;
-                if(k)parts.push(encodeURIComponent(k)+'='+encodeURIComponent(v));
+            tables.forEach(function (t) {
+                lines.push('[' + t.key + ']');
+                walk(t.val, t.key);
             });
-            buildOutput.textContent=parts.join('&');
         }
-        buildBtn.addEventListener('click',buildQueryString);
-        addBuilderRow('name','John');addBuilderRow('age','30');addBuilderRow('colors','red');addBuilderRow('colors','blue');
-        qsInput.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();doParse()}});
+        walk(value, '');
+        return lines.join('\n');
+    }
+
+    return {
+        parse: parse,
+        toYaml: toYaml,
+        toToml: toToml,
+        jsonSafe: jsonSafe,
+        buildExportObject: buildExportObject,
+        SETTINGS_DEFAULTS: SETTINGS_DEFAULTS,
+        SETTINGS_LIST: SETTINGS_LIST
+    };
+});
+
+    </script>
+
+    <script>
+(function() {
+    'use strict';
+
+    var SETTINGS_STORAGE_KEY = 'qs-parser-settings-v1';
+
+    var SUMMARY_ITEMS = [
+        { key: 'numbers', label: 'Numbers' },
+        { key: 'floats', label: 'Floats' },
+        { key: 'bigints', label: 'BigInts' },
+        { key: 'booleans', label: 'Booleans' },
+        { key: 'nulls', label: 'Nulls' },
+        { key: 'undefinedCount', label: 'Undefined' },
+        { key: 'arrays', label: 'Arrays' },
+        { key: 'json', label: 'JSON' },
+        { key: 'dates', label: 'Dates' },
+        { key: 'urls', label: 'URLs' },
+        { key: 'emails', label: 'Emails' },
+        { key: 'phones', label: 'Phones' },
+        { key: 'base64', label: 'Base64' },
+        { key: 'dataUri', label: 'Data URIs' },
+        { key: 'ips', label: 'IPs' },
+        { key: 'macs', label: 'MACs' },
+        { key: 'regexes', label: 'Regexes' }
+    ];
+
+    var state = {
+        parsed: null,
+        rawParams: null,
+        view: 'table'
+    };
+
+    var elements = {};
+
+    function init() {
+        elements = {
+            qsInput: document.getElementById('qs-input'),
+            parseBtn: document.getElementById('parse-btn'),
+            clearBtn: document.getElementById('clear-btn'),
+            resultArea: document.getElementById('result-area'),
+            emptyState: document.getElementById('empty-state'),
+            statusBadge: document.getElementById('status-badge'),
+            limitationsBox: document.getElementById('limitations-box'),
+            workspaceBody: document.getElementById('workspace-body'),
+            actionBar: document.getElementById('action-bar'),
+            tableContainer: document.getElementById('table-container'),
+            treeContainer: document.getElementById('tree-container'),
+            serializedView: document.getElementById('serialized-view'),
+            viewButtons: document.querySelectorAll('.view-btn'),
+            settingsToggle: document.getElementById('settings-toggle'),
+            settingsBody: document.getElementById('settings-body'),
+            settingsGrid: document.getElementById('settings-grid'),
+            summarySubsection: document.getElementById('summary-subsection'),
+            summaryGrid: document.getElementById('summary-grid'),
+            exportSection: document.getElementById('export-section'),
+            exportCopy: document.getElementById('export-copy'),
+            exportJson: document.getElementById('export-json'),
+            exportCsv: document.getElementById('export-csv'),
+            exportTxt: document.getElementById('export-txt'),
+            exportYaml: document.getElementById('export-yaml'),
+            exportToml: document.getElementById('export-toml'),
+            exportPrint: document.getElementById('export-print'),
+            statCount: document.getElementById('stat-count'),
+            statDupes: document.getElementById('stat-dupes'),
+            statEmpty: document.getElementById('stat-empty'),
+            statEncoded: document.getElementById('stat-encoded'),
+            statDecoded: document.getElementById('stat-decoded'),
+            statTime: document.getElementById('stat-time')
+        };
+
+        elements.parseBtn.addEventListener('click', doParse);
+        elements.clearBtn.addEventListener('click', resetTool);
+        elements.qsInput.addEventListener('input', onInputChanged);
+
+        if (elements.exportCopy) elements.exportCopy.addEventListener('click', exportCopy);
+        if (elements.exportJson) elements.exportJson.addEventListener('click', exportJson);
+        if (elements.exportCsv) elements.exportCsv.addEventListener('click', exportCsv);
+        if (elements.exportTxt) elements.exportTxt.addEventListener('click', exportTxt);
+        if (elements.exportYaml) elements.exportYaml.addEventListener('click', exportYaml);
+        if (elements.exportToml) elements.exportToml.addEventListener('click', exportToml);
+        if (elements.exportPrint) elements.exportPrint.addEventListener('click', exportPrint);
+
+        if (elements.settingsToggle) elements.settingsToggle.addEventListener('click', function() {
+            var hidden = elements.settingsBody.hidden;
+            elements.settingsBody.hidden = !hidden;
+            elements.settingsToggle.setAttribute('aria-expanded', hidden ? 'false' : 'true');
+        });
+
+        Array.prototype.forEach.call(elements.viewButtons, function(btn) {
+            btn.addEventListener('click', function() {
+                state.view = btn.getAttribute('data-view');
+                if (state.parsed) renderCurrentView();
+            });
+        });
+
+        buildSettingsGrid(loadSettings());
+
+        showEmptyState();
+
         doParse();
-    })();
+    }
+
+    var debounceTimer = null;
+
+    function onInputChanged() {
+        var len = elements.qsInput.value.trim().length;
+        if (len > 0) {
+            updateStatus('ready', 'Ready');
+        } else {
+            updateStatus('', '');
+        }
+        if (debounceTimer) clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(function() {
+            doParse();
+        }, 300);
+    }
+
+    function updateStatus(type, text) {
+        elements.statusBadge.className = 'status-badge' + (type ? ' ' + type : '');
+        elements.statusBadge.textContent = text;
+    }
+
+    function showEmptyState() {
+        if (elements.emptyState) elements.emptyState.style.display = 'flex';
+        if (elements.resultArea) {
+            elements.resultArea.style.display = 'none';
+            elements.resultArea.classList.remove('show');
+        }
+        if (elements.limitationsBox) elements.limitationsBox.classList.add('show');
+        if (elements.exportSection) elements.exportSection.style.display = 'none';
+    }
+
+    function showResults() {
+        if (elements.emptyState) elements.emptyState.style.display = 'none';
+        if (elements.resultArea) {
+            elements.resultArea.style.display = 'block';
+            elements.resultArea.classList.add('show');
+        }
+        if (elements.limitationsBox) elements.limitationsBox.classList.add('show');
+    }
+
+    function loadSettings() {
+        var s = {};
+        QSParser.SETTINGS_LIST.forEach(function(item) {
+            s[item.key] = item.def;
+        });
+        try {
+            var stored = JSON.parse(localStorage.getItem(SETTINGS_STORAGE_KEY));
+            if (stored) {
+                for (var k in stored) {
+                    if (Object.prototype.hasOwnProperty.call(s, k)) s[k] = !!stored[k];
+                }
+            }
+        } catch (e) {}
+        return s;
+    }
+
+    function saveSettings() {
+        var s = {};
+        QSParser.SETTINGS_LIST.forEach(function(item) {
+            var el = document.getElementById('qs-set-' + item.key);
+            s[item.key] = el ? el.checked : item.def;
+        });
+        try {
+            localStorage.setItem(SETTINGS_STORAGE_KEY, JSON.stringify(s));
+        } catch (e) {}
+    }
+
+    function currentSettings() {
+        var s = {};
+        QSParser.SETTINGS_LIST.forEach(function(item) {
+            var el = document.getElementById('qs-set-' + item.key);
+            s[item.key] = el ? el.checked : item.def;
+        });
+        return s;
+    }
+
+    function buildSettingsGrid(settings) {
+        if (!elements.settingsGrid) return;
+        var frag = document.createDocumentFragment();
+        QSParser.SETTINGS_LIST.forEach(function(item) {
+            var label = document.createElement('label');
+            label.className = 'setting-item';
+            label.title = item.hint;
+            var cb = document.createElement('input');
+            cb.type = 'checkbox';
+            cb.id = 'qs-set-' + item.key;
+            cb.checked = !!settings[item.key];
+            cb.addEventListener('change', function() {
+                saveSettings();
+                doParse();
+            });
+            var span = document.createElement('span');
+            span.textContent = item.label;
+            label.appendChild(cb);
+            label.appendChild(span);
+            frag.appendChild(label);
+        });
+        elements.settingsGrid.appendChild(frag);
+    }
+
+    function parseQueryString(raw) {
+        return QSParser.parse(raw, currentSettings());
+    }
+
+    function renderResults(data) {
+        if (!data || data.groups.length === 0) {
+            showEmptyState();
+            updateStatus('', '');
+            return;
+        }
+
+        renderStats(data.stats);
+        renderSummary(data.summary);
+        renderCurrentView();
+
+        if (elements.exportSection) elements.exportSection.style.display = 'flex';
+        showResults();
+    }
+
+    function renderCurrentView() {
+        var view = state.view;
+        if (view === 'table') {
+            if (elements.tableContainer) elements.tableContainer.style.display = '';
+            if (elements.treeContainer) elements.treeContainer.style.display = 'none';
+            if (elements.serializedView) elements.serializedView.style.display = 'none';
+            renderTable();
+        } else if (view === 'tree') {
+            if (elements.tableContainer) elements.tableContainer.style.display = 'none';
+            if (elements.treeContainer) elements.treeContainer.style.display = '';
+            if (elements.serializedView) elements.serializedView.style.display = 'none';
+            renderTree();
+        } else {
+            if (elements.tableContainer) elements.tableContainer.style.display = 'none';
+            if (elements.treeContainer) elements.treeContainer.style.display = 'none';
+            if (elements.serializedView) elements.serializedView.style.display = '';
+            renderSerialized(view);
+        }
+
+        Array.prototype.forEach.call(elements.viewButtons, function(btn) {
+            var active = btn.getAttribute('data-view') === view;
+            btn.classList.toggle('active', active);
+            btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+    }
+
+    function getTypeBadgeHtml(type) {
+        return '<span class="type-badge ' + type + '">' + type + '</span>';
+    }
+
+    function formatDisplayValue(v) {
+        if (v === null) return '<span style="color:#94a3b8;font-style:italic">null</span>';
+        if (v === undefined) return '<span style="color:#94a3b8;font-style:italic">undefined</span>';
+        if (typeof v === 'boolean') return '<span style="color:#16a34a;font-weight:500">' + v + '</span>';
+        if (typeof v === 'number') return '<span style="color:#d97706;font-weight:500">' + v + '</span>';
+        if (Array.isArray(v)) return '<span style="color:#db2777;font-weight:500">[' + v.map(function(item) {
+            if (item !== null && typeof item === 'object') return escapeHtml(JSON.stringify(item));
+            return escapeHtml(String(item));
+        }).join(', ') + ']</span>';
+        if (v !== null && typeof v === 'object') return '<span style="color:#7c3aed;font-weight:500;word-break:break-all">' + escapeHtml(JSON.stringify(v)) + '</span>';
+        if (v === '') return '<span style="color:#cbd5e1;font-style:italic">(empty)</span>';
+        return escapeHtml(v);
+    }
+
+    function metaChipHtml(meta, type) {
+        if (!meta) return '';
+        var txt = '';
+        if (type === 'bigint') txt = 'bigint ' + (meta.sign || '') + String(meta.digits).slice(0, 24) + (String(meta.digits).length > 24 ? '…' : '');
+        else if (type === 'date') txt = meta.hasTimezone ? 'timezone: ' + meta.timezone : (meta.hasTime ? 'date-time' : 'date');
+        else if (type === 'base64') txt = meta.hasPreview ? 'decoded: ' + meta.preview.slice(0, 48) : 'base64';
+        else if (type === 'data-uri') txt = meta.mimeType + ' · ' + meta.encoding + ' · ' + meta.payloadSize + 'B';
+        else if (type === 'url') txt = meta.scheme + '://';
+        else if (type === 'json') txt = 'JSON';
+        if (!txt) return '';
+        return '<div class="cell-meta">' + escapeHtml(txt) + '</div>';
+    }
+
+    var copyValues = [];
+
+    function rawOfGroup(g) {
+        if (g.entries.length === 1) return g.entries[0].valueRaw;
+        return g.entries.map(function(e) { return e.valueRaw; }).join(' & ');
+    }
+
+    function buildRowHtml(idx, key, p, rawVal, value, type, meta, keyRaw) {
+        var keyDisplay = escapeHtml(p.key !== undefined ? p.key : key);
+        var keyFinal = p.key !== undefined ? p.key : key;
+        if (keyRaw !== undefined && keyRaw !== keyFinal) {
+            keyDisplay += '<div class="cell-raw">raw: ' + escapeHtml(keyRaw) + '</div>';
+        }
+        return '<tr>' +
+            '<td style="color:#94a3b8;font-weight:500">' + (idx + 1) + '</td>' +
+            '<td class="cell-key">' + keyDisplay + '</td>' +
+            '<td class="cell-value">' + escapeHtml(rawVal == null ? '' : rawVal) + '</td>' +
+            '<td class="cell-value">' + formatDisplayValue(value) + metaChipHtml(meta, type) + '</td>' +
+            '<td>' + getTypeBadgeHtml(type) + '</td>' +
+            '<td>' +
+            '<button class="row-copy-btn" data-row="' + idx + '" title="Copy value" aria-label="Copy value">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>' +
+            '</button>' +
+            '</td>' +
+            '</tr>';
+    }
+
+    function renderTable() {
+        if (!elements.tableContainer) return;
+
+        var groups = state.parsed.groups;
+        copyValues = [];
+        var html = '<table class="qs-table">' +
+            '<thead><tr>' +
+            '<th>#</th>' +
+            '<th>Key</th>' +
+            '<th>Raw Value</th>' +
+            '<th>Value</th>' +
+            '<th>Type</th>' +
+            '<th></th>' +
+            '</tr></thead><tbody>';
+
+        var idx = 0;
+        groups.forEach(function(g) {
+            if (!g.isArray && g.entries.length > 1) {
+                g.entries.forEach(function(e) {
+                    copyValues.push(displayString(e.value));
+                    html += buildRowHtml(idx, g.key, e, e.valueRaw, e.value, e.type, e.meta, e.keyRaw);
+                    idx++;
+                });
+            } else {
+                copyValues.push(displayString(g.value));
+                html += buildRowHtml(idx, g.key, g, rawOfGroup(g), g.value, g.type, g.meta, g.entries[0].keyRaw);
+                idx++;
+            }
+        });
+
+        html += '</tbody></table>';
+        elements.tableContainer.innerHTML = html;
+
+        var btns = elements.tableContainer.querySelectorAll('.row-copy-btn');
+        Array.prototype.forEach.call(btns, function(btn) {
+            btn.addEventListener('click', function() {
+                var i = parseInt(btn.getAttribute('data-row'), 10);
+                if (copyValues[i] !== undefined) {
+                    copyToClipboard(copyValues[i]);
+                }
+            });
+        });
+    }
+
+    function renderTree() {
+        if (!elements.treeContainer) return;
+        elements.treeContainer.innerHTML = '<div class="tree-view">' + treeHtml(state.parsed.object, 0) + '</div>';
+    }
+
+    function treeHtml(node, depth) {
+        var pad = depth * 20;
+        var html = '';
+        if (node === null || node === undefined) {
+            return '<div class="tree-line" style="padding-left:' + pad + 'px">' + formatDisplayValue(node) + '</div>';
+        }
+        if (Array.isArray(node)) {
+            node.forEach(function(item, i) {
+                if (item !== null && typeof item === 'object') {
+                    html += '<div class="tree-line" style="padding-left:' + pad + 'px"><span class="tree-arr">' + i + '</span></div>';
+                    html += treeHtml(item, depth + 1);
+                } else {
+                    html += '<div class="tree-line" style="padding-left:' + pad + 'px"><span class="tree-arr">' + i + '</span><span class="tree-val">' + formatDisplayValue(item) + '</span></div>';
+                }
+            });
+        } else if (node !== null && typeof node === 'object') {
+            Object.keys(node).forEach(function(k) {
+                var v = node[k];
+                if (v !== null && typeof v === 'object') {
+                    html += '<div class="tree-line" style="padding-left:' + pad + 'px"><span class="tree-branch">&#9656;</span><span class="tree-key">' + escapeHtml(k) + '</span></div>';
+                    html += treeHtml(v, depth + 1);
+                } else {
+                    html += '<div class="tree-line" style="padding-left:' + pad + 'px"><span class="tree-key">' + escapeHtml(k) + '</span><span class="tree-val">' + formatDisplayValue(v) + '</span></div>';
+                }
+            });
+        } else {
+            html += '<div class="tree-line" style="padding-left:' + pad + 'px">' + formatDisplayValue(node) + '</div>';
+        }
+        return html;
+    }
+
+    function renderSerialized(fmt) {
+        if (!elements.serializedView) return;
+        var obj = QSParser.buildExportObject(state.parsed);
+        var text = '';
+        if (fmt === 'json') text = JSON.stringify(obj, null, 2);
+        else if (fmt === 'yaml') text = QSParser.toYaml(obj);
+        else if (fmt === 'toml') text = QSParser.toToml(obj);
+        else if (fmt === 'csv') text = buildCsv();
+        elements.serializedView.textContent = text;
+    }
+
+    function buildCsv() {
+        var lines = ['"#","Key","Raw Value","Value","Type"'];
+        var n = 0;
+        state.parsed.groups.forEach(function(g) {
+            if (!g.isArray && g.entries.length > 1) {
+                g.entries.forEach(function(e) {
+                    lines.push(n + 1 + ',"' + escapeCsv(e.key) + '","' + escapeCsv(e.valueRaw) + '","' + escapeCsv(displayString(e.value)) + '","' + e.type + '"');
+                    n++;
+                });
+            } else {
+                lines.push(n + 1 + ',"' + escapeCsv(g.key) + '","' + escapeCsv(rawOfGroup(g)) + '","' + escapeCsv(displayString(g.value)) + '","' + g.type + '"');
+                n++;
+            }
+        });
+        return lines.join('\r\n');
+    }
+
+    function renderStats(stats) {
+        setStat(elements.statCount, stats.count);
+        setStat(elements.statDupes, stats.duplicates);
+        setStat(elements.statEmpty, stats.emptyValues);
+        setStat(elements.statEncoded, stats.encodedValues);
+        setStat(elements.statDecoded, stats.decodedValues);
+        setStat(elements.statTime, stats.parsingTime);
+    }
+
+    function renderSummary(summary) {
+        if (!elements.summaryGrid) return;
+        var html = '';
+        SUMMARY_ITEMS.forEach(function(item) {
+            var val = summary[item.key] || 0;
+            html += '<div class="stat-box"><div class="stat-label">' + item.label + '</div><div class="stat-value">' + val + '</div></div>';
+        });
+        elements.summaryGrid.innerHTML = html;
+        if (elements.summarySubsection) elements.summarySubsection.style.display = '';
+    }
+
+    function setStat(el, val) {
+        if (el) el.textContent = val;
+    }
+
+    function displayString(v) {
+        if (v === null) return 'null';
+        if (v === undefined) return 'undefined';
+        if (typeof v === 'object') return JSON.stringify(v);
+        return String(v);
+    }
+
+    function doParse() {
+        var raw = elements.qsInput.value;
+        if (!raw.trim()) {
+            state.parsed = null;
+            showEmptyState();
+            updateStatus('', '');
+            return;
+        }
+
+        updateStatus('processing', 'Parsing...');
+
+        setTimeout(function() {
+            try {
+                var result = parseQueryString(raw);
+                state.parsed = result;
+                renderResults(result);
+                if (result.params.length > 0) {
+                    updateStatus('done', result.params.length + ' params');
+                } else {
+                    updateStatus('', '');
+                    showEmptyState();
+                }
+            } catch (e) {
+                updateStatus('error', 'Error');
+                showToast('Failed to parse query string: ' + e.message, 'error');
+            }
+        }, 50);
+    }
+
+    function resetTool() {
+        elements.qsInput.value = '';
+        state.parsed = null;
+        updateStatus('', '');
+        showEmptyState();
+        if (elements.tableContainer) elements.tableContainer.innerHTML = '';
+        if (elements.treeContainer) elements.treeContainer.innerHTML = '';
+        if (elements.serializedView) elements.serializedView.textContent = '';
+        if (elements.exportSection) elements.exportSection.style.display = 'none';
+        if (elements.summarySubsection) elements.summarySubsection.style.display = 'none';
+        if (elements.summaryGrid) elements.summaryGrid.innerHTML = '';
+        setStat(elements.statCount, '0');
+        setStat(elements.statDupes, '0');
+        setStat(elements.statEmpty, '0');
+        setStat(elements.statEncoded, '0');
+        setStat(elements.statDecoded, '0');
+        setStat(elements.statTime, '0ms');
+    }
+
+    function copyToClipboard(text) {
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(text).then(function() {
+                showToast('Copied to clipboard!', 'success');
+            }).catch(function() {
+                fallbackCopy(text);
+            });
+        } else {
+            fallbackCopy(text);
+        }
+    }
+
+    function fallbackCopy(text) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+            document.execCommand('copy');
+            showToast('Copied to clipboard!', 'success');
+        } catch (e) {
+            showToast('Copy failed', 'error');
+        }
+        document.body.removeChild(ta);
+    }
+
+    /* ========================
+       EXPORT FUNCTIONS
+       ======================== */
+
+    function exportCopy() {
+        if (!state.parsed) return;
+        copyToClipboard(buildExportText(state.parsed));
+    }
+
+    function exportJson() {
+        if (!state.parsed) return;
+        var json = JSON.stringify(QSParser.buildExportObject(state.parsed), null, 2);
+        downloadFile('parsed-query-params.json', json, 'application/json');
+        showToast('Downloaded JSON file', 'success');
+    }
+
+    function exportCsv() {
+        if (!state.parsed) return;
+        var csv = buildCsv();
+        downloadFile('parsed-query-params.csv', csv, 'text/csv;charset=utf-8');
+        showToast('Downloaded CSV file', 'success');
+    }
+
+    function exportTxt() {
+        if (!state.parsed) return;
+        downloadFile('parsed-query-params.txt', buildExportText(state.parsed), 'text/plain');
+        showToast('Downloaded TXT file', 'success');
+    }
+
+    function exportYaml() {
+        if (!state.parsed) return;
+        var yaml = QSParser.toYaml(QSParser.buildExportObject(state.parsed));
+        downloadFile('parsed-query-params.yaml', yaml, 'text/yaml;charset=utf-8');
+        showToast('Downloaded YAML file', 'success');
+    }
+
+    function exportToml() {
+        if (!state.parsed) return;
+        var toml = QSParser.toToml(QSParser.buildExportObject(state.parsed));
+        downloadFile('parsed-query-params.toml', toml, 'application/toml;charset=utf-8');
+        showToast('Downloaded TOML file', 'success');
+    }
+
+    function exportPrint() {
+        window.print();
+    }
+
+    function buildExportText(data) {
+        var lines = [];
+        lines.push('Query String Parser Report');
+        lines.push('==========================');
+        lines.push('');
+        lines.push('Parameters: ' + data.stats.count);
+        lines.push('Unique Keys: ' + data.stats.uniqueKeys);
+        lines.push('Duplicate Keys: ' + data.stats.duplicates);
+        lines.push('Empty Values: ' + data.stats.emptyValues);
+        lines.push('Encoded Values: ' + data.stats.encodedValues);
+        lines.push('Decoded Values: ' + data.stats.decodedValues);
+        lines.push('Parsing Time: ' + data.stats.parsingTime);
+        lines.push('');
+        lines.push('---');
+        lines.push('');
+
+        data.groups.forEach(function(g, i) {
+            lines.push((i + 1) + '. ' + g.key + ' = ' + displayString(g.value) + '  [' + g.type + ']');
+        });
+
+        return lines.join('\r\n');
+    }
+
+    function escapeCsv(val) {
+        return String(val).replace(/"/g, '""');
+    }
+
+    function downloadFile(filename, content, mimeType) {
+        var blob = new Blob([content], { type: mimeType });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
+    function escapeHtml(text) {
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode(String(text)));
+        return div.innerHTML;
+    }
+
+    function showToast(msg, type) {
+        var existing = document.querySelector('.toast');
+        if (existing) existing.remove();
+        var el = document.createElement('div');
+        el.className = 'toast ' + (type || 'info');
+        el.textContent = msg;
+        document.body.appendChild(el);
+        setTimeout(function() { el.classList.add('show'); }, 10);
+        setTimeout(function() {
+            el.classList.remove('show');
+            setTimeout(function() { el.remove(); }, 300);
+        }, 3000);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+
     </script>
 </body>
 </html>

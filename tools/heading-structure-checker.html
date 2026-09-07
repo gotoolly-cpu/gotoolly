@@ -3,28 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heading Structure Checker - H1-H6 SEO Analyzer | GoToolly</title>
-    <meta name="description" content="Analyze heading hierarchy in HTML. Extract all H1-H6 tags, show structure tree, and warn about missing H1, skipped levels, multiple H1s, and empty headings.">
-    <meta name="keywords" content="heading structure checker, h1 checker, heading hierarchy analyzer, seo heading tool, html heading validator, h1 h6 checker">
+    <title>Heading Structure Checker | GoToolly</title>
+    <meta name="description" content="Validate your H1-H6 heading hierarchy for SEO. Enter headings as text (H1: Title) or paste HTML to check for a single H1, skipped levels, H1 before H2, empty headings, heading length and overall structure health.">
+    <meta name="keywords" content="heading structure checker, h1 checker, heading hierarchy analyzer, seo heading tool, html heading validator, h1 h6 checker, heading outline">
     <link rel="canonical" href="https://gotoolly.com/tools/heading-structure-checker">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gotoolly.com/tools/heading-structure-checker">
-    <meta property="og:title" content="Heading Structure Checker - H1-H6 SEO Analyzer | GoToolly">
-    <meta property="og:description" content="Analyze heading hierarchy in HTML. Extract H1-H6 tags and warn about SEO issues like missing H1 or skipped levels.">
+    <meta property="og:title" content="Heading Structure Checker | GoToolly">
+    <meta property="og:description" content="Validate your H1-H6 heading hierarchy for SEO. Enter headings as text (H1: Title) or paste HTML to check for a single H1, skipped levels, H1 before H2, empty headings, heading length and overall structure health.">
     <meta property="og:image" content="https://gotoolly.com/assets/images/logo-512.png">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
-    <meta property="og:image:alt" content="GoToolly Logo">
+    <meta property="og:image:alt" content="GoToolly Logo - Privacy-first tools">
     <meta property="og:site_name" content="GoToolly">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://gotoolly.com/tools/heading-structure-checker">
-    <meta name="twitter:title" content="Heading Structure Checker - H1-H6 SEO Analyzer | GoToolly">
-    <meta name="twitter:description" content="Analyze heading hierarchy in HTML. Extract H1-H6 tags and warn about SEO issues like missing H1 or skipped levels.">
+    <meta name="twitter:title" content="Heading Structure Checker | GoToolly">
+    <meta name="twitter:description" content="Validate your H1-H6 heading hierarchy for SEO. Enter headings as text (H1: Title) or paste HTML to check for a single H1, skipped levels, H1 before H2, empty headings, heading length and overall structure health.">
     <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
     <meta name="twitter:image:alt" content="GoToolly Logo">
     <meta name="twitter:creator" content="@GoToolly">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
     <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
@@ -32,11 +35,311 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Heading Structure Checker","url":"https://gotoolly.com/tools/heading-structure-checker","description":"Analyze heading hierarchy in HTML for SEO optimization.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Hierarchy visualization","SEO issue detection"]}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Heading Structure Checker"}]}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is heading structure important for SEO?","acceptedAnswer":{"@type":"Answer","text":"Heading structure helps search engines understand the hierarchy and topics of your content. A proper H1-H6 structure improves accessibility and can help your content rank better."}},{"@type":"Question","name":"How many H1 tags should a page have?","acceptedAnswer":{"@type":"Answer","text":"Each page should have exactly one H1 tag that describes the main topic. Multiple H1 tags can confuse search engines about the page's primary focus."}}]}</script>
-    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.check-form{margin-bottom:var(--space-4)}.check-textarea{width:100%;min-height:250px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text);tab-size:2}.check-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.check-actions{display:flex;gap:var(--space-2);margin-bottom:var(--space-4);flex-wrap:wrap}.check-output{border:1px solid var(--color-border);border-radius:12px;padding:var(--space-4);background:var(--color-surface)}.check-output h3{margin-bottom:var(--space-3);font-size:var(--text-base)}.heading-tree{padding:var(--space-3);background:#1e1e2e;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);color:#cdd6f4;margin-bottom:var(--space-4)}.tree-node{padding:4px 0;display:flex;align-items:flex-start;gap:var(--space-2)}.tree-indent{color:var(--color-text-light);white-space:pre;user-select:none}.tree-tag{font-weight:600;min-width:30px}.tree-tag.h1{color:#f38ba8}.tree-tag.h2{color:#fab387}.tree-tag.h3{color:#f9e2af}.tree-tag.h4{color:#a6e3a1}.tree-tag.h5{color:#89dceb}.tree-tag.h6{color:#cba6f7}.tree-text{color:#cdd6f4}.tree-empty{color:#6c7086;font-style:italic}.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:var(--space-3);margin-bottom:var(--space-4)}.stat-card{padding:var(--space-3);border-radius:8px;background:rgba(255,255,255,.05);text-align:center}.stat-card .stat-value{font-size:var(--text-2xl);font-weight:700;color:var(--color-primary)}.stat-card .stat-label{font-size:var(--text-xs);color:var(--color-text-light);margin-top:var(--space-1)}.issue-list{margin-top:var(--space-3)}.issue-item{display:flex;align-items:flex-start;gap:var(--space-2);padding:var(--space-2);font-size:var(--text-sm);border-radius:4px;margin-bottom:var(--space-1)}.issue-item.error{background:rgba(239,68,68,.1);color:#ef4444}.issue-item.warning{background:rgba(245,158,11,.1);color:#f59e0b}.issue-item.success{background:rgba(34,197,94,.1);color:#22c55e}.issue-icon{flex-shrink:0;font-weight:700}</style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Heading Structure Checker","url":"https://gotoolly.com/tools/heading-structure-checker","description":"Analyze heading hierarchy in HTML or as text for SEO optimization. Validate H1-H6 structure and structure health.","applicationCategory":"SEOApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","Hierarchy visualization","SEO issue detection"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Heading Structure Checker"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is heading structure important for SEO?","acceptedAnswer":{"@type":"Answer","text":"Heading structure helps search engines understand the hierarchy and topics of your content. A proper H1-H6 structure improves accessibility and can help your content rank better."}},{"@type":"Question","name":"How many H1 tags should a page have?","acceptedAnswer":{"@type":"Answer","text":"Each page should have exactly one H1 tag that describes the main topic. Multiple H1 tags can confuse search engines about the page's primary focus."}},{"@type":"Question","name":"What does this tool check?","acceptedAnswer":{"@type":"Answer","text":"It validates that there is a single H1, heading levels do not skip, the H1 appears before H2 headings, no headings are empty, and headings are not overly long."}}]}</script>
 
+    <style>
+        /* ========== SKIP LINK ========== */
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .25s cubic-bezier(.4,0,.2,1);text-decoration:none}
+        .skip-link:focus{top:0}
+
+        /* ========== HERO ========== */
+        .hero{background:radial-gradient(1200px 600px at 70% -20%,rgba(139,92,246,.18),transparent),radial-gradient(900px 500px at 10% -10%,rgba(59,130,246,.22),transparent),#0f172a;padding:52px 0 40px;text-align:center}
+        .hero h1{font-size:42px;font-weight:800;color:#fff;line-height:1.15;margin:0 0 14px}
+        .hero h1 .gradient-text{background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-subtitle{font-size:16px;color:#94a3b8;line-height:1.6;margin:0 auto 26px;max-width:680px}
+        .trust-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .trust-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:7px 14px;border-radius:9999px;font-size:13px;font-weight:500;color:#cbd5e1;transition:background .2s}
+        .trust-badge:hover{background:rgba(255,255,255,.1)}
+        .trust-badge svg{width:14px;height:14px;color:#60a5fa}
+
+        /* ========== WORKSPACE ========== */
+        .tool-workspace{max-width:920px;margin:0 auto}
+        .tool-card{background:#fff;border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.06);border:1px solid #e2e8f0;padding:28px;margin-bottom:40px}
+        .card-header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+        .card-header-left{display:flex;align-items:center;gap:10px}
+        .card-header-left .ch-icon{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#eff6ff,#e0ecff);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .card-header-left .ch-icon svg{width:18px;height:18px;color:var(--color-primary)}
+        .card-header-left h2{font-size:17px;font-weight:700;margin:0;color:#0f172a}
+        .card-divider{height:1px;background:linear-gradient(90deg,#e2e8f0,transparent);margin:18px 0 0}
+
+        /* ========== STATUS BADGE ========== */
+        .gt-status{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;padding:5px 14px;border-radius:9999px;background:#f8fafc;border:1px solid #e2e8f0;color:#64748b;transition:all .2s}
+        .gt-status::before{content:'';width:7px;height:7px;border-radius:50%;background:#94a3b8;flex-shrink:0}
+        .gt-status.ready{background:#f0fdf4;color:#166534;border-color:#bbf7d0}
+        .gt-status.ready::before{background:#22c55e}
+        .gt-status.processing{background:#fffbeb;color:#92400e;border-color:#fde68a}
+        .gt-status.processing::before{background:#f59e0b;animation:gt-pulse 1s ease-in-out infinite}
+        .gt-status.done{background:#f0fdf4;color:#166534;border-color:#bbf7d0}
+        .gt-status.done::before{background:#22c55e}
+        .gt-status.error{background:#fef2f2;color:#991b1b;border-color:#fecaca}
+        .gt-status.error::before{background:#ef4444}
+
+        /* ========== INPUT ZONE (generic form) ========== */
+        .text-input-zone{margin-top:20px}
+        .text-input-label-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:12px}
+        .text-input-label{font-size:14px;font-weight:600;color:#0f172a;margin:0}
+        .gt-char-count{font-size:12px;color:#64748b;font-family:'JetBrains Mono',monospace;background:#f8fafc;border:1px solid #e2e8f0;border-radius:9999px;padding:3px 10px}
+        .input-textarea{width:100%;min-height:220px;padding:16px 18px;border:2px solid #e2e8f0;border-radius:14px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.6;resize:vertical;background:#f8fafc;color:#0f172a;tab-size:2;box-sizing:border-box;transition:border-color .2s,box-shadow .2s,background .2s}
+        .input-textarea::placeholder{color:#94a3b8}
+        .input-textarea:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 4px rgba(37,99,235,.12);background:#fff}
+        .text-input-hint{font-size:12px;color:#94a3b8;margin-top:8px;padding:0 2px}
+        .text-input-hint kbd{font-family:'JetBrains Mono',monospace;background:#f8fafc;border:1px solid #e2e8f0;border-bottom-width:2px;border-radius:5px;padding:1px 6px;font-size:11px;color:#475569}
+
+        .gt-form{display:grid;gap:16px;margin-top:20px}
+        .gt-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+        .gt-field{display:flex;flex-direction:column;gap:6px}
+        .gt-field.full{grid-column:1/-1}
+        .gt-label{font-size:13px;font-weight:600;color:#0f172a}
+        .gt-label-row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+        .gt-input,.gt-textarea,.gt-select{width:100%;padding:11px 14px;border:2px solid #e2e8f0;border-radius:11px;font-size:14px;font-family:inherit;background:#f8fafc;color:#0f172a;box-sizing:border-box;transition:border-color .2s,box-shadow .2s,background .2s}
+        .gt-input::placeholder,.gt-textarea::placeholder{color:#94a3b8}
+        .gt-input:focus,.gt-textarea:focus,.gt-select:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 4px rgba(37,99,235,.12);background:#fff}
+        .gt-textarea{min-height:110px;resize:vertical;line-height:1.6}
+        .gt-textarea.mono,.gt-input.mono{font-family:'JetBrains Mono',monospace;font-size:13px}
+        .gt-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px;cursor:pointer}
+        .gt-help{font-size:12px;color:#94a3b8;line-height:1.5}
+        .gt-err{display:none;font-size:12px;color:#dc2626;font-weight:600;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:7px 10px}
+        .gt-err.show{display:block}
+        .gt-check{display:flex;align-items:center;gap:9px;font-size:13px;color:#334155;cursor:pointer;padding:6px 0}
+        .gt-check input{width:16px;height:16px;accent-color:#2563eb;cursor:pointer}
+        .gt-seg{display:inline-flex;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:10px;padding:3px;gap:2px}
+        .gt-seg button{border:none;background:transparent;padding:7px 14px;border-radius:8px;font-size:13px;font-weight:600;color:#64748b;cursor:pointer;transition:all .15s}
+        .gt-seg button.active{background:#fff;color:#0f172a;box-shadow:0 1px 4px rgba(15,23,42,.12)}
+        .gt-seg button:hover:not(.active){color:#334155}
+
+        /* ========== ACTION BAR ========== */
+        .action-bar{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin-top:20px}
+        .action-bar .btn{width:100%;padding:14px 20px;font-size:15px;border-radius:12px;transition:all .2s cubic-bezier(.4,0,.2,1);font-weight:600;cursor:pointer}
+        .action-bar .btn-primary{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border:none;box-shadow:0 2px 10px rgba(37,99,235,.25);display:inline-flex;align-items:center;justify-content:center;gap:8px}
+        .action-bar .btn-primary:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 8px 25px rgba(37,99,235,.35)}
+        .action-bar .btn-primary:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+        .action-bar .btn-primary .gt-spinner-inline{display:none}
+        .action-bar .btn-primary.loading .gt-spinner-inline{display:inline-block}
+        .action-bar .btn-primary.loading svg.gt-scan{display:none}
+        .action-bar .btn-outline{background:#fff;color:#0f172a;border:1px solid #e2e8f0}
+        .action-bar .btn-outline:hover{background:#f8fafc;border-color:#cbd5e1;transform:translateY(-1px)}
+
+        /* ========== PROGRESS ========== */
+        .gt-progress{height:4px;border-radius:99px;background:#eef2f7;overflow:hidden;margin:18px 0 0;position:relative}
+        .gt-progress::after{content:'';position:absolute;inset:0;width:40%;background:linear-gradient(90deg,transparent,#2563eb,transparent);animation:gt-indeterminate 1s ease-in-out infinite}
+        @keyframes gt-indeterminate{0%{transform:translateX(-100%)}100%{transform:translateX(350%)}}
+        @keyframes gt-pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+        /* ========== RESULTS ========== */
+        #results{margin-top:24px}
+        .gt-report{animation:gt-fade .4s cubic-bezier(.4,0,.2,1)}
+        @keyframes gt-fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+        .gt-loading{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 20px;text-align:center;border:1px dashed #dbe3ee;border-radius:16px;background:linear-gradient(180deg,#fbfdff,#f8fafc)}
+        .gt-loading .gt-spinner{width:38px;height:38px;border-radius:50%;border:3px solid #e2e8f0;border-top-color:#2563eb;animation:gt-spin .8s linear infinite;margin-bottom:16px}
+        .gt-loading p{font-size:14px;color:#64748b;margin:0}
+        @keyframes gt-spin{to{transform:rotate(360deg)}}
+
+        .gt-empty,.gt-error{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 24px;border:1px dashed #dbe3ee;border-radius:16px;background:linear-gradient(180deg,#fbfdff,#f8fafc)}
+        .gt-empty .gt-empty-icon,.gt-error .gt-empty-icon{width:64px;height:64px;border-radius:18px;background:#eff6ff;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+        .gt-empty .gt-empty-icon svg,.gt-error .gt-empty-icon svg{width:30px;height:30px;color:#2563eb}
+        .gt-empty h3{font-size:18px;font-weight:700;color:#0f172a;margin:0 0 8px}
+        .gt-empty p{margin:0;font-size:14px;color:#64748b;line-height:1.6;max-width:480px}
+        .gt-error .gt-empty-icon{background:#fef2f2}
+        .gt-error .gt-empty-icon svg{color:#ef4444}
+        .gt-error-title{font-weight:700;color:#991b1b;font-size:16px;margin-bottom:6px}
+        .gt-error-hint{font-size:14px;color:#64748b}
+
+        /* ========== SUMMARY / HERO SCORE ========== */
+        .gt-score-hero{display:flex;align-items:center;gap:28px;flex-wrap:wrap;padding:26px;border:1px solid #e2e8f0;border-radius:16px;background:linear-gradient(180deg,#f8fafc,#fff);margin-bottom:18px;position:relative;overflow:hidden}
+        .gt-score-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#2563eb,#8b5cf6);opacity:.35}
+        .gt-score-ring{position:relative;width:118px;height:118px;flex-shrink:0;filter:drop-shadow(0 6px 16px rgba(37,99,235,.15))}
+        .gt-score-ring svg{width:118px;height:118px;transform:rotate(-90deg)}
+        .gt-ring-bg{fill:none;stroke:#e8edf4;stroke-width:10}
+        .gt-ring-fill{fill:none;stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1)}
+        .gt-score-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column}
+        .gt-score-num{font-size:32px;font-weight:800;font-family:'JetBrains Mono',monospace;line-height:1;color:#0f172a}
+        .gt-score-total{font-size:12px;color:#94a3b8;margin-top:2px;font-weight:500}
+        .gt-score-info{flex:1;min-width:220px}
+        .gt-score-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#94a3b8}
+        .gt-score-grade{font-size:26px;font-weight:800;line-height:1.15;margin:2px 0 8px}
+        .gt-score-meta{display:flex;gap:8px;flex-wrap:wrap}
+        .gt-chip{display:inline-flex;align-items:center;gap:5px;padding:4px 11px;border-radius:9999px;font-size:11px;font-weight:700}
+        .gt-chip::before{content:'';width:6px;height:6px;border-radius:50%}
+        .gt-chip-pass{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+        .gt-chip-pass::before{background:#22c55e}
+        .gt-chip-warn{background:#fffbeb;color:#92400e;border:1px solid #fde68a}
+        .gt-chip-warn::before{background:#f59e0b}
+        .gt-chip-fail{background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+        .gt-chip-fail::before{background:#ef4444}
+        .gt-chip-info{background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe}
+        .gt-chip-info::before{background:#3b82f6}
+        .gt-score-hint{font-size:13px;color:#64748b;margin-top:10px;line-height:1.5}
+
+        /* ========== STAT CARDS ========== */
+        .gt-stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:18px}
+        .gt-stat{padding:16px 10px;border-radius:14px;background:#fff;border:1px solid #e2e8f0;text-align:center;transition:all .2s}
+        .gt-stat:hover{border-color:#c3d4ef;transform:translateY(-2px);box-shadow:0 6px 16px rgba(15,23,42,.06)}
+        .gt-stat-icon{width:30px;height:30px;margin:0 auto 8px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:#eff6ff}
+        .gt-stat-icon svg{width:16px;height:16px;color:#2563eb}
+        .gt-stat-value{font-size:24px;font-weight:800;color:#0f172a;font-family:'JetBrains Mono',monospace;line-height:1}
+        .gt-stat-label{font-size:11px;color:#64748b;margin-top:5px;font-weight:500;text-transform:uppercase;letter-spacing:.4px}
+
+        /* ========== SECTIONS / COLLAPSE ========== */
+        .gt-section{border:1px solid #e2e8f0;border-radius:14px;margin-bottom:14px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(15,23,42,.03)}
+        .gt-section summary{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 22px;cursor:pointer;list-style:none;font-weight:700;font-size:15px;color:#0f172a;user-select:none;transition:background .18s}
+        .gt-section summary::-webkit-details-marker{display:none}
+        .gt-section summary:hover{background:#f8fafc}
+        .gt-section summary:focus-visible{outline:2px solid #2563eb;outline-offset:-2px;border-radius:14px}
+        .gt-section-title{display:flex;align-items:center;gap:10px}
+        .gt-section-title svg{width:17px;height:17px;color:#2563eb;flex-shrink:0}
+        .gt-chevron{width:18px;height:18px;color:#94a3b8;transition:transform .22s ease;flex-shrink:0}
+        .gt-section[open] .gt-chevron{transform:rotate(180deg)}
+        .gt-section-body{padding:0 22px 22px;overflow-x:auto}
+        .gt-block-label{font-size:12px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:18px 0 10px}
+        .gt-none{font-size:13px;color:#94a3b8;padding:14px;background:#f8fafc;border:1px dashed #dbe3ee;border-radius:10px}
+
+        /* ========== TABLES ========== */
+        .gt-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:8px;background:#fff;border:1px solid #e8edf4;border-radius:12px;overflow:hidden}
+        .gt-table th{text-align:left;padding:10px 14px;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:#64748b;background:#f8fafc;border-bottom:1px solid #e8edf4;white-space:nowrap;font-weight:700}
+        .gt-table td{padding:9px 14px;border-bottom:1px solid #f1f5f9;vertical-align:top}
+        .gt-table tr:last-child td{border-bottom:none}
+        .gt-table tbody tr{transition:background .12s}
+        .gt-table tbody tr:hover{background:#f8fafc}
+        .gt-mono{font-family:'JetBrains Mono',monospace;font-size:12px;word-break:break-all}
+        .gt-name{font-family:'JetBrains Mono',monospace;font-size:12px;color:#2563eb;white-space:nowrap;font-weight:600}
+        .gt-muted{color:#94a3b8}
+
+        /* ========== CHECK ITEMS / LEGEND ========== */
+        .gt-legend{display:flex;gap:16px;flex-wrap:wrap;padding:10px 14px;background:#f8fafc;border:1px solid #e8edf4;border-radius:10px;margin-bottom:14px;font-size:11px;color:#475569}
+        .gt-legend-item{display:inline-flex;align-items:center;gap:6px;font-weight:600}
+        .gt-legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+        .gt-legend-pass{background:#22c55e}
+        .gt-legend-warn{background:#f59e0b}
+        .gt-legend-fail{background:#ef4444}
+        .gt-legend-info{background:#3b82f6}
+        .gt-item{display:flex;gap:12px;align-items:flex-start;padding:13px 16px;border-radius:12px;margin-bottom:8px;border:1px solid #e8edf4;border-left-width:4px;background:#fff;transition:all .18s}
+        .gt-item:hover{box-shadow:0 4px 14px rgba(15,23,42,.05);transform:translateX(2px)}
+        .gt-item-icon{width:20px;height:20px;flex-shrink:0;margin-top:1px}
+        .gt-item.pass .gt-item-icon{color:#16a34a}
+        .gt-item.warn .gt-item-icon{color:#d97706}
+        .gt-item.fail .gt-item-icon{color:#dc2626}
+        .gt-item.info .gt-item-icon{color:#3b82f6}
+        .gt-item.pass{border-left-color:#16a34a;background:linear-gradient(90deg,rgba(22,163,74,.05),#fff 60%)}
+        .gt-item.warn{border-left-color:#d97706;background:linear-gradient(90deg,rgba(217,119,6,.05),#fff 60%)}
+        .gt-item.fail{border-left-color:#dc2626;background:linear-gradient(90deg,rgba(220,38,38,.05),#fff 60%)}
+        .gt-item.info{border-left-color:#3b82f6;background:linear-gradient(90deg,rgba(59,130,246,.05),#fff 60%)}
+        .gt-item-body{flex:1;min-width:0}
+        .gt-item-label{font-weight:600;font-size:14px;color:#0f172a}
+        .gt-item-detail{font-size:13px;color:#64748b;margin-top:2px;line-height:1.5}
+        .gt-item-fix{margin-top:8px;font-size:12px;color:#475569;background:#eff6ff;border-left:3px solid #2563eb;padding:6px 10px;border-radius:0 8px 8px 0}
+        .gt-fix-label{font-weight:700;color:#2563eb}
+
+        /* ========== OUTPUT / CODE ========== */
+        .gt-out-card{border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin-bottom:14px;background:#fff}
+        .gt-out-header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;background:#f8fafc;border-bottom:1px solid #e8edf4;font-size:13px;font-weight:700;color:#0f172a}
+        .gt-out-body{padding:16px;overflow-x:auto}
+        .gt-code{font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.65;color:#1e293b;white-space:pre-wrap;word-break:break-word;background:#0f172a;color:#e2e8f0;border-radius:10px;padding:16px;margin:0;overflow-x:auto;tab-size:2}
+        .gt-result-box{background:#f8fafc;border:1px solid #e8edf4;border-radius:10px;padding:14px 16px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#0f172a;word-break:break-all;line-height:1.6}
+        .gt-inline-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;align-self:flex-end}
+        .gt-btn-sm,.gt-export-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid #e2e8f0;border-radius:10px;cursor:pointer;transition:all .18s;white-space:nowrap}
+        .gt-btn-sm svg,.gt-export-btn svg{width:13px;height:13px}
+        .gt-btn-sm:hover,.gt-export-btn:hover{border-color:#2563eb;color:#2563eb;background:#eff6ff;transform:translateY(-1px);box-shadow:0 4px 12px rgba(37,99,235,.12)}
+        .gt-btn-sm:focus-visible,.gt-export-btn:focus-visible{outline:2px solid #2563eb;outline-offset:2px}
+
+        /* ========== TOAST ========== */
+        .gt-toast{position:fixed;top:20px;right:20px;z-index:2000;padding:13px 20px;border-radius:12px;font-size:14px;font-weight:600;color:#fff;display:flex;align-items:center;gap:9px;box-shadow:0 10px 30px rgba(0,0,0,.18);opacity:0;transform:translateX(30px);transition:all .28s cubic-bezier(.4,0,.2,1);pointer-events:none;max-width:340px}
+        .gt-toast.show{opacity:1;transform:translateX(0)}
+        .gt-toast.info{background:linear-gradient(135deg,#2563eb,#1d4ed8)}
+        .gt-toast.success{background:linear-gradient(135deg,#16a34a,#15803d)}
+        .gt-toast.error{background:linear-gradient(135deg,#ef4444,#dc2626)}
+        .gt-toast svg{width:16px;height:16px;flex-shrink:0}
+
+        /* ========== STICKY ACTION BAR ========== */
+        .gt-sticky-actions{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(30px);z-index:1500;display:flex;align-items:center;gap:6px;background:rgba(15,23,42,.92);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:9999px;padding:6px;box-shadow:0 14px 40px rgba(0,0,0,.35);opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility .25s}
+        .gt-sticky-actions.show{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+        .gt-sticky-actions .gt-sticky-score{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:9999px;font-weight:800;font-family:'JetBrains Mono',monospace;font-size:12.5px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#fff}
+        .gt-sticky-actions .gt-export-btn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(255,255,255,.18);color:#e2e8f0;padding:8px 13px;border-radius:9999px;font-size:12.5px;font-weight:600;cursor:pointer;transition:all .18s;white-space:nowrap}
+        .gt-sticky-actions .gt-export-btn svg{width:13px;height:13px}
+        .gt-sticky-actions .gt-export-btn:hover{border-color:#60a5fa;color:#93c5fd;background:rgba(96,165,250,.12);box-shadow:none;transform:none}
+
+        /* ========== RELATED / HOW / FAQ ========== */
+        .related-section{margin:44px auto 8px;max-width:920px}
+        .section-heading h2{font-size:24px;font-weight:800;color:#0f172a;margin:0 0 6px}
+        .section-heading p{font-size:14px;color:#64748b;margin:0 0 18px}
+        .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+        .related-card{display:block;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px;text-decoration:none;transition:all .2s;color:inherit}
+        .related-card:hover{border-color:#c3d4ef;transform:translateY(-3px);box-shadow:0 10px 26px rgba(15,23,42,.08)}
+        .related-card .rc-icon{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#eff6ff,#e0ecff);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+        .related-card .rc-icon svg{width:19px;height:19px;color:var(--color-primary)}
+        .related-card h4{font-size:14px;font-weight:700;color:#0f172a;margin:0 0 6px}
+        .related-card p{font-size:12.5px;color:#64748b;margin:0 0 10px;line-height:1.5}
+        .related-card .rc-btn{font-size:12px;font-weight:700;color:#2563eb;display:inline-flex;align-items:center;gap:5px}
+        .related-card .rc-btn svg{width:13px;height:13px}
+        .how-section,.faq-section{margin:40px auto 8px;max-width:920px}
+        .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+        .step-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:20px}
+        .step-num{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#2563eb,#8b5cf6);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+        .step-card h4{font-size:14px;font-weight:700;color:#0f172a;margin:0 0 6px}
+        .step-card p{font-size:12.5px;color:#64748b;margin:0;line-height:1.55}
+        .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+        .faq-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px}
+        .faq-card h4{font-size:14px;font-weight:700;color:#0f172a;margin:0 0 6px}
+        .faq-card p{font-size:13px;color:#64748b;margin:0;line-height:1.6}
+        .privacy-note{display:flex;gap:12px;align-items:center;background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:14px 18px;margin:36px auto 8px;max-width:920px;font-size:13px;color:#92400e;line-height:1.5}
+        .privacy-note svg{width:18px;height:18px;flex-shrink:0;color:#d97706}
+        .guide-link{margin:20px auto 8px;max-width:920px;text-align:center;font-size:14px}
+        .guide-link a{color:#2563eb;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+        .guide-link a:hover{text-decoration:underline}
+
+        /* ========== RESPONSIVE ========== */
+        @media(max-width:768px){
+            .hero{padding:36px 0 26px}
+            .hero h1{font-size:30px}
+            .hero-subtitle{font-size:14px;margin-bottom:20px}
+            .trust-badge{padding:5px 11px;font-size:12px}
+            .tool-card{padding:18px;margin-bottom:32px}
+            .action-bar{grid-template-columns:1fr}
+            .related-grid,.steps-grid{grid-template-columns:1fr}
+            .faq-grid{grid-template-columns:1fr}
+            .gt-row{grid-template-columns:1fr}
+            .gt-stats-grid{grid-template-columns:repeat(2,1fr)}
+            .gt-sticky-actions{width:auto;max-width:94vw;flex-wrap:wrap;justify-content:center}
+        }
+        @media(max-width:480px){
+            .hero{padding:28px 0 20px}
+            .hero h1{font-size:26px}
+            .section-heading h2{font-size:24px}
+            .gt-stats-grid{grid-template-columns:repeat(2,1fr)}
+            .gt-score-hero{gap:18px;padding:20px}
+        }
+        @media(prefers-reduced-motion:reduce){
+            .gt-report,.gt-progress::after,.gt-status.processing::before,.gt-chevron,.gt-ring-fill,.gt-loading .gt-spinner,.gt-sticky-actions{animation:none!important;transition:none!important}
+        }
+        @media print{
+            .hero,.site-header,.site-footer,.related-section,.how-section,.faq-section,.privacy-note,.guide-link,.action-bar,.text-input-zone,.gt-sticky-actions,.gt-toast{display:none!important}
+            .tool-card{box-shadow:none;border:none;padding:0}
+            #results{margin-top:0}
+            .gt-section{break-inside:avoid}
+            body{background:#fff}
+        }
+        /* ========== HEADING STRUCTURE CHECKER ========== */
+.hs-tree{background:#0f172a;border-radius:12px;padding:16px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.9;margin-bottom:16px;overflow-x:auto;color:#e2e8f0}
+.hs-node{display:flex;align-items:flex-start;gap:8px}
+.hs-indent{color:#475569;white-space:pre;user-select:none;flex-shrink:0}
+.hs-tag{font-weight:700;min-width:34px;flex-shrink:0}
+.hs-tag.h1{color:#f38ba8}
+.hs-tag.h2{color:#fab387}
+.hs-tag.h3{color:#f9e2af}
+.hs-tag.h4{color:#a6e3a1}
+.hs-tag.h5{color:#89dceb}
+.hs-tag.h6{color:#cba6f7}
+.hs-text{color:#e2e8f0;word-break:break-word}
+.hs-empty{color:#64748b;font-style:italic}
+.hs-length{color:#64748b;margin-left:auto;padding-left:12px;white-space:nowrap;font-size:11px}
+.hs-length.over{color:#f87171}
+.gt-inline-actions .gt-export-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid #e2e8f0;border-radius:10px;cursor:pointer;transition:all .18s}
+.gt-inline-actions .gt-export-btn svg{width:13px;height:13px}
+.gt-inline-actions .gt-export-btn:hover{border-color:#2563eb;color:#2563eb;background:#eff6ff;transform:translateY(-1px)}
+
+    </style>
     <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
 </head>
 <body>
@@ -59,44 +362,113 @@
     </header>
 
     <main id="main-content" class="main-content">
-        <div class="container">
-            <div class="page-header">
-                <h1>Heading Structure Checker</h1>
-                <p class="page-description">Analyze heading hierarchy in HTML for proper SEO structure and accessibility.</p>
-                <p style="margin-top:var(--space-3);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No sign-up &bull; No server uploads &bull; 100% browser-based</p>
-            </div>
-
-            <div class="check-form">
-                <label for="html-input" style="font-weight:600;margin-bottom:var(--space-2);display:block">Paste HTML Source Code</label>
-                <textarea id="html-input" class="check-textarea" placeholder="Paste your HTML here...&#10;&#10;Example:&#10;<h1>Main Title</h1>&#10;<h2>Section</h2>&#10;<h3>Subsection</h3>"></textarea>
-            </div>
-
-            <div class="check-actions">
-                <button id="check-btn" class="btn btn-primary btn-lg">Check Headings</button>
-                <button id="clear-btn" class="btn btn-outline btn-lg">Clear</button>
-            </div>
-
-            <div id="check-output" class="check-output">
-                <div style="color:var(--color-text-light);text-align:center;padding:var(--space-8)">Heading analysis results will appear here</div>
-            </div>
-
-            <section class="content-section" style="margin-top:var(--space-8)">
-                <div class="section-header"><h2>Related Tools</h2></div>
-                <div class="tools-grid">
-                    <div class="card tool-card"><h3>Meta Length Checker</h3><p>Check title and description lengths for SEO optimization.</p><div class="card-footer"><a href="./meta-length-checker" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-                    <div class="card tool-card"><h3>Canonical URL Checker</h3><p>Validate canonical URLs and detect common issues.</p><div class="card-footer"><a href="./canonical-url-checker" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-                    <div class="card tool-card"><h3>Article Schema Generator</h3><p>Generate Article JSON-LD structured data for SEO.</p><div class="card-footer"><a href="./article-schema-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+        <section class="hero">
+            <div class="container">
+                <h1>Heading Structure <span class="gradient-text">Checker</span></h1>
+                <p class="hero-subtitle">Paste your headings (one per line, e.g. "H1: Page Title") or raw HTML to validate hierarchy, spot skipped levels, empty headings and length issues, and get a structure-health score — all in your browser.</p>
+                <div class="trust-badges">
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>100% Free</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>No Sign-up</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>100% Browser-Based</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Instant Results</span>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="content-section" style="margin-top:var(--space-4)">
-                <div class="section-header"><h2>Privacy Notice</h2></div>
-                <p style="color:var(--color-text-light);font-size:var(--text-sm)">All processing happens entirely in your browser. Your HTML data is never uploaded to any server. Once you close this page, all data is gone.</p>
-            </section>
+        <div class="container" style="margin-top:32px">
+            <div class="tool-workspace">
+                <div class="tool-card">
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 10h16M4 14h10M4 18h6"/></svg></div>
+                            <h2>Heading Structure Checker</h2>
+                        </div>
+                        <span id="gt-status" class="gt-status ready" role="status" aria-live="polite">Ready</span>
+                    </div>
+                    <div class="card-divider"></div>
+                    <div class="gt-form">
+    <div class="gt-field">
+        <div class="gt-label-row">
+            <label for="hs-input" class="gt-label">Page Headings</label>
+            <span id="hs-input-count" class="gt-char-count">0 headings</span>
+        </div>
+        <textarea id="hs-input" class="gt-textarea mono" rows="10" placeholder="Paste your headings, one per line:&#10;H1: Brew Better Coffee at Home&#10;H2: Choosing the Right Beans&#10;H3: Roast Levels Explained&#10;H2: Brewing Methods&#10;&#10;...or paste raw HTML with &lt;h1&gt; to &lt;h6&gt; tags." spellcheck="false"></textarea>
+        <p class="gt-help">One heading per line using the <code>H1:</code> to <code>H6:</code> format, or paste the page HTML — both are supported.</p>
+    </div>
+</div>
 
-            <p style="margin-top: var(--space-4); text-align: center;">
-                <a href="../guides/heading-structure-checker" style="color: var(--color-primary);">Read Guide: How to Structure Headings for SEO <i class="fas fa-arrow-right"></i></a>
-            </p>
+                    <div class="action-bar">
+    <button id="gt-run" class="btn btn-primary" type="button">
+        <span class="gt-spinner-inline"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="12" cy="12" r="10" opacity=".25"/><path d="M12 2a10 10 0 0 1 10 10"/></svg></span>
+        <svg class="gt-scan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Check Structure
+    </button>
+    <button id="gt-sample" class="btn btn-outline" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Load Sample</button>
+    <button id="gt-clear" class="btn btn-outline" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>Clear</button>
+</div>
+
+                    <div id="gt-progress" class="gt-progress" hidden></div>
+                    <div id="results" aria-live="polite">
+                        <div class="gt-empty">
+    <div class="gt-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 10h16M4 14h10M4 18h6"/></svg></div>
+    <h3>Your structure analysis appears here</h3>
+    <p>Enter your headings one per line (e.g. <code>H1: Page Title</code>) or paste HTML, then press Check Structure — you'll get a hierarchy outline, issues and a structure-health score.</p>
+</div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="related-section">
+    <div class="section-heading">
+        <h2>Related Tools</h2>
+        <p>Complete your on-page SEO workflow with these free utilities.</p>
+    </div>
+    <div class="related-grid">
+        <a href="./meta-length-checker" class="related-card"><div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 10h16M4 14h10M4 18h6"/></svg></div><h4>Meta Length Checker</h4><p>Check title and description lengths against display limits.</p><span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+        <a href="./canonical-url-checker" class="related-card"><div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></div><h4>Canonical URL Checker</h4><p>Validate canonical URLs and detect common issues.</p><span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+        <a href="./keyword-density-checker" class="related-card"><div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div><h4>Keyword Density Checker</h4><p>Analyze keyword usage and density percentages.</p><span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+        <a href="./serp-preview" class="related-card"><div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><h4>SERP Preview</h4><p>Preview your title and description in Google results.</p><span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+        <a href="./meta-tag-analyzer" class="related-card"><div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h4>Meta Tag Analyzer</h4><p>Full SEO audit with quality score and recommendations.</p><span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+        <a href="./xml-sitemap-generator" class="related-card"><div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><h4>XML Sitemap Generator</h4><p>Generate an XML sitemap for your website.</p><span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+    </div>
+</div>
+
+            <div class="how-section">
+    <div class="section-heading">
+        <h2>How It Works</h2>
+        <p>Three simple steps to validate your heading hierarchy.</p>
+    </div>
+    <div class="steps-grid">
+        <div class="step-card"><div class="step-num">1</div><h4>Enter your headings</h4><p>Type headings one per line as <code>H1: Title</code> or paste the page HTML with h1-h6 tags.</p></div>
+        <div class="step-card"><div class="step-num">2</div><h4>Review the outline</h4><p>See a colour-coded hierarchy outline with flags for multiple H1s, skipped levels, empty headings and length issues.</p></div>
+        <div class="step-card"><div class="step-num">3</div><h4>Score &amp; export</h4><p>Check the structure-health score, follow the recommendations, then export as TXT, JSON or print.</p></div>
+    </div>
+</div>
+
+            <div class="faq-section">
+    <div class="section-heading">
+        <h2>FAQ</h2>
+        <p>Common questions about the Heading Structure Checker tool.</p>
+    </div>
+    <div class="faq-grid">
+        <div class="faq-card"><h4>Why is heading structure important for SEO?</h4><p>Heading structure helps search engines understand the hierarchy and topics of your content. A proper H1-H6 structure improves accessibility and can help your content rank better.</p></div>
+        <div class="faq-card"><h4>How many H1 tags should a page have?</h4><p>Each page should have exactly one H1 tag that describes the main topic. Multiple H1 tags can confuse search engines about the page's primary focus.</p></div>
+        <div class="faq-card"><h4>What does this tool check?</h4><p>It validates that there is a single H1, heading levels do not skip, the H1 appears before H2 headings, no headings are empty, and headings are not overly long.</p></div>
+        <div class="faq-card"><h4>Can I paste raw HTML?</h4><p>Yes. Paste the full page HTML and the tool extracts every h1-h6 tag. You can also list headings as plain text lines such as H1: Title.</p></div>
+    </div>
+</div>
+
+
+            <div class="privacy-note">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                <span><strong>Privacy first:</strong> all processing happens in your browser. Your data is never uploaded &mdash; once you close this page, all data is gone.</span>
+            </div>
+
+            <div class="guide-link">
+                <a href="../guides/heading-structure-checker">Read Guide: How to Structure Headings for SEO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+
+            </div>
         </div>
     </main>
 
@@ -104,80 +476,544 @@
                     <div class="footer-social">
                         <a href="https://x.com/GoToolly" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                         <a href="https://www.facebook.com/profile.php?id=61591898344203" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                        <a href="https://linkedin.com/in/go-toolly-426b67422" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                        <a href="https://www.youtube.com/@GoToolly" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                         <a href="https://www.instagram.com/gotoolly/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
                         <a href="https://www.tiktok.com/@gotoolly26" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
                         <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></a>
-                    </div></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor.html">Image Compressor</a></li><li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li><li><a href="/tools/word-counter.html">Word Counter</a></li><li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li><li><a href="/tools/password-generator.html">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; 2026 GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
+                    </div></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor.html">Image Compressor</a></li><li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li><li><a href="/tools/word-counter.html">Word Counter</a></li><li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li><li><a href="/tools/password-generator.html">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
 
     <script defer src="../assets/js/main.min.js"></script>
     <script>
-    (function(){
-        var htmlInput=document.getElementById('html-input'),output=document.getElementById('check-output'),checkBtn=document.getElementById('check-btn'),clearBtn=document.getElementById('clear-btn');
+    (function () {
+        'use strict';
 
-        function stripTags(html){
-            var tmp=document.createElement('div');tmp.innerHTML=html;return tmp.textContent||tmp.innerText||'';
+        var $ = function (sel, root) { return (root || document).querySelector(sel); };
+        var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
+
+        var ICONS = {
+            pass: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+            warn: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+            fail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>',
+            info: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
+            copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>',
+            list: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>',
+            download: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>',
+            braces: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>',
+            print: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>',
+            chevron: '<svg class="gt-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>',
+            search: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
+            clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+            trash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>',
+            check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>'
+        };
+        var EXPORT_ICONS = { 'copy-report': 'copy', 'copy-recs': 'list', txt: 'download', json: 'braces', print: 'print' };
+
+        function esc(s) {
+            return String(s == null ? '' : s)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
         }
 
-        checkBtn.addEventListener('click',function(){
-            var html=htmlInput.value.trim();
-            if(!html){output.innerHTML='<div style="color:#f38ba8;text-align:center;padding:var(--space-4)">Please paste some HTML to analyze.</div>';return;}
-            var regex=/<(h[1-6])[^>]*>([\s\S]*?)<\/\1>/gi;
-            var headings=[];var match;
-            while((match=regex.exec(html))!==null){
-                headings.push({tag:match[1].toLowerCase(),level:parseInt(match[1].charAt(1)),text:stripTags(match[2]).trim()});
+        function truncate(s, n) {
+            s = String(s == null ? '' : s);
+            if (s.length <= n) return s;
+            return s.slice(0, n - 1).replace(/\s+\S*$/, '') + '\u2026';
+        }
+
+        function debounce(fn, wait) {
+            var t;
+            return function () {
+                var args = arguments, ctx = this;
+                clearTimeout(t);
+                t = setTimeout(function () { fn.apply(ctx, args); }, wait);
+            };
+        }
+
+        function decodeEntities(str) {
+            var t = document.createElement('textarea');
+            t.innerHTML = String(str);
+            return t.value;
+        }
+
+        function download(filename, content, mime) {
+            var blob = new Blob([content], { type: (mime || 'text/plain') + ';charset=utf-8' });
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 120);
+        }
+
+        function copyText(text, successMsg) {
+            var done = function () { showToast(successMsg || 'Copied to clipboard', 'success'); };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text, done); });
+            } else {
+                fallbackCopy(text, done);
             }
-            var counts={1:0,2:0,3:0,4:0,5:0,6:0};
-            headings.forEach(function(h){counts[h.level]++;});
-            var total=headings.length;
+        }
 
-            var html2='<h3>Heading Summary</h3>';
-            html2+='<div class="stats-grid">';
-            html2+='<div class="stat-card"><div class="stat-value">'+total+'</div><div class="stat-label">Total</div></div>';
-            html2+='<div class="stat-card"><div class="stat-value">'+counts[1]+'</div><div class="stat-label">H1</div></div>';
-            html2+='<div class="stat-card"><div class="stat-value">'+counts[2]+'</div><div class="stat-label">H2</div></div>';
-            html2+='<div class="stat-card"><div class="stat-value">'+counts[3]+'</div><div class="stat-label">H3</div></div>';
-            html2+='<div class="stat-card"><div class="stat-value">'+counts[4]+'</div><div class="stat-label">H4</div></div>';
-            html2+='<div class="stat-card"><div class="stat-value">'+counts[5]+'</div><div class="stat-label">H5</div></div>';
-            html2+='<div class="stat-card"><div class="stat-value">'+counts[6]+'</div><div class="stat-label">H6</div></div>';
-            html2+='</div>';
+        function fallbackCopy(text, done) {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.top = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); done(); } catch (e) { showToast('Could not copy to clipboard', 'error'); }
+            ta.remove();
+        }
 
-            html2+='<div class="heading-tree">';
-            headings.forEach(function(h,i){
-                var indent='  '.repeat(h.level-1);
-                var prefix=h.level===1?'▸ ':h.level===2?'  ├ ':'  '.repeat(h.level-1)+'└ ';
-                var textClass=h.text?'tree-text':'tree-empty';
-                var displayText=h.text||'(empty heading)';
-                html2+='<div class="tree-node"><span class="tree-indent">'+indent+'</span><span class="tree-tag '+h.tag+'">'+h.tag.toUpperCase()+'</span> <span class="'+textClass+'">'+displayText+'</span></div>';
+        function printCurrent() {
+            var w = window.open('', '_blank', 'width=900,height=700');
+            if (!w) { showToast('Pop-ups are blocked. Use the browser print menu instead.', 'error'); return; }
+            w.document.write('<html><head><title>Print</title><style>body{font-family:Inter,Arial,sans-serif;color:#0f172a;padding:24px;max-width:900px;margin:0 auto}h1{font-size:22px}h2{font-size:16px;margin-top:22px}pre{white-space:pre-wrap;font-family:monospace;background:#f8fafc;padding:12px;border-radius:8px;border:1px solid #e2e8f0}@media print{body{padding:0}}</style></head><body>' +
+                printHeader() + '<h1>' + esc(printTitle()) + '</h1>' + printBody() + '</body></html>');
+            w.document.close();
+            w.focus();
+            setTimeout(function () { w.print(); }, 350);
+        }
+
+        /* tool must define: printTitle(), printHeader(), printBody(), showToast, DOM.results */
+        function showToast(msg, type) {
+            var el = document.getElementById('gt-toast');
+            if (!el) {
+                el = document.createElement('div');
+                el.id = 'gt-toast';
+                el.className = 'gt-toast';
+                el.setAttribute('role', 'status');
+                document.body.appendChild(el);
+            }
+            var icon = type === 'success' ? ICONS.check : type === 'error' ? ICONS.fail : ICONS.info;
+            el.innerHTML = icon + esc(msg);
+            el.className = 'gt-toast show ' + (type || 'info');
+            clearTimeout(showToast._t);
+            showToast._t = setTimeout(function () { el.className = 'gt-toast'; }, 2600);
+        }
+
+        function exportBtn(key, label) {
+            return '<button type="button" class="gt-export-btn" data-export="' + key + '">' + (ICONS[EXPORT_ICONS[key] || 'copy'] || '') + label + '</button>';
+        }
+
+        function renderSticky(r) {
+            var bar = document.getElementById('gt-sticky');
+            if (!bar) {
+                bar = document.createElement('div');
+                bar.id = 'gt-sticky';
+                bar.className = 'gt-sticky-actions';
+                bar.setAttribute('role', 'toolbar');
+                bar.setAttribute('aria-label', 'Result actions');
+                document.body.appendChild(bar);
+            }
+            bar.innerHTML = stickyScore(r) +
+                exportBtn('copy-report', 'Copy') +
+                exportBtn('txt', 'TXT') +
+                exportBtn('json', 'JSON') +
+                exportBtn('print', 'Print');
+            requestAnimationFrame(function () { bar.classList.add('show'); });
+        }
+
+        function hideSticky() {
+            var bar = document.getElementById('gt-sticky');
+            if (bar) bar.classList.remove('show');
+        }
+
+        /* tool must define: stickyScore(r), handleExport(key), buildReportText(r), buildReportJson(r) */
+        function delegateExport(root) {
+            if (!root) return;
+            root.addEventListener('click', function (e) {
+                var btn = e.target.closest('[data-export]');
+                if (!btn) return;
+                if (root === document.body && DOM.results.contains(btn)) return;
+                e.preventDefault();
+                handleExport(btn.getAttribute('data-export'));
             });
-            if(headings.length===0)html2+='<div style="color:var(--color-text-light)">No headings found in the provided HTML.</div>';
-            html2+='</div>';
+        }
 
-            html2+='<h3>Issues &amp; Recommendations</h3><div class="issue-list">';
-            if(total===0)html2+='<div class="issue-item error"><span class="issue-icon">✗</span>No heading tags found. Add headings to structure your content.</div>';
-            if(counts[1]===0&&total>0)html2+='<div class="issue-item error"><span class="issue-icon">✗</span>No H1 tag found. Every page should have exactly one H1 tag.</div>';
-            if(counts[1]>1)html2+='<div class="issue-item warning"><span class="issue-icon">!</span>Multiple H1 tags found ('+counts[1]+'). Use only one H1 per page for best SEO.</div>';
-            var emptyCount=headings.filter(function(h){return!h.text;}).length;
-            if(emptyCount>0)html2+='<div class="issue-item warning"><span class="issue-icon">!</span>'+emptyCount+' empty heading tag(s) found. Fill headings with descriptive text.</div>';
-            var skipped=false;
-            for(var i=1;i<headings.length;i++){
-                if(headings[i].level>headings[i-1].level+1){
-                    skipped=true;
-                    html2+='<div class="issue-item warning"><span class="issue-icon">!</span>Heading level skipped: '+headings[i-1].tag.toUpperCase()+' → '+headings[i].tag.toUpperCase()+' (at "'+headings[i].text.substring(0,30)+'"). Avoid skipping heading levels for proper hierarchy.</div>';
-                }
-            }
-            if(!skipped&&headings.length>1)html2+='<div class="issue-item success"><span class="issue-icon">✓</span>No skipped heading levels detected.</div>';
-            if(counts[1]===1&&emptyCount===0&&total>0)html2+='<div class="issue-item success"><span class="issue-icon">✓</span>Page has a single H1 tag with content.</div>';
-            html2+='</div>';
+        /* ================= HEADING STRUCTURE CHECKER ================= */
+var DOM = {
+    results: $('#results'),
+    status: $('#gt-status'),
+    progress: $('#gt-progress'),
+    runBtn: $('#gt-run'),
+    sampleBtn: $('#gt-sample'),
+    clearBtn: $('#gt-clear'),
+    input: $('#hs-input'),
+    inputCount: $('#hs-input-count')
+};
 
-            output.innerHTML=html2;
-        });
+var state = { busy: false, lastResult: null };
 
-        clearBtn.addEventListener('click',function(){
-            htmlInput.value='';
-            output.innerHTML='<div style="color:var(--color-text-light);text-align:center;padding:var(--space-8)">Heading analysis results will appear here</div>';
-        });
+var CONFIG = {
+    maxHeadingLength: 70,
+    gradeA: 90,
+    gradeB: 75,
+    gradeC: 60,
+    penaltyNoH1: 25,
+    penaltyMultiH1: 15,
+    penaltySkipped: 10,
+    penaltyEmpty: 8,
+    penaltyLength: 5,
+    penaltyH1Order: 10
+};
+
+var STATUS_LABEL = { pass: 'Good', warn: 'Warning', fail: 'Fix', info: 'Info' };
+var STATUS_RANK = { fail: 0, warn: 1, info: 2, pass: 3 };
+
+var SAMPLE = 'H1: Brew Better Coffee at Home\nH2: Choosing the Right Beans\nH3: Roast Levels Explained\nH2: Brewing Methods\nH3: Pour Over\nH3: French Press\nH3: Espresso\nH2: Common Mistakes\nH3: Storing Beans\nH4: Best Storage Containers';
+
+function stripTags(html) {
+    var tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || '';
+}
+
+function parseHeadings(input) {
+    var headings = [];
+    var regex = /<(h[1-6])[^>]*>([\s\S]*?)<\/\1>/gi;
+    var match;
+    while ((match = regex.exec(input)) !== null) {
+        headings.push({ tag: match[1].toLowerCase(), level: parseInt(match[1].charAt(1), 10), text: stripTags(match[2]).trim() });
+    }
+    if (headings.length === 0) {
+        var lines = String(input).split(/\r?\n/);
+        for (var i = 0; i < lines.length; i++) {
+            var m = lines[i].match(/^\s*(h[1-6])\s*[:.\-)\]]?\s*(.*)$/i);
+            if (m) headings.push({ tag: m[1].toLowerCase(), level: parseInt(m[1].charAt(1), 10), text: m[2].trim() });
+        }
+    }
+    return headings;
+}
+
+function compute() {
+    var raw = DOM.input.value;
+    var headings = parseHeadings(raw);
+    var counts = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
+    headings.forEach(function (h) { counts[h.level]++; });
+    var total = headings.length;
+    var emptyCount = headings.filter(function (h) { return !h.text; }).length;
+    var longCount = headings.filter(function (h) { return h.text && h.text.length > CONFIG.maxHeadingLength; }).length;
+    var maxLength = 0;
+    headings.forEach(function (h) { if (h.text && h.text.length > maxLength) maxLength = h.text.length; });
+
+    var issues = [];
+    if (total === 0) {
+        issues.push({ status: 'fail', label: 'No heading tags found', detail: 'No headings were found in the provided content.', fix: 'Add headings to structure your content.' });
+    }
+    if (counts[1] === 0 && total > 0) {
+        issues.push({ status: 'fail', label: 'No H1 tag found', detail: 'Every page should have exactly one H1 tag.', fix: 'Add a single H1 that describes the page topic.' });
+    }
+    if (counts[1] > 1) {
+        issues.push({ status: 'warn', label: 'Multiple H1 tags found', detail: counts[1] + ' H1 tags were found.', fix: 'Use only one H1 per page.' });
+    }
+    if (emptyCount > 0) {
+        issues.push({ status: 'warn', label: emptyCount + ' empty heading(s) found', detail: 'Empty headings carry no content for search engines or users.', fix: 'Fill every heading with descriptive text.' });
+    }
+    if (longCount > 0) {
+        issues.push({ status: 'warn', label: longCount + ' heading(s) longer than ' + CONFIG.maxHeadingLength + ' characters', detail: 'Overly long headings are harder to scan and can dilute focus.', fix: 'Shorten long headings to under ' + CONFIG.maxHeadingLength + ' characters.' });
+    }
+
+    var firstH1Index = -1;
+    for (var i = 0; i < headings.length; i++) {
+        if (headings[i].level === 1) { firstH1Index = i; break; }
+    }
+    var h2BeforeH1 = false;
+    if (total > 0 && firstH1Index > -1) {
+        for (var j = 0; j < firstH1Index; j++) {
+            if (headings[j].level === 2) { h2BeforeH1 = true; break; }
+        }
+    } else if (total > 0 && firstH1Index === -1) {
+        var hasAnyH2 = counts[2] > 0;
+        h2BeforeH1 = hasAnyH2;
+    }
+    if (h2BeforeH1) {
+        issues.push({ status: 'warn', label: 'H2 appears before H1', detail: 'An H2 heading appears before the H1 heading.', fix: 'Place the single H1 as the first heading on the page.' });
+    }
+
+    var skipped = false;
+    for (var s = 1; s < headings.length; s++) {
+        if (headings[s].level > headings[s - 1].level + 1) {
+            skipped = true;
+            issues.push({ status: 'warn', label: 'Heading level skipped: ' + headings[s - 1].tag.toUpperCase() + ' \u2192 ' + headings[s].tag.toUpperCase(), detail: 'At "' + headings[s].text.substring(0, 30) + '".', fix: 'Avoid skipping heading levels for proper hierarchy.' });
+        }
+    }
+    if (!skipped && headings.length > 1) {
+        issues.push({ status: 'pass', label: 'No skipped heading levels', detail: 'Heading levels progress correctly.' });
+    }
+    if (counts[1] === 1 && emptyCount === 0 && total > 0) {
+        issues.push({ status: 'pass', label: 'Single H1 with content', detail: 'The page has exactly one H1 with descriptive text.' });
+    }
+    if (headings.length > 0 && !h2BeforeH1) {
+        issues.push({ status: 'pass', label: 'H1 appears first', detail: 'No sub-headings appear before the H1.' });
+    }
+
+    issues.sort(function (a, b) { return STATUS_RANK[a.status] - STATUS_RANK[b.status]; });
+
+    var score = 100;
+    if (total === 0) {
+        score = 0;
+    } else {
+        if (counts[1] === 0) score -= CONFIG.penaltyNoH1;
+        if (counts[1] > 1) score -= CONFIG.penaltyMultiH1;
+        if (skipped) score -= CONFIG.penaltySkipped;
+        if (emptyCount > 0) score -= emptyCount * CONFIG.penaltyEmpty;
+        if (longCount > 0) score -= longCount * CONFIG.penaltyLength;
+        if (h2BeforeH1) score -= CONFIG.penaltyH1Order;
+        score = Math.max(0, Math.min(100, Math.round(score)));
+    }
+
+    var grade = score >= CONFIG.gradeA ? 'Excellent' : score >= CONFIG.gradeB ? 'Good' : score >= CONFIG.gradeC ? 'Fair' : 'Poor';
+    var color = score >= CONFIG.gradeA ? '#16a34a' : score >= CONFIG.gradeB ? '#2563eb' : score >= CONFIG.gradeC ? '#d97706' : '#dc2626';
+    var circ = 2 * Math.PI * 54;
+    var offset = Math.round(circ * (1 - score / 100) * 100) / 100;
+
+    var hint;
+    if (score >= CONFIG.gradeA) hint = 'Your heading hierarchy is clean and well structured.';
+    else if (score >= CONFIG.gradeB) hint = 'Strong structure! Fix the warnings to perfect your hierarchy.';
+    else if (score >= CONFIG.gradeC) hint = 'A reasonable structure. Address the issues below to improve it.';
+    else hint = 'Your heading structure needs work. Use the recommendations to fix it.';
+
+    return {
+        raw: raw,
+        headings: headings,
+        counts: counts,
+        total: total,
+        emptyCount: emptyCount,
+        longCount: longCount,
+        maxLength: maxLength,
+        skipped: skipped,
+        h2BeforeH1: h2BeforeH1,
+        score: score,
+        grade: grade,
+        color: color,
+        circ: circ,
+        offset: offset,
+        issues: issues,
+        hint: hint
+    };
+}
+
+function stat(iconKey, value, label) {
+    return '<div class="gt-stat"><div class="gt-stat-icon">' + (ICONS[iconKey] || '') + '</div><div class="gt-stat-value">' + value + '</div><div class="gt-stat-label">' + label + '</div></div>';
+}
+
+function exportButtons() {
+    return '<button type="button" class="gt-export-btn" data-export="copy-report">' + ICONS.copy + 'Copy</button>' +
+        '<button type="button" class="gt-export-btn" data-export="txt">' + ICONS.download + 'TXT</button>' +
+        '<button type="button" class="gt-export-btn" data-export="json">' + ICONS.braces + 'JSON</button>' +
+        '<button type="button" class="gt-export-btn" data-export="print">' + ICONS.print + 'Print</button>';
+}
+
+function scoreHero(r) {
+    var ring = '<svg viewBox="0 0 120 120" aria-hidden="true"><circle class="gt-ring-bg" cx="60" cy="60" r="54"/><circle class="gt-ring-fill" cx="60" cy="60" r="54" stroke="' + r.color + '" stroke-dasharray="' + r.circ + '" stroke-dashoffset="' + r.offset + '"/></svg>';
+    var chips =
+        '<span class="gt-chip gt-chip-' + (r.counts[1] === 1 ? 'pass' : r.counts[1] === 0 ? 'fail' : 'warn') + '">H1 ' + STATUS_LABEL[(r.counts[1] === 1 ? 'pass' : r.counts[1] === 0 ? 'fail' : 'warn')] + '</span>' +
+        '<span class="gt-chip gt-chip-' + (r.skipped ? 'warn' : 'pass') + '">Levels ' + STATUS_LABEL[(r.skipped ? 'warn' : 'pass')] + '</span>' +
+        '<span class="gt-chip gt-chip-' + (r.emptyCount ? 'warn' : 'pass') + '">Content ' + STATUS_LABEL[(r.emptyCount ? 'warn' : 'pass')] + '</span>';
+    return '<div class="gt-score-hero">' +
+        '<div class="gt-score-ring">' + ring + '<div class="gt-score-inner"><span class="gt-score-num" style="color:' + r.color + '">' + r.score + '</span><span class="gt-score-total">/ 100</span></div></div>' +
+        '<div class="gt-score-info">' +
+        '<div class="gt-score-label">Structure Health Score</div>' +
+        '<div class="gt-score-grade" style="color:' + r.color + '">' + r.grade + '</div>' +
+        '<div class="gt-score-meta">' + chips + '</div>' +
+        '<div class="gt-score-hint">' + r.hint + '</div>' +
+        '</div>' +
+        '<div class="gt-inline-actions" style="align-self:flex-end">' +
+        exportButtons() +
+        '</div>' +
+        '</div>';
+}
+
+function statsGrid(r) {
+    return '<div class="gt-stats-grid">' +
+        stat('list', r.total, 'Total Headings') +
+        stat('check', r.counts[1], 'H1 Tags') +
+        stat('copy', r.emptyCount, 'Empty') +
+        stat('clock', r.longCount, 'Too Long') +
+        '</div>';
+}
+
+function treeHtml(r) {
+    if (!r.headings.length) return '<div class="hs-tree">No headings found in the provided content.</div>';
+    var h = '<div class="gt-block-label">Heading Outline</div><div class="hs-tree">';
+    r.headings.forEach(function (hd, idx) {
+        var indent = new Array(hd.level).join('  ');
+        var prefix = hd.level === 1 ? '\u25B8 ' : hd.level === 2 ? '  \u251C ' : '  ' + new Array(hd.level - 1).join('  ') + '\u2514 ';
+        var textClass = hd.text ? 'hs-text' : 'hs-empty';
+        var displayText = hd.text || '(empty heading)';
+        var lenCls = (hd.text && hd.text.length > CONFIG.maxHeadingLength) ? ' hs-length over' : ' hs-length';
+        h += '<div class="hs-node"><span class="hs-indent">' + indent + prefix + '</span><span class="hs-tag ' + hd.tag + '">' + hd.tag.toUpperCase() + '</span><span class="' + textClass + '">' + esc(displayText) + '</span>' + (hd.text ? '<span class="' + lenCls + '">' + hd.text.length + ' ch</span>' : '') + '</div>';
+    });
+    h += '</div>';
+    return h;
+}
+
+function issuesSection(r) {
+    var items = r.issues.map(function (it) {
+        return '<div class="gt-item ' + it.status + '">' +
+            '<span class="gt-item-icon">' + ICONS[it.status] + '</span>' +
+            '<div class="gt-item-body">' +
+            '<div class="gt-item-label">' + esc(it.label) + '</div>' +
+            (it.detail ? '<div class="gt-item-detail">' + esc(it.detail) + '</div>' : '') +
+            (it.fix ? '<div class="gt-item-fix"><span class="gt-fix-label">Fix: </span>' + esc(it.fix) + '</div>' : '') +
+            '</div></div>';
+    }).join('');
+    return '<details class="gt-section" open><summary><span class="gt-section-title">' + ICONS.list + ' Issues &amp; Recommendations</span>' + ICONS.chevron + '</summary><div class="gt-section-body">' + items + '</div></details>';
+}
+
+function renderResult(r) {
+    DOM.results.innerHTML = scoreHero(r) + statsGrid(r) + treeHtml(r) + issuesSection(r);
+}
+
+function renderEmpty() {
+    DOM.results.innerHTML = '<div class="gt-empty"><div class="gt-empty-icon">' + ICONS.search + '</div><h3>Your structure analysis appears here</h3><p>Enter your headings one per line (e.g. H1: Page Title) or paste HTML, then press Check Structure.</p></div>';
+}
+
+function renderError(msg) {
+    hideSticky();
+    DOM.results.innerHTML = '<div class="gt-error"><div class="gt-empty-icon">' + ICONS.warn + '</div><div class="gt-error-title">' + esc(msg) + '</div><div class="gt-error-hint">Enter some headings, then press Check Structure.</div></div>';
+}
+
+function setStatus(cls, text) {
+    DOM.status.className = 'gt-status ' + cls;
+    DOM.status.textContent = text;
+}
+
+function updateCount() {
+    var n = parseHeadings(DOM.input.value).length;
+    DOM.inputCount.textContent = n + ' heading' + (n === 1 ? '' : 's');
+}
+
+function update(notifyMsg) {
+    var r = compute();
+    state.lastResult = r;
+    renderResult(r);
+    renderSticky(r);
+    setStatus('done', 'Updated');
+    if (notifyMsg) showToast(notifyMsg, 'success');
+}
+
+/* ================= EXPORTS ================= */
+function buildReportText(r) {
+    var L = [];
+    L.push('GoToolly Heading Structure Checker Report');
+    L.push('Generated: ' + new Date().toLocaleString());
+    L.push('----------------------------------');
+    L.push('Total headings: ' + r.total);
+    L.push('Counts: H1=' + r.counts[1] + ' H2=' + r.counts[2] + ' H3=' + r.counts[3] + ' H4=' + r.counts[4] + ' H5=' + r.counts[5] + ' H6=' + r.counts[6]);
+    L.push('Empty headings: ' + r.emptyCount);
+    L.push('Over-long headings: ' + r.longCount);
+    L.push('Skipped levels: ' + (r.skipped ? 'yes' : 'no'));
+    L.push('H2 before H1: ' + (r.h2BeforeH1 ? 'yes' : 'no'));
+    L.push('Score: ' + r.score + '/100 (' + r.grade + ')');
+    L.push('');
+    L.push('Heading outline:');
+    r.headings.forEach(function (hd) {
+        L.push('  ' + hd.tag.toUpperCase() + ': ' + (hd.text || '(empty)'));
+    });
+    L.push('');
+    L.push('Recommendations:');
+    r.issues.forEach(function (it) {
+        L.push('  [' + it.status.toUpperCase() + '] ' + it.label);
+        if (it.detail) L.push('       ' + it.detail);
+        if (it.fix) L.push('       Fix: ' + it.fix);
+    });
+    return L.join('\n');
+}
+
+function buildReportJson(r) {
+    return JSON.stringify({
+        tool: 'Heading Structure Checker',
+        generatedAt: new Date().toISOString(),
+        summary: {
+            totalHeadings: r.total,
+            counts: r.counts,
+            emptyHeadings: r.emptyCount,
+            overLongHeadings: r.longCount,
+            maxHeadingLength: r.maxLength,
+            skippedLevels: r.skipped,
+            h2BeforeH1: r.h2BeforeH1,
+            score: r.score,
+            grade: r.grade
+        },
+        headings: r.headings,
+        recommendations: r.issues
+    }, null, 2);
+}
+
+function printTitle() { return 'Heading Structure Checker Report'; }
+function printHeader() { return ''; }
+function printBody() {
+    return state.lastResult ? '<pre>' + esc(buildReportText(state.lastResult)) + '</pre>' : '<p>Nothing to print yet.</p>';
+}
+
+function stickyScore(r) {
+    return '<span class="gt-sticky-score" style="color:' + r.color + '">' + r.score + '/100</span>';
+}
+
+function handleExport(key) {
+    var r = state.lastResult;
+    if (!r) { showToast('Generate a report first.', 'error'); return; }
+    switch (key) {
+        case 'copy-report': copyText(buildReportText(r)); break;
+        case 'txt': download('heading-structure-checker-report.txt', buildReportText(r), 'text/plain'); showToast('TXT export complete', 'success'); break;
+        case 'json': download('heading-structure-checker-report.json', buildReportJson(r), 'application/json'); showToast('JSON export complete', 'success'); break;
+        case 'print': printCurrent(); break;
+    }
+}
+
+/* ================= EVENTS ================= */
+function loadSample() {
+    DOM.input.value = SAMPLE;
+    updateCount();
+    update('Sample loaded');
+}
+
+function clearAll() {
+    DOM.input.value = '';
+    updateCount();
+    renderEmpty();
+    hideSticky();
+    setStatus('ready', 'Ready');
+    state.lastResult = null;
+    DOM.input.focus();
+    showToast('Cleared', 'info');
+}
+
+var live = debounce(function () { update(); }, 160);
+DOM.input.addEventListener('input', function () {
+    updateCount();
+    live();
+});
+
+DOM.runBtn.addEventListener('click', function () { update('Structure check updated'); });
+DOM.sampleBtn.addEventListener('click', loadSample);
+DOM.clearBtn.addEventListener('click', clearAll);
+
+DOM.results.addEventListener('keydown', function (e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { e.preventDefault(); update('Structure check updated'); }
+});
+
+delegateExport(DOM.results);
+delegateExport(document.body);
+
+if (window.matchMedia) {
+    var hsMql = window.matchMedia('print');
+    var hsOpen = function () {
+        $$('details', DOM.results).forEach(function (d) { d.setAttribute('open', ''); });
+    };
+    if (hsMql.addEventListener) hsMql.addEventListener('change', hsOpen);
+    else if (hsMql.addListener) hsMql.addListener(hsOpen);
+}
+
     })();
+    </script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

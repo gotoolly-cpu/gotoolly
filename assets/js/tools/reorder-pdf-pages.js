@@ -19,10 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var resultsPanel = document.getElementById('results-panel');
     var downloadBtn = document.getElementById('download-btn');
     var newFileBtn = document.getElementById('new-file-btn');
+    var actionBar = document.getElementById('action-bar');
 
     var currentFile = null;
     var pageOrder = [];
     var outputBytes = null;
+    var pdfJsDoc = null;
 
     function showNotification(msg, isError) {
         var existing = document.querySelector('.notification');
@@ -53,12 +55,37 @@ document.addEventListener('DOMContentLoaded', function() {
             card.className = 'page-card';
             card.draggable = true;
             card.dataset.index = pageIdx;
-            card.innerHTML = '<div class="page-thumb"><div style="text-align:center"><div style="font-size:28px;margin-bottom:4px">&#128196;</div><div>Page ' + (pageIdx + 1) + '</div></div><div class="page-number">#' + (order + 1) + '</div></div>' +
+            card.innerHTML = '<div class="page-thumb" id="thumb-' + pageIdx + '"><div style="text-align:center"><div style="font-size:28px;margin-bottom:4px">&#128196;</div><div>Page ' + (pageIdx + 1) + '</div></div><div class="page-number">#' + (order + 1) + '</div></div>' +
                 '<div class="page-body"><span class="page-order">Position ' + (order + 1) + '</span></div>';
             pagesGrid.appendChild(card);
         });
+        pageOrder.forEach(function(pageIdx) {
+            renderThumbnail(pageIdx);
+        });
         attachDragHandlers();
         checkChanges();
+    }
+
+    async function renderThumbnail(pageIdx) {
+        if (!pdfJsDoc) return;
+        try {
+            var page = await pdfJsDoc.getPage(pageIdx + 1);
+            var viewport = page.getViewport({ scale: 0.4 });
+            var canvas = document.createElement('canvas');
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+            var ctx = canvas.getContext('2d');
+            await page.render({ canvasContext: ctx, viewport: viewport }).promise;
+            var container = document.getElementById('thumb-' + pageIdx);
+            if (container) {
+                container.innerHTML = '';
+                container.appendChild(canvas);
+                var num = document.createElement('div');
+                num.className = 'page-number';
+                num.textContent = '#' + (pageOrder.indexOf(pageIdx) + 1);
+                container.appendChild(num);
+            }
+        } catch (e) {}
     }
 
     var dragSrcIdx = null;
@@ -116,11 +143,13 @@ document.addEventListener('DOMContentLoaded', function() {
         currentFile = null;
         pageOrder = [];
         outputBytes = null;
+        pdfJsDoc = null;
         fileInput.value = '';
         fileInfo.classList.remove('show');
         settingsPanel.classList.remove('show');
         resultsPanel.classList.remove('show');
         progressContainer.classList.remove('show');
+        actionBar.style.display = '';
         applyBtn.disabled = true;
         pagesGrid.innerHTML = '';
         updateProgress('Reordering pages...', 0);
@@ -152,6 +181,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 pageOrder = [];
                 for (var i = 0; i < count; i++) pageOrder.push(i);
                 renderPages();
+                if (typeof pdfjsLib !== 'undefined') {
+                    pdfJsDoc = null;
+                    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+                    try {
+                        pdfJsDoc = await pdfjsLib.getDocument({ data: arr.slice(0) }).promise;
+                        renderPages();
+                    } catch (e) { pdfJsDoc = null; }
+                }
                 applyBtn.disabled = true;
                 showNotification('PDF loaded with ' + count + ' pages', false);
             } catch (err) {
@@ -161,7 +198,6 @@ document.addEventListener('DOMContentLoaded', function() {
         reader.readAsArrayBuffer(file);
     }
 
-    dropZone.addEventListener('click', function() { fileInput.click(); });
     dropZone.addEventListener('dragover', function(e) { e.preventDefault(); dropZone.classList.add('dragover'); });
     dropZone.addEventListener('dragleave', function() { dropZone.classList.remove('dragover'); });
     dropZone.addEventListener('drop', function(e) {
@@ -196,6 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
                 progressContainer.classList.remove('show');
                 resultsPanel.classList.add('show');
+                actionBar.style.display = 'none';
                 downloadBtn.download = 'reordered-' + currentFile.name;
                 showNotification('Pages reordered successfully!', false);
             }, 500);

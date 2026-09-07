@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     if (typeof PDFLib === 'undefined') {
-        if (typeof window.showNotification === 'function') { window.showNotification('PDF library failed to load. Please refresh the page.', 'error'); }
+        showToast('PDF library failed to load. Please refresh the page.', 'error');
         return;
     }
     const MAX_FILE_SIZE = 50 * 1024 * 1024;
@@ -10,30 +10,43 @@ document.addEventListener('DOMContentLoaded', () => {
     let compressedPDFBytes = null;
     let processingActive = false;
     let excludedPages = new Set();
+    let cancelRequested = false;
+    let cancelTimer = null;
 
     const pdfInput = document.getElementById('pdf-input');
     const dropZone = document.getElementById('drop-zone');
+    const uploadZone = document.getElementById('upload-zone');
     const fileInfo = document.getElementById('file-info');
-    const fileName = document.getElementById('file-name');
+    const fileNameEl = document.getElementById('file-name');
     const fileSizeEl = document.getElementById('file-size');
-    const fileStatus = document.getElementById('file-status');
-    const pageCount = document.getElementById('page-count');
-    const fileCounter = document.getElementById('file-counter');
+    const fileStatusEl = document.getElementById('file-status');
+    const pageCountEl = document.getElementById('page-count');
+    const fileRemoveBtn = document.getElementById('file-remove-btn');
+    const statusBadge = document.getElementById('status-badge');
     const settingsPanel = document.getElementById('settings-panel');
-    const pagesSection = document.getElementById('pages-section');
+    const optimizationCard = document.getElementById('optimization-card');
+    const pagesCard = document.getElementById('pages-card');
     const pagesGrid = document.getElementById('pages-grid');
     const progressSection = document.getElementById('progress-section');
-    const progressText = document.getElementById('progress-text');
-    const progressPercent = document.getElementById('progress-percent');
+    const progressPhase = document.getElementById('progress-phase');
+    const progressPct = document.getElementById('progress-pct');
     const progressFill = document.getElementById('progress-fill');
+    const progressCancel = document.getElementById('progress-cancel');
+    const cancelBtn = document.getElementById('cancel-btn');
     const compressBtn = document.getElementById('compress-btn');
     const resetBtn = document.getElementById('reset-btn');
-    const resultSection = document.getElementById('result-section');
+    const resultsPanel = document.getElementById('results-panel');
+    const resultIconWrap = document.getElementById('result-icon-wrap');
+    const resultHeading = document.getElementById('result-heading');
+    const resultSub = document.getElementById('result-sub');
     const statOriginal = document.getElementById('stat-original');
     const statCompressed = document.getElementById('stat-compressed');
     const statReduction = document.getElementById('stat-reduction');
     const downloadBtn = document.getElementById('download-btn');
     const compressAnotherBtn = document.getElementById('compress-another-btn');
+    const actionBar = document.getElementById('action-bar');
+    const limitationsBox = document.getElementById('limitations-box');
+    const presetBtns = document.querySelectorAll('.preset-btn');
 
     function init() {
         pdfInput.addEventListener('change', handleFileSelect);
@@ -42,12 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             dropZone.classList.add('dragover');
         });
-
         dropZone.addEventListener('dragleave', (e) => {
             e.preventDefault();
             dropZone.classList.remove('dragover');
         });
-
         dropZone.addEventListener('drop', (e) => {
             e.preventDefault();
             dropZone.classList.remove('dragover');
@@ -55,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (file && file.type === 'application/pdf') {
                 processFile(file);
             } else {
-                showNotification('Please drop a valid PDF file.', 'error');
+                showToast('Please drop a valid PDF file.', 'error');
             }
         });
 
@@ -63,13 +74,49 @@ document.addEventListener('DOMContentLoaded', () => {
         resetBtn.addEventListener('click', resetInterface);
         downloadBtn.addEventListener('click', handleDownload);
         compressAnotherBtn.addEventListener('click', resetInterface);
+        fileRemoveBtn.addEventListener('click', resetInterface);
+        cancelBtn.addEventListener('click', cancelCompression);
 
-        document.querySelectorAll('.preset-btn').forEach(btn => {
+        presetBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+                presetBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-checked', 'false');
+                });
                 btn.classList.add('active');
+                btn.setAttribute('aria-checked', 'true');
+                updateAdvancedVisibility(btn.dataset.preset);
             });
         });
+    }
+
+    const optRemoveMetadata = document.getElementById('opt-remove-metadata');
+    const optRemoveAnnotations = document.getElementById('opt-remove-annotations');
+    const optRemoveForms = document.getElementById('opt-remove-forms');
+    const optObjectStreams = document.getElementById('opt-object-streams');
+    const optLinearize = document.getElementById('opt-linearize');
+
+    const PRESET_OPTIONS = {
+        balanced: { metadata: true, annotations: true, forms: false, objectStreams: true, linearize: false },
+        maximum: { metadata: true, annotations: true, forms: true, objectStreams: true, linearize: true },
+        custom: { metadata: false, annotations: false, forms: false, objectStreams: false, linearize: false }
+    };
+
+    function updateAdvancedVisibility(preset) {
+        const opts = PRESET_OPTIONS[preset];
+        optRemoveMetadata.checked = opts.metadata;
+        optRemoveAnnotations.checked = opts.annotations;
+        optRemoveForms.checked = opts.forms;
+        optObjectStreams.checked = opts.objectStreams;
+        optLinearize.checked = opts.linearize;
+
+        if (preset === 'custom') {
+            optimizationCard.classList.remove('hidden');
+            pagesCard.classList.remove('hidden');
+        } else {
+            optimizationCard.classList.add('hidden');
+            pagesCard.classList.add('hidden');
+        }
     }
 
     function handleFileSelect(e) {
@@ -77,13 +124,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (file && file.type === 'application/pdf') {
             processFile(file);
         } else {
-            showNotification('Please select a valid PDF file.', 'error');
+            showToast('Please select a valid PDF file.', 'error');
         }
     }
 
     function processFile(file) {
         if (processingActive) {
-            showNotification('Please wait for current operation to complete.', 'error');
+            showToast('Please wait for current operation to complete.', 'error');
             return;
         }
 
@@ -91,21 +138,28 @@ document.addEventListener('DOMContentLoaded', () => {
         originalFileSize = file.size;
         excludedPages.clear();
 
-        fileName.textContent = file.name;
+        fileNameEl.textContent = file.name;
+        fileNameEl.title = file.name;
         fileSizeEl.textContent = formatFileSize(file.size);
 
         if (file.size > MAX_FILE_SIZE) {
-            fileStatus.textContent = 'Too large';
-            fileStatus.className = 'file-status warn';
-            showNotification('File exceeds 50 MB limit.', 'error');
+            fileStatusEl.textContent = 'Too large';
+            fileStatusEl.className = 'file-info-status warn';
+            statusBadge.textContent = 'Error';
+            statusBadge.className = 'status-badge error';
+            showToast('File exceeds 50 MB limit.', 'error');
             return;
         }
 
-        fileStatus.textContent = 'Ready';
-        fileStatus.className = 'file-status ok';
-        fileCounter.textContent = '1 file';
+        fileStatusEl.textContent = 'Ready';
+        fileStatusEl.className = 'file-info-status ok';
+        statusBadge.textContent = 'Ready';
+        statusBadge.className = 'status-badge ready';
+
         fileInfo.classList.add('show');
         settingsPanel.classList.add('show');
+        limitationsBox.classList.add('show');
+        uploadZone.style.display = 'none';
         compressBtn.disabled = false;
 
         loadPDFPages(file);
@@ -118,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const pdfDoc = await PDFDocument.load(arrayBuffer, { ignoreEncryption: true });
             const pages = pdfDoc.getPageCount();
 
-            pageCount.textContent = `${pages} page${pages !== 1 ? 's' : ''}`;
+            pageCountEl.textContent = `${pages} page${pages !== 1 ? 's' : ''}`;
             pagesGrid.innerHTML = '';
             excludedPages.clear();
 
@@ -126,27 +180,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 const chip = document.createElement('div');
                 chip.className = 'page-chip';
                 chip.dataset.page = i;
-                chip.innerHTML = `<span class="page-num">${i}</span>`;
-                chip.addEventListener('click', () => {
-                    if (excludedPages.has(i)) {
-                        excludedPages.delete(i);
-                        chip.classList.remove('selected');
-                    } else {
-                        if (excludedPages.size >= pages - 1) {
-                            showNotification('You must keep at least one page.', 'error');
-                            return;
-                        }
-                        excludedPages.add(i);
-                        chip.classList.add('selected');
+                chip.textContent = i;
+                chip.setAttribute('role', 'button');
+                chip.setAttribute('tabindex', '0');
+                chip.setAttribute('aria-pressed', 'false');
+                chip.addEventListener('click', () => togglePageExclusion(i, chip, pages));
+                chip.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        togglePageExclusion(i, chip, pages);
                     }
                 });
                 pagesGrid.appendChild(chip);
             }
-
-            pagesSection.classList.add('show');
         } catch (err) {
             console.error('Failed to load PDF:', err);
-            showNotification('Failed to read PDF. The file may be corrupted.', 'error');
+            showToast('Failed to read PDF. The file may be corrupted.', 'error');
+        }
+    }
+
+    function togglePageExclusion(pageNum, chip, totalPages) {
+        if (excludedPages.has(pageNum)) {
+            excludedPages.delete(pageNum);
+            chip.classList.remove('excluded');
+            chip.setAttribute('aria-pressed', 'false');
+        } else {
+            if (excludedPages.size >= totalPages - 1) {
+                showToast('You must keep at least one page.', 'error');
+                return;
+            }
+            excludedPages.add(pageNum);
+            chip.classList.add('excluded');
+            chip.setAttribute('aria-pressed', 'true');
         }
     }
 
@@ -154,9 +219,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!currentFile || processingActive) return;
 
         processingActive = true;
+        cancelRequested = false;
         compressBtn.disabled = true;
+        resultsPanel.classList.remove('show');
+        actionBar.style.display = 'none';
         progressSection.classList.add('show');
-        resultSection.classList.remove('show');
+        progressCancel.classList.remove('show');
 
         const activePreset = document.querySelector('.preset-btn.active')?.dataset.preset || 'balanced';
         const removeMetadata = document.getElementById('opt-remove-metadata').checked;
@@ -169,9 +237,13 @@ document.addEventListener('DOMContentLoaded', () => {
             updateProgress('Loading PDF document...', 10);
             const arrayBuffer = await currentFile.arrayBuffer();
 
+            if (cancelRequested) return handleCancel();
+
             updateProgress('Parsing PDF structure...', 25);
             const { PDFDocument } = PDFLib;
             const pdfDoc = await PDFDocument.load(arrayBuffer, { ignoreEncryption: true });
+
+            if (cancelRequested) return handleCancel();
 
             updateProgress('Applying compression settings...', 40);
 
@@ -194,6 +266,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
+            if (cancelRequested) return handleCancel();
+
             updateProgress('Saving optimized PDF...', 75);
             const saveOptions = {
                 useObjectStreams: useObjectStreams,
@@ -208,36 +282,82 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const compressedBytes = await pdfDoc.save(saveOptions);
 
+            if (cancelRequested) return handleCancel();
+
             updateProgress('Finalizing...', 90);
             await new Promise(r => setTimeout(r, 300));
 
+            if (cancelRequested) return handleCancel();
+
             compressedPDFBytes = compressedBytes;
-            const reduction = ((originalFileSize - compressedBytes.byteLength) / originalFileSize * 100).toFixed(1);
+            const reductionPct = ((originalFileSize - compressedBytes.byteLength) / originalFileSize * 100);
+            const reductionStr = reductionPct.toFixed(1);
 
             statOriginal.textContent = formatFileSize(originalFileSize);
             statCompressed.textContent = formatFileSize(compressedBytes.byteLength);
-            statReduction.textContent = reduction > 0 ? `${reduction}%` : '0%';
+            statReduction.textContent = reductionPct > 0 ? `${reductionStr}%` : '0%';
+
+            if (reductionPct < 5) {
+                resultHeading.textContent = 'Already optimized';
+                resultSub.textContent = 'This PDF is already highly optimized. No significant size reduction was possible.';
+                resultIconWrap.className = 'result-icon-wrap success';
+                resultIconWrap.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+            } else {
+                resultHeading.textContent = `${reductionStr}% smaller`;
+                resultSub.textContent = `Reduced from ${formatFileSize(originalFileSize)} to ${formatFileSize(compressedBytes.byteLength)}`;
+                resultIconWrap.className = 'result-icon-wrap success';
+                resultIconWrap.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+            }
 
             updateProgress('Compression complete!', 100);
 
             setTimeout(() => {
                 progressSection.classList.remove('show');
-                resultSection.classList.add('show');
+                actionBar.style.display = 'none';
+                resultsPanel.classList.add('show');
+                statusBadge.textContent = 'Done';
+                statusBadge.className = 'status-badge done';
+                fileStatusEl.textContent = 'Done';
+                fileStatusEl.className = 'file-info-status ok';
             }, 400);
 
         } catch (err) {
             console.error('Compression error:', err);
-            showNotification('Failed to compress PDF. The file may use unsupported features.', 'error');
+            showToast('Failed to compress PDF. The file may use unsupported features.', 'error');
             progressSection.classList.remove('show');
+            actionBar.style.display = '';
+            statusBadge.textContent = 'Error';
+            statusBadge.className = 'status-badge error';
         } finally {
             processingActive = false;
             compressBtn.disabled = false;
+            clearTimeout(cancelTimer);
+            cancelTimer = null;
         }
+    }
+
+    function cancelCompression() {
+        cancelRequested = true;
+        showToast('Compression cancelled.', 'info');
+    }
+
+    function handleCancel() {
+        progressSection.classList.remove('show');
+        actionBar.style.display = '';
+        statusBadge.textContent = 'Ready';
+        statusBadge.className = 'status-badge ready';
+        fileStatusEl.textContent = 'Ready';
+        fileStatusEl.className = 'file-info-status ok';
+        processingActive = false;
+        cancelRequested = false;
+        compressBtn.disabled = false;
+        clearTimeout(cancelTimer);
+        cancelTimer = null;
     }
 
     function handleDownload() {
         if (!compressedPDFBytes) {
-            showNotification('No compressed PDF available.', 'error');
+            showToast('No compressed PDF available.', 'error');
             return;
         }
 
@@ -250,6 +370,8 @@ document.addEventListener('DOMContentLoaded', () => {
         a.click();
         document.body.removeChild(a);
         setTimeout(() => URL.revokeObjectURL(url), 100);
+
+        showToast('File downloaded', 'success');
     }
 
     function resetInterface() {
@@ -258,26 +380,43 @@ document.addEventListener('DOMContentLoaded', () => {
         originalFileSize = 0;
         compressedPDFBytes = null;
         processingActive = false;
+        cancelRequested = false;
         excludedPages.clear();
+        clearTimeout(cancelTimer);
+        cancelTimer = null;
 
         fileInfo.classList.remove('show');
         settingsPanel.classList.remove('show');
-        pagesSection.classList.remove('show');
+        optimizationCard.classList.add('hidden');
+        pagesCard.classList.add('hidden');
         progressSection.classList.remove('show');
-        resultSection.classList.remove('show');
+        resultsPanel.classList.remove('show');
+        limitationsBox.classList.remove('show');
+        uploadZone.style.display = '';
+        actionBar.style.display = '';
         compressBtn.disabled = true;
-        fileCounter.textContent = 'No file';
         pagesGrid.innerHTML = '';
 
-        document.querySelectorAll('.preset-btn').forEach((b, i) => {
+        statusBadge.textContent = '';
+        statusBadge.className = 'status-badge';
+
+        presetBtns.forEach((b, i) => {
             b.classList.toggle('active', i === 0);
+            b.setAttribute('aria-checked', i === 0 ? 'true' : 'false');
         });
     }
 
     function updateProgress(text, percent) {
-        progressText.textContent = text;
-        progressPercent.textContent = `${percent}%`;
+        progressPhase.textContent = text;
+        progressPct.textContent = `${percent}%`;
         progressFill.style.width = `${percent}%`;
+        progressSection.setAttribute('aria-valuenow', percent);
+
+        if (percent > 20 && !cancelTimer) {
+            cancelTimer = setTimeout(() => {
+                progressCancel.classList.add('show');
+            }, 5000);
+        }
     }
 
     function formatFileSize(bytes) {
@@ -288,16 +427,26 @@ document.addEventListener('DOMContentLoaded', () => {
         return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
     }
 
-    function showNotification(message, type = 'info') {
-        if (typeof window.showNotification === 'function') {
-            window.showNotification(message, type);
-            return;
-        }
-        const div = document.createElement('div');
-        div.className = `notification ${type}`;
-        div.textContent = message;
-        document.body.appendChild(div);
-        setTimeout(() => div.remove(), 3000);
+    function showToast(message, type = 'info') {
+        const existing = document.querySelector('.toast');
+        if (existing) existing.remove();
+
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        toast.textContent = message;
+        toast.setAttribute('role', 'alert');
+        document.body.appendChild(toast);
+
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                toast.classList.add('show');
+            });
+        });
+
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 200);
+        }, type === 'error' ? 5000 : 3500);
     }
 
     init();

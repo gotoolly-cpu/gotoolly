@@ -24,7 +24,10 @@
     <meta name="twitter:image:alt" content="GoToolly Logo">
     <meta name="twitter:creator" content="@GoToolly">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
     <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
@@ -32,10 +35,390 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Meta Tag Analyzer","url":"https://gotoolly.com/tools/meta-tag-analyzer","description":"Analyze meta tags from any webpage HTML. Check SEO quality, find missing tags, and get actionable recommendations instantly.","applicationCategory":"SEOApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","SEO quality scoring","Missing tag detection"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Meta Tag Analyzer","url":"https://gotoolly.com/tools/meta-tag-analyzer","description":"Analyze meta tags from any webpage HTML. Check SEO quality, find missing tags, and get actionable recommendations instantly.","applicationCategory":"SEOApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","SEO quality scoring","Missing tag detection","Open Graph analysis","Twitter Card analysis","Favicon and PWA checks","SERP previews","Export report"]}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Meta Tag Analyzer"}]}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the meta tag analyzer work?","acceptedAnswer":{"@type":"Answer","text":"Paste your HTML code and the tool extracts all meta tags, scores your SEO quality, and provides recommendations for improvement."}},{"@type":"Question","name":"What meta tags does it check?","acceptedAnswer":{"@type":"Answer","text":"It checks title, description, keywords, robots, viewport, canonical, Open Graph, Twitter Cards, and charset tags."}},{"@type":"Question","name":"Is my HTML code uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. All analysis happens in your browser. Your HTML code never leaves your device."}}]}</script>
-    <style>.skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s;text-decoration:none}.skip-link:focus{top:0}.input-textarea{width:100%;min-height:250px;padding:var(--space-3);border:1px solid var(--color-border);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:var(--text-sm);resize:vertical;background:var(--color-surface);color:var(--color-text)}.input-textarea:focus{outline:2px solid var(--color-primary);outline-offset:-1px}.score-display{display:flex;align-items:center;gap:var(--space-4);padding:var(--space-4);border-radius:12px;margin-bottom:var(--space-4)}.score-circle{width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:var(--text-2xl);font-weight:700;color:#fff;flex-shrink:0}.analysis-item{padding:var(--space-3);border-radius:8px;margin-bottom:var(--space-2);display:flex;align-items:flex-start;gap:var(--space-3);font-size:var(--text-sm)}.analysis-item.pass{background:rgba(166,227,161,.1);border-left:3px solid #a6e3a1}.analysis-item.warn{background:rgba(250,179,135,.1);border-left:3px solid #fab387}.analysis-item.fail{background:rgba(243,139,168,.1);border-left:3px solid #f38ba8}.analysis-icon{font-size:var(--text-lg);flex-shrink:0;width:24px;text-align:center}.analysis-text{flex:1}.analysis-text strong{display:block;margin-bottom:2px}.tag-value{font-family:'JetBrains Mono',monospace;font-size:var(--text-xs);color:var(--color-text-light);margin-top:4px;word-break:break-all}.section-title{font-weight:600;font-size:var(--text-md);margin:var(--space-4) 0 var(--space-2)}</style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the meta tag analyzer work?","acceptedAnswer":{"@type":"Answer","text":"Paste your HTML code and the tool extracts all meta tags, scores your SEO quality, and provides recommendations for improvement."}},{"@type":"Question","name":"What meta tags does it check?","acceptedAnswer":{"@type":"Answer","text":"It checks title, description, keywords, robots, viewport, canonical, Open Graph, Twitter Cards, favicons, PWA tags, and charset."}},{"@type":"Question","name":"Is my HTML code uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. All analysis happens in your browser. Your HTML code never leaves your device."}}]}</script>
+    <style>
+        /* ========== SKIP LINK ========== */
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .25s cubic-bezier(.4,0,.2,1);text-decoration:none}
+        .skip-link:focus{top:0}
+
+        /* ========== HERO ========== */
+        .hero{background:radial-gradient(1200px 600px at 70% -20%,rgba(139,92,246,.18),transparent),radial-gradient(900px 500px at 10% -10%,rgba(59,130,246,.22),transparent),#0f172a;padding:52px 0 40px;text-align:center}
+        .hero h1{font-size:42px;font-weight:800;color:#fff;line-height:1.15;margin:0 0 14px}
+        .hero h1 .gradient-text{background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-subtitle{font-size:16px;color:#94a3b8;line-height:1.6;margin:0 auto 26px;max-width:640px}
+        .trust-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .trust-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:7px 14px;border-radius:9999px;font-size:13px;font-weight:500;color:#cbd5e1;transition:background .2s}
+        .trust-badge:hover{background:rgba(255,255,255,.1)}
+        .trust-badge svg{width:14px;height:14px;color:#60a5fa}
+
+        /* ========== WORKSPACE ========== */
+        .tool-workspace{max-width:920px;margin:0 auto}
+        .tool-card{background:#fff;border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.06);border:1px solid #e2e8f0;padding:28px;margin-bottom:40px}
+        .card-header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+        .card-header-left{display:flex;align-items:center;gap:10px}
+        .card-header-left .ch-icon{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#eff6ff,#e0ecff);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .card-header-left .ch-icon svg{width:18px;height:18px;color:var(--color-primary)}
+        .card-header-left h2{font-size:17px;font-weight:700;margin:0;color:#0f172a}
+        .card-divider{height:1px;background:linear-gradient(90deg,#e2e8f0,transparent);margin:18px 0 0}
+
+        /* ========== STATUS BADGE ========== */
+        .mta-status{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;padding:5px 14px;border-radius:9999px;background:#f8fafc;border:1px solid #e2e8f0;color:#64748b;transition:all .2s}
+        .mta-status::before{content:'';width:7px;height:7px;border-radius:50%;background:#94a3b8;flex-shrink:0}
+        .mta-status.ready{background:#f0fdf4;color:#166534;border-color:#bbf7d0}
+        .mta-status.ready::before{background:#22c55e}
+        .mta-status.processing{background:#fffbeb;color:#92400e;border-color:#fde68a}
+        .mta-status.processing::before{background:#f59e0b;animation:mta-pulse 1s ease-in-out infinite}
+        .mta-status.done{background:#f0fdf4;color:#166534;border-color:#bbf7d0}
+        .mta-status.done::before{background:#22c55e}
+        .mta-status.error{background:#fef2f2;color:#991b1b;border-color:#fecaca}
+        .mta-status.error::before{background:#ef4444}
+
+        /* ========== INPUT ZONE ========== */
+        .text-input-zone{margin-top:20px}
+        .text-input-label-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:12px}
+        .text-input-label{font-size:14px;font-weight:600;color:#0f172a;margin:0}
+        .mta-char-count{font-size:12px;color:#64748b;font-family:'JetBrains Mono',monospace;background:#f8fafc;border:1px solid #e2e8f0;border-radius:9999px;padding:3px 10px}
+        .input-textarea{width:100%;min-height:260px;padding:16px 18px;border:2px solid #e2e8f0;border-radius:14px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.6;resize:vertical;background:#f8fafc;color:#0f172a;tab-size:2;box-sizing:border-box;transition:border-color .2s,box-shadow .2s,background .2s}
+        .input-textarea::placeholder{color:#94a3b8}
+        .input-textarea:focus{outline:none;border-color:#2563eb;box-shadow:0 0 0 4px rgba(37,99,235,.12);background:#fff}
+        .text-input-hint{font-size:12px;color:#94a3b8;margin-top:8px;padding:0 2px}
+        .text-input-hint kbd{font-family:'JetBrains Mono',monospace;background:#f8fafc;border:1px solid #e2e8f0;border-bottom-width:2px;border-radius:5px;padding:1px 6px;font-size:11px;color:#475569}
+
+        /* ========== ACTION BAR ========== */
+        .action-bar{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin-top:20px}
+        .action-bar .btn{width:100%;padding:14px 20px;font-size:15px;border-radius:12px;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .action-bar .btn-primary{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border:none;box-shadow:0 2px 10px rgba(37,99,235,.25)}
+        .action-bar .btn-primary:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 8px 25px rgba(37,99,235,.35)}
+        .action-bar .btn-primary:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+        .action-bar .btn-primary .mta-spinner-inline{display:none}
+        .action-bar .btn-primary.loading .mta-spinner-inline{display:inline-block}
+        .action-bar .btn-primary.loading svg.mta-scan{display:none}
+        .action-bar .btn-outline{background:#fff;color:#0f172a;border:1px solid #e2e8f0}
+        .action-bar .btn-outline:hover{background:#f8fafc;border-color:#cbd5e1;transform:translateY(-1px)}
+
+        /* ========== PROGRESS ========== */
+        .mta-progress{height:4px;border-radius:99px;background:#eef2f7;overflow:hidden;margin:18px 0 0;position:relative}
+        .mta-progress::after{content:'';position:absolute;inset:0;width:40%;background:linear-gradient(90deg,transparent,var(--color-primary),transparent);animation:mta-indeterminate 1s ease-in-out infinite}
+        @keyframes mta-indeterminate{0%{transform:translateX(-100%)}100%{transform:translateX(350%)}}
+        @keyframes mta-pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+        /* ========== RESULTS ========== */
+        #results{margin-top:24px}
+        .mta-report{animation:mta-fade .4s cubic-bezier(.4,0,.2,1)}
+        @keyframes mta-fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+        /* ========== LOADING STATE ========== */
+        .mta-loading{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 20px;text-align:center;border:1px dashed #dbe3ee;border-radius:16px;background:linear-gradient(180deg,#fbfdff,#f8fafc)}
+        .mta-loading .mta-spinner{width:38px;height:38px;border-radius:50%;border:3px solid #e2e8f0;border-top-color:#2563eb;animation:mta-spin .8s linear infinite;margin-bottom:16px}
+        .mta-loading p{font-size:14px;color:#64748b;margin:0}
+        @keyframes mta-spin{to{transform:rotate(360deg)}}
+
+        /* ========== EMPTY / ERROR ========== */
+        .mta-empty,.mta-error{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 24px;border:1px dashed #dbe3ee;border-radius:16px;background:linear-gradient(180deg,#fbfdff,#f8fafc)}
+        .mta-empty .mta-empty-icon,.mta-error .mta-empty-icon{width:64px;height:64px;border-radius:18px;background:#eff6ff;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+        .mta-empty .mta-empty-icon svg,.mta-error .mta-empty-icon svg{width:30px;height:30px;color:#2563eb}
+        .mta-empty h3{font-size:18px;font-weight:700;color:#0f172a;margin:0 0 8px}
+        .mta-empty p{margin:0;font-size:14px;color:#64748b;line-height:1.6}
+        .mta-error .mta-empty-icon{background:#fef2f2}
+        .mta-error .mta-empty-icon svg{color:#ef4444}
+        .mta-error-title{font-weight:700;color:#991b1b;font-size:16px;margin-bottom:6px}
+        .mta-error-hint{font-size:14px;color:#64748b}
+
+        /* ========== SCORE HERO ========== */
+        .mta-score-hero{display:flex;align-items:center;gap:28px;flex-wrap:wrap;padding:26px;border:1px solid #e2e8f0;border-radius:16px;background:linear-gradient(180deg,#f8fafc,#fff);margin-bottom:18px;position:relative;overflow:hidden}
+        .mta-score-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#2563eb,#8b5cf6);opacity:.35}
+        .mta-score-ring{position:relative;width:126px;height:126px;flex-shrink:0;filter:drop-shadow(0 6px 16px rgba(37,99,235,.15))}
+        .mta-score-ring svg{width:126px;height:126px;transform:rotate(-90deg)}
+        .mta-ring-bg{fill:none;stroke:#e8edf4;stroke-width:10}
+        .mta-ring-fill{fill:none;stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1)}
+        .mta-score-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column}
+        .mta-score-num{font-size:34px;font-weight:800;font-family:'JetBrains Mono',monospace;line-height:1;color:#0f172a}
+        .mta-score-total{font-size:12px;color:#94a3b8;margin-top:2px;font-weight:500}
+        .mta-score-info{flex:1;min-width:220px}
+        .mta-score-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#94a3b8}
+        .mta-score-grade{font-size:28px;font-weight:800;line-height:1.15;margin:2px 0 8px}
+        .mta-score-meta{display:flex;gap:8px;flex-wrap:wrap}
+        .mta-chip{display:inline-flex;align-items:center;gap:5px;padding:4px 11px;border-radius:9999px;font-size:11px;font-weight:700}
+        .mta-chip::before{content:'';width:6px;height:6px;border-radius:50%}
+        .mta-chip-pass{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+        .mta-chip-pass::before{background:#22c55e}
+        .mta-chip-warn{background:#fffbeb;color:#92400e;border:1px solid #fde68a}
+        .mta-chip-warn::before{background:#f59e0b}
+        .mta-chip-fail{background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+        .mta-chip-fail::before{background:#ef4444}
+        .mta-chip-info{background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe}
+        .mta-chip-info::before{background:#3b82f6}
+        .mta-score-hint{font-size:13px;color:#64748b;margin-top:10px;line-height:1.5}
+        .mta-export-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;align-self:flex-end}
+        .mta-export-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;font-size:12px;font-weight:600;color:#334155;background:#fff;border:1px solid #e2e8f0;border-radius:10px;cursor:pointer;transition:all .18s}
+        .mta-export-btn svg{width:13px;height:13px}
+        .mta-export-btn:hover{border-color:#2563eb;color:#2563eb;background:#eff6ff;transform:translateY(-1px);box-shadow:0 4px 12px rgba(37,99,235,.12)}
+        .mta-export-btn:focus-visible{outline:2px solid #2563eb;outline-offset:2px}
+
+        /* ========== STATS GRID ========== */
+        .mta-stats-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:18px}
+        .mta-stat{padding:16px 10px;border-radius:14px;background:#fff;border:1px solid #e2e8f0;text-align:center;transition:all .2s}
+        .mta-stat:hover{border-color:#c3d4ef;transform:translateY(-2px);box-shadow:0 6px 16px rgba(15,23,42,.06)}
+        .mta-stat-icon{width:30px;height:30px;margin:0 auto 8px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:#eff6ff}
+        .mta-stat-icon svg{width:16px;height:16px;color:#2563eb}
+        .mta-stat-value{font-size:24px;font-weight:800;color:#0f172a;font-family:'JetBrains Mono',monospace;line-height:1}
+        .mta-stat-label{font-size:11px;color:#64748b;margin-top:5px;font-weight:500;text-transform:uppercase;letter-spacing:.4px}
+
+        /* ========== SECTION COLLAPSE ========== */
+        .mta-section{border:1px solid #e2e8f0;border-radius:14px;margin-bottom:14px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(15,23,42,.03)}
+        .mta-section summary{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 22px;cursor:pointer;list-style:none;font-weight:700;font-size:15px;color:#0f172a;user-select:none;transition:background .18s}
+        .mta-section summary::-webkit-details-marker{display:none}
+        .mta-section summary:hover{background:#f8fafc}
+        .mta-section summary:focus-visible{outline:2px solid #2563eb;outline-offset:-2px;border-radius:14px}
+        .mta-section-title{display:flex;align-items:center;gap:10px}
+        .mta-section-title svg{width:17px;height:17px;color:#2563eb;flex-shrink:0}
+        .mta-chevron{width:18px;height:18px;color:#94a3b8;transition:transform .22s ease;flex-shrink:0}
+        .mta-section[open] .mta-chevron{transform:rotate(180deg)}
+        .mta-section-body{padding:0 22px 22px;overflow-x:auto}
+
+        /* ========== BLOCK LABEL / NONE ========== */
+        .mta-block-label{font-size:12px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin:20px 0 10px}
+        .mta-none{font-size:13px;color:#94a3b8;padding:14px;background:#f8fafc;border:1px dashed #dbe3ee;border-radius:10px}
+
+        /* ========== TAG TABLE ========== */
+        .mta-tag-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:8px;background:#fff;border:1px solid #e8edf4;border-radius:12px;overflow:hidden}
+        .mta-tag-table th{text-align:left;padding:10px 14px;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:#64748b;background:#f8fafc;border-bottom:1px solid #e8edf4;white-space:nowrap;font-weight:700}
+        .mta-tag-table td{padding:9px 14px;border-bottom:1px solid #f1f5f9;vertical-align:top}
+        .mta-tag-table tr:last-child td{border-bottom:none}
+        .mta-tag-table tbody tr{transition:background .12s}
+        .mta-tag-table tbody tr:hover{background:#f8fafc}
+        .mta-tag-name{font-family:'JetBrains Mono',monospace;font-size:12px;color:#2563eb;white-space:nowrap;font-weight:600}
+        .mta-attr{font-family:'JetBrains Mono',monospace;font-size:12px;color:#94a3b8;white-space:nowrap}
+        .mta-tag-val{font-family:'JetBrains Mono',monospace;font-size:12px;color:#334155;max-width:420px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+        .mta-muted{color:#94a3b8}
+
+        /* ========== CHECK GROUPS ========== */
+        .mta-group{margin-bottom:18px}
+        .mta-group-title{font-size:13px;font-weight:700;color:#0f172a;margin:0 0 10px;padding-bottom:8px;border-bottom:1px solid #e8edf4;display:flex;align-items:center;gap:8px}
+        .mta-group-title .mta-group-count{margin-left:auto;font-size:11px;color:#94a3b8;background:#f8fafc;border:1px solid #e8edf4;padding:2px 9px;border-radius:9999px;font-weight:600}
+
+        /* ========== CHECK ITEM ========== */
+        .mta-legend{display:flex;gap:16px;flex-wrap:wrap;padding:10px 14px;background:#f8fafc;border:1px solid #e8edf4;border-radius:10px;margin-bottom:14px;font-size:11px;color:#475569}
+        .mta-legend-item{display:inline-flex;align-items:center;gap:6px;font-weight:600}
+        .mta-legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+        .mta-legend-pass{background:#22c55e}
+        .mta-legend-warn{background:#f59e0b}
+        .mta-legend-fail{background:#ef4444}
+        .mta-legend-info{background:#3b82f6}
+        .mta-item{display:flex;gap:12px;align-items:flex-start;padding:13px 16px;border-radius:12px;margin-bottom:8px;border:1px solid #e8edf4;border-left-width:4px;background:#fff;transition:all .18s}
+        .mta-item:hover{box-shadow:0 4px 14px rgba(15,23,42,.05);transform:translateX(2px)}
+        .mta-item-icon{width:20px;height:20px;flex-shrink:0;margin-top:1px}
+        .mta-item.pass .mta-item-icon{color:#16a34a}
+        .mta-item.warn .mta-item-icon{color:#d97706}
+        .mta-item.fail .mta-item-icon{color:#dc2626}
+        .mta-item.info .mta-item-icon{color:#3b82f6}
+        .mta-item.pass{border-left-color:#16a34a;background:linear-gradient(90deg,rgba(22,163,74,.05),#fff 60%)}
+        .mta-item.warn{border-left-color:#d97706;background:linear-gradient(90deg,rgba(217,119,6,.05),#fff 60%)}
+        .mta-item.fail{border-left-color:#dc2626;background:linear-gradient(90deg,rgba(220,38,38,.05),#fff 60%)}
+        .mta-item.info{border-left-color:#3b82f6;background:linear-gradient(90deg,rgba(59,130,246,.05),#fff 60%)}
+        .mta-item-body{flex:1;min-width:0}
+        .mta-item-label{font-weight:600;font-size:14px;color:#0f172a}
+        .mta-item-detail{font-size:13px;color:#64748b;margin-top:2px;line-height:1.5}
+        .mta-item-value{font-family:'JetBrains Mono',monospace;font-size:12px;color:#334155;background:#f8fafc;border:1px solid #e8edf4;border-radius:8px;padding:5px 10px;margin-top:7px;word-break:break-all;white-space:normal}
+        .mta-item-fix{margin-top:8px;font-size:12px;color:#475569;background:#eff6ff;border-left:3px solid #2563eb;padding:6px 10px;border-radius:0 8px 8px 0}
+        .mta-fix-label{font-weight:700;color:#2563eb}
+
+        /* ========== SUMMARY BREAKDOWN ========== */
+        .mta-summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+        .mta-summary-item{background:#f8fafc;border:1px solid #e8edf4;border-radius:12px;padding:16px;text-align:center}
+        .mta-summary-count{display:block;font-size:26px;font-weight:800;font-family:'JetBrains Mono',monospace}
+        .mta-s-pass .mta-summary-count{color:#16a34a}
+        .mta-s-warn .mta-summary-count{color:#d97706}
+        .mta-s-fail .mta-summary-count{color:#dc2626}
+        .mta-s-info .mta-summary-count{color:#3b82f6}
+        .mta-summary-label{font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:.4px;font-weight:600}
+        .mta-summary-bar{height:6px;border-radius:99px;background:#e8edf4;margin-top:10px;overflow:hidden}
+        .mta-summary-bar i{display:block;height:100%;border-radius:99px;transition:width .8s cubic-bezier(.4,0,.2,1)}
+        .mta-s-pass .mta-summary-bar i{background:#16a34a}
+        .mta-s-warn .mta-summary-bar i{background:#d97706}
+        .mta-s-fail .mta-summary-bar i{background:#dc2626}
+        .mta-s-info .mta-summary-bar i{background:#3b82f6}
+
+        /* ========== URL LIST ========== */
+        .mta-url-list{display:flex;flex-direction:column;gap:8px}
+        .mta-url-stats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+        .mta-url-stats span{font-size:11px;color:#64748b;background:#f8fafc;border:1px solid #e8edf4;padding:3px 9px;border-radius:9999px}
+        .mta-url-stats b{font-family:'JetBrains Mono',monospace;color:#0f172a}
+        .mta-url-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:9px 14px;border:1px solid #e8edf4;border-radius:10px;background:#fff;font-size:12px;transition:border-color .15s}
+        .mta-url-row:hover{border-color:#c3d4ef}
+        .mta-url-status{padding:3px 10px;border-radius:9999px;font-weight:700;font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:#fff;white-space:nowrap}
+        .mta-url-status.ok{background:linear-gradient(135deg,#22c55e,#16a34a)}
+        .mta-url-status.warn{background:linear-gradient(135deg,#f59e0b,#d97706)}
+        .mta-url-status.bad{background:linear-gradient(135deg,#ef4444,#dc2626)}
+        .mta-url{font-family:'JetBrains Mono',monospace;color:#334155;word-break:break-all;min-width:0}
+        .mta-url-label{color:#94a3b8;white-space:nowrap;text-align:right;font-size:11px;font-weight:600}
+        .mta-url-dup{display:inline-block;background:#fef3c7;color:#92400e;border-radius:5px;padding:0 5px;font-size:10px;font-weight:700;margin-left:4px}
+        .mta-url-extra{grid-column:2/4;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+        .mta-url-flag{display:inline-block;padding:1px 8px;border-radius:9999px;font-size:10px;font-weight:700;letter-spacing:.3px;text-transform:uppercase}
+        .mta-url-flag-ok{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+        .mta-url-flag-warn{background:#fffbeb;color:#92400e;border:1px solid #fde68a}
+        .mta-url-note{color:#94a3b8;font-style:italic;font-size:12px}
+
+        /* ========== RECOMMENDATIONS ========== */
+        .mta-recommendation{display:flex;gap:12px;align-items:flex-start;padding:13px 16px;border-radius:12px;background:linear-gradient(90deg,rgba(217,119,6,.06),#fff 70%);border:1px solid rgba(217,119,6,.25);margin-bottom:8px;transition:transform .15s,box-shadow .15s}
+        .mta-recommendation:hover{transform:translateX(3px);box-shadow:0 4px 12px rgba(217,119,6,.12)}
+        .mta-reco-num{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 6px rgba(217,119,6,.3)}
+        .mta-reco-text{font-size:13px;color:#334155;flex:1;min-width:0;line-height:1.6}
+
+        /* ========== TABS ========== */
+        .mta-tabs{display:flex;gap:4px;flex-wrap:wrap;border-bottom:2px solid #e8edf4;margin-bottom:16px}
+        .mta-tab-button{padding:10px 16px;font-size:13px;font-weight:600;color:#64748b;background:transparent;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;cursor:pointer;border-radius:8px 8px 0 0;transition:color .15s,background .15s}
+        .mta-tab-button:hover{color:#0f172a;background:#f8fafc}
+        .mta-tab-button[aria-selected="true"]{color:#2563eb;border-bottom-color:#2563eb;background:#eff6ff}
+        .mta-tab-button:focus-visible{outline:2px solid #2563eb;outline-offset:-1px}
+        .mta-tab-panel[hidden]{display:none}
+        .mta-preview-zone{border:1px solid #e8edf4;border-radius:14px;overflow:hidden;background:#fff;padding:20px;box-shadow:0 1px 2px rgba(15,23,42,.03)}
+
+        /* ========== LIVE PREVIEWS ========== */
+        .pr-mobile-frame{max-width:380px;margin:0 auto;border:1px solid #d1d5db;border-radius:20px;padding:14px;background:#0b0b0d}
+        .pr-google{font-family:Arial,Helvetica,sans-serif;padding:16px;background:#fff;border-radius:6px}
+        .pr-google-mobile{background:#202124;color:#fff;padding:14px;border-radius:0}
+        .pr-g-top{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+        .pr-g-fav{width:28px;height:28px;border-radius:50%;background:#f1f3f4;display:flex;align-items:center;justify-content:center;overflow:hidden}
+        .pr-g-fav img{width:26px;height:26px}
+        .pr-g-site{color:#4d5156;font-size:14px}
+        .pr-g-site svg{width:14px;height:14px;color:#4d5156;vertical-align:middle}
+        .pr-google-mobile .pr-g-site{color:#bdc1c6}
+        .pr-g-title{color:#1a0dab;font-size:20px;line-height:1.3;margin-bottom:2px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+        .pr-google-mobile .pr-g-title{color:#8ab4f8;font-size:18px}
+        .pr-g-url{color:#006621;font-size:14px;margin-bottom:6px;word-break:break-all}
+        .pr-google-mobile .pr-g-url{color:#8ab4f8}
+        .pr-g-desc{color:#4d5156;font-size:14px;line-height:1.5;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+        .pr-google-mobile .pr-g-desc{color:#bdc1c6}
+        .pr-fb{font-family:Helvetica,Arial,sans-serif;background:#fff;border:1px solid #e4e6eb;max-width:560px;margin:0 auto;border-radius:6px}
+        .pr-fb-img{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#e4e6eb,#d8dbe0);display:flex;align-items:center;justify-content:center;overflow:hidden}
+        .pr-fb-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
+        .pr-fb-fallback{width:48px;height:48px;color:#b0b3b8}
+        .pr-fb-body{padding:12px 14px}
+        .pr-fb-host{font-size:12px;color:#606770;text-transform:uppercase;letter-spacing:.3px}
+        .pr-fb-title{font-size:16px;font-weight:600;color:#1d2129;margin-top:4px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+        .pr-fb-desc{font-size:13px;color:#4b4f56;margin-top:4px;line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+        .pr-li{font-family:Arial,sans-serif;background:#fff;border:1px solid #e2e2e2;max-width:560px;margin:0 auto;border-radius:6px}
+        .pr-li-img{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#e6edf5,#cdd9e6);display:flex;align-items:center;justify-content:center;overflow:hidden}
+        .pr-li-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
+        .pr-li-fallback{width:48px;height:48px;color:#5a6b7d}
+        .pr-li-body{padding:12px 14px}
+        .pr-li-host{font-size:12px;color:#5a6b7d}
+        .pr-li-title{font-size:15px;font-weight:600;color:#000;margin-top:4px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+        .pr-li-desc{font-size:13px;color:#5a6b7d;margin-top:4px;line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+        .pr-tw{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:#fff;border:1px solid #e1e8ed;border-radius:12px;max-width:550px;margin:0 auto;overflow:hidden}
+        .pr-tw-img{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#e1e8ed,#cfd9de);display:flex;align-items:center;justify-content:center;overflow:hidden}
+        .pr-tw-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
+        .pr-tw-fallback{width:48px;height:48px;color:#8b98a5}
+        .pr-tw-body{padding:12px 16px}
+        .pr-tw-title{font-size:15px;font-weight:700;color:#0f1419;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+        .pr-tw-desc{font-size:14px;color:#3c4249;margin-top:4px;line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+        .pr-tw-meta{font-size:13px;color:#536471;margin-top:8px;display:flex;align-items:center;gap:4px}
+        .pr-tw-meta svg{width:14px;height:14px}
+        .mta-ph{color:#94a3b8;font-style:italic;font-weight:400}
+        .mta-ph-img{color:#b0b3b8;flex-direction:column;gap:8px;text-align:center;font-size:12px;font-weight:600}
+        .mta-ph-img svg{width:38px;height:38px}
+        .mta-tw-card{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#3b82f6;background:#eff6ff;border:1px solid #bfdbfe;border-radius:9999px;padding:2px 9px;margin-bottom:8px}
+        .mta-tw-card-none{color:#94a3b8;background:#f8fafc;border-color:#e2e8f0}
+
+        /* ========== STICKY ACTIONS ========== */
+        .mta-sticky-actions{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(30px);z-index:1500;display:flex;align-items:center;gap:8px;background:rgba(15,23,42,.95);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:10px 14px;box-shadow:0 12px 40px rgba(15,23,42,.35);opacity:0;visibility:hidden;transition:all .3s cubic-bezier(.4,0,.2,1)}
+        .mta-sticky-actions.show{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+        .mta-sticky-actions .mta-sticky-score{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;background:rgba(255,255,255,.08);font-size:13px;font-weight:800;font-family:'JetBrains Mono',monospace;color:#fff}
+        .mta-sticky-actions .mta-export-btn{background:transparent;border:1px solid rgba(255,255,255,.18);color:#e2e8f0}
+        .mta-sticky-actions .mta-export-btn:hover{border-color:#60a5fa;color:#93c5fd;background:rgba(96,165,250,.12);box-shadow:none}
+
+        /* ========== RELATED / HOW / FAQ ========== */
+        .related-section,.how-section,.faq-section{max-width:920px;margin:0 auto 48px;padding:0 24px}
+        .section-heading{text-align:center;margin-bottom:28px}
+        .section-heading h2{font-size:30px;font-weight:800;color:#0f172a;margin:0 0 6px}
+        .section-heading p{font-size:14px;color:#64748b;margin:0}
+        .related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+        .related-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:22px;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit;display:flex;flex-direction:column}
+        .related-card:hover{border-color:#2563eb;box-shadow:0 8px 24px rgba(37,99,235,.12);transform:translateY(-3px)}
+        .related-card .rc-icon{width:36px;height:36px;margin-bottom:14px;border-radius:10px;background:#eff6ff;display:flex;align-items:center;justify-content:center}
+        .related-card .rc-icon svg{width:20px;height:20px;color:#2563eb;transition:transform .25s cubic-bezier(.4,0,.2,1)}
+        .related-card:hover .rc-icon svg{transform:scale(1.12)}
+        .related-card h4{font-size:15px;font-weight:700;margin:0 0 6px;color:#0f172a}
+        .related-card p{font-size:13px;color:#64748b;margin:0 0 18px;flex:1;line-height:1.55}
+        .related-card .rc-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#2563eb;margin-top:auto;transition:gap .2s}
+        .related-card:hover .rc-btn{gap:10px}
+        .related-card .rc-btn svg{width:14px;height:14px}
+        .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .step-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:26px;text-align:center;transition:border-color .2s,box-shadow .2s}
+        .step-card:hover{border-color:rgba(37,99,235,.25);box-shadow:0 6px 20px rgba(37,99,235,.08)}
+        .step-num{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#eff6ff,#dbeafe);color:#2563eb;font-size:16px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;margin-bottom:14px;transition:background .2s}
+        .step-card:hover .step-num{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff}
+        .step-card h4{font-size:15px;font-weight:700;margin:0 0 6px;color:#0f172a}
+        .step-card p{font-size:13px;color:#64748b;margin:0;line-height:1.55}
+        .faq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .faq-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:22px;transition:border-color .2s,transform .2s}
+        .faq-card:hover{border-color:#c3d4ef;transform:translateY(-2px)}
+        .faq-card h4{font-size:14px;font-weight:700;margin:0 0 8px;color:#0f172a}
+        .faq-card p{font-size:13px;color:#64748b;margin:0;line-height:1.6}
+
+        /* ========== PRIVACY NOTE ========== */
+        .privacy-note{max-width:920px;margin:0 auto 40px;padding:18px 24px;background:linear-gradient(90deg,#eff6ff,#f8fafc);border:1px solid #dbeafe;border-radius:14px;display:flex;align-items:center;gap:12px;font-size:13px;color:#334155}
+        .privacy-note svg{width:20px;height:20px;color:#2563eb;flex-shrink:0}
+        .privacy-note strong{color:#0f172a}
+
+        /* ========== GUIDE LINK ========== */
+        .guide-link{display:flex;justify-content:center;margin:0 0 12px}
+        .guide-link a{display:inline-flex;align-items:center;gap:7px;color:#2563eb;font-weight:600;font-size:14px;text-decoration:none;padding:10px 18px;border:1px solid #dbeafe;background:#eff6ff;border-radius:9999px;transition:all .2s}
+        .guide-link a:hover{background:#dbeafe;gap:10px}
+        .guide-link a svg{width:15px;height:15px}
+
+        /* ========== TOAST ========== */
+        .mta-toast{position:fixed;top:20px;right:20px;z-index:2000;padding:13px 20px;border-radius:12px;font-size:14px;font-weight:600;color:#fff;box-shadow:0 10px 30px rgba(15,23,42,.25);opacity:0;transform:translateX(24px);pointer-events:none;transition:opacity .25s ease,transform .25s ease}
+        .mta-toast.show{opacity:1;transform:translateX(0)}
+        .mta-toast.info{background:linear-gradient(135deg,#2563eb,#1d4ed8)}
+        .mta-toast.success{background:linear-gradient(135deg,#16a34a,#15803d)}
+        .mta-toast.error{background:linear-gradient(135deg,#ef4444,#dc2626)}
+
+        /* ========== RESPONSIVE ========== */
+        @media(max-width:1024px){
+            .related-grid{grid-template-columns:repeat(2,1fr)}
+            .faq-grid{grid-template-columns:repeat(2,1fr)}
+            .mta-stats-grid{grid-template-columns:repeat(3,1fr)}
+        }
+        @media(max-width:768px){
+            .hero{padding:36px 0 26px}
+            .hero h1{font-size:30px}
+            .hero-subtitle{font-size:14px;margin-bottom:20px}
+            .trust-badge{padding:5px 11px;font-size:12px}
+            .tool-card{padding:18px;margin-bottom:32px}
+            .action-bar{grid-template-columns:1fr}
+            .related-grid,.steps-grid,.faq-grid{grid-template-columns:1fr}
+            .mta-score-hero{gap:18px;padding:20px}
+            .mta-export-row{justify-content:flex-start}
+            .mta-summary-grid{grid-template-columns:1fr}
+            .mta-url-row{grid-template-columns:1fr;gap:6px}
+            .mta-url-label{text-align:left}
+            .mta-url-extra{grid-column:1}
+            .mta-stats-grid{grid-template-columns:repeat(2,1fr)}
+            .input-textarea{min-height:200px;padding:14px 16px}
+            .mta-sticky-actions{width:auto;max-width:94vw}
+        }
+        @media(max-width:480px){
+            .hero{padding:28px 0 20px}
+            .hero h1{font-size:26px}
+            .section-heading h2{font-size:24px}
+            .related-section,.how-section,.faq-section{padding:0 16px}
+            .mta-stats-grid{grid-template-columns:repeat(2,1fr)}
+        }
+        @media(prefers-reduced-motion:reduce){
+            .mta-report,.mta-progress::after,.mta-status.processing::before,.mta-chevron,.mta-ring-fill,.mta-loading .mta-spinner,.mta-sticky-actions{animation:none!important;transition:none!important}
+        }
+        @media print{
+            .hero,.site-header,.site-footer,.related-section,.how-section,.faq-section,.privacy-note,.guide-link,.action-bar,.text-input-zone,.mta-sticky-actions,.mta-toast,.mta-tabs,.text-input-hint{display:none!important}
+            .tool-card{box-shadow:none;border:none;padding:0}
+            #results{margin-top:0}
+            .mta-section{break-inside:avoid}
+            body{background:#fff}
+        }
+    </style>
 
     <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
 </head>
@@ -59,45 +442,103 @@
     </header>
 
     <main id="main-content" class="main-content">
-        <div class="container">
-            <div class="page-header">
-                <h1>Meta Tag Analyzer</h1>
-                <p class="page-description">Paste any HTML code and instantly analyze meta tags for SEO quality. Get a score, find missing tags, and receive actionable recommendations.</p>
-                <p style="margin-top:var(--space-3);font-size:var(--text-sm);color:rgba(255,255,255,.8)">No sign-up &bull; No server uploads &bull; 100% browser-based</p>
-            </div>
-
-            <div style="margin-bottom:var(--space-4)">
-                <label for="html-input" style="font-weight:600;margin-bottom:var(--space-2);display:block">Paste HTML Code</label>
-                <textarea id="html-input" class="input-textarea" placeholder='Paste your HTML code here...\n\nExample:\n<!DOCTYPE html>\n<html>\n<head>\n  <title>My Page</title>\n  <meta name="description" content="...">\n
-    <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
-</head>\n<body>...</body>\n</html>'></textarea>
-            </div>
-
-            <div style="display:flex;gap:var(--space-2);margin-bottom:var(--space-4);flex-wrap:wrap">
-                <button id="analyze-btn" class="btn btn-primary btn-lg">Analyze Meta Tags</button>
-                <button id="clear-btn" class="btn btn-outline btn-lg">Clear</button>
-            </div>
-
-            <div id="results"></div>
-
-            <section class="content-section" style="margin-top:var(--space-8)">
-                <div class="section-header"><h2>Related Tools</h2></div>
-                <div class="tools-grid">
-                    <div class="card tool-card"><h3>Meta Tag Generator</h3><p>Create SEO-optimized meta tags for your webpages.</p><div class="card-footer"><a href="./meta-tag-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-                    <div class="card tool-card"><h3>SERP Preview</h3><p>See how your page appears in Google search results.</p><div class="card-footer"><a href="./serp-preview" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-                    <div class="card tool-card"><h3>Robots.txt Generator</h3><p>Generate robots.txt files to control search engine crawling.</p><div class="card-footer"><a href="./robots-txt-generator" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-                    <div class="card tool-card"><h3>JSON Formatter</h3><p>Format and validate JSON data instantly.</p><div class="card-footer"><a href="./json-formatter" class="btn btn-primary btn-sm">Use Tool</a></div></div>
+        <section class="hero">
+            <div class="container">
+                <h1>Meta Tag <span class="gradient-text">Analyzer</span></h1>
+                <p class="hero-subtitle">Paste any HTML code and get a complete SEO audit &mdash; quality score, missing-tag detection, URL analysis, live social previews and actionable recommendations, all in your browser.</p>
+                <div class="trust-badges">
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>100% Free</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>No Sign-up</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>100% Browser-Based</span>
+                    <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Instant Results</span>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="content-section" style="margin-top:var(--space-4)">
-                <div class="section-header"><h2>Privacy Notice</h2></div>
-                <p style="color:var(--color-text-light);font-size:var(--text-sm)">All processing happens entirely in your browser. Your HTML code is never uploaded to any server. Once you close this page, all data is gone.</p>
-            </section>
+        <div class="container" style="margin-top:32px">
+            <div class="tool-workspace">
+                <div class="tool-card">
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                            <h2>Meta Tag Analyzer</h2>
+                        </div>
+                        <span id="mta-status" class="mta-status ready" role="status" aria-live="polite">Ready</span>
+                    </div>
+                    <div class="card-divider"></div>
 
-            <p style="margin-top: var(--space-4); text-align: center;">
-                <a href="../guides/meta-tag-analyzer" style="color: var(--color-primary);">Read Guide: How to Optimize Meta Tags for SEO <i class="fas fa-arrow-right"></i></a>
-            </p>
+                    <div class="text-input-zone">
+                        <div class="text-input-label-row">
+                            <label for="html-input" class="text-input-label">Paste HTML Code</label>
+                            <span id="mta-char-count" class="mta-char-count" aria-live="polite">0 characters</span>
+                        </div>
+                        <textarea id="html-input" class="input-textarea" spellcheck="false" autocapitalize="off" autocorrect="off" placeholder='Paste your HTML code here...&#10;&#10;Example:&#10;&lt;!DOCTYPE html&gt;&#10;&lt;html&gt;&#10;&lt;head&gt;&#10;  &lt;title&gt;My Page&lt;/title&gt;&#10;  &lt;meta name="description" content="..."&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;...&lt;/body&gt;&#10;&lt;/html&gt;'></textarea>
+                        <p class="text-input-hint">Tip: press <kbd>Ctrl</kbd> + <kbd>Enter</kbd> to analyze &mdash; everything stays in your browser.</p>
+                    </div>
+
+                    <div class="action-bar">
+                        <button id="analyze-btn" class="btn btn-primary" type="button"><span class="mta-spinner-inline"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="12" cy="12" r="10" opacity=".25"/><path d="M12 2a10 10 0 0 1 10 10" /></svg></span><svg class="mta-scan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Analyze Meta Tags</button>
+                        <button id="sample-btn" class="btn btn-outline" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Load Sample</button>
+                        <button id="clear-btn" class="btn btn-outline" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>Clear</button>
+                    </div>
+
+                    <div id="mta-progress" class="mta-progress" hidden></div>
+
+                    <div id="results" aria-live="polite">
+                        <div class="mta-empty">
+                            <div class="mta-empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+                            <h3>Ready to analyze</h3>
+                            <p>Paste your HTML code above and click <strong>Analyze Meta Tags</strong>, or load the sample to see a full SEO report.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="related-section">
+                <div class="section-heading">
+                    <h2>Related Tools</h2>
+                    <p>Complete your SEO workflow with these free utilities.</p>
+                </div>
+                <div class="related-grid">
+                    <a href="./meta-tag-generator" class="related-card"><div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><h4>Meta Tag Generator</h4><p>Create SEO-optimized meta tags for any webpage in seconds.</p><span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+                    <a href="./serp-preview" class="related-card"><div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3z"/><path d="M14 3h7v7h-7z"/><path d="M14 14h7v7h-7z"/><path d="M3 14h7v7H3z"/></svg></div><h4>SERP Preview</h4><p>See exactly how your page appears in Google search results.</p><span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+                    <a href="./robots-txt-generator" class="related-card"><div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="8.5" cy="10" r="1.5"/><circle cx="15.5" cy="10" r="1.5"/><path d="M8 16a4 4 0 0 0 8 0"/></svg></div><h4>Robots.txt Generator</h4><p>Generate robots.txt files to control search engine crawling.</p><span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+                    <a href="./keyword-density-checker" class="related-card"><div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div><h4>Keyword Density Checker</h4><p>Analyze keyword density and optimize your on-page content.</p><span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+                </div>
+            </div>
+
+            <div class="how-section">
+                <div class="section-heading">
+                    <h2>How It Works</h2>
+                    <p>Three simple steps to a full SEO meta tag audit.</p>
+                </div>
+                <div class="steps-grid">
+                    <div class="step-card"><div class="step-num">1</div><h4>Paste your HTML</h4><p>Copy and paste the full HTML source of your page, especially the &lt;head&gt; section.</p></div>
+                    <div class="step-card"><div class="step-num">2</div><h4>Analyze instantly</h4><p>We extract every meta, title, link and structured-data tag and score your SEO quality.</p></div>
+                    <div class="step-card"><div class="step-num">3</div><h4>Fix &amp; export</h4><p>Follow the prioritized recommendations, then export the report as TXT, JSON or print.</p></div>
+                </div>
+            </div>
+
+            <div class="faq-section">
+                <div class="section-heading">
+                    <h2>FAQ</h2>
+                    <p>Common questions about the Meta Tag Analyzer.</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-card"><h4>How does the analyzer work?</h4><p>Paste your HTML code and the tool extracts all meta tags, scores your SEO quality, and provides recommendations for improvement.</p></div>
+                    <div class="faq-card"><h4>What meta tags does it check?</h4><p>Title, description, robots, viewport, canonical, Open Graph, Twitter Cards, favicons, PWA tags, structured data and charset.</p></div>
+                    <div class="faq-card"><h4>Is my HTML code uploaded?</h4><p>No. All analysis happens entirely in your browser. Your HTML code never leaves your device.</p></div>
+                </div>
+            </div>
+
+            <div class="privacy-note">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                <span><strong>Privacy first:</strong> all processing happens in your browser. Your HTML is never uploaded &mdash; once you close this page, all data is gone.</span>
+            </div>
+
+            <div class="guide-link">
+                <a href="../guides/meta-tag-analyzer">Read Guide: How to Optimize Meta Tags for SEO <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
         </div>
     </main>
 
@@ -105,7 +546,7 @@
                     <div class="footer-social">
                         <a href="https://x.com/GoToolly" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                         <a href="https://www.facebook.com/profile.php?id=61591898344203" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                        <a href="https://linkedin.com/in/go-toolly-426b67422" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                        <a href="https://www.youtube.com/@GoToolly" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                         <a href="https://www.instagram.com/gotoolly/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
                         <a href="https://www.tiktok.com/@gotoolly26" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
                         <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></a>
@@ -113,122 +554,1487 @@
 
     <script defer src="../assets/js/main.min.js"></script>
     <script>
-    (function(){
-        var results=document.getElementById('results');
+    (function () {
+        'use strict';
 
-        function getMeta(html,name){
-            var re=new RegExp('<meta[^>]*name=["\']'+name+'["\'][^>]*content=["\']([^"\']*)["\']','i');
-            var m=html.match(re);
-            if(m)return m[1];
-            re=new RegExp('<meta[^>]*content=["\']([^"\']*)["\'][^>]*name=["\']'+name+'["\']','i');
-            m=html.match(re);
-            return m?m[1]:null;
+        var $ = function (sel, root) { return (root || document).querySelector(sel); };
+        var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
+
+        var DOM = {
+            input: $('#html-input'),
+            results: $('#results'),
+            analyzeBtn: $('#analyze-btn'),
+            sampleBtn: $('#sample-btn'),
+            clearBtn: $('#clear-btn'),
+            charCount: $('#mta-char-count'),
+            status: $('#mta-status'),
+            progress: $('#mta-progress')
+        };
+
+        var state = {
+            busy: false,
+            parsed: null,
+            lastReport: null
+        };
+
+        var ICONS = {
+            pass: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+            warn: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+            fail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>',
+            info: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
+            copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>',
+            list: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>',
+            download: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>',
+            braces: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>',
+            print: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>',
+            chevron: '<svg class="mta-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>',
+            image: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>',
+            search: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>',
+            clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>'
+        };
+
+        var EXPORT_ICONS = { 'copy-report': 'copy', 'copy-recs': 'list', txt: 'download', json: 'braces', print: 'print' };
+
+        function esc(s) {
+            return String(s == null ? '' : s)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
         }
-        function getMetaProp(html,prop){
-            var re=new RegExp('<meta[^>]*property=["\']'+prop+'["\'][^>]*content=["\']([^"\']*)["\']','i');
-            var m=html.match(re);
-            if(m)return m[1];
-            re=new RegExp('<meta[^>]*content=["\']([^"\']*)["\'][^>]*property=["\']'+prop+'["\']','i');
-            m=html.match(re);
-            return m?m[1]:null;
+
+        function truncate(s, n) {
+            s = String(s == null ? '' : s);
+            if (s.length <= n) return s;
+            return s.slice(0, n - 1).replace(/\s+\S*$/, '') + '\u2026';
         }
-        function getTitle(html){
-            var m=html.match(/<title[^>]*>([^<]*)<\/title>/i);
-            return m?m[1]:null;
+
+        function debounce(fn, wait) {
+            var t;
+            return function () {
+                var args = arguments, ctx = this;
+                clearTimeout(t);
+                t = setTimeout(function () { fn.apply(ctx, args); }, wait);
+            };
         }
-        function hasMeta(html,name){
-            return new RegExp('<meta[^>]*name=["\']'+name+'["\']','i').test(html)||new RegExp('<meta[^>]*name=["\']'+name+'["\'][^>]*','i').test(html);
+
+        function decodeEntities(str) {
+            var t = document.createElement('textarea');
+            t.innerHTML = String(str);
+            return t.value;
         }
-        function hasCharset(html){return /<meta[^>]*charset[^>]*>/i.test(html);}
-        function hasViewport(html){return hasMeta(html,'viewport');}
-        function hasCanonical(html){return /<link[^>]*rel=["\']canonical["\'][^>]*>/i.test(html);}
 
-        document.getElementById('analyze-btn').addEventListener('click',function(){
-            var html=document.getElementById('html-input').value.trim();
-            if(!html){results.innerHTML='<div style="color:var(--color-text-light);text-align:center;padding:var(--space-6)">Please paste some HTML code to analyze.</div>';return;}
+        function stripTags(str) {
+            return String(str).replace(/<[^>]*>/g, '');
+        }
 
-            var title=getTitle(html),desc=getMeta(html,'description'),keywords=getMeta(html,'keywords'),robots=getMeta(html,'robots'),viewport=getMeta(html,'viewport'),author=getMeta(html,'author'),ogTitle=getMetaProp(html,'og:title'),ogDesc=getMetaProp(html,'og:description'),ogImage=getMetaProp(html,'og:image'),ogType=getMetaProp(html,'og:type'),twCard=getMeta(html,'twitter:card'),twTitle=getMeta(html,'twitter:title');
+        function wordCount(s) {
+            return String(s == null ? '' : s).split(/\s+/).filter(Boolean).length;
+        }
 
-            var checks=[],passed=0,total=0;
+        function extractJsonLdTypes(content) {
+            var types = [];
+            var seen = {};
+            function add(s) {
+                s = String(s).trim();
+                if (s && !seen[s]) { seen[s] = true; types.push(s); }
+            }
+            function collect(obj) {
+                if (!obj || typeof obj !== 'object') return;
+                if (Array.isArray(obj)) { obj.forEach(collect); return; }
+                var t = obj['@type'];
+                if (t) {
+                    var arr = Array.isArray(t) ? t : [t];
+                    arr.forEach(add);
+                }
+                if (obj['@graph']) collect(obj['@graph']);
+                Object.keys(obj).forEach(function (k) {
+                    if (k === '@type' || k === '@context' || k === '@id' || k === '@graph') return;
+                    if (typeof obj[k] === 'object') collect(obj[k]);
+                });
+            }
+            try {
+                collect(JSON.parse(content));
+            } catch (e) {
+                var m;
+                var re = /"@type"\s*:\s*(?:"([^"]+)"|\[([^\]]*)\])/g;
+                while ((m = re.exec(content))) {
+                    if (m[1]) add(m[1]);
+                    else if (m[2]) m[2].split(',').forEach(function (x) { add(x.replace(/["\[\]\s]/g, '')); });
+                }
+            }
+            return types;
+        }
 
-            function addCheck(status,label,detail,value){
-                checks.push({status:status,label:label,detail:detail,value:value});
-                if(status==='pass')passed++;
-                total++;
+        function titleQuality(tl, tw) {
+            if (tl >= 50 && tl <= 60) return { status: 'pass', label: 'Title Length Ideal', text: tl + ' characters (' + tw + ' words) \u2014 ideal length. Quality: Excellent.' };
+            if (tl >= 40 && tl <= 70) return { status: 'pass', label: 'Good Title Length', text: tl + ' characters (' + tw + ' words) \u2014 within a reasonable range. Quality: Good.' };
+            if (tl < 40) return { status: 'warn', label: 'Title Too Short', text: tl + ' characters (' + tw + ' words) \u2014 too short. Aim for 50-60 characters.', fix: 'Expand the title to 50-60 characters while keeping it descriptive.' };
+            return { status: 'warn', label: 'Title Too Long', text: tl + ' characters (' + tw + ' words) \u2014 too long. May be truncated in search results. Aim for 50-60 characters.', fix: 'Shorten the title to 50-60 characters.' };
+        }
+
+        function descriptionQuality(dl, dw) {
+            if (dl >= 120 && dl <= 160) return { status: 'pass', label: 'Description Length Ideal', text: dl + ' characters (' + dw + ' words) \u2014 ideal description length. Quality: Excellent.' };
+            if (dl >= 70 && dl <= 200) return { status: 'pass', label: 'Good Description Length', text: dl + ' characters (' + dw + ' words) \u2014 acceptable length. Quality: Good.' };
+            if (dl < 70) return { status: 'warn', label: 'Description Too Short', text: dl + ' characters (' + dw + ' words) \u2014 too short. Aim for 150-160 characters.', fix: 'Expand the description to 150-160 characters.' };
+            return { status: 'warn', label: 'Description Too Long', text: dl + ' characters (' + dw + ' words) \u2014 too long. Aim for 150-160 characters.', fix: 'Trim the description to 150-160 characters.' };
+        }
+
+        function hasImageExt(url) {
+            var m = String(url || '').split(/[?#]/)[0].match(/\.([a-z0-9]{2,5})$/i);
+            return m ? m[1].toLowerCase() : null;
+        }
+
+        function imageExtValid(url) {
+            var path = String(url || '').split(/[?#]/)[0];
+            return /\.(jpe?g|png|webp|gif|avif|svg|ico)$/i.test(path);
+        }
+
+        function attrVal(raw, name) {
+            var key = String(name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+            var m = String(raw).match(new RegExp('\\b' + key + '\\s*=\\s*(?:"([^"]*)"|\'([^\']*)\'|([^\\s"\'>/=]+))', 'i'));
+            if (!m) return null;
+            return decodeEntities(m[1] != null ? m[1] : (m[2] != null ? m[2] : m[3]));
+        }
+
+        function tagAttrs(rawTag) {
+            var attrs = {};
+            var re = /([\w:.-]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>`]+))/gi;
+            var m;
+            while ((m = re.exec(rawTag))) {
+                var key = m[1].toLowerCase();
+                var val = m[2] != null ? m[2] : (m[3] != null ? m[3] : (m[4] != null ? m[4] : ''));
+                if (!(key in attrs)) attrs[key] = decodeEntities(val);
+            }
+            return attrs;
+        }
+
+        function parseHtml(html) {
+            var out = {
+                raw: html,
+                titles: [],
+                metas: [],
+                links: [],
+                charset: null,
+                htmlLang: null,
+                jsonld: 0,
+                jsonldBlocks: []
+            };
+
+            var titleRe = /<title\b[^>]*>([\s\S]*?)<\/title>/gi;
+            var tm;
+            while ((tm = titleRe.exec(html))) {
+                out.titles.push(decodeEntities(stripTags(tm[1])).trim());
             }
 
-            if(title){
-                addCheck('pass','Title Tag Found','Your page has a title tag.',title);
-                if(title.length>60)addCheck('warn','Title Too Long','Title is '+title.length+' characters. Aim for 50-60 characters.',title+' ('+title.length+' chars)');
-                else if(title.length<20)addCheck('warn','Title Too Short','Title is only '+title.length+' characters. Aim for 50-60 characters.',title+' ('+title.length+' chars)');
-                else addCheck('pass','Good Title Length','Title is '+title.length+' characters, within optimal range.',title+' ('+title.length+' chars)');
+            var htmlTag = html.match(/<html\b[^>]*>/i);
+            if (htmlTag) out.htmlLang = attrVal(htmlTag[0], 'lang');
+
+            var tagRe = /<(meta|link)\b[^>]*>/gi;
+            var m;
+            while ((m = tagRe.exec(html))) {
+                var raw = m[0];
+                var attrs = tagAttrs(raw);
+                if (/^<meta/i.test(raw)) {
+                    var attrType = attrs.charset != null ? 'charset'
+                        : attrs.name ? 'name'
+                        : attrs.property ? 'property'
+                        : attrs['http-equiv'] ? 'http-equiv'
+                        : attrs.itemprop ? 'itemprop'
+                        : null;
+                    if (attrs.charset != null) out.charset = attrs.charset;
+                    var key = attrType === 'charset' ? 'charset' : (attrType ? (attrs[attrType] || 'meta') : null);
+                    if (!key) continue;
+                    var value = attrs.charset != null ? attrs.charset : (attrs.content != null ? attrs.content : '');
+                    out.metas.push({ attr: attrType, key: key, value: value, raw: raw });
+                } else {
+                    var rel = (attrs.rel || '').toLowerCase().split(/\s+/).filter(Boolean);
+                    out.links.push({
+                        rel: rel,
+                        href: attrs.href != null ? attrs.href : null,
+                        sizes: attrs.sizes || null,
+                        hreflang: attrs.hreflang || null,
+                        raw: raw
+                    });
+                }
+            }
+
+            out.jsonld = (html.match(/<script[^>]*type=["']application\/ld\+json["'][^>]*>/gi) || []).length;
+            var ldRe = /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
+            var lm;
+            while ((lm = ldRe.exec(html))) {
+                var ldContent = decodeEntities(stripTags(lm[1])).trim();
+                if (!ldContent) continue;
+                out.jsonldBlocks.push({ content: ldContent, types: extractJsonLdTypes(ldContent) });
+            }
+            return out;
+        }
+
+        function metasBy(attr, key) {
+            var results = [];
+            state.parsed.metas.forEach(function (meta) {
+                if (meta.attr === attr && meta.key.toLowerCase() === key.toLowerCase()) results.push(meta);
+            });
+            return results;
+        }
+
+        function findMeta(pairs) {
+            var found = [];
+            state.parsed.metas.forEach(function (meta) {
+                pairs.forEach(function (p) {
+                    if (meta.attr === p.attr && meta.key.toLowerCase() === p.key.toLowerCase()) {
+                        var dup = false;
+                        found.forEach(function (f) { if (f === meta) dup = true; });
+                        if (!dup) found.push(meta);
+                    }
+                });
+            });
+            return found;
+        }
+
+        function val(m) {
+            if (!m) return null;
+            var v = m.value;
+            return (v == null || String(v).trim() === '') ? null : v;
+        }
+
+        function findFirst(pairs) { var f = findMeta(pairs); return f.length ? f[0] : null; }
+        function getFirstMetaName(name) { return findFirst([{ attr: 'name', key: name }]); }
+        function getFirstValue(name) { return val(getFirstMetaName(name)); }
+        function getOG(key) { return findFirst([{ attr: 'property', key: 'og:' + key }, { attr: 'name', key: 'og:' + key }]); }
+        function getTwitter(key) { return findFirst([{ attr: 'name', key: 'twitter:' + key }, { attr: 'property', key: 'twitter:' + key }]); }
+        function linksByRel(rel) {
+            return state.parsed.links.filter(function (l) { return l.rel.indexOf(rel) !== -1; });
+        }
+
+        function robotsConflict(value) {
+            var tokens = String(value).toLowerCase().split(/[,\s]+/);
+            var has = function (t) { return tokens.indexOf(t) !== -1; };
+            if (has('noindex') && has('index')) return ['index', 'noindex'];
+            if (has('nofollow') && has('follow')) return ['nofollow', 'follow'];
+            if (has('noarchive') && has('archive')) return ['archive', 'noarchive'];
+            return null;
+        }
+
+        function analyzeUrl(url) {
+            var trimmed = String(url).trim();
+            var res = { url: trimmed, status: 'valid', badge: 'Valid', note: '', scheme: null, protocol: null, secure: false, relative: false, type: 'http', dup: false };
+            if (!trimmed) { res.status = 'invalid'; res.badge = 'Empty'; res.type = 'empty'; res.note = 'Empty URL.'; return res; }
+            if (/[\s<>"'`]/g.test(trimmed)) { res.status = 'invalid'; res.badge = 'Invalid'; res.type = 'malformed'; res.note = 'URL contains spaces, quotes or invalid characters.'; return res; }
+            if (/^data:/i.test(trimmed)) { res.status = 'invalid'; res.badge = 'Data URI'; res.type = 'data'; res.scheme = 'data'; res.protocol = 'Data URI'; res.note = 'Data URIs bloat the HTML and are not appropriate for this tag.'; return res; }
+            if (/^javascript:/i.test(trimmed)) { res.status = 'invalid'; res.badge = 'JS URI'; res.type = 'javascript'; res.scheme = 'javascript'; res.protocol = 'JavaScript'; res.note = 'JavaScript URIs are not valid for this tag.'; return res; }
+            if (/^mailto:/i.test(trimmed)) { res.status = 'warn'; res.badge = 'Mailto'; res.type = 'mailto'; res.scheme = 'mailto'; res.protocol = 'Email'; res.note = 'Email links are not appropriate for this tag.'; return res; }
+            if (/^tel:/i.test(trimmed)) { res.status = 'warn'; res.badge = 'Tel'; res.type = 'tel'; res.scheme = 'tel'; res.protocol = 'Phone'; res.note = 'Phone links are not appropriate for this tag.'; return res; }
+            if (/^blob:/i.test(trimmed)) { res.status = 'invalid'; res.badge = 'Blob URI'; res.type = 'blob'; res.scheme = 'blob'; res.protocol = 'Blob'; res.note = 'Blob URIs are temporary and not valid in meta tags.'; return res; }
+            var schemeM = trimmed.match(/^([a-z][a-z0-9+.-]*):/i);
+            if (schemeM) {
+                var scheme = schemeM[1].toLowerCase();
+                if (scheme.indexOf('.') !== -1) {
+                    res.status = 'invalid'; res.badge = 'Invalid'; res.type = 'malformed';
+                    res.note = 'Missing protocol \u2014 this looks like a hostname with a port. Use https://...';
+                } else if (scheme === 'https') {
+                    res.status = 'valid'; res.badge = 'HTTPS'; res.secure = true; res.protocol = 'HTTPS';
+                } else if (scheme === 'http') {
+                    res.status = 'warn'; res.badge = 'HTTP'; res.type = 'http'; res.protocol = 'HTTP';
+                    res.note = 'Uses HTTP instead of HTTPS.';
+                } else {
+                    res.status = 'warn'; res.badge = 'Scheme'; res.type = 'scheme'; res.protocol = scheme;
+                    res.note = 'Uses non-standard scheme "' + scheme + '".';
+                }
+            } else if (/^\/\//.test(trimmed)) {
+                res.status = 'warn'; res.badge = 'Protocol-relative'; res.type = 'relative'; res.relative = true; res.protocol = 'Protocol-relative';
+                res.note = 'Protocol-relative URL. Use https:// explicitly.';
+            } else if (/^\//.test(trimmed)) {
+                res.status = 'warn'; res.badge = 'Relative'; res.type = 'relative'; res.relative = true; res.protocol = 'Relative';
+                res.note = 'Root-relative URL. Absolute URLs are recommended.';
+            } else if (/^\.\.?\//.test(trimmed)) {
+                res.status = 'warn'; res.badge = 'Relative'; res.type = 'relative'; res.relative = true; res.protocol = 'Relative';
+                res.note = 'Relative URL. Use a full absolute URL.';
+            } else if (trimmed.indexOf('/') !== -1) {
+                res.status = 'warn'; res.badge = 'Relative'; res.type = 'relative'; res.relative = true; res.protocol = 'Relative';
+                res.note = 'Relative URL. Use a full absolute URL.';
+            } else if (/\./.test(trimmed)) {
+                res.status = 'warn'; res.badge = 'Missing protocol'; res.type = 'malformed';
+                res.note = 'Missing protocol. Add https:// (e.g. https://' + trimmed + ').';
             } else {
-                addCheck('fail','Missing Title Tag','No <title> tag found. Every page needs a unique title tag.');
+                res.status = 'warn'; res.badge = 'Relative'; res.type = 'relative'; res.relative = true; res.protocol = 'Relative';
+                res.note = 'Relative URL. Use a full absolute URL.';
+            }
+            return res;
+        }
+
+        function buildReport() {
+            var p = state.parsed;
+            var checks = [];
+            var urlRows = [];
+            var seenUrls = {};
+
+            function addCheck(status, label, detail, value, opts) {
+                var o = (opts && typeof opts === 'object') ? opts : {};
+                checks.push({
+                    status: status,
+                    label: label,
+                    detail: o.detail != null ? o.detail : String(detail != null ? detail : ''),
+                    value: o.value != null ? o.value : (value != null ? value : null),
+                    fix: o.fix || null,
+                    weight: o.weight || 1,
+                    group: o.group || 'Other'
+                });
             }
 
-            if(desc){
-                addCheck('pass','Meta Description Found','Your page has a meta description.',desc);
-                if(desc.length>160)addCheck('warn','Description Too Long','Description is '+desc.length+' characters. Aim for 150-160 characters.',desc+' ('+desc.length+' chars)');
-                else if(desc.length<70)addCheck('warn','Description Too Short','Description is only '+desc.length+' characters. Aim for 150-160 characters.',desc+' ('+desc.length+' chars)');
-                else addCheck('pass','Good Description Length','Description is '+desc.length+' characters, within optimal range.',desc+' ('+desc.length+' chars)');
+            function noteUrl(value, label, roles) {
+                if (value == null || String(value).trim() === '') return null;
+                var u = analyzeUrl(value);
+                var key = u.url.toLowerCase();
+                if (seenUrls[key]) {
+                    var prev = seenUrls[key];
+                    roles.forEach(function (r) {
+                        if (prev.roles.indexOf(r) !== -1) { prev.dup = true; u.dup = true; }
+                        else prev.roles.push(r);
+                    });
+                    if (prev.label !== label) prev.label += ', ' + label;
+                    if (prev.protocol !== u.protocol) prev.note = (prev.note ? prev.note + ' ' : '') + u.note;
+                    if (!prev.secure && u.secure) prev.secure = true;
+                    return prev;
+                }
+                u.label = label;
+                u.roles = roles.slice();
+                seenUrls[key] = u;
+                urlRows.push(u);
+                return u;
+            }
+
+            var titles = p.titles;
+            var title = titles[0] || null;
+            var description = getFirstValue('description');
+            var descriptionTags = metasBy('name', 'description');
+            var keywords = getFirstValue('keywords');
+            var robots = getFirstValue('robots');
+            var viewport = getFirstValue('viewport');
+            var canonicals = linksByRel('canonical');
+
+            var og = {
+                title: val(getOG('title')),
+                description: val(getOG('description')),
+                type: val(getOG('type')),
+                url: val(getOG('url')),
+                image: val(getOG('image')),
+                imageAlt: val(getOG('image:alt')),
+                imageType: val(getOG('image:type')),
+                imageWidth: val(getOG('image:width')),
+                imageHeight: val(getOG('image:height')),
+                siteName: val(getOG('site_name')),
+                locale: val(getOG('locale'))
+            };
+
+            var tw = {
+                card: val(getTwitter('card')),
+                title: val(getTwitter('title')),
+                description: val(getTwitter('description')),
+                image: val(getTwitter('image')),
+                imageAlt: val(getTwitter('image:alt')),
+                site: val(getTwitter('site')),
+                creator: val(getTwitter('creator')),
+                url: val(getTwitter('url'))
+            };
+
+            if (title) {
+                addCheck('pass', 'Title Tag Found', 'A <title> tag was detected.', title, { weight: 2, group: 'Core SEO' });
+                if (titles.length > 1) {
+                    addCheck('warn', 'Duplicate Title Tags', titles.length + ' title tags found. Search engines only use one.', titles.length + ' titles found', { fix: 'Remove duplicate <title> tags and keep a single unique title.', group: 'Core SEO' });
+                }
+                var tl = title.length;
+                var titleWords = wordCount(title);
+                var tq = titleQuality(tl, titleWords);
+                addCheck(tq.status, tq.label, tq.text, tl + ' characters, ' + titleWords + ' words', { fix: tq.fix || null, group: 'Core SEO' });
             } else {
-                addCheck('fail','Missing Meta Description','No meta description found. Add a compelling 150-160 character description.');
+                addCheck('fail', 'Missing Title Tag', 'No <title> tag was found. Every page needs a unique, descriptive title.', null, { fix: 'Add a <title> tag inside the <head> that is unique and descriptive.', weight: 2, group: 'Core SEO' });
             }
 
-            if(hasCharset(html))addCheck('pass','Charset Defined','Character encoding is specified.');else addCheck('warn','Missing Charset','No charset meta tag found. Add <meta charset="UTF-8">.');
-            if(viewport)addCheck('pass','Viewport Configured','Viewport meta tag is set.',viewport);else addCheck('fail','Missing Viewport','No viewport meta tag. Add viewport for mobile optimization.');
-            if(hasCanonical(html))addCheck('pass','Canonical URL Set','Canonical link tag is present.');else addCheck('warn','Missing Canonical','No canonical tag found. Add canonical to prevent duplicate content issues.');
-            if(robots)addCheck('pass','Robots Directive Set','Robots meta tag is present.',robots);
-            if(keywords)addCheck('pass','Keywords Defined','Keywords meta tag is present.',keywords);
-            if(author)addCheck('pass','Author Defined','Author meta tag is present.',author);
-
-            if(ogTitle||ogDesc||ogImage)addCheck('pass','Open Graph Tags Found','Some Open Graph tags are present.',(ogTitle?'title: '+ogTitle:'')+(ogDesc?' | desc: '+ogDesc:'')+(ogImage?' | image: '+ogImage:''));
-            else addCheck('warn','Missing Open Graph Tags','No Open Graph tags found. Add og:title, og:description, and og:image for social sharing.');
-            if(twCard||twTitle)addCheck('pass','Twitter Card Tags Found','Some Twitter Card tags are present.');else addCheck('warn','Missing Twitter Card Tags','No Twitter Card tags found. Add twitter:card, twitter:title, and twitter:image.');
-
-            var score=Math.round((passed/total)*100);
-            var scoreColor=score>=80?'#a6e3a1':score>=50?'#fab387':'#f38ba8';
-            var scoreLabel=score>=80?'Good':score>=50?'Needs Work':'Poor';
-
-            var html2='<div class="score-display" style="background:rgba(255,255,255,.05)">';
-            html2+='<div class="score-circle" style="background:'+scoreColor+'">'+score+'</div>';
-            html2+='<div><div style="font-size:var(--text-xl);font-weight:700">SEO Score: '+scoreLabel+'</div>';
-            html2+='<div style="color:var(--color-text-light);font-size:var(--text-sm)">'+passed+' of '+total+' checks passed</div></div></div>';
-
-            html2+='<div class="section-title">Extracted Meta Tags</div>';
-            var extracted=[];
-            if(title)extracted.push('<strong>Title:</strong> '+title);
-            if(desc)extracted.push('<strong>Description:</strong> '+desc);
-            if(keywords)extracted.push('<strong>Keywords:</strong> '+keywords);
-            if(author)extracted.push('<strong>Author:</strong> '+author);
-            if(robots)extracted.push('<strong>Robots:</strong> '+robots);
-            if(viewport)extracted.push('<strong>Viewport:</strong> '+viewport);
-            if(ogTitle)extracted.push('<strong>OG Title:</strong> '+ogTitle);
-            if(ogDesc)extracted.push('<strong>OG Description:</strong> '+ogDesc);
-            if(ogImage)extracted.push('<strong>OG Image:</strong> '+ogImage);
-            if(ogType)extracted.push('<strong>OG Type:</strong> '+ogType);
-            if(twCard)extracted.push('<strong>Twitter Card:</strong> '+twCard);
-            if(extracted.length)html2+='<div class="tag-value" style="padding:var(--space-3);background:rgba(255,255,255,.05);border-radius:8px;margin-bottom:var(--space-4)">'+extracted.join('<br>')+'</div>';
-            else html2+='<div class="tag-value" style="padding:var(--space-3);background:rgba(255,255,255,.05);border-radius:8px;margin-bottom:var(--space-4)">No meta tags found.</div>';
-
-            html2+='<div class="section-title">Detailed Analysis</div>';
-            var icons={pass:'&#10003;',warn:'&#9888;',fail:'&#10007;'};
-            for(var i=0;i<checks.length;i++){
-                var c=checks[i];
-                html2+='<div class="analysis-item '+c.status+'">';
-                html2+='<span class="analysis-icon">'+icons[c.status]+'</span>';
-                html2+='<div class="analysis-text"><strong>'+c.label+'</strong>'+c.detail;
-                if(c.value)html2+='<div class="tag-value">'+c.value+'</div>';
-                html2+='</div></div>';
+            if (description) {
+                addCheck('pass', 'Meta Description Found', 'A meta description was detected.', description, { weight: 2, group: 'Core SEO' });
+                if (descriptionTags.length > 1) {
+                    addCheck('warn', 'Duplicate Meta Description', descriptionTags.length + ' description tags found. Only the first is used.', descriptionTags.length + ' found', { fix: 'Remove duplicate description meta tags.', group: 'Core SEO' });
+                }
+                var dl = description.length;
+                var dw = wordCount(description);
+                var dq = descriptionQuality(dl, dw);
+                addCheck(dq.status, dq.label, dq.text, dl + ' characters, ' + dw + ' words', { fix: dq.fix || null, group: 'Core SEO' });
+                if (title && description.toLowerCase() === title.toLowerCase()) {
+                    addCheck('warn', 'Description Repeats Title', 'The meta description is identical to the title tag.', null, { fix: 'Write a unique description that complements the title.', group: 'Core SEO' });
+                }
+            } else {
+                addCheck('fail', 'Missing Meta Description', 'No meta description found. Search engines may show auto-generated text.', null, { fix: 'Add <meta name="description" content="A compelling 150-160 character summary">.', weight: 2, group: 'Core SEO' });
             }
 
-            results.innerHTML=html2;
+            if (canonicals.length) {
+                var canonical = canonicals[0].href;
+                addCheck('pass', 'Canonical URL Found', 'A canonical link tag was detected.', canonical, { weight: 2, group: 'Core SEO' });
+                if (canonicals.length > 1) {
+                    addCheck('warn', 'Multiple Canonical Tags', canonicals.length + ' canonical tags found. Only one should be used.', canonicals.map(function (l) { return l.href; }).join(' | '), { fix: 'Keep a single canonical tag.', group: 'Core SEO' });
+                }
+                canonicals.forEach(function (c) { noteUrl(c.href, 'canonical', ['canonical']); });
+            } else {
+                addCheck('warn', 'Missing Canonical URL', 'No rel="canonical" link tag found. Duplicate content may dilute rankings.', null, { fix: 'Add <link rel="canonical" href="https://example.com/page">.', weight: 2, group: 'Core SEO' });
+            }
+
+            if (canonicals.length && og.url) {
+                var normUrl = function (s) { return String(s || '').replace(/\/+$/, '').toLowerCase(); };
+                if (normUrl(canonicals[0].href) === normUrl(og.url)) {
+                    addCheck('pass', 'Canonical Matches og:url', 'The canonical URL matches og:url, so search engines and social platforms agree on the same address.', canonical + ' = ' + og.url, { group: 'Core SEO' });
+                } else {
+                    addCheck('warn', 'Canonical and og:url Differ', 'The canonical URL and og:url point to different addresses, which sends conflicting signals.', (canonical || '') + ' vs ' + og.url, { fix: 'Make og:url match the canonical URL.', group: 'Core SEO' });
+                }
+            }
+
+            if (robots) {
+                var robotsLower = robots.toLowerCase();
+                var robotsMeaning;
+                if (/\bnoindex\b/.test(robotsLower)) {
+                    robotsMeaning = 'Directive "' + robots + '" will prevent this page from being indexed.';
+                } else if (/\bnofollow\b/.test(robotsLower)) {
+                    robotsMeaning = 'Directive "' + robots + '" tells crawlers not to follow links on this page.';
+                } else if (/^index,\s*follow/.test(robotsLower) || /^all/.test(robotsLower)) {
+                    robotsMeaning = 'Directive "' + robots + '" is the recommended setting \u2014 pages are indexed and links followed.';
+                } else {
+                    robotsMeaning = 'Directive "' + robots + '" is set. Verify it matches your indexing intent (index,follow is recommended).';
+                }
+                addCheck('pass', 'Robots Directive Found', robotsMeaning, robots, { group: 'Core SEO' });
+                if (metasBy('name', 'robots').length > 1) {
+                    addCheck('warn', 'Duplicate Robots Tags', 'Multiple robots meta tags found.', metasBy('name', 'robots').length + ' found', { fix: 'Keep a single robots directive.', group: 'Core SEO' });
+                }
+                var conflict = robotsConflict(robots);
+                if (conflict) {
+                    addCheck('fail', 'Conflicting Robots Directives', 'The robots directive contains both "' + conflict[0] + '" and "' + conflict[1] + '", which conflict.', robots, { fix: 'Remove one of the conflicting directives.', weight: 2, group: 'Core SEO' });
+                }
+            } else {
+                addCheck('pass', 'Robots Meta (default)', 'No robots meta tag found. Search engines default to index, follow \u2014 the recommended behavior.', null, { group: 'Core SEO' });
+            }
+
+            if (p.charset != null) {
+                if (!/utf-8/i.test(p.charset)) {
+                    addCheck('warn', 'Non-UTF-8 Charset', 'Charset is "' + p.charset + '". UTF-8 is recommended.', p.charset, { fix: 'Use <meta charset="UTF-8">.', group: 'Core SEO' });
+                } else {
+                    addCheck('pass', 'Charset Defined', 'UTF-8 character encoding is declared.', p.charset, { group: 'Core SEO' });
+                }
+            } else {
+                addCheck('warn', 'Missing Charset', 'No character encoding declared.', null, { fix: 'Add <meta charset="UTF-8"> as the first element in <head>.', group: 'Core SEO' });
+            }
+
+            if (viewport) {
+                addCheck('pass', 'Viewport Configured', 'A viewport meta tag was detected.', viewport, { weight: 2, group: 'Core SEO' });
+                var vp = viewport.toLowerCase();
+                if (vp.indexOf('width=device-width') === -1 || vp.indexOf('initial-scale') === -1) {
+                    addCheck('warn', 'Incomplete Viewport', 'Viewport should include width=device-width and initial-scale.', viewport, { fix: 'Use content="width=device-width, initial-scale=1".', group: 'Core SEO' });
+                }
+            } else {
+                addCheck('fail', 'Missing Viewport', 'No viewport meta tag. Mobile users will not get an optimized layout.', null, { fix: 'Add <meta name="viewport" content="width=device-width, initial-scale=1">.', weight: 2, group: 'Core SEO' });
+            }
+
+            if (p.htmlLang) {
+                addCheck('pass', 'Language Attribute', 'The <html> tag declares lang="' + p.htmlLang + '".', p.htmlLang, { group: 'Core SEO' });
+            } else {
+                addCheck('warn', 'Missing Language Attribute', 'The <html> tag has no lang attribute. Screen readers and search engines use it.', null, { fix: 'Add lang="en" (or your page language) to the <html> tag.', group: 'Core SEO' });
+            }
+
+            var hreflangs = linksByRel('alternate').filter(function (l) { return l.hreflang; });
+            if (hreflangs.length) {
+                addCheck('pass', 'Hreflang Tags Found', hreflangs.length + ' hreflang alternate tags detected.', hreflangs.length + ' tags', { group: 'Core SEO' });
+                hreflangs.forEach(function (l) { noteUrl(l.href, 'hreflang:' + l.hreflang, ['hreflang']); });
+            }
+
+            var refresh = metasBy('http-equiv', 'refresh');
+            if (refresh.length) {
+                addCheck('warn', 'Meta Refresh Detected', 'A <meta http-equiv="refresh"> redirect was found. It can hurt UX and SEO.', refresh[0].value || 'present', { fix: 'Use a server-side 301 redirect instead.', group: 'Core SEO' });
+            }
+            var xua = metasBy('http-equiv', 'x-ua-compatible');
+            if (xua.length) {
+                addCheck('pass', 'X-UA-Compatible (legacy)', 'The X-UA-Compatible tag is present. Only needed for legacy IE support.', xua[0].value, { group: 'Core SEO' });
+            }
+
+            var deprecatedNames = ['generator', 'revisit-after', 'rating', 'distribution', 'classification', 'resource-type', 'copyright', 'abstract'];
+            var deprecatedFound = [];
+            deprecatedNames.forEach(function (n) {
+                if (metasBy('name', n).length) deprecatedFound.push(n);
+            });
+            if (deprecatedFound.length) {
+                addCheck('warn', 'Deprecated Meta Tags', 'Deprecated meta tags detected: ' + deprecatedFound.join(', ') + '. These are ignored by modern search engines.', deprecatedFound.join(', '), { fix: 'Remove deprecated meta tags.', group: 'Core SEO' });
+            }
+            if (keywords) {
+                addCheck('info', 'Keywords Meta Present', 'A keywords meta tag was found. Google and Bing ignore it \u2014 it has no SEO effect but is harmless.', keywords, { group: 'Core SEO' });
+            }
+
+            var dupes = [];
+            var seen = {};
+            p.metas.forEach(function (meta) {
+                if (meta.attr === 'http-equiv' || meta.attr === 'charset' || meta.key.toLowerCase() === 'description') return;
+                var k = meta.attr + ':' + meta.key.toLowerCase();
+                if (seen[k]) {
+                    if (!seen[k].dup) { dupes.push(k); seen[k].dup = true; }
+                } else {
+                    seen[k] = { dup: false };
+                }
+            });
+            if (dupes.length) {
+                addCheck('warn', 'Duplicate Meta Tags', 'These meta tags are defined more than once: ' + dupes.join(', ') + '.', dupes.join(', '), { fix: 'Remove duplicate meta tags so each appears once.', group: 'Core SEO' });
+            }
+
+            var ogAny = p.metas.some(function (m) { return /^og:/i.test(m.key); });
+            if (!ogAny) {
+                addCheck('warn', 'Missing Open Graph Tags', 'No Open Graph tags found. Social platforms will not render rich previews.', null, { fix: 'Add og:title, og:description, og:type, og:url and og:image.', weight: 2, group: 'Open Graph' });
+            } else {
+                if (og.title) { addCheck('pass', 'og:title', 'Open Graph title is defined.', og.title, { group: 'Open Graph' }); }
+                else { addCheck('warn', 'Missing og:title', 'Open Graph is missing og:title.', null, { fix: 'Add <meta property="og:title" content="Page title">.', group: 'Open Graph' }); }
+                if (og.description) { addCheck('pass', 'og:description', 'Open Graph description is defined.', og.description, { group: 'Open Graph' }); }
+                else { addCheck('warn', 'Missing og:description', 'Open Graph is missing og:description.', null, { fix: 'Add <meta property="og:description" content="...">.', group: 'Open Graph' }); }
+                if (og.type) { addCheck('pass', 'og:type', 'Open Graph type is defined.', og.type, { group: 'Open Graph' }); }
+                else { addCheck('warn', 'Missing og:type', 'Open Graph is missing og:type.', null, { fix: 'Add <meta property="og:type" content="website">.', group: 'Open Graph' }); }
+                if (og.url) { addCheck('pass', 'og:url', 'Open Graph URL is defined.', og.url, { group: 'Open Graph' }); noteUrl(og.url, 'og:url', ['og']); }
+                else { addCheck('warn', 'Missing og:url', 'Open Graph is missing og:url.', null, { fix: 'Add <meta property="og:url" content="https://...">.', group: 'Open Graph' }); }
+                if (og.image) {
+                    addCheck('pass', 'og:image', 'Open Graph image is defined.', og.image, { weight: 2, group: 'Open Graph' });
+                    var ogImg = analyzeUrl(og.image);
+                    if (ogImg.status === 'invalid') {
+                        addCheck('fail', 'og:image URL Invalid', ogImg.note, og.image, { fix: 'Use a valid absolute image URL.', weight: 2, group: 'Open Graph' });
+                    } else {
+                        var ogExt = hasImageExt(og.image);
+                        if (ogExt && !imageExtValid(og.image)) {
+                            addCheck('warn', 'og:image File Type Not Recommended', 'og:image points to a .' + ogExt + ' file. Recommended formats: .jpg, .jpeg, .png, .webp, .gif, .avif, .svg, .ico.', og.image, { fix: 'Use one of the recommended image formats.', group: 'Open Graph' });
+                        } else if (!ogExt) {
+                            addCheck('info', 'og:image No File Extension', 'og:image has no image file extension (common with CDN URLs). It may still render correctly.', og.image, { group: 'Open Graph' });
+                        }
+                        if (ogImg.relative) {
+                            addCheck('info', 'og:image Relative URL', 'og:image uses a relative URL. Absolute URLs are recommended so crawlers can resolve the image.', og.image, { group: 'Open Graph' });
+                        } else if (ogImg.status === 'warn') {
+                            addCheck('info', 'og:image URL Note', ogImg.note, og.image, { group: 'Open Graph' });
+                        }
+                    }
+                    if (!og.imageAlt) { addCheck('warn', 'Missing og:image:alt', 'Open Graph image has no alt text.', null, { fix: 'Add <meta property="og:image:alt" content="Describe the image">.', group: 'Open Graph' }); }
+                    if (!(og.imageWidth && og.imageHeight)) { addCheck('warn', 'Missing og:image Dimensions', 'og:image width/height are not declared. 1200x630 is recommended.', null, { fix: 'Add og:image:width and og:image:height meta tags.', group: 'Open Graph' }); }
+                    noteUrl(og.image, 'og:image', ['og:image']);
+                } else {
+                    addCheck('warn', 'Missing og:image', 'Open Graph is missing og:image. Shares will have no image preview.', null, { fix: 'Add <meta property="og:image" content="https://.../image.png"> (1200x630 recommended).', weight: 2, group: 'Open Graph' });
+                }
+                if (!og.siteName) { addCheck('warn', 'Missing og:site_name', 'Open Graph is missing og:site_name.', null, { fix: 'Add <meta property="og:site_name" content="Your site name">.', group: 'Open Graph' }); }
+                if (!og.locale) { addCheck('warn', 'Missing og:locale', 'Open Graph is missing og:locale.', null, { fix: 'Add <meta property="og:locale" content="en_US">.', group: 'Open Graph' }); }
+            }
+
+            var twAny = p.metas.some(function (m) { return /^twitter:/i.test(m.key); });
+            if (!twAny) {
+                addCheck('warn', 'Missing Twitter Card Tags', 'No Twitter Card tags found. Tweets sharing this page will lack rich previews.', null, { fix: 'Add twitter:card, twitter:title, twitter:description and twitter:image.', weight: 2, group: 'Twitter Cards' });
+            } else {
+                if (tw.card) { addCheck('pass', 'twitter:card', 'Twitter card type is defined.', tw.card, { group: 'Twitter Cards' }); }
+                else { addCheck('warn', 'Missing twitter:card', 'No twitter:card type defined. Twitter cannot render a card.', null, { fix: 'Add <meta name="twitter:card" content="summary_large_image">.', group: 'Twitter Cards' }); }
+                if (tw.title) { addCheck('pass', 'twitter:title', 'Twitter card title is defined.', tw.title, { group: 'Twitter Cards' }); }
+                else { addCheck('warn', 'Missing twitter:title', 'Twitter card is missing twitter:title.', null, { fix: 'Add <meta name="twitter:title" content="Page title">.', group: 'Twitter Cards' }); }
+                if (tw.description) { addCheck('pass', 'twitter:description', 'Twitter card description is defined.', tw.description, { group: 'Twitter Cards' }); }
+                else { addCheck('warn', 'Missing twitter:description', 'Twitter card is missing twitter:description.', null, { fix: 'Add <meta name="twitter:description" content="...">.', group: 'Twitter Cards' }); }
+                if (tw.image) { addCheck('pass', 'twitter:image', 'Twitter card image is defined.', tw.image, { weight: 2, group: 'Twitter Cards' }); noteUrl(tw.image, 'twitter:image', ['twitter:image']); var twImg = analyzeUrl(tw.image); if (twImg.status === 'invalid') { addCheck('fail', 'twitter:image URL Invalid', twImg.note, tw.image, { fix: 'Use a valid absolute image URL.', weight: 2, group: 'Twitter Cards' }); } else { var twExt = hasImageExt(tw.image); if (twExt && !imageExtValid(tw.image)) { addCheck('warn', 'twitter:image File Type Not Recommended', 'twitter:image points to a .' + twExt + ' file. Recommended formats: .jpg, .jpeg, .png, .webp, .gif, .avif, .svg, .ico.', tw.image, { fix: 'Use one of the recommended image formats.', group: 'Twitter Cards' }); } else if (!twExt) { addCheck('info', 'twitter:image No File Extension', 'twitter:image has no image file extension (common with CDN URLs). It may still render correctly.', tw.image, { group: 'Twitter Cards' }); } if (twImg.relative) { addCheck('info', 'twitter:image Relative URL', 'twitter:image uses a relative URL. Absolute URLs are recommended.', tw.image, { group: 'Twitter Cards' }); } else if (twImg.status === 'warn') { addCheck('info', 'twitter:image URL Note', twImg.note, tw.image, { group: 'Twitter Cards' }); } } }
+                else { addCheck('warn', 'Missing twitter:image', 'Twitter card is missing twitter:image.', null, { fix: 'Add <meta name="twitter:image" content="https://.../image.png">.', weight: 2, group: 'Twitter Cards' }); }
+                if (!tw.imageAlt) { addCheck('warn', 'Missing twitter:image:alt', 'Twitter card image has no alt text.', null, { fix: 'Add <meta name="twitter:image:alt" content="Describe the image">.', group: 'Twitter Cards' }); }
+                if (!tw.site) { addCheck('warn', 'Missing twitter:site', 'Twitter card is missing twitter:site.', null, { fix: 'Add <meta name="twitter:site" content="@yourhandle">.', group: 'Twitter Cards' }); }
+                if (!tw.creator) { addCheck('warn', 'Missing twitter:creator', 'Twitter card is missing twitter:creator.', null, { fix: 'Add <meta name="twitter:creator" content="@author">.', group: 'Twitter Cards' }); }
+                if (!tw.url) { addCheck('warn', 'Missing twitter:url', 'Twitter card is missing twitter:url.', null, { fix: 'Add <meta name="twitter:url" content="https://...">.', group: 'Twitter Cards' }); }
+                else { noteUrl(tw.url, 'twitter:url', ['twitter']); }
+            }
+
+            var favicons = linksByRel('icon');
+            var shortcutFav = linksByRel('shortcut icon');
+            if (favicons.length || shortcutFav.length) {
+                addCheck('pass', 'Favicon Found', 'Favicon link tag(s) detected.', favicons.concat(shortcutFav).map(function (l) { return l.href || '(no href)'; }).join(', '), { group: 'Favicons & PWA' });
+                favicons.concat(shortcutFav).forEach(function (l) {
+                    if (l.href) {
+                        var favUrl = noteUrl(l.href, 'favicon', ['favicon']);
+                        if (favUrl) favUrl.ignoreRollup = true;
+                        if (favUrl && favUrl.relative) {
+                            addCheck('info', 'Relative Favicon URL', 'The favicon uses a relative URL (' + favUrl.badge.toLowerCase() + '). This is usually fine, but an absolute URL is more robust.', l.href, { group: 'Favicons & PWA' });
+                        }
+                    }
+                });
+                if (shortcutFav.length && !favicons.length) {
+                    addCheck('warn', 'Outdated Favicon Markup', 'Only the deprecated rel="shortcut icon" was found.', shortcutFav[0].href, { fix: 'Use rel="icon" instead.', group: 'Favicons & PWA' });
+                }
+            } else {
+                addCheck('warn', 'Missing Favicon', 'No favicon link tag found. Browsers will show a default icon.', null, { fix: 'Add <link rel="icon" href="/favicon.ico"> or a PNG/SVG icon.', group: 'Favicons & PWA' });
+            }
+
+            var appleTouch = linksByRel('apple-touch-icon');
+            if (appleTouch.length) { addCheck('pass', 'Apple Touch Icon', 'apple-touch-icon is defined.', appleTouch[0].href || '(no href)', { group: 'Favicons & PWA' }); appleTouch.forEach(function (l) { if (l.href) noteUrl(l.href, 'apple-touch-icon', ['favicon']); }); }
+            var maskIcon = linksByRel('mask-icon');
+            if (maskIcon.length) { addCheck('pass', 'Mask Icon (Safari pinned tab)', 'mask-icon is defined.', maskIcon[0].href || '(no href)', { group: 'Favicons & PWA' }); maskIcon.forEach(function (l) { if (l.href) noteUrl(l.href, 'mask-icon', ['favicon']); }); }
+            var manifest = linksByRel('manifest');
+            if (manifest.length) { addCheck('pass', 'Web App Manifest', 'A web app manifest is linked.', manifest[0].href || '(no href)', { group: 'Favicons & PWA' }); manifest.forEach(function (l) { if (l.href) noteUrl(l.href, 'manifest', ['manifest']); }); }
+            var msTile = metasBy('name', 'msapplication-TileImage');
+            if (msTile.length) { addCheck('pass', 'MSApplication Tile Image', 'msapplication-TileImage is defined.', msTile[0].value, { group: 'Favicons & PWA' }); noteUrl(msTile[0].value, 'msapplication-TileImage', ['favicon']); }
+            var themeColor = metasBy('name', 'theme-color');
+            if (themeColor.length) { addCheck('pass', 'Theme Color', 'A theme-color meta tag is defined.', themeColor[0].value, { group: 'Favicons & PWA' }); }
+            var mwac = metasBy('name', 'mobile-web-app-capable');
+            if (mwac.length) { addCheck('pass', 'Mobile Web App Capable', 'mobile-web-app-capable is set.', mwac[0].value, { group: 'Favicons & PWA' }); }
+            var amwac = metasBy('name', 'apple-mobile-web-app-capable');
+            if (amwac.length) { addCheck('pass', 'Apple Mobile Web App Capable', 'apple-mobile-web-app-capable is set.', amwac[0].value, { group: 'Favicons & PWA' }); }
+
+            if (p.jsonld > 0) {
+                var jsonldTypes = [];
+                p.jsonldBlocks.forEach(function (b) {
+                    b.types.forEach(function (t) { if (jsonldTypes.indexOf(t) === -1) jsonldTypes.push(t); });
+                });
+                if (jsonldTypes.length) {
+                    addCheck('pass', 'Structured Data Found', 'JSON-LD detected. Schema type(s): ' + jsonldTypes.join(', ') + '.', jsonldTypes.join(', '), { group: 'Core SEO' });
+                } else {
+                    addCheck('pass', 'Structured Data Found', p.jsonld + ' JSON-LD block(s) detected, but the schema type(s) could not be parsed.', p.jsonld + ' block(s)', { group: 'Core SEO' });
+                    addCheck('info', 'Unparsable JSON-LD', 'JSON-LD blocks exist but their @type could not be read (invalid JSON or unexpected structure).', null, { group: 'Core SEO' });
+                }
+            } else {
+                jsonldTypes = [];
+                addCheck('warn', 'Missing Structured Data', 'No JSON-LD structured data found. Rich results (FAQ, breadcrumbs, product) need schema markup.', null, { fix: 'Add <script type="application/ld+json"> with schema.org markup.', group: 'Core SEO' });
+            }
+
+            var httpCount = 0, httpsCount = 0, relativeCount = 0, invalidCount = 0, dupCount = 0;
+            urlRows.forEach(function (u) {
+                if (u.ignoreRollup) return;
+                if (u.scheme === 'http') httpCount++;
+                if (u.secure) httpsCount++;
+                if (u.relative) relativeCount++;
+                if (u.status === 'invalid') invalidCount++;
+                if (u.dup) dupCount++;
+            });
+            if (httpCount) addCheck('warn', 'HTTP URLs Found', httpCount + ' URL(s) use HTTP instead of HTTPS.', httpCount + ' URL(s)', { fix: 'Update all meta URLs to HTTPS.', group: 'URL Analysis' });
+            if (relativeCount) addCheck('warn', 'Relative URLs Found', relativeCount + ' URL(s) are relative instead of absolute.', relativeCount + ' URL(s)', { fix: 'Use absolute URLs in meta tags.', group: 'URL Analysis' });
+            if (invalidCount) addCheck('fail', 'Invalid URL Format', invalidCount + ' URL(s) have an invalid format.', invalidCount + ' URL(s)', { fix: 'Fix the malformed URLs.', group: 'URL Analysis' });
+            if (dupCount) addCheck('warn', 'Duplicate URLs', dupCount + ' URL(s) appear more than once for the same purpose.', dupCount + ' URL(s)', { fix: 'Review and deduplicate the repeated URLs.', group: 'URL Analysis' });
+
+            var passedW = 0, totalW = 0, passed = 0, warned = 0, failed = 0, infoCount = 0;
+            checks.forEach(function (c) {
+                if (c.status === 'info') { infoCount++; return; }
+                totalW += c.weight;
+                if (c.status === 'pass') { passedW += c.weight; passed++; }
+                else if (c.status === 'warn') { passedW += c.weight * 0.5; warned++; }
+                else { failed++; }
+            });
+            var scoreValue = totalW ? Math.round((passedW / totalW) * 100) : 0;
+            var grade, color;
+            if (scoreValue >= 90) { grade = 'Excellent'; color = '#10b981'; }
+            else if (scoreValue >= 75) { grade = 'Good'; color = '#22c55e'; }
+            else if (scoreValue >= 50) { grade = 'Needs Work'; color = '#f59e0b'; }
+            else { grade = 'Poor'; color = '#ef4444'; }
+
+            var recommendations = [];
+            checks.forEach(function (c) {
+                if ((c.status === 'fail' || c.status === 'warn') && c.fix) {
+                    recommendations.push({ text: c.label + ': ' + c.fix, weight: c.weight, status: c.status });
+                }
+            });
+            recommendations.sort(function (a, b) {
+                if (b.weight !== a.weight) return b.weight - a.weight;
+                if (a.status !== b.status) return a.status === 'fail' ? -1 : 1;
+                return 0;
+            });
+            var seenRecs = {};
+            recommendations = recommendations.filter(function (r) {
+                if (seenRecs[r.text]) return false;
+                seenRecs[r.text] = true;
+                return true;
+            }).map(function (r) { return r.text; });
+
+            return {
+                title: title,
+                titles: titles,
+                description: description,
+                keywords: keywords,
+                robots: robots,
+                viewport: viewport,
+                canonical: canonicals.length ? canonicals[0].href : null,
+                og: og,
+                twitter: tw,
+                themeColor: themeColor.length ? themeColor[0].value : null,
+                charset: p.charset,
+                htmlLang: p.htmlLang,
+                jsonld: p.jsonld,
+                jsonldTypes: jsonldTypes || [],
+                metaCount: p.metas.length,
+                linkCount: p.links.length,
+                ogCount: p.metas.filter(function (m) { return /^og:/i.test(m.key); }).length,
+                twCount: p.metas.filter(function (m) { return /^twitter:/i.test(m.key); }).length,
+                checks: checks,
+                urls: urlRows,
+                urlStats: { total: urlRows.length, https: httpsCount, http: httpCount, relative: relativeCount, invalid: invalidCount, duplicate: dupCount },
+                score: { value: scoreValue, grade: grade, color: color, passed: passed, warned: warned, failed: failed, info: infoCount, total: checks.length },
+                recommendations: recommendations,
+                sourceLength: p.raw.length
+            };
+        }
+
+        function groupChecks(checks) {
+            var groups = {};
+            var order = [];
+            checks.forEach(function (c) {
+                var g = c.group || 'Other';
+                if (!groups[g]) { groups[g] = []; order.push(g); }
+                groups[g].push(c);
+            });
+            return { groups: groups, order: order };
+        }
+
+        function hostnameFromUrl(url) {
+            if (!url) return 'example.com';
+            try { return new URL(url).hostname.replace(/^www\./, ''); }
+            catch (e) {
+                var m = String(url).match(/^https?:\/\/([^\/]+)/i);
+                return m ? m[1].replace(/^www\./, '') : 'example.com';
+            }
+        }
+
+        var SECTION_ICONS = {
+            'mta-section-score': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>',
+            'mta-section-extracted': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>',
+            'mta-section-urls': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>',
+            'mta-section-checks': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>',
+            'mta-section-previews': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3z"/><path d="M14 3h7v7h-7z"/><path d="M14 14h7v7h-7z"/><path d="M3 14h7v7H3z"/></svg>',
+            'mta-section-recs': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M5.16 11.66A8 8 0 0120.84 11.66"/><path d="M19.3 14.19l.02.01"/><path d="M4.7 14.19l.02.01"/></svg>'
+        };
+
+        function sectionOpen(title, open, id) {
+            return '<details class="mta-section" id="' + id + '"' + (open ? ' open' : '') + '><summary><span class="mta-section-title">' + (SECTION_ICONS[id] || '') + '<span>' + esc(title) + '</span></span>' + ICONS.chevron + '</summary><div class="mta-section-body">';
+        }
+        function sectionClose() {
+            return '</div></details>';
+        }
+
+        function exportBtn(action, label) {
+            return '<button type="button" class="mta-export-btn" data-export="' + action + '" aria-label="' + esc(label) + '">' + (ICONS[EXPORT_ICONS[action]] || ICONS.copy) + '<span>' + esc(label) + '</span></button>';
+        }
+
+        function scoreHero(r) {
+            var s = r.score;
+            var hint = s.value >= 75 ? 'This page is well optimized. Address the remaining warnings to improve further.'
+                : s.value >= 50 ? 'Several important issues should be fixed to improve search visibility.'
+                : 'Critical SEO issues detected. Follow the recommendations below.';
+            var R = 54, C = 2 * Math.PI * R;
+            var off = C * (1 - s.value / 100);
+            return '<div class="mta-score-hero">' +
+                '<div class="mta-score-ring" role="img" aria-label="SEO score ' + s.value + ' out of 100">' +
+                '<svg viewBox="0 0 120 120" aria-hidden="true"><circle class="mta-ring-bg" cx="60" cy="60" r="' + R + '"/><circle class="mta-ring-fill" id="mta-ring-fill" cx="60" cy="60" r="' + R + '" style="stroke:' + s.color + ';stroke-dasharray:' + C + ';stroke-dashoffset:' + off + '"/></svg>' +
+                '<div class="mta-score-inner"><span class="mta-score-num">' + s.value + '</span><span class="mta-score-total">/100</span></div></div>' +
+                '<div class="mta-score-info">' +
+                '<div class="mta-score-label">SEO Score</div>' +
+                '<div class="mta-score-grade" style="color:' + s.color + '">' + esc(s.grade) + '</div>' +
+                '<div class="mta-score-meta">' +
+                '<span class="mta-chip mta-chip-pass">' + s.passed + ' passed</span>' +
+                '<span class="mta-chip mta-chip-warn">' + s.warned + ' warnings</span>' +
+                '<span class="mta-chip mta-chip-fail">' + s.failed + ' failed</span>' +
+                (s.info ? '<span class="mta-chip mta-chip-info">' + s.info + ' info</span>' : '') +
+                '</div>' +
+                '<div class="mta-score-hint">' + esc(hint) + '</div>' +
+                '</div>' +
+                '<div class="mta-export-row" aria-label="Export options">' +
+                exportBtn('copy-report', 'Copy Report') +
+                exportBtn('copy-recs', 'Copy Recommendations') +
+                exportBtn('txt', 'TXT') +
+                exportBtn('json', 'JSON') +
+                exportBtn('print', 'Print') +
+                '</div>' +
+                '</div>';
+        }
+
+        function statsGrid(r) {
+            var stats = [
+                ['Meta Tags', r.metaCount, '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>'],
+                ['Links', r.linkCount, '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>'],
+                ['Title Tags', r.titles.length, '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>'],
+                ['OG Tags', r.ogCount, '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>'],
+                ['Twitter Tags', r.twCount, '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>'],
+                ['Checks', r.checks.length, '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>']
+            ];
+            var h = '<div class="mta-stats-grid">';
+            stats.forEach(function (s) {
+                h += '<div class="mta-stat"><div class="mta-stat-icon">' + s[2] + '</div><div class="mta-stat-value">' + s[1] + '</div><div class="mta-stat-label">' + esc(s[0]) + '</div></div>';
+            });
+            return h + '</div>';
+        }
+
+        function checkItem(c) {
+            var h = '<div class="mta-item ' + c.status + '">';
+            h += '<span class="mta-item-icon" aria-hidden="true">' + (ICONS[c.status] || ICONS.warn) + '</span>';
+            h += '<div class="mta-item-body">';
+            h += '<div class="mta-item-label">' + esc(c.label) + '</div>';
+            if (c.detail) h += '<div class="mta-item-detail">' + esc(c.detail) + '</div>';
+            if (c.value) h += '<div class="mta-item-value" title="' + esc(c.value) + '">' + esc(truncate(c.value, 200)) + '</div>';
+            if (c.fix) h += '<div class="mta-item-fix"><span class="mta-fix-label">Fix:</span> ' + esc(c.fix) + '</div>';
+            h += '</div></div>';
+            return h;
+        }
+
+        function extractedTable() {
+            var p = state.parsed;
+            var h = '';
+
+            h += '<div class="mta-block-label">Titles</div>';
+            if (!p.titles.length) {
+                h += '<div class="mta-none">No &lt;title&gt; tags found.</div>';
+            } else {
+                h += '<table class="mta-tag-table"><thead><tr><th>Tag</th><th>Value</th></tr></thead><tbody>';
+                p.titles.forEach(function (t, i) {
+                    h += '<tr><td class="mta-tag-name">title' + (p.titles.length > 1 ? ' (' + (i + 1) + ')' : '') + '</td><td class="mta-tag-val" title="' + esc(t) + '">' + esc(t) + '</td></tr>';
+                });
+                h += '</tbody></table>';
+            }
+
+            h += '<div class="mta-block-label">Meta Tags (' + p.metas.length + ')</div>';
+            if (!p.metas.length) {
+                h += '<div class="mta-none">No meta tags found.</div>';
+            } else {
+                h += '<table class="mta-tag-table"><thead><tr><th>Attribute</th><th>Name / Property</th><th>Value</th></tr></thead><tbody>';
+                p.metas.forEach(function (m) {
+                    h += '<tr><td class="mta-attr">' + esc(m.attr) + '</td><td class="mta-tag-name">' + esc(m.key) + '</td><td class="mta-tag-val" title="' + esc(m.value) + '">' + esc(m.value) + '</td></tr>';
+                });
+                h += '</tbody></table>';
+            }
+
+            h += '<div class="mta-block-label">Link Tags (' + p.links.length + ')</div>';
+            if (!p.links.length) {
+                h += '<div class="mta-none">No link tags found.</div>';
+            } else {
+                h += '<table class="mta-tag-table"><thead><tr><th>Rel</th><th>Href</th><th>Sizes</th></tr></thead><tbody>';
+                p.links.forEach(function (l) {
+                    h += '<tr><td class="mta-tag-name">' + esc(l.rel.join(' ')) + '</td><td class="mta-tag-val" title="' + esc(l.href || '') + '">' + esc(l.href || '') + '</td><td class="mta-tag-val mta-muted">' + esc(l.sizes || '') + '</td></tr>';
+                });
+                h += '</tbody></table>';
+            }
+
+            h += '<div class="mta-block-label">Structured Data</div>';
+            if (p.jsonldBlocks.length) {
+                var knownTypes = {};
+                p.jsonldBlocks.forEach(function (b) {
+                    b.types.forEach(function (t) { knownTypes[t] = true; });
+                });
+                var typeList = Object.keys(knownTypes);
+                if (typeList.length) {
+                    h += '<table class="mta-tag-table"><thead><tr><th>Block</th><th>Detected Schema Type(s)</th></tr></thead><tbody>';
+                    p.jsonldBlocks.forEach(function (b, i) {
+                        h += '<tr><td class="mta-tag-name">JSON-LD ' + (i + 1) + '</td><td class="mta-tag-val">' + esc(b.types.join(', ') || 'unparsable') + '</td></tr>';
+                    });
+                    h += '</tbody></table>';
+                } else {
+                    h += '<div class="mta-none">' + p.jsonld + ' JSON-LD block(s) detected, but schema types could not be parsed.</div>';
+                }
+            } else {
+                h += '<div class="mta-none">No JSON-LD structured data detected.</div>';
+            }
+
+            return h;
+        }
+
+        function urlSection(r) {
+            var h = '<div class="mta-block-label">Collected URLs (' + r.urls.length + ')</div>';
+            if (!r.urls.length) return h + '<div class="mta-none">No URL-bearing tags found.</div>';
+            if (r.urlStats) {
+                var st = r.urlStats;
+                h += '<div class="mta-url-stats"><span>Total: <b>' + st.total + '</b></span><span>HTTPS: <b>' + st.https + '</b></span><span>HTTP: <b>' + st.http + '</b></span><span>Relative: <b>' + st.relative + '</b></span><span>Invalid: <b>' + st.invalid + '</b></span><span>Duplicate: <b>' + st.duplicate + '</b></span></div>';
+            }
+            h += '<div class="mta-url-list">';
+            r.urls.forEach(function (u) {
+                var cls = u.status === 'valid' ? 'ok' : (u.status === 'invalid' ? 'bad' : 'warn');
+                h += '<div class="mta-url-row">';
+                h += '<span class="mta-url-status ' + cls + '">' + esc(u.badge) + '</span>';
+                h += '<span class="mta-url" title="' + esc(u.url) + '">' + esc(u.url) + '</span>';
+                h += '<span class="mta-url-label">' + esc(u.label) + (u.dup ? ' <span class="mta-url-dup">duplicate</span>' : '') + '</span>';
+                var extra = '';
+                if (u.relative) extra += '<span class="mta-url-flag mta-url-flag-warn">relative</span>';
+                else if (u.secure) extra += '<span class="mta-url-flag mta-url-flag-ok">secure</span>';
+                else if (u.protocol === 'HTTP') extra += '<span class="mta-url-flag mta-url-flag-warn">HTTP</span>';
+                else if (u.protocol && u.protocol !== 'HTTPS') extra += '<span class="mta-url-flag mta-url-flag-warn">' + esc(u.protocol) + '</span>';
+                if (extra || u.note) {
+                    h += '<div class="mta-url-extra">' + extra + (u.note ? '<span class="mta-url-note">' + esc(u.note) + '</span>' : '') + '</div>';
+                }
+                h += '</div>';
+            });
+            return h + '</div>';
+        }
+
+        function checksSection(r) {
+            var g = groupChecks(r.checks);
+            var h = '<div class="mta-legend">' +
+                '<span class="mta-legend-item"><span class="mta-legend-dot mta-legend-pass"></span>Success</span>' +
+                '<span class="mta-legend-item"><span class="mta-legend-dot mta-legend-warn"></span>Warning</span>' +
+                '<span class="mta-legend-item"><span class="mta-legend-dot mta-legend-fail"></span>Error</span>' +
+                '<span class="mta-legend-item"><span class="mta-legend-dot mta-legend-info"></span>Information</span>' +
+                '</div>';
+            g.order.forEach(function (grp) {
+                h += '<div class="mta-group"><div class="mta-group-title">' + esc(grp) + ' (' + g.groups[grp].length + ')</div>';
+                g.groups[grp].forEach(function (c) { h += checkItem(c); });
+                h += '</div>';
+            });
+            return h;
+        }
+
+        function scoreBreakdown(r) {
+            var s = r.score;
+            var pct = function (n) { return s.total ? Math.round((n / s.total) * 100) : 0; };
+            var h = '<div class="mta-summary-grid">' +
+                '<div class="mta-summary-item mta-s-pass"><span class="mta-summary-count">' + s.passed + '</span><span class="mta-summary-label">Passed checks</span><div class="mta-summary-bar"><i style="width:' + pct(s.passed) + '%"></i></div></div>' +
+                '<div class="mta-summary-item mta-s-warn"><span class="mta-summary-count">' + s.warned + '</span><span class="mta-summary-label">Warnings</span><div class="mta-summary-bar"><i style="width:' + pct(s.warned) + '%"></i></div></div>' +
+                '<div class="mta-summary-item mta-s-fail"><span class="mta-summary-count">' + s.failed + '</span><span class="mta-summary-label">Failed checks</span><div class="mta-summary-bar"><i style="width:' + pct(s.failed) + '%"></i></div></div>';
+            if (s.info) {
+                h += '<div class="mta-summary-item mta-s-info"><span class="mta-summary-count">' + s.info + '</span><span class="mta-summary-label">Info notes</span><div class="mta-summary-bar"><i style="width:100%"></i></div></div>';
+            }
+            return h + '</div>';
+        }
+
+        function recommendationsSection(r) {
+            if (!r.recommendations.length) {
+                return '<div class="mta-none">No recommendations. Everything looks well optimized.</div>';
+            }
+            var h = '';
+            r.recommendations.forEach(function (rec, i) {
+                h += '<div class="mta-recommendation"><span class="mta-reco-num">' + (i + 1) + '</span><span class="mta-reco-text">' + esc(rec) + '</span></div>';
+            });
+            return h;
+        }
+
+        function previewUrl(r) {
+            return r.canonical || r.og.url || r.twitter.url || null;
+        }
+
+        function previewImage(r) {
+            return r.og.image || r.twitter.image || null;
+        }
+
+        function previewImageAlt(r) {
+            return r.og.imageAlt || r.twitter.imageAlt || 'Shared image';
+        }
+
+        function previewHost(r) {
+            return hostnameFromUrl(previewUrl(r));
+        }
+
+        function previewDesc(r) {
+            return r.description || r.og.description || r.twitter.description || 'No meta description was found for this page.';
+        }
+
+        function previewTitle(r) {
+            return r.title || r.og.title || r.twitter.title || 'Untitled Page';
+        }
+
+        function imgBlock(imgUrl, altText, fallbackClass) {
+            if (!imgUrl) return '<div class="' + fallbackClass + '">' + ICONS.image + '</div>';
+            return '<div class="' + fallbackClass + '">' + ICONS.image +
+                '<img src="' + esc(imgUrl) + '" alt="' + esc(altText) + '" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">' +
+                '</div>';
+        }
+
+        function previewGoogle(r, mobile) {
+            var url = previewUrl(r) || 'https://example.com/';
+            var host = hostnameFromUrl(url);
+            var title = truncate(previewTitle(r), 62);
+            var desc = truncate(previewDesc(r), 160);
+            var w = '<div class="pr-google' + (mobile ? ' pr-google-mobile' : '') + '">';
+            w += '<div class="pr-g-top"><span class="pr-g-fav"><img src="https://www.google.com/s2/favicons?domain=' + encodeURIComponent(host) + '&sz=32" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span>';
+            w += '<span class="pr-g-site">' + esc(host) + ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></span></div>';
+            w += '<div class="pr-g-title">' + esc(title) + '</div>';
+            w += '<div class="pr-g-url">' + esc(url) + '</div>';
+            w += '<div class="pr-g-desc">' + esc(desc) + '</div>';
+            return w + '</div>';
+        }
+
+        function previewFacebook(r) {
+            var host = previewHost(r);
+            var img = r.og.image || null;
+            var imgHtml = img
+                ? imgBlock(img, r.og.imageAlt || previewImageAlt(r), 'pr-fb-img')
+                : '<div class="pr-fb-img mta-ph-img">' + ICONS.image + '<span>og:image missing</span></div>';
+            var title = r.og.title || r.title || null;
+            var desc = r.og.description || r.description || null;
+            return '<div class="pr-fb">' + imgHtml +
+                '<div class="pr-fb-body">' +
+                '<div class="pr-fb-host">' + esc(r.og.siteName || host) + '</div>' +
+                '<div class="pr-fb-title">' + (title ? esc(truncate(title, 90)) : '<span class="mta-ph">og:title missing</span>') + '</div>' +
+                '<div class="pr-fb-desc">' + (desc ? esc(truncate(desc, 140)) : '<span class="mta-ph">og:description missing</span>') + '</div>' +
+                '</div></div>';
+        }
+
+        function previewLinkedin(r) {
+            var host = previewHost(r);
+            return '<div class="pr-li">' + imgBlock(previewImage(r), previewImageAlt(r), 'pr-li-img') +
+                '<div class="pr-li-body">' +
+                '<div class="pr-li-host">' + esc(r.og.siteName || host) + '</div>' +
+                '<div class="pr-li-title">' + esc(previewTitle(r)) + '</div>' +
+                '<div class="pr-li-desc">' + esc(truncate(previewDesc(r), 130)) + '</div>' +
+                '</div></div>';
+        }
+
+        function previewTwitter(r) {
+            var large = /large/i.test(r.twitter.card || '');
+            var img = r.twitter.image || null;
+            var imgHtml = img
+                ? imgBlock(img, r.twitter.imageAlt || 'Shared image', large ? 'pr-tw-img pr-tw-img-large' : 'pr-tw-img')
+                : '<div class="pr-tw-img' + (large ? ' pr-tw-img-large' : '') + ' mta-ph-img">' + ICONS.image + '<span>twitter:image missing</span></div>';
+            var title = r.twitter.title || r.title || null;
+            var desc = r.twitter.description || r.description || null;
+            var handle = r.twitter.site || r.twitter.creator || '@' + previewHost(r);
+            var cardBadge = r.twitter.card ? '<span class="mta-tw-card">' + esc(r.twitter.card) + '</span>' : '<span class="mta-tw-card mta-tw-card-none">card type missing</span>';
+            return '<div class="pr-tw' + (large ? ' pr-tw-large' : '') + '">' + imgHtml +
+                '<div class="pr-tw-body">' + cardBadge +
+                '<div class="pr-tw-title">' + (title ? esc(truncate(title, 90)) : '<span class="mta-ph">twitter:title missing</span>') + '</div>' +
+                '<div class="pr-tw-desc">' + (desc ? esc(truncate(desc, 140)) : '<span class="mta-ph">twitter:description missing</span>') + '</div>' +
+                '<div class="pr-tw-meta">' + ICONS.clock + '<span>' + esc(handle) + ' &middot; 2 min read</span></div>' +
+                '</div></div>';
+        }
+
+        function previewsSection(r) {
+            var tabs = [['google', 'Google (Desktop)'], ['mobile', 'Google (Mobile)'], ['facebook', 'Facebook'], ['linkedin', 'LinkedIn'], ['twitter', 'Twitter / X']];
+            var h = '<div class="mta-tabs" role="tablist" aria-label="Live preview platforms">';
+            tabs.forEach(function (t, i) {
+                h += '<button type="button" class="mta-tab-button" id="tab-' + t[0] + '" role="tab" aria-selected="' + (i === 0 ? 'true' : 'false') + '" aria-controls="panel-' + t[0] + '" data-tab="' + t[0] + '">' + esc(t[1]) + '</button>';
+            });
+            h += '</div>';
+            tabs.forEach(function (t, i) {
+                h += '<div class="mta-tab-panel" id="panel-' + t[0] + '" role="tabpanel" aria-labelledby="tab-' + t[0] + '"' + (i === 0 ? '' : ' hidden') + '>';
+                if (t[0] === 'google') h += '<div class="mta-preview-zone">' + previewGoogle(r, false) + '</div>';
+                else if (t[0] === 'mobile') h += '<div class="pr-mobile-frame">' + previewGoogle(r, true) + '</div>';
+                else if (t[0] === 'facebook') h += '<div class="mta-preview-zone">' + previewFacebook(r) + '</div>';
+                else if (t[0] === 'linkedin') h += '<div class="mta-preview-zone">' + previewLinkedin(r) + '</div>';
+                else h += '<div class="mta-preview-zone">' + previewTwitter(r) + '</div>';
+                h += '</div>';
+            });
+            return h;
+        }
+
+        function renderReport(r) {
+            var h = '<div class="mta-report" aria-label="Meta tag analysis report">';
+            h += scoreHero(r);
+            h += statsGrid(r);
+            h += sectionOpen('Score Breakdown', true, 'mta-section-score');
+            h += scoreBreakdown(r);
+            h += sectionClose();
+            h += sectionOpen('Extracted Meta Tags', true, 'mta-section-extracted');
+            h += extractedTable();
+            h += sectionClose();
+            h += sectionOpen('URL Analysis', false, 'mta-section-urls');
+            h += urlSection(r);
+            h += sectionClose();
+            h += sectionOpen('Detailed Analysis', true, 'mta-section-checks');
+            h += checksSection(r);
+            h += sectionClose();
+            h += sectionOpen('Live Previews', false, 'mta-section-previews');
+            h += previewsSection(r);
+            h += sectionClose();
+            h += sectionOpen('Recommendations', r.recommendations.length > 0, 'mta-section-recs');
+            h += recommendationsSection(r);
+            h += sectionClose();
+            h += '</div>';
+            DOM.results.innerHTML = h;
+            bindTabs();
+            DOM.results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function bindTabs() {
+            var tablist = $('[role="tablist"]', DOM.results);
+            if (!tablist) return;
+            var tabs = $$('[role="tab"]', tablist);
+            tabs.forEach(function (tab, i) {
+                tab.addEventListener('click', function () {
+                    tabs.forEach(function (t) { t.setAttribute('aria-selected', 'false'); });
+                    this.setAttribute('aria-selected', 'true');
+                    $$('[role="tabpanel"]', DOM.results).forEach(function (p) { p.hidden = true; });
+                    var panel = document.getElementById(this.getAttribute('aria-controls'));
+                    if (panel) panel.hidden = false;
+                });
+                tab.addEventListener('keydown', function (e) {
+                    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+                    e.preventDefault();
+                    var idx = tabs.indexOf(this);
+                    var next = e.key === 'ArrowRight' ? (idx + 1) % tabs.length : (idx - 1 + tabs.length) % tabs.length;
+                    tabs[next].focus();
+                    tabs[next].click();
+                });
+            });
+        }
+
+        function buildReportText(r) {
+            var L = [];
+            var line = function (s) { L.push(s); };
+            line('==================================================');
+            line('  META TAG ANALYZER REPORT');
+            line('  Generated: ' + new Date().toLocaleString());
+            line('==================================================');
+            line('');
+            line('SEO SCORE: ' + r.score.value + '/100 (' + r.score.grade + ')');
+            line('Passed: ' + r.score.passed + '   Warnings: ' + r.score.warned + '   Failed: ' + r.score.failed + (r.score.info ? '   Info: ' + r.score.info : ''));
+            line('');
+            line('--- SUMMARY ---');
+            line('Title: ' + (r.title || '(missing)'));
+            line('Description: ' + (r.description || '(missing)'));
+            line('Canonical: ' + (r.canonical || '(missing)'));
+            line('Source size: ' + r.sourceLength + ' characters');
+            line('');
+            line('--- SCHEMA TYPES (JSON-LD) ---');
+            line((r.jsonldTypes && r.jsonldTypes.length) ? r.jsonldTypes.join(', ') : (r.jsonld > 0 ? 'JSON-LD present but types unparsable' : 'None detected'));
+            line('');
+            line('--- GOOGLE SEARCH PREVIEW ---');
+            line('Title: ' + previewTitle(r));
+            line('URL: ' + (previewUrl(r) || '(missing)'));
+            line('Description: ' + previewDesc(r));
+            line('');
+            line('--- SOCIAL PREVIEW SUMMARY ---');
+            line('Open Graph: ' + (r.og.title || '(missing og:title)') + ' | image: ' + (r.og.image || '(missing og:image)'));
+            line('Twitter Card: ' + (r.twitter.card || '(missing twitter:card)') + ' | image: ' + (r.twitter.image || '(missing twitter:image)'));
+            line('');
+            if (r.urlStats) {
+                var st = r.urlStats;
+                line('--- URL STATISTICS ---');
+                line('Total: ' + st.total + '   HTTPS: ' + st.https + '   HTTP: ' + st.http + '   Relative: ' + st.relative + '   Invalid: ' + st.invalid + '   Duplicate: ' + st.duplicate);
+                line('');
+            }
+            var g = groupChecks(r.checks);
+            g.order.forEach(function (grp) {
+                line('--- ' + grp + ' ---');
+                g.groups[grp].forEach(function (c) {
+                    line('[' + c.status.toUpperCase() + '] ' + c.label);
+                    if (c.detail) line('       ' + c.detail);
+                    if (c.fix) line('       FIX: ' + c.fix);
+                });
+                line('');
+            });
+            if (r.urls.length) {
+                line('--- URL ANALYSIS ---');
+                r.urls.forEach(function (u) {
+                    line('[' + u.badge.toUpperCase() + '] ' + u.url + '  (' + u.label + ')' + (u.dup ? ' [duplicate]' : ''));
+                });
+                line('');
+            }
+            if (r.recommendations.length) {
+                line('--- RECOMMENDATIONS ---');
+                r.recommendations.forEach(function (rec, i) { line((i + 1) + '. ' + rec); });
+                line('');
+            }
+            line('Generated by GoToolly Meta Tag Analyzer - 100% browser-based.');
+            return L.join('\n');
+        }
+
+        function buildRecommendationsText(r) {
+            if (!r.recommendations.length) return 'No recommendations. Everything looks well optimized.';
+            var L = ['META TAG ANALYZER - RECOMMENDATIONS'];
+            L.push('SEO Score: ' + r.score.value + '/100 (' + r.score.grade + ')');
+            L.push('');
+            r.recommendations.forEach(function (rec, i) { L.push((i + 1) + '. ' + rec); });
+            return L.join('\n');
+        }
+
+        function buildReportJson(r) {
+            return JSON.stringify({
+                tool: 'GoToolly Meta Tag Analyzer',
+                generatedAt: new Date().toISOString(),
+                score: {
+                    value: r.score.value,
+                    grade: r.score.grade,
+                    passed: r.score.passed,
+                    warned: r.score.warned,
+                    failed: r.score.failed,
+                    info: r.score.info
+                },
+                summary: {
+                    title: r.title,
+                    description: r.description,
+                    canonical: r.canonical,
+                    robots: r.robots,
+                    viewport: r.viewport,
+                    sourceLength: r.sourceLength
+                },
+                schemaTypes: r.jsonldTypes || [],
+                googlePreview: {
+                    title: truncate(previewTitle(r), 62),
+                    url: previewUrl(r),
+                    host: previewHost(r),
+                    description: truncate(previewDesc(r), 160)
+                },
+                socialPreview: {
+                    openGraph: { title: r.og.title, description: r.og.description, image: r.og.image, siteName: r.og.siteName, locale: r.og.locale },
+                    twitter: { card: r.twitter.card, title: r.twitter.title, description: r.twitter.description, image: r.twitter.image, site: r.twitter.site }
+                },
+                urlStats: r.urlStats,
+                openGraph: r.og,
+                twitter: r.twitter,
+                metaTags: state.parsed.metas,
+                links: state.parsed.links.map(function (l) { return { rel: l.rel, href: l.href, sizes: l.sizes, hreflang: l.hreflang }; }),
+                urls: r.urls,
+                checks: r.checks,
+                recommendations: r.recommendations
+            }, null, 2);
+        }
+
+        function copyText(text, successMsg) {
+            var done = function () { showToast(successMsg || 'Copied to clipboard', 'success'); };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+            } else {
+                fallbackCopy(text);
+                done();
+            }
+        }
+
+        function fallbackCopy(text) {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch (e) {}
+            document.body.removeChild(ta);
+        }
+
+        function download(filename, text, mime) {
+            var blob = new Blob([text], { type: mime });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            setTimeout(function () { URL.revokeObjectURL(url); a.remove(); }, 0);
+        }
+
+        function printReport(r) {
+            var w = window.open('', '_blank', 'width=860,height=1000');
+            if (!w) { showToast('Pop-ups are blocked. Use the browser print menu instead.', 'error'); return; }
+            var g = groupChecks(r.checks);
+            var h = '<!DOCTYPE html><html><head><meta charset="utf-8"><title>Meta Tag Analysis Report</title>';
+            h += '<style>body{font-family:Segoe UI,Arial,sans-serif;color:#111;max-width:760px;margin:24px auto;padding:0 20px;line-height:1.5}h1{font-size:20px;margin-bottom:4px}.meta{color:#555;font-size:13px}.score{font-size:28px;font-weight:700;margin:12px 0 4px}.badge{display:inline-block;padding:2px 10px;border-radius:999px;font-size:11px;color:#fff;margin-right:6px}.b-pass{background:#16a34a}.b-warn{background:#d97706}.b-fail{background:#dc2626}.b-info{background:#3b82f6}.group{margin-top:16px}.group h2{font-size:15px;border-bottom:1px solid #ddd;padding-bottom:4px}.item{margin:6px 0;font-size:13px}.detail{color:#555}.fix{color:#2563eb}.rec{margin:4px 0;font-size:13px;padding-left:18px}.urls{margin:4px 0;font-size:12px;font-family:Consolas,monospace}</style></head><body>';
+            h += '<h1>Meta Tag Analysis Report</h1>';
+            h += '<div class="meta">Generated ' + new Date().toLocaleString() + ' by GoToolly</div>';
+            h += '<div class="score">SEO Score: ' + r.score.value + '/100 (' + esc(r.score.grade) + ')</div>';
+            h += '<div><span class="badge b-pass">Passed ' + r.score.passed + '</span><span class="badge b-warn">Warnings ' + r.score.warned + '</span><span class="badge b-fail">Failed ' + r.score.failed + '</span>' + (r.score.info ? '<span class="badge b-info">Info ' + r.score.info + '</span>' : '') + '</div>';
+            h += '<div class="meta">Source: ' + r.sourceLength + ' characters</div>';
+            if (r.jsonldTypes && r.jsonldTypes.length) h += '<div class="meta">Structured data (JSON-LD): ' + esc(r.jsonldTypes.join(', ')) + '</div>';
+            if (r.urlStats) {
+                var st2 = r.urlStats;
+                h += '<div class="meta">URLs: ' + st2.total + ' total, ' + st2.https + ' https, ' + st2.http + ' http, ' + st2.relative + ' relative, ' + st2.invalid + ' invalid, ' + st2.duplicate + ' duplicate</div>';
+            }
+            h += '<div class="group"><h2>Preview Summary</h2><div class="item"><strong>Google:</strong> ' + esc(truncate(previewTitle(r), 62)) + ' &mdash; ' + esc(truncate(previewDesc(r), 120)) + '</div><div class="item"><strong>Open Graph:</strong> ' + esc(r.og.title || '(missing og:title)') + ' &mdash; ' + esc(r.og.image || '(missing og:image)') + '</div><div class="item"><strong>Twitter:</strong> ' + esc(r.twitter.card || '(missing twitter:card)') + ' &mdash; ' + esc(r.twitter.image || '(missing twitter:image)') + '</div></div>';
+            g.order.forEach(function (grp) {
+                h += '<div class="group"><h2>' + esc(grp) + '</h2>';
+                g.groups[grp].forEach(function (c) {
+                    h += '<div class="item">[' + c.status.toUpperCase() + '] <strong>' + esc(c.label) + '</strong>';
+                    if (c.detail) h += '<div class="detail">' + esc(c.detail) + '</div>';
+                    if (c.fix) h += '<div class="fix">Fix: ' + esc(c.fix) + '</div>';
+                    h += '</div>';
+                });
+                h += '</div>';
+            });
+            if (r.urls.length) {
+                h += '<div class="group"><h2>URL Analysis</h2>';
+                r.urls.forEach(function (u) {
+                    h += '<div class="urls">[' + esc(u.badge) + '] ' + esc(u.url) + ' (' + esc(u.label) + ')' + (u.dup ? ' [duplicate]' : '') + '</div>';
+                });
+                h += '</div>';
+            }
+            if (r.recommendations.length) {
+                h += '<div class="group"><h2>Recommendations</h2>';
+                r.recommendations.forEach(function (rec, i) { h += '<div class="rec">' + (i + 1) + '. ' + esc(rec) + '</div>'; });
+                h += '</div>';
+            }
+            h += '</body></html>';
+            w.document.write(h);
+            w.document.close();
+            w.focus();
+            setTimeout(function () { w.print(); }, 250);
+        }
+
+        function handleExport(action) {
+            var r = state.lastReport;
+            if (!r) { showToast('Analyze some HTML first.', 'error'); return; }
+            switch (action) {
+                case 'copy-report': copyText(buildReportText(r), 'Report copied to clipboard'); break;
+                case 'copy-recs': copyText(buildRecommendationsText(r), 'Recommendations copied to clipboard'); break;
+                case 'txt': download('meta-tag-analysis-report.txt', buildReportText(r), 'text/plain'); showToast('Report downloaded as TXT'); break;
+                case 'json': download('meta-tag-analysis-report.json', buildReportJson(r), 'application/json'); showToast('Report downloaded as JSON'); break;
+                case 'print': printReport(r); break;
+            }
+        }
+
+        function showToast(msg, type) {
+            var el = document.getElementById('mta-toast');
+            if (!el) {
+                el = document.createElement('div');
+                el.id = 'mta-toast';
+                el.className = 'mta-toast';
+                el.setAttribute('role', 'status');
+                document.body.appendChild(el);
+            }
+            el.textContent = msg;
+            el.className = 'mta-toast show ' + (type || 'info');
+            clearTimeout(showToast._t);
+            showToast._t = setTimeout(function () { el.className = 'mta-toast'; }, 2600);
+        }
+
+        function setStatus(type, text) {
+            DOM.status.className = 'mta-status ' + type;
+            DOM.status.textContent = text;
+        }
+
+        function updateCharCount() {
+            DOM.charCount.textContent = DOM.input.value.length.toLocaleString() + ' characters';
+        }
+
+        function renderEmpty() {
+            hideSticky();
+            DOM.results.innerHTML = '<div class="mta-empty">' +
+                '<div class="mta-empty-icon">' + ICONS.search + '</div>' +
+                '<h3>Ready to analyze</h3>' +
+                '<p>Paste your HTML code above and click <strong>Analyze Meta Tags</strong>, or load the sample to see a full SEO report.</p>' +
+                '</div>';
+        }
+
+        function renderError(titleMsg, hint) {
+            hideSticky();
+            DOM.results.innerHTML = '<div class="mta-error">' +
+                '<div class="mta-empty-icon">' + ICONS.warn + '</div>' +
+                '<div class="mta-error-title">' + esc(titleMsg) + '</div>' +
+                '<div class="mta-error-hint">' + esc(hint || 'Paste your HTML code above, then click Analyze Meta Tags.') + '</div>' +
+                '</div>';
+        }
+
+        function renderLoading() {
+            DOM.results.innerHTML = '<div class="mta-loading" role="status">' +
+                '<div class="mta-spinner"></div>' +
+                '<p>Analyzing your HTML &mdash; extracting tags, checking URLs and scoring SEO quality&hellip;</p>' +
+                '</div>';
+        }
+
+        function renderSticky(r) {
+            var bar = document.getElementById('mta-sticky');
+            if (!bar) {
+                bar = document.createElement('div');
+                bar.id = 'mta-sticky';
+                bar.className = 'mta-sticky-actions';
+                bar.setAttribute('role', 'toolbar');
+                document.body.appendChild(bar);
+            }
+            bar.innerHTML = '<span class="mta-sticky-score" style="color:' + r.score.color + '">' + r.score.value + '/100</span>' +
+                exportBtn('copy-report', 'Copy Report') +
+                exportBtn('txt', 'TXT') +
+                exportBtn('json', 'JSON') +
+                exportBtn('print', 'Print');
+            requestAnimationFrame(function () { bar.classList.add('show'); });
+        }
+
+        function hideSticky() {
+            var bar = document.getElementById('mta-sticky');
+            if (bar) bar.classList.remove('show');
+        }
+
+        function runAnalysis() {
+            if (state.busy) return;
+            var html = DOM.input.value;
+            if (!html.trim()) {
+                renderError('Please paste some HTML code to analyze.', 'Paste the HTML source of a webpage, including its <head> section, then click Analyze Meta Tags.');
+                setStatus('error', 'No input');
+                return;
+            }
+            state.busy = true;
+            setStatus('processing', 'Analyzing\u2026');
+            DOM.progress.hidden = false;
+            DOM.analyzeBtn.disabled = true;
+            DOM.analyzeBtn.classList.add('loading');
+            renderLoading();
+            setTimeout(function () {
+                try {
+                    state.parsed = parseHtml(html);
+                    var empty = state.parsed.metas.length === 0 && state.parsed.links.length === 0 && state.parsed.titles.length === 0;
+                    if (empty) {
+                        renderError('No meta tags detected.', 'The input did not contain any <title>, <meta> or <link> tags. Paste the full HTML, especially the <head> section.');
+                        setStatus('error', 'No tags');
+                        return;
+                    }
+                    var report = buildReport();
+                    state.lastReport = report;
+                    renderReport(report);
+                    renderSticky(report);
+                    setStatus('done', 'Analyzed');
+                } catch (err) {
+                    renderError('Something went wrong while analyzing.', err && err.message ? String(err.message) : '');
+                    setStatus('error', 'Error');
+                } finally {
+                    DOM.progress.hidden = true;
+                    DOM.analyzeBtn.disabled = false;
+                    DOM.analyzeBtn.classList.remove('loading');
+                    state.busy = false;
+                }
+            }, 40);
+        }
+
+        var SAMPLE_HTML = [
+            '<!DOCTYPE html>',
+            '<html lang="en">',
+            '<head>',
+            '  <meta charset="UTF-8">',
+            '  <meta name="viewport" content="width=device-width, initial-scale=1.0">',
+            '  <title>Delicious Coffee Recipes - Brew Better Coffee</title>',
+            '  <meta name="description" content="Learn to brew better coffee at home with 25 delicious recipes, expert tips, and step-by-step guides for every skill level.">',
+            '  <meta name="keywords" content="coffee, recipes, brewing">',
+            '  <meta name="author" content="Brew Journal">',
+            '  <link rel="canonical" href="http://example.com/recipes">',
+            '  <link rel="icon" href="/favicon.ico">',
+            '  <meta property="og:title" content="Delicious Coffee Recipes">',
+            '  <meta property="og:description" content="25 delicious recipes and expert brewing tips.">',
+            '  <meta property="og:type" content="website">',
+            '  <meta property="og:url" content="http://example.com/recipes">',
+            '  <meta property="og:image" content="https://example.com/images/coffee-og.png">',
+            '  <meta name="twitter:card" content="summary_large_image">',
+            '  <meta name="twitter:title" content="Delicious Coffee Recipes">',
+            '  <meta name="twitter:image" content="https://example.com/images/coffee-og.png">',
+            '</head>',
+            '<body>',
+            '  <h1>Brew Better Coffee</h1>',
+            '</body>',
+            '</html>'
+        ].join('\n');
+
+        DOM.analyzeBtn.addEventListener('click', runAnalysis);
+        DOM.clearBtn.addEventListener('click', function () {
+            DOM.input.value = '';
+            updateCharCount();
+            renderEmpty();
+            setStatus('ready', 'Ready');
+            DOM.input.focus();
+        });
+        DOM.sampleBtn.addEventListener('click', function () {
+            DOM.input.value = SAMPLE_HTML;
+            updateCharCount();
+            runAnalysis();
+        });
+        DOM.input.addEventListener('input', debounce(updateCharCount, 120));
+        DOM.input.addEventListener('keydown', function (e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                e.preventDefault();
+                runAnalysis();
+            }
         });
 
-        document.getElementById('clear-btn').addEventListener('click',function(){
-            document.getElementById('html-input').value='';
-            results.innerHTML='';
-        });
+        function delegateExport(root) {
+            if (!root) return;
+            root.addEventListener('click', function (e) {
+                var btn = e.target.closest('[data-export]');
+                if (!btn) return;
+                if (root === document.body && DOM.results.contains(btn)) return;
+                e.preventDefault();
+                handleExport(btn.getAttribute('data-export'));
+            });
+        }
+
+        delegateExport(DOM.results);
+        delegateExport(document.body);
+
+        if (window.matchMedia) {
+            var mql = window.matchMedia('print');
+            var openAll = function () {
+                $$('details', DOM.results).forEach(function (d) { d.setAttribute('open', ''); });
+            };
+            if (mql.addEventListener) mql.addEventListener('change', openAll);
+            else if (mql.addListener) mql.addListener(openAll);
+        }
     })();
     </script>
 </body>

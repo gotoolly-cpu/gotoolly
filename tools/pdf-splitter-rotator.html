@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,9 +6,8 @@
     <title>PDF Tools - Split, Extract & Rotate PDF Pages | GoToolly</title>
     <meta name="description" content="Free online PDF splitter, extractor, and rotator. Extract, split, or rotate PDF pages in your browser. No uploads required.">
     <meta name="keywords" content="PDF splitter, extract PDF pages, PDF extractor, split PDF, page extraction, rotate PDF, PDF rotator, fix PDF orientation">
-    <!-- Canonical -->
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://gotoolly.com/tools/pdf-splitter-rotator">
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gotoolly.com/tools/pdf-splitter-rotator">
     <meta property="og:title" content="PDF Tools - Split, Extract & Rotate PDF Pages | GoToolly">
@@ -18,7 +17,6 @@
     <meta property="og:image:height" content="512">
     <meta property="og:image:alt" content="GoToolly Logo">
     <meta property="og:site_name" content="GoToolly">
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://gotoolly.com/tools/pdf-splitter-rotator">
     <meta name="twitter:title" content="PDF Tools - Split, Extract & Rotate PDF Pages | GoToolly">
@@ -26,806 +24,119 @@
     <meta name="twitter:image" content="https://gotoolly.com/assets/images/logo-512.png">
     <meta name="twitter:image:alt" content="GoToolly Logo">
     <meta name="twitter:creator" content="@GoToolly">
-    
-    <!-- Favicon & Manifest -->
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
-    
-    <!-- Critical CSS: preload and non-blocking load -->
-    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    
+
+    <!-- Global Styles (header, footer, layout) -->
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+
+    <!-- Design System -->
+    <link rel="stylesheet" href="../assets/css/design-system.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/assets/css/font-awesome.all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/font-awesome.all.min.css"></noscript>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+
     <!-- PDF.js for preview -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf_viewer.min.css">
-    
+
     <style>
-        :root {
-            --panel-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --border-gradient: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-        }
-        
-        /* Page Header */
-        .page-header {
-            margin-bottom: var(--space-8);
-            text-align: center;
-        }
-        
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: var(--space-4);
-            color: var(--color-text);
-        }
-        
-        .page-description {
-            font-size: var(--text-lg);
-            color: var(--color-text-light);
-            max-width: 800px;
-            margin: 0 auto var(--space-6);
-            line-height: 1.6;
-        }
-        
-        /* Tool Navigation */
-        .tool-navigation {
-            margin-bottom: var(--space-8);
-            background: var(--color-bg-light);
-            border-radius: var(--radius-lg);
-            padding: var(--space-4);
-        }
-        
-        .nav-container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .tool-options {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-3);
-        }
-        
-        @media (max-width: 640px) {
-            .tool-options {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .tool-option {
-            background: white;
-            border: 2px solid var(--color-border);
-            border-radius: var(--radius-lg);
-            padding: var(--space-4);
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-        }
-        
-        .tool-option:hover {
-            border-color: var(--color-primary);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        .tool-option.active {
-            border-color: var(--color-primary);
-            background: var(--color-primary-light);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
-        }
-        
-        .option-icon {
-            font-size: 2rem;
-            display: block;
-            margin-bottom: var(--space-2);
-        }
-        
-        .option-content {
-            display: block;
-            line-height: 1.4;
-        }
-        
-        .option-content strong {
-            display: block;
-            font-size: var(--text-lg);
-            color: var(--color-text);
-            margin-bottom: 2px;
-        }
-        
-        .option-content small {
-            font-size: var(--text-sm);
-            color: var(--color-text-light);
-        }
-        
-        /* Tab Content */
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        /* Tool Workspace */
-        .tool-workspace {
-            background: white;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--color-border);
-            overflow: hidden;
-            margin-bottom: var(--space-8);
-        }
-        
-        .workspace-header {
-            background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
-            padding: var(--space-6);
-            border-bottom: 1px solid var(--color-border);
-        }
-        
-        .workspace-header h2 {
-            margin: 0 0 var(--space-2) 0;
-            color: var(--color-text);
-        }
-        
-        .workspace-header p {
-            margin: 0;
-            color: var(--color-text-light);
-        }
-        
-        /* Splitter Tool Styles */
-        .file-upload-section {
-            padding: var(--space-6);
-            border-bottom: 1px solid var(--color-border);
-        }
-        
-        .file-drop-zone {
-            border: 2px dashed var(--color-border);
-            border-radius: var(--radius-lg);
-            padding: var(--space-12) var(--space-6);
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            background: var(--color-bg-light);
-        }
-        
-        .file-drop-zone:hover,
-        .file-drop-zone.dragover {
-            border-color: var(--color-primary);
-            background: var(--color-primary-light);
-        }
-        
-        .file-drop-zone svg {
-            width: 48px;
-            height: 48px;
-            margin: 0 auto var(--space-3);
-            color: var(--color-primary);
-        }
-        
-        .file-drop-zone p {
-            margin: var(--space-2) 0;
-        }
-        
-        .file-drop-zone .small {
-            font-size: var(--text-sm);
-            color: var(--color-text-light);
-        }
-        
-        .file-info {
-            background: var(--color-bg-light);
-            border-radius: var(--radius-lg);
-            padding: var(--space-4);
-            margin-top: var(--space-4);
-            display: none;
-        }
-        
-        .file-details {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .file-name {
-            font-weight: 600;
-            color: var(--color-text);
-        }
-        
-        .split-file-size {
-            color: var(--color-primary);
-            font-weight: 600;
-            background: var(--color-primary-light);
-            padding: var(--space-1) var(--space-3);
-            border-radius: var(--radius-full);
-            font-size: var(--text-sm);
-        }
-        
-        /* Page Selection */
-        .page-selection-section {
-            padding: var(--space-6);
-            border-bottom: 1px solid var(--color-border);
-        }
-        
-        .page-controls {
-            display: flex;
-            gap: var(--space-3);
-            margin-bottom: var(--space-4);
-        }
-        
-        .page-selector {
-            background: var(--color-bg-light);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-lg);
-            padding: var(--space-4);
-            max-height: 300px;
-            overflow-y: auto;
-            margin-bottom: var(--space-4);
-        }
-        
-        .page-checkbox {
-            display: flex;
-            align-items: center;
-            gap: var(--space-3);
-            padding: var(--space-3);
-            margin-bottom: var(--space-2);
-            background: white;
-            border-radius: var(--radius-md);
-            transition: var(--transition-fast);
-        }
-        
-        .page-checkbox:hover {
-            background: var(--color-primary-light);
-        }
-        
-        .page-checkbox input {
-            cursor: pointer;
-            accent-color: var(--color-primary);
-        }
-        
-        .page-checkbox label {
-            cursor: pointer;
-            margin: 0;
-            flex: 1;
-        }
-        
-        .action-buttons {
-            display: flex;
-            gap: var(--space-3);
-            justify-content: center;
-        }
-        
-        /* Results Section */
-        .results-section {
-            padding: var(--space-6);
-            text-align: center;
-        }
-        
-        .result-card {
-            background: var(--color-bg-light);
-            border-radius: var(--radius-lg);
-            padding: var(--space-6);
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        
-        .result-info {
-            text-align: left;
-            margin-bottom: var(--space-4);
-            padding-bottom: var(--space-4);
-            border-bottom: 1px solid var(--color-border);
-        }
-        
-        .result-info p {
-            margin: var(--space-2) 0;
-        }
-        
-        /* Rotator Tool Styles */
-        .pdf-rotator {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        @media (max-width: 1024px) {
-            .pdf-rotator {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-        }
-        
-        .pdf-panel {
-            background: linear-gradient(145deg, #ffffff, #f9fafb);
-            border: 1px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 28px;
-            box-shadow: var(--panel-shadow);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .pdf-panel::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--border-gradient);
-            border-radius: 16px 16px 0 0;
-        }
-        
-        .panel-header {
-            margin-bottom: 24px;
-            padding-bottom: 16px;
-            border-bottom: 2px solid #f0f2f5;
-            position: relative;
-        }
-        
-        .panel-header::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 60px;
-            height: 2px;
-            background: var(--color-primary);
-        }
-        
-        .panel-title {
-            font-size: 20px;
-            font-weight: 700;
-            margin: 0;
-            color: #1f2937;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .panel-title i {
-            color: var(--color-primary);
-            font-size: 18px;
-        }
-        
-        .upload-area {
-            text-align: center;
-            padding: var(--space-8);
-            border: 2px dashed var(--color-border);
-            border-radius: var(--radius-lg);
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            background: var(--color-bg-light);
-        }
-        
-        .upload-area:hover {
-            border-color: var(--color-primary);
-            background: var(--color-primary-light);
-        }
-        
-        .rotation-controls {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: var(--space-4);
-            margin: var(--space-6) 0;
-        }
-        
-        .rotation-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: var(--space-5);
-            background: var(--color-bg);
-            border: 2px solid var(--color-border);
-            border-radius: var(--radius-lg);
-            cursor: pointer;
-            transition: all 0.2s var(--ease-out);
-            text-align: center;
-        }
-        
-        .rotation-btn:hover {
-            border-color: var(--color-primary);
-            background: var(--color-primary-light);
-            transform: translateY(-2px);
-        }
-        
-        .rotation-btn.active {
-            border-color: var(--color-primary);
-            background: var(--color-primary-light);
-            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
-        }
-        
-        .rotation-btn svg {
-            width: 40px;
-            height: 40px;
-            margin-bottom: var(--space-3);
-            color: var(--color-text);
-        }
-        
-        .rotation-btn.active svg {
-            color: var(--color-primary);
-        }
-        
-        .page-list-container {
-            max-height: 400px;
-            overflow-y: auto;
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-lg);
-            padding: var(--space-4);
-            margin-top: var(--space-4);
-            background: var(--color-bg);
-        }
-        
-        .page-item {
-            display: flex;
-            align-items: center;
-            padding: var(--space-3);
-            border-bottom: 1px solid var(--color-border-light);
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        
-        .page-item:hover {
-            background-color: var(--color-bg-light);
-        }
-        
-        .page-item.selected {
-            background-color: var(--color-primary-light);
-            border-left: 4px solid var(--color-primary);
-        }
-        
-        .page-item:last-child {
-            border-bottom: none;
-        }
-        
-        .page-thumbnail {
-            width: 60px;
-            height: 80px;
-            background: var(--color-bg-light);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-md);
-            margin-right: var(--space-4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            position: relative;
-            flex-shrink: 0;
-        }
-        
-        .page-thumbnail canvas {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        
-        .page-info {
-            flex: 1;
-            min-width: 0;
-        }
-        
-        .page-number {
-            font-weight: 600;
-            color: var(--color-text);
-            margin-bottom: 2px;
-        }
-        
-        .page-orientation {
-            font-size: var(--text-sm);
-            color: var(--color-text-light);
-            margin-bottom: 2px;
-        }
-        
-        .page-controls {
-            display: flex;
-            gap: var(--space-2);
-        }
-        
-        .page-btn {
-            padding: var(--space-2) var(--space-3);
-            background: var(--color-bg-light);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-md);
-            cursor: pointer;
-            font-size: var(--text-sm);
-            transition: all 0.2s;
-        }
-        
-        .page-btn:hover {
-            background: var(--color-bg);
-            border-color: var(--color-primary);
-        }
-        
-        .preview-container {
-            width: 100%;
-            height: 400px;
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            margin: var(--space-6) 0;
-            background: var(--color-bg-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        #rotate-pdf-preview {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .rotation-degree {
-            font-size: var(--text-sm);
-            margin-top: var(--space-1);
-            color: var(--color-text-light);
-        }
-        
-        .batch-controls {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-3);
-            margin: var(--space-4) 0;
-        }
-        
-        .batch-btn {
-            padding: var(--space-3) var(--space-4);
-            background: var(--color-bg-light);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-md);
-            cursor: pointer;
-            font-size: var(--text-sm);
-            transition: all 0.2s;
-        }
-        
-        .batch-btn:hover {
-            background: var(--color-bg);
-            border-color: var(--color-primary);
-        }
-        
-        .batch-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-        
-        .batch-btn:disabled:hover {
-            background: var(--color-bg-light);
-            border-color: var(--color-border);
-        }
-        
-        .progress-container {
-            display: none;
-            margin: var(--space-6) 0;
-        }
-        
-        .progress-bar {
-            height: 6px;
-            background: var(--color-border);
-            border-radius: 3px;
-            overflow: hidden;
-            margin-bottom: var(--space-3);
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: var(--color-primary);
-            width: 0%;
-            transition: width 0.3s var(--ease-out);
-        }
-        
-        .status-text {
-            text-align: center;
-            font-size: var(--text-sm);
-            color: var(--color-text-light);
-        }
-        
-        /* Custom rotation input */
-        .custom-rotation {
-            display: none;
-            margin-top: var(--space-4);
-        }
-        
-        .custom-rotation input {
-            width: 100%;
-            max-width: 200px;
-            margin: 0 auto;
-        }
-        
-        /* Features Section */
-        .features-section {
-            margin: var(--space-12) 0;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: var(--space-8);
-        }
-        
-        .section-header h2 {
-            font-size: 2rem;
-            margin-bottom: var(--space-2);
-            color: var(--color-text);
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-6);
-        }
-        
-        .feature-card {
-            background: white;
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-lg);
-            padding: var(--space-6);
-            text-align: center;
-            transition: var(--transition-smooth);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: var(--space-4);
-        }
-        
-        .feature-card h3 {
-            margin: 0 0 var(--space-3) 0;
-            color: var(--color-text);
-        }
-        
-        .feature-card p {
-            margin: 0;
-            color: var(--color-text-light);
-            font-size: var(--text-sm);
-            line-height: 1.5;
-        }
-        
-        /* How-to Section */
-        .howto-section {
-            margin: var(--space-12) 0;
-        }
-        
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-6);
-        }
-        
-        .step-card {
-            background: var(--color-bg-light);
-            border-radius: var(--radius-lg);
-            padding: var(--space-6);
-            text-align: center;
-            position: relative;
-        }
-        
-        .step-number {
-            position: absolute;
-            top: -16px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--color-primary);
-            color: white;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-        
-        .step-card h3 {
-            margin: var(--space-4) 0 var(--space-3) 0;
-            color: var(--color-text);
-        }
-        
-        .step-card p {
-            margin: 0;
-            color: var(--color-text-light);
-            font-size: var(--text-sm);
-            line-height: 1.5;
-        }
-        
-        /* Notification System */
-        .notification {
-            position: fixed;
-            top: var(--space-4);
-            right: var(--space-4);
-            padding: var(--space-3) var(--space-4);
-            background-color: var(--color-primary);
-            color: white;
-            border-radius: 6px;
-            font-size: var(--text-sm);
-            z-index: 1000;
-            animation: slideIn 0.3s ease;
-            max-width: 400px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-        
-        .notification.error {
-            background-color: #ef4444;
-        }
-        
-        .notification.success {
-            background-color: #10b981;
-        }
-        
-        @keyframes slideIn {
-            from {
-                transform: translateX(400px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes slideOut {
-            from {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateX(400px);
-                opacity: 0;
-            }
-        }
-        
-        /* Empty states */
-        .empty-state {
-            text-align: center;
-            color: var(--color-text-light);
-            padding: var(--space-8);
-        }
-        
-        /* Tool actions */
-        .tool-actions {
-            margin-top: var(--space-6);
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-4);
-        }
-        
-        .btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-        
-        .options-panel {
-            margin-bottom: var(--space-6);
-        }
-        
-        .options-panel h3 {
-            margin-bottom: var(--space-3);
-            color: var(--color-text);
-        }
-            .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--color-primary);
-            color: white;
-            padding: 8px 16px;
-            z-index: 100;
-            transition: top 0.3s;
-        }
-        .skip-link:focus {
-            top: 0;
+        /* ── Tab Navigation ── */
+        .tab-nav{display:flex;gap:var(--gt-space-3);justify-content:center;margin-top:var(--gt-space-6);margin-bottom:var(--gt-space-6)}
+        .tab-btn{display:flex;align-items:center;gap:var(--gt-space-2);padding:var(--gt-space-3) var(--gt-space-6);background:var(--gt-white);border:2px solid var(--gt-border);border-radius:var(--gt-radius-xl);font-family:var(--gt-font);font-size:var(--gt-text-sm);font-weight:var(--gt-weight-semibold);color:var(--gt-text-secondary);cursor:pointer;transition:all var(--gt-transition-normal)}
+        .tab-btn:hover{border-color:var(--gt-primary);color:var(--gt-text)}
+        .tab-btn.active{border-color:var(--gt-primary);background:var(--gt-primary-bg);color:var(--gt-primary);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+        .tab-btn svg{width:16px;height:16px}
+        .tab-content{display:none}.tab-content.active{display:block}
+        .gt-steps-grid{grid-template-columns:repeat(4,1fr)}
+
+        /* ── Split Tool ── */
+        .split-controls{display:flex;gap:var(--gt-space-3);margin-bottom:var(--gt-space-4)}
+        .page-selector{background:var(--gt-surface);border:1px solid var(--gt-border);border-radius:var(--gt-radius-xl);padding:var(--gt-space-4);max-height:300px;overflow-y:auto;margin-bottom:var(--gt-space-4)}
+        .page-checkbox{display:flex;align-items:center;gap:var(--gt-space-3);padding:var(--gt-space-3);margin-bottom:var(--gt-space-2);background:var(--gt-white);border-radius:var(--gt-radius-md);transition:background var(--gt-transition-fast)}
+        .page-checkbox:hover{background:var(--gt-primary-bg)}
+        .page-checkbox input{cursor:pointer;accent-color:var(--gt-primary);width:16px;height:16px}
+        .page-checkbox label{cursor:pointer;margin:0;flex:1;font-size:var(--gt-text-sm);color:var(--gt-text)}
+        .result-card{background:var(--gt-surface);border:1px solid var(--gt-border);border-radius:var(--gt-radius-xl);padding:var(--gt-space-6);max-width:400px;margin:0 auto;text-align:left}
+        .result-card p{margin:var(--gt-space-2) 0;font-size:var(--gt-text-sm)}
+
+        /* ── Rotator Tool ── */
+        .rotator-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gt-space-6)}
+        @media(max-width:1024px){.rotator-grid{grid-template-columns:1fr}}
+        .rotator-panel{background:var(--gt-bg);border:1px solid var(--gt-border);border-radius:var(--gt-radius-3xl);padding:var(--gt-space-6);box-shadow:var(--gt-shadow-sm);position:relative;overflow:hidden;display:flex;flex-direction:column}
+        .rotator-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(135deg,var(--gt-primary),var(--gt-accent));border-radius:var(--gt-radius-3xl) var(--gt-radius-3xl) 0 0}
+        .panel-header{margin-bottom:var(--gt-space-5);padding-bottom:var(--gt-space-4);border-bottom:2px solid var(--gt-surface);position:relative}
+        .panel-header::after{content:'';position:absolute;bottom:-2px;left:0;width:60px;height:2px;background:var(--gt-primary)}
+        .panel-title{font-size:var(--gt-text-lg);font-weight:var(--gt-weight-bold);margin:0;color:var(--gt-text);display:flex;align-items:center;gap:var(--gt-space-3)}
+        .panel-title i{color:var(--gt-primary);font-size:16px}
+
+        .rotation-controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:var(--gt-space-3);margin:var(--gt-space-5) 0}
+        .rotation-btn{display:flex;flex-direction:column;align-items:center;padding:var(--gt-space-4);background:var(--gt-surface);border:2px solid var(--gt-border);border-radius:var(--gt-radius-xl);cursor:pointer;transition:all var(--gt-transition-normal);text-align:center;font-family:var(--gt-font)}
+        .rotation-btn:hover{border-color:var(--gt-primary);background:var(--gt-primary-bg);transform:translateY(-2px)}
+        .rotation-btn.active{border-color:var(--gt-primary);background:var(--gt-primary-bg);box-shadow:0 4px 12px rgba(37,99,235,.15)}
+        .rotation-btn svg{width:32px;height:32px;margin-bottom:var(--gt-space-2);color:var(--gt-text);transition:color var(--gt-transition-normal)}
+        .rotation-btn.active svg{color:var(--gt-primary)}
+        .rotation-btn span{font-size:var(--gt-text-xs);font-weight:var(--gt-weight-semibold);color:var(--gt-text)}
+        .rotation-degree{font-size:11px;margin-top:2px;color:var(--gt-text-muted)}
+
+        .custom-rotation{display:none;margin-top:var(--gt-space-4)}
+        .custom-rotation label{font-size:var(--gt-text-sm);font-weight:var(--gt-weight-medium);color:var(--gt-text);margin-bottom:var(--gt-space-2);display:block}
+        .custom-rotation-row{display:flex;gap:var(--gt-space-3);align-items:center;margin-top:var(--gt-space-2)}
+        .custom-rotation-row input[type="range"]{flex:1;accent-color:var(--gt-primary)}
+        .custom-rotation-row input[type="number"]{width:80px;padding:var(--gt-space-2);border:1px solid var(--gt-border);border-radius:var(--gt-radius-md);font-family:var(--gt-font-mono);font-size:var(--gt-text-sm);text-align:center}
+
+        .batch-controls{display:flex;flex-wrap:wrap;gap:var(--gt-space-3);margin:var(--gt-space-4) 0}
+        .batch-btn{padding:var(--gt-space-2) var(--gt-space-4);background:var(--gt-surface);border:1px solid var(--gt-border);border-radius:var(--gt-radius-lg);cursor:pointer;font-size:var(--gt-text-xs);font-weight:var(--gt-weight-medium);font-family:var(--gt-font);color:var(--gt-text);transition:all var(--gt-transition-normal)}
+        .batch-btn:hover{background:var(--gt-white);border-color:var(--gt-primary);color:var(--gt-primary)}
+        .batch-btn:disabled{opacity:.5;cursor:not-allowed;pointer-events:none}
+
+        .page-list-container{max-height:400px;overflow-y:auto;border:1px solid var(--gt-border);border-radius:var(--gt-radius-xl);padding:var(--gt-space-3);margin-top:var(--gt-space-4);background:var(--gt-surface)}
+        .page-item{display:flex;align-items:center;padding:var(--gt-space-3);border-bottom:1px solid var(--gt-border);cursor:pointer;transition:background var(--gt-transition-fast)}
+        .page-item:hover{background:var(--gt-primary-bg)}
+        .page-item.selected{background:var(--gt-primary-bg);border-left:4px solid var(--gt-primary)}
+        .page-item:last-child{border-bottom:none}
+        .page-thumbnail{width:60px;height:80px;background:var(--gt-white);border:1px solid var(--gt-border);border-radius:var(--gt-radius-md);margin-right:var(--gt-space-3);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0}
+        .page-info{flex:1;min-width:0}
+        .page-number{font-weight:var(--gt-weight-semibold);color:var(--gt-text);font-size:var(--gt-text-sm);margin-bottom:2px}
+        .page-orientation{font-size:var(--gt-text-xs);color:var(--gt-text-muted);margin-bottom:2px}
+        .page-controls{display:flex;gap:var(--gt-space-2)}
+        .page-btn{padding:var(--gt-space-1) var(--gt-space-3);background:var(--gt-surface);border:1px solid var(--gt-border);border-radius:var(--gt-radius-md);cursor:pointer;font-size:11px;font-weight:var(--gt-weight-medium);font-family:var(--gt-font);color:var(--gt-text);transition:all var(--gt-transition-fast)}
+        .page-btn:hover{background:var(--gt-white);border-color:var(--gt-primary);color:var(--gt-primary)}
+
+        .preview-container{width:100%;height:400px;border:1px solid var(--gt-border);border-radius:var(--gt-radius-xl);overflow:hidden;margin:var(--gt-space-5) 0;background:var(--gt-surface);display:flex;align-items:center;justify-content:center}
+        #rotate-pdf-preview{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+
+        .empty-state{text-align:center;color:var(--gt-text-muted);padding:var(--gt-space-8);font-size:var(--gt-text-sm)}
+        .tool-actions{margin-top:var(--gt-space-5);display:flex;flex-direction:column;gap:var(--gt-space-3)}
+
+        .notification{position:fixed;top:var(--gt-space-4);right:var(--gt-space-4);padding:var(--gt-space-3) var(--gt-space-5);background:var(--gt-primary);color:#fff;border-radius:var(--gt-radius-md);font-size:var(--gt-text-sm);font-weight:var(--gt-weight-medium);z-index:var(--gt-z-toast);animation:slideIn .3s var(--gt-ease);max-width:400px;box-shadow:var(--gt-shadow-xl)}
+        .notification.error{background:var(--gt-error)}
+        .notification.success{background:var(--gt-success)}
+        @keyframes slideIn{from{transform:translateX(400px);opacity:0}to{transform:translateX(0);opacity:1}}
+        @keyframes slideOut{from{transform:translateX(0);opacity:1}to{transform:translateX(400px);opacity:0}}
+
+        @media(max-width:768px){
+            .tab-nav{flex-direction:column;align-items:stretch}
+            .tab-btn{justify-content:center}
+            .gt-steps-grid{grid-template-columns:repeat(2,1fr)}
+            .split-controls{flex-direction:column}
+            .rotation-controls{grid-template-columns:repeat(2,1fr)}
+            .batch-controls{flex-direction:column}
+            .batch-btn{width:100%}
+            .page-item{flex-wrap:wrap}
+        }
+        @media(max-width:480px){
+            .gt-steps-grid{grid-template-columns:1fr}
         }
     </style>
 
@@ -838,20 +149,10 @@
         "description": "Free online PDF splitter, extractor, and rotator. Extract, split, or rotate PDF pages in your browser. No uploads required.",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Any (Web Browser)",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "featureList": [
-            "Free to use",
-            "No account required",
-            "Client-side processing",
-            "Privacy-focused"
-        ]
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["Free to use", "No account required", "Client-side processing", "Privacy-focused"]
     }
     </script>
-    
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -864,12 +165,12 @@
     }
     </script>
 
-
-    <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
+    <style>.footer-social{display:flex;gap:var(--gt-space-3);margin-top:var(--gt-space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-<!-- Header -->
+    <a href="#main-content" class="gt-skip">Skip to main content</a>
+
+    <!-- ===== NAVBAR ===== -->
     <header class="site-header">
         <div class="container">
             <div class="header-content">
@@ -877,387 +178,360 @@
                     <img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg">
                     <span class="logo-text">GoToolly</span>
                 </a>
-                
                 <nav class="main-nav">
                     <a href="/" class="nav-link">Home</a>
                     <a href="/tools" class="nav-link active">Tools</a>
                     <a href="/guides" class="nav-link">Guides</a>
-                    <a href="../../about" class="nav-link">About</a>
-                    <a href="../../contact" class="nav-link">Contact</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
                 </nav>
-                
                 <button class="mobile-menu-button" aria-label="Toggle navigation menu">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
             </div>
-            
             <div class="mobile-menu">
                 <nav class="mobile-nav">
                     <a href="/" class="nav-link">Home</a>
                     <a href="/tools" class="nav-link active">Tools</a>
                     <a href="/guides" class="nav-link">Guides</a>
-                    <a href="../../about" class="nav-link">About</a>
-                    <a href="../../contact" class="nav-link">Contact</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/contact" class="nav-link">Contact</a>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main id="main-content" class="main-content">
-        <div class="container">
-            <!-- Page Header -->
-            <div class="page-header">
-                <h1>PDF Tools: Split, Extract & Rotate</h1>
-                <p class="page-description">
-                    Professional PDF tools that work entirely in your browser. Split, extract, or rotate PDF pages with privacy guaranteed. No uploads required.
-                </p>
-                <a href="/guides/split-pdf-files.html" class="btn btn-secondary"><i class="fas fa-book"></i> View Guide</a>
-            </div>
+    <main id="main-content">
 
-            <!-- Tool Navigation Tabs -->
-            <nav class="tool-navigation">
-                <div class="nav-container">
-                    <div class="tool-options">
-                        <button class="tool-option active" id="tab-split">
-                            <span class="option-icon"><i class="fas fa-scissors"></i></span>
-                            <span class="option-content"><strong>Split & Extract</strong><br><small>Extract specific pages</small></span>
-                        </button>
-                        <button class="tool-option" id="tab-rotate">
-                            <span class="option-icon"><i class="fas fa-scissors"></i></span>
-                            <span class="option-content"><strong>Rotate Pages</strong><br><small>Fix orientation</small></span>
-                        </button>
-                    </div>
+        <!-- ===== HERO ===== -->
+        <section class="hero" style="background:#0f172a;padding:40px 0 28px;text-align:center">
+            <div class="container">
+                <h1 style="font-size:40px;font-weight:800;color:#fff;line-height:1.2;margin:0 0 12px">
+                    <span class="text-gradient">Split, Extract & Rotate</span> PDF Pages
+                </h1>
+                <p style="font-size:16px;color:#94a3b8;line-height:1.5;margin:0 0 24px">
+                    Professional PDF tools that work entirely in your browser. Split, extract, or rotate pages with privacy guaranteed.
+                </p>
+                <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+                    <span class="gt-badge gt-badge-ready">100% Private</span>
+                    <span class="gt-badge gt-badge-done">Free &amp; unlimited</span>
+                    <span class="gt-badge gt-badge-ready">No uploads</span>
                 </div>
+            </div>
+        </section>
+
+        <div class="container">
+
+            <!-- ===== TAB NAVIGATION ===== -->
+            <nav class="tab-nav" aria-label="Tool selection">
+                <button class="tab-btn active" id="tab-split">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+                    Split &amp; Extract
+                </button>
+                <button class="tab-btn" id="tab-rotate">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+                    Rotate Pages
+                </button>
             </nav>
 
-            <!-- Split/Extract Tab -->
+            <!-- ===== SPLIT TAB ===== -->
             <div id="split-tab" class="tab-content active">
-                <div class="tool-workspace">
-                    <div class="workspace-header">
-                        <div class="header-content">
-                            <h2>PDF Splitter & Extractor</h2>
-                            <p>Extract specific pages from your PDF. Select individual pages or ranges to create new PDFs.</p>
+                <div style="max-width:900px;margin:0 auto">
+                    <div class="gt-tool-card" role="region" aria-label="PDF Splitter workspace">
+                        <div class="gt-card-header">
+                            <div class="gt-card-header-left">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+                                <h2>PDF Splitter &amp; Extractor</h2>
+                            </div>
+                            <span class="gt-badge gt-badge-ready" id="split-status">Ready</span>
                         </div>
-                    </div>
-                    
-                    <!-- File Upload Section -->
-                    <div class="file-upload-section">
-                        <div class="file-drop-zone" id="split-drop-zone">
-                            <input type="file" id="split-pdf-input" accept=".pdf" style="display:none;">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="17 8 12 3 7 8"/>
-                                <line x1="12" y1="3" x2="12" y2="15"/>
-                            </svg>
-                            <p><strong>Drop your PDF here or click to select</strong></p>
-                            <p class="small">Max file size: 50MB � Works entirely in your browser</p>
-                            <button id="split-select-pdf" class="btn btn-primary">Select PDF File</button>
+                        <div class="gt-card-divider"></div>
+
+                        <div style="margin-top:20px">
+                            <input type="file" id="split-pdf-input" accept=".pdf" style="display:none" aria-label="Select PDF file">
+                            <label for="split-pdf-input" class="gt-upload-area" id="split-drop-zone" role="button" tabindex="0">
+                                <div class="gt-upload-icon" style="width:60px;height:60px;border-radius:var(--gt-radius-2xl)">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="28" height="28"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                                </div>
+                                <h3>Drop your PDF here</h3>
+                                <p class="gt-upload-sub">Select individual pages or ranges to create new PDFs. Max 50MB.</p>
+                                <span class="gt-upload-btn" id="split-select-pdf">Select PDF File</span>
+                            </label>
                         </div>
-                        
-                        <div class="file-info" id="split-file-info">
-                            <div class="file-details">
-                                <span class="file-name" id="split-file-name">filename.pdf</span>
-                                <span class="split-file-size" id="split-file-pages">0 pages</span>
+
+                        <div class="gt-file-info" id="split-file-info" role="status" aria-live="polite">
+                            <div class="gt-file-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            </div>
+                            <div class="gt-file-details">
+                                <div class="gt-file-name" id="split-file-name"></div>
+                                <div class="gt-file-meta">
+                                    <span id="split-file-pages"></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Page Selection Section -->
-                    <div class="page-selection-section" id="split-settings-section">
-                        <h3>Select Pages to Extract</h3>
-                        <p style="color: var(--color-text-light); margin-bottom: var(--space-4);">Choose which pages to include in your new PDF</p>
-                        
-                        <div class="page-controls">
-                            <button class="btn btn-secondary" id="select-all-btn">Select All</button>
-                            <button class="btn btn-secondary" id="deselect-all-btn">Deselect All</button>
-                        </div>
-                        
-                        <div class="page-selector" id="split-page-selector">
-                            <div class="empty-state">
-                                <p>Pages will appear here after PDF upload</p>
+
+                        <div id="split-settings-section" style="display:none;margin-top:20px">
+                            <div class="gt-settings-card">
+                                <div class="gt-settings-card-header"><h3>Select Pages to Extract</h3></div>
+                                <div class="gt-settings-card-body">
+                                    <p style="font-size:var(--gt-text-xs);color:var(--gt-text-muted);margin:0 0 var(--gt-space-4)">Choose which pages to include in your new PDF.</p>
+                                    <div class="split-controls">
+                                        <button class="gt-btn gt-btn-outline gt-btn-sm" id="select-all-btn">Select All</button>
+                                        <button class="gt-btn gt-btn-outline gt-btn-sm" id="deselect-all-btn">Deselect All</button>
+                                    </div>
+                                    <div class="page-selector" id="split-page-selector">
+                                        <div class="empty-state">Pages will appear here after PDF upload</div>
+                                    </div>
+                                    <div style="display:flex;gap:var(--gt-space-3);margin-top:var(--gt-space-4)">
+                                        <button class="gt-btn gt-btn-primary" id="split-extract-btn">Extract Selected Pages</button>
+                                        <button class="gt-btn gt-btn-outline" id="split-reset-btn">Start Over</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="action-buttons">
-                            <button class="btn btn-primary" id="split-extract-btn">Extract Selected Pages</button>
-                            <button class="btn btn-secondary" id="split-reset-btn">Start Over</button>
-                        </div>
-                    </div>
-                    
-                    <!-- Results Section -->
-                    <div class="results-section" id="split-results-section">
-                        <h3>Extraction Complete!</h3>
-                        <div class="result-card">
-                            <div class="result-info">
-                                <p><strong>File:</strong> <span id="split-result-filename">extracted.pdf</span></p>
-                                <p><strong>Pages extracted:</strong> <span id="split-result-pages">0</span></p>
+
+                        <div id="split-results-section" style="display:none;margin-top:20px">
+                            <div class="gt-results show">
+                                <div class="gt-results-icon success">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <h3>Extraction Complete!</h3>
+                                <div class="result-card" style="margin:var(--gt-space-4) auto">
+                                    <p><strong>File:</strong> <span id="split-result-filename" style="font-family:var(--gt-font-mono)">extracted.pdf</span></p>
+                                    <p><strong>Pages extracted:</strong> <span id="split-result-pages" style="font-family:var(--gt-font-mono)">0</span></p>
+                                </div>
+                                <div class="gt-results-actions">
+                                    <button class="gt-btn gt-btn-primary gt-btn-xl gt-btn-block" id="split-download-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                        Download Extracted PDF
+                                    </button>
+                                    <button class="gt-btn gt-btn-outline gt-btn-block" id="split-another-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+                                        Extract Another
+                                    </button>
+                                </div>
                             </div>
-                            <button class="btn btn-primary" id="split-download-btn">Download Extracted PDF</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Rotate Tab -->
+            <!-- ===== ROTATE TAB ===== -->
             <div id="rotate-tab" class="tab-content">
-                <div class="tool-workspace">
-                    <div class="workspace-header">
-                        <div class="header-content">
-                            <h2>PDF Rotator</h2>
-                            <p>Fix sideways or upside-down PDF pages instantly. Rotate individual pages or the entire document. 100% browser-based.</p>
+                <div style="max-width:900px;margin:0 auto">
+                    <div class="gt-tool-card" role="region" aria-label="PDF Rotator workspace">
+                        <div class="gt-card-header">
+                            <div class="gt-card-header-left">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+                                <h2>PDF Rotator</h2>
+                            </div>
+                            <span class="gt-badge gt-badge-ready">Ready</span>
                         </div>
-                    </div>
-                    
-                    <div class="pdf-rotator">
-                        <!-- Left Panel (File Upload and Options) -->
-                        <div class="pdf-panel">
-                            <div class="panel-header">
-                                <h2 class="panel-title"><i class="fas fa-upload"></i> Upload & Options</h2>
-                            </div>
-                            <div class="upload-area" id="rotate-drop-zone">
-                                <input type="file" id="rotate-pdf-input" accept=".pdf" style="display:none;">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-bottom: var(--space-4); color: var(--color-primary);">
-                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                    <polyline points="17 8 12 3 7 8"/>
-                                    <line x1="12" y1="3" x2="12" y2="15"/>
-                                </svg>
-                                <p><strong>Drop your PDF here or click to select</strong></p>
-                                <p class="small" style="margin-top: var(--space-2);">Max file size: 50MB � Works entirely in your browser</p>
-                                <button id="rotate-select-pdf" class="btn btn-primary" style="margin-top: var(--space-4);">Select PDF File</button>
-                            </div>
-                            <div id="rotate-tool-interface-left" style="display: none;">
-                                <div class="options-panel">
-                                    <h3>Rotation Options</h3>
-                                    <div class="rotation-controls">
-                                        <div class="rotation-btn" data-degrees="0" id="rotate-0">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                                                <polyline points="9 7 9 17"/>
-                                                <polyline points="15 7 15 17"/>
-                                            </svg>
-                                            No Rotation
-                                            <div class="rotation-degree">0�</div>
-                                        </div>
-                                        <div class="rotation-btn" data-degrees="90" id="rotate-90">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <rect x="3" y="3" width="18" height="18" rx="2" transform="rotate(90 12 12)"/>
-                                                <polyline points="9 7 9 17"/>
-                                                <polyline points="15 7 15 17"/>
-                                            </svg>
-                                            Rotate Right
-                                            <div class="rotation-degree">90� clockwise</div>
-                                        </div>
-                                        <div class="rotation-btn" data-degrees="-90" id="rotate-270">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <rect x="3" y="3" width="18" height="18" rx="2" transform="rotate(-90 12 12)"/>
-                                                <polyline points="9 7 9 17"/>
-                                                <polyline points="15 7 15 17"/>
-                                            </svg>
-                                            Rotate Left
-                                            <div class="rotation-degree">90� counter-clockwise</div>
-                                        </div>
-                                        <div class="rotation-btn" data-degrees="180" id="rotate-180">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <rect x="3" y="3" width="18" height="18" rx="2" transform="rotate(180 12 12)"/>
-                                                <polyline points="9 7 9 17"/>
-                                                <polyline points="15 7 15 17"/>
-                                            </svg>
-                                            Flip Upside Down
-                                            <div class="rotation-degree">180�</div>
-                                        </div>
-                                        <div class="rotation-btn" id="rotate-custom">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <circle cx="12" cy="12" r="10"/>
-                                                <polyline points="12 6 12 12 16 14"/>
-                                            </svg>
-                                            Custom Angle
-                                            <div class="rotation-degree">Set specific degrees</div>
-                                        </div>
+                        <div class="gt-card-divider"></div>
+
+                        <div class="rotator-panel" style="margin-top:20px">
+                            <!-- Left Panel: Upload & Options -->
+                            <div>
+                                <div class="panel-header">
+                                    <h3 class="panel-title"><i class="fas fa-upload"></i> Upload &amp; Options</h3>
+                                </div>
+                                <div class="gt-upload-area" id="rotate-drop-zone" style="padding:var(--gt-space-8) var(--gt-space-4)">
+                                    <input type="file" id="rotate-pdf-input" accept=".pdf" style="display:none" aria-label="Select PDF file">
+                                    <div class="gt-upload-icon" style="width:60px;height:60px;border-radius:var(--gt-radius-2xl)">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="width:var(--gt-icon-xl);height:var(--gt-icon-xl)"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
                                     </div>
-                                    <div class="custom-rotation" id="custom-rotation-input">
-                                        <label for="custom-degrees">Custom Rotation Angle (degrees):</label>
-                                        <div style="display: flex; gap: var(--space-3); align-items: center; margin-top: var(--space-2);">
-                                            <input type="range" id="custom-degrees" min="-180" max="180" value="0" step="90" style="flex: 1;">
-                                            <input type="number" id="custom-degrees-input" min="-180" max="180" value="0" step="90" style="width: 80px;">
-                                            <span>�</span>
+                                    <h3>Drop your PDF here</h3>
+                                    <p class="gt-upload-sub">Fix sideways or upside-down pages instantly.</p>
+                                    <span class="gt-upload-btn" id="rotate-select-pdf">Select PDF File</span>
+                                </div>
+                                <div id="rotate-tool-interface-left" style="display:none">
+                                    <div style="margin-top:var(--gt-space-5)">
+                                        <h4 style="font-size:var(--gt-text-sm);font-weight:var(--gt-weight-semibold);margin:0 0 var(--gt-space-3);color:var(--gt-text)">Rotation Options</h4>
+                                        <div class="rotation-controls">
+                                            <div class="rotation-btn" data-degrees="0" id="rotate-0">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="9 7 9 17"/><polyline points="15 7 15 17"/></svg>
+                                                <span>No Rotation</span>
+                                                <div class="rotation-degree">0&#176;</div>
+                                            </div>
+                                            <div class="rotation-btn" data-degrees="90" id="rotate-90">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" transform="rotate(90 12 12)"/><polyline points="9 7 9 17"/><polyline points="15 7 15 17"/></svg>
+                                                <span>Rotate Right</span>
+                                                <div class="rotation-degree">90&#176; clockwise</div>
+                                            </div>
+                                            <div class="rotation-btn" data-degrees="-90" id="rotate-270">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" transform="rotate(-90 12 12)"/><polyline points="9 7 9 17"/><polyline points="15 7 15 17"/></svg>
+                                                <span>Rotate Left</span>
+                                                <div class="rotation-degree">90&#176; counter-clockwise</div>
+                                            </div>
+                                            <div class="rotation-btn" data-degrees="180" id="rotate-180">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" transform="rotate(180 12 12)"/><polyline points="9 7 9 17"/><polyline points="15 7 15 17"/></svg>
+                                                <span>Flip Upside Down</span>
+                                                <div class="rotation-degree">180&#176;</div>
+                                            </div>
+                                            <div class="rotation-btn" id="rotate-custom">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                                <span>Custom Angle</span>
+                                                <div class="rotation-degree">Set specific degrees</div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="batch-controls">
-                                        <button class="batch-btn" id="apply-all">Apply to All Pages</button>
-                                        <button class="batch-btn" id="apply-selected">Apply to Selected Pages</button>
-                                        <button class="batch-btn" id="reset-all">Reset All Pages</button>
-                                        <button class="batch-btn" id="auto-detect">Auto-Detect Orientation</button>
+                                        <div class="custom-rotation" id="custom-rotation-input">
+                                            <label for="custom-degrees">Custom Rotation Angle (degrees):</label>
+                                            <div class="custom-rotation-row">
+                                                <input type="range" id="custom-degrees" min="-180" max="180" value="0" step="90">
+                                                <input type="number" id="custom-degrees-input" min="-180" max="180" value="0" step="90">
+                                                <span>&#176;</span>
+                                            </div>
+                                        </div>
+                                        <div class="batch-controls">
+                                            <button class="batch-btn" id="apply-all">Apply to All Pages</button>
+                                            <button class="batch-btn" id="apply-selected">Apply to Selected Pages</button>
+                                            <button class="batch-btn" id="reset-all">Reset All Pages</button>
+                                            <button class="batch-btn" id="auto-detect">Auto-Detect Orientation</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- Right Panel (Pages & Preview) -->
-                        <div class="pdf-panel">
-                            <div class="panel-header">
-                                <h2 class="panel-title"><i class="fas fa-list"></i> Pages & Preview</h2>
-                            </div>
-                            <div id="rotate-tool-interface-middle" style="display: none;">
-                                <div class="options-panel">
-                                    <h3>Pages <span id="rotate-page-count-display">(0 pages)</span></h3>
-                                    <p style="margin-bottom: var(--space-4); color: var(--color-text-light); font-size: var(--text-sm);">
-                                        Click on page thumbnails to select multiple pages. Selected pages will have a blue border.
-                                    </p>
-                                    <div class="page-list-container" id="rotate-page-list">
-                                        <div class="empty-state">
-                                            <p>Pages will appear here after PDF upload</p>
+
+                            <!-- Right Panel: Pages & Preview -->
+                            <div style="margin-top:var(--gt-space-4)">
+                                <div class="panel-header">
+                                    <h3 class="panel-title"><i class="fas fa-list"></i> Pages &amp; Preview</h3>
+                                </div>
+                                <div id="rotate-tool-interface-middle" style="display:none">
+                                    <div style="margin-bottom:var(--gt-space-5)">
+                                        <h4 style="font-size:var(--gt-text-sm);font-weight:var(--gt-weight-semibold);margin:0 0 var(--gt-space-1);color:var(--gt-text)">Pages <span id="rotate-page-count-display" style="font-weight:var(--gt-weight-normal);color:var(--gt-text-muted)">(0 pages)</span></h4>
+                                        <p style="font-size:var(--gt-text-xs);color:var(--gt-text-muted);margin:0 0 var(--gt-space-3)">Click pages to select. Selected pages have a blue border.</p>
+                                        <div class="page-list-container" id="rotate-page-list">
+                                            <div class="empty-state">Pages will appear here after PDF upload</div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="options-panel">
-                                    <h3>Live Preview</h3>
-                                    <div class="preview-container">
-                                        <div id="rotate-pdf-preview">
-                                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--color-text-light);">
-                                                Select a page to preview
+                                    <div style="margin-bottom:var(--gt-space-5)">
+                                        <h4 style="font-size:var(--gt-text-sm);font-weight:var(--gt-weight-semibold);margin:0 0 var(--gt-space-3);color:var(--gt-text)">Live Preview</h4>
+                                        <div class="preview-container">
+                                            <div id="rotate-pdf-preview">
+                                                <div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--gt-text-muted);font-size:var(--gt-text-sm)">Select a page to preview</div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="tool-actions">
-                                    <button id="rotate-download-pdf" class="btn btn-primary" disabled>
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
-                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                            <polyline points="7 10 12 15 17 10"/>
-                                            <line x1="12" y1="15" x2="12" y2="3"/>
-                                        </svg>
-                                        Download Rotated PDF
-                                    </button>
-                                    <button id="rotate-process-another" class="btn btn-secondary">Process Another PDF</button>
+                                    <div class="tool-actions">
+                                        <button id="rotate-download-pdf" class="gt-btn gt-btn-primary gt-btn-xl gt-btn-block" disabled>
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                            Download Rotated PDF
+                                        </button>
+                                        <button id="rotate-process-another" class="gt-btn gt-btn-outline gt-btn-block">Process Another PDF</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Features Section -->
-            <section class="features-section">
-                <div class="section-header">
-                    <h2>Why Choose Our PDF Tools?</h2>
-                </div>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                        <h3>100% Private</h3>
-                        <p>All processing happens in your browser. Your files never leave your computer.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">?</div>
-                        <h3>Fast Processing</h3>
-                        <p>No uploads or downloads to external servers. Process PDFs instantly.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-tachometer-alt"></i></div>
-                        <h3>No Limits</h3>
-                        <p>No file size restrictions for browser processing. Works with large PDFs.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                        <h3>Professional Results</h3>
-                        <p>Maintains PDF quality and structure while providing accurate results.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- How-to Section -->
-            <section class="howto-section">
-                <div class="section-header">
-                    <h2>How to Use</h2>
-                </div>
-                <div class="steps-grid">
-                    <div class="step-card">
-                        <div class="step-number">1</div>
-                        <h3>Upload Your PDF</h3>
-                        <p>Drag and drop a PDF file or click to browse. Your file stays on your device.</p>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-number">2</div>
-                        <h3>Choose Action</h3>
-                        <p>Select Split/Extract or Rotate tab based on what you need to do.</p>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-number">3</div>
-                        <h3>Customize</h3>
-                        <p>Select specific pages or rotation angles according to your needs.</p>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-number">4</div>
-                        <h3>Download</h3>
-                        <p>Get your processed PDF instantly with one click.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Related Tools -->
-            <section class="content-section">
-                <div class="section-header">
-                    <h2>Related Tools</h2>
-                </div>
-                <div class="tools-grid">
-                    <div class="card tool-card">
-                        <h3>PDF Compressor</h3>
-                        <p>Reduce PDF file size while maintaining quality.</p>
-                        <div class="card-footer">
-                            <a href="./pdf-compressor" class="btn btn-primary btn-sm">Use Tool</a>
-                        </div>
-                    </div>
-                    <div class="card tool-card">
-                        <h3>PDF Merger</h3>
-                        <p>Combine multiple PDF files into a single document.</p>
-                        <div class="card-footer">
-                            <a href="./pdf-merger" class="btn btn-primary btn-sm">Use Tool</a>
-                        </div>
-                    </div>
-                    <div class="card tool-card">
-                        <h3>PDF Editor</h3>
-                        <p>Edit PDF files, add watermarks, page numbers, and more.</p>
-                        <div class="card-footer">
-                            <a href="./pdf-editor" class="btn btn-primary btn-sm">Use Tool</a>
-                        </div>
-                    </div>
-                    <div class="card tool-card">
-                        <h3>PDF to Word</h3>
-                        <p>Convert PDF documents to editable Word files.</p>
-                        <div class="card-footer">
-                            <a href="./pdf-to-word" class="btn btn-primary btn-sm">Use Tool</a>
-                        </div>
-                    </div>
-                </div>
-                <p style="margin-top: var(--space-4); text-align: center;">
-                    <a href="../guides/split-pdf-files" style="color: var(--color-primary);">Read Guide: Split PDF Files ?</a>
-                </p>
-            </section>
         </div>
+
+        <!-- ===== RELATED TOOLS ===== -->
+        <section class="gt-related content-section" style="margin-top:48px">
+            <div class="gt-section-heading">
+                <h2>Related Tools</h2>
+                <p>You might also need...</p>
+            </div>
+            <div class="gt-related-grid">
+                <a href="./pdf-compressor.html" class="gt-related-card">
+                    <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+                    <h4>PDF Compressor</h4>
+                    <p>Reduce PDF file size while maintaining quality.</p>
+                    <span class="rc-link">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./pdf-merger.html" class="gt-related-card">
+                    <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+                    <h4>PDF Merger</h4>
+                    <p>Combine multiple PDF files into one document.</p>
+                    <span class="rc-link">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./pdf-editor.html" class="gt-related-card">
+                    <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+                    <h4>PDF Editor</h4>
+                    <p>Edit PDF files, add watermarks, page numbers, and more.</p>
+                    <span class="rc-link">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./pdf-to-word.html" class="gt-related-card">
+                    <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+                    <h4>PDF to Word</h4>
+                    <p>Convert PDF documents to editable Word files.</p>
+                    <span class="rc-link">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== HOW IT WORKS ===== -->
+        <section class="gt-how content-section" style="margin-top:48px">
+            <div class="gt-section-heading"><h2>How It Works</h2></div>
+            <div class="gt-steps-grid">
+                <div class="gt-step-card">
+                    <div class="gt-step-num">1</div>
+                    <h4>Upload Your PDF</h4>
+                    <p>Drag and drop or click to select. Your file stays on your device.</p>
+                </div>
+                <div class="gt-step-card">
+                    <div class="gt-step-num">2</div>
+                    <h4>Choose Action</h4>
+                    <p>Select Split/Extract or Rotate tab based on what you need.</p>
+                </div>
+                <div class="gt-step-card">
+                    <div class="gt-step-num">3</div>
+                    <h4>Customize</h4>
+                    <p>Select pages or rotation angles according to your needs.</p>
+                </div>
+                <div class="gt-step-card">
+                    <div class="gt-step-num">4</div>
+                    <h4>Download</h4>
+                    <p>Get your processed PDF instantly with one click.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FAQ ===== -->
+        <section class="gt-faq content-section" style="margin-top:48px">
+            <div class="gt-section-heading"><h2>Frequently Asked Questions</h2></div>
+            <div class="gt-faq-grid">
+                <div class="gt-faq-card">
+                    <h4>Is my data safe?</h4>
+                    <p>Yes. All processing happens in your browser. Files never leave your device.</p>
+                </div>
+                <div class="gt-faq-card">
+                    <h4>What file sizes are supported?</h4>
+                    <p>Up to 50MB per file for optimal browser performance.</p>
+                </div>
+                <div class="gt-faq-card">
+                    <h4>Can I select specific pages?</h4>
+                    <p>Yes. The Split tab lets you select individual pages or ranges to extract.</p>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:var(--space-8)">
+                <a href="/guides/split-pdf-files" style="color:var(--color-primary);font-weight:600;font-size:var(--text-sm);text-decoration:none;transition:opacity .2s">Read Guide: Split PDF Files ➜</a>
+            </div>
+        </section>
+
     </main>
 
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer class="site-footer" role="contentinfo">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>GoToolly</h3>
-                    <p style="font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-4);">
-                        Free, privacy-focused online tools that work entirely in your browser.
-                    </p>
+                    <p style="font-size:var(--gt-text-sm);color:#9ca3af;margin-bottom:var(--gt-space-4)">Free, privacy-focused online tools that work entirely in your browser.</p>
                     <div class="footer-social">
                         <a href="https://x.com/GoToolly" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                         <a href="https://www.facebook.com/profile.php?id=61591898344203" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                        <a href="https://linkedin.com/in/go-toolly-426b67422" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                        <a href="https://www.youtube.com/@GoToolly" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                         <a href="https://www.instagram.com/gotoolly/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
                         <a href="https://www.tiktok.com/@gotoolly26" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
-                        <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></a>
+                        <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 01-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 01.042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 014.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 01.14-.197.35.35 0 01.238-.042l2.906.617a1.214 1.214 0 011.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 00-.231.094.33.33 0 000 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 00.029-.463.33.33 0 00-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 00-.232-.095z"/></svg></a>
                     </div>
                 </div>
-                
                 <div class="footer-section">
                     <h3>Popular Tools</h3>
                     <ul class="footer-links">
@@ -1265,11 +539,9 @@
                         <li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li>
                         <li><a href="/tools/word-counter.html">Word Counter</a></li>
                         <li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li>
-                        <li><a href="/tools/password-generator.html">Password Generator</a></li>
                         <li><a href="/tools">View All Tools</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h3>Resources</h3>
                     <ul class="footer-links">
@@ -1279,7 +551,6 @@
                         <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h3>Legal</h3>
                     <ul class="footer-links">
@@ -1289,11 +560,8 @@
                     </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <div class="copyright">
-                    � <span id="current-year">2026</span> GoToolly. All rights reserved.
-                </div>
+                <div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div>
                 <div class="legal-links">
                     <a href="/legal/privacy-policy">Privacy</a>
                     <a href="/legal/terms-of-service">Terms</a>
@@ -1305,70 +573,11 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="/assets/js/pdf-lib.min.js"></script>
     <script defer src="/assets/js/main.min.js"></script>
     <script src="/assets/js/tools/pdf-splitter-rotator.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set current year
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-            
-            // Initialize tab system
-            initializeTabs();
-        });
-        
-        function initializeTabs() {
-            const tabs = {
-                split: {
-                    button: document.getElementById('tab-split'),
-                    content: document.getElementById('split-tab')
-                },
-                rotate: {
-                    button: document.getElementById('tab-rotate'),
-                    content: document.getElementById('rotate-tab')
-                }
-            };
-            
-            // Function to switch tabs
-            function switchToTab(tabName) {
-                // Hide all tabs and remove active class
-                Object.values(tabs).forEach(tab => {
-                    if (tab.content) {
-                        tab.content.classList.remove('active');
-                        tab.content.style.display = 'none';
-                    }
-                    if (tab.button) {
-                        tab.button.classList.remove('active');
-                    }
-                });
-                
-                // Show selected tab
-                if (tabs[tabName]) {
-                    if (tabs[tabName].content) {
-                        tabs[tabName].content.classList.add('active');
-                        tabs[tabName].content.style.display = 'block';
-                    }
-                    if (tabs[tabName].button) {
-                        tabs[tabName].button.classList.add('active');
-                    }
-                }
-            }
-            
-            // Add click events to tab buttons
-            if (tabs.split.button) {
-                tabs.split.button.addEventListener('click', () => switchToTab('split'));
-            }
-            if (tabs.rotate.button) {
-                tabs.rotate.button.addEventListener('click', () => switchToTab('rotate'));
-            }
-            
-            // Set initial tab
-            switchToTab('split');
-        }
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
-
-
-
-

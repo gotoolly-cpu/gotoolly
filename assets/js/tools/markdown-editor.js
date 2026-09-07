@@ -13,21 +13,101 @@ document.addEventListener('DOMContentLoaded', function() {
     var copyHtmlBtn = document.getElementById('copy-html-btn');
     var editor = document.getElementById('md-editor');
     var fullscreenExitBtn = document.getElementById('fullscreen-exit-btn');
+    var statusBadge = document.querySelector('.status-badge');
 
     var isFullscreen = false;
     var prevScroll = 0;
+    var MAX_SIZE = 1048576;
+    var debounceTimer = null;
 
-    function init() {
-        if (typeof marked !== 'undefined') {
-            marked.setOptions({ breaks: true, gfm: true });
+    function cleanHtml(html) {
+        if (!html) return '';
+        var doc = new DOMParser().parseFromString(html, 'text/html');
+        var body = doc.body;
+
+        function removeEmpty(node) {
+            var child = node.firstChild;
+            while (child) {
+                var next = child.nextSibling;
+                if (child.nodeType === 1) {
+                    removeEmpty(child);
+                    var tag = child.tagName.toLowerCase();
+                    if (['p', 'div', 'blockquote', 'section', 'article', 'ul', 'ol', 'li', 'span'].indexOf(tag) !== -1 && !child.innerHTML.trim()) {
+                        node.removeChild(child);
+                    }
+                }
+                child = next;
+            }
         }
-        mdInput.addEventListener('input', updatePreview);
-        fullscreenBtn.addEventListener('click', toggleFullscreen);
-        fullscreenExitBtn.addEventListener('click', toggleFullscreen);
-        downloadMdBtn.addEventListener('click', downloadMd);
-        downloadHtmlBtn.addEventListener('click', downloadHtml);
-        copyHtmlBtn.addEventListener('click', copyHtml);
-        updatePreview();
+        removeEmpty(body);
+
+        var links = body.querySelectorAll('a');
+        for (var i = links.length - 1; i >= 0; i--) {
+            var link = links[i];
+            var href = link.getAttribute('href');
+            if (href === null || href === '' || /^\s*javascript\s*:/i.test(href)) {
+                var span = doc.createElement('span');
+                while (link.firstChild) {
+                    span.appendChild(link.firstChild);
+                }
+                link.parentNode.replaceChild(span, link);
+            }
+        }
+
+        var imgs = body.querySelectorAll('img');
+        for (var i = 0; i < imgs.length; i++) {
+            if (!imgs[i].hasAttribute('alt')) {
+                imgs[i].setAttribute('alt', '');
+            }
+        }
+
+        var walker = doc.createTreeWalker(body, 4, null, false);
+        var textNodes = [];
+        while (walker.nextNode()) {
+            var node = walker.currentNode;
+            var parent = node.parentElement;
+            var skip = false;
+            while (parent) {
+                var tag = parent.tagName.toLowerCase();
+                if (tag === 'pre' || tag === 'code') {
+                    skip = true;
+                    break;
+                }
+                parent = parent.parentElement;
+            }
+            if (!skip) textNodes.push(node);
+        }
+
+        for (var i = 0; i < textNodes.length; i++) {
+            var node = textNodes[i];
+            if (!node.textContent.trim()) {
+                node.parentNode.removeChild(node);
+            }
+        }
+
+        return body.innerHTML.trim();
+    }
+
+    function parseAndSanitize(text) {
+        var html;
+        if (typeof marked !== 'undefined') {
+            try {
+                html = marked.parse(text);
+            } catch (e) {
+                console.error('Markdown parsing failed:', e);
+                html = text ? simpleRender(text) : '';
+            }
+        } else {
+            html = text ? simpleRender(text) : '';
+        }
+        html = html.replace(/<input[^>]*type\s*=\s*["']checkbox["'][^>]*>/gi, function(match) {
+            return /\bchecked\b/i.test(match) ? '✅ ' : '⬜ ';
+        });
+        if (typeof DOMPurify !== 'undefined') {
+            html = DOMPurify.sanitize(html, { FORBID_TAGS: ['script', 'iframe', 'object', 'embed', 'svg', 'math', 'form', 'input', 'button', 'textarea', 'select', 'option'] });
+        }
+        html = cleanHtml(html);
+        return html;
     }
 
     function simpleRender(md) {
@@ -52,19 +132,26 @@ document.addEventListener('DOMContentLoaded', function() {
         return html;
     }
 
+    function updateStats() {
+        var text = mdInput.value;
+        wordCount.textContent = text.trim() ? text.trim().split(/\s+/).length : 0;
+        charCount.textContent = text.length;
+    }
+
     function updatePreview() {
         var text = mdInput.value;
-        var html;
-        if (typeof marked !== 'undefined') {
-            html = marked.parse(text);
-        } else {
-            html = text ? simpleRender(text) : '';
-        }
-        mdPreview.innerHTML = html;
 
-        var words = text.trim() ? text.trim().split(/\s+/).length : 0;
-        wordCount.textContent = words;
-        charCount.textContent = text.length;
+        if (text.length > MAX_SIZE) {
+            mdPreview.innerHTML = '<p style="color:#dc2626;padding:16px;text-align:center">This document exceeds the maximum supported size (1 MB).</p>';
+            return;
+        }
+
+        mdPreview.innerHTML = parseAndSanitize(text);
+    }
+
+    function debouncedUpdatePreview() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(updatePreview, 200);
     }
 
     function toggleFullscreen() {
@@ -90,28 +177,44 @@ document.addEventListener('DOMContentLoaded', function() {
         downloadFile(text, 'document.md', 'text/markdown');
     }
 
+    function getExportStyles() {
+        return 'body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;max-width:800px;margin:0 auto;padding:20px;line-height:1.6;color:#1a1a2e}'
+            + 'h1,h2,h3,h4,h5,h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}'
+            + 'h1{font-size:2em;border-bottom:1px solid #e2e8f0;padding-bottom:8px}'
+            + 'h2{font-size:1.5em;border-bottom:1px solid #e2e8f0;padding-bottom:6px}'
+            + 'h3{font-size:1.25em}'
+            + 'p{margin-bottom:16px}'
+            + 'ul,ol{padding-left:2em;margin-bottom:16px}'
+            + 'li{margin-bottom:4px}'
+            + 'blockquote{margin:0 0 16px;padding:8px 16px;border-left:4px solid #2563eb;background:#f8fafc;color:#475569}'
+            + 'pre{background:#0f172a;color:#e2e8f0;padding:16px;border-radius:8px;overflow-x:auto;margin-bottom:16px}'
+            + 'code{font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;font-size:0.9em}'
+            + 'pre code{background:none;color:inherit;padding:0}'
+            + 'p code{background:#f1f5f9;padding:2px 6px;border-radius:4px}'
+            + 'table{width:100%;border-collapse:collapse;margin-bottom:16px}'
+            + 'th,td{border:1px solid #e2e8f0;padding:8px 12px;text-align:left}'
+            + 'th{background:#f8fafc;font-weight:600}'
+            + 'img{max-width:100%;border-radius:8px}'
+            + 'a{color:#2563eb;text-decoration:none}'
+            + 'a:hover{text-decoration:underline}'
+            + 'hr{border:none;border-top:1px solid #e2e8f0;margin:24px 0}';
+    }
+
     function downloadHtml() {
         var text = mdInput.value;
         if (!text.trim()) { showNotification('Nothing to download', true); return; }
-        var html;
-        if (typeof marked !== 'undefined') {
-            html = marked.parse(text);
-        } else {
-            html = simpleRender(text);
-        }
-        var fullHtml = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Converted</title></head><body>' + html + '</body></html>';
+        if (text.length > MAX_SIZE) { showNotification('Document exceeds maximum size (1 MB).', true); return; }
+        var html = parseAndSanitize(text);
+        var styles = getExportStyles();
+        var fullHtml = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Converted</title><style>' + styles + '</style></head><body>' + html + '</body></html>';
         downloadFile(fullHtml, 'document.html', 'text/html');
     }
 
     function copyHtml() {
         var text = mdInput.value;
         if (!text.trim()) { showNotification('Nothing to copy', true); return; }
-        var html;
-        if (typeof marked !== 'undefined') {
-            html = marked.parse(text);
-        } else {
-            html = simpleRender(text);
-        }
+        if (text.length > MAX_SIZE) { showNotification('Document exceeds maximum size (1 MB).', true); return; }
+        var html = parseAndSanitize(text);
         copyToClipboard(html, copyHtmlBtn);
     }
 
@@ -158,23 +261,92 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() { el.remove(); }, 3500);
     }
 
-    function waitForMarked() {
-        if (typeof marked !== 'undefined') {
-            init();
-            return;
-        }
-        var attempts = 0;
-        var interval = setInterval(function() {
-            attempts++;
-            if (typeof marked !== 'undefined') {
-                clearInterval(interval);
-                init();
-            } else if (attempts > 50) {
-                clearInterval(interval);
-                init();
+    function handleKeyboardShortcuts(e) {
+        var isCtrl = e.ctrlKey || e.metaKey;
+        if (!isCtrl) { return; }
+
+        var ta = mdInput;
+        var start = ta.selectionStart;
+        var end = ta.selectionEnd;
+        var val = ta.value;
+        var selected = val.substring(start, end);
+
+        if (e.key === 'b') {
+            e.preventDefault();
+            ta.value = val.substring(0, start) + '**' + selected + '**' + val.substring(end);
+            ta.selectionStart = start + 2;
+            ta.selectionEnd = end + 2;
+            updatePreview();
+        } else if (e.key === 'i') {
+            e.preventDefault();
+            ta.value = val.substring(0, start) + '*' + selected + '*' + val.substring(end);
+            ta.selectionStart = start + 1;
+            ta.selectionEnd = end + 1;
+            updatePreview();
+        } else if (e.key === 'k') {
+            e.preventDefault();
+            if (selected) {
+                ta.value = val.substring(0, start) + '[' + selected + '](url)' + val.substring(end);
+                ta.selectionStart = end + 3;
+                ta.selectionEnd = end + 6;
+            } else {
+                ta.value = val.substring(0, start) + '[text](url)' + val.substring(end);
+                ta.selectionStart = start + 1;
+                ta.selectionEnd = start + 5;
             }
-        }, 200);
+            updatePreview();
+        }
     }
 
-    waitForMarked();
+    function init() {
+        if (typeof marked !== 'undefined') {
+            marked.setOptions({ breaks: true, gfm: true });
+            if (statusBadge) {
+                statusBadge.textContent = 'Ready';
+                statusBadge.classList.add('ready');
+            }
+        } else {
+            if (statusBadge) {
+                statusBadge.textContent = 'Basic';
+                statusBadge.classList.remove('ready');
+            }
+            showNotification('Advanced Markdown rendering is unavailable. Using the basic renderer.', true);
+        }
+
+        mdInput.addEventListener('input', function() {
+            updateStats();
+            debouncedUpdatePreview();
+        });
+
+        mdInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                e.preventDefault();
+                var start = mdInput.selectionStart;
+                var end = mdInput.selectionEnd;
+                mdInput.value = mdInput.value.substring(0, start) + '    ' + mdInput.value.substring(end);
+                mdInput.selectionStart = mdInput.selectionEnd = start + 4;
+                updatePreview();
+            } else {
+                handleKeyboardShortcuts(e);
+            }
+        });
+
+        fullscreenBtn.addEventListener('click', toggleFullscreen);
+        fullscreenExitBtn.addEventListener('click', toggleFullscreen);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && isFullscreen) {
+                toggleFullscreen();
+            }
+        });
+
+        downloadMdBtn.addEventListener('click', downloadMd);
+        downloadHtmlBtn.addEventListener('click', downloadHtml);
+        copyHtmlBtn.addEventListener('click', copyHtml);
+
+        updatePreview();
+        updateStats();
+    }
+
+    init();
 });

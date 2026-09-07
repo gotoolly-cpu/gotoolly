@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +6,7 @@
     <title>Image Upscaler - Enlarge Images Online Free | GoToolly</title>
     <meta name="description" content="Upscale images up to 4x using browser-based interpolation. Enlarge JPG, PNG, WebP images with canvas smoothing. Free, private, no uploads.">
     <meta name="keywords" content="image upscaler, enlarge image, upscale photo, increase image resolution, image enlarger free">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://gotoolly.com/tools/image-upscaler">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gotoolly.com/tools/image-upscaler">
@@ -24,149 +25,390 @@
     <meta name="twitter:image:alt" content="GoToolly Logo">
     <meta name="twitter:creator" content="@GoToolly">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../assets/images/logo-192.png">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
     <link rel="manifest" href="../site.webmanifest">
-    <link rel="preload" href="../assets/css/styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../assets/css/styles.min.css"></noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/font-awesome.all.min.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=optional" rel="stylesheet"></noscript>
+
     <style>
-        .hero-section{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:var(--space-6) 0;margin-bottom:var(--space-6);border-radius:12px}
-        .hero-content{display:grid;grid-template-columns:2fr 1fr;gap:var(--space-4);align-items:center}
-        .hero-text h1{font-size:2rem;margin:0 0 var(--space-2)}
-        .hero-text p{margin:0;opacity:.95}
-        .hero-badges{display:flex;gap:var(--space-2);margin-top:var(--space-3);flex-wrap:wrap}
-        .hero-badge{background:rgba(255,255,255,.15);padding:4px 12px;border-radius:999px;font-size:var(--text-sm);font-weight:500}
-        .hero-stats{display:grid;gap:var(--space-3)}
-        .stat-card{background:rgba(255,255,255,.08);padding:var(--space-3);border-radius:8px;text-align:center}
-        .stat-number{font-weight:700;font-size:1.25rem}
-        .tool-workspace{background:var(--color-surface);border-radius:12px;padding:var(--space-5);box-shadow:0 8px 30px rgba(0,0,0,.06)}
-        .workspace-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:var(--space-3);border-bottom:1px solid var(--color-border);padding-bottom:var(--space-3)}
-        .workspace-header h2{margin:0;font-size:1.25rem}
-        .upload-area{border:2px dashed var(--color-border);border-radius:12px;padding:var(--space-6);text-align:center;cursor:pointer;transition:all .18s ease;background-color:var(--color-bg-alt);display:block}
-        .upload-area:hover{border-color:var(--color-primary);background-color:rgba(37,99,235,.04);transform:translateY(-2px)}
-        .upload-area svg{width:56px;height:56px;color:var(--color-primary);margin-bottom:var(--space-3)}
-        #settings-panel{display:none;margin-top:var(--space-4)}
-        #settings-panel.show{display:block}
-        .preview-wrap{margin-bottom:var(--space-4);text-align:center;background:var(--color-bg-alt);border-radius:8px;padding:var(--space-3)}
-        .preview-wrap canvas{max-width:100%;border-radius:8px;display:block;margin:0 auto}
-        .scale-options{display:flex;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-3)}
-        .scale-btn{padding:8px 16px;border-radius:6px;border:1px solid var(--color-border);background:var(--color-bg-alt);cursor:pointer;font-size:var(--text-sm);font-weight:500;transition:all .15s ease}
-        .scale-btn:hover{border-color:var(--color-primary);color:var(--color-primary)}
-        .scale-btn.active{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}
-        .dim-inputs{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3);margin-bottom:var(--space-3)}
-        .dim-inputs .form-group{margin-bottom:0}
-        .dim-inputs .form-label{font-size:var(--text-sm);font-weight:600;margin-bottom:4px;display:block}
-        .dim-inputs input{width:100%;padding:8px 10px;border:1px solid var(--color-border);border-radius:6px;font-size:var(--text-sm);box-sizing:border-box}
-        .btn-row{display:flex;gap:var(--space-3);margin-top:var(--space-3)}
-        .btn-row button{flex:1}
-        .progress-section{display:none;margin-top:var(--space-4)}
-        .comparison-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3);margin-top:var(--space-3)}
-        .comparison-box{background:var(--color-bg-alt);border-radius:8px;padding:var(--space-3);text-align:center}
-        .comparison-box img{max-width:100%;border-radius:6px}
-        .comparison-label{font-weight:600;font-size:var(--text-sm);margin-bottom:var(--space-2);color:var(--color-text-light)}
-        .privacy-badge{display:flex;align-items:center;gap:var(--space-2);background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;padding:10px 16px;border-radius:8px;margin-top:var(--space-4);font-size:var(--text-sm);font-weight:500}
-        .privacy-badge i{font-size:1rem}
-        .honesty-notice{background:#fef3c7;border:1px solid #fde68a;color:#92400e;padding:10px 16px;border-radius:8px;margin-top:var(--space-3);font-size:var(--text-sm);font-weight:500}
-        @media(max-width:900px){.hero-content{grid-template-columns:1fr;gap:var(--space-3)}.hero-text h1{font-size:1.6rem}.tool-workspace{padding:var(--space-4)}.comparison-grid{grid-template-columns:1fr}.upload-area{padding:var(--space-4);min-height:120px}.upload-area svg{width:48px;height:48px}.scale-options{justify-content:center}}
-        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .3s}
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--color-primary);color:#fff;padding:8px 16px;z-index:100;transition:top .25s cubic-bezier(.4,0,.2,1)}
         .skip-link:focus{top:0}
+
+        .hero{background:#0f172a;padding:40px 0 28px;text-align:center}
+        .hero h1{font-size:40px;font-weight:800;color:#fff;line-height:1.2;margin:0 0 12px}
+        .hero h1 .gradient-text{background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-subtitle{font-size:16px;color:#94a3b8;line-height:1.5;margin:0 0 24px}
+        .trust-badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .trust-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);padding:6px 14px;border-radius:9999px;font-size:13px;font-weight:500;color:#cbd5e1;transition:background .2s}
+        .trust-badge:hover{background:rgba(255,255,255,.1)}
+        .trust-badge svg{width:14px;height:14px;color:#60a5fa}
+
+        .tool-card{background:#fff;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.04);border:1px solid #e2e8f0;padding:24px;margin-bottom:48px;overflow:visible}
+        .card-header{display:flex;justify-content:space-between;align-items:center}
+        .card-header-left{display:flex;align-items:center;gap:10px}
+        .card-header-left svg{width:18px;height:18px;color:var(--color-primary)}
+        .card-header-left h2{font-size:16.8px;font-weight:600;margin:0;color:#0f172a}
+        .card-divider{height:1px;background:#e2e8f0;margin:16px 0 0}
+
+        .upload-zone{display:block;margin-top:20px}
+        .upload-area{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 24px;border:2px dashed #e2e8f0;border-radius:16px;background:#f8fafc;cursor:pointer;transition:border-color .2s,background .2s;text-decoration:none;color:inherit}
+        .upload-area:hover{border-color:#2563eb;background:rgba(37,99,235,.04)}
+        .upload-area:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.15)}
+        .upload-area.dragover{border-color:#2563eb;background:rgba(37,99,235,.08);box-shadow:0 0 0 4px rgba(37,99,235,.15)}
+        .upload-icon-wrap{width:72px;height:72px;border-radius:16px;background:linear-gradient(135deg,#2563eb,#7c3aed);display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:transform .25s cubic-bezier(.4,0,.2,1)}
+        .upload-area:hover .upload-icon-wrap{transform:scale(1.05)}
+        .upload-icon-wrap svg{width:32px;height:32px;color:#fff;stroke-width:2}
+        .upload-area h3{font-size:16px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .upload-area .upload-subtext{font-size:12px;color:#64748b;margin:0 0 16px}
+        .upload-area .upload-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;font-size:14px;font-weight:500;color:#0f172a;cursor:pointer;transition:all .2s}
+        .upload-area .upload-btn:hover{border-color:#2563eb;color:#2563eb}
+
+        .settings-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin-top:20px}
+        .settings-card-header{padding:16px 20px;border-bottom:1px solid #e2e8f0}
+        .settings-card-header h3{font-size:15px;font-weight:600;margin:0;color:#0f172a}
+        .settings-card-body{padding:20px}
+
+        .preview-wrap{background:#f8fafc;border-radius:12px;padding:16px;text-align:center;margin-bottom:20px;max-height:360px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+        .preview-wrap canvas,.preview-wrap img{max-width:100%;max-height:320px;border-radius:8px;display:block;margin:0 auto;object-fit:contain}
+
+        .action-bar{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:20px}
+        .action-bar .btn-primary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:#2563eb;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .action-bar .btn-primary:hover:not(:disabled){background:#1d4ed8;transform:translateY(-1px);box-shadow:0 8px 25px rgba(37,99,235,.35)}
+        .action-bar .btn-primary:disabled{opacity:.5;cursor:not-allowed}
+        .action-bar .btn-secondary{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;background:#fff;color:#0f172a;border:1px solid #e2e8f0;border-radius:12px;font-size:15px;font-weight:500;cursor:pointer;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .action-bar .btn-secondary:hover{border-color:#cbd5e1;background:#f8fafc;transform:translateY(-1px)}
+        .result-success-icon{width:72px;height:72px;border-radius:50%;background:#f0fdf4;border:2px solid #bbf7d0;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;animation:resultPop .4s cubic-bezier(.4,0,.2,1)}
+        @keyframes resultPop{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
+        .result-download-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:#16a34a;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;transition:all .2s cubic-bezier(.4,0,.2,1)}
+        .result-download-btn:hover{background:#15803d;transform:translateY(-1px);box-shadow:0 8px 25px rgba(22,163,74,.35)}
+        .result-dims{font-family:'JetBrains Mono',monospace}
+
+        .progress-section{display:none;padding:20px;background:#f8fafc;border-radius:12px;margin-top:20px}
+        .progress-section.show{display:block}
+        .progress-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+        .progress-spinner{width:24px;height:24px;border:3px solid #e2e8f0;border-top-color:#2563eb;border-radius:50%;animation:spin .6s linear infinite}
+        @keyframes spin{to{transform:rotate(360deg)}}
+        .progress-phase{font-size:14px;font-weight:500;color:#0f172a;flex:1}
+        .progress-pct{font-size:14px;font-weight:600;color:#2563eb;font-family:'JetBrains Mono',monospace}
+        .progress-track{height:8px;background:#e2e8f0;border-radius:9999px;overflow:hidden}
+        .progress-fill{height:100%;background:linear-gradient(90deg,#2563eb,#7c3aed);border-radius:9999px;transition:width .4s cubic-bezier(.4,0,.2,1);width:0}
+
+        .privacy-badge{display:flex;align-items:center;gap:8px;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;padding:10px 16px;border-radius:10px;margin-top:16px;font-size:13px;font-weight:500}
+        .privacy-badge svg{width:16px;height:16px;flex-shrink:0}
+
+        .warning-banner{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;margin-top:12px;font-size:13px;font-weight:500}
+        .warning-banner svg{width:16px;height:16px;flex-shrink:0}
+        .warning-banner.warning-upscale{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+
+        .tool-workspace{max-width:900px;margin:0 auto;padding:0 24px}
+        .related-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .related-section .section-intro{font-size:14px;color:#64748b;text-align:center;margin-bottom:24px}
+        .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .related-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none;color:inherit;display:flex;flex-direction:column}
+        .related-card:hover{border-color:#2563eb;box-shadow:0 8px 24px rgba(37,99,235,.1);transform:translateY(-3px)}
+        .related-card .rc-icon{width:32px;height:32px;margin-bottom:12px}
+        .related-card .rc-icon svg{width:32px;height:32px;color:#2563eb;transition:transform .25s cubic-bezier(.4,0,.2,1)}
+        .related-card:hover .rc-icon svg{transform:scale(1.1)}
+        .related-card h4{font-size:15px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .related-card p{font-size:13px;color:#64748b;margin:0 0 16px;flex:1}
+        .related-card .rc-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#2563eb;margin-top:auto;transition:gap .2s}
+        .related-card:hover .rc-btn{gap:10px}
+
+        .how-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .step-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:24px;text-align:center;transition:border-color .2s,box-shadow .2s}
+        .step-card:hover{border-color:rgba(37,99,235,.2);box-shadow:0 2px 8px rgba(37,99,235,.06)}
+        .step-num{width:40px;height:40px;border-radius:50%;background:#eff6ff;color:#2563eb;font-size:16px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-bottom:12px;transition:background .2s}
+        .step-card:hover .step-num{background:#dbeafe}
+        .step-card h4{font-size:15px;font-weight:600;margin:0 0 4px;color:#0f172a}
+        .step-card p{font-size:13px;color:#64748b;margin:0}
+
+        .faq-section{max-width:900px;margin:0 auto;padding:0 24px}
+        .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+        .faq-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;transition:border-color .2s}
+        .faq-card:hover{border-color:#cbd5e1}
+        .faq-card h4{font-size:14px;font-weight:600;margin:0 0 8px;color:#0f172a}
+        .faq-card p{font-size:13px;color:#64748b;margin:0;line-height:1.6}
+
+        .section-heading{text-align:center;margin-bottom:32px}
+        .section-heading h2{font-size:28.8px;font-weight:700;color:#0f172a;margin:0 0 4px}
+
+        .honesty-notice{display:flex;align-items:center;gap:8px;padding:10px 16px;background:#fffbeb;border:1px solid #fde68a;border-radius:10px;margin-top:12px;font-size:13px;font-weight:500;color:#92400e}
+        .honesty-notice svg{width:16px;height:16px;flex-shrink:0}
+        .scale-options{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+        .scale-btn{padding:8px 18px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;cursor:pointer;font-size:14px;font-weight:600;color:#0f172a;transition:all .15s ease;font-family:'JetBrains Mono',monospace}
+        .scale-btn:hover{border-color:#2563eb;color:#2563eb}
+        .scale-btn.active{background:#2563eb;color:#fff;border-color:#2563eb}
+        .dim-inputs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+        .dim-inputs .form-group{margin-bottom:0}
+        .dim-inputs .form-label{font-size:13px;font-weight:600;margin-bottom:4px;display:block;color:#0f172a}
+        .dim-inputs input[type="number"]{width:100%;padding:10px 14px;border:1px solid #e2e8f0;border-radius:10px;font-size:14px;box-sizing:border-box;color:#0f172a;transition:border-color .15s;outline:none}
+        .dim-inputs input[type="number"]:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+        @media(max-width:768px){.scale-options{justify-content:center}}
+
+        @media(max-width:1024px){.related-grid{grid-template-columns:repeat(2,1fr)}.faq-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:768px){
+            .hero{padding:32px 0 20px}.hero h1{font-size:28px}.hero-subtitle{font-size:14px;margin-bottom:20px}
+            .trust-badges{gap:8px}.trust-badge{padding:4px 10px;font-size:12px}
+            .tool-card{padding:16px;margin-bottom:32px}
+            .action-bar{grid-template-columns:1fr}
+            .related-grid,.steps-grid,.faq-grid{grid-template-columns:1fr}
+            .upload-area{padding:32px 16px}
+            .upload-icon-wrap{width:60px;height:60px;border-radius:14px}
+            .upload-icon-wrap svg{width:28px;height:28px}
+            .settings-card-body{padding:16px}
+            .step-card{padding:20px}
+        }
+        @media(max-width:480px){.hero{padding:24px 0 16px}.hero h1{font-size:24px}.related-grid{gap:12px}}
+        @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
     </style>
+
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"WebApplication","name":"Image Upscaler","url":"https://gotoolly.com/tools/image-upscaler","description":"Upscale images up to 4x using browser-based interpolation. Enlarge JPG, PNG, WebP images with canvas smoothing.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (Web Browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["Free to use","No account required","Client-side processing","Privacy-focused","2x, 3x, 4x upscale","Custom dimensions","Before/after comparison"]}
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Image Upscaler",
+        "url": "https://gotoolly.com/tools/image-upscaler",
+        "description": "Upscale images up to 4x using browser-based interpolation. Enlarge JPG, PNG, WebP images with canvas smoothing. Free, private, no uploads.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any (Web Browser)",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "featureList": ["Free to use", "No account required", "Client-side processing", "Privacy-focused", "2x, 3x, 4x upscale", "Custom dimensions"]
+    }
     </script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gotoolly.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://gotoolly.com/tools"},{"@type":"ListItem","position":3,"name":"Image Upscaler","item":"https://gotoolly.com/tools/image-upscaler"}]}
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gotoolly.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://gotoolly.com/tools"},
+            {"@type": "ListItem", "position": 3, "name": "Image Upscaler", "item": "https://gotoolly.com/tools/image-upscaler"}
+        ]
+    }
     </script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does browser-based upscaling work?","acceptedAnswer":{"@type":"Answer","text":"Browser-based upscaling uses the HTML5 Canvas API to draw the image at a larger size with bicubic interpolation smoothing. This is not AI super-resolution — it interpolates existing pixels, so fine details cannot be magically created."}},{"@type":"Question","name":"What is the maximum upscale factor?","acceptedAnswer":{"@type":"Answer","text":"You can upscale by 2x, 3x, or 4x presets, or enter custom width and height values up to 8192 pixels."}},{"@type":"Question","name":"Does upscaling reduce image quality?","acceptedAnswer":{"@type":"Answer","text":"Upscaling enlarges the pixel grid and fills in gaps with interpolated color values. The image will appear larger but sharpness and detail are limited by the original resolution. Very large upscales will look blurry."}},{"@type":"Question","name":"What image formats are supported?","acceptedAnswer":{"@type":"Answer","text":"JPG, PNG, and WebP images are supported. All processing is done locally in your browser."}},{"@type":"Question","name":"Is my image uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. All upscaling is performed entirely in your browser. Your images never leave your device."}}]}
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "How does browser-based upscaling work?", "acceptedAnswer": {"@type": "Answer", "text": "Browser-based upscaling uses the HTML5 Canvas API to draw the image at a larger size with bicubic interpolation smoothing. This is not AI super-resolution — it interpolates existing pixels, so fine details cannot be magically created."}},
+            {"@type": "Question", "name": "What is the maximum upscale factor?", "acceptedAnswer": {"@type": "Answer", "text": "You can upscale by 2x, 3x, or 4x presets, or enter custom width and height values up to 8192 pixels."}},
+            {"@type": "Question", "name": "Does upscaling reduce image quality?", "acceptedAnswer": {"@type": "Answer", "text": "Upscaling enlarges the pixel grid and fills in gaps with interpolated color values. The image will appear larger but sharpness and detail are limited by the original resolution. Very large upscales will look blurry."}},
+            {"@type": "Question", "name": "What image formats are supported?", "acceptedAnswer": {"@type": "Answer", "text": "JPG, PNG, and WebP images are supported. All processing is done locally in your browser."}}
+        ]
+    }
     </script>
 
     <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
 </head>
 <body>
-<a href="#main-content" class="skip-link">Skip to main content</a>
-<header class="site-header"><div class="container"><div class="header-content"><a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a><nav class="main-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="/about" class="nav-link">About</a><a href="/contact" class="nav-link">Contact</a></nav><button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></div><div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="/about" class="nav-link">About</a><a href="/contact" class="nav-link">Contact</a></nav></div></div></header>
-<main id="main-content" class="main-content"><div class="container">
-    <div class="hero-section"><div class="hero-content"><div class="hero-text"><h1>Image Upscaler</h1><p>Enlarge images while maintaining smooth edges using browser-based interpolation. Not AI super-resolution — an honest, free upscaling tool.</p><div class="hero-badges"><span class="hero-badge">100% Private</span><span class="hero-badge">No Upload</span><span class="hero-badge">Free Forever</span></div></div><div class="hero-stats"><div class="stat-card"><div class="stat-number">4x</div><div class="stat-label">Max Scale</div></div><div class="stat-card"><div class="stat-number">Local</div><div class="stat-label">No uploads</div></div></div></div></div>
-    <div class="tool-workspace">
-        <div class="workspace-header"><div><h2>Upscale Image</h2><p style="margin:0;color:var(--color-text-light)">Upload an image, choose scale, and download the result</p></div><a href="../guides/image-upscaler" style="color:var(--color-primary);font-size:var(--text-sm);font-weight:500;text-decoration:none">Read Guide <i class="fas fa-arrow-right" style="font-size:.75rem"></i></a></div>
-        <label for="file-input" class="upload-area" style="margin:0;display:block;width:100%;box-sizing:border-box;position:relative">
-            <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp" style="position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;z-index:2" aria-label="Select an image to upscale">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-            <p style="margin:0;font-weight:600">Drag an image here or <span style="color:var(--color-primary);text-decoration:underline;cursor:pointer">click to browse</span></p>
-            <p style="margin:var(--space-2) 0 0;font-size:var(--text-sm);color:var(--color-text-light)">JPG, PNG, or WebP — up to 25 MB</p>
-        </label>
-        <div id="settings-panel">
-            <div class="honesty-notice"><i class="fas fa-info-circle"></i> Browser-based upscaling uses interpolation — not AI super-resolution. Results depend on image quality. Fine details cannot be magically created.</div>
-            <div class="preview-wrap"><div id="preview-container"></div><p class="original-dims" style="font-size:var(--text-sm);color:var(--color-text-light);margin-top:var(--space-2);text-align:center">Original: <span id="original-dims">0 x 0</span></p></div>
-            <p style="font-weight:600;margin-bottom:var(--space-2);font-size:var(--text-sm)">Upscale Factor</p>
-            <div class="scale-options">
-                <button class="scale-btn active" data-scale="2">2x</button>
-                <button class="scale-btn" data-scale="3">3x</button>
-                <button class="scale-btn" data-scale="4">4x</button>
-                <button class="scale-btn" data-scale="custom">Custom</button>
-            </div>
-            <div class="dim-inputs" id="custom-dims" style="display:none">
-                <div class="form-group"><label class="form-label" for="upscale-width">Width (px)</label><input type="number" id="upscale-width" min="1" max="8192" value="1920"></div>
-                <div class="form-group"><label class="form-label" for="upscale-height">Height (px)</label><input type="number" id="upscale-height" min="1" max="8192" value="1080"></div>
-            </div>
-            <div class="btn-row">
-                <button id="apply-btn" class="btn btn-primary btn-lg" disabled><i class="fas fa-expand-alt"></i> Upscale &amp; Download</button>
-                <button id="reset-btn" class="btn btn-outline btn-lg"><i class="fas fa-redo"></i> Reset</button>
-            </div>
-            <div id="progress-section" class="progress-section">
-                <div class="progress-bar" style="height:6px;background:var(--color-border);border-radius:3px;overflow:hidden"><div id="progress-fill" style="width:0%;background:var(--color-primary);height:100%;transition:width .2s"></div></div>
-                <div style="display:flex;justify-content:space-between;margin-top:var(--space-2);font-size:var(--text-sm)"><span id="progress-text">Processing...</span><span id="progress-percent">0%</span></div>
-            </div>
-            <div id="comparison-area" style="display:none;margin-top:var(--space-4)">
-                <p style="font-weight:600;margin-bottom:var(--space-2);font-size:var(--text-sm)">Before &amp; After Comparison</p>
-                <div class="comparison-grid">
-                    <div class="comparison-box"><div class="comparison-label">Before</div><img id="before-img" alt="Original"></div>
-                    <div class="comparison-box"><div class="comparison-label">After</div><img id="after-img" alt="Upscaled"></div>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header"><div class="container"><div class="header-content"><a href="/" class="logo"><img src="../assets/images/logo.svg" alt="GoToolly" class="logo-svg"><span class="logo-text">GoToolly</span></a><nav class="main-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="/about" class="nav-link">About</a><a href="/contact" class="nav-link">Contact</a></nav><button class="mobile-menu-button" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg></button></div><div class="mobile-menu"><nav class="mobile-nav"><a href="/" class="nav-link">Home</a><a href="/tools" class="nav-link active">Tools</a><a href="/guides" class="nav-link">Guides</a><a href="/about" class="nav-link">About</a><a href="/contact" class="nav-link">Contact</a></nav></div></div></header>
+
+    <main id="main-content">
+        <section class="hero">
+            <div class="container">
+                <h1>Upscale <span class="gradient-text">images online</span></h1>
+                <p class="hero-subtitle">Enlarge images up to 4x using browser-based interpolation. Supports JPG, PNG, WebP. Works entirely in your browser.</p>
+                <div class="trust-badges">
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        100% Private
+                    </span>
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                        No uploads
+                    </span>
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Free &amp; unlimited
+                    </span>
                 </div>
             </div>
-            <div class="privacy-badge"><i class="fas fa-shield-alt"></i><span>Your images never leave your device. Processing happens locally inside your browser.</span></div>
+        </section>
+
+        <div class="container">
+            <div class="tool-workspace">
+                <div class="tool-card" role="region" aria-label="Image Upscaler workspace">
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                            <h2>Upscale Image</h2>
+                        </div>
+                    </div>
+                    <div class="card-divider"></div>
+
+                    <div class="workspace-body">
+                        <div class="upload-zone">
+                            <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp" style="display:none" aria-label="Select an image to upscale">
+                            <label for="file-input" class="upload-area" role="button" tabindex="0">
+                                <div class="upload-icon-wrap">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                                </div>
+                                <h3>Drop your image here</h3>
+                                <p class="upload-subtext">JPG, PNG, or WebP &mdash; single image at a time.</p>
+                                <span class="upload-btn">Select image</span>
+                            </label>
+                        </div>
+
+                        <div id="settings-panel">
+                            <div class="honesty-notice">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                                Browser-based upscaling uses interpolation — not AI super-resolution. Results depend on image quality. Fine details cannot be magically created.
+                            </div>
+
+                            <div class="settings-card">
+                                <div class="settings-card-header"><h3>Preview</h3></div>
+                                <div class="settings-card-body">
+                                    <div class="preview-wrap">
+                                        <div id="preview-container"></div>
+                                        <p style="font-size:13px;color:#64748b;margin-top:8px;text-align:center">Original: <span id="original-dims">0 x 0</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="settings-card">
+                                <div class="settings-card-header"><h3>Upscale Settings</h3></div>
+                                <div class="settings-card-body">
+                                    <p style="font-weight:600;margin-bottom:8px;font-size:13px;color:#0f172a">Upscale Factor</p>
+                                    <div class="scale-options">
+                                        <button class="scale-btn active" data-scale="2">2x</button>
+                                        <button class="scale-btn" data-scale="3">3x</button>
+                                        <button class="scale-btn" data-scale="4">4x</button>
+                                        <button class="scale-btn" data-scale="custom">Custom</button>
+                                    </div>
+                                    <div class="dim-inputs" id="custom-dims" style="display:none">
+                                        <div class="form-group">
+                                            <label class="form-label" for="upscale-width">Width (px)</label>
+                                            <input type="number" id="upscale-width" min="1" max="8192" value="1920">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="upscale-height">Height (px)</label>
+                                            <input type="number" id="upscale-height" min="1" max="8192" value="1080">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="action-bar" style="grid-template-columns:1fr 1fr">
+                                <button class="btn-primary" id="apply-btn" disabled>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                                    Process Image
+                                </button>
+                                <button class="btn-secondary" id="reset-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+                                    Reset
+                                </button>
+                            </div>
+
+                            <div class="progress-section" id="progress-section">
+                                <div class="progress-top">
+                                    <div class="progress-spinner"></div>
+                                    <span class="progress-phase" id="progress-text">Processing...</span>
+                                    <span class="progress-pct" id="progress-percent">0%</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" id="progress-fill"></div>
+                                </div>
+                            </div>
+
+                            <div id="result-section" style="display:none">
+                                <div class="settings-card" style="margin-top:20px">
+                                    <div class="settings-card-header"><h3>Upscale Complete</h3></div>
+                                    <div class="settings-card-body" style="text-align:center">
+                                        <div class="result-success-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="48" height="48"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                        </div>
+                                        <p style="font-size:16px;font-weight:600;color:#0f172a;margin:0 0 4px">Image upscaled successfully!</p>
+                                        <p id="result-info" class="result-dims" style="font-size:13px;color:#64748b;margin:0 0 16px"></p>
+                                        <img id="result-preview" src="" alt="Upscaled image preview" style="display:block;max-width:100%;max-height:400px;border-radius:8px;margin:0 auto 16px;border:1px solid #e2e8f0">
+                                        <div style="text-align:center"><a id="download-result-btn" href="#" download="" class="result-download-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Upscaled Image</a></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="privacy-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                                Your images never leave your device. Processing happens locally inside your browser.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <section class="content-section">
-        <div class="section-header"><h2>How It Works</h2></div>
-        <div class="tools-grid" style="grid-template-columns:repeat(3,1fr)">
-            <div class="card tool-card"><h3>1. Upload Image</h3><p>Select a JPG, PNG, or WebP image from your device. The image stays local.</p></div>
-            <div class="card tool-card"><h3>2. Choose Scale</h3><p>Pick 2x, 3x, 4x or set custom dimensions. Active sharpness enhancement applied.</p></div>
-            <div class="card tool-card"><h3>3. Download</h3><p>Preview the result in a side-by-side comparison, then download the upscaled image.</p></div>
-        </div>
-    </section>
-    <section class="content-section"><div class="section-header"><h2>Frequently Asked Questions</h2></div>
-        <div class="faq-list">
-            <div class="faq-item"><h3>How does browser-based upscaling work?</h3><p>Browser-based upscaling uses the HTML5 Canvas API to draw the image at a larger size with bicubic interpolation smoothing. This is not AI super-resolution — it interpolates existing pixels, so fine details cannot be magically created.</p></div>
-            <div class="faq-item"><h3>What is the maximum upscale factor?</h3><p>You can upscale by 2x, 3x, or 4x presets, or enter custom width and height values up to 8192 pixels.</p></div>
-            <div class="faq-item"><h3>Does upscaling reduce image quality?</h3><p>Upscaling enlarges the pixel grid and fills in gaps with interpolated color values. The image will appear larger but sharpness and detail are limited by the original resolution. Very large upscales will look blurry.</p></div>
-            <div class="faq-item"><h3>Is this AI super-resolution?</h3><p>No. This tool uses standard canvas interpolation, not AI or machine learning. For AI upscaling, dedicated desktop software is recommended. This tool is useful for quick enlargements where perfect detail is not required.</p></div>
-        </div>
-    </section>
-    <section class="content-section"><div class="section-header"><h2>Related Tools</h2></div><div class="tools-grid">
-        <div class="card tool-card"><h3>Image Editor</h3><p>Crop, resize, rotate, and flip images with ease.</p><div class="card-footer"><a href="./image-editor" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-        <div class="card tool-card"><h3>Image Resizer</h3><p>Resize images to exact dimensions while maintaining quality.</p><div class="card-footer"><a href="./image-resizer" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-        <div class="card tool-card"><h3>Image Compressor</h3><p>Reduce image file sizes without quality loss.</p><div class="card-footer"><a href="./image-compressor" class="btn btn-primary btn-sm">Use Tool</a></div></div>
-    </div></section>
-</div></main>
-<footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p>
+
+        <section class="related-section content-section" style="margin-top:48px">
+            <div class="section-heading">
+                <h2>Related Tools</h2>
+                <p class="section-intro">After upscaling, you might also need...</p>
+            </div>
+            <div class="related-grid">
+                <a href="./image-editor.html" class="related-card">
+                    <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+                    <h4>Image Editor</h4>
+                    <p>Edit, crop, resize, and apply filters to images.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./image-resizer.html" class="related-card">
+                    <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+                    <h4>Image Resizer</h4>
+                    <p>Resize images to exact dimensions while maintaining quality.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+                <a href="./image-compressor.html" class="related-card">
+                    <div class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+                    <h4>Image Compressor</h4>
+                    <p>Reduce image file sizes without quality loss.</p>
+                    <span class="rc-btn">Use tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                </a>
+            </div>
+        </section>
+
+        <section class="how-section content-section" style="margin-top:48px">
+            <div class="section-heading"><h2>How It Works</h2></div>
+            <div class="steps-grid">
+                <div class="step-card"><div class="step-num">1</div><h4>Upload your image</h4><p>Drag and drop or select a JPG, PNG, or WebP file.</p></div>
+                <div class="step-card"><div class="step-num">2</div><h4>Choose scale factor</h4><p>Pick 2x, 3x, 4x, or enter custom dimensions.</p></div>
+                <div class="step-card"><div class="step-num">3</div><h4>Download</h4><p>Preview your upscaled image and download it instantly.</p></div>
+            </div>
+        </section>
+
+        <section class="faq-section content-section" style="margin-top:48px">
+            <div class="section-heading"><h2>Frequently Asked Questions</h2></div>
+            <div class="faq-grid">
+                <div class="faq-card"><h4>How does browser-based upscaling work?</h4><p>Browser-based upscaling uses the HTML5 Canvas API to draw the image at a larger size with bicubic interpolation smoothing. This is not AI super-resolution — it interpolates existing pixels, so fine details cannot be magically created.</p></div>
+                <div class="faq-card"><h4>What is the maximum upscale factor?</h4><p>You can upscale by 2x, 3x, or 4x presets, or enter custom width and height values up to 8192 pixels.</p></div>
+                <div class="faq-card"><h4>Does upscaling reduce image quality?</h4><p>Upscaling enlarges the pixel grid and fills in gaps with interpolated color values. The image will appear larger but sharpness and detail are limited by the original resolution. Very large upscales will look blurry.</p></div>
+                <div class="faq-card"><h4>What image formats are supported?</h4><p>JPG, PNG, and WebP images are supported. All processing is done locally in your browser.</p></div>
+            </div>
+            <div style="text-align:center;margin-top:var(--space-8)">
+                <a href="/guides/image-upscaler" style="color:var(--color-primary);font-weight:600;font-size:var(--text-sm);text-decoration:none;transition:opacity .2s">Read Guide: How to Upscale Images Online &#10132;</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo"><div class="container"><div class="footer-grid"><div class="footer-section"><h3>GoToolly</h3><p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-4)">Free, privacy-focused online tools that work entirely in your browser.</p>
                     <div class="footer-social">
                         <a href="https://x.com/GoToolly" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                         <a href="https://www.facebook.com/profile.php?id=61591898344203" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                        <a href="https://linkedin.com/in/go-toolly-426b67422" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                        <a href="https://www.youtube.com/@GoToolly" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                         <a href="https://www.instagram.com/gotoolly/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
                         <a href="https://www.tiktok.com/@gotoolly26" target="_blank" rel="noopener" aria-label="TikTok"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
                         <a href="https://www.reddit.com/user/Adventurous-Tip-2009/" target="_blank" rel="noopener" aria-label="Reddit"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg></a>
                     </div></div><div class="footer-section"><h3>Popular Tools</h3><ul class="footer-links"><li><a href="/tools/image-compressor.html">Image Compressor</a></li><li><a href="/tools/pdf-compressor.html">PDF Compressor</a></li><li><a href="/tools/word-counter.html">Word Counter</a></li><li><a href="/tools/qr-code-generator.html">QR Code Generator</a></li><li><a href="/tools/password-generator.html">Password Generator</a></li><li><a href="/tools">View All Tools</a></li></ul></div><div class="footer-section"><h3>Resources</h3><ul class="footer-links"><li><a href="/guides">Guides</a></li><li><a href="/tools">All Tools</a></li><li><a href="/about">About Us</a></li><li><a href="/contact">Contact</a></li></ul></div><div class="footer-section"><h3>Legal</h3><ul class="footer-links"><li><a href="/legal/privacy-policy">Privacy Policy</a></li><li><a href="/legal/terms-of-service">Terms of Service</a></li><li><a href="/legal/disclaimer">Disclaimer</a></li></ul></div></div><div class="footer-bottom"><div class="copyright">&copy; <span id="current-year">2026</span> GoToolly. All rights reserved.</div><div class="legal-links"><a href="/legal/privacy-policy">Privacy</a><a href="/legal/terms-of-service">Terms</a><a href="/legal/disclaimer">Disclaimer</a><a href="/contact">Contact</a></div></div></div></footer>
-<script defer src="../assets/js/main.min.js"></script>
-<script>document.getElementById('current-year').textContent=new Date().getFullYear();if('serviceWorker'in navigator){navigator.serviceWorker.register('/sw.js').then(function(r){console.log('[ServiceWorker] Registered:',r.scope)}).catch(function(e){console.warn('[ServiceWorker] Registration failed:',e)})}</script>
-<script defer src="../assets/js/tools/image-upscaler.min.js"></script>
+
+    <script defer src="../assets/js/main.min.js"></script>
+    <script>document.getElementById('current-year').textContent=new Date().getFullYear();if('serviceWorker'in navigator){navigator.serviceWorker.register('/sw.js')}</script>
+    <script defer src="../assets/js/tools/image-upscaler.min.js"></script>
 </body>
 </html>

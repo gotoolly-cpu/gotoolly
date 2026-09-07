@@ -1,22 +1,27 @@
+/* ============================================
+   GO TOOLLY v2.0 - LOAN CALCULATOR
+   ============================================ */
+(function(){
+'use strict';
 document.addEventListener('DOMContentLoaded', function() {
-    const amount = document.getElementById('lc-amount');
-    const rate = document.getElementById('lc-rate');
-    const term = document.getElementById('lc-term');
-    const calcBtn = document.getElementById('lc-calculate-btn');
-    const resultsDiv = document.getElementById('lc-results');
-    const monthlyEl = document.getElementById('lc-monthly');
-    const totalInterestEl = document.getElementById('lc-total-interest');
-    const totalRepaymentEl = document.getElementById('lc-total-repayment');
-    const scheduleDiv = document.getElementById('lc-schedule');
-    const scheduleBody = document.getElementById('lc-schedule-body');
-    const copyBtn = document.getElementById('lc-copy-btn');
-    const printBtn = document.getElementById('lc-print-btn');
-    const clearBtn = document.getElementById('lc-clear-btn');
+    var amount = document.getElementById('lc-amount');
+    var rate = document.getElementById('lc-rate');
+    var term = document.getElementById('lc-term');
+    var calcBtn = document.getElementById('lc-calculate-btn');
+    var resultsDiv = document.getElementById('lc-results');
+    var monthlyEl = document.getElementById('lc-monthly');
+    var totalInterestEl = document.getElementById('lc-total-interest');
+    var totalRepaymentEl = document.getElementById('lc-total-repayment');
+    var scheduleDiv = document.getElementById('lc-schedule');
+    var scheduleBody = document.getElementById('lc-schedule-body');
+    var copyBtn = document.getElementById('lc-copy-btn');
+    var printBtn = document.getElementById('lc-print-btn');
+    var clearBtn = document.getElementById('lc-clear-btn');
 
     function calculateLoan() {
-        const P = parseFloat(amount.value);
-        const annualRate = parseFloat(rate.value);
-        const years = parseFloat(term.value);
+        var P = parseFloat(amount.value);
+        var annualRate = parseFloat(rate.value);
+        var years = parseFloat(term.value);
 
         if (isNaN(P) || isNaN(annualRate) || isNaN(years) || P <= 0 || annualRate < 0 || years <= 0) {
             resultsDiv.style.display = 'none';
@@ -24,18 +29,18 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const r = (annualRate / 100) / 12;
-        const n = years * 12;
+        var r = (annualRate / 100) / 12;
+        var n = years * 12;
 
-        let monthly;
+        var monthly;
         if (r === 0) {
             monthly = P / n;
         } else {
             monthly = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
         }
 
-        const totalRepayment = monthly * n;
-        const totalInterest = totalRepayment - P;
+        var totalRepayment = monthly * n;
+        var totalInterest = totalRepayment - P;
 
         monthlyEl.textContent = formatCurrency(monthly);
         totalInterestEl.textContent = formatCurrency(totalInterest);
@@ -48,13 +53,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function buildAmortizationSchedule(P, r, n, monthly) {
         scheduleBody.innerHTML = '';
-        let balance = P;
-        let totalPrincipal = 0;
-        let totalInterestPaid = 0;
+        var balance = P;
+        var totalPrincipal = 0;
+        var totalInterestPaid = 0;
 
-        for (let i = 1; i <= n; i++) {
-            let interestPayment;
-            let principalPayment;
+        for (var i = 1; i <= n; i++) {
+            var interestPayment;
+            var principalPayment;
             if (r === 0) {
                 interestPayment = 0;
                 principalPayment = P / n;
@@ -68,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
             totalPrincipal += principalPayment;
             totalInterestPaid += interestPayment;
 
-            const row = document.createElement('tr');
+            var row = document.createElement('tr');
             row.innerHTML = '<td>' + i + '</td>' +
                 '<td>' + formatCurrency(monthly) + '</td>' +
                 '<td>' + formatCurrency(principalPayment) + '</td>' +
@@ -77,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
             scheduleBody.appendChild(row);
         }
 
-        const totalRow = document.createElement('tr');
+        var totalRow = document.createElement('tr');
         totalRow.className = 'total-row';
         totalRow.innerHTML = '<td>Total</td>' +
             '<td>' + formatCurrency(monthly * n) + '</td>' +
@@ -102,27 +107,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
     copyBtn.addEventListener('click', function() {
         if (resultsDiv.style.display === 'none') return;
-        const text = 'Monthly Payment: ' + monthlyEl.textContent +
+        var text = 'Monthly Payment: ' + monthlyEl.textContent +
             '\nTotal Interest: ' + totalInterestEl.textContent +
             '\nTotal Repayment: ' + totalRepaymentEl.textContent;
-        navigator.clipboard.writeText(text).then(function() {
+        var done = function() {
             copyBtn.textContent = 'Copied!';
             setTimeout(function() { copyBtn.textContent = 'Copy Results'; }, 1500);
-        });
+        };
+        copyText(text, done);
     });
+
+    function copyText(text, done) {
+        var fallback = function () {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.top = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch (e) {}
+            ta.remove();
+            done();
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done, fallback);
+        } else {
+            fallback();
+        }
+    }
 
     printBtn.addEventListener('click', function() {
         if (resultsDiv.style.display === 'none') return;
-        const printContent = document.getElementById('lc-schedule');
+        var printContent = document.getElementById('lc-schedule');
         if (!printContent) return;
-        const originalContents = document.body.innerHTML;
-        const printStyles = Array.from(document.styleSheets).map(function(sheet) {
+        var originalContents = document.body.innerHTML;
+        var printStyles = Array.prototype.slice.call(document.styleSheets).map(function(sheet) {
             try {
                 return sheet.cssText ? '<style>' + sheet.cssText + '</style>' : '';
             } catch(e) { return ''; }
         }).join('');
 
-        const summary = '<div style="text-align:center;margin-bottom:20px">' +
+        var summary = '<div style="text-align:center;margin-bottom:20px">' +
             '<h1>Loan Calculator Results</h1>' +
             '<p>Loan Amount: ' + formatCurrency(parseFloat(amount.value)) + '</p>' +
             '<p>Annual Rate: ' + rate.value + '%</p>' +
@@ -146,3 +171,4 @@ document.addEventListener('DOMContentLoaded', function() {
         scheduleDiv.style.display = 'none';
     });
 });
+})();

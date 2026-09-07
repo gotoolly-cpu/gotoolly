@@ -1,19 +1,24 @@
+/* ============================================
+   GO TOOLLY v2.0 - UNIX TIMESTAMP CONVERTER
+   ============================================ */
+(function(){
+'use strict';
 document.addEventListener('DOMContentLoaded', function() {
-    const tsInput = document.getElementById('ts-input');
-    const tsFormat = document.getElementById('ts-format');
-    const tsUtc = document.getElementById('ts-utc');
-    const tsLocal = document.getElementById('ts-local');
-    const tsNowBtn = document.getElementById('ts-now-btn');
-    const tsCopyBtn = document.getElementById('ts-copy-btn');
-    const tsClearBtn = document.getElementById('ts-clear-btn');
-    const dtDatetime = document.getElementById('ts-datetime');
-    const dtSeconds = document.getElementById('dt-seconds');
-    const dtMilliseconds = document.getElementById('dt-milliseconds');
-    const dtNowBtn = document.getElementById('dt-now-btn');
-    const dtCopyBtn = document.getElementById('dt-copy-btn');
-    const currentTimestamp = document.getElementById('current-timestamp');
+    var tsInput = document.getElementById('ts-input');
+    var tsFormat = document.getElementById('ts-format');
+    var tsUtc = document.getElementById('ts-utc');
+    var tsLocal = document.getElementById('ts-local');
+    var tsNowBtn = document.getElementById('ts-now-btn');
+    var tsCopyBtn = document.getElementById('ts-copy-btn');
+    var tsClearBtn = document.getElementById('ts-clear-btn');
+    var dtDatetime = document.getElementById('ts-datetime');
+    var dtSeconds = document.getElementById('dt-seconds');
+    var dtMilliseconds = document.getElementById('dt-milliseconds');
+    var dtNowBtn = document.getElementById('dt-now-btn');
+    var dtCopyBtn = document.getElementById('dt-copy-btn');
+    var currentTimestamp = document.getElementById('current-timestamp');
 
-    let liveInterval;
+    var liveInterval;
 
     function updateCurrentTimestamp() {
         currentTimestamp.textContent = Math.floor(Date.now() / 1000);
@@ -21,13 +26,32 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCurrentTimestamp();
     liveInterval = setInterval(updateCurrentTimestamp, 1000);
 
+    function copyText(text, done) {
+        var fallback = function () {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.top = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch (e) {}
+            ta.remove();
+            done();
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done, fallback);
+        } else {
+            fallback();
+        }
+    }
+
     function convertTimestampToDate() {
-        const raw = tsInput.value.trim();
+        var raw = tsInput.value.trim();
         if (!raw) { resetTsToDate(); return; }
-        const num = parseFloat(raw);
+        var num = parseFloat(raw);
         if (isNaN(num)) { resetTsToDate(); return; }
-        const isMs = tsFormat.value === 'milliseconds';
-        const date = isMs ? new Date(num) : new Date(num * 1000);
+        var isMs = tsFormat.value === 'milliseconds';
+        var date = isMs ? new Date(num) : new Date(num * 1000);
         if (isNaN(date.getTime())) { resetTsToDate(); return; }
         tsUtc.textContent = date.toUTCString();
         tsLocal.textContent = date.toLocaleString();
@@ -39,9 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function convertDateToTimestamp() {
-        const val = dtDatetime.value;
+        var val = dtDatetime.value;
         if (!val) { resetDtToTs(); return; }
-        const date = new Date(val);
+        var date = new Date(val);
         if (isNaN(date.getTime())) { resetDtToTs(); return; }
         dtSeconds.textContent = Math.floor(date.getTime() / 1000);
         dtMilliseconds.textContent = date.getTime();
@@ -64,12 +88,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     tsCopyBtn.addEventListener('click', function() {
-        const text = 'UTC: ' + tsUtc.textContent + '\nLocal: ' + tsLocal.textContent;
         if (tsUtc.textContent === '--') return;
-        navigator.clipboard.writeText(text).then(function() {
+        var text = 'UTC: ' + tsUtc.textContent + '\nLocal: ' + tsLocal.textContent;
+        var done = function() {
             tsCopyBtn.textContent = 'Copied!';
             setTimeout(function() { tsCopyBtn.textContent = 'Copy Results'; }, 1500);
-        });
+        };
+        copyText(text, done);
     });
 
     tsClearBtn.addEventListener('click', function() {
@@ -79,23 +104,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     dtNowBtn.addEventListener('click', function() {
-        const now = new Date();
-        const offset = now.getTimezoneOffset();
-        const local = new Date(now.getTime() - offset * 60000);
+        var now = new Date();
+        var offset = now.getTimezoneOffset();
+        var local = new Date(now.getTime() - offset * 60000);
         dtDatetime.value = local.toISOString().slice(0, 16);
         convertDateToTimestamp();
     });
 
     dtCopyBtn.addEventListener('click', function() {
-        const text = 'Seconds: ' + dtSeconds.textContent + '\nMilliseconds: ' + dtMilliseconds.textContent;
         if (dtSeconds.textContent === '--') return;
-        navigator.clipboard.writeText(text).then(function() {
+        var text = 'Seconds: ' + dtSeconds.textContent + '\nMilliseconds: ' + dtMilliseconds.textContent;
+        var done = function() {
             dtCopyBtn.textContent = 'Copied!';
             setTimeout(function() { dtCopyBtn.textContent = 'Copy Results'; }, 1500);
-        });
+        };
+        copyText(text, done);
     });
-
-    function formatNumber(n) {
-        return n.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 2});
-    }
 });
+})();

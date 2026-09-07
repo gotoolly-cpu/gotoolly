@@ -1,28 +1,30 @@
 /* ============================================
-   GO TOOLLY - COLOR PICKER & CONVERTER
+   GO TOOLLY v2.0 - COLOR PICKER & CONVERTER
    ============================================ */
+(function(){
+'use strict';
 document.addEventListener('DOMContentLoaded', function() {
-    const canvas = document.getElementById('color-wheel');
-    const ctx = canvas.getContext('2d');
-    const nativePicker = document.getElementById('native-picker');
-    const preview = document.getElementById('color-preview');
-    const valHex = document.getElementById('val-hex');
-    const valRgb = document.getElementById('val-rgb');
-    const valHsl = document.getElementById('val-hsl');
-    const valCmyk = document.getElementById('val-cmyk');
-    const shadesGrid = document.getElementById('shades-grid');
+    var canvas = document.getElementById('color-wheel');
+    var ctx = canvas.getContext('2d');
+    var nativePicker = document.getElementById('native-picker');
+    var preview = document.getElementById('color-preview');
+    var valHex = document.getElementById('val-hex');
+    var valRgb = document.getElementById('val-rgb');
+    var valHsl = document.getElementById('val-hsl');
+    var valCmyk = document.getElementById('val-cmyk');
+    var shadesGrid = document.getElementById('shades-grid');
 
-    let currentColor = { r: 37, g: 99, b: 235 };
+    var currentColor = { r: 37, g: 99, b: 235 };
 
     drawColorWheel();
     updateAll('#2563EB');
 
     canvas.addEventListener('click', function(e) {
-        const rect = canvas.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width * canvas.width;
-        const y = (e.clientY - rect.top) / rect.height * canvas.height;
-        const pixel = ctx.getImageData(Math.floor(x), Math.floor(y), 1, 1).data;
-        const hex = rgbToHex(pixel[0], pixel[1], pixel[2]);
+        var rect = canvas.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width * canvas.width;
+        var y = (e.clientY - rect.top) / rect.height * canvas.height;
+        var pixel = ctx.getImageData(Math.floor(x), Math.floor(y), 1, 1).data;
+        var hex = rgbToHex(pixel[0], pixel[1], pixel[2]);
         nativePicker.value = hex;
         updateAll(hex);
     });
@@ -33,22 +35,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.copy-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
-            const target = document.getElementById(btn.dataset.target);
-            if (target) {
-                navigator.clipboard.writeText(target.value).then(function() {
-                    btn.textContent = 'Copied!';
-                    setTimeout(function() { btn.textContent = 'Copy'; }, 1200);
-                });
-            }
+            var target = document.getElementById(btn.dataset.target);
+            if (!target) return;
+            var txt = target.value;
+            var done = function() {
+                btn.textContent = 'Copied!';
+                setTimeout(function() { btn.textContent = 'Copy'; }, 1200);
+            };
+            copyText(txt, done);
         });
     });
 
+    function copyText(text, done) {
+        var fallback = function () {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.top = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch (e) {}
+            ta.remove();
+            done();
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done, fallback);
+        } else {
+            fallback();
+        }
+    }
+
     function updateAll(hex) {
-        const rgb = hexToRgb(hex);
+        var rgb = hexToRgb(hex);
         if (!rgb) return;
         currentColor = rgb;
-        const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
-        const cmyk = rgbToCmyk(rgb.r, rgb.g, rgb.b);
+        var hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
+        var cmyk = rgbToCmyk(rgb.r, rgb.g, rgb.b);
 
         preview.style.background = hex;
         valHex.value = hex.toUpperCase();
@@ -61,20 +83,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function drawColorWheel() {
-        const w = canvas.width, h = canvas.height, cx = w / 2, cy = h / 2, r = w / 2;
-        for (let angle = 0; angle < 360; angle += 0.5) {
-            const startAngle = (angle - 0.5) * Math.PI / 180;
-            const endAngle = (angle + 0.5) * Math.PI / 180;
-            for (let rad = 0; rad < r; rad += 1) {
-                const x = cx + rad * Math.cos(startAngle);
-                const y = cy + rad * Math.sin(startAngle);
-                const sat = (rad / r) * 100;
-                const light = 50;
+        var w = canvas.width, h = canvas.height, cx = w / 2, cy = h / 2, r = w / 2;
+        for (var angle = 0; angle < 360; angle += 0.5) {
+            var startAngle = (angle - 0.5) * Math.PI / 180;
+            var endAngle = (angle + 0.5) * Math.PI / 180;
+            for (var rad = 0; rad < r; rad += 1) {
+                var x = cx + rad * Math.cos(startAngle);
+                var y = cy + rad * Math.sin(startAngle);
+                var sat = (rad / r) * 100;
+                var light = 50;
                 ctx.fillStyle = 'hsl(' + angle + ', ' + sat + '%, ' + light + '%)';
                 ctx.fillRect(x, y, 2, 2);
             }
         }
-        const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+        var grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
         grad.addColorStop(0, 'rgba(255,255,255,1)');
         grad.addColorStop(0.5, 'rgba(255,255,255,0)');
         grad.addColorStop(1, 'rgba(0,0,0,0)');
@@ -176,3 +198,4 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 });
+})();
