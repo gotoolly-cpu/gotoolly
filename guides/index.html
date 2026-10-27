@@ -216,6 +216,38 @@
         .tab-btn{background:var(--color-bg-alt);border:1px solid var(--color-border);border-radius:8px;padding:8px 16px;cursor:pointer;font-size:var(--text-sm);color:var(--color-text);transition:all .2s;white-space:nowrap}.tab-btn:hover{background:var(--color-bg-secondary);border-color:var(--color-primary)}.tab-btn.active{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}.tab-count{opacity:.7;font-size:var(--text-xs)}.tab-btn.active .tab-count{opacity:.9}.tool-card,.guide-card{position:relative}.tool-card .card-footer,.guide-card .card-footer{display:flex;gap:var(--space-2)}.tool-card .card-footer .btn,.guide-card .card-footer .btn{flex:1;text-align:center}    </style>
 
     <style>.footer-social{display:flex;gap:var(--space-3);margin-top:var(--space-3)}.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);color:#9ca3af;transition:all .2s}.footer-social a:hover{background:rgba(255,255,255,.2);color:#fff;transform:translateY(-2px)}</style>
+    <style>
+        .static-guide-index {
+            grid-column: 1 / -1;
+            columns: 220px;
+            column-gap: var(--space-8, 2rem);
+        }
+
+        .static-guide-index ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .static-guide-index li {
+            break-inside: avoid;
+            margin: 0 0 var(--space-2, 0.5rem);
+        }
+
+        .static-guide-index a {
+            color: var(--color-text);
+            text-decoration: none;
+        }
+
+        .static-guide-index a:hover {
+            text-decoration: underline;
+        }
+
+        .static-guide-index a:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -299,6 +331,145 @@
                     <p class="section-description" id="guides-count">Showing 134 guides</p>
                 </div>
                 <div class="guides-grid" id="all-guides-grid">
+                    <!-- Static crawlable fallback generated from guidesData. Keep in sync with guidesData. -->
+                    <nav class="static-guide-index" aria-label="All guides" data-static-directory>
+                        <ul>
+                            <li><a href="/guides/reduce-pdf-size-online">PDF Compressor Guide</a></li>
+                            <li><a href="/guides/pdf-to-word-converter">PDF to Word Converter Guide</a></li>
+                            <li><a href="/guides/pdf-to-jpg">PDF to JPG Converter Guide</a></li>
+                            <li><a href="/guides/pdf-to-png">PDF to PNG Converter Guide</a></li>
+                            <li><a href="/guides/convert-pdf-to-text">PDF to Text Extractor Guide</a></li>
+                            <li><a href="/guides/pdf-ocr">PDF OCR Guide</a></li>
+                            <li><a href="/guides/merge-pdf-files">PDF Merger Guide</a></li>
+                            <li><a href="/guides/split-pdf-files">PDF Splitter Guide</a></li>
+                            <li><a href="/guides/unlock-pdf">Unlock PDF Guide</a></li>
+                            <li><a href="/guides/protect-pdf">Protect PDF Guide</a></li>
+                            <li><a href="/guides/organize-pdf-pages">Organize PDF Pages Guide</a></li>
+                            <li><a href="/guides/extract-pdf-pages">Extract PDF Pages Guide</a></li>
+                            <li><a href="/guides/delete-pdf-pages">Delete PDF Pages Guide</a></li>
+                            <li><a href="/guides/reorder-pdf-pages">Reorder PDF Pages Guide</a></li>
+                            <li><a href="/guides/add-watermark-to-pdf">PDF Watermark Guide</a></li>
+                            <li><a href="/guides/add-page-numbers-to-pdf">PDF Page Numbers Guide</a></li>
+                            <li><a href="/guides/add-text-to-pdf">PDF Add Text Guide</a></li>
+                            <li><a href="/guides/extract-images-from-pdf">Extract Images from PDF Guide</a></li>
+                            <li><a href="/guides/fill-pdf-forms">Fill PDF Forms Guide</a></li>
+                            <li><a href="/guides/sign-pdf">Sign PDF Guide</a></li>
+                            <li><a href="/guides/excel-to-pdf">Excel to PDF Guide</a></li>
+                            <li><a href="/guides/powerpoint-to-pdf">PPT to PDF Guide</a></li>
+                            <li><a href="/guides/jpg-to-pdf">JPG to PDF Guide</a></li>
+                            <li><a href="/guides/png-to-pdf">PNG to PDF Guide</a></li>
+                            <li><a href="/guides/html-to-pdf">HTML to PDF Guide</a></li>
+                            <li><a href="/guides/compress-images-for-web">Compress Images for Web Guide</a></li>
+                            <li><a href="/guides/resize-images-properly">Image Resizer Guide</a></li>
+                            <li><a href="/guides/crop-images-online">Image Cropper Guide</a></li>
+                            <li><a href="/guides/image-upscaler">Image Upscaler Guide</a></li>
+                            <li><a href="/guides/blur-image">Blur Image Guide</a></li>
+                            <li><a href="/guides/flip-image">Flip Image Guide</a></li>
+                            <li><a href="/guides/rotate-image">Rotate Image Guide</a></li>
+                            <li><a href="/guides/background-removal">Background Removal Guide</a></li>
+                            <li><a href="/guides/favicon-generator">Favicon Generator Guide</a></li>
+                            <li><a href="/guides/add-watermark-to-image">Image Watermark Guide</a></li>
+                            <li><a href="/guides/remove-image-metadata">Image Metadata Remover Guide</a></li>
+                            <li><a href="/guides/create-memes-online">Meme Generator Guide</a></li>
+                            <li><a href="/guides/png-to-jpg">PNG to JPG Guide</a></li>
+                            <li><a href="/guides/jpg-to-png">JPG to PNG Guide</a></li>
+                            <li><a href="/guides/webp-converter">WebP Converter Guide</a></li>
+                            <li><a href="/guides/avif-converter">AVIF Converter Guide</a></li>
+                            <li><a href="/guides/svg-converter">SVG Converter Guide</a></li>
+                            <li><a href="/guides/batch-image-converter">Batch Image Converter Guide</a></li>
+                            <li><a href="/guides/screenshot-to-pdf">Screenshot to PDF Guide</a></li>
+                            <li><a href="/guides/count-words-accurately">Count Words Accurately Guide</a></li>
+                            <li><a href="/guides/convert-text-case">Case Converter Guide</a></li>
+                            <li><a href="/guides/keyword-generator">Keyword Generator Guide</a></li>
+                            <li><a href="/guides/text-cleaner">Text Cleaner Guide</a></li>
+                            <li><a href="/guides/compare-texts-with-diff">Text Diff Checker Guide</a></li>
+                            <li><a href="/guides/check-readability-score">Readability Checker Guide</a></li>
+                            <li><a href="/guides/remove-duplicate-lines">Duplicate Line Remover Guide</a></li>
+                            <li><a href="/guides/summarize-text-online">Text Summarizer Guide</a></li>
+                            <li><a href="/guides/markdown-editor">Markdown Editor Guide</a></li>
+                            <li><a href="/guides/markdown-to-html">Markdown to HTML Guide</a></li>
+                            <li><a href="/guides/html-to-markdown">HTML to Markdown Guide</a></li>
+                            <li><a href="/guides/html-encoder">HTML Encoder Guide</a></li>
+                            <li><a href="/guides/base64-encoder">Base64 Encoder Guide</a></li>
+                            <li><a href="/guides/url-encoder">URL Encoder Guide</a></li>
+                            <li><a href="/guides/regex-tester">Regex Tester Guide</a></li>
+                            <li><a href="/guides/html-minifier">HTML Minifier Guide</a></li>
+                            <li><a href="/guides/css-minifier">CSS Minifier Guide</a></li>
+                            <li><a href="/guides/js-minifier">JS Minifier Guide</a></li>
+                            <li><a href="/guides/sql-formatter">SQL Formatter Guide</a></li>
+                            <li><a href="/guides/xml-formatter">XML Formatter Guide</a></li>
+                            <li><a href="/guides/csv-viewer">CSV Viewer Guide</a></li>
+                            <li><a href="/guides/create-qr-code-for-marketing">Create QR Code for Marketing Guide</a></li>
+                            <li><a href="/guides/create-strong-passwords">Create Strong Passwords Guide</a></li>
+                            <li><a href="/guides/lorem-ipsum-generator">Lorem Ipsum Generator Guide</a></li>
+                            <li><a href="/guides/url-slug-generator">URL Slug Generator Guide</a></li>
+                            <li><a href="/guides/format-json-data">JSON Formatter Guide</a></li>
+                            <li><a href="/guides/pick-and-convert-colors">Color Picker Guide</a></li>
+                            <li><a href="/guides/calculate-exact-age">Age Calculator Guide</a></li>
+                            <li><a href="/guides/generate-uuids">UUID Generator Guide</a></li>
+                            <li><a href="/guides/barcode-generator">Barcode Generator Guide</a></li>
+                            <li><a href="/guides/random-name-generator">Random Name Generator Guide</a></li>
+                            <li><a href="/guides/random-number-generator">Random Number Generator Guide</a></li>
+                            <li><a href="/guides/uuid-v7-generator">UUID v7 Generator Guide</a></li>
+                            <li><a href="/guides/password-strength-checker">Password Strength Checker Guide</a></li>
+                            <li><a href="/guides/hash-generator">Hash Generator Guide</a></li>
+                            <li><a href="/guides/hash-checker">Hash Checker Guide</a></li>
+                            <li><a href="/guides/jwt-decoder">JWT Decoder Guide</a></li>
+                            <li><a href="/guides/jwt-generator">JWT Generator Guide</a></li>
+                            <li><a href="/guides/cron-expression-generator">Cron Expression Generator Guide</a></li>
+                            <li><a href="/guides/unix-timestamp-converter">Unix Timestamp Converter Guide</a></li>
+                            <li><a href="/guides/unit-converter">Unit Converter Guide</a></li>
+                            <li><a href="/guides/percentage-calculator">Percentage Calculator Guide</a></li>
+                            <li><a href="/guides/bmi-calculator">BMI Calculator Guide</a></li>
+                            <li><a href="/guides/loan-calculator">Loan Calculator Guide</a></li>
+                            <li><a href="/guides/json-compare">JSON Compare Guide</a></li>
+                            <li><a href="/guides/json-escape-unescape">JSON Escape/Unescape Guide</a></li>
+                            <li><a href="/guides/json-to-yaml">JSON to YAML Guide</a></li>
+                            <li><a href="/guides/yaml-to-json">YAML to JSON Guide</a></li>
+                            <li><a href="/guides/json-to-csv">JSON to CSV Guide</a></li>
+                            <li><a href="/guides/csv-to-json">CSV to JSON Guide</a></li>
+                            <li><a href="/guides/xml-to-json">XML to JSON Guide</a></li>
+                            <li><a href="/guides/html-beautifier">HTML Beautifier Guide</a></li>
+                            <li><a href="/guides/html-validator">HTML Validator Guide</a></li>
+                            <li><a href="/guides/css-beautifier">CSS Beautifier Guide</a></li>
+                            <li><a href="/guides/js-beautifier">JavaScript Beautifier Guide</a></li>
+                            <li><a href="/guides/url-parser">URL Parser Guide</a></li>
+                            <li><a href="/guides/query-string-parser">Query String Parser Guide</a></li>
+                            <li><a href="/guides/http-status-lookup">HTTP Status Lookup Guide</a></li>
+                            <li><a href="/guides/mime-type-lookup">MIME Type Lookup Guide</a></li>
+                            <li><a href="/guides/uuid-validator">UUID Validator Guide</a></li>
+                            <li><a href="/guides/meta-tag-generator">Meta Tag Generator Guide</a></li>
+                            <li><a href="/guides/meta-tag-analyzer">Meta Tag Analyzer Guide</a></li>
+                            <li><a href="/guides/meta-description-preview">Meta Description Preview Guide</a></li>
+                            <li><a href="/guides/serp-preview">SERP Preview Guide</a></li>
+                            <li><a href="/guides/robots-txt-generator">Robots.txt Generator Guide</a></li>
+                            <li><a href="/guides/robots-txt-validator">Robots.txt Validator Guide</a></li>
+                            <li><a href="/guides/xml-sitemap-generator">XML Sitemap Generator Guide</a></li>
+                            <li><a href="/guides/xml-sitemap-validator">XML Sitemap Validator Guide</a></li>
+                            <li><a href="/guides/open-graph-generator">Open Graph Generator Guide</a></li>
+                            <li><a href="/guides/twitter-card-generator">Twitter Card Generator Guide</a></li>
+                            <li><a href="/guides/schema-markup-generator">Schema Markup Generator Guide</a></li>
+                            <li><a href="/guides/faq-schema-generator">FAQ Schema Generator Guide</a></li>
+                            <li><a href="/guides/breadcrumb-schema-generator">Breadcrumb Schema Generator Guide</a></li>
+                            <li><a href="/guides/organization-schema-generator">Organization Schema Generator Guide</a></li>
+                            <li><a href="/guides/article-schema-generator">Article Schema Generator Guide</a></li>
+                            <li><a href="/guides/product-schema-generator">Product Schema Generator Guide</a></li>
+                            <li><a href="/guides/canonical-url-checker">Canonical URL Checker Guide</a></li>
+                            <li><a href="/guides/keyword-density-checker">Keyword Density Checker Guide</a></li>
+                            <li><a href="/guides/meta-length-checker">Meta Length Checker Guide</a></li>
+                            <li><a href="/guides/heading-structure-checker">Heading Structure Checker Guide</a></li>
+                            <li><a href="/guides/zip-creator">ZIP Creator Guide</a></li>
+                            <li><a href="/guides/zip-extractor">ZIP Extractor Guide</a></li>
+                            <li><a href="/guides/tar-creator">TAR Creator Guide</a></li>
+                            <li><a href="/guides/tar-extractor">TAR Extractor Guide</a></li>
+                            <li><a href="/guides/gzip-compressor">GZIP Compressor Guide</a></li>
+                            <li><a href="/guides/gzip-extractor">GZIP Extractor Guide</a></li>
+                            <li><a href="/guides/archive-viewer">Archive Viewer Guide</a></li>
+                            <li><a href="/guides/archive-file-info">Archive File Info Guide</a></li>
+                            <li><a href="/guides/seven-z-extractor">7Z Extractor Guide</a></li>
+                            <li><a href="/guides/rar-extractor">RAR Extractor Guide</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </section>
         </div>
